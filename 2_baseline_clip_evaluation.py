@@ -1,5 +1,3 @@
-# 2_baseline_clip_evaluation.py
-
 import os
 import torch
 import clip
