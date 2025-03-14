@@ -112,7 +112,7 @@ Average Mean Average Precision (mAP): 0.7940
 
 ```
 
-## Output of 2_baseline_clip_evaluation_all.py
+## Output of 2_baseline_clip_evaluation_all_vitb32.py
 
 ```
 (.venv) PS C:\Users\Girija\OneDrive - De Montfort University\MSC PROJECT\BABU PALLAM\HandCLIP\HandCLIP> python .\2_c_baseline_clip_evaluation_all.py
@@ -471,3 +471,8 @@ Palmar Left: Rank-1 = 0.6418, mAP = 0.7199
 ```
 
 
+## Output of 2_baseline_clip_evaluation_all_rn50.py
+
+```
+
+```
