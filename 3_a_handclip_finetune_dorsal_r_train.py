@@ -107,15 +107,57 @@ train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
 val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False)
 
 # ----------------------------------------
-# Step 5: Define Loss Function and Optimizer
+# Step 5: Define Loss Function and Optimizer (With Alternatives)
 # ----------------------------------------
+
+# ✅ Loss Function Choices:
+# 1. CrossEntropyLoss - baseline, for multi-class classification
 criterion = nn.CrossEntropyLoss()
+
+# 2. Label Smoothing CrossEntropy (reduces overconfidence, improves generalization)
+# Note: Helps when dataset labels are noisy or classes are imbalanced.
+# from torch.nn.functional import cross_entropy
+# def label_smoothing_loss(preds, targets, smoothing=0.1):
+#     confidence = 1.0 - smoothing
+#     logprobs = torch.nn.functional.log_softmax(preds, dim=-1)
+#     nll_loss = -logprobs.gather(dim=-1, index=targets.unsqueeze(1)).squeeze(1)
+#     smooth_loss = -logprobs.mean(dim=-1)
+#     return confidence * nll_loss.mean() + smoothing * smooth_loss.mean()
+
+# 3. Focal Loss - helps with class imbalance by focusing on hard examples
+# Useful if some identities have very few samples
+# from torch.nn.functional import cross_entropy
+# def focal_loss(preds, targets, gamma=2.0, alpha=1.0):
+#     ce_loss = cross_entropy(preds, targets, reduction='none')
+#     pt = torch.exp(-ce_loss)
+#     focal = alpha * (1 - pt) ** gamma * ce_loss
+#     return focal.mean()
+
+# ✅ Optimizer Choices:
+# 1. AdamW - baseline optimizer for transformers
 optimizer = optim.AdamW(model.parameters(), lr=1e-5, weight_decay=0.01)
 
+# 2. SGD + Momentum (useful if you want more control and better generalization)
+# optimizer = optim.SGD(model.parameters(), lr=1e-3, momentum=0.9, weight_decay=0.01)
+
+# 3. Adam (standard adaptive optimizer without weight decay)
+# optimizer = optim.Adam(model.parameters(), lr=1e-5)
+
+# ✅ Scheduler Choices (Optional but recommended)
+# 1. Cosine Annealing LR Scheduler
+# scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=num_epochs)
+
+# 2. Step LR Scheduler (decays LR by gamma every step_size epochs)
+# scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=10, gamma=0.1)
+
+# 3. ReduceLROnPlateau (reduces LR when val_acc plateaus)
+# scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='max', patience=3, factor=0.5)
+
 # ----------------------------------------
-# Step 6: Training Loop
+# Step 6: Training Loop (Supports Alternate Losses, Optimizers, Schedulers)
 # ----------------------------------------
-num_epochs = 50
+
+num_epochs = 5
 best_val_acc = 0.0
 save_path = 'handclip_finetuned_model.pth'
 
@@ -129,9 +171,14 @@ for epoch in range(num_epochs):
         images, labels = images.to(device), labels.to(device)
 
         optimizer.zero_grad()
+
         outputs = model(images)
 
+        # ✅ Select the criterion as needed:
         loss = criterion(outputs, labels)
+        # loss = label_smoothing_loss(outputs, labels, smoothing=0.1)
+        # loss = focal_loss(outputs, labels, gamma=2.0, alpha=1.0)
+
         loss.backward()
         optimizer.step()
 
@@ -163,10 +210,14 @@ for epoch in range(num_epochs):
     val_acc = val_correct / val_total
     print(f"[Epoch {epoch + 1}/{num_epochs}] Val Acc: {val_acc:.4f}")
 
+    # ✅ Optional: Step the scheduler if used
+    # scheduler.step()  # For CosineAnnealingLR or StepLR
+    # scheduler.step(val_acc)  # For ReduceLROnPlateau
+
     # Save best model based on validation accuracy
     if val_acc > best_val_acc:
         best_val_acc = val_acc
         torch.save(model.state_dict(), save_path)
-        print(f"Best model saved with val_acc: {best_val_acc:.4f}")
+        print(f"✅ Best model saved with val_acc: {best_val_acc:.4f}")
 
 print("Training completed. Best validation accuracy:", best_val_acc)
