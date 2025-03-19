@@ -159,7 +159,7 @@ optimizer = optim.AdamW(model.parameters(), lr=1e-5, weight_decay=0.01)
 
 num_epochs = 5
 best_val_acc = 0.0
-save_path = 'handclip_finetuned_model.pth'
+save_path = 'handclip_finetuned_model_dorsal_r.pth'
 
 for epoch in range(num_epochs):
     model.train()
