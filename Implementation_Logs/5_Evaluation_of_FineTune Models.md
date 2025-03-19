@@ -183,3 +183,99 @@ Let me know if you want:
 - A **CMC curve plotting example**
 
 🚀
+
+
+Sure! Here's a **capsule-style cheat sheet** for **Evaluation Metrics** and **Usage in HandCLIP Fine-Tuning and Evaluation**:
+
+---
+
+# ✅ HandCLIP Evaluation Cheat Sheet 🚀
+
+---
+
+## 📌 Evaluation Metrics
+
+| **Metric**       | **Purpose**                             | **Used In**            | **Interpretation**                                   |
+|------------------|-----------------------------------------|------------------------|-----------------------------------------------------|
+| **Top-1 Accuracy** | Classification                         | Fine-tuned HandCLIP classification (Cross-Entropy Loss) | Model's **best guess is correct**.                 |
+| **Top-5 Accuracy** | Classification                         | Fine-tuned HandCLIP classification (Cross-Entropy Loss) | **Correct label** is in **top 5 guesses**.         |
+| **Rank-1 Accuracy**| Re-Identification (Re-ID)             | Baseline CLIP & HandCLIP Re-ID evaluations (Query-Gallery setup) | The **closest match** in gallery is **correct**.   |
+| **mAP**           | Re-Identification (Re-ID)             | Baseline CLIP & HandCLIP Re-ID evaluations (Query-Gallery setup) | **Ranking quality** across **all candidates**.     |
+
+---
+
+## ✅ **When to Use What?**
+
+### 🎯 **Classification Tasks**
+- Use **Top-1 / Top-5 Accuracy**
+- Example:  
+  `Hand Image → Classify as Person ID`
+- Common in **Cross-Entropy Loss**-based training  
+- Evaluated on: `train`, `val`, `test`
+
+---
+
+### 🎯 **Re-Identification Tasks (Query-Gallery)**  
+- Use **Rank-1 Accuracy + mAP**
+- Example:  
+  `Query Hand → Retrieve Correct Gallery Image`
+- Common in **Contrastive Learning** or **Embedding-Based Retrieval**  
+- Evaluated on: `queryX` vs `galleryX`
+
+---
+
+## ✅ **Training → Evaluation Flow**
+
+| **Phase**     | **Dataset Folder**                | **Goal**                                            | **Metric**           |
+|---------------|-----------------------------------|-----------------------------------------------------|----------------------|
+| **Training**  | `train` (sometimes `train_all`)   | Fine-tune HandCLIP **(Image Encoder)**              | Loss, Accuracy       |
+| **Validation**| `val`                             | Monitor **generalization** during training          | Loss, Accuracy       |
+| **Test Set**  | `test`                            | Final **classification** evaluation (if used)       | Top-1, Top-5         |
+| **Re-ID Eval**| `query0...query9` vs `gallery0...gallery9` | Evaluate **retrieval performance** after training   | Rank-1 Accuracy, mAP |
+
+---
+
+## ✅ **Folder Structure Meaning**
+
+| **Folder**               | **What It Contains**                                    | **Use Case**                                    |
+|--------------------------|----------------------------------------------------------|-------------------------------------------------|
+| `train`                  | Training images **(identities for learning)**            | Model Fine-tuning (Cross-Entropy / Contrastive) |
+| `val`                    | Validation images **(same identities as train)**         | Model selection (early stopping, tuning)        |
+| `test`                   | Testing images **(new identities, not seen in training)**| Final classification evaluation (optional)      |
+| `query0...query9`        | Query images for **Re-ID evaluation** (per Monte Carlo run) | Re-ID evaluation (retrieval)                   |
+| `gallery0...gallery9`    | Gallery images corresponding to **query splits**         | Re-ID evaluation (retrieval)                   |
+| `gallery0_all...gallery9_all` | **Combined galleries** from all hand aspects (dorsal/palmar) | Multi-aspect Re-ID evaluation (harder task)     |
+
+---
+
+## ✅ **Rank-1 vs Top-1**
+
+| **Rank-1 Accuracy** | **Top-1 Accuracy**  |
+|---------------------|---------------------|
+| Used in **Re-ID retrieval** (query-gallery matching). | Used in **Classification** (predict label). |
+| Nearest gallery match has the correct identity. | Predicted class matches ground truth. |
+| Retrieval-based task. | Classification-based task. |
+
+---
+
+## ✅ **Why Use mAP in Re-ID?**
+- **Mean Average Precision (mAP):**
+  - Measures **how well** the system ranks **all correct matches**, not just the top result.
+  - Important when there are **multiple images per identity** in the gallery.
+  - Reflects **precision and recall** over the entire retrieval list.
+
+---
+
+## ✅ **Fine-Tuning HandCLIP Recap**
+1. **Train on `train` + Validate on `val`**
+2. **Evaluate on `queryX` vs `galleryX` (Rank-1 + mAP)**
+3. **(Optional)** Test on `test` for classification performance (Top-1/Top-5)
+4. **Multi-view Re-ID**: Evaluate with `galleryX_all` and `queryX` for **multi-aspect retrieval**.
+
+---
+
+### 🚀 **End Goal**
+✅ HandCLIP can **identify a person** using **any hand image** (dorsal/palmar, left/right)  
+✅ Achieves **high retrieval accuracy** in **query-gallery Re-ID tasks**
+
+---
