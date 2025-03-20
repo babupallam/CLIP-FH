@@ -497,7 +497,7 @@ Training completed. Best validation accuracy: 0.9305555555555556
 ```
 
 
-## Output of 3_a_handclip_finetune_dorsal_r_eval
+## Output of 3_a_handclip_finetune_dorsal_r_eval.py
 ```
 (.venv) PS C:\Users\Girija\OneDrive - De Montfort University\MSC PROJECT\BABU PALLAM\HandCLIP\HandCLIP> python .\3_a_handclip_finetune_dorsal_r_eval.py       
 Using device: cpu
@@ -506,3 +506,26 @@ Rank-1 Accuracy: 0.8733
 mAP: 0.9096
 
 ```
+
+## Output of 3_a_handclip_finetune_dorsal_r_eval_multi.py
+```
+(.venv) PS C:\Users\Girija\OneDrive - De Montfort University\MSC PROJECT\BABU PALLAM\HandCLIP\HandCLIP> python .\3_a_handclip_finetune_dorsal_r_eval_multi.py
+Using device: cpu
+Loaded model from ./models/handclip_finetuned_model_dorsal_r.pth
+[Split 0] Rank-1: 0.8733, mAP: 0.9096
+[Split 1] Rank-1: 0.9032, mAP: 0.9348
+[Split 2] Rank-1: 0.9022, mAP: 0.9296
+[Split 3] Rank-1: 0.9197, mAP: 0.9417
+[Split 4] Rank-1: 0.9279, mAP: 0.9502
+[Split 5] Rank-1: 0.8774, mAP: 0.9134
+[Split 6] Rank-1: 0.8980, mAP: 0.9228
+[Split 7] Rank-1: 0.8970, mAP: 0.9312
+[Split 8] Rank-1: 0.9022, mAP: 0.9286
+[Split 9] Rank-1: 0.8898, mAP: 0.9247
+
+=== Final Results over 10 splits ===
+Mean Rank-1: 0.8991
+Mean mAP:    0.9287
+
+```
+
