@@ -476,4 +476,33 @@ Palmar Left: Rank-1 = 0.6418, mAP = 0.7199
 
 ## Output of 3_a_handclip_finetune_dorsal_r_train
 ```
+(.venv) PS C:\Users\Girija\OneDrive - De Montfort University\MSC PROJECT\BABU PALLAM\HandCLIP\HandCLIP> python .\3_a_handclip_finetune_dorsal_r_train_basic.py
+Using device: cpu
+
+[Epoch 1/5] Train Loss: 4.7120, Train Acc: 0.1584
+[Epoch 1/5] Val Acc: 0.2639
+✅ Best model saved with val_acc: 0.2639
+[Epoch 2/5] Train Loss: 3.4347, Train Acc: 0.7764
+[Epoch 2/5] Val Acc: 0.7917
+✅ Best model saved with val_acc: 0.7917
+[Epoch 3/5] Train Loss: 2.3988, Train Acc: 0.9663
+[Epoch 3/5] Val Acc: 0.8889
+✅ Best model saved with val_acc: 0.8889
+[Epoch 4/5] Train Loss: 1.7978, Train Acc: 0.9933
+[Epoch 4/5] Val Acc: 0.9306
+✅ Best model saved with val_acc: 0.9306
+[Epoch 5/5] Train Loss: 1.4624, Train Acc: 0.9989
+[Epoch 5/5] Val Acc: 0.9306
+Training completed. Best validation accuracy: 0.9305555555555556
+```
+
+
+## Output of 3_a_handclip_finetune_dorsal_r_eval
+```
+(.venv) PS C:\Users\Girija\OneDrive - De Montfort University\MSC PROJECT\BABU PALLAM\HandCLIP\HandCLIP> python .\3_a_handclip_finetune_dorsal_r_eval.py       
+Using device: cpu
+Loaded model from ./models/handclip_finetuned_model_dorsal_r.pth
+Rank-1 Accuracy: 0.8733
+mAP: 0.9096
+
 ```
