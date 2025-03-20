@@ -161,3 +161,4 @@ cython_debug/
 /11k
 /.idea
 1_prepare_train_val_test_hd.py
+*.pth
