@@ -1,7 +1,8 @@
 """
-3_a_handclip_finetune_dorsal_r_train.py
+3_a_handclip_finetune_dorsal_r_train_unfreeze_layers.py
 
 Trains a CLIP-based model on dorsal_r data using ID classification (CrossEntropy).
+Unfreezes later layers of the image encoder for better fine-tuning.
 After training, saves the best model checkpoint: ./models/handclip_finetuned_dorsal_r.pth
 """
 
@@ -16,18 +17,11 @@ import clip
 device = "cuda" if torch.cuda.is_available() else "cpu"
 print(f"Using device: {device}")
 
+
 # ---------------------------
 # Dataset Classes
 # ---------------------------
 class IDFolderDataset(Dataset):
-    """
-    Expects subfolders for each person ID:
-      train/
-        0000000/*.jpg
-        0000001/*.jpg
-      ...
-    We build a label_map like { '0000000': 0, '0000001': 1, ... }.
-    """
     def __init__(self, root_dir, preprocess, label_map):
         super().__init__()
         self.root_dir = root_dir
@@ -72,14 +66,40 @@ class HandCLIPReID(nn.Module):
         return logits
 
 
+# ---------------------------
+# Function to Freeze Layers
+# ---------------------------
+def freeze_clip_layers(clip_model, unfreeze_layers=[]):
+    """
+    Freezes all layers except the ones in unfreeze_layers list.
+    Example: unfreeze_layers = ['transformer.resblocks.10', 'transformer.resblocks.11']
+    """
+    # Freeze everything first
+    for name, param in clip_model.visual.named_parameters():
+        param.requires_grad = False
+
+    # Unfreeze selected layers
+    for name, param in clip_model.visual.named_parameters():
+        if any([name.startswith(layer) for layer in unfreeze_layers]):
+            param.requires_grad = True
+            print(f"Unfreezing layer: {name}")
+
+
 def main():
     # ----------------------------------
     # 1) Load CLIP and create model
     # ----------------------------------
     clip_model, preprocess = clip.load("ViT-B/32", device=device)
-    # Freeze text encoder
+
+    # Freeze text encoder completely
     clip_model.transformer.requires_grad_(False)
-    # Extract the CLIP image encoder
+
+    # Strategy: Unfreeze the last 2 transformer blocks of the image encoder
+    # These are often 'transformer.resblocks.10' and 'transformer.resblocks.11'
+    unfreeze_layers = ['transformer.resblocks.10', 'transformer.resblocks.11']
+
+    freeze_clip_layers(clip_model, unfreeze_layers=unfreeze_layers)
+
     image_encoder = clip_model.visual
 
     num_classes = 190  # adjust if needed
@@ -91,7 +111,6 @@ def main():
     train_dir = './11k/train_val_test_split_dorsal_r/train'
     val_dir = './11k/train_val_test_split_dorsal_r/val'
 
-    # Build label_map from train subfolders
     label_map = {}
     if os.path.isdir(train_dir):
         subfolders = sorted(os.listdir(train_dir))
@@ -113,10 +132,14 @@ def main():
     val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False)
 
     # ----------------------------------
-    # 3) Loss & Optim
+    # 3) Loss & Optimizer
     # ----------------------------------
-    criterion = nn.CrossEntropyLoss()  # Basic ID classification
-    optimizer = optim.AdamW(model.parameters(), lr=1e-5, weight_decay=0.01)
+    criterion = nn.CrossEntropyLoss()
+
+    # Collect all parameters that require gradients (unfrozen ones + classifier head)
+    trainable_params = [p for p in model.parameters() if p.requires_grad]
+
+    optimizer = optim.AdamW(trainable_params, lr=1e-5, weight_decay=0.01)
 
     # ----------------------------------
     # 4) Training Loop
@@ -136,7 +159,7 @@ def main():
             images, labels = images.to(device), labels.to(device)
 
             optimizer.zero_grad()
-            logits = model(images)  # [B, num_classes]
+            logits = model(images)
             loss = criterion(logits, labels)
 
             loss.backward()
@@ -149,7 +172,7 @@ def main():
 
         epoch_loss = running_loss / total if total else 0
         epoch_acc = correct / total if total else 0
-        print(f"[Epoch {epoch+1}/{num_epochs}] Train Loss: {epoch_loss:.4f}, Train Acc: {epoch_acc:.4f}")
+        print(f"[Epoch {epoch + 1}/{num_epochs}] Train Loss: {epoch_loss:.4f}, Train Acc: {epoch_acc:.4f}")
 
         # Validation
         model.eval()
@@ -162,10 +185,11 @@ def main():
                 _, v_preds = torch.max(v_logits, dim=1)
                 val_correct += (v_preds == labels).sum().item()
                 val_total += labels.size(0)
-        val_acc = val_correct / val_total if val_total else 0
-        print(f"[Epoch {epoch+1}/{num_epochs}] Val Acc: {val_acc:.4f}")
 
-        # Save best
+        val_acc = val_correct / val_total if val_total else 0
+        print(f"[Epoch {epoch + 1}/{num_epochs}] Val Acc: {val_acc:.4f}")
+
+        # Save best model
         if val_acc > best_val_acc:
             best_val_acc = val_acc
             torch.save(model.state_dict(), save_path)
@@ -173,6 +197,7 @@ def main():
 
     print("\nTraining complete.")
     print("Best validation accuracy:", best_val_acc)
+
 
 if __name__ == "__main__":
     main()

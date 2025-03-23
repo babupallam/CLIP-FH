@@ -476,36 +476,29 @@ Palmar Left: Rank-1 = 0.6418, mAP = 0.7199
 
 ## Output of 3_a_handclip_finetune_dorsal_r_train
 ```
-(.venv) PS C:\Users\Girija\OneDrive - De Montfort University\MSC PROJECT\BABU PALLAM\HandCLIP\HandCLIP> python .\3_a_handclip_finetune_dorsal_r_train_basic.py
+(.venv) PS C:\Users\Girija\OneDrive - De Montfort University\MSC PROJECT\BABU PALLAM\HandCLIP\HandCLIP> python .\3_a_handclip_finetune_dorsal_r_train.py     
 Using device: cpu
+[Epoch 1/5] Train Loss: 4.6794, Train Acc: 0.1989
+[Epoch 1/5] Val Acc: 0.2500
+✅ Best model saved with val_acc: 0.2500
+[Epoch 2/5] Train Loss: 3.3065, Train Acc: 0.7258
+[Epoch 2/5] Val Acc: 0.7222
+✅ Best model saved with val_acc: 0.7222
+[Epoch 3/5] Train Loss: 2.1709, Train Acc: 0.9461
+[Epoch 3/5] Val Acc: 0.8750
+✅ Best model saved with val_acc: 0.8750
+[Epoch 4/5] Train Loss: 1.4562, Train Acc: 0.9921
+[Epoch 4/5] Val Acc: 0.9028
+✅ Best model saved with val_acc: 0.9028
+[Epoch 5/5] Train Loss: 1.0357, Train Acc: 0.9989
+[Epoch 5/5] Val Acc: 0.9167
+✅ Best model saved with val_acc: 0.9167
 
-[Epoch 1/5] Train Loss: 4.7120, Train Acc: 0.1584
-[Epoch 1/5] Val Acc: 0.2639
-✅ Best model saved with val_acc: 0.2639
-[Epoch 2/5] Train Loss: 3.4347, Train Acc: 0.7764
-[Epoch 2/5] Val Acc: 0.7917
-✅ Best model saved with val_acc: 0.7917
-[Epoch 3/5] Train Loss: 2.3988, Train Acc: 0.9663
-[Epoch 3/5] Val Acc: 0.8889
-✅ Best model saved with val_acc: 0.8889
-[Epoch 4/5] Train Loss: 1.7978, Train Acc: 0.9933
-[Epoch 4/5] Val Acc: 0.9306
-✅ Best model saved with val_acc: 0.9306
-[Epoch 5/5] Train Loss: 1.4624, Train Acc: 0.9989
-[Epoch 5/5] Val Acc: 0.9306
-Training completed. Best validation accuracy: 0.9305555555555556
-```
-
-
-## Output of 3_a_handclip_finetune_dorsal_r_eval.py
-```
-(.venv) PS C:\Users\Girija\OneDrive - De Montfort University\MSC PROJECT\BABU PALLAM\HandCLIP\HandCLIP> python .\3_a_handclip_finetune_dorsal_r_eval.py       
-Using device: cpu
-Loaded model from ./models/handclip_finetuned_model_dorsal_r.pth
-Rank-1 Accuracy: 0.8733
-mAP: 0.9096
+Training complete.
+Best validation accuracy: 0.9166666666666666
 
 ```
+<hr style="height:10px; background-color:red; border:none;">
 
 ## Output of 3_a_handclip_finetune_dorsal_r_eval_multi.py
 ```
@@ -528,4 +521,40 @@ Mean Rank-1: 0.8991
 Mean mAP:    0.9287
 
 ```
+<hr style="height:10px; background-color:red; border:none;">
+
+## Output of 3_a_handclip_finetune_dorsal_r_eval_multi_gallery_all.py
+
+###  Cross-Aspect Re-ID
+- Evaluate each query split (query0 to query9) against the galleryX_all folders.
+- These galleryX_all folders likely contain combined galleries from different aspects or entire datasets, simulating a cross-aspect Re-ID task.
+- Compute Rank-1 and mAP for each query/gallery_all pair, then average across all splits.
+
+```
+(.venv) PS C:\Users\Girija\OneDrive - De Montfort University\MSC PROJECT\BABU PALLAM\HandCLIP\HandCLIP> python 3_a_handclip_finetune_dorsal_r_eval_multi_gallery_all.py
+Using device: cpu
+Loaded model from ./models/handclip_finetuned_dorsal_r.pth
+[Split 0] Rank-1: 0.7508, mAP: 0.8005
+[Split 1] Rank-1: 0.8084, mAP: 0.8398
+[Split 2] Rank-1: 0.7806, mAP: 0.8146
+[Split 3] Rank-1: 0.8177, mAP: 0.8416
+[Split 4] Rank-1: 0.8167, mAP: 0.8417
+[Split 5] Rank-1: 0.7642, mAP: 0.8049
+[Split 6] Rank-1: 0.7549, mAP: 0.8045
+[Split 7] Rank-1: 0.7817, mAP: 0.8195
+[Split 8] Rank-1: 0.7806, mAP: 0.8194
+[Split 9] Rank-1: 0.7817, mAP: 0.8136
+
+=== Final Cross-Aspect Results over 10 splits ===
+Mean Rank-1: 0.7837
+Mean mAP:    0.8200
+
+```
+### Observation
+ - Good result for cross-aspect Re-ID, though the training was aspect-specific (dorsal_r).
+ - Results
+   - Rank-1 (78%): Out of 100 searches, 78 times the first suggestion is the right person.
+   - mAP (82%): Across all searches, the system is usually very accurate in ranking the correct people close to the top, not leaving them far down the list.
+ 
+<hr style="height:10px; background-color:red; border:none;">
 
