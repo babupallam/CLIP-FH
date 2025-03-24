@@ -14,7 +14,7 @@ from shutil import copyfile
 import numpy as np
 
 # You only need to change this line to your dataset path
-data_path = './11k'
+data_path = './datasets/11khands'
 ext = 'jpg'
 if not os.path.isdir(data_path):
     print('Please change the 11k_data_path!')

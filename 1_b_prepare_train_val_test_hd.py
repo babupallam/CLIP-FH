@@ -14,7 +14,7 @@ import numpy as np
 
 
 # Set to your dataset path
-data_path = './HD/Original Images'
+data_path = './datasets/HD/Original Images'
 ext = 'jpg'
 if not os.path.isdir(data_path):
     print('Please change the HUnique_data_path!')
