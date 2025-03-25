@@ -1,3 +1,1 @@
-"""
-Auto-generated file.
-"""
+# Makes this directory a Python package

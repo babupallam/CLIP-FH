@@ -77,3 +77,13 @@ datasets/
   (Exclude `--random_gallery` flag.)
 
 ---
+
+
+# validate_dataset_splits.py
+
+- its for checking the splitting output when we do it with prepare_11k.py and prepare_hd.py
+
+
+# Note (babu)
+    - we need to change the three files: prepare_11k.py, prepare_hd.py, and alidate_dataset_splits.py,
+        according to the original once...

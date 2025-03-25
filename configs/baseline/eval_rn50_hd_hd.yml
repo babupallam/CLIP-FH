@@ -1,0 +1,6 @@
+dataset: hd
+aspect: hd
+model: rn50
+variant: baseline
+batch_size: 32
+num_splits: 10
