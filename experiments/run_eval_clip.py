@@ -47,9 +47,7 @@ def run_evaluation(config):
     output_lines = []
     output_lines.append(f"📋 CONFIG: {model_name.upper()} | {dataset.upper()} | {aspect} | {variant.upper()}")
 
-    #for i in range(num_splits):
-    for i in range(1):
-
+    for i in range(num_splits):
         query_path = os.path.join(data_path, f"query{i}")
         gallery_path = os.path.join(data_path, f"gallery{i}")
 
