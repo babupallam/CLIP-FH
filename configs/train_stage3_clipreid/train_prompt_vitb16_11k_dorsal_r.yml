@@ -1,0 +1,11 @@
+dataset: 11k
+aspect: dorsal_r
+model: vitb16
+
+batch_size: 32
+epochs: 1
+lr: 0.002
+n_ctx: 4
+
+save_path: saved_models/clipreid_prompts_vitb16_11k_dorsal_r.pth
+log_path: train_logs/clipreid_prompts_vitb16_11k_dorsal_r.log
