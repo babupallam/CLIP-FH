@@ -1,0 +1,7 @@
+dataset: 11k
+aspect: dorsal_r
+model: vitb16
+variant: finetuned  # <== tells run_eval_clip.py to load from saved_models/
+
+batch_size: 32
+num_splits: 10
