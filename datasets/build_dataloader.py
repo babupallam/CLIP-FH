@@ -19,6 +19,7 @@ import os
 from torch.utils.data import DataLoader
 from torchvision.datasets import ImageFolder
 from .transforms import build_transforms
+from torchvision import datasets, transforms
 
 def get_dataloader(data_dir, batch_size=64, shuffle=False, num_workers=4, train=True):
     """
@@ -38,3 +39,33 @@ def get_dataloader(data_dir, batch_size=64, shuffle=False, num_workers=4, train=
     dataset = ImageFolder(root=data_dir, transform=transform)
     loader = DataLoader(dataset, batch_size=batch_size, shuffle=shuffle, num_workers=num_workers)
     return loader
+
+
+def get_train_val_loaders(config):
+    dataset = config["dataset"]
+    aspect = config["aspect"]
+    batch_size = config["batch_size"]
+
+    if dataset == "11k":
+        base_path = f"./datasets/11khands/train_val_test_split_{aspect}"
+    elif dataset == "hd":
+        base_path = f"./datasets/HD/Original Images/train_val_test_split"
+    else:
+        raise ValueError("Unsupported dataset in config.")
+
+    train_dir = os.path.join(base_path, "train")
+    val_dir = os.path.join(base_path, "val")
+
+    transform = transforms.Compose([
+        transforms.Resize((224, 224)),
+        transforms.ToTensor(),
+    ])
+
+    train_dataset = datasets.ImageFolder(train_dir, transform=transform)
+    val_dataset = datasets.ImageFolder(val_dir, transform=transform)
+
+    train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, num_workers=4)
+    val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False, num_workers=4)
+
+    num_classes = len(train_dataset.classes)
+    return train_loader, val_loader, num_classes

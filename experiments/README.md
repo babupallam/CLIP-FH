@@ -103,4 +103,8 @@ This directory contains **entry-point scripts** to run different parts of your C
 
 ---
 
-✅ Let me know if you want me to generate templates for any of these scripts — e.g., a full version of `train_finetune_clip.py` with CLI + config loading + training loop.
+```angular2html
+python experiments/run_eval_clip.py --config configs/finetuning_stage1_frozen_text/eval_vitb16_11k_dorsal_r.yml
+
+```
+
