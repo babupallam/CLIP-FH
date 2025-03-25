@@ -1,0 +1,6 @@
+dataset: hd
+aspect: dorsal_r
+model: vitb16
+variant: baseline
+batch_size: 32
+num_splits: 10
