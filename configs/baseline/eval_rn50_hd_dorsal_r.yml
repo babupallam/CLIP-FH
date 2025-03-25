@@ -1,5 +1,5 @@
 dataset: hd
-aspect: hd
+aspect: dorsal_r
 model: rn50
 variant: baseline
 batch_size: 32

@@ -2,13 +2,13 @@ import os
 import yaml
 
 # Base folder to save YAML configs
-config_dir = "configs/baseline"
+config_dir = "baseline"
 os.makedirs(config_dir, exist_ok=True)
 
 # Supported values
 models = ["vitb16", "rn50"]
 aspects_11k = ["dorsal_r", "dorsal_l", "palmar_r", "palmar_l"]
-aspects_hd = ["hd"]
+aspects_hd = ["dorsal_r"]
 
 # Common config values
 batch_size = 32
