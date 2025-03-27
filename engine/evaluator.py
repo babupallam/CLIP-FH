@@ -1,8 +1,14 @@
+"""
+evaluator.py
+
+Calculates mAP and CMC for ReID evaluation.
+"""
+
 import numpy as np
 
 def evaluate_rank(similarity_matrix, query_ids, gallery_ids, topk=[1, 5, 10]):
     """
-    Evaluate using CMC and mAP metrics, excluding distractor gallery IDs.
+    Evaluate using CMC and mAP metrics.
 
     Args:
         similarity_matrix: cosine similarity [n_query, n_gallery]
@@ -22,19 +28,8 @@ def evaluate_rank(similarity_matrix, query_ids, gallery_ids, topk=[1, 5, 10]):
 
     for i in range(num_query):
         scores = sim[i]
-        query_id = q_ids[i]
-
-        # ✅ Step 1: Filter gallery indices that have the same ID as query
-        valid_indices = np.where(g_ids == query_id)[0]
-
-        # ✅ Step 2: If there are no matching IDs in the gallery, skip
-        if len(valid_indices) == 0:
-            continue
-
-        # ✅ Step 3: Get scores only for valid (non-distractor) gallery entries
-        valid_scores = scores[valid_indices]
-        sorted_idx = np.argsort(valid_scores)[::-1]
-        matches = (g_ids[valid_indices[sorted_idx]] == query_id)
+        indices = np.argsort(scores)[::-1]
+        matches = (g_ids[indices] == q_ids[i])
 
         # CMC
         for j, k in enumerate(topk):
