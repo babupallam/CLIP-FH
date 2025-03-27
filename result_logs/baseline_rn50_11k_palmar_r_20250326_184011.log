@@ -1,0 +1,90 @@
+📋 CONFIG: RN50 | 11K | palmar_r | BASELINE
+
+============================================================
+🔁 Run 1/10 | 🖼️ Query: query0 (917 images) | Gallery: gallery0 (71 images)
+✅ Run-1 Results:
+   Rank-1: 0.7339
+   Rank-5: 0.8822
+   Rank-10: 0.9313
+   mAP: 0.8038
+
+============================================================
+🔁 Run 2/10 | 🖼️ Query: query1 (917 images) | Gallery: gallery1 (71 images)
+✅ Run-2 Results:
+   Rank-1: 0.7186
+   Rank-5: 0.8593
+   Rank-10: 0.9160
+   mAP: 0.7830
+
+============================================================
+🔁 Run 3/10 | 🖼️ Query: query2 (917 images) | Gallery: gallery2 (71 images)
+✅ Run-3 Results:
+   Rank-1: 0.6761
+   Rank-5: 0.8430
+   Rank-10: 0.9040
+   mAP: 0.7505
+
+============================================================
+🔁 Run 4/10 | 🖼️ Query: query3 (917 images) | Gallery: gallery3 (71 images)
+✅ Run-4 Results:
+   Rank-1: 0.7317
+   Rank-5: 0.8680
+   Rank-10: 0.9149
+   mAP: 0.7961
+
+============================================================
+🔁 Run 5/10 | 🖼️ Query: query4 (917 images) | Gallery: gallery4 (71 images)
+✅ Run-5 Results:
+   Rank-1: 0.7186
+   Rank-5: 0.8637
+   Rank-10: 0.9149
+   mAP: 0.7827
+
+============================================================
+🔁 Run 6/10 | 🖼️ Query: query5 (917 images) | Gallery: gallery5 (71 images)
+✅ Run-6 Results:
+   Rank-1: 0.7165
+   Rank-5: 0.8484
+   Rank-10: 0.9128
+   mAP: 0.7805
+
+============================================================
+🔁 Run 7/10 | 🖼️ Query: query6 (917 images) | Gallery: gallery6 (71 images)
+✅ Run-7 Results:
+   Rank-1: 0.6827
+   Rank-5: 0.8451
+   Rank-10: 0.8866
+   mAP: 0.7572
+
+============================================================
+🔁 Run 8/10 | 🖼️ Query: query7 (917 images) | Gallery: gallery7 (71 images)
+✅ Run-8 Results:
+   Rank-1: 0.7197
+   Rank-5: 0.8539
+   Rank-10: 0.9193
+   mAP: 0.7832
+
+============================================================
+🔁 Run 9/10 | 🖼️ Query: query8 (917 images) | Gallery: gallery8 (71 images)
+✅ Run-9 Results:
+   Rank-1: 0.7012
+   Rank-5: 0.8561
+   Rank-10: 0.9138
+   mAP: 0.7708
+
+============================================================
+🔁 Run 10/10 | 🖼️ Query: query9 (917 images) | Gallery: gallery9 (71 images)
+✅ Run-10 Results:
+   Rank-1: 0.6663
+   Rank-5: 0.8190
+   Rank-10: 0.9029
+   mAP: 0.7341
+
+============================================================
+📊 FINAL AVERAGED RESULTS (RN50 - 11K - palmar_r)
+============================================================
+Rank-1: 0.7065
+Rank-5: 0.8539
+Rank-10: 0.9117
+mAP: 0.7742
+============================================================

@@ -40,6 +40,7 @@
       <recent name="C:\Users\Girija\OneDrive - De Montfort University\MSC PROJECT\BABU PALLAM\HandCLIP\HandCLIP\datasets\data_preprocessing" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Girija\OneDrive - De Montfort University\MSC PROJECT\BABU PALLAM\HandCLIP\HandCLIP\experiments\stage1_train_classifier_frozen_text" />
       <recent name="C:\Users\Girija\OneDrive - De Montfort University\MSC PROJECT\BABU PALLAM\HandCLIP\HandCLIP\configs\baseline" />
       <recent name="C:\Users\Girija\OneDrive - De Montfort University\MSC PROJECT\BABU PALLAM\HandCLIP\HandCLIP" />
     </key>
@@ -48,8 +49,8 @@
     <servers />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/HandCLIP$run_all_experiments.coverage" NAME="run_all_experiments Coverage Results" MODIFIED="1742883198297" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments" />
     <SUITE FILE_PATH="coverage/HandCLIP$make.coverage" NAME="make Coverage Results" MODIFIED="1742883981794" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/configs/baseline" />
+    <SUITE FILE_PATH="coverage/HandCLIP$run_all_experiments.coverage" NAME="run_all_experiments Coverage Results" MODIFIED="1743007031779" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments" />
     <SUITE FILE_PATH="coverage/HandCLIP$1_baseline_vitb16.coverage" NAME="1_baseline_vitb16 Coverage Results" MODIFIED="1742875789432" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments" />
     <SUITE FILE_PATH="coverage/HandCLIP$prepare_train_val_test_hd.coverage" NAME="prepare_train_val_test_hd Coverage Results" MODIFIED="1742880044284" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/datasets/data_preprocessing" />
     <SUITE FILE_PATH="coverage/HandCLIP$1_baseline_vitb16_11k.coverage" NAME="1_baseline_vitb16_11k Coverage Results" MODIFIED="1742878198261" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments" />

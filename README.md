@@ -14,6 +14,16 @@ python experiments/run_all_finetuned_stage1.py
 ## To Run Stage 1 Fine-Tuning:
 ```angular2html
 python experiments/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_vitb16_11k_dorsal_r.yml
+python experiments/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_vitb16_11k_dorsal_l.yml
+python experiments/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_vitb16_11k_palmar_r.yml
+python experiments/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_vitb16_11k_palmar_l.yml
+python experiments/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_vitb16_hd_dorsal_r.yml
+
+python experiments/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_hd_11k_dorsal_r.yml
+python experiments/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_hd_11k_dorsal_l.yml
+python experiments/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_hd_11k_palmar_r.yml
+python experiments/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_hd_11k_palmar_l.yml
+python experiments/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_hd_hd_dorsal_r.yml
 
 ```
 
@@ -27,3 +37,5 @@ python experiments/train_stage3a_prompt_learn_vitb16_11k_dorsal_r.py --config co
 python experiments/train_stage3b_img_encoder_vitb16_11k_dorsal_r.py --config configs/train_stage3_clipreid/train_img_encoder_vitb16_11k_dorsal_r.yml
 
 ```
+
+

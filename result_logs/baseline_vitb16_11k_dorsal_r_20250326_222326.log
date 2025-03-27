@@ -1,0 +1,90 @@
+📋 CONFIG: VITB16 | 11K | dorsal_r | BASELINE
+
+============================================================
+🔁 Run 1/10 | 🖼️ Query: query0 (971 images) | Gallery: gallery0 (71 images)
+✅ Run-1 Results:
+   Rank-1: 0.7312
+   Rank-5: 0.8692
+   Rank-10: 0.9279
+   mAP: 0.7957
+
+============================================================
+🔁 Run 2/10 | 🖼️ Query: query1 (971 images) | Gallery: gallery1 (71 images)
+✅ Run-2 Results:
+   Rank-1: 0.7394
+   Rank-5: 0.9145
+   Rank-10: 0.9629
+   mAP: 0.8130
+
+============================================================
+🔁 Run 3/10 | 🖼️ Query: query2 (971 images) | Gallery: gallery2 (71 images)
+✅ Run-3 Results:
+   Rank-1: 0.7456
+   Rank-5: 0.8939
+   Rank-10: 0.9537
+   mAP: 0.8134
+
+============================================================
+🔁 Run 4/10 | 🖼️ Query: query3 (971 images) | Gallery: gallery3 (71 images)
+✅ Run-4 Results:
+   Rank-1: 0.7096
+   Rank-5: 0.9094
+   Rank-10: 0.9660
+   mAP: 0.7983
+
+============================================================
+🔁 Run 5/10 | 🖼️ Query: query4 (971 images) | Gallery: gallery4 (71 images)
+✅ Run-5 Results:
+   Rank-1: 0.7013
+   Rank-5: 0.8754
+   Rank-10: 0.9361
+   mAP: 0.7797
+
+============================================================
+🔁 Run 6/10 | 🖼️ Query: query5 (971 images) | Gallery: gallery5 (71 images)
+✅ Run-6 Results:
+   Rank-1: 0.7188
+   Rank-5: 0.9053
+   Rank-10: 0.9578
+   mAP: 0.7990
+
+============================================================
+🔁 Run 7/10 | 🖼️ Query: query6 (971 images) | Gallery: gallery6 (71 images)
+✅ Run-7 Results:
+   Rank-1: 0.7003
+   Rank-5: 0.8867
+   Rank-10: 0.9403
+   mAP: 0.7786
+
+============================================================
+🔁 Run 8/10 | 🖼️ Query: query7 (971 images) | Gallery: gallery7 (71 images)
+✅ Run-8 Results:
+   Rank-1: 0.6900
+   Rank-5: 0.8671
+   Rank-10: 0.9516
+   mAP: 0.7670
+
+============================================================
+🔁 Run 9/10 | 🖼️ Query: query8 (971 images) | Gallery: gallery8 (71 images)
+✅ Run-9 Results:
+   Rank-1: 0.7055
+   Rank-5: 0.8888
+   Rank-10: 0.9413
+   mAP: 0.7853
+
+============================================================
+🔁 Run 10/10 | 🖼️ Query: query9 (971 images) | Gallery: gallery9 (71 images)
+✅ Run-10 Results:
+   Rank-1: 0.6818
+   Rank-5: 0.8507
+   Rank-10: 0.9197
+   mAP: 0.7586
+
+============================================================
+📊 FINAL AVERAGED RESULTS (VITB16 - 11K - dorsal_r)
+============================================================
+Rank-1: 0.7124
+Rank-5: 0.8861
+Rank-10: 0.9457
+mAP: 0.7888
+============================================================

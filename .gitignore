@@ -8,3 +8,7 @@
 *.pth
 /datasets/__pycache__
 /datasets/__pycache__
+*.pyc
+*.pyc
+*.pyc
+*.pyc
