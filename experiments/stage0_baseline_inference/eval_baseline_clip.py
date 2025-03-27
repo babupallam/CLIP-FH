@@ -9,7 +9,7 @@ def run_all_configs(config_dir):
 
 if __name__ == "__main__":
     print("📂 Running all baseline evaluations...")
-    run_all_configs("../configs/baseline/")
+    run_all_configs("../../configs/baseline/")
 
     # as make progress new models can be evaluated in this way
     # print("\n📂 Running all fine-tuned evaluations...")
