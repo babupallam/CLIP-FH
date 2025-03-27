@@ -13,6 +13,8 @@ Useful For:
 - Evaluating different model-dataset-aspect combinations
 - Logging repeatable evaluation experiments
 """
+import sys, os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 # ========= Imports =========
 
@@ -75,9 +77,9 @@ def run_evaluation(config):
 
     # ==== Define dataset path ====
     if dataset == "11k":
-        data_path = f"../datasets/11khands/train_val_test_split_{aspect}"
+        data_path = os.path.join("datasets", "11khands", f"train_val_test_split_{aspect}")
     elif dataset == "hd":
-        data_path = "../datasets/HD/Original Images/train_val_test_split"
+        data_path = os.path.join("datasets", "HD", "Original Images", "train_val_test_split")
     else:
         raise ValueError("Unsupported dataset name in config.")
 
@@ -91,6 +93,12 @@ def run_evaluation(config):
         # Set paths for query and gallery for the ith split
         query_path = os.path.join(data_path, f"query{i}")
         gallery_path = os.path.join(data_path, f"gallery{i}")
+
+        # 🧪 Debug check
+        if not os.path.exists(query_path):
+            raise FileNotFoundError(f"❌ Query path does not exist: {query_path}")
+        if not os.path.exists(gallery_path):
+            raise FileNotFoundError(f"❌ Gallery path does not exist: {gallery_path}")
 
         # Load DataLoaders for query and gallery sets
         query_loader = get_dataloader(query_path, batch_size=batch_size, shuffle=False, train=False)
