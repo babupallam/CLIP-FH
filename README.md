@@ -38,4 +38,3 @@ python experiments/train_stage3b_img_encoder_vitb16_11k_dorsal_r.py --config con
 
 ```
 
-
