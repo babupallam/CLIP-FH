@@ -5,15 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c7cde98-b929-4071-bc2e-b0363f4c695d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/configs/train_stage1_frozen_text/continue_train_vitb16_11k_dorsal_r.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text_continue.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configs/eval_stage1_frozen_text/eval_vitb16_11k_dorsal_r.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/eval_stage1_frozen_text/eval_vitb16_11k_dorsal_r.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/baseline_inference.py" beforeDir="false" afterPath="$PROJECT_DIR$/engine/baseline_inference.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/stage1_train_classifier_frozen_text/eval_stage1_frozen_text.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/stage1_train_classifier_frozen_text/eval_stage1_frozen_text.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/train_logs/stage1_frozen_text_vitb16_11k_dorsal_r.log" beforeDir="false" afterPath="$PROJECT_DIR$/train_logs/stage1_frozen_text_vitb16_11k_dorsal_r.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/train_stage1_frozen_text/continue_train_vitb16_11k_dorsal_r.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/train_stage1_frozen_text/continue_train_vitb16_11k_dorsal_r.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +91,7 @@
       <updated>1743073598098</updated>
       <workItem from="1743073599348" duration="11010000" />
       <workItem from="1743101365064" duration="57007000" />
-      <workItem from="1743163173510" duration="8225000" />
+      <workItem from="1743163173510" duration="11191000" />
     </task>
     <servers />
   </component>

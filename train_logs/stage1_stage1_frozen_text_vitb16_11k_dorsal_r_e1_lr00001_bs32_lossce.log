@@ -1,0 +1,4 @@
+2025-03-28 14:52:30,811 - INFO - \U0001f680 Starting training on 890 samples for 1 epochs
+2025-03-28 15:08:35,863 - INFO - Epoch 1: Loss=4.1819, Acc=4.04%, Time=965.05s, LR=0.0001
+2025-03-28 15:08:36,619 - INFO - \u2705 Model saved to: saved_models\stage1_stage1_frozen_text_vitb16_11k_dorsal_r_e1_lr00001_bs32_lossce_v1.pth
+2025-03-28 15:08:36,619 - INFO - \U0001f4c8 Training metrics logged to: train_logs\stage1_stage1_frozen_text_vitb16_11k_dorsal_r_e1_lr00001_bs32_lossce.log
