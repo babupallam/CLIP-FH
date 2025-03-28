@@ -9,7 +9,7 @@ batch_size: 32
 num_workers: 4
 
 # Path to the trained model checkpoint
-model_path: saved_models/stage1_frozen_text_vitb16_11k_dorsal_l.pth
+model_path: saved_models/stage1_stage1_frozen_text_vitb16_11k_dorsal_r_e1_lr00001_bs32_lossce_v1.pth
 
 # Where to save evaluation results/logs
 output_dir: eval_logs/
