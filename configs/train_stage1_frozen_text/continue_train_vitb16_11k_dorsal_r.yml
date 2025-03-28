@@ -1,0 +1,15 @@
+experiment: stage1_frozen_text_vitb16_11k_dorsal_r_continue
+dataset: 11k
+aspect: dorsal_r
+model: vitb16
+variant: stage1_frozen_text
+
+epochs: 10
+batch_size: 32
+num_workers: 4
+lr: 0.0001                 # ✅ Required for training
+
+resume_from: saved_models/stage1_frozen_text_vitb16_11k_dorsal_r.pth
+
+save_dir: saved_models
+log_dir: train_logs
