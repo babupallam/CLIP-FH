@@ -12,3 +12,6 @@
 *.pyc
 *.pyc
 *.pyc
+experiments/run_eval_clip.py
+experiments/stage0_baseline_inference/eval_baseline_clip.py
+*.pyc
