@@ -1,13 +1,13 @@
-experiment: stage1_frozen_text_vitb16_11k_dorsal_r
+experiment: stage1_frozen_text_rn50_11k_palmar_r
 
 dataset: 11k
-aspect: dorsal_r
-model: vitb16
+aspect: palmar_r
+model: rn50
 variant: stage1_frozen_text
 
-epochs: 1
+epochs: 5
 batch_size: 32
-lr: 0.1
+lr: 0.0001
 num_workers: 4
 loss: cross_entropy
 

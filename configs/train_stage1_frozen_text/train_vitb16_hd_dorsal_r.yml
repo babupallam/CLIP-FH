@@ -1,4 +1,4 @@
-experiment: vitb16_stage1_hd_dorsal_r_v1
+experiment: stage1_frozen_text_vitb16_hd_dorsal_r
 
 dataset: hd
 aspect: dorsal_r
