@@ -3,7 +3,10 @@ import os                                 # OS module for path and environment m
 
 # 🔧 Add the project root directory to PYTHONPATH to ensure internal imports work correctly.
 # This allows importing modules like `datasets`, `models`, `engine`, etc., without installing them as packages.
-PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..'))
+if "datasets" not in os.listdir(PROJECT_ROOT):
+    raise RuntimeError("PROJECT_ROOT is misaligned. Check the relative path in the script.")
+
 if PROJECT_ROOT not in sys.path:
     sys.path.insert(0, PROJECT_ROOT)
 
@@ -28,6 +31,11 @@ def main(config_path):
     # 🔹 Load configuration from YAML file
     with open(config_path, "r") as f:
         config = yaml.safe_load(f)
+
+    # 🔹 Construct full save/log paths using `experiment` and directories
+    exp_name = config["experiment"]
+    config["save_path"] = os.path.join(config["save_dir"], f"{exp_name}.pth")
+    config["log_path"] = os.path.join(config["log_dir"], f"{exp_name}.log")
 
     # 🔹 Automatically choose GPU if available
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")

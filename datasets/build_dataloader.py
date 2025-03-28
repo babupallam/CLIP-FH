@@ -86,9 +86,11 @@ def get_train_val_loaders(config):
     train_dataset = datasets.ImageFolder(train_dir, transform=transform)
     val_dataset = datasets.ImageFolder(val_dir, transform=transform)
 
+    num_workers = config.get("num_workers", 4)
+
     # Create DataLoaders
-    train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True,  num_workers=4)
-    val_loader   = DataLoader(val_dataset,   batch_size=batch_size, shuffle=False, num_workers=4)
+    train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, num_workers=num_workers)
+    val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False, num_workers=num_workers)
 
     # Get number of unique classes (important for loss functions, classification heads, etc.)
     num_classes = len(train_dataset.classes)

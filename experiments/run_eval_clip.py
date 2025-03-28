@@ -125,8 +125,10 @@ def run_evaluation(config):
 
         # Log results for this split
         output_lines.append(f"✅ Run-{i+1} Results:")
+        print(metrics)
         for k, v in metrics.items():
             output_lines.append(f"   {k}: {v:.4f}")
+            print(f"{k}: {v:.4f}")
         all_metrics.append(metrics)
 
     # ==== Average metrics across all splits ====
@@ -143,12 +145,17 @@ def run_evaluation(config):
         print(line)
 
     # ==== Save results to log file ====
-    os.makedirs("result_logs", exist_ok=True)  # Make log directory if it doesn't exist
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")  # Unique filename
+    project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+    log_dir = os.path.join(project_root, "result_logs")
+    os.makedirs(log_dir, exist_ok=True)  # This will just ensure it exists
+
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     log_filename = f"{variant}_{model_name}_{dataset}_{aspect}_{timestamp}.log"
-    log_path = os.path.join("../result_logs", log_filename)
+    log_path = os.path.join(log_dir, log_filename)
+
     with open(log_path, "w", encoding="utf-8") as f:
         f.write("\n".join(output_lines))
+
     print(f"\n📁 Results saved to: {log_path}")
 
 

@@ -1,7 +1,7 @@
 import os
 import subprocess
 
-CONFIG_DIR = "configs/finetuning_stage1_frozen_text"
+CONFIG_DIR = "configs/eval_stage1_frozen_text"
 
 def run_all_eval_configs():
     config_files = sorted([f for f in os.listdir(CONFIG_DIR) if f.endswith(".yml")])
