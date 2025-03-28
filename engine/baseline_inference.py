@@ -67,3 +67,19 @@ def compute_similarity_matrix(query_features, gallery_features):
     """
     # Cosine similarity is just the dot product if vectors are normalized (which they are)
     return torch.matmul(query_features, gallery_features.T)
+
+
+
+def test_clip_import():
+    import sys
+    print("📦 Inside baseline_inference:")
+    print(" - sys.executable:", sys.executable)
+    print(" - sys.path:")
+    for p in sys.path:
+        print("   >", p)
+
+    try:
+        import clip
+        print("✅ Successfully imported clip in baseline_inference.")
+    except ModuleNotFoundError as e:
+        print("❌ Failed to import clip in baseline_inference:", e)

@@ -1,7 +1,15 @@
+experiment: eval_stage1_frozen_text_vitb16_11k_dorsal_l
+
 dataset: 11k
-aspect: dorsal_r
+aspect: dorsal_l
 model: vitb16
-variant: finetuned  # <== tells run_eval_clip.py to load from saved_models/
+variant: stage1_frozen_text
 
 batch_size: 32
-num_splits: 10
+num_workers: 4
+
+# Path to the trained model checkpoint
+model_path: saved_models/stage1_frozen_text_vitb16_11k_dorsal_l.pth
+
+# Where to save evaluation results/logs
+output_dir: eval_logs/
