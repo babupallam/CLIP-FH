@@ -25,12 +25,23 @@ python experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text.
 
 ```
 
-## To Run Stage 1 Evaluation:
+## To Run Stage 1 Evaluation: all together...
 
 ```angular2html
 
+python .\experiments\stage1_train_classifier_frozen_text\eval_stage1_frozen_text.py              
 
 ```
+
+## To Run Stage 1 Fine-Tuning:
+```angular2html
+python experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text_continue.py --config configs/train_stage1_frozen_text/continue_train_vitb16_11k_dorsal_r.yml
+
+```
+
+***
+***
+***
 
 ## To Run Stage 2 Fine-Tuning:
 
