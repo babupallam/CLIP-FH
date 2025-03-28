@@ -1,29 +1,34 @@
 # CLIP-FH: Fine-Tuning CLIP for Hand-Based Identity Matching
 
 
-## To Run evaluation of Models
+## stage0_baseline_model_evaluation
+
 ```angular2html
-python experiments/run_all_experiments.py
+python experiments/stage0_baseline_inference/eval_baseline_clip.py
 
 ```
-
-python experiments/run_all_finetuned_stage1.py
-
 
 
 ## To Run Stage 1 Fine-Tuning:
 ```angular2html
-python experiments/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_vitb16_11k_dorsal_r.yml
-python experiments/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_vitb16_11k_dorsal_l.yml
-python experiments/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_vitb16_11k_palmar_r.yml
-python experiments/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_vitb16_11k_palmar_l.yml
-python experiments/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_vitb16_hd_dorsal_r.yml
+python experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_vitb16_11k_dorsal_r.yml
+python experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_vitb16_11k_dorsal_l.yml
+python experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_vitb16_11k_palmar_r.yml
+python experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_vitb16_11k_palmar_l.yml
+python experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_vitb16_hd_dorsal_r.yml
 
-python experiments/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_hd_11k_dorsal_r.yml
-python experiments/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_hd_11k_dorsal_l.yml
-python experiments/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_hd_11k_palmar_r.yml
-python experiments/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_hd_11k_palmar_l.yml
-python experiments/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_hd_hd_dorsal_r.yml
+python experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_hd_11k_dorsal_r.yml
+python experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_hd_11k_dorsal_l.yml
+python experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_hd_11k_palmar_r.yml
+python experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_hd_11k_palmar_l.yml
+python experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_hd_hd_dorsal_r.yml
+
+```
+
+## To Run Stage 1 Evaluation:
+
+```angular2html
+
 
 ```
 
