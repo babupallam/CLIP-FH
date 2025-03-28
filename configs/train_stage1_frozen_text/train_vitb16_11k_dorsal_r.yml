@@ -5,9 +5,9 @@ aspect: dorsal_r
 model: vitb16
 variant: stage1_frozen_text
 
-epochs: 1
+epochs: 5
 batch_size: 32
-lr: 0.1
+lr: 0.0001
 num_workers: 4
 loss: cross_entropy
 
