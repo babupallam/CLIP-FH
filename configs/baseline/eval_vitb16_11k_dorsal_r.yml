@@ -4,3 +4,5 @@ model: vitb16
 variant: baseline
 batch_size: 32
 num_splits: 10
+use_flip: False
+
