@@ -1,0 +1,15 @@
+📄 Evaluation Log
+==================================================
+Config      : C:\Users\Girija\OneDrive - De Montfort University\MSC PROJECT\BABU PALLAM\HandCLIP\HandCLIP\configs\eval_stage1_frozen_text\eval_vitb16_11k_dorsal_r.yml
+Experiment  : eval_stage1_frozen_text_vitb16_11k_dorsal_r
+Model       : vitb16
+Variant     : stage1_frozen_text
+Dataset     : 11k
+Aspect      : dorsal_r
+Model Path  : saved_models/stage1_stage1_frozen_text_vitb16_11k_dorsal_r_e30_lr00001_bs32_losscross_entropy.pth
+==================================================
+
+🖥️ Device: cpu
+✅ Loaded fine-tuned model from: saved_models/stage1_stage1_frozen_text_vitb16_11k_dorsal_r_e30_lr00001_bs32_losscross_entropy.pth
+
+🔁 Split 1/10

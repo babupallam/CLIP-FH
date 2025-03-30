@@ -25,26 +25,20 @@ def extract_features(model, dataloader, device, use_flip=False):
     features, labels = [], []
 
     with torch.no_grad():
-        for batch in tqdm(dataloader, desc="Extracting features"):
-            images = batch["image"].to(device)
-            label = batch["label"].to(device)
+        for images, label in tqdm(dataloader, desc="Extracting features"):
+            images = images.to(device)
+            label = label.to(device)
 
-            # Forward pass: original
             feats_orig = model.encode_image(images)
 
             if use_flip:
-                # Flip horizontally (dim=3 = width)
                 images_flipped = torch.flip(images, dims=[3])
                 feats_flip = model.encode_image(images_flipped)
-
-                # Average features
                 feats = (feats_orig + feats_flip) / 2.0
             else:
                 feats = feats_orig
 
-            # Normalize (L2)
             feats = torch.nn.functional.normalize(feats, dim=1)
-
             features.append(feats)
             labels.append(label)
 
