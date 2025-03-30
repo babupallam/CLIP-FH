@@ -19,39 +19,38 @@ from tqdm import tqdm  # Progress bar for iterations
 from torch.nn.functional import normalize  # For L2-normalization of feature vectors
 
 
-def extract_features(model, dataloader, device):
-    """
-    Step 1: Extract visual features from a dataloader using CLIP's image encoder.
 
-    Args:
-        model (clip.model.CLIP): Pretrained CLIP model
-        dataloader (DataLoader): DataLoader yielding (images, labels)
-        device (torch.device)  : Device to run inference on (CPU or CUDA)
+def extract_features(model, dataloader, device, use_flip=False):
+    model.eval()
+    features, labels = [], []
 
-    Returns:
-        features (Tensor): Shape [N, D] where N = number of samples, D = embedding dimension
-        labels   (Tensor): Shape [N]   where each entry is the class/ID label
-    """
+    with torch.no_grad():
+        for batch in tqdm(dataloader, desc="Extracting features"):
+            images = batch["image"].to(device)
+            label = batch["label"].to(device)
 
-    all_features = []  # Will collect feature vectors from each batch
-    all_labels = []  # Will collect corresponding labels
+            # Forward pass: original
+            feats_orig = model.encode_image(images)
 
-    with torch.no_grad():  # No gradients needed during inference (saves memory and computation)
-        for images, labels in tqdm(dataloader, desc="Extracting features"):
-            # images: Tensor of shape [B, C, H, W]
-            # labels: Tensor of shape [B]
+            if use_flip:
+                # Flip horizontally (dim=3 = width)
+                images_flipped = torch.flip(images, dims=[3])
+                feats_flip = model.encode_image(images_flipped)
 
-            images = images.to(device)  # Move batch to device (CPU/GPU)
-            features = model.encode_image(images)  # Use CLIP's image encoder to extract features → [B, D]
-            features = normalize(features, dim=1)  # Normalize each feature vector to unit length
-            all_features.append(features)  # Store batch of features
-            all_labels.append(labels)  # Store batch of labels
+                # Average features
+                feats = (feats_orig + feats_flip) / 2.0
+            else:
+                feats = feats_orig
 
-    # Concatenate all batches into one tensor
-    return torch.cat(all_features), torch.cat(all_labels)
-    # Output:
-    #   features: [N, D]
-    #   labels  : [N]
+            # Normalize (L2)
+            feats = torch.nn.functional.normalize(feats, dim=1)
+
+            features.append(feats)
+            labels.append(label)
+
+    features = torch.cat(features)
+    labels = torch.cat(labels)
+    return features, labels
 
 
 def compute_similarity_matrix(query_features, gallery_features):
