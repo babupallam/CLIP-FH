@@ -34,5 +34,6 @@ loss_tri_weight: 1.0
 loss_i2t_weight: 1.0
 
 # === Logging and Saving ===
-output_dir: logs/stage2b
-save_dir: saved_models
+output_dir: train_logs/
+save_dir: saved_models/
+
