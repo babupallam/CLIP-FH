@@ -3,11 +3,18 @@
 
 ## stage0_baseline_model_evaluation
 
+### for all
 ```angular2html
 python experiments/stage0_baseline_inference/eval_baseline_clip.py
 
 ```
 
+### for single config
+
+````angular2html
+python experiments/stage0_baseline_inference/eval_baseline_clip_single.py --config configs/baseline/eval_vitb16_11k_dorsal_r.yml
+
+````
 
 ## To Run Stage 1 Fine-Tuning:
 ```angular2html
@@ -32,7 +39,7 @@ python experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text.
 python .\experiments\stage1_train_classifier_frozen_text\eval_stage1_frozen_text.py              
 
 ```
-## To Run Stage 1 Evaluation: Single...
+## To Run Stage 1 Evaluation: Single model evaluation
 ```angular2html
 
 python experiments/stage1_train_classifier_frozen_text/eval_stage1_frozen_text_single.py configs/eval_stage1_frozen_text/eval_vitb16_11k_dorsal_r.yml
@@ -61,3 +68,9 @@ python experiments/train_stage3b_img_encoder_vitb16_11k_dorsal_r.py --config con
 
 ```
 
+TO BE EXICUTED
+```angular2html
+python experiments/stage0_baseline_inference/eval_baseline_clip_single.py --config configs/baseline/eval_vitb16_11k_dorsal_r.yml
+python experiments/stage1_train_classifier_frozen_text/eval_stage1_frozen_text_single.py configs/eval_stage1_frozen_text/eval_vitb16_11k_dorsal_r.yml
+
+```

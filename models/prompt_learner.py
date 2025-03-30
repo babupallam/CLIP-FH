@@ -1,64 +1,63 @@
 import torch
 import torch.nn as nn
+import clip
+
 
 class PromptLearner(nn.Module):
-    def __init__(self, class_names, clip_model, n_ctx=4, prefix="A photo of a", suffix="person."):
+    def __init__(self, classnames, clip_model, n_ctx=8, ctx_init=None, prompt_template="A photo of a {}.", device="cuda"):
         super().__init__()
-        self.class_names = class_names
-        self.n_cls = len(class_names)
-        self.n_ctx = n_ctx
 
-        # Fixed prefix and suffix
-        self.prefix = prefix
-        self.suffix = suffix
+        self.classnames = classnames
+        self.n_cls = len(classnames)
+        self.n_ctx = n_ctx
+        self.device = device
+        self.ctx_init = ctx_init
+        self.prompt_template = prompt_template
 
         # Token embedding dimension from CLIP
-        embed_dim = clip_model.token_embedding.weight.shape[1]
-
-        # Context (learnable) prompt embeddings: [X1]...[Xn]
-        self.ctx_vectors = nn.Parameter(torch.randn(n_ctx, embed_dim) * 0.02)
-
-        # Store CLIP's token and positional embeddings
+        dtype = clip_model.token_embedding.weight.dtype
+        ctx_dim = clip_model.ln_final.weight.shape[0]
         self.token_embedding = clip_model.token_embedding
         self.positional_embedding = clip_model.positional_embedding
+        self.context_length = clip_model.context_length  # typically 77
+        self.tokenizer = clip.tokenize
 
-        # The full prompt will be built dynamically, but we use the same structure for all classes
-        # So we simulate a fixed context length
-        self.context_length = 77  # CLIP default
+        # Build class-specific prompts (e.g., "A photo of a {} hand.")
+        self.prompts = [prompt_template.format(c.replace("_", " ")) for c in classnames]
+        tokenized_prompts = self.tokenizer(self.prompts).to(device)  # shape: (num_classes, context_len)
+        self.register_buffer("tokenized_prompts", tokenized_prompts)
 
-        # Initialize full prompt embeddings buffer
-        self.register_buffer("tokenized_prompt", torch.zeros(self.context_length, dtype=torch.long))
+        # ===== Learnable context embeddings =====
+        if ctx_init:
+            # Use initialized tokens
+            init_token = clip.tokenize(ctx_init).to(device)  # shape (1, context_len)
+            init_embedding = self.token_embedding(init_token).detach()[0, 1 : 1 + n_ctx]
+            assert init_embedding.shape[0] == n_ctx, "Init context length doesn't match n_ctx"
+            ctx_vectors = init_embedding
+        else:
+            # Random initialization
+            ctx_vectors = torch.empty(n_ctx, ctx_dim, dtype=dtype).uniform_(-0.02, 0.02)
+
+        self.ctx = nn.Parameter(ctx_vectors)  # shape: (n_ctx, dim)
+
+        # Meta indices: [prefix_len, ctx_len, suffix_len] to reconstruct full prompt
+        self.prefix_len = (self.tokenized_prompts == self.tokenizer("a")[0]).nonzero(as_tuple=True)[1][0].item()
 
     def forward(self):
         """
         Returns:
-            prompt_embeddings: (num_classes, context_length, embed_dim)
+            prompts_embedded: (num_classes, context_length, embed_dim)
         """
-        # Get token embeddings (fixed for prefix/suffix)
-        prefix_tokens = self.token_embedding(self.tokenized_prompt).detach().clone()
-        token_embed_dim = prefix_tokens.shape[-1]
+        # Shape: (n_cls, ctx_len, dim)
+        ctx = self.ctx.unsqueeze(0).expand(self.n_cls, -1, -1)
 
-        # Insert learnable context into prompt embedding
-        prompt_embeddings = []
+        # Get full token embeddings (with padding)
+        token_embeds = self.token_embedding(self.tokenized_prompts)  # (n_cls, context_len, dim)
 
-        for _ in range(self.n_cls):
-            # Start with all zeros
-            prompt = torch.zeros(self.context_length, token_embed_dim).to(self.ctx_vectors.device)
+        # Replace the context tokens [1 : 1+n_ctx] with learned ctx
+        prefix = token_embeds[:, :1, :]                        # [SOS]
+        suffix = token_embeds[:, 1 + self.n_ctx :, :]         # [tokens after prompt]
 
-            # Insert prefix
-            prefix_len = len(self.prefix.split())
-            suffix_len = len(self.suffix.split())
-            ctx_start = prefix_len
-            ctx_end = prefix_len + self.n_ctx
-
-            # Use token embedding from prefix/suffix
-            prefix_embed = self.token_embedding(self.tokenized_prompt[:prefix_len])
-            suffix_embed = self.token_embedding(self.tokenized_prompt[-suffix_len:])
-
-            prompt[:prefix_len] = prefix_embed
-            prompt[ctx_start:ctx_end] = self.ctx_vectors  # <-- Learnable tokens
-            prompt[-suffix_len:] = suffix_embed
-
-            prompt_embeddings.append(prompt)
-
-        return torch.stack(prompt_embeddings)  # shape: (n_cls, context_len, embed_dim)
+        # Rebuild full prompt embedding
+        prompts_embedded = torch.cat([prefix, ctx, suffix], dim=1)  # (n_cls, context_len, dim)
+        return prompts_embedded

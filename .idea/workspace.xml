@@ -5,10 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c7cde98-b929-4071-bc2e-b0363f4c695d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/configs/train_stage2a_prompt_learn/train_vitb16_11k_dorsal_r.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/experiments/stage2_clipid_prompt_learning/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/experiments/stage2_clipid_prompt_learning/train_stage2a_prompt_learn.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/eval_stage1_frozen_text/eval_vitb16_11k_dorsal_r.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/eval_stage1_frozen_text/eval_vitb16_11k_dorsal_r.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/train_stage1_frozen_text/continue_train_vitb16_11k_dorsal_r.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/train_stage1_frozen_text/continue_train_vitb16_11k_dorsal_r.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/train_stage3_clipreid/train_img_encoder_vitb16_11k_dorsal_r.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/train_stage3_clipreid/train_prompt_vitb16_11k_dorsal_r.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/clipreid_trainer_stage1.py" beforeDir="false" afterPath="$PROJECT_DIR$/engine/clipreid_trainer_stage1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/stage2_adapting_clip_reid/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/clip_patch.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/clip_patch.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/prompt_learner.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/prompt_learner.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +58,7 @@
     &quot;Python.test_log_saving.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;v4-fine-tuning-CLIP-for-ReID-(Person-Re-Identification)&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Girija/OneDrive - De Montfort University/MSC PROJECT/BABU PALLAM/HandCLIP/HandCLIP/configs/finetuning_stage1_frozen_text&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Girija/OneDrive - De Montfort University/MSC PROJECT/BABU PALLAM/HandCLIP/HandCLIP/experiments/stage0_baseline_inference&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
@@ -62,15 +69,17 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Girija\OneDrive - De Montfort University\MSC PROJECT\BABU PALLAM\HandCLIP\HandCLIP\experiments\stage0_baseline_inference" />
+      <recent name="C:\Users\Girija\OneDrive - De Montfort University\MSC PROJECT\BABU PALLAM\HandCLIP\HandCLIP\utils" />
       <recent name="C:\Users\Girija\OneDrive - De Montfort University\MSC PROJECT\BABU PALLAM\HandCLIP\HandCLIP\configs\finetuning_stage1_frozen_text" />
       <recent name="C:\Users\Girija\OneDrive - De Montfort University\MSC PROJECT\BABU PALLAM\HandCLIP\HandCLIP\datasets\data_preprocessing" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Girija\OneDrive - De Montfort University\MSC PROJECT\BABU PALLAM\HandCLIP\HandCLIP\configs" />
+      <recent name="C:\Users\Girija\OneDrive - De Montfort University\MSC PROJECT\BABU PALLAM\HandCLIP\HandCLIP\experiments\archived\stage2_finetune_image_encoder_loss_variants" />
+      <recent name="C:\Users\Girija\OneDrive - De Montfort University\MSC PROJECT\BABU PALLAM\HandCLIP\HandCLIP\experiments\archived" />
+      <recent name="C:\Users\Girija\OneDrive - De Montfort University\MSC PROJECT\BABU PALLAM\HandCLIP\HandCLIP\configs\archived" />
       <recent name="C:\Users\Girija\OneDrive - De Montfort University\MSC PROJECT\BABU PALLAM\HandCLIP\HandCLIP\datasets\dataset_analysis" />
-      <recent name="C:\Users\Girija\OneDrive - De Montfort University\MSC PROJECT\BABU PALLAM\HandCLIP\HandCLIP\datasets" />
-      <recent name="C:\Users\Girija\OneDrive - De Montfort University\MSC PROJECT\BABU PALLAM\HandCLIP\HandCLIP\configs\train_stage1_frozen_text" />
-      <recent name="C:\Users\Girija\OneDrive - De Montfort University\MSC PROJECT\BABU PALLAM\HandCLIP\HandCLIP\configs\baseline" />
-      <recent name="C:\Users\Girija\OneDrive - De Montfort University\MSC PROJECT\BABU PALLAM\HandCLIP\HandCLIP\configs\baseline\rest" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -91,7 +100,8 @@
       <updated>1743073598098</updated>
       <workItem from="1743073599348" duration="11010000" />
       <workItem from="1743101365064" duration="57007000" />
-      <workItem from="1743163173510" duration="11191000" />
+      <workItem from="1743163173510" duration="55073000" />
+      <workItem from="1743300666675" duration="15082000" />
     </task>
     <servers />
   </component>
