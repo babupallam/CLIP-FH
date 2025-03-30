@@ -1,0 +1,33 @@
+2025-03-28 15:24:08,457 - INFO - \U0001f680 Starting training on 890 samples for 30 epochs
+2025-03-28 15:38:32,298 - INFO - Epoch 1: Loss=4.1927, Acc=3.26%, Time=863.84s, LR=0.0001
+2025-03-28 15:52:51,491 - INFO - Epoch 2: Loss=4.1062, Acc=4.27%, Time=859.19s, LR=0.0001
+2025-03-28 16:07:09,084 - INFO - Epoch 3: Loss=4.0925, Acc=3.03%, Time=857.59s, LR=0.0001
+2025-03-28 16:21:25,418 - INFO - Epoch 4: Loss=4.0782, Acc=3.26%, Time=856.33s, LR=0.0001
+2025-03-28 16:35:40,188 - INFO - Epoch 5: Loss=4.0730, Acc=4.04%, Time=854.77s, LR=0.0001
+2025-03-28 16:49:56,852 - INFO - Epoch 6: Loss=4.0761, Acc=4.04%, Time=856.66s, LR=0.0001
+2025-03-28 17:04:12,547 - INFO - Epoch 7: Loss=4.0737, Acc=2.92%, Time=855.69s, LR=0.0001
+2025-03-28 17:18:33,292 - INFO - Epoch 8: Loss=4.0809, Acc=4.38%, Time=860.74s, LR=0.0001
+2025-03-28 17:32:47,945 - INFO - Epoch 9: Loss=4.0694, Acc=4.38%, Time=854.65s, LR=0.0001
+2025-03-28 17:47:07,049 - INFO - Epoch 10: Loss=4.0714, Acc=3.60%, Time=859.10s, LR=0.0001
+2025-03-28 18:01:25,382 - INFO - Epoch 11: Loss=4.0712, Acc=3.71%, Time=858.33s, LR=0.0001
+2025-03-28 18:15:41,202 - INFO - Epoch 12: Loss=4.0621, Acc=3.60%, Time=855.82s, LR=0.0001
+2025-03-28 18:29:59,006 - INFO - Epoch 13: Loss=4.0662, Acc=3.48%, Time=857.80s, LR=0.0001
+2025-03-28 18:44:19,348 - INFO - Epoch 14: Loss=4.0631, Acc=3.60%, Time=860.34s, LR=0.0001
+2025-03-28 18:58:48,503 - INFO - Epoch 15: Loss=4.0631, Acc=4.16%, Time=869.15s, LR=0.0001
+2025-03-28 19:13:19,490 - INFO - Epoch 16: Loss=4.0616, Acc=4.27%, Time=870.99s, LR=0.0001
+2025-03-28 19:27:39,665 - INFO - Epoch 17: Loss=4.0616, Acc=3.93%, Time=860.17s, LR=0.0001
+2025-03-28 19:42:00,568 - INFO - Epoch 18: Loss=4.0606, Acc=4.38%, Time=860.90s, LR=0.0001
+2025-03-28 19:56:31,396 - INFO - Epoch 19: Loss=4.0434, Acc=5.17%, Time=870.83s, LR=0.0001
+2025-03-28 20:11:03,514 - INFO - Epoch 20: Loss=3.8652, Acc=6.52%, Time=872.12s, LR=0.0001
+2025-03-28 20:25:23,809 - INFO - Epoch 21: Loss=3.5909, Acc=9.89%, Time=860.29s, LR=0.0001
+2025-03-28 20:39:43,877 - INFO - Epoch 22: Loss=3.4260, Acc=10.79%, Time=860.07s, LR=0.0001
+2025-03-28 20:54:03,301 - INFO - Epoch 23: Loss=3.1755, Acc=13.60%, Time=859.42s, LR=0.0001
+2025-03-28 21:08:26,652 - INFO - Epoch 24: Loss=3.0943, Acc=14.04%, Time=863.35s, LR=0.0001
+2025-03-28 21:22:55,948 - INFO - Epoch 25: Loss=3.0384, Acc=14.27%, Time=869.30s, LR=0.0001
+2025-03-28 21:37:34,695 - INFO - Epoch 26: Loss=2.8563, Acc=17.64%, Time=878.75s, LR=0.0001
+2025-03-28 21:51:54,595 - INFO - Epoch 27: Loss=2.8833, Acc=19.55%, Time=859.90s, LR=0.0001
+2025-03-28 22:06:13,792 - INFO - Epoch 28: Loss=2.6726, Acc=24.16%, Time=859.20s, LR=0.0001
+2025-03-28 22:20:32,152 - INFO - Epoch 29: Loss=2.4876, Acc=27.75%, Time=858.36s, LR=0.0001
+2025-03-28 22:34:52,659 - INFO - Epoch 30: Loss=2.4420, Acc=28.76%, Time=860.51s, LR=0.0001
+2025-03-28 22:34:53,799 - INFO - \u2705 Model saved to: saved_models/stage1_stage1_frozen_text_vitb16_11k_dorsal_r_e30_lr00001_bs32_losscross_entropy.pth
+2025-03-28 22:34:53,799 - INFO - \U0001f4c8 Training metrics logged to: train_logs/stage1_stage1_frozen_text_vitb16_11k_dorsal_r_e30_lr00001_bs32_losscross_entropy.log
