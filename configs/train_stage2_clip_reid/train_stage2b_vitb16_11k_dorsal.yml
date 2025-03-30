@@ -1,0 +1,38 @@
+# === General Experiment Info ===
+experiment: stage2b_finetune
+dataset: 11k
+aspect: dorsal_r
+model: vitb16
+stage: stage2b
+
+# === CLIP Model Config ===
+clip_model:  vitb16
+pretrained: true
+freeze_text_encoder: true
+freeze_prompt: true
+
+# === Prompt Config ===
+n_ctx: 8
+ctx_init: ""
+prompt_template: "a photo of a {}."
+resume_prompt_from: saved_models/stage2a_prompt_vitb16_11k_dorsal_r_vitb16_11k_dorsal_r_e01_lr1e-04_bs32_ctx8_freezeTrue.pth
+
+# === Dataloader ===
+batch_size: 32
+num_workers: 4
+shuffle: true
+pin_memory: true
+
+# === Optimizer and Training ===
+epochs: 1
+lr: 0.0001
+weight_decay: 0.0005
+
+# === Loss Function Weights ===
+loss_id_weight: 1.0
+loss_tri_weight: 1.0
+loss_i2t_weight: 1.0
+
+# === Logging and Saving ===
+output_dir: logs/stage2b
+save_dir: saved_models

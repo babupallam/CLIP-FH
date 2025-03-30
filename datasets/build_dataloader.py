@@ -94,6 +94,8 @@ def get_train_val_loaders(config):
 
     # Get number of unique classes (important for loss functions, classification heads, etc.)
     num_classes = len(train_dataset.classes)
+    #print(f"f numer of classes found is {num_classes}")
+
 
     return train_loader, val_loader, num_classes
 

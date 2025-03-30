@@ -57,16 +57,20 @@ python experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text_
 ***
 ***
 
-## To Run Stage 2 Fine-Tuning:
+## To Run Stage 2 stage 1: Training
 
 ``` 
-python experiments/train_stage2_loss_variants_vitb16_11k_dorsal_r.py --config configs/train_stage2_loss_variants/train_vitb16_11k_dorsal_r_ce_triplet.yml
-python experiments/train_stage2_loss_variants_vitb16_11k_dorsal_r.py --config configs/train_stage2_loss_variants/train_vitb16_11k_dorsal_r_ce_triplet_center.yml
-
-python experiments/train_stage3a_prompt_learn_vitb16_11k_dorsal_r.py --config configs/train_stage3_clipreid/train_prompt_vitb16_11k_dorsal_r.yml
-python experiments/train_stage3b_img_encoder_vitb16_11k_dorsal_r.py --config configs/train_stage3_clipreid/train_img_encoder_vitb16_11k_dorsal_r.yml
+python experiments/stage2_clipid_prompt_learning/train_stage2a_prompt_learn.py --config configs/train_stage2_clip_reid/train_stage2a_vitb16_11k_dorsal_r.yml
 
 ```
+## To Run Stage 2 stage 2: Training
+
+``` 
+python experiments/stage2_clipid_prompt_learning/train_stage2b_finetune_image_encoder.py --config configs/train_stage2_clip_reid/train_stage2b_vitb16_11k_dorsal.yml
+
+```
+
+
 
 TO BE EXICUTED
 ```angular2html

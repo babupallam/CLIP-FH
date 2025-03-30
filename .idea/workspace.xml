@@ -5,17 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c7cde98-b929-4071-bc2e-b0363f4c695d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/configs/train_stage2a_prompt_learn/train_vitb16_11k_dorsal_r.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/experiments/stage2_clipid_prompt_learning/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/experiments/stage2_clipid_prompt_learning/train_stage2a_prompt_learn.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/experiments/stage2_clipid_prompt_learning/validate_stage2a_prompt_checkpoint.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/train_stage3_clipreid/train_img_encoder_vitb16_11k_dorsal_r.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/train_stage3_clipreid/train_prompt_vitb16_11k_dorsal_r.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/clipreid_trainer_stage1.py" beforeDir="false" afterPath="$PROJECT_DIR$/engine/clipreid_trainer_stage1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/stage2_adapting_clip_reid/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/clip_patch.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/clip_patch.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/prompt_learner.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/prompt_learner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/build_dataloader.py" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/build_dataloader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/clipreid_trainer_stage2.py" beforeDir="false" afterPath="$PROJECT_DIR$/engine/clipreid_trainer_stage2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/stage2_clipid_prompt_learning/train_stage2a_prompt_learn.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/stage2_clipid_prompt_learning/train_stage2a_prompt_learn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train_logs/stage2a_prompt_vitb16_11k_dorsal_r_vitb16_11k_dorsal_r_e01_lr1e-04_bs32_ctx8_freezeTrue.log" beforeDir="false" afterPath="$PROJECT_DIR$/train_logs/stage2a_prompt_vitb16_11k_dorsal_r_vitb16_11k_dorsal_r_e01_lr1e-04_bs32_ctx8_freezeTrue.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +97,7 @@
       <workItem from="1743073599348" duration="11010000" />
       <workItem from="1743101365064" duration="57007000" />
       <workItem from="1743163173510" duration="55073000" />
-      <workItem from="1743300666675" duration="15082000" />
+      <workItem from="1743300666675" duration="31472000" />
     </task>
     <servers />
   </component>
