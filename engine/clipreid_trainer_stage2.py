@@ -4,6 +4,7 @@ import torch.nn.functional as F
 from tqdm import tqdm
 from datetime import datetime
 from loss.triplet_loss import TripletLoss
+import time  # Add this to the top if not already imported
 
 class PromptLearnerTrainerStage2b:
     def __init__(self, clip_model, prompt_learner, train_loader, config, device):
@@ -25,7 +26,7 @@ class PromptLearnerTrainerStage2b:
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         name_detail = (
             f"{exp_name}_{model}_{dataset}_{aspect}"
-            f"_e{self.epochs:02d}_lr{self.lr:.0e}_bs{self.batch_size}_stage2b"
+            f"_e{self.epochs:02d}_lr{self.lr:.0e}_bs{self.batch_size}"
         )
 
         self.save_path = os.path.join(config["save_dir"], f"{name_detail}.pth")
@@ -76,6 +77,9 @@ class PromptLearnerTrainerStage2b:
         for epoch in range(self.epochs):
             total_loss = 0.0
             total_batches = 0
+            correct = 0
+            total = 0
+            start_time = time.time()
 
             pbar = tqdm(self.train_loader, desc=f"Epoch {epoch + 1}/{self.epochs}")
 
@@ -116,10 +120,21 @@ class PromptLearnerTrainerStage2b:
 
                 total_loss += loss.item()
                 total_batches += 1
+
+                preds = logits.argmax(dim=1)
+                correct += (preds == torch.arange(logits.size(0)).to(self.device)).sum().item()
+                total += labels.size(0)
+
                 pbar.set_postfix(loss=loss.item())
 
+            # === End-of-epoch logging ===
             epoch_loss = total_loss / total_batches
-            self.log(f"[Epoch {epoch + 1}] Avg Loss: {epoch_loss:.4f}")
+            epoch_acc = 100.0 * correct / total if total > 0 else 0.0
+            epoch_time = time.time() - start_time
+            lr = self.optimizer.param_groups[0]["lr"]
+
+            self.log(
+                f"- Epoch {epoch + 1}: Loss={epoch_loss:.4f}, Acc={epoch_acc:.2f}%, Time={epoch_time:.2f}s, LR={lr:.4f}")
 
         # Save final fine-tuned image encoder
         torch.save(self.clip_model.state_dict(), self.save_path)
