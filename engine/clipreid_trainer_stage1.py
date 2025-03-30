@@ -1,4 +1,5 @@
 import os
+import time
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -52,13 +53,10 @@ class PromptLearnerTrainerStage1:
 
         # === Freeze the CLIP encoders if specified (Stage 1: only train prompts) ===
         if self.freeze_text:
-            # Freeze text encoder
             for param in self.clip_model.transformer.parameters():
                 param.requires_grad = False
             for param in self.clip_model.token_embedding.parameters():
                 param.requires_grad = False
-
-            # Freeze image encoder (visual backbone)
             for param in self.clip_model.visual.parameters():
                 param.requires_grad = False
 
@@ -78,9 +76,12 @@ class PromptLearnerTrainerStage1:
         self.log(f"LR: {self.lr} | Epochs: {self.epochs} | BS: {self.batch_size} | N_CTX: {self.n_ctx}\n")
 
         for epoch in range(self.epochs):
+            start_time = time.time()
+
             total_loss = 0.0
             total_batches = 0
             avg_pos_across_batches = []
+            row_acc_list, col_acc_list, grad_norm_list, prompt_norm_list = [], [], [], []
 
             pbar = tqdm(self.train_loader, desc=f"Epoch {epoch + 1}/{self.epochs}")
 
@@ -93,43 +94,68 @@ class PromptLearnerTrainerStage1:
                     image_features = self.clip_model.encode_image(images)
 
                 # === Step 2: Generate prompts per label ===
-                prompt_embeddings = self.prompt_learner.forward_batch(labels)  # (B, ctx_len, dim)
+                prompt_embeddings = self.prompt_learner.forward_batch(labels)
 
-                # === Step 3: Add position embeddings and pass through text encoder ===
+                # === Step 3: Pass prompts through transformer ===
                 pos_embed = self.clip_model.positional_embedding
-                pos_embed = pos_embed.unsqueeze(0).expand(prompt_embeddings.size(0), -1, -1)  # (B, ctx_len, dim)
-
+                pos_embed = pos_embed.unsqueeze(0).expand(prompt_embeddings.size(0), -1, -1)
                 x = prompt_embeddings + pos_embed
-                x = x.permute(1, 0, 2)  # (ctx_len, B, dim) for transformer
+                x = x.permute(1, 0, 2)
                 x = self.clip_model.transformer(x)
-                x = x.permute(1, 0, 2)  # (B, ctx_len, dim)
-                text_features = self.clip_model.ln_final(x[:, 0, :])  # CLS token
+                x = x.permute(1, 0, 2)
+                text_features = self.clip_model.ln_final(x[:, 0, :])
                 text_features = text_features / text_features.norm(dim=-1, keepdim=True)
 
-                # === Step 4: Compute contrastive loss ===
+                # === Step 4: Contrastive loss ===
                 loss = supcon_loss(image_features, text_features, labels)
 
-                # === Step 5: Optional logging: average positives per sample ===
+                # === Step 5: Logging metrics ===
                 with torch.no_grad():
                     pos_counts = (labels.unsqueeze(0) == labels.unsqueeze(1)).float().sum(1) - 1
                     avg_pos = pos_counts.mean().item()
                     avg_pos_across_batches.append(avg_pos)
 
-                # === Step 6: Backprop ===
+                    # Similarity matrix
+                    sim = image_features @ text_features.T
+                    row_acc = (sim.argmax(1) == torch.arange(sim.size(0), device=self.device)).float().mean().item()
+                    col_acc = (sim.argmax(0) == torch.arange(sim.size(0), device=self.device)).float().mean().item()
+                    row_acc_list.append(row_acc)
+                    col_acc_list.append(col_acc)
+
+                    # Prompt norm
+                    prompt_norm = self.prompt_learner.ctx.norm(dim=1).mean().item()
+                    prompt_norm_list.append(prompt_norm)
+
                 self.optimizer.zero_grad()
                 loss.backward()
+
+                # Prompt gradient norm
+                if self.prompt_learner.ctx.grad is not None:
+                    grad_norm = self.prompt_learner.ctx.grad.norm().item()
+                    grad_norm_list.append(grad_norm)
+
                 self.optimizer.step()
 
                 total_loss += loss.item()
                 total_batches += 1
-                pbar.set_postfix(loss=loss.item(), avg_pos=f"{avg_pos:.2f}")
+                pbar.set_postfix(loss=loss.item(), avg_pos=f"{avg_pos:.2f}", row_acc=f"{row_acc:.2f}")
 
-            # === Epoch logging ===
+            # === End of Epoch Logging ===
             epoch_loss = total_loss / total_batches
             avg_epoch_pos = sum(avg_pos_across_batches) / len(avg_pos_across_batches)
+            avg_row_acc = sum(row_acc_list) / len(row_acc_list)
+            avg_col_acc = sum(col_acc_list) / len(col_acc_list)
+            avg_grad = sum(grad_norm_list) / len(grad_norm_list) if grad_norm_list else 0
+            avg_prompt_norm = sum(prompt_norm_list) / len(prompt_norm_list)
+            epoch_time = time.time() - start_time
 
             self.log(f"\n[Epoch {epoch + 1}] Avg Loss: {epoch_loss:.4f}")
             self.log(f"[Epoch {epoch + 1}] Avg Positives/sample: {avg_epoch_pos:.2f}")
+            self.log(f"[Epoch {epoch + 1}] Row Acc (Img→Text): {avg_row_acc:.4f}")
+            self.log(f"[Epoch {epoch + 1}] Col Acc (Text→Img): {avg_col_acc:.4f}")
+            self.log(f"[Epoch {epoch + 1}] Prompt Norm: {avg_prompt_norm:.4f}")
+            self.log(f"[Epoch {epoch + 1}] Prompt Grad Norm: {avg_grad:.4f}")
+            self.log(f"[Epoch {epoch + 1}] Time Taken: {epoch_time:.2f} sec\n")
 
         # === Save learned prompt parameters ===
         torch.save(self.prompt_learner.state_dict(), self.save_path)

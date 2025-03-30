@@ -65,9 +65,13 @@ def main(config_path):
     train_loader, _, num_classes = get_train_val_loaders(config)
     config["num_classes"] = num_classes
 
+    # 🔄 Align classnames to ImageFolder's internal label ordering
+    class_to_idx = train_loader.dataset.class_to_idx
+    classnames = [k for k, v in sorted(class_to_idx.items(), key=lambda item: item[1])]
+
     # 🔹 Initialize prompt learner
     prompt_learner = PromptLearner(
-        classnames=[f"ID_{i:03d}" for i in range(num_classes)],
+        classnames=classnames,
         clip_model=clip_model,
         n_ctx=n_ctx,
         ctx_init=config.get("ctx_init", None),
