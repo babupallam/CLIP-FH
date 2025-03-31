@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c7cde98-b929-4071-bc2e-b0363f4c695d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/clipreid_trainer_stage2.py" beforeDir="false" afterPath="$PROJECT_DIR$/engine/clipreid_trainer_stage2.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,29 +35,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.1_baseline_vitb16.executor&quot;: &quot;Run&quot;,
-    &quot;Python.1_baseline_vitb16_11k.executor&quot;: &quot;Run&quot;,
-    &quot;Python.build_dataloader.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.eval_baseline_clip.executor&quot;: &quot;Run&quot;,
-    &quot;Python.eval_rn50_vitb16_hd_dorsal_r.executor&quot;: &quot;Run&quot;,
-    &quot;Python.make.executor&quot;: &quot;Run&quot;,
-    &quot;Python.prepare_train_val_test_hd.executor&quot;: &quot;Run&quot;,
-    &quot;Python.run_all_experiments.executor&quot;: &quot;Run&quot;,
-    &quot;Python.run_all_stage1_dorsal_r.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test_log_saving.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;v4-fine-tuning-CLIP-for-ReID-(Person-Re-Identification)&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Girija/OneDrive - De Montfort University/MSC PROJECT/BABU PALLAM/HandCLIP/HandCLIP/experiments/stage0_baseline_inference&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.1_baseline_vitb16.executor": "Run",
+    "Python.1_baseline_vitb16_11k.executor": "Run",
+    "Python.build_dataloader.executor": "Debug",
+    "Python.eval_baseline_clip.executor": "Run",
+    "Python.eval_rn50_vitb16_hd_dorsal_r.executor": "Run",
+    "Python.make.executor": "Run",
+    "Python.prepare_train_val_test_hd.executor": "Run",
+    "Python.run_all_experiments.executor": "Run",
+    "Python.run_all_stage1_dorsal_r.executor": "Run",
+    "Python.test_log_saving.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/Girija/OneDrive - De Montfort University/MSC PROJECT/BABU PALLAM/HandCLIP/HandCLIP/experiments/stage0_baseline_inference",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Girija\OneDrive - De Montfort University\MSC PROJECT\BABU PALLAM\HandCLIP\HandCLIP\experiments\stage0_baseline_inference" />

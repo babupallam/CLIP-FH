@@ -1,0 +1,15 @@
+experiment: eval_stage2b_finetuned_vitb16_11k_dorsal_r
+
+dataset: 11k
+aspect: dorsal_r
+model: vitb16
+variant: finetuned     # ⚠️ Triggers loading from model_path
+
+batch_size: 32
+num_workers: 4
+
+# Path to the fine-tuned image encoder from Stage 2b
+model_path: saved_models/stage2b_finetune_vitb16_11k_dorsal_r_e01_lr1e-04_bs32.pth
+
+# Where to save evaluation logs
+output_dir: eval_logs/
