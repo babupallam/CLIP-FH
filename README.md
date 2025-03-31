@@ -71,10 +71,23 @@ python experiments/stage2_clipid_prompt_learning/train_stage2b_finetune_image_en
 ```
 
 
+## To run Stage 2 Evaluation
 
-TO BE EXICUTED
+```angular2html
+python experiments/stage2_clipid_prompt_learning/eval_stage2b_finetune_image_encoder.py configs/eval_stage2_clip_reid/eval_vitb16_11k_dorsal.yml
+
+```
+
+
+
+
+
+***
+***
+***
+#TO BE EXICUTED
 ```angular2html
 python experiments/stage0_baseline_inference/eval_baseline_clip_single.py --config configs/baseline/eval_vitb16_11k_dorsal_r.yml
 python experiments/stage1_train_classifier_frozen_text/eval_stage1_frozen_text_single.py configs/eval_stage1_frozen_text/eval_vitb16_11k_dorsal_r.yml
-
+python experiments/stage2_clipid_prompt_learning/eval_stage2b_finetune_image_encoder.py configs/eval_stage2_clip_reid/eval_vitb16_11k_dorsal.yml
 ```
