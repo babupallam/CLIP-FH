@@ -1,0 +1,15 @@
+experiment: vitb16_stage1_dorsal_l_v1
+
+dataset: 11k
+aspect: dorsal_l
+model: vitb16
+variant: stage1_frozen_text
+
+epochs: 5
+batch_size: 32
+lr: 0.0001
+num_workers: 4
+loss: cross_entropy
+
+log_dir: train_logs/
+save_dir: saved_models/

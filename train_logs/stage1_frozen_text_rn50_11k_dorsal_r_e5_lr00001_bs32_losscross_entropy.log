@@ -1,0 +1,8 @@
+2025-03-28 09:38:02,167 - INFO - \U0001f680 Starting training on 890 samples for 5 epochs
+2025-03-28 09:44:45,427 - INFO - Epoch 1: Loss=3.5828, Acc=16.74%, Time=403.26s, LR=0.0001
+2025-03-28 09:51:35,208 - INFO - Epoch 2: Loss=1.9158, Acc=52.02%, Time=409.78s, LR=0.0001
+2025-03-28 09:58:36,415 - INFO - Epoch 3: Loss=0.8624, Acc=76.74%, Time=421.21s, LR=0.0001
+2025-03-28 10:05:52,028 - INFO - Epoch 4: Loss=0.4096, Acc=88.54%, Time=435.61s, LR=0.0001
+2025-03-28 10:13:19,130 - INFO - Epoch 5: Loss=0.2470, Acc=92.81%, Time=447.10s, LR=0.0001
+2025-03-28 10:13:20,222 - INFO - \u2705 Model saved to: saved_models/stage1_frozen_text_rn50_11k_dorsal_r.pth
+2025-03-28 10:13:20,222 - INFO - \U0001f4c8 Training metrics logged to: train_logs/stage1_frozen_text_rn50_11k_dorsal_r.log

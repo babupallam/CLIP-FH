@@ -1,0 +1,13 @@
+# configs/train_stage2_loss_variants/train_vitb16_11k_dorsal_r_ce_triplet_center.yml
+dataset: 11k
+aspect: dorsal_r
+model: vitb16
+variant: stage2_loss_ce_triplet_center
+
+epochs: 50
+batch_size: 64
+lr: 0.0001
+loss: [cross_entropy, triplet, center]
+
+save_path: saved_models/stage2_vitb16_11k_dorsal_r_ce_triplet_center.pth
+log_path: train_logs/stage2_vitb16_11k_dorsal_r_ce_triplet_center.log

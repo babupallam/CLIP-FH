@@ -1,0 +1,6 @@
+dataset: 11k
+aspect: palmar_l
+model: vitb16
+variant: baseline
+batch_size: 32
+num_splits: 10
