@@ -17,4 +17,7 @@ lr: 0.0001
 output_dir: train_logs/
 save_dir: saved_models/
 
+loss_list: ["supcon"]   # CLIP-ReID uses supcon_loss for prompt tuning
+
+
 

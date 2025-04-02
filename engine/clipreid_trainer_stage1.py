@@ -5,7 +5,7 @@ import torch.nn as nn
 import torch.optim as optim
 from tqdm import tqdm
 from datetime import datetime
-from loss.contrastive_loss import clip_contrastive_loss, supcon_loss
+from loss.make_loss import build_loss
 
 from engine.baseline_inference import extract_features
 from engine.evaluator import evaluate_rank
@@ -24,6 +24,13 @@ class PromptLearnerTrainerStage1:
         self.batch_size = config.get("batch_size", 32)
         self.n_ctx = config.get("n_ctx", 8)
         self.freeze_text = config.get("freeze_text_encoder", True)
+
+        # loss function accessing
+        self.loss_fn = build_loss(
+            loss_list=config.get("loss_list", ["supcon"]),
+            num_classes=config["num_classes"],
+            feat_dim=clip_model.ln_final.weight.shape[0]
+        )
 
         # === Generate unique experiment name based on config and timestamp ===
         exp_name = config["experiment"]
@@ -115,8 +122,14 @@ class PromptLearnerTrainerStage1:
                 text_features = self.clip_model.ln_final(x[:, 0, :])
                 text_features = text_features / text_features.norm(dim=-1, keepdim=True)
 
-                # === Step 4: Contrastive loss ===
-                loss = supcon_loss(image_features, text_features, labels)
+                # === Step 4:  loss fucntion ===
+                loss_i2t = self.loss_fn(features=image_features, text_features=text_features, targets=labels,
+                                        mode="contrastive")
+                loss_t2i = self.loss_fn(features=text_features, text_features=image_features, targets=labels,
+                                        mode="contrastive")
+                contrastive_loss = loss_i2t + loss_t2i
+                prompt_reg = (self.prompt_learner.ctx ** 2).mean()
+                loss = contrastive_loss + 0.001 * prompt_reg
 
                 # === Step 5: Logging metrics ===
                 with torch.no_grad():
