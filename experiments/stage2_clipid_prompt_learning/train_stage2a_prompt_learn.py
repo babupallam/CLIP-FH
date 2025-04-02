@@ -68,7 +68,7 @@ def main(config_path):
     # 🔄 Align classnames to ImageFolder's internal label ordering
     class_to_idx = train_loader.dataset.class_to_idx
     classnames = [k for k, v in sorted(class_to_idx.items(), key=lambda item: item[1])]
-    #print(f"classnames{classnames}")
+    print(f"classnames{classnames}")
 
     # 🔹 Initialize prompt learner
     prompt_learner = PromptLearner(
@@ -90,7 +90,7 @@ def main(config_path):
         device=device
     )
 
-    trainer.train()
+    #trainer.train()
 
 
 if __name__ == "__main__":
