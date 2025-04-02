@@ -18,6 +18,10 @@ from torch.utils.data import DataLoader              # PyTorch DataLoader for ba
 from torchvision.datasets import ImageFolder         # Loads images from directory structure as labeled dataset
 from .transforms import build_transforms             # Project-specific image augmentation pipeline
 from torchvision import datasets, transforms         # Standard torchvision tools for loading and transforming images
+from torch.utils.data import DataLoader
+from torch.utils.data.sampler import Sampler
+from collections import defaultdict
+import random
 
 
 def get_dataloader(data_dir, batch_size=64, shuffle=False, num_workers=4, train=True):
@@ -180,3 +184,76 @@ def get_train_all_loader(config):
     return train_all_loader, num_classes
 
 
+
+
+class BalancedBatchSampler(Sampler):
+    def __init__(self, labels, P, K):
+        self.labels = labels
+        self.P = P  # Number of classes per batch
+        self.K = K  # Number of samples per class
+
+        # Group indices by label
+        self.index_dict = defaultdict(list)
+        for idx, label in enumerate(labels):
+            self.index_dict[label].append(idx)
+
+        # Filter labels with enough samples
+        self.valid_labels = [label for label in self.index_dict if len(self.index_dict[label]) >= K]
+
+        self.batch_size = P * K
+
+    def __iter__(self):
+        random.shuffle(self.valid_labels)
+        batches = []
+
+        for i in range(0, len(self.valid_labels), self.P):
+            selected_labels = self.valid_labels[i:i + self.P]
+            if len(selected_labels) < self.P:
+                continue
+
+            batch = []
+            for label in selected_labels:
+                indices = random.sample(self.index_dict[label], self.K)
+                batch.extend(indices)
+            batches.append(batch)
+
+        random.shuffle(batches)
+        for batch in batches:
+            yield batch
+
+    def __len__(self):
+        return len(self.valid_labels) // self.P
+
+def get_train_val_loaders_balanced(config):
+    """
+    Returns a DataLoader using BalancedBatchSampler (P classes × K samples).
+    Use this for prompt learning with SupCon loss.
+    """
+    dataset = config["dataset"]
+    aspect = config["aspect"]
+    P = config.get("P", 8)
+    K = config.get("K", 4)
+    batch_size = P * K
+
+    if dataset == "11k":
+        base_path = f"./datasets/11khands/train_val_test_split_{aspect}"
+    elif dataset == "hd":
+        base_path = f"./datasets/HD/Original Images/train_val_test_split"
+    else:
+        raise ValueError("Unsupported dataset in config.")
+
+    train_dir = os.path.join(base_path, "train")
+
+    transform = transforms.Compose([
+        transforms.Resize((224, 224)),
+        transforms.ToTensor(),
+    ])
+
+    train_dataset = datasets.ImageFolder(train_dir, transform=transform)
+    labels = [label for _, label in train_dataset.samples]
+
+    sampler = BalancedBatchSampler(labels, P=P, K=K)
+    train_loader = DataLoader(train_dataset, batch_sampler=sampler, num_workers=4)
+
+    num_classes = len(train_dataset.classes)
+    return train_loader, None, num_classes

@@ -19,7 +19,7 @@ from datetime import datetime
 from models.prompt_learner import PromptLearner
 from models.clip_patch import load_clip_with_patch
 from engine.clipreid_trainer_stage1 import PromptLearnerTrainerStage1
-from datasets.build_dataloader import get_train_val_loaders
+from datasets.build_dataloader import get_train_val_loaders_balanced
 
 
 def main(config_path):
@@ -62,13 +62,16 @@ def main(config_path):
     clip_model, preprocess = load_clip_with_patch(model_type, device, freeze_all=True)
 
     # 🔹 Load training data
-    train_loader, _, num_classes = get_train_val_loaders(config)
+    train_loader, _, num_classes = get_train_val_loaders_balanced(config)
+    print(f"🧾 Loaded {len(train_loader.dataset)} training images from {train_loader.dataset.root}")
+
     config["num_classes"] = num_classes
+    print(f"Number of classes: {num_classes}")
 
     # 🔄 Align classnames to ImageFolder's internal label ordering
     class_to_idx = train_loader.dataset.class_to_idx
     classnames = [k for k, v in sorted(class_to_idx.items(), key=lambda item: item[1])]
-    print(f"classnames{classnames}")
+    #print(f"classnames{classnames}")
 
     # 🔹 Initialize prompt learner
     prompt_learner = PromptLearner(
@@ -90,7 +93,7 @@ def main(config_path):
         device=device
     )
 
-    #trainer.train()
+    trainer.train()
 
 
 if __name__ == "__main__":
