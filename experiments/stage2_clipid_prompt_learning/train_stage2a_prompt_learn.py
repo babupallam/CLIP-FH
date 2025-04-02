@@ -79,6 +79,7 @@ def main(config_path):
         prompt_template=config["prompt_template"],
         device=device
     )
+    #print("Initialised prompt learner")
 
     # 🔹 Train prompt learner
     trainer = PromptLearnerTrainerStage1(
@@ -89,7 +90,7 @@ def main(config_path):
         device=device
     )
 
-    #trainer.train()
+    trainer.train()
 
 
 if __name__ == "__main__":

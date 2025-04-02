@@ -1,0 +1,101 @@
+📄 Evaluation Log
+==================================================
+Config      : C:\Users\Girija\OneDrive - De Montfort University\MSC PROJECT\BABU PALLAM\HandCLIP\HandCLIP\configs\baseline\eval_vitb16_11k_dorsal_r.yml
+Experiment  : eval_baseline_vitb16_11k_dorsal_r
+Model       : vitb16
+Variant     : baseline
+Dataset     : 11k
+Aspect      : dorsal_r
+Model Path  : N/A
+==================================================
+
+🖥️ Device: cpu
+🎯 Using baseline CLIP model
+
+🔁 Split 1/10
+✅ Evaluation Metrics:
+   Rank-1 : 73.12%
+   Rank-5 : 86.92%
+   Rank-10: 92.79%
+   mAP    : 79.57%
+⏱️ Time Taken     : 457.49s
+
+🔁 Split 2/10
+✅ Evaluation Metrics:
+   Rank-1 : 73.94%
+   Rank-5 : 91.45%
+   Rank-10: 96.29%
+   mAP    : 81.30%
+⏱️ Time Taken     : 557.34s
+
+🔁 Split 3/10
+✅ Evaluation Metrics:
+   Rank-1 : 74.56%
+   Rank-5 : 89.39%
+   Rank-10: 95.37%
+   mAP    : 81.34%
+⏱️ Time Taken     : 595.70s
+
+🔁 Split 4/10
+✅ Evaluation Metrics:
+   Rank-1 : 70.96%
+   Rank-5 : 90.94%
+   Rank-10: 96.60%
+   mAP    : 79.83%
+⏱️ Time Taken     : 460.46s
+
+🔁 Split 5/10
+✅ Evaluation Metrics:
+   Rank-1 : 70.13%
+   Rank-5 : 87.54%
+   Rank-10: 93.61%
+   mAP    : 77.97%
+⏱️ Time Taken     : 452.39s
+
+🔁 Split 6/10
+✅ Evaluation Metrics:
+   Rank-1 : 71.88%
+   Rank-5 : 90.53%
+   Rank-10: 95.78%
+   mAP    : 79.90%
+⏱️ Time Taken     : 461.33s
+
+🔁 Split 7/10
+✅ Evaluation Metrics:
+   Rank-1 : 70.03%
+   Rank-5 : 88.67%
+   Rank-10: 94.03%
+   mAP    : 77.86%
+⏱️ Time Taken     : 454.36s
+
+🔁 Split 8/10
+✅ Evaluation Metrics:
+   Rank-1 : 69.00%
+   Rank-5 : 86.71%
+   Rank-10: 95.16%
+   mAP    : 76.70%
+⏱️ Time Taken     : 431.81s
+
+🔁 Split 9/10
+✅ Evaluation Metrics:
+   Rank-1 : 70.55%
+   Rank-5 : 88.88%
+   Rank-10: 94.13%
+   mAP    : 78.53%
+⏱️ Time Taken     : 426.60s
+
+🔁 Split 10/10
+✅ Evaluation Metrics:
+   Rank-1 : 68.18%
+   Rank-5 : 85.07%
+   Rank-10: 91.97%
+   mAP    : 75.86%
+⏱️ Time Taken     : 417.42s
+
+📊 Final Averaged Results Across All Splits:
+Rank-1 Accuracy : 71.24%
+Rank-5 Accuracy : 88.61%
+Rank-10 Accuracy: 94.57%
+Mean AP         : 78.88%
+
+📁 Log saved to: eval_logs/eval_baseline_vitb16_11k_dorsal_r_20250331_054915.log

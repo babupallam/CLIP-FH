@@ -6,11 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="8c7cde98-b929-4071-bc2e-b0363f4c695d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eval_logs/eval_stage1_frozen_text_vitb16_11k_dorsal_r_20250330_031330.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eval_logs/eval_stage1_frozen_text_vitb16_11k_dorsal_r_20250330_031700.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eval_logs/eval_vitb16_11k_dorsal_r_20250330_033338.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/train_stage2_clip_reid/train_stage2a_vitb16_11k_dorsal_r.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/train_stage2_clip_reid/train_stage2a_vitb16_11k_dorsal_r.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/clipreid_trainer_stage1.py" beforeDir="false" afterPath="$PROJECT_DIR$/engine/clipreid_trainer_stage1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/experiments/run_eval_clip.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/run_eval_clip.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/stage2_clipid_prompt_learning/train_stage2a_prompt_learn.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/stage2_clipid_prompt_learning/train_stage2a_prompt_learn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/stage2b/stage2b_finetune_vitb16_11k_dorsal_r_e01_lr1e-04_bs32_stage2b.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/prompt_learner.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/prompt_learner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train_logs/stage2a_prompt_vitb16_11k_dorsal_r_vitb16_11k_dorsal_r_e01_lr1e-04_bs32_ctx8_freezeTrue.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/train_logs/stage2b_finetune_vitb16_11k_dorsal_r_e01_lr1e-04_bs32.log" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

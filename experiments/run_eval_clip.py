@@ -54,7 +54,7 @@ def setup_log_file(config, config_path):
         str: The path to the newly created log file.
     """
     # Derive a name for this experiment (or use the default naming scheme)
-    exp_name = config.get("experiment", f"eval_{config['model']}_{config['dataset']}_{config['aspect']}")
+    exp_name = config.get("experiment", f"eval_{config['variant']}_{config['model']}_{config['dataset']}_{config['aspect']}")
 
     # Create a timestamp to uniquely identify the log file
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")

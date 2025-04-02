@@ -51,6 +51,10 @@ class PromptLearnerTrainerStage1:
             lr=self.lr
         )
 
+        print("🔍 Prompt Learner Parameters:")
+        for name, param in self.prompt_learner.named_parameters():
+            print(f" - {name}: requires_grad = {param.requires_grad}")
+
         # === Freeze the CLIP encoders if specified (Stage 1: only train prompts) ===
         if self.freeze_text:
             for param in self.clip_model.transformer.parameters():
@@ -59,6 +63,11 @@ class PromptLearnerTrainerStage1:
                 param.requires_grad = False
             for param in self.clip_model.visual.parameters():
                 param.requires_grad = False
+
+            ## DO NOT freeze prompt learner in this
+
+        # to test again
+        print([p.requires_grad for p in self.prompt_learner.parameters()])  # should all be True
 
     def log(self, text):
         """Utility to print and write log to file"""
@@ -90,8 +99,8 @@ class PromptLearnerTrainerStage1:
                 images, labels = images.to(self.device), labels.to(self.device)
 
                 # === Step 1: Extract image features ===
-                with torch.no_grad():
-                    image_features = self.clip_model.encode_image(images)
+                image_features = self.clip_model.encode_image(images)
+                image_features = image_features / image_features.norm(dim=-1, keepdim=True)
 
                 # === Step 2: Generate prompts per label ===
                 prompt_embeddings = self.prompt_learner.forward_batch(labels)
@@ -127,8 +136,15 @@ class PromptLearnerTrainerStage1:
                     prompt_norm_list.append(prompt_norm)
 
                 self.optimizer.zero_grad()
+                loss = (self.prompt_learner.ctx ** 2).mean()
                 loss.backward()
-
+                """
+                for name, param in self.prompt_learner.named_parameters():
+                    if param.grad is None:
+                        print(f"🚫 {name} has no grad")
+                    else:
+                        print(f"✅ {name} grad norm: {param.grad.norm().item():.6f}")
+                """
                 # Prompt gradient norm
                 if self.prompt_learner.ctx.grad is not None:
                     grad_norm = self.prompt_learner.ctx.grad.norm().item()
@@ -147,15 +163,36 @@ class PromptLearnerTrainerStage1:
             avg_col_acc = sum(col_acc_list) / len(col_acc_list)
             avg_grad = sum(grad_norm_list) / len(grad_norm_list) if grad_norm_list else 0
             avg_prompt_norm = sum(prompt_norm_list) / len(prompt_norm_list)
+            prompt_std = torch.std(self.prompt_learner.ctx).item()  # prompt variability
             epoch_time = time.time() - start_time
 
-            self.log(f"\n[Epoch {epoch + 1}] Avg Loss: {epoch_loss:.4f}")
-            self.log(f"[Epoch {epoch + 1}] Avg Positives/sample: {avg_epoch_pos:.2f}")
-            self.log(f"[Epoch {epoch + 1}] Row Acc (Img→Text): {avg_row_acc:.4f}")
-            self.log(f"[Epoch {epoch + 1}] Col Acc (Text→Img): {avg_col_acc:.4f}")
-            self.log(f"[Epoch {epoch + 1}] Prompt Norm: {avg_prompt_norm:.4f}")
-            self.log(f"[Epoch {epoch + 1}] Prompt Grad Norm: {avg_grad:.4f}")
-            self.log(f"[Epoch {epoch + 1}] Time Taken: {epoch_time:.2f} sec\n")
+            # === Optional: Top-5 Img→Text accuracy ===
+            with torch.no_grad():
+                sim = image_features @ text_features.T
+                top5_row_acc = (
+                    (labels.unsqueeze(1) == labels[sim.topk(5, dim=1).indices]).any(dim=1).float().mean().item()
+                )
+
+            # === Unified Single-Line Logging ===
+            self.log(
+                f"[Epoch {epoch + 1:02d}] "
+                f"Loss: {epoch_loss:.4f} | "
+                f"Pos/Sample: {avg_epoch_pos:.2f} | "
+                f"Img→Text@1: {avg_row_acc:.4f} | "
+                f"Img→Text@5: {top5_row_acc:.4f} | "
+                f"Text→Img@1: {avg_col_acc:.4f} | "
+                f"PromptNorm: {avg_prompt_norm:.4f} | "
+                f"PromptVar: {prompt_std:.4f} | "
+                f"PromptGrad: {avg_grad:.4f} | "
+                f"Time: {epoch_time:.2f}s"
+            )
+
+            # === Early stopping based on prompt norm ===
+            #early_stop_threshold = self.config.get("early_stop_prompt_norm", 1.2e-3)
+            #if avg_prompt_norm < early_stop_threshold:
+            #    self.log(f"🛑 Early stopping: prompt norm {avg_prompt_norm:.6f} < threshold {early_stop_threshold}")
+            #    break
+
 
         # === Save learned prompt parameters ===
         torch.save(self.prompt_learner.state_dict(), self.save_path)

@@ -8,9 +8,10 @@ n_ctx: 8                        # Number of learnable context tokens
 ctx_init: null                 # Use null for random, or "hand" / "identity" etc.
 prompt_template: "A photo of a {} hand."  # Prompt format
 freeze_text_encoder: true  # true = CoOp-style | false = full-tuning
+early_stop_prompt_norm: 1.2e-3
 
 batch_size: 32
-epochs: 1
+epochs: 30
 lr: 0.0001
 
 output_dir: train_logs/
