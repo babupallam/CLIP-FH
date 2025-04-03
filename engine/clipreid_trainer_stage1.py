@@ -64,12 +64,14 @@ class PromptLearnerTrainerStage1:
 
         # === Freeze the CLIP encoders if specified (Stage 1: only train prompts) ===
         if self.freeze_text:
+            print("Freezing everything except prompt learner....")
             for param in self.clip_model.transformer.parameters():
                 param.requires_grad = False
             for param in self.clip_model.token_embedding.parameters():
                 param.requires_grad = False
             for param in self.clip_model.visual.parameters():
                 param.requires_grad = False
+
 
             ## DO NOT freeze prompt learner in this
 
