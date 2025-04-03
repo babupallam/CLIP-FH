@@ -5,8 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c7cde98-b929-4071-bc2e-b0363f4c695d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/experiments/stage2_clipid_prompt_learning/analyze_stage2a_prompt_similarity.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/train_stage2_clip_reid/train_stage2a_vitb16_11k_dorsal_r.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/train_stage2_clip_reid/train_stage2a_vitb16_11k_dorsal_r.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/train_stage2_clip_reid/train_stage2b_vitb16_11k_dorsal.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/train_stage2_clip_reid/train_stage2b_vitb16_11k_dorsal.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/clipreid_trainer_stage2.py" beforeDir="false" afterPath="$PROJECT_DIR$/engine/clipreid_trainer_stage2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/stage2_clipid_prompt_learning/train_stage2b_finetune_image_encoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/stage2_clipid_prompt_learning/train_stage2b_finetune_image_encoder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/stage2_clipid_prompt_learning/validate_stage2a_prompt_checkpoint.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +100,7 @@
       <workItem from="1743101365064" duration="57007000" />
       <workItem from="1743163173510" duration="55073000" />
       <workItem from="1743300666675" duration="38853000" />
-      <workItem from="1743644798987" duration="6312000" />
+      <workItem from="1743644798987" duration="34457000" />
     </task>
     <servers />
   </component>

@@ -59,6 +59,7 @@ def main(config_path):
         n_ctx=cfg.get("n_ctx", 8),
         ctx_init=cfg.get("ctx_init", None),
         prompt_template=cfg.get("prompt_template", "a photo of a {}."),
+        aspect=cfg["aspect"],
         device=device
     )
 

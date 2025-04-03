@@ -1,0 +1,36 @@
+Experiment: stage2a_prompt_vitb16_11k_dorsal_r
+Save Path: saved_models/stage2a_prompt_vitb16_11k_dorsal_r_vitb16_11k_dorsal_r_e30_lr1e-04_bs32_ctx8_freezeTrue.pth
+Freeze Text Encoder: True
+LR: 0.0001 | Epochs: 30 | BS: 32 | N_CTX: 8
+
+[Epoch 01] Loss: 0.0003 | Pos/Sample: 3.00 | Img→Text@1: 0.0312 | Img→Text@5: 0.2500 | Text→Img@1: 0.0312 | PromptNorm: 0.3599 | PromptVar: 0.0180 | PromptGrad: 0.0006 | Time: 128.11s
+[Epoch 02] Loss: 0.0003 | Pos/Sample: 3.00 | Img→Text@1: 0.0312 | Img→Text@5: 0.2500 | Text→Img@1: 0.0312 | PromptNorm: 0.3475 | PromptVar: 0.0176 | PromptGrad: 0.0006 | Time: 123.73s
+[Epoch 03] Loss: 0.0003 | Pos/Sample: 3.00 | Img→Text@1: 0.0312 | Img→Text@5: 0.2500 | Text→Img@1: 0.0312 | PromptNorm: 0.3357 | PromptVar: 0.0173 | PromptGrad: 0.0005 | Time: 123.04s
+[Epoch 04] Loss: 0.0003 | Pos/Sample: 3.00 | Img→Text@1: 0.0312 | Img→Text@5: 0.2500 | Text→Img@1: 0.0312 | PromptNorm: 0.3245 | PromptVar: 0.0170 | PromptGrad: 0.0005 | Time: 127.18s
+[Epoch 05] Loss: 0.0003 | Pos/Sample: 3.00 | Img→Text@1: 0.0312 | Img→Text@5: 0.2500 | Text→Img@1: 0.0312 | PromptNorm: 0.3139 | PromptVar: 0.0167 | PromptGrad: 0.0005 | Time: 125.25s
+[Epoch 06] Loss: 0.0003 | Pos/Sample: 3.00 | Img→Text@1: 0.0312 | Img→Text@5: 0.2500 | Text→Img@1: 0.0312 | PromptNorm: 0.3039 | PromptVar: 0.0164 | PromptGrad: 0.0005 | Time: 129.70s
+[Epoch 07] Loss: 0.0003 | Pos/Sample: 3.00 | Img→Text@1: 0.0312 | Img→Text@5: 0.2500 | Text→Img@1: 0.0312 | PromptNorm: 0.2945 | PromptVar: 0.0161 | PromptGrad: 0.0005 | Time: 123.23s
+[Epoch 08] Loss: 0.0003 | Pos/Sample: 3.00 | Img→Text@1: 0.0312 | Img→Text@5: 0.2500 | Text→Img@1: 0.0312 | PromptNorm: 0.2856 | PromptVar: 0.0159 | PromptGrad: 0.0005 | Time: 136.84s
+[Epoch 09] Loss: 0.0002 | Pos/Sample: 3.00 | Img→Text@1: 0.0312 | Img→Text@5: 0.2500 | Text→Img@1: 0.0312 | PromptNorm: 0.2773 | PromptVar: 0.0157 | PromptGrad: 0.0005 | Time: 196.23s
+[Epoch 10] Loss: 0.0002 | Pos/Sample: 3.00 | Img→Text@1: 0.0312 | Img→Text@5: 0.2500 | Text→Img@1: 0.0312 | PromptNorm: 0.2693 | PromptVar: 0.0155 | PromptGrad: 0.0005 | Time: 132.03s
+[Epoch 11] Loss: 0.0002 | Pos/Sample: 3.00 | Img→Text@1: 0.0312 | Img→Text@5: 0.2500 | Text→Img@1: 0.0312 | PromptNorm: 0.2619 | PromptVar: 0.0153 | PromptGrad: 0.0005 | Time: 129.03s
+[Epoch 12] Loss: 0.0002 | Pos/Sample: 3.00 | Img→Text@1: 0.0312 | Img→Text@5: 0.2500 | Text→Img@1: 0.0312 | PromptNorm: 0.2548 | PromptVar: 0.0151 | PromptGrad: 0.0005 | Time: 181.47s
+[Epoch 13] Loss: 0.0002 | Pos/Sample: 3.00 | Img→Text@1: 0.0312 | Img→Text@5: 0.2500 | Text→Img@1: 0.0312 | PromptNorm: 0.2480 | PromptVar: 0.0149 | PromptGrad: 0.0005 | Time: 177.56s
+[Epoch 14] Loss: 0.0002 | Pos/Sample: 3.00 | Img→Text@1: 0.0312 | Img→Text@5: 0.2500 | Text→Img@1: 0.0312 | PromptNorm: 0.2416 | PromptVar: 0.0148 | PromptGrad: 0.0005 | Time: 177.85s
+[Epoch 15] Loss: 0.0002 | Pos/Sample: 3.00 | Img→Text@1: 0.0312 | Img→Text@5: 0.2500 | Text→Img@1: 0.0312 | PromptNorm: 0.2356 | PromptVar: 0.0147 | PromptGrad: 0.0005 | Time: 208.55s
+[Epoch 16] Loss: 0.0002 | Pos/Sample: 3.00 | Img→Text@1: 0.0312 | Img→Text@5: 0.2500 | Text→Img@1: 0.0312 | PromptNorm: 0.2298 | PromptVar: 0.0145 | PromptGrad: 0.0005 | Time: 196.18s
+[Epoch 17] Loss: 0.0002 | Pos/Sample: 3.00 | Img→Text@1: 0.0312 | Img→Text@5: 0.2500 | Text→Img@1: 0.0312 | PromptNorm: 0.2243 | PromptVar: 0.0144 | PromptGrad: 0.0005 | Time: 167.05s
+[Epoch 18] Loss: 0.0002 | Pos/Sample: 3.00 | Img→Text@1: 0.0312 | Img→Text@5: 0.2500 | Text→Img@1: 0.0312 | PromptNorm: 0.2191 | PromptVar: 0.0143 | PromptGrad: 0.0004 | Time: 222.17s
+[Epoch 19] Loss: 0.0002 | Pos/Sample: 3.00 | Img→Text@1: 0.0312 | Img→Text@5: 0.2500 | Text→Img@1: 0.0312 | PromptNorm: 0.2141 | PromptVar: 0.0142 | PromptGrad: 0.0004 | Time: 206.47s
+[Epoch 20] Loss: 0.0002 | Pos/Sample: 3.00 | Img→Text@1: 0.0312 | Img→Text@5: 0.2500 | Text→Img@1: 0.0312 | PromptNorm: 0.2094 | PromptVar: 0.0141 | PromptGrad: 0.0004 | Time: 160.60s
+[Epoch 21] Loss: 0.0002 | Pos/Sample: 3.00 | Img→Text@1: 0.0312 | Img→Text@5: 0.2500 | Text→Img@1: 0.0312 | PromptNorm: 0.2049 | PromptVar: 0.0140 | PromptGrad: 0.0004 | Time: 155.37s
+[Epoch 22] Loss: 0.0002 | Pos/Sample: 3.00 | Img→Text@1: 0.0312 | Img→Text@5: 0.2500 | Text→Img@1: 0.0312 | PromptNorm: 0.2005 | PromptVar: 0.0139 | PromptGrad: 0.0004 | Time: 165.22s
+[Epoch 23] Loss: 0.0002 | Pos/Sample: 3.00 | Img→Text@1: 0.0312 | Img→Text@5: 0.2500 | Text→Img@1: 0.0312 | PromptNorm: 0.1964 | PromptVar: 0.0138 | PromptGrad: 0.0004 | Time: 158.78s
+[Epoch 24] Loss: 0.0002 | Pos/Sample: 3.00 | Img→Text@1: 0.0312 | Img→Text@5: 0.2500 | Text→Img@1: 0.0312 | PromptNorm: 0.1925 | PromptVar: 0.0137 | PromptGrad: 0.0004 | Time: 152.19s
+[Epoch 25] Loss: 0.0002 | Pos/Sample: 3.00 | Img→Text@1: 0.0312 | Img→Text@5: 0.2500 | Text→Img@1: 0.0312 | PromptNorm: 0.1887 | PromptVar: 0.0137 | PromptGrad: 0.0004 | Time: 153.88s
+[Epoch 26] Loss: 0.0002 | Pos/Sample: 3.00 | Img→Text@1: 0.0312 | Img→Text@5: 0.2500 | Text→Img@1: 0.0312 | PromptNorm: 0.1851 | PromptVar: 0.0136 | PromptGrad: 0.0004 | Time: 145.12s
+[Epoch 27] Loss: 0.0002 | Pos/Sample: 3.00 | Img→Text@1: 0.0312 | Img→Text@5: 0.2500 | Text→Img@1: 0.0312 | PromptNorm: 0.1816 | PromptVar: 0.0135 | PromptGrad: 0.0004 | Time: 158.07s
+[Epoch 28] Loss: 0.0002 | Pos/Sample: 3.00 | Img→Text@1: 0.0312 | Img→Text@5: 0.2500 | Text→Img@1: 0.0312 | PromptNorm: 0.1783 | PromptVar: 0.0135 | PromptGrad: 0.0004 | Time: 214.43s
+[Epoch 29] Loss: 0.0002 | Pos/Sample: 3.00 | Img→Text@1: 0.0312 | Img→Text@5: 0.2500 | Text→Img@1: 0.0312 | PromptNorm: 0.1752 | PromptVar: 0.0134 | PromptGrad: 0.0004 | Time: 204.79s
+[Epoch 30] Loss: 0.0002 | Pos/Sample: 3.00 | Img→Text@1: 0.0312 | Img→Text@5: 0.2500 | Text→Img@1: 0.0312 | PromptNorm: 0.1721 | PromptVar: 0.0133 | PromptGrad: 0.0004 | Time: 171.41s
+✅ Prompt model saved to: saved_models/stage2a_prompt_vitb16_11k_dorsal_r_vitb16_11k_dorsal_r_e30_lr1e-04_bs32_ctx8_freezeTrue.pth

@@ -19,14 +19,24 @@ class PromptLearnerTrainerStage2b:
         self.batch_size = config.get("batch_size", 32)
 
         # === Output paths ===
-        exp_name = config["experiment"]
-        model = config["model"]
-        dataset = config["dataset"]
-        aspect = config["aspect"]
+        self.exp_name = config["experiment"]  # e.g., "stage2b_finetune"
+        self.model = config.get("model", "vitb16")
+        self.dataset = config.get("dataset", "11k")
+        self.aspect = config.get("aspect", "dorsal_r")
+        self.n_ctx = config.get("n_ctx", 8)
+        self.freeze_text_encoder = config.get("freeze_text_encoder", True)
+        self.freeze_prompt = config.get("freeze_prompt", True)
+
+        self.loss_tri_weight = config.get("loss_tri_weight", 1.0)
+        self.loss_i2t_weight = config.get("loss_i2t_weight", 1.0)
+
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         name_detail = (
-            f"{exp_name}_{model}_{dataset}_{aspect}"
-            f"_e{self.epochs:02d}_lr{self.lr:.0e}_bs{self.batch_size}"
+            f"{self.exp_name}_{self.model}_{self.dataset}_{self.aspect}"
+            f"_e{self.epochs:02d}_lr{self.lr:.0e}_bs{self.batch_size}_ctx{self.n_ctx}"
+            f"_freezeT{self.freeze_text_encoder}_freezeP{self.freeze_prompt}"
+            f"_from2a"
+            f"_lossT{self.loss_tri_weight}_I2T{self.loss_i2t_weight}"
         )
 
         self.save_path = os.path.join(config["save_dir"], f"{name_detail}.pth")
