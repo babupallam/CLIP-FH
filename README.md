@@ -1,6 +1,12 @@
 # CLIP-FH: Fine-Tuning CLIP for Hand-Based Identity Matching
 
 
+## Data preprocessing
+```
+python .\datasets\data_preprocessing\prepare_train_val_test_11k_r_l.py
+python .\datasets\data_preprocessing\prepare_train_val_test_hd.py     
+```
+
 ## stage0_baseline_model_evaluation
 
 ### for all
