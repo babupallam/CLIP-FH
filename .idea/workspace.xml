@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c7cde98-b929-4071-bc2e-b0363f4c695d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/HandCLIP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/HandCLIP.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/build_dataloader.py" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/build_dataloader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,11 +66,11 @@
       <recent name="C:\Users\Girija\OneDrive - De Montfort University\MSC PROJECT\BABU PALLAM\HandCLIP\HandCLIP\datasets\data_preprocessing" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Girija\OneDrive - De Montfort University\MSC PROJECT\BABU PALLAM\HandCLIP\HandCLIP\configs" />
-      <recent name="C:\Users\Girija\OneDrive - De Montfort University\MSC PROJECT\BABU PALLAM\HandCLIP\HandCLIP\experiments\archived\stage2_finetune_image_encoder_loss_variants" />
-      <recent name="C:\Users\Girija\OneDrive - De Montfort University\MSC PROJECT\BABU PALLAM\HandCLIP\HandCLIP\experiments\archived" />
-      <recent name="C:\Users\Girija\OneDrive - De Montfort University\MSC PROJECT\BABU PALLAM\HandCLIP\HandCLIP\configs\archived" />
-      <recent name="C:\Users\Girija\OneDrive - De Montfort University\MSC PROJECT\BABU PALLAM\HandCLIP\HandCLIP\datasets\dataset_analysis" />
+      <recent name="C:\Users\Girija\Documents\GitHub\HandCLIP\configs\train_stage2_clip_reid" />
+      <recent name="C:\Users\Girija\Documents\GitHub\HandCLIP\configs" />
+      <recent name="C:\Users\Girija\Documents\GitHub\HandCLIP\experiments\stage2_clipid_prompt_learning" />
+      <recent name="C:\Users\Girija\Documents\GitHub\HandCLIP\engine" />
+      <recent name="C:\Users\Girija\Documents\GitHub\HandCLIP\models" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -95,7 +93,7 @@
       <workItem from="1743101365064" duration="57007000" />
       <workItem from="1743163173510" duration="55073000" />
       <workItem from="1743300666675" duration="38853000" />
-      <workItem from="1743644798987" duration="702000" />
+      <workItem from="1743644798987" duration="1824000" />
     </task>
     <servers />
   </component>
