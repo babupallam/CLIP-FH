@@ -36,6 +36,8 @@ python experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text.
 python experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_rn50_11k_palmar_l.yml
 python experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_rn50_hd_dorsal_r.yml
 
+
+
 ```
 
 ## To Run Stage 1 Evaluation: all together...
@@ -94,6 +96,15 @@ python experiments/stage2_clipid_prompt_learning/eval_stage2b_finetune_image_enc
 #TO BE EXICUTED
 ```angular2html
 python experiments/stage0_baseline_inference/eval_baseline_clip_single.py --config configs/baseline/eval_vitb16_11k_dorsal_r.yml
+
+python experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_vitb16_11k_dorsal_r.yml
+
 python experiments/stage1_train_classifier_frozen_text/eval_stage1_frozen_text_single.py configs/eval_stage1_frozen_text/eval_vitb16_11k_dorsal_r.yml
-python experiments/stage2_clipid_prompt_learning/eval_stage2b_finetune_image_encoder.py configs/eval_stage2_clip_reid/eval_vitb16_11k_dorsal.yml
+
+
+python experiments/stage2_clipid_prompt_learning/train_stage2a_prompt_learn.py --config configs/train_stage2_clip_reid/train_stage2a_vitb16_11k_dorsal_r.yml
+
+python experiments/stage2_clipid_prompt_learning/train_stage2b_finetune_image_encoder.py --config configs/train_stage2_clip_reid/train_stage2b_vitb16_11k_dorsal.yml
+
+
 ```
