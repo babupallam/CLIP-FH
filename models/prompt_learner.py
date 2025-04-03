@@ -7,7 +7,7 @@ import clip
 
 class PromptLearner(nn.Module):
     def __init__(self, classnames, clip_model, n_ctx=8, ctx_init=None,
-                 prompt_template="A photo of a {}.", device="cuda"):
+                 prompt_template="A photo of a {}.", aspect=None,device="cuda"):
         super().__init__()
 
         self.classnames = classnames
@@ -24,7 +24,14 @@ class PromptLearner(nn.Module):
         self.context_length = clip_model.context_length
         self.tokenizer = clip.tokenize
 
-        self.prompts = [prompt_template.format(c.replace("_", " ")) for c in classnames]
+        aspect_map = {
+            "dorsal_r": "right dorsal",
+            "dorsal_l": "left dorsal",
+            "palmar_r": "right palmar",
+            "palmar_l": "left palmar"
+        }
+        aspect_text = aspect_map[aspect]
+        self.prompts = [prompt_template.format(cls_name, aspect=aspect_text) for cls_name in classnames]
         tokenized_prompts = self.tokenizer(self.prompts).to(device)
         self.register_buffer("tokenized_prompts", tokenized_prompts)
 

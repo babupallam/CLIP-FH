@@ -242,7 +242,7 @@ def get_train_val_loaders_balanced(config):
     else:
         raise ValueError("Unsupported dataset in config.")
 
-    train_dir = os.path.join(base_path, "train")
+    train_dir = os.path.join(base_path, "train") # I'm using train_all rahter than train since no validation is doing in this stage...
 
     transform = transforms.Compose([
         transforms.Resize((224, 224)),

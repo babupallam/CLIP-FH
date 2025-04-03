@@ -80,6 +80,7 @@ def main(config_path):
         n_ctx=n_ctx,
         ctx_init=config.get("ctx_init", None),
         prompt_template=config["prompt_template"],
+        aspect=aspect,
         device=device
     )
     #print("Initialised prompt learner")

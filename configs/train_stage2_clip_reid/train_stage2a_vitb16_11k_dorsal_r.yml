@@ -4,10 +4,10 @@ aspect: dorsal_r
 model: vitb16
 variant: clipid
 
-n_ctx: 8                        # Number of learnable context tokens
-ctx_init: null                 # Use null for random, or "hand" / "identity" etc.
-prompt_template: "A photo of a {} hand."  # Prompt format
-freeze_text_encoder: true  # true = CoOp-style | false = full-tuning
+n_ctx: 8
+ctx_init: "a hand" # person,  identity, biometric, individual, "hand image"
+prompt_template: "A photo of {}'s {aspect} hand for identification."  # Dynamic prompt based on identity and aspect
+freeze_text_encoder: false
 early_stop_prompt_norm: 1.2e-3
 
 batch_size: 32
@@ -18,6 +18,9 @@ output_dir: train_logs/
 save_dir: saved_models/
 
 loss_list: ["supcon"]   # CLIP-ReID uses supcon_loss for prompt tuning
+
+
+
 
 
 
