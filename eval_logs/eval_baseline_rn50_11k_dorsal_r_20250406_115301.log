@@ -1,0 +1,101 @@
+📄 Evaluation Log
+==================================================
+Config      : C:\Users\Girija\Documents\GitHub\HandCLIP\configs\baseline\eval_rn50_11k_dorsal_r.yml
+Experiment  : eval_baseline_rn50_11k_dorsal_r
+Model       : rn50
+Variant     : baseline
+Dataset     : 11k
+Aspect      : dorsal_r
+Model Path  : N/A
+==================================================
+
+🖥️ Device: cpu
+🎯 Using baseline CLIP model
+
+🔁 Split 1/10
+✅ Evaluation Metrics:
+   Rank-1 : 67.87%
+   Rank-5 : 83.73%
+   Rank-10: 89.70%
+   mAP    : 75.36%
+⏱️ Time Taken     : 201.70s
+
+🔁 Split 2/10
+✅ Evaluation Metrics:
+   Rank-1 : 70.44%
+   Rank-5 : 86.61%
+   Rank-10: 93.61%
+   mAP    : 78.16%
+⏱️ Time Taken     : 189.18s
+
+🔁 Split 3/10
+✅ Evaluation Metrics:
+   Rank-1 : 66.43%
+   Rank-5 : 82.80%
+   Rank-10: 88.47%
+   mAP    : 73.95%
+⏱️ Time Taken     : 200.83s
+
+🔁 Split 4/10
+✅ Evaluation Metrics:
+   Rank-1 : 67.04%
+   Rank-5 : 81.77%
+   Rank-10: 89.91%
+   mAP    : 74.20%
+⏱️ Time Taken     : 190.18s
+
+🔁 Split 5/10
+✅ Evaluation Metrics:
+   Rank-1 : 64.37%
+   Rank-5 : 83.63%
+   Rank-10: 91.04%
+   mAP    : 73.25%
+⏱️ Time Taken     : 198.47s
+
+🔁 Split 6/10
+✅ Evaluation Metrics:
+   Rank-1 : 72.61%
+   Rank-5 : 85.07%
+   Rank-10: 91.04%
+   mAP    : 78.57%
+⏱️ Time Taken     : 189.10s
+
+🔁 Split 7/10
+✅ Evaluation Metrics:
+   Rank-1 : 69.41%
+   Rank-5 : 84.96%
+   Rank-10: 89.29%
+   mAP    : 76.42%
+⏱️ Time Taken     : 172.69s
+
+🔁 Split 8/10
+✅ Evaluation Metrics:
+   Rank-1 : 64.98%
+   Rank-5 : 82.70%
+   Rank-10: 90.53%
+   mAP    : 73.20%
+⏱️ Time Taken     : 174.59s
+
+🔁 Split 9/10
+✅ Evaluation Metrics:
+   Rank-1 : 70.44%
+   Rank-5 : 84.24%
+   Rank-10: 91.25%
+   mAP    : 77.20%
+⏱️ Time Taken     : 171.82s
+
+🔁 Split 10/10
+✅ Evaluation Metrics:
+   Rank-1 : 68.38%
+   Rank-5 : 85.27%
+   Rank-10: 93.82%
+   mAP    : 76.66%
+⏱️ Time Taken     : 173.12s
+
+📊 Final Averaged Results Across All Splits:
+Rank-1 Accuracy : 68.20%
+Rank-5 Accuracy : 84.08%
+Rank-10 Accuracy: 90.87%
+Mean AP         : 75.70%
+
+📁 Log saved to: eval_logs/eval_baseline_rn50_11k_dorsal_r_20250406_115301.log
