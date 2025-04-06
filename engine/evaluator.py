@@ -1,9 +1,3 @@
-"""
-evaluator.py
-
-Calculates mAP and CMC for ReID evaluation.
-"""
-
 import numpy as np
 
 def evaluate_rank(similarity_matrix, query_ids, gallery_ids, topk=[1, 5, 10]):
@@ -45,8 +39,7 @@ def evaluate_rank(similarity_matrix, query_ids, gallery_ids, topk=[1, 5, 10]):
             ap.append(0)
 
     cmc /= num_query
-    return {
-        f"Rank-{k}": cmc[i] for i, k in enumerate(topk)
-    } | {
-        "mAP": np.mean(ap)
-    }
+    rank_metrics = {f"Rank-{k}": cmc[i] for i, k in enumerate(topk)}
+    map_metric = {"mAP": np.mean(ap)}
+
+    return {**rank_metrics, **map_metric}

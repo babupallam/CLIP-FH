@@ -154,7 +154,8 @@ def run_eval(config_path):
         if not model_path or not os.path.exists(model_path):
             log(log_path, f"❌ Checkpoint not found: {model_path}")
             return
-        state_dict = torch.load(model_path, map_location=device)
+        state_dict = torch.load(model_path, map_location=device, weights_only=True)
+
         # If the state_dict is wrapped under a "model" key, unwrap it.
         if "model" in state_dict:
             model.load_state_dict(state_dict["model"], strict=False)
