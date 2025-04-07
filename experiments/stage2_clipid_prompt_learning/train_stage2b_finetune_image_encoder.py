@@ -68,7 +68,7 @@ def main(config_path):
     assert os.path.exists(prompt_ckpt), f"❌ Prompt checkpoint not found: {prompt_ckpt}"
     print(f"🔁 Loading prompt from: {prompt_ckpt}")
 
-    ckpt = torch.load(prompt_ckpt, map_location=device)
+    ckpt = torch.load(prompt_ckpt, map_location=device, weights_only=False)
 
     # Safely remove tokenized_prompts if shape will mismatch
     if "tokenized_prompts" in ckpt:
