@@ -62,5 +62,5 @@ class FinetuneTrainerStage2:
         torch.save(self.clip_model.state_dict(), self.save_path)
         with open(self.log_path, "w") as f:
             f.write("\n".join(log))
-        print(f"\n✅ Model saved to: {self.save_path}")
-        print(f"📝 Training log saved to: {self.log_path}")
+        print(f"\nModel saved to: {self.save_path}")
+        print(f"Training log saved to: {self.log_path}")
