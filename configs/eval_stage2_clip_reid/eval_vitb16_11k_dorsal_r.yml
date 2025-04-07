@@ -9,7 +9,7 @@ batch_size: 32
 num_workers: 4
 
 # Path to the fine-tuned image encoder from Stage 2b
-model_path: saved_models/stage2b_finetune_vitb16_11k_dorsal_r_e01_lr1e-04_bs32.pth
+model_path: saved_models/stage2b_finetune_vitb16_11k_dorsal_r_vitb16_11k_dorsal_r_e30_lr1e-04_bs32_ctx8_freezeTTrue_freezePTrue_from2a_lossT1.0_I2T1.0.pth
 
 # Where to save evaluation logs
 output_dir: eval_logs/
