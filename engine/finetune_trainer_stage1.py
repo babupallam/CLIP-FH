@@ -48,7 +48,7 @@ class FinetuneTrainerStage1:
     def train(self):
         self.clip_model.train()
         total_samples = len(self.train_loader.dataset)
-        self.logger.info(f"🚀 Starting training on {total_samples} samples for {self.epochs} epochs")
+        self.logger.info(f"Starting training on {total_samples} samples for {self.epochs} epochs")
 
         for epoch in range(1, self.epochs + 1):
             start_time = time.time()
@@ -85,5 +85,5 @@ class FinetuneTrainerStage1:
 
         # Save final model
         torch.save(self.clip_model.state_dict(), self.save_path)
-        self.logger.info(f"✅ Model saved to: {self.save_path}")
-        self.logger.info(f"📈 Training metrics logged to: {self.csv_path}")
+        self.logger.info(f"Model saved to: {self.save_path}")
+        self.logger.info(f"Training metrics logged to: {self.csv_path}")
