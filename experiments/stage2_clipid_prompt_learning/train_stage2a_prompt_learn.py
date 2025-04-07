@@ -19,7 +19,7 @@ from datetime import datetime
 from models.prompt_learner import PromptLearner
 from models.clip_patch import load_clip_with_patch
 from engine.clipreid_trainer_stage1 import PromptLearnerTrainerStage1
-from datasets.build_dataloader import get_train_val_loaders_balanced
+from datasets.build_dataloader import get_train_loader_all
 
 
 def main(config_path):
@@ -62,11 +62,34 @@ def main(config_path):
     clip_model, preprocess = load_clip_with_patch(model_type, device, freeze_all=True)
 
     # 🔹 Load training data
-    train_loader, _, num_classes = get_train_val_loaders_balanced(config)
-    print(f"🧾 Loaded {len(train_loader.dataset)} training images from {train_loader.dataset.root}")
-
+    train_loader, num_classes = get_train_loader_all(config)
     config["num_classes"] = num_classes
+    print(f"🧾 Loaded {len(train_loader.dataset)} training images from {train_loader.dataset.root}")
     print(f"Number of classes: {num_classes}")
+    # === OFFLINE FEATURE CACHING ===
+    clip_model.eval()  # Ensure no gradients
+    image_features = []
+    labels = []
+
+    print("🔄 Extracting image features for all training data...")
+
+    with torch.no_grad():
+        for images, label_batch in train_loader:
+            images = images.to(device)
+            label_batch = label_batch.to(device)
+
+            features = clip_model.encode_image(images)
+            features = features / features.norm(dim=-1, keepdim=True)
+
+            image_features.append(features.cpu())
+            labels.append(label_batch.cpu())
+
+    # === Combine features into big tensors ===
+    image_features_tensor = torch.cat(image_features, dim=0).to(device)
+    labels_tensor = torch.cat(labels, dim=0).to(device)
+
+    print(f"✅ Cached {image_features_tensor.shape[0]} image features.")
+
 
     # 🔄 Align classnames to ImageFolder's internal label ordering
     class_to_idx = train_loader.dataset.class_to_idx
