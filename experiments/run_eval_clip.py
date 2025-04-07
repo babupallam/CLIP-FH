@@ -174,9 +174,12 @@ def run_eval(config_path):
                              "11khands" if dataset == "11k" else "HD/Original Images",
                              "train_val_test_split")
 
+
     # If using the 11k dataset, further append the aspect specification.
     if dataset == "11k":
         base_path = os.path.join(base_path + f"_{aspect}")
+
+    print(f"dataset path: ", base_path)
 
     # Lists to accumulate rank-1 and mAP for each split.
     all_rank1, all_rank5, all_rank10, all_map = [],[],[],[]
