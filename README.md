@@ -71,6 +71,13 @@ python experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text_
 python experiments/stage2_clipid_prompt_learning/train_stage2a_prompt_learn.py --config configs/train_stage2_clip_reid/train_stage2a_vitb16_11k_dorsal_r.yml
 
 ```
+## Validation of Stage 2 Stage 1
+
+```angular2html
+python experiments/stage2_clipid_prompt_learning/validate_stage2a_prompt_model.py --config configs/validate_stage2_clip_reid/validate_stage2a_vitb16_11k_dorsal_r.yml
+
+```
+
 ## To Run Stage 2 stage 2: Training
 
 ``` 
@@ -100,7 +107,6 @@ python experiments/stage0_baseline_inference/eval_baseline_clip_single.py --conf
 python experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_vitb16_11k_dorsal_r.yml
 
 python experiments/stage1_train_classifier_frozen_text/eval_stage1_frozen_text_single.py configs/eval_stage1_frozen_text/eval_vitb16_11k_dorsal_r.yml
-
 
 python experiments/stage2_clipid_prompt_learning/train_stage2a_prompt_learn.py --config configs/train_stage2_clip_reid/train_stage2a_vitb16_11k_dorsal_r.yml
 
