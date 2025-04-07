@@ -7,7 +7,7 @@ import clip
 
 class PromptLearner(nn.Module):
     def __init__(self, classnames, clip_model, n_ctx=8, ctx_init=None,
-                 prompt_template="A photo of a {}.", aspect=None,device="cuda"):
+                 prompt_template="A photo of {}'s {aspect} hand for identification.", aspect=None,device="cuda"):
         super().__init__()
 
         self.classnames = classnames
@@ -32,6 +32,12 @@ class PromptLearner(nn.Module):
         }
         aspect_text = aspect_map[aspect]
         self.prompts = [prompt_template.format(cls_name, aspect=aspect_text) for cls_name in classnames]
+        print("🔤 Generated prompts per class:")
+        for i, p in enumerate(self.prompts[:5]):
+            print(f"[{i}] {p}")
+        if len(self.prompts) > 5:
+            print(f"... (total {len(self.prompts)})")
+
         tokenized_prompts = self.tokenizer(self.prompts).to(device)
         self.register_buffer("tokenized_prompts", tokenized_prompts)
 

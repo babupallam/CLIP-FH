@@ -58,7 +58,7 @@ class PromptLearnerTrainerStage1:
             lr=self.lr
         )
 
-        print("🔍 Prompt Learner Parameters:")
+        print(" Prompt Learner Parameters:")
         for name, param in self.prompt_learner.named_parameters():
             print(f" - {name}: requires_grad = {param.requires_grad}")
 
@@ -93,45 +93,92 @@ class PromptLearnerTrainerStage1:
         self.log(f"Freeze Text Encoder: {self.freeze_text}")
         self.log(f"LR: {self.lr} | Epochs: {self.epochs} | BS: {self.batch_size} | N_CTX: {self.n_ctx}\n")
 
+        # === OFFLINE FEATURE CACHING ===
+        image_features_all = []
+        labels_all = []
+
+        print("Extracting and caching image features from training set...")
+        with torch.no_grad():
+            for images, labels in self.train_loader:
+                images = images.to(self.device)
+                labels = labels.to(self.device)
+
+                feats = self.clip_model.encode_image(images)
+                feats = feats / feats.norm(dim=-1, keepdim=True)
+
+                image_features_all.append(feats.cpu())
+                labels_all.append(labels.cpu())
+
+        image_features_all = torch.cat(image_features_all, dim=0).to(self.device)
+        labels_all = torch.cat(labels_all, dim=0).to(self.device)
+        num_samples = image_features_all.shape[0]
+
         for epoch in range(self.epochs):
+
             start_time = time.time()
 
             total_loss = 0.0
-            total_batches = 0
             avg_pos_across_batches = []
             row_acc_list, col_acc_list, grad_norm_list, prompt_norm_list = [], [], [], []
 
-            pbar = tqdm(self.train_loader, desc=f"Epoch {epoch + 1}/{self.epochs}")
+            indices = torch.randperm(num_samples)
 
-            for batch in pbar:
-                images, labels = batch
-                images, labels = images.to(self.device), labels.to(self.device)
-
-                # === Step 1: Extract image features ===
-                image_features = self.clip_model.encode_image(images)
-                image_features = image_features / image_features.norm(dim=-1, keepdim=True)
+            pbar = tqdm(range(0, num_samples, self.batch_size), desc=f"Epoch {epoch + 1}/{self.epochs}")
+            for i in pbar:
+                batch_idx = indices[i:i + self.batch_size]
+                img_feats = image_features_all[batch_idx]
+                labels = labels_all[batch_idx]
 
                 # === Step 2: Generate prompts per label ===
                 prompt_embeddings = self.prompt_learner.forward_batch(labels)
 
-                # === Step 3: Pass prompts through transformer ===
-                pos_embed = self.clip_model.positional_embedding
-                pos_embed = pos_embed.unsqueeze(0).expand(prompt_embeddings.size(0), -1, -1)
-                x = prompt_embeddings + pos_embed
-                x = x.permute(1, 0, 2)
-                x = self.clip_model.transformer(x)
-                x = x.permute(1, 0, 2)
-                text_features = self.clip_model.ln_final(x[:, 0, :])
-                text_features = text_features / text_features.norm(dim=-1, keepdim=True)
+                if epoch == 0:
+                    print("ctx grad_fn:", self.prompt_learner.ctx.grad_fn)
+                    print("prompt_embedded requires_grad:", prompt_embeddings.requires_grad)
 
-                # === Step 4:  loss fucntion ===
-                loss_i2t = self.loss_fn(features=image_features, text_features=text_features, targets=labels,
+                # === Step 3: Prepare positional embeddings ===
+                pos_embed = self.clip_model.positional_embedding
+
+
+                # === Step 4: Build text features ===
+                try:
+                    x = prompt_embeddings + pos_embed.unsqueeze(0).expand(prompt_embeddings.size(0), -1, -1)
+                    x = x.permute(1, 0, 2)  # (context_len, B, dim)
+                    x = self.clip_model.transformer(x)
+                    x = x.permute(1, 0, 2)  # (B, context_len, dim)
+                    x = self.clip_model.ln_final(x[:, 0, :])  # [CLS] token
+
+                    # CRITICAL LINE:
+                    x = x @ self.clip_model.text_projection
+                    #print("x: ",self.clip_model.text_projection.shape)
+
+                    text_feats = x / x.norm(dim=-1, keepdim=True)
+                    #print("text_feats after projection: ", x.shape, x[0, :5])
+
+
+                except Exception as e:
+                    print("Error during prompt→text embedding block!", e)
+                    print(f"prompt_embeddings shape: {prompt_embeddings.shape}")
+                    print(f"pos_embed shape: {self.clip_model.positional_embedding.shape}")
+                    raise e  # re-raise to see full error
+
+                assert img_feats is not None, "img_feats is None!"
+                assert text_feats is not None, "text_feats is None!"
+                assert img_feats.shape == text_feats.shape, f"Shape mismatch: {img_feats.shape} vs {text_feats.shape}"
+
+                #print(f"text_feats: {text_feats.shape}, img_feats: {img_feats.shape}, labels: {labels.shape}")
+
+                # === Step 4: Contrastive Loss ===
+                loss_i2t = self.loss_fn(features=img_feats, text_features=text_feats, targets=labels,
                                         mode="contrastive")
-                loss_t2i = self.loss_fn(features=text_features, text_features=image_features, targets=labels,
+                loss_t2i = self.loss_fn(features=text_feats, text_features=img_feats, targets=labels,
                                         mode="contrastive")
+
                 contrastive_loss = loss_i2t + loss_t2i
+
                 prompt_reg = (self.prompt_learner.ctx ** 2).mean()
                 loss = contrastive_loss + 0.001 * prompt_reg
+
 
                 # === Step 5: Logging metrics ===
                 with torch.no_grad():
@@ -139,56 +186,48 @@ class PromptLearnerTrainerStage1:
                     avg_pos = pos_counts.mean().item()
                     avg_pos_across_batches.append(avg_pos)
 
-                    # Similarity matrix
-                    sim = image_features @ text_features.T
+                    sim = img_feats @ text_feats.T
                     row_acc = (sim.argmax(1) == torch.arange(sim.size(0), device=self.device)).float().mean().item()
                     col_acc = (sim.argmax(0) == torch.arange(sim.size(0), device=self.device)).float().mean().item()
                     row_acc_list.append(row_acc)
                     col_acc_list.append(col_acc)
 
-                    # Prompt norm
                     prompt_norm = self.prompt_learner.ctx.norm(dim=1).mean().item()
                     prompt_norm_list.append(prompt_norm)
 
                 self.optimizer.zero_grad()
-                loss = (self.prompt_learner.ctx ** 2).mean()
+                self.prompt_learner.ctx.retain_grad()  # ensure ctx grad is retained
                 loss.backward()
-                """
-                for name, param in self.prompt_learner.named_parameters():
-                    if param.grad is None:
-                        print(f"🚫 {name} has no grad")
-                    else:
-                        print(f"✅ {name} grad norm: {param.grad.norm().item():.6f}")
-                """
-                # Prompt gradient norm
-                if self.prompt_learner.ctx.grad is not None:
+
+                if self.prompt_learner.ctx.grad is None:
+                    print(" Warning: No gradient received by prompt learner. Check data or loss.")
+                else:
                     grad_norm = self.prompt_learner.ctx.grad.norm().item()
                     grad_norm_list.append(grad_norm)
+                    if epoch == 0 and i == 0:
+                        print(" ctx.grad example:", self.prompt_learner.ctx.grad[0][:5])
 
                 self.optimizer.step()
-
                 total_loss += loss.item()
-                total_batches += 1
+
                 pbar.set_postfix(loss=loss.item(), avg_pos=f"{avg_pos:.2f}", row_acc=f"{row_acc:.2f}")
+            #print(grad_norm_list)
 
             # === End of Epoch Logging ===
-            epoch_loss = total_loss / total_batches
+            epoch_loss = total_loss / len(pbar)
             avg_epoch_pos = sum(avg_pos_across_batches) / len(avg_pos_across_batches)
             avg_row_acc = sum(row_acc_list) / len(row_acc_list)
             avg_col_acc = sum(col_acc_list) / len(col_acc_list)
             avg_grad = sum(grad_norm_list) / len(grad_norm_list) if grad_norm_list else 0
             avg_prompt_norm = sum(prompt_norm_list) / len(prompt_norm_list)
-            prompt_std = torch.std(self.prompt_learner.ctx).item()  # prompt variability
+            prompt_std = torch.std(self.prompt_learner.ctx).item()
             epoch_time = time.time() - start_time
 
-            # === Optional: Top-5 Img→Text accuracy ===
             with torch.no_grad():
-                sim = image_features @ text_features.T
-                top5_row_acc = (
-                    (labels.unsqueeze(1) == labels[sim.topk(5, dim=1).indices]).any(dim=1).float().mean().item()
-                )
+                sim = img_feats @ text_feats.T
+                k = min(5, sim.size(1))
+                top5_row_acc = compute_topk_acc(sim, labels, k)
 
-            # === Unified Single-Line Logging ===
             self.log(
                 f"[Epoch {epoch + 1:02d}] "
                 f"Loss: {epoch_loss:.4f} | "
@@ -198,17 +237,24 @@ class PromptLearnerTrainerStage1:
                 f"Text→Img@1: {avg_col_acc:.4f} | "
                 f"PromptNorm: {avg_prompt_norm:.4f} | "
                 f"PromptVar: {prompt_std:.4f} | "
-                f"PromptGrad: {avg_grad:.4f} | "
+                f"PromptGrad: {avg_grad:.7f} | "
                 f"Time: {epoch_time:.2f}s"
             )
 
-            # === Early stopping based on prompt norm ===
-            #early_stop_threshold = self.config.get("early_stop_prompt_norm", 1.2e-3)
-            #if avg_prompt_norm < early_stop_threshold:
-            #    self.log(f"🛑 Early stopping: prompt norm {avg_prompt_norm:.6f} < threshold {early_stop_threshold}")
-            #    break
-
-
-        # === Save learned prompt parameters ===
+        # === Save prompt model only ===
         torch.save(self.prompt_learner.state_dict(), self.save_path)
-        self.log(f"✅ Prompt model saved to: {self.save_path}")
+        self.log(f"Prompt model saved to: {self.save_path}")
+
+
+
+
+def compute_topk_acc(similarity, labels, k=5):
+    k = min(k, similarity.size(1))
+    topk_indices = similarity.topk(k, dim=1).indices
+    return (
+        (labels.unsqueeze(1) == labels[topk_indices])
+        .any(dim=1)
+        .float()
+        .mean()
+        .item()
+    )
