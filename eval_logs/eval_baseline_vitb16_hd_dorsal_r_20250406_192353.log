@@ -29,3 +29,73 @@ Model Path  : N/A
 ⏱️ Time Taken     : 1456.63s
 
 🔁 Split 3/10
+✅ Evaluation Metrics:
+   Rank-1 : 0.00%
+   Rank-5 : 0.50%
+   Rank-10: 1.10%
+   mAP    : 0.80%
+⏱️ Time Taken     : 1467.28s
+
+🔁 Split 4/10
+✅ Evaluation Metrics:
+   Rank-1 : 0.00%
+   Rank-5 : 0.25%
+   Rank-10: 0.60%
+   mAP    : 0.76%
+⏱️ Time Taken     : 1328.05s
+
+🔁 Split 5/10
+✅ Evaluation Metrics:
+   Rank-1 : 0.00%
+   Rank-5 : 0.00%
+   Rank-10: 0.35%
+   mAP    : 0.70%
+⏱️ Time Taken     : 1476.67s
+
+🔁 Split 6/10
+✅ Evaluation Metrics:
+   Rank-1 : 0.00%
+   Rank-5 : 0.05%
+   Rank-10: 0.50%
+   mAP    : 0.71%
+⏱️ Time Taken     : 1415.19s
+
+🔁 Split 7/10
+✅ Evaluation Metrics:
+   Rank-1 : 0.00%
+   Rank-5 : 0.30%
+   Rank-10: 0.75%
+   mAP    : 0.77%
+⏱️ Time Taken     : 1614.91s
+
+🔁 Split 8/10
+✅ Evaluation Metrics:
+   Rank-1 : 0.00%
+   Rank-5 : 0.20%
+   Rank-10: 0.95%
+   mAP    : 0.74%
+⏱️ Time Taken     : 1569.48s
+
+🔁 Split 9/10
+✅ Evaluation Metrics:
+   Rank-1 : 0.00%
+   Rank-5 : 0.20%
+   Rank-10: 0.65%
+   mAP    : 0.75%
+⏱️ Time Taken     : 1376.81s
+
+🔁 Split 10/10
+✅ Evaluation Metrics:
+   Rank-1 : 0.00%
+   Rank-5 : 0.30%
+   Rank-10: 0.60%
+   mAP    : 0.77%
+⏱️ Time Taken     : 1301.35s
+
+📊 Final Averaged Results Across All Splits:
+Rank-1 Accuracy : 0.00%
+Rank-5 Accuracy : 0.21%
+Rank-10 Accuracy: 0.67%
+Mean AP         : 0.74%
+
+📁 Log saved to: eval_logs/eval_baseline_vitb16_hd_dorsal_r_20250406_192353.log
