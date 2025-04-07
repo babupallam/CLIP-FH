@@ -1,0 +1,101 @@
+📄 Evaluation Log
+==================================================
+Config      : C:\Users\Girija\Documents\GitHub\HandCLIP\configs\eval_stage1_frozen_text\eval_vitb16_11k_dorsal_r.yml
+Experiment  : eval_stage1_frozen_text_vitb16_11k_dorsal_r
+Model       : vitb16
+Variant     : stage1_frozen_text
+Dataset     : 11k
+Aspect      : dorsal_r
+Model Path  : saved_models/stage1_stage1_frozen_text_vitb16_11k_dorsal_r_e30_lr00001_bs32_losscross_entropy.pth
+==================================================
+
+🖥️ Device: cpu
+✅ Loaded fine-tuned model from: saved_models/stage1_stage1_frozen_text_vitb16_11k_dorsal_r_e30_lr00001_bs32_losscross_entropy.pth
+
+🔁 Split 1/10
+✅ Evaluation Metrics:
+   Rank-1 : 25.13%
+   Rank-5 : 48.82%
+   Rank-10: 64.26%
+   mAP    : 37.54%
+⏱️ Time Taken     : 437.24s
+
+🔁 Split 2/10
+✅ Evaluation Metrics:
+   Rank-1 : 25.64%
+   Rank-5 : 47.17%
+   Rank-10: 60.76%
+   mAP    : 36.45%
+⏱️ Time Taken     : 375.99s
+
+🔁 Split 3/10
+✅ Evaluation Metrics:
+   Rank-1 : 23.17%
+   Rank-5 : 46.96%
+   Rank-10: 64.37%
+   mAP    : 35.33%
+⏱️ Time Taken     : 379.16s
+
+🔁 Split 4/10
+✅ Evaluation Metrics:
+   Rank-1 : 24.41%
+   Rank-5 : 46.86%
+   Rank-10: 62.10%
+   mAP    : 36.16%
+⏱️ Time Taken     : 381.98s
+
+🔁 Split 5/10
+✅ Evaluation Metrics:
+   Rank-1 : 24.92%
+   Rank-5 : 46.24%
+   Rank-10: 61.28%
+   mAP    : 35.73%
+⏱️ Time Taken     : 388.21s
+
+🔁 Split 6/10
+✅ Evaluation Metrics:
+   Rank-1 : 22.04%
+   Rank-5 : 46.24%
+   Rank-10: 59.84%
+   mAP    : 34.30%
+⏱️ Time Taken     : 382.17s
+
+🔁 Split 7/10
+✅ Evaluation Metrics:
+   Rank-1 : 22.97%
+   Rank-5 : 45.62%
+   Rank-10: 59.42%
+   mAP    : 34.98%
+⏱️ Time Taken     : 396.50s
+
+🔁 Split 8/10
+✅ Evaluation Metrics:
+   Rank-1 : 22.76%
+   Rank-5 : 47.06%
+   Rank-10: 60.35%
+   mAP    : 35.37%
+⏱️ Time Taken     : 395.54s
+
+🔁 Split 9/10
+✅ Evaluation Metrics:
+   Rank-1 : 25.44%
+   Rank-5 : 46.86%
+   Rank-10: 62.20%
+   mAP    : 36.96%
+⏱️ Time Taken     : 388.39s
+
+🔁 Split 10/10
+✅ Evaluation Metrics:
+   Rank-1 : 26.26%
+   Rank-5 : 46.96%
+   Rank-10: 60.14%
+   mAP    : 36.88%
+⏱️ Time Taken     : 412.42s
+
+📊 Final Averaged Results Across All Splits:
+Rank-1 Accuracy : 24.27%
+Rank-5 Accuracy : 46.88%
+Rank-10 Accuracy: 61.47%
+Mean AP         : 35.97%
+
+📁 Log saved to: eval_logs/eval_stage1_frozen_text_vitb16_11k_dorsal_r_20250406_100431.log
