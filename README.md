@@ -94,6 +94,12 @@ python experiments/stage2_clipid_prompt_learning/eval_stage2b_finetune_image_enc
 ```
 
 
+# To run stage 3 training
+
+python experiments/stage3_promptsg_integration/train_stage3_promptsg.py --config configs/train_stage3_promptsg/train_stage3_vitb16_11k_dorsal_r.yml
+
+
+
 
 
 

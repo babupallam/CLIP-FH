@@ -48,3 +48,23 @@ def supcon_loss(text_features, image_features, t_labels, i_labels, temperature=1
     loss = -mean_log_prob_pos.mean()
 
     return loss
+
+
+
+import torch.nn as nn
+
+class SymmetricSupConLoss(nn.Module):
+    def __init__(self, temperature=0.07):
+        super().__init__()
+        self.temperature = temperature
+        self.similarity = nn.CosineSimilarity(dim=-1)
+
+    def forward(self, img_emb, text_emb, labels):
+        logits = self.similarity(img_emb.unsqueeze(1), text_emb.unsqueeze(0)) / self.temperature
+        labels = labels.unsqueeze(1) == labels.unsqueeze(0)
+        labels = labels.float()
+
+        img2text_loss = -(labels * torch.log_softmax(logits, dim=1)).sum(1).mean()
+        text2img_loss = -(labels * torch.log_softmax(logits, dim=0)).sum(0).mean()
+
+        return (img2text_loss + text2img_loss) / 2

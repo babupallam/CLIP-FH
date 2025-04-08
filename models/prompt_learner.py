@@ -67,3 +67,18 @@ class PromptLearner(nn.Module):
 
         prompts_embedded = torch.cat([prefix, ctx, suffix], dim=1)
         return prompts_embedded  # (B, context_len, dim)
+
+
+
+class TextualInversionMLP(nn.Module):
+    def __init__(self, input_dim=512, output_dim=512):
+        super().__init__()
+        self.model = nn.Sequential(
+            nn.Linear(input_dim, 512),
+            nn.ReLU(),
+            nn.Linear(512, output_dim),
+            nn.BatchNorm1d(output_dim)
+        )
+
+    def forward(self, img_embedding):
+        return self.model(img_embedding)

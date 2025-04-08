@@ -1,0 +1,50 @@
+# === General Experiment Info ===
+experiment: stage3_promptsg_vitb16_11k_dorsal_r
+dataset: 11k
+aspect: dorsal_r
+model: vitb16
+variant: promptsg
+stage: stage3_promptsg
+
+# === CLIP Model Config ===
+clip_model: ViT-B/16
+pretrained: true
+freeze_text_encoder: true
+
+# === Textual Inversion (Pseudo-token) ===
+pseudo_token_dim: 512
+pseudo_token_init: random
+
+# === Multimodal Interaction Module ===
+cross_attention_layers: 1
+transformer_layers: 2
+attention_heads: 8
+
+# === Prompt Configuration ===
+use_composed_prompt: true
+prompt_template: "A detailed photo of {}'s {aspect} hand for identification."
+simplified_prompt: "A detailed photo of a {aspect} hand."
+
+# === Training Config ===
+batch_size: 32
+epochs: 30
+lr_clip_visual: 5e-6
+lr_modules: 5e-5
+weight_decay: 0.0005
+supcon_loss_weight: 0.5
+loss_tri_weight: 1.0
+loss_id_weight: 1.0
+
+# === Dataloader Settings ===
+num_workers: 4
+shuffle: true
+pin_memory: true
+
+# === Logging and Checkpoint Saving ===
+output_dir: train_logs/
+save_dir: saved_models/
+save_frequency: 10
+log_frequency: 50
+
+# === Resume and Checkpoints ===
+resume_from_checkpoint: null
