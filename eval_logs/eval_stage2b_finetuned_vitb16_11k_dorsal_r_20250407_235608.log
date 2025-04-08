@@ -1,0 +1,101 @@
+📄 Evaluation Log
+==================================================
+Config      : C:\Users\Girija\Documents\GitHub\HandCLIP\configs\eval_stage2_clip_reid\eval_vitb16_11k_dorsal_r.yml
+Experiment  : eval_stage2b_finetuned_vitb16_11k_dorsal_r
+Model       : vitb16
+Variant     : finetuned
+Dataset     : 11k
+Aspect      : dorsal_r
+Model Path  : saved_models/stage2b_finetune_vitb16_11k_dorsal_r_vitb16_11k_dorsal_r_e30_lr1e-04_bs32_ctx8_freezeTTrue_freezePTrue_from2a_lossT1.0_I2T1.0.pth
+==================================================
+
+🖥️ Device: cpu
+✅ Loaded fine-tuned model from: saved_models/stage2b_finetune_vitb16_11k_dorsal_r_vitb16_11k_dorsal_r_e30_lr1e-04_bs32_ctx8_freezeTTrue_freezePTrue_from2a_lossT1.0_I2T1.0.pth
+
+🔁 Split 1/10
+✅ Evaluation Metrics:
+   Rank-1 : 17.61%
+   Rank-5 : 45.11%
+   Rank-10: 64.88%
+   mAP    : 31.85%
+⏱️ Time Taken     : 404.46s
+
+🔁 Split 2/10
+✅ Evaluation Metrics:
+   Rank-1 : 12.67%
+   Rank-5 : 37.28%
+   Rank-10: 58.39%
+   mAP    : 26.32%
+⏱️ Time Taken     : 412.37s
+
+🔁 Split 3/10
+✅ Evaluation Metrics:
+   Rank-1 : 16.89%
+   Rank-5 : 41.71%
+   Rank-10: 60.66%
+   mAP    : 30.43%
+⏱️ Time Taken     : 414.54s
+
+🔁 Split 4/10
+✅ Evaluation Metrics:
+   Rank-1 : 14.93%
+   Rank-5 : 41.71%
+   Rank-10: 62.51%
+   mAP    : 28.73%
+⏱️ Time Taken     : 414.09s
+
+🔁 Split 5/10
+✅ Evaluation Metrics:
+   Rank-1 : 14.11%
+   Rank-5 : 39.75%
+   Rank-10: 61.07%
+   mAP    : 27.75%
+⏱️ Time Taken     : 393.54s
+
+🔁 Split 6/10
+✅ Evaluation Metrics:
+   Rank-1 : 16.07%
+   Rank-5 : 38.72%
+   Rank-10: 58.91%
+   mAP    : 28.80%
+⏱️ Time Taken     : 389.16s
+
+🔁 Split 7/10
+✅ Evaluation Metrics:
+   Rank-1 : 16.37%
+   Rank-5 : 42.53%
+   Rank-10: 61.07%
+   mAP    : 30.22%
+⏱️ Time Taken     : 393.54s
+
+🔁 Split 8/10
+✅ Evaluation Metrics:
+   Rank-1 : 15.14%
+   Rank-5 : 39.86%
+   Rank-10: 57.47%
+   mAP    : 28.29%
+⏱️ Time Taken     : 389.64s
+
+🔁 Split 9/10
+✅ Evaluation Metrics:
+   Rank-1 : 12.98%
+   Rank-5 : 40.58%
+   Rank-10: 59.53%
+   mAP    : 26.76%
+⏱️ Time Taken     : 390.96s
+
+🔁 Split 10/10
+✅ Evaluation Metrics:
+   Rank-1 : 15.14%
+   Rank-5 : 39.75%
+   Rank-10: 61.28%
+   mAP    : 28.37%
+⏱️ Time Taken     : 391.56s
+
+📊 Final Averaged Results Across All Splits:
+Rank-1 Accuracy : 15.19%
+Rank-5 Accuracy : 40.70%
+Rank-10 Accuracy: 60.58%
+Mean AP         : 28.75%
+
+📁 Log saved to: eval_logs/eval_stage2b_finetuned_vitb16_11k_dorsal_r_20250407_235608.log
