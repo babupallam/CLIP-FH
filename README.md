@@ -89,7 +89,7 @@ python experiments/stage2_clipid_prompt_learning/train_stage2b_finetune_image_en
 ## To run Stage 2 Evaluation
 
 ```angular2html
-python experiments/stage2_clipid_prompt_learning/eval_stage2b_finetune_image_encoder.py configs/eval_stage2_clip_reid/eval_vitb16_11k_dorsal.yml
+python experiments/stage2_clipid_prompt_learning/eval_stage2b_finetune_image_encoder.py configs/eval_stage2_clip_reid/eval_vitb16_11k_dorsal_r.yml
 
 ```
 
