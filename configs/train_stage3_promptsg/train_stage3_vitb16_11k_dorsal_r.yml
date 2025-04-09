@@ -27,7 +27,7 @@ simplified_prompt: "A detailed photo of a {aspect} hand."
 
 # === Training Config ===
 batch_size: 32
-epochs: 30
+epochs: 2
 lr_clip_visual: 5e-6
 lr_modules: 5e-5
 weight_decay: 0.0005

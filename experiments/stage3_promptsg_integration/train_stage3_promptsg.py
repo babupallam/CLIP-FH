@@ -9,7 +9,7 @@ from datetime import datetime
 from tqdm import tqdm
 from clip import clip
 
-# 🧠 Project structure
+# Project structure
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..'))
 if PROJECT_ROOT not in sys.path:
     sys.path.insert(0, PROJECT_ROOT)
@@ -35,7 +35,7 @@ def generate_model_name(cfg):
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     return (f"{cfg['stage']}_{cfg['variant']}_{cfg['model']}_{cfg['dataset']}_{cfg['aspect']}_"
             f"e{cfg['epochs']}_lr{cfg['lr_modules']}_bs{cfg['batch_size']}_"
-            f"freezeText{cfg['freeze_text_encoder']}_{timestamp}.pth")
+            f"freezeText{cfg['freeze_text_encoder']}.pth")
 
 def train(config):
 
@@ -158,7 +158,7 @@ def train(config):
                 best_epoch = epoch
 
                 best_model_path = os.path.join(config['save_dir'], model_name.replace('.pth', '_BEST.pth'))
-                print(f"💾 Saving best model at epoch {epoch} (Acc@1={acc1:.2f}%) → {best_model_path}")
+                print(f"Saving best model at epoch {epoch} (Acc@1={acc1:.2f}%) → {best_model_path}")
                 torch.save({
                     'epoch': epoch,
                     'inversion_model_state_dict': inversion_model.state_dict(),
@@ -182,7 +182,7 @@ def train(config):
                     'optimizer_state_dict': optimizer.state_dict(),
                     'loss': avg_loss,
                     'config': config
-                }, os.path.join(config['save_dir'], model_name))
+                }, os.path.join(config['save_dir'], model_name.replace('.pth', '_FINAL.pth')))
 
 
             model_components = (clip_model, inversion_model, multimodal_module, classifier)

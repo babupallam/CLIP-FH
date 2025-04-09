@@ -1,0 +1,16 @@
+# === PromptSG Evaluation Config for Stage 3 ===
+experiment: eval_stage3_promptsg_vitb16_11k_dorsal_r
+
+dataset: 11k
+aspect: dorsal_r
+model: vitb16
+variant: promptsg
+
+batch_size: 32
+num_workers: 4
+
+# Path to the best trained model from Stage 3 (PromptSG)
+model_path: saved_models/stage3_promptsg_promptsg_vitb16_11k_dorsal_r_e2_lr5e-5_bs32_freezeTextTrue_BEST.pth
+
+# Where to save the split-wise and average evaluation metrics
+output_dir: eval_logs/
