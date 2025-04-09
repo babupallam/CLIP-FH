@@ -93,30 +93,49 @@ python experiments/stage2_clipid_prompt_learning/eval_stage2b_finetune_image_enc
 
 ```
 
+# To runt Stage 2 JOINED
+
+python experiments/stage2_clipreid_integration/train_stage2_joint.py --config configs/train_stage2_clip_reid/train_joint_vitb16_11k_dorsal_r.yml
+
+
+# To run Stage 2 Evaluation
+
+
+
 
 # To run stage 3 training
 
 python experiments/stage3_promptsg_integration/train_stage3_promptsg.py --config configs/train_stage3_promptsg/train_stage3_vitb16_11k_dorsal_r.yml
 
 
+# To run stage 3 evaluation
 
+```
+python experiments/stage3_promptsg_integration/eval_stage3_promptsg.py configs/eval_stage3_promptsg/eval_stage3_vitb16_11k_dorsal_r.yml
+```
 
 
 
 ***
 ***
 ***
-#TO BE EXICUTED
+
+
 ```angular2html
-python experiments/stage0_baseline_inference/eval_baseline_clip_single.py --config configs/baseline/eval_vitb16_11k_dorsal_r.yml
+make a script which can run the following commands one follows another automatically 
 
-python experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_vitb16_11k_dorsal_r.yml
+
+python experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_vitb16_11k_dorsal_r.yml   
 
 python experiments/stage1_train_classifier_frozen_text/eval_stage1_frozen_text_single.py configs/eval_stage1_frozen_text/eval_vitb16_11k_dorsal_r.yml
 
-python experiments/stage2_clipid_prompt_learning/train_stage2a_prompt_learn.py --config configs/train_stage2_clip_reid/train_stage2a_vitb16_11k_dorsal_r.yml
+python experiments/stage2_clipreid_integration/train_stage2_joint.py --config configs/train_stage2_clip_reid/train_joint_vitb16_11k_dorsal_r.yml
 
-python experiments/stage2_clipid_prompt_learning/train_stage2b_finetune_image_encoder.py --config configs/train_stage2_clip_reid/train_stage2b_vitb16_11k_dorsal.yml
+python experiments/stage2_clipreid_integration/eval_stage2_joint.py --config configs/eval_stage2_clip_reid/eval_joint_vitb16_11k_dorsal_r.yml
 
+
+python experiments/stage3_promptsg_integration/train_stage3_promptsg.py --config configs/train_stage3_promptsg/train_stage3_vitb16_11k_dorsal_r.yml
+    
+python experiments/stage3_promptsg_integration/eval_stage3_promptsg.py configs/eval_stage3_promptsg/eval_stage3_vitb16_11k_dorsal_r.yml
 
 ```
