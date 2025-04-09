@@ -68,7 +68,7 @@ def setup_log_file(config, config_path):
 
     # Initialize the log file with basic run info
     with open(log_path, "w", encoding="utf-8") as f:
-        f.write("📄 Evaluation Log\n")
+        f.write("Evaluation Log\n")
         f.write("=" * 50 + "\n")
         f.write(f"Config      : {os.path.abspath(config_path)}\n")
         f.write(f"Experiment  : {exp_name}\n")
@@ -130,7 +130,7 @@ def run_eval(config_path):
 
     # Decide on device (GPU if available, otherwise CPU).
     device = "cuda" if torch.cuda.is_available() else "cpu"
-    log(log_path, f"🖥️ Device: {device}")
+    log(log_path, f"Device: {device}")
 
     # 3. Load a CLIP model from the specified model name.
     model_map = {
@@ -145,14 +145,14 @@ def run_eval(config_path):
 
     clip_name = model_map.get(model_name.lower())
     if clip_name is None:
-        raise ValueError(f"❌ Unknown model name: {model_name}. Must be one of: {list(model_map.keys())}")
+        raise ValueError(f"Unknown model name: {model_name}. Must be one of: {list(model_map.keys())}")
 
     model, preprocess = clip.load(clip_name, device=device)
 
     # If a variant other than baseline is specified, we attempt to load a fine-tuned checkpoint.
     if variant != "baseline":
         if not model_path or not os.path.exists(model_path):
-            log(log_path, f"❌ Checkpoint not found: {model_path}")
+            log(log_path, f"Checkpoint not found: {model_path}")
             return
         state_dict = torch.load(model_path, map_location=device, weights_only=True)
 
@@ -161,9 +161,9 @@ def run_eval(config_path):
             model.load_state_dict(state_dict["model"], strict=False)
         else:
             model.load_state_dict(state_dict, strict=False)
-        log(log_path, f"✅ Loaded fine-tuned model from: {model_path}")
+        log(log_path, f"Loaded fine-tuned model from: {model_path}")
     else:
-        log(log_path, "🎯 Using baseline CLIP model")
+        log(log_path, "Using baseline CLIP model")
 
     # Make sure model is in eval mode for inference
     model.eval()
@@ -191,10 +191,10 @@ def run_eval(config_path):
 
         # If either folder doesn’t exist, we skip.
         if not os.path.exists(query_path) or not os.path.exists(gallery_path):
-            log(log_path, f"⚠️ Skipping missing split {i}: {query_path} / {gallery_path}")
+            log(log_path, f" Skipping missing split {i}: {query_path} / {gallery_path}")
             continue
 
-        log(log_path, f"\n🔁 Split {i + 1}/{num_splits}")
+        log(log_path, f"\nSplit {i + 1}/{num_splits}")
         start_time = time.time()
 
         # Prepare full image folder paths
@@ -228,12 +228,12 @@ def run_eval(config_path):
         all_map.append(metrics.get("mAP", 0))
 
         # Log all ranks and mAP
-        log(log_path, "✅ Evaluation Metrics:")
+        log(log_path, "Evaluation Metrics:")
         log(log_path, f"   Rank-1 : {metrics.get('Rank-1', 0):.2f}%")
         log(log_path, f"   Rank-5 : {metrics.get('Rank-5', 0):.2f}%")
         log(log_path, f"   Rank-10: {metrics.get('Rank-10', 0):.2f}%")
         log(log_path, f"   mAP    : {metrics.get('mAP', 0):.2f}%")
-        log(log_path, f"⏱️ Time Taken     : {time.time() - start_time:.2f}s")
+        log(log_path, f"Time Taken     : {time.time() - start_time:.2f}s")
 
     # 5. Compute and log the averaged results if we evaluated at least one split.
     if all_rank1:
@@ -242,16 +242,16 @@ def run_eval(config_path):
         avg_rank10 = sum(all_rank10) / len(all_rank10)
         avg_map = sum(all_map) / len(all_map)
 
-        log(log_path, "\n📊 Final Averaged Results Across All Splits:")
+        log(log_path, "\nFinal Averaged Results Across All Splits:")
         log(log_path, f"Rank-1 Accuracy : {avg_rank1:.2f}%")
         log(log_path, f"Rank-5 Accuracy : {avg_rank5:.2f}%")
         log(log_path, f"Rank-10 Accuracy: {avg_rank10:.2f}%")
         log(log_path, f"Mean AP         : {avg_map:.2f}%")
     else:
-        log(log_path, "\n❌ No splits were evaluated. Check dataset path.")
+        log(log_path, "\nNo splits were evaluated. Check dataset path.")
 
     # 6. Indicate where the log was saved
-    log(log_path, f"\n📁 Log saved to: {log_path}")
+    log(log_path, f"\nLog saved to: {log_path}")
 
 
 if __name__ == "__main__":

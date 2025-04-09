@@ -54,14 +54,14 @@ def main(config_path):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     # 🔹 Load training and validation DataLoaders
-    train_loader, _, num_classes = get_train_val_loaders(config)
+    train_loader, val_loader, num_classes = get_train_val_loaders(config)
     config["num_classes"] = num_classes
 
     # 🔹 Build the model components
     clip_model, classifier = build_model(config, freeze_text=True)
 
     # 🔹 Initialize trainer and begin training loop
-    trainer = FinetuneTrainerStage1(clip_model, classifier, train_loader, config, device)
+    trainer = FinetuneTrainerStage1(clip_model, classifier, train_loader, val_loader, config, device)
     trainer.train()
 
 
