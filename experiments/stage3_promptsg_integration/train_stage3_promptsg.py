@@ -157,6 +157,20 @@ def train(config):
                 best_acc1 = acc1
                 best_epoch = epoch
 
+                best_model_path = os.path.join(config['save_dir'], model_name.replace('.pth', '_BEST.pth'))
+                print(f"💾 Saving best model at epoch {epoch} (Acc@1={acc1:.2f}%) → {best_model_path}")
+                torch.save({
+                    'epoch': epoch,
+                    'inversion_model_state_dict': inversion_model.state_dict(),
+                    'multimodal_module_state_dict': multimodal_module.state_dict(),
+                    'clip_visual_state_dict': clip_model.visual.state_dict(),
+                    'classifier_state_dict': classifier.state_dict(),
+                    'optimizer_state_dict': optimizer.state_dict(),
+                    'loss': avg_loss,
+                    'config': config,
+                    'top1_accuracy': acc1
+                }, best_model_path)
+
             if epoch % config['save_frequency'] == 0 or epoch == config['epochs']:
                 print(" Saving model...")
                 torch.save({
