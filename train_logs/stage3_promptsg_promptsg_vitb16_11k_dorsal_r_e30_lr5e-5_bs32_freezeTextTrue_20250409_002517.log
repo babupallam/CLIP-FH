@@ -1,0 +1,374 @@
+    ======= Stage 3: PromptSG Training =======
+Experiment Name : stage3_promptsg_vitb16_11k_dorsal_r
+Model & Dataset : vitb16, 11k, dorsal_r
+Freeze Text Enc.: True
+Loss Weights    : ID=1.0, Tri=1.0, SupCon=0.5
+LR=5e-05 | Epochs=30 | BatchSize=32
+
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
+[Epoch 1] Total Loss=6.8707
+[Epoch 1] Acc@1=9.72% | Acc@5=12.50% | Acc@10=25.00%
+
+==================== Epoch 1 Validation ====================
+Avg Validation Loss : 3.9078
+Validation Top-1    : 8.33%
+Validation Top-5    : 12.50%
+Validation Top-10   : 27.78%
+============================================================
+
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
+[Epoch 2] Total Loss=4.8566
+[Epoch 2] Acc@1=26.39% | Acc@5=54.17% | Acc@10=63.89%
+
+==================== Epoch 2 Validation ====================
+Avg Validation Loss : 2.7624
+Validation Top-1    : 26.39%
+Validation Top-5    : 54.17%
+Validation Top-10   : 66.67%
+============================================================
+
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
+[Epoch 3] Total Loss=3.3256
+[Epoch 3] Acc@1=54.17% | Acc@5=80.56% | Acc@10=84.72%
+
+==================== Epoch 3 Validation ====================
+Avg Validation Loss : 1.9091
+Validation Top-1    : 54.17%
+Validation Top-5    : 80.56%
+Validation Top-10   : 86.11%
+============================================================
+
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
+[Epoch 4] Total Loss=2.5078
+[Epoch 4] Acc@1=68.06% | Acc@5=86.11% | Acc@10=93.06%
+
+==================== Epoch 4 Validation ====================
+Avg Validation Loss : 1.3736
+Validation Top-1    : 68.06%
+Validation Top-5    : 86.11%
+Validation Top-10   : 94.44%
+============================================================
+
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
+[Epoch 5] Total Loss=2.0282
+[Epoch 5] Acc@1=77.78% | Acc@5=90.28% | Acc@10=94.44%
+
+==================== Epoch 5 Validation ====================
+Avg Validation Loss : 1.0034
+Validation Top-1    : 77.78%
+Validation Top-5    : 90.28%
+Validation Top-10   : 95.83%
+============================================================
+
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
+[Epoch 6] Total Loss=1.6943
+[Epoch 6] Acc@1=84.72% | Acc@5=95.83% | Acc@10=97.22%
+
+==================== Epoch 6 Validation ====================
+Avg Validation Loss : 0.7565
+Validation Top-1    : 84.72%
+Validation Top-5    : 94.44%
+Validation Top-10   : 97.22%
+============================================================
+
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
+[Epoch 7] Total Loss=1.5417
+[Epoch 7] Acc@1=87.50% | Acc@5=95.83% | Acc@10=98.61%
+
+==================== Epoch 7 Validation ====================
+Avg Validation Loss : 0.6020
+Validation Top-1    : 87.50%
+Validation Top-5    : 95.83%
+Validation Top-10   : 97.22%
+============================================================
+
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
+[Epoch 8] Total Loss=1.4212
+[Epoch 8] Acc@1=88.89% | Acc@5=97.22% | Acc@10=98.61%
+
+==================== Epoch 8 Validation ====================
+Avg Validation Loss : 0.4850
+Validation Top-1    : 88.89%
+Validation Top-5    : 97.22%
+Validation Top-10   : 98.61%
+============================================================
+
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
+[Epoch 9] Total Loss=1.3164
+[Epoch 9] Acc@1=91.67% | Acc@5=97.22% | Acc@10=98.61%
+
+==================== Epoch 9 Validation ====================
+Avg Validation Loss : 0.4149
+Validation Top-1    : 90.28%
+Validation Top-5    : 97.22%
+Validation Top-10   : 98.61%
+============================================================
+
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
+[Epoch 10] Total Loss=1.2527
+[Epoch 10] Acc@1=93.06% | Acc@5=98.61% | Acc@10=100.00%
+
+==================== Epoch 10 Validation ====================
+Avg Validation Loss : 0.3505
+Validation Top-1    : 93.06%
+Validation Top-5    : 100.00%
+Validation Top-10   : 100.00%
+============================================================
+
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
+[Epoch 11] Total Loss=1.2432
+[Epoch 11] Acc@1=95.83% | Acc@5=100.00% | Acc@10=100.00%
+
+==================== Epoch 11 Validation ====================
+Avg Validation Loss : 0.2883
+Validation Top-1    : 95.83%
+Validation Top-5    : 100.00%
+Validation Top-10   : 100.00%
+============================================================
+
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
+[Epoch 12] Total Loss=1.1539
+[Epoch 12] Acc@1=97.22% | Acc@5=100.00% | Acc@10=100.00%
+
+==================== Epoch 12 Validation ====================
+Avg Validation Loss : 0.2507
+Validation Top-1    : 95.83%
+Validation Top-5    : 100.00%
+Validation Top-10   : 100.00%
+============================================================
+
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
+[Epoch 13] Total Loss=1.0982
+[Epoch 13] Acc@1=97.22% | Acc@5=100.00% | Acc@10=100.00%
+
+==================== Epoch 13 Validation ====================
+Avg Validation Loss : 0.2305
+Validation Top-1    : 97.22%
+Validation Top-5    : 100.00%
+Validation Top-10   : 100.00%
+============================================================
+
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
+[Epoch 14] Total Loss=1.0134
+[Epoch 14] Acc@1=97.22% | Acc@5=100.00% | Acc@10=100.00%
+
+==================== Epoch 14 Validation ====================
+Avg Validation Loss : 0.2038
+Validation Top-1    : 97.22%
+Validation Top-5    : 100.00%
+Validation Top-10   : 100.00%
+============================================================
+
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
+[Epoch 15] Total Loss=1.0122
+[Epoch 15] Acc@1=97.22% | Acc@5=100.00% | Acc@10=100.00%
+
+==================== Epoch 15 Validation ====================
+Avg Validation Loss : 0.1855
+Validation Top-1    : 97.22%
+Validation Top-5    : 100.00%
+Validation Top-10   : 100.00%
+============================================================
+
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
+[Epoch 16] Total Loss=1.0291
+[Epoch 16] Acc@1=97.22% | Acc@5=100.00% | Acc@10=100.00%
+
+==================== Epoch 16 Validation ====================
+Avg Validation Loss : 0.1723
+Validation Top-1    : 97.22%
+Validation Top-5    : 100.00%
+Validation Top-10   : 100.00%
+============================================================
+
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
+[Epoch 17] Total Loss=0.9883
+[Epoch 17] Acc@1=98.61% | Acc@5=100.00% | Acc@10=100.00%
+
+==================== Epoch 17 Validation ====================
+Avg Validation Loss : 0.1543
+Validation Top-1    : 98.61%
+Validation Top-5    : 100.00%
+Validation Top-10   : 100.00%
+============================================================
+
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
+[Epoch 18] Total Loss=0.9336
+[Epoch 18] Acc@1=98.61% | Acc@5=100.00% | Acc@10=100.00%
+
+==================== Epoch 18 Validation ====================
+Avg Validation Loss : 0.1462
+Validation Top-1    : 98.61%
+Validation Top-5    : 100.00%
+Validation Top-10   : 100.00%
+============================================================
+
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
+[Epoch 19] Total Loss=0.9859
+[Epoch 19] Acc@1=97.22% | Acc@5=100.00% | Acc@10=100.00%
+
+==================== Epoch 19 Validation ====================
+Avg Validation Loss : 0.1385
+Validation Top-1    : 98.61%
+Validation Top-5    : 100.00%
+Validation Top-10   : 100.00%
+============================================================
+
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
+[Epoch 20] Total Loss=0.9969
+[Epoch 20] Acc@1=98.61% | Acc@5=100.00% | Acc@10=100.00%
+
+==================== Epoch 20 Validation ====================
+Avg Validation Loss : 0.1272
+Validation Top-1    : 98.61%
+Validation Top-5    : 100.00%
+Validation Top-10   : 100.00%
+============================================================
+
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
+[Epoch 21] Total Loss=0.9687
+[Epoch 21] Acc@1=98.61% | Acc@5=100.00% | Acc@10=100.00%
+
+==================== Epoch 21 Validation ====================
+Avg Validation Loss : 0.1202
+Validation Top-1    : 98.61%
+Validation Top-5    : 100.00%
+Validation Top-10   : 100.00%
+============================================================
+
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
+[Epoch 22] Total Loss=0.9584
+[Epoch 22] Acc@1=98.61% | Acc@5=100.00% | Acc@10=100.00%
+
+==================== Epoch 22 Validation ====================
+Avg Validation Loss : 0.1171
+Validation Top-1    : 98.61%
+Validation Top-5    : 100.00%
+Validation Top-10   : 100.00%
+============================================================
+
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
+[Epoch 23] Total Loss=0.9452
+[Epoch 23] Acc@1=100.00% | Acc@5=100.00% | Acc@10=100.00%
+
+==================== Epoch 23 Validation ====================
+Avg Validation Loss : 0.1116
+Validation Top-1    : 98.61%
+Validation Top-5    : 100.00%
+Validation Top-10   : 100.00%
+============================================================
+
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
+[Epoch 24] Total Loss=0.9760
+[Epoch 24] Acc@1=98.61% | Acc@5=100.00% | Acc@10=100.00%
+
+==================== Epoch 24 Validation ====================
+Avg Validation Loss : 0.1057
+Validation Top-1    : 98.61%
+Validation Top-5    : 100.00%
+Validation Top-10   : 100.00%
+============================================================
+
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
+[Epoch 25] Total Loss=0.9140
+[Epoch 25] Acc@1=98.61% | Acc@5=100.00% | Acc@10=100.00%
+
+==================== Epoch 25 Validation ====================
+Avg Validation Loss : 0.1009
+Validation Top-1    : 98.61%
+Validation Top-5    : 100.00%
+Validation Top-10   : 100.00%
+============================================================
+
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
+[Epoch 26] Total Loss=0.9013
+[Epoch 26] Acc@1=98.61% | Acc@5=100.00% | Acc@10=100.00%
+
+==================== Epoch 26 Validation ====================
+Avg Validation Loss : 0.1001
+Validation Top-1    : 98.61%
+Validation Top-5    : 100.00%
+Validation Top-10   : 100.00%
+============================================================
+
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
+[Epoch 27] Total Loss=0.9202
+[Epoch 27] Acc@1=98.61% | Acc@5=100.00% | Acc@10=100.00%
+
+==================== Epoch 27 Validation ====================
+Avg Validation Loss : 0.0981
+Validation Top-1    : 98.61%
+Validation Top-5    : 100.00%
+Validation Top-10   : 100.00%
+============================================================
+
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
+[Epoch 28] Total Loss=0.9051
+[Epoch 28] Acc@1=98.61% | Acc@5=100.00% | Acc@10=100.00%
+
+==================== Epoch 28 Validation ====================
+Avg Validation Loss : 0.0929
+Validation Top-1    : 98.61%
+Validation Top-5    : 100.00%
+Validation Top-10   : 100.00%
+============================================================
+
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
+[Epoch 29] Total Loss=0.8673
+[Epoch 29] Acc@1=98.61% | Acc@5=100.00% | Acc@10=100.00%
+
+==================== Epoch 29 Validation ====================
+Avg Validation Loss : 0.0874
+Validation Top-1    : 98.61%
+Validation Top-5    : 100.00%
+Validation Top-10   : 100.00%
+============================================================
+
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
+[Epoch 30] Total Loss=0.9499
+[Epoch 30] Acc@1=98.61% | Acc@5=100.00% | Acc@10=100.00%
+
+==================== Epoch 30 Validation ====================
+Avg Validation Loss : 0.0856
+Validation Top-1    : 98.61%
+Validation Top-5    : 100.00%
+Validation Top-10   : 100.00%
+============================================================
+
+
+====== FINAL SUMMARY ======
+Total epochs       : 30
+Avg Loss           : 88.1481
+Best Acc@1 Epoch   : 23
+Best Acc@1         : 100.00%
+============================
