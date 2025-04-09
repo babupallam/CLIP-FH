@@ -1,0 +1,35 @@
+# === Experiment Info ===
+experiment: stage2_joint_vitb16_11k_dorsal_r
+dataset: 11k
+aspect: dorsal_r
+model: vitb16
+variant: clipid
+
+# === Prompt Config ===
+n_ctx: 8
+ctx_init: "a hand"
+prompt_template: "A photo of {}'s {aspect} hand for identification."
+freeze_prompt: false
+freeze_text_encoder: true
+
+# === Training Strategy ===
+stage_mode: prompt_then_image        # options: [prompt_only, image_only, prompt_then_image]
+epochs_prompt: 2                   # prompt learner training epochs
+epochs_image: 2                     # image encoder fine-tuning epochs
+
+# === Optimizer ===
+lr: 0.0001
+weight_decay: 0.0005
+
+# === Loss Function ===
+loss_list: ["supcon"]                # SupCon is used for contrastive alignment
+
+# === Dataloader ===
+batch_size: 32
+num_workers: 4
+shuffle: true
+pin_memory: true
+
+# === Output Paths ===
+output_dir: train_logs/
+save_dir: saved_models/
