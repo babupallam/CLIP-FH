@@ -1,0 +1,101 @@
+Evaluation Log
+==================================================
+Config      : C:\Users\Girija\Documents\GitHub\HandCLIP\configs\baseline\eval_vitb16_hd_dorsal_r.yml
+Experiment  : eval_baseline_vitb16_hd_dorsal_r
+Model       : vitb16
+Variant     : baseline
+Dataset     : hd
+Aspect      : dorsal_r
+Model Path  : N/A
+==================================================
+
+Device: cpu
+Using baseline CLIP model
+
+Split 1/10
+Evaluation Metrics:
+   Rank-1 : 0.00%
+   Rank-5 : 0.20%
+   Rank-10: 0.65%
+   mAP    : 0.72%
+Time Taken     : 1194.08s
+
+Split 2/10
+Evaluation Metrics:
+   Rank-1 : 0.00%
+   Rank-5 : 0.05%
+   Rank-10: 0.50%
+   mAP    : 0.70%
+Time Taken     : 1191.52s
+
+Split 3/10
+Evaluation Metrics:
+   Rank-1 : 0.00%
+   Rank-5 : 0.50%
+   Rank-10: 1.10%
+   mAP    : 0.80%
+Time Taken     : 1188.92s
+
+Split 4/10
+Evaluation Metrics:
+   Rank-1 : 0.00%
+   Rank-5 : 0.25%
+   Rank-10: 0.60%
+   mAP    : 0.76%
+Time Taken     : 1184.77s
+
+Split 5/10
+Evaluation Metrics:
+   Rank-1 : 0.00%
+   Rank-5 : 0.00%
+   Rank-10: 0.35%
+   mAP    : 0.70%
+Time Taken     : 1198.74s
+
+Split 6/10
+Evaluation Metrics:
+   Rank-1 : 0.00%
+   Rank-5 : 0.05%
+   Rank-10: 0.50%
+   mAP    : 0.71%
+Time Taken     : 1198.18s
+
+Split 7/10
+Evaluation Metrics:
+   Rank-1 : 0.00%
+   Rank-5 : 0.30%
+   Rank-10: 0.75%
+   mAP    : 0.77%
+Time Taken     : 1190.47s
+
+Split 8/10
+Evaluation Metrics:
+   Rank-1 : 0.00%
+   Rank-5 : 0.20%
+   Rank-10: 0.95%
+   mAP    : 0.74%
+Time Taken     : 1208.16s
+
+Split 9/10
+Evaluation Metrics:
+   Rank-1 : 0.00%
+   Rank-5 : 0.20%
+   Rank-10: 0.65%
+   mAP    : 0.75%
+Time Taken     : 1195.40s
+
+Split 10/10
+Evaluation Metrics:
+   Rank-1 : 0.00%
+   Rank-5 : 0.30%
+   Rank-10: 0.60%
+   mAP    : 0.77%
+Time Taken     : 1259.04s
+
+Final Averaged Results Across All Splits:
+Rank-1 Accuracy : 0.00%
+Rank-5 Accuracy : 0.21%
+Rank-10 Accuracy: 0.67%
+Mean AP         : 0.74%
+
+Log saved to: eval_logs/eval_baseline_vitb16_hd_dorsal_r_20250410_070025.log

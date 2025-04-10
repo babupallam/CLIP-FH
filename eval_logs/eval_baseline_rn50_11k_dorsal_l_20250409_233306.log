@@ -1,0 +1,101 @@
+Evaluation Log
+==================================================
+Config      : C:\Users\Girija\Documents\GitHub\HandCLIP\configs\baseline\eval_rn50_11k_dorsal_l.yml
+Experiment  : eval_baseline_rn50_11k_dorsal_l
+Model       : rn50
+Variant     : baseline
+Dataset     : 11k
+Aspect      : dorsal_l
+Model Path  : N/A
+==================================================
+
+Device: cpu
+Using baseline CLIP model
+
+Split 1/10
+Evaluation Metrics:
+   Rank-1 : 73.99%
+   Rank-5 : 87.96%
+   Rank-10: 92.71%
+   mAP    : 80.28%
+Time Taken     : 191.20s
+
+Split 2/10
+Evaluation Metrics:
+   Rank-1 : 70.65%
+   Rank-5 : 86.23%
+   Rank-10: 92.41%
+   mAP    : 77.65%
+Time Taken     : 196.77s
+
+Split 3/10
+Evaluation Metrics:
+   Rank-1 : 70.95%
+   Rank-5 : 85.93%
+   Rank-10: 91.09%
+   mAP    : 77.79%
+Time Taken     : 194.15s
+
+Split 4/10
+Evaluation Metrics:
+   Rank-1 : 76.72%
+   Rank-5 : 88.66%
+   Rank-10: 93.83%
+   mAP    : 82.18%
+Time Taken     : 191.46s
+
+Split 5/10
+Evaluation Metrics:
+   Rank-1 : 69.64%
+   Rank-5 : 84.82%
+   Rank-10: 90.49%
+   mAP    : 76.41%
+Time Taken     : 202.20s
+
+Split 6/10
+Evaluation Metrics:
+   Rank-1 : 75.40%
+   Rank-5 : 89.07%
+   Rank-10: 94.33%
+   mAP    : 81.67%
+Time Taken     : 195.82s
+
+Split 7/10
+Evaluation Metrics:
+   Rank-1 : 75.30%
+   Rank-5 : 88.87%
+   Rank-10: 94.13%
+   mAP    : 81.63%
+Time Taken     : 178.38s
+
+Split 8/10
+Evaluation Metrics:
+   Rank-1 : 72.06%
+   Rank-5 : 90.28%
+   Rank-10: 95.14%
+   mAP    : 80.22%
+Time Taken     : 184.74s
+
+Split 9/10
+Evaluation Metrics:
+   Rank-1 : 75.30%
+   Rank-5 : 88.97%
+   Rank-10: 92.51%
+   mAP    : 81.43%
+Time Taken     : 186.65s
+
+Split 10/10
+Evaluation Metrics:
+   Rank-1 : 69.94%
+   Rank-5 : 85.02%
+   Rank-10: 91.50%
+   mAP    : 76.87%
+Time Taken     : 170.85s
+
+Final Averaged Results Across All Splits:
+Rank-1 Accuracy : 73.00%
+Rank-5 Accuracy : 87.58%
+Rank-10 Accuracy: 92.81%
+Mean AP         : 79.61%
+
+Log saved to: eval_logs/eval_baseline_rn50_11k_dorsal_l_20250409_233306.log
