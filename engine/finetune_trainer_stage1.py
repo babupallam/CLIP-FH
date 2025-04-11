@@ -6,7 +6,7 @@ import os  # This helps us work with files and folders on our computer.
 import logging  # This helps us keep track of what's happening during training.
 import time  # This helps us measure how long things take.
 import csv  # This helps us save our training results in a spreadsheet-like format.
-
+from models.utils import save_checkpoint
 class FinetuneTrainerStage1:
     def __init__(self, clip_model, classifier, train_loader, val_loader, config, device):
         """
@@ -123,16 +123,17 @@ class FinetuneTrainerStage1:
                 best_model_path = os.path.join(self.config['save_dir'], model_name)
 
                 # Saving the program's "memory".
-                torch.save({
-                    'epoch': epoch,
-                    'clip_visual_state_dict': self.clip_model.visual.state_dict(),
-                    'classifier_state_dict': self.classifier.state_dict(),
-                    'optimizer_state_dict': self.optimizer.state_dict(),
-                    'loss': avg_loss,
-                    'config': self.config,
-                    'top1_accuracy': val_metrics['top1_accuracy']
-                }, best_model_path)
-
+                save_checkpoint(
+                    model=self.clip_model,
+                    classifier=self.classifier,
+                    optimizer=self.optimizer,
+                    config=self.config,
+                    epoch=epoch,
+                    val_metrics=val_metrics,
+                    path=best_model_path,
+                    is_best=True,
+                    scheduler=getattr(self, "scheduler", None)
+                )
                 self.logger.info(f"Saving best model at epoch {epoch} (Acc@1={val_metrics['top1_accuracy']:.2f}%) -> {best_model_path}")
 
         # Saving the program's "memory" one last time.
@@ -143,7 +144,17 @@ class FinetuneTrainerStage1:
             f"{self.config.get('loss', 'crossentropy')}_FINAL.pth"
         )
         final_model_path = os.path.join(self.config['save_dir'], model_name)
-        torch.save(self.clip_model.state_dict(), final_model_path)
+        save_checkpoint(
+            model=self.clip_model,
+            classifier=self.classifier,
+            optimizer=self.optimizer,
+            config=self.config,
+            epoch=epoch,
+            val_metrics=val_metrics,
+            path=final_model_path,
+            is_best=True,
+            scheduler=getattr(self, "scheduler", None)
+        )
         self.logger.info(f"Model saved to: {final_model_path}")
 
     def validate(self):
