@@ -218,3 +218,96 @@ These `[CTX]` tokens are trained to get better feature alignment with images —
 - But during training, it **uses image–text matching loss** to improve those prompt tokens over time.
 
 ---
+
+
+***
+***
+
+Thanks! I’ve reviewed both `eval_stage1_frozen_text.py` and `run_eval_clip.py` — and here's a **clear professional verdict** on what kind of evaluation this setup performs.
+
+---
+
+## ✅ TL;DR
+
+> 🔍 **This is a proper *Re-identification evaluation*** — NOT a classifier-based accuracy test.
+
+---
+
+## ✅ Why It's Re-identification
+
+### 1. **No Classifier Involved**
+There is:
+- No call to `model.classifier(...)`
+- No `CrossEntropyLoss`
+- No class prediction → compare to label
+
+✔️ Instead, the model is used only to extract **embeddings**:
+```python
+q_feats, q_labels = extract_features(model, query_loader, ...)
+g_feats, g_labels = extract_features(model, gallery_loader, ...)
+```
+
+---
+
+### 2. **Cosine Similarity Is Used**
+```python
+sim_matrix = compute_similarity_matrix(q_feats, g_feats)
+```
+✔️ This is how ReID systems measure similarity — by comparing **embedding vectors**, not class predictions.
+
+---
+
+### 3. **Evaluation Metrics Are ReID Metrics**
+```python
+metrics = evaluate_rank(sim_matrix, q_labels, g_labels, topk=[1, 5, 10])
+```
+
+✔️ This gives:
+- **Rank-1**: Is the correct gallery identity the top match?
+- **Rank-5**, **Rank-10**: Is it in the top 5 or 10?
+- **mAP**: Mean Average Precision across ranked list
+
+These are classic **ReID ranking metrics**.
+
+---
+
+### 4. **Multiple Query-Gallery Splits Are Evaluated**
+```python
+for i in range(num_splits):
+    ...
+    query_path = ...
+    gallery_path = ...
+```
+
+✔️ This is **query-gallery-based evaluation**, not a classification test. Typical of person or hand ReID systems.
+
+---
+
+## ❌ What It’s Not
+
+| Metric                  | Used? |
+|-------------------------|-------|
+| CrossEntropy Loss       | ❌    |
+| Softmax classifier output | ❌    |
+| Accuracy from predicted classes | ❌ |
+
+---
+
+## ✅ Summary
+
+| Aspect                     | Behavior           |
+|----------------------------|--------------------|
+| Type of evaluation         | 🔁 Re-identification |
+| Uses classifier?           | ❌ No              |
+| Uses embedding similarity? | ✅ Yes             |
+| Computes Rank-1/mAP?       | ✅ Yes             |
+| Compatible with CLIP-FH?   | ✅ Perfectly       |
+
+---
+
+Would you like me to help you extend this to include:
+- Attention map logging
+- Per-class mAP
+- Hard positive/negative mining visuals?
+
+Let me know — your current setup is already correct for embedding-based CLIP ReID.
