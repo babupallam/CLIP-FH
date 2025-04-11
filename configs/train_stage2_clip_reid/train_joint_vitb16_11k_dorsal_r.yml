@@ -14,8 +14,8 @@ freeze_text_encoder: true
 
 # === Training Strategy ===
 stage_mode: prompt_then_image        # options: [prompt_only, image_only, prompt_then_image]
-epochs_prompt: 2                   # prompt learner training epochs
-epochs_image: 2                     # image encoder fine-tuning epochs
+epochs_prompt: 30                   # prompt learner training epochs
+epochs_image: 30                     # image encoder fine-tuning epochs
 
 # === Optimizer ===
 lr: 0.0001
