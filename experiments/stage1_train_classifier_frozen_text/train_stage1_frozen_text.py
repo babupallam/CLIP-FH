@@ -132,11 +132,33 @@ class FinetuneTrainerStage1:
 
             val_metrics = self.validate()
 
-            self.logger.info(f"Validation Results")
+            self.logger.info(f"Validation Results (for REID perspective)")
             self.logger.info(f"Rank-1 Accuracy     : {val_metrics['rank1']:.2f}%")
             self.logger.info(f"Rank-5 Accuracy     : {val_metrics['rank5']:.2f}%")
             self.logger.info(f"Rank-10 Accuracy    : {val_metrics['rank10']:.2f}%")
             self.logger.info(f"Mean Average Precision (mAP): {val_metrics['mean_ap']:.2f}%")
+
+            # If classifier is present, measure classification accuracy too
+            if self.classifier is not None:
+                correct1 = correct5 = correct10 = 0
+                total = 0
+                with torch.no_grad():
+                    for images, labels in self.val_loader:
+                        images, labels = images.to(self.device), labels.to(self.device)
+                        feats = self.clip_model.encode_image(images)
+                        outputs = self.classifier(feats)
+                        _, preds = outputs.topk(10, dim=1)
+                        total += labels.size(0)
+                        correct1 += (preds[:, :1] == labels.unsqueeze(1)).sum().item()
+                        correct5 += (preds[:, :5] == labels.unsqueeze(1)).sum().item()
+                        correct10 += (preds[:, :10] == labels.unsqueeze(1)).sum().item()
+
+                cls_acc1 = 100.0 * correct1 / total
+                cls_acc5 = 100.0 * correct5 / total
+                cls_acc10 = 100.0 * correct10 / total
+
+                self.logger.info(f"Validation Results (for Classification perspective)")
+                self.logger.info(f"[Classifier Validation] Acc@1: {cls_acc1:.2f}% | Acc@5: {cls_acc5:.2f}% | Acc@10: {cls_acc10:.2f}%")
 
             with open(self.csv_path, "a", newline="") as f:
                 writer = csv.writer(f)
