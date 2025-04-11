@@ -1,0 +1,66 @@
+--- CLIP Model Architecture Comparison Log ---
+
+Model: official_clip
+  Total parameters     : 302
+  Trainable parameters : 302
+  Frozen parameters    : 0
+  Image encoder params : 152
+  Text encoder params  : 144
+  Prompt-related params: 0 (None)
+  Buffers              : 0
+  Trainable Preview    : positional_embedding, text_projection, logit_scale, visual.class_embedding, visual.positional_embedding...
+  Extra Parameters     : 0 (None)
+
+Model: stage1_frozen_text
+  Total parameters     : 302
+  Trainable parameters : 302
+  Frozen parameters    : 0
+  Image encoder params : 152
+  Text encoder params  : 144
+  Prompt-related params: 0 (None)
+  Buffers              : 0
+  Trainable Preview    : positional_embedding, text_projection, logit_scale, visual.class_embedding, visual.positional_embedding...
+  Extra Parameters     : 0 (None)
+
+Model: stage2_joint
+  Total parameters     : 302
+  Trainable parameters : 302
+  Frozen parameters    : 0
+  Image encoder params : 152
+  Text encoder params  : 144
+  Prompt-related params: 0 (None)
+  Buffers              : 0
+  Trainable Preview    : positional_embedding, text_projection, logit_scale, visual.class_embedding, visual.positional_embedding...
+  Extra Parameters     : 0 (None)
+
+Model: stage3_promptsg
+  Total parameters     : 302
+  Trainable parameters : 302
+  Frozen parameters    : 0
+  Image encoder params : 152
+  Text encoder params  : 144
+  Prompt-related params: 0 (None)
+  Buffers              : 0
+  Trainable Preview    : positional_embedding, text_projection, logit_scale, visual.class_embedding, visual.positional_embedding...
+  Extra Parameters     : 0 (None)
+
+--- Summary & Observations ---
+
+Model: stage1_frozen_text
+  - No prompt module found.
+  - No architectural additions over official CLIP.
+  - All parameters are trainable (no freezing).
+  - Trainable layers same as official CLIP (check if training was effective).
+
+Model: stage2_joint
+  - No prompt module found.
+  - No architectural additions over official CLIP.
+  - All parameters are trainable (no freezing).
+  - Trainable layers same as official CLIP (check if training was effective).
+
+Model: stage3_promptsg
+  - No prompt module found.
+  - No architectural additions over official CLIP.
+  - All parameters are trainable (no freezing).
+  - Trainable layers same as official CLIP (check if training was effective).
+
