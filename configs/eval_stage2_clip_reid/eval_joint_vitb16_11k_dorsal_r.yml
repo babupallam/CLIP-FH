@@ -10,7 +10,7 @@ num_workers: 4
 
 # === Path to the fine-tuned image encoder from Stage 2 joint training ===
 # Change this path to _BEST.pth or _FINAL.pth depending on what you want to evaluate
-model_path: saved_models/stage2_joint_vitb16_11k_dorsal_r_vitb16_11k_dorsal_r_finetune_e2_lr00001_bs32_FINAL.pth
+model_path: saved_models/stage2_joint_vitb16_11k_dorsal_r_vitb16_11k_dorsal_r_finetune_e30_lr00001_bs32_FINAL.pth
 
 # === Output logging directory ===
 output_dir: eval_logs/
