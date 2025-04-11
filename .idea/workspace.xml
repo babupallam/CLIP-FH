@@ -5,20 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c7cde98-b929-4071-bc2e-b0363f4c695d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/HandCLIP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/HandCLIP.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configs/eval_stage1_frozen_text/eval_vitb16_11k_dorsal_r.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/eval_stage1_frozen_text/eval_vitb16_11k_dorsal_r.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/train_stage1_frozen_text/train_vitb16_11k_dorsal_r.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/train_stage1_frozen_text/train_vitb16_11k_dorsal_r.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deep_compare_clip_models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/run_eval_clip.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/run_eval_clip.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/stage1_train_classifier_frozen_text/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/stage1_train_classifier_frozen_text/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run_full_handclip_pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_full_handclip_pipeline.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/train_logs/stage1_stage1_frozen_text_vitb16_11k_dorsal_r_e30_lr00001_bs32_losscross_entropy.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/train_logs/stage1_stage1_frozen_text_vitb16_11k_dorsal_r_e5_lr00001_bs32_losscross_entropy.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/train_logs/stage1_stage1_frozen_text_vitb16_11k_dorsal_r_e30_lr00001_bs32_losscross_entropy.log" beforeDir="false" afterPath="$PROJECT_DIR$/train_logs/stage1_stage1_frozen_text_vitb16_11k_dorsal_r_e30_lr00001_bs32_losscross_entropy.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +100,7 @@
       <workItem from="1743644798987" duration="34457000" />
       <workItem from="1743727135744" duration="417000" />
       <workItem from="1743727805200" duration="271051000" />
-      <workItem from="1744357298496" duration="15727000" />
+      <workItem from="1744357298496" duration="21441000" />
     </task>
     <servers />
   </component>
