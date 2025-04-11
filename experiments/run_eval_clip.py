@@ -11,6 +11,7 @@ import torch
 import clip
 import time
 from datetime import datetime
+from models.utils import load_checkpoint
 
 # Local imports from your repository
 from engine.baseline_inference import extract_features, compute_similarity_matrix
@@ -124,8 +125,8 @@ def run_eval(config_path):
     dataset = config["dataset"]
     aspect = config["aspect"]
     variant = config.get("variant", "baseline")
-    model_path = config.get("model_path", None)
-    batch_size = config.get("batch_size", 32)
+    model_path = config.get("model_path")
+    batch_size = config.get("batch_size")
     num_splits = config.get("num_splits", 10)
 
     # Decide on device (GPU if available, otherwise CPU).
@@ -149,21 +150,23 @@ def run_eval(config_path):
 
     model, preprocess = clip.load(clip_name, device=device)
 
-    # If a variant other than baseline is specified, we attempt to load a fine-tuned checkpoint.
-    if variant != "baseline":
-        if not model_path or not os.path.exists(model_path):
-            log(log_path, f"Checkpoint not found: {model_path}")
-            return
-        state_dict = torch.load(model_path, map_location=device, weights_only=True)
+    if model_path:
+        if not os.path.exists(model_path):
+            log(log_path, f"[ERROR] Specified checkpoint does not exist: {model_path}")
+            raise FileNotFoundError(f"Checkpoint not found at {model_path}")
 
-        # If the state_dict is wrapped under a "model" key, unwrap it.
-        if "model" in state_dict:
-            model.load_state_dict(state_dict["model"], strict=False)
-        else:
-            model.load_state_dict(state_dict, strict=False)
-        log(log_path, f"Loaded fine-tuned model from: {model_path}")
+        log(log_path, f"Loading fine-tuned model from: {model_path}")
+        checkpoint, config_ckpt, epoch_ckpt, metadata_ckpt = load_checkpoint(
+            path=model_path,
+            model=model,
+            device=device,
+            config=config
+        )
+        log(log_path, f"Model weights loaded successfully from: {model_path}")
+        log(log_path, f"Checkpoint restored from epoch {epoch_ckpt}")
+        log(log_path, f"Checkpoint metadata: {metadata_ckpt}")
     else:
-        log(log_path, "Using baseline CLIP model")
+        log(log_path, "No fine-tuned model path specified. Using official CLIP baseline.")
 
     # Make sure model is in eval mode for inference
     model.eval()

@@ -90,3 +90,100 @@ def save_checkpoint(
     print(f"Saved {tag} checkpoint to: {path}")
 
 
+
+import torch
+import os
+import warnings
+
+def load_checkpoint(
+    path,
+    model,
+    classifier=None,
+    optimizer=None,
+    scheduler=None,
+    device="cpu",
+    config=None
+):
+    """
+    Universal checkpoint loader for CLIP-FH training/eval stages.
+
+    Args:
+        path (str): Path to the saved model checkpoint (.pth).
+        model (nn.Module): The CLIP model instance.
+        classifier (nn.Module, optional): The classifier head (Stage 1).
+        optimizer (Optimizer, optional): The optimizer used during training.
+        scheduler (Scheduler, optional): LR scheduler (if used).
+        device (str): 'cuda' or 'cpu'.
+        config (dict, optional): Runtime config for comparison/logging.
+
+    Returns:
+        checkpoint (dict)
+        checkpoint_config (dict)
+        epoch (int)
+        metadata (dict)
+    """
+    if not path or not os.path.exists(path):
+        raise FileNotFoundError(f"[ERROR] Checkpoint not found: {path}")
+
+    checkpoint = torch.load(path, map_location=device)
+
+    # === Load model weights ===
+    if "model_state_dict" in checkpoint:
+        missing, unexpected = model.load_state_dict(checkpoint["model_state_dict"], strict=False)
+        if missing:
+            warnings.warn(f"[WARN] Missing model keys: {missing}")
+        if unexpected:
+            warnings.warn(f"[WARN] Unexpected model keys: {unexpected}")
+    else:
+        model.load_state_dict(checkpoint, strict=False)
+
+    # === Restore requires_grad flags ===
+    if "trainable_flags" in checkpoint:
+        for name, param in model.named_parameters():
+            if name in checkpoint["trainable_flags"]:
+                param.requires_grad = checkpoint["trainable_flags"][name]
+    else:
+        warnings.warn("[INFO] No trainable_flags found in checkpoint.")
+
+    # === Load classifier (if present) ===
+    if classifier and "classifier_state_dict" in checkpoint:
+        try:
+            classifier.load_state_dict(checkpoint["classifier_state_dict"], strict=False)
+        except Exception as e:
+            warnings.warn(f"[WARN] Failed to load classifier: {e}")
+    elif classifier is not None:
+        warnings.warn("[INFO] Classifier passed in, but no classifier_state_dict found in checkpoint.")
+
+    # === Load optimizer (if present) ===
+    if optimizer and "optimizer_state_dict" in checkpoint:
+        try:
+            optimizer.load_state_dict(checkpoint["optimizer_state_dict"])
+        except Exception as e:
+            warnings.warn(f"[WARN] Failed to load optimizer state: {e}")
+
+    # === Load scheduler (if present) ===
+    if scheduler and "scheduler_state_dict" in checkpoint:
+        try:
+            scheduler.load_state_dict(checkpoint["scheduler_state_dict"])
+        except Exception as e:
+            warnings.warn(f"[WARN] Failed to load scheduler state: {e}")
+
+    # === RNG restoration ===
+    if "rng_state" in checkpoint:
+        torch.set_rng_state(checkpoint["rng_state"]["torch_rng_state"])
+        if torch.cuda.is_available() and checkpoint["rng_state"]["cuda_rng_state"]:
+            torch.cuda.set_rng_state_all(checkpoint["rng_state"]["cuda_rng_state"])
+
+    # === Meta info ===
+    checkpoint_config = checkpoint.get("config", {})
+    metadata = checkpoint.get("metadata", {})
+    epoch = checkpoint.get("epoch", 0)
+
+    print(f"Checkpoint loaded from: {path}")
+    print(f"Restored to epoch: {epoch}")
+
+    # === Optional config comparison ===
+    if config and checkpoint_config and checkpoint_config != config:
+        warnings.warn("[INFO] Loaded checkpoint config differs from current config.")
+
+    return checkpoint, checkpoint_config, epoch, metadata

@@ -1,1 +1,3 @@
-epoch,train_loss,train_acc1,train_acc5,train_acc10,val_loss,val_acc1,val_acc5,val_acc10,learning_rate,epoch_time_sec
+2025-04-11 13:35:13,380 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+2025-04-11 13:35:13,382 - INFO - [DEBUG] img_features: torch.Size([32, 512]), prompt: N/A, pooled: torch.Size([32, 72])
+2025-04-11 13:35:13,385 - INFO - [DEBUG] logits std: 0.3234
