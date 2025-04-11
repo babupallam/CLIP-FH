@@ -1,0 +1,101 @@
+Evaluation Log
+==================================================
+Config      : C:\Users\Girija\Documents\GitHub\HandCLIP\configs\baseline\eval_vitb16_11k_palmar_r.yml
+Experiment  : eval_baseline_vitb16_11k_palmar_r
+Model       : vitb16
+Variant     : baseline
+Dataset     : 11k
+Aspect      : palmar_r
+Model Path  : N/A
+==================================================
+
+Device: cpu
+Using baseline CLIP model
+
+Split 1/10
+Evaluation Metrics:
+   Rank-1 : 65.21%
+   Rank-5 : 81.24%
+   Rank-10: 88.99%
+   mAP    : 72.57%
+Time Taken     : 342.21s
+
+Split 2/10
+Evaluation Metrics:
+   Rank-1 : 60.96%
+   Rank-5 : 82.88%
+   Rank-10: 91.82%
+   mAP    : 70.23%
+Time Taken     : 339.04s
+
+Split 3/10
+Evaluation Metrics:
+   Rank-1 : 61.94%
+   Rank-5 : 81.68%
+   Rank-10: 88.33%
+   mAP    : 70.73%
+Time Taken     : 339.96s
+
+Split 4/10
+Evaluation Metrics:
+   Rank-1 : 63.25%
+   Rank-5 : 81.90%
+   Rank-10: 90.19%
+   mAP    : 71.42%
+Time Taken     : 341.66s
+
+Split 5/10
+Evaluation Metrics:
+   Rank-1 : 63.79%
+   Rank-5 : 80.15%
+   Rank-10: 85.61%
+   mAP    : 71.61%
+Time Taken     : 341.18s
+
+Split 6/10
+Evaluation Metrics:
+   Rank-1 : 63.58%
+   Rank-5 : 83.97%
+   Rank-10: 90.51%
+   mAP    : 72.45%
+Time Taken     : 342.60s
+
+Split 7/10
+Evaluation Metrics:
+   Rank-1 : 62.92%
+   Rank-5 : 79.50%
+   Rank-10: 87.90%
+   mAP    : 70.80%
+Time Taken     : 339.54s
+
+Split 8/10
+Evaluation Metrics:
+   Rank-1 : 60.63%
+   Rank-5 : 78.30%
+   Rank-10: 86.26%
+   mAP    : 68.53%
+Time Taken     : 338.09s
+
+Split 9/10
+Evaluation Metrics:
+   Rank-1 : 60.96%
+   Rank-5 : 81.24%
+   Rank-10: 87.90%
+   mAP    : 69.90%
+Time Taken     : 342.50s
+
+Split 10/10
+Evaluation Metrics:
+   Rank-1 : 63.03%
+   Rank-5 : 78.63%
+   Rank-10: 88.11%
+   mAP    : 70.97%
+Time Taken     : 342.00s
+
+Final Averaged Results Across All Splits:
+Rank-1 Accuracy : 62.63%
+Rank-5 Accuracy : 80.95%
+Rank-10 Accuracy: 88.56%
+Mean AP         : 70.92%
+
+Log saved to: eval_logs/eval_baseline_vitb16_11k_palmar_r_20250410_060329.log
