@@ -1,2 +1,0 @@
-2025-04-11 11:21:47,273 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
-2025-04-11 11:21:47,275 - INFO - [DEBUG] img_features: torch.Size([32, 512]), prompt: N/A, pooled: torch.Size([32, 72])
