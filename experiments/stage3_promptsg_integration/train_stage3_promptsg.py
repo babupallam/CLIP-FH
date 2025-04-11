@@ -37,14 +37,31 @@ def generate_model_name(cfg):
             f"e{cfg['epochs']}_lr{cfg['lr_modules']}_bs{cfg['batch_size']}_"
             f"freezeText{cfg['freeze_text_encoder']}.pth")
 
+def freeze_clip_text_encoder(clip_model):
+    for param in clip_model.transformer.parameters():
+        param.requires_grad = False
+    for param in clip_model.token_embedding.parameters():
+        param.requires_grad = False
+    clip_model.positional_embedding.requires_grad = False
+    clip_model.ln_final.requires_grad = False
+    clip_model.text_projection.requires_grad = False
+
+
 def train(config):
 
     clip_model, preprocess = clip.load(config['clip_model'], device=device)
     clip_model.eval()
 
+
+    if config.get("freeze_text_encoder", True):
+        freeze_clip_text_encoder(clip_model)
+
+    # turns image features into pseudo-tokens.
     inversion_model = TextualInversionMLP(config['pseudo_token_dim'], config['pseudo_token_dim']).to(device)
+    # connects text & vision using attention.
     multimodal_module = MultiModalInteraction(dim=config['pseudo_token_dim'],
                                               depth=config['transformer_layers']).to(device)
+    #  predicts the person/identity based on enhanced features.
     classifier = nn.Linear(config['pseudo_token_dim'], get_train_val_loaders(config)[2]).to(device)
 
     lr_clip = float(config['lr_clip_visual'])
@@ -98,8 +115,8 @@ def train(config):
                 images, labels = images.to(device), labels.to(device)
                 optimizer.zero_grad()
 
-                with torch.no_grad():
-                    img_features = clip_model.encode_image(images).float()
+                #with torch.no_grad(): not freexing image encoder
+                img_features = clip_model.encode_image(images).float()
 
                 pseudo_tokens = inversion_model(img_features)
                 text_emb = compose_prompt(clip_model.encode_text, pseudo_tokens)
