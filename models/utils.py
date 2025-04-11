@@ -32,7 +32,7 @@ def save_checkpoint(
     has_classifier = classifier is not None
     has_scheduler = scheduler is not None
     clip_variant = config.get("clip_model", "ViT-B/16")
-    text_encoder_frozen = config.get("freeze_text", True)
+    text_encoder_frozen = config.get("freeze_text", False)
 
     # Generate config hash for traceability
     config_serialized = str(sorted(config.items()))
@@ -72,7 +72,10 @@ def save_checkpoint(
         "top10_accuracy": val_metrics.get("top10_accuracy"),
         "config": config,
         "metadata": metadata,
-        "rng_state": rng_state
+        "rng_state": rng_state,
+        "trainable_flags": {
+            n: p.requires_grad for n, p in model.named_parameters()
+        }
     }
 
     if has_classifier:
@@ -85,3 +88,5 @@ def save_checkpoint(
     torch.save(checkpoint, path)
     tag = "BEST" if is_best else "FINAL"
     print(f"Saved {tag} checkpoint to: {path}")
+
+

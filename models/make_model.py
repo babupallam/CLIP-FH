@@ -26,9 +26,14 @@ def build_model(config, freeze_text=False):
     clip_model, _ = clip.load("ViT-B/16" if model_name == "vitb16" else "RN50", device=device)
 
     # Optionally freeze text encoder (CLIP's transformer) to prevent updating its weights during training
+    '''
+     This freezes:
+        The full text encoder (transformer)
+        Embedding layers
+        Text projection layer
+    '''
     if freeze_text:
-        for p in clip_model.transformer.parameters():
-            p.requires_grad = False
+        freeze_clip_text_encoder(clip_model)
 
     # Get the dimensionality of the image embedding output from CLIP (e.g., 512 or 1024)
     image_embed_dim = clip_model.visual.output_dim
@@ -41,3 +46,18 @@ def build_model(config, freeze_text=False):
 
     # Return the CLIP model and the classifier head separately
     return clip_model, classifier
+
+
+
+def freeze_clip_text_encoder(model):
+    """
+    Freezes all text-related parameters in CLIP.
+    """
+    for name, param in model.named_parameters():
+        if (
+            name.startswith("transformer") or
+            "token_embedding" in name or
+            "text_projection" in name
+        ):
+            param.requires_grad = False
+            print(f"Freezing {name} parameters")
