@@ -8,7 +8,7 @@ commands = [
     },
     {
         "title": "🧪 Stage 1: Evaluation",
-        "cmd": "python experiments/stage1_train_classifier_frozen_text/eval_stage1_frozen_text_single.py configs/eval_stage1_frozen_text/eval_vitb16_11k_dorsal_r.yml"
+        "cmd": "python experiments/stage1_train_classifier_frozen_text/eval_stage1_frozen_text.py configs/eval_stage1_frozen_text/eval_vitb16_11k_dorsal_r.yml"
     },
     {
         "title": "🔧 Stage 2: Train CLIP ReID - Joint Training (Prompt + Image Encoder)",
