@@ -85,3 +85,83 @@ save_checkpoint(
 | Compatible with ReID best practices | ✅ Yes | ✅
 
 ---
+
+***
+***
+Excellent question — and your instinct is spot on.
+
+Let’s answer this **strategically for your CLIP-FH ReID project**:
+
+---
+
+## 🎯 You’re Training For: **Re-identification**
+
+That means:
+- Your goal is **accurate ranking of identity embeddings**
+- Not class prediction (as in classification)
+- So **retrieval metrics** matter more than just loss
+
+---
+
+## 🧠 Should We Use `val_metrics['rank1']` or `val_metrics['avg_val_loss']`?
+
+### 🔹 If you use `val_metrics['rank1']`:
+- You're saving the model that best ranks the same identity at the top (Rank-1)
+- ✔️ **This aligns directly with your final goal**
+- ❗But early in training, Rank-1 might fluctuate wildly (e.g., 0 → 10 → 0), which could miss better **generalization**
+
+### 🔹 If you use `val_metrics['avg_val_loss']`:
+- You’re saving the model that **minimizes validation loss**
+- This loss is based on **CrossEntropy** over the classifier (used for training)
+- ❗But it may not correlate with good ReID retrieval performance (embedding quality)
+
+---
+
+## ✅ Best Practice for ReID Projects Like Yours:
+
+Use **Rank-1 Accuracy as your primary checkpointing metric**, because:
+- You're ultimately doing retrieval
+- mAP and Rank-1 are standard in ReID research
+- Classifier loss can go down while embeddings are still bad
+
+---
+
+### ✅ Robust Save Condition for Your Case
+
+Update your condition to this:
+```python
+if epoch == 1 or val_metrics['rank1'] > best_acc1:
+```
+
+And track `best_acc1 = val_metrics['rank1']` as you already do.
+
+✅ This ensures:
+- First epoch always saves
+- Any improvement in retrieval ability (Rank-1) saves the model
+
+---
+
+### 🧪 Optional: Save Best by mAP Too
+
+If your project will report mAP as a major benchmark (common in papers), you can add:
+
+```python
+if val_metrics['mean_ap'] > best_map:
+    # Save checkpoint for best mAP separately
+```
+
+---
+
+## ✅ Final Answer
+
+> ✔️ **Use Rank-1 Accuracy (`val_metrics['rank1']`) for best checkpointing**, not loss  
+> Because your goal is to retrieve correct identities, not just minimize classifier loss.
+
+---
+
+Would you like me to help you track and save both `BEST_RANK1.pth` and `BEST_MAP.pth` models simultaneously? It’s useful for post-hoc model comparison.
+
+
+***
+***
+

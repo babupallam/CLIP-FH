@@ -8,8 +8,6 @@ variant: stage1_frozen_text
 batch_size: 32
 num_workers: 4
 
-# Path to the trained model checkpoint
-model_path: saved_models/stage1_frozen_text_vitb16_11k_dorsal_r_e30_lr0p0001_bs32_cross_entropy_BEST.pth
+model_path: "saved_models/stage1_stage1_frozen_text_vitb16_11k_dorsal_r_e5_lr00001_bs32_losscross_entropy_FINAL.pth"
 
-# Where to save evaluation results/logs
 output_dir: eval_logs/

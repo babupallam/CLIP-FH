@@ -9,7 +9,6 @@ if "datasets" not in os.listdir(PROJECT_ROOT):
 if PROJECT_ROOT not in sys.path:
     sys.path.insert(0, PROJECT_ROOT)
 
-import sys
 import os
 import argparse
 import yaml
@@ -120,6 +119,7 @@ class FinetuneTrainerStage1:
                 if batch_idx == 0:
                     self.logger.info(f"[DEBUG] Batch 0 - image shape: {images.shape}, labels: {labels.shape}")
                     self.logger.info(f"[DEBUG] img_features: {features.shape}, prompt: N/A, pooled: {outputs.shape}")
+                    self.logger.info(f"[DEBUG] logits std: {outputs.std().item():.4f}")
 
             avg_loss = total_loss / len(self.train_loader)
             acc1 = 100.0 * correct_rank1 / total
@@ -147,7 +147,7 @@ class FinetuneTrainerStage1:
                     self.lr, epoch_time
                 ])
 
-            if val_metrics['rank1'] > best_acc1:
+            if epoch == 1 or val_metrics['rank1'] > best_acc1:
                 best_acc1 = val_metrics['rank1']
                 model_name = generate_model_name(self.config) + "_BEST.pth"
                 best_model_path = os.path.join(self.config['save_dir'], model_name)
@@ -179,6 +179,8 @@ class FinetuneTrainerStage1:
                     scheduler=getattr(self, "scheduler", None)
                 )
                 self.logger.info(f"Saving best model at epoch {epoch} -> {best_model_path}")
+            else:
+                self.logger.info(f"[INFO] No improvement in Rank-1 ({val_metrics['rank1']:.2f}%), skipping checkpoint.")
 
         model_name = generate_model_name(self.config) + "_FINAL.pth"
         final_model_path = os.path.join(self.config['save_dir'], model_name)
@@ -232,6 +234,8 @@ class FinetuneTrainerStage1:
         all_feats = torch.cat(all_feats, dim=0)
         all_labels = torch.cat(all_labels, dim=0)
         all_feats = F.normalize(all_feats, dim=1)
+
+        self.logger.info(f"[DEBUG] Val embedding norm mean: {all_feats.norm(dim=1).mean():.4f}")
 
         sim_matrix = torch.matmul(all_feats, all_feats.T)
         N = len(all_labels)
