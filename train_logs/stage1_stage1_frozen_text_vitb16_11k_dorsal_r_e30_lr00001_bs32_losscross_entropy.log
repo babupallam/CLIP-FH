@@ -1,0 +1,1 @@
+epoch,train_loss,train_acc1,train_acc5,train_acc10,val_loss,val_acc1,val_acc5,val_acc10,learning_rate,epoch_time_sec

@@ -26,8 +26,8 @@ def run_single_eval_config(config_path):
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("⚠️ Usage: python eval_stage1_frozen_text_single.py <full_path_to_config.yml>")
-        print("    e.g. python eval_stage1_frozen_text_single.py configs/eval_stage1_frozen_text/eval_vitb16_11k_dorsal_r.yml")
+        print("⚠️ Usage: python eval_stage1_frozen_text.py <full_path_to_config.yml>")
+        print("    e.g. python eval_stage1_frozen_text.py configs/eval_stage1_frozen_text/eval_vitb16_11k_dorsal_r.yml")
         sys.exit(1)
 
     config_file_path = sys.argv[1]
