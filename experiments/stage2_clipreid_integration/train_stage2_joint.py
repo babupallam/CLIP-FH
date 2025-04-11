@@ -109,9 +109,9 @@ def validate(model, prompt_learner, val_loader, device, config, log):
         aps.append(ap.item())
     metrics["mAP"] = sum(aps) / len(aps)
 
-
     for r in ranks:
-        correct = (sim_matrix.topk(r, dim=1).indices == torch.arange(sim_matrix.size(0), device=device).unsqueeze(1)).any(dim=1)
+        k = min(r, sim_matrix.size(1))  # Avoid topk crash
+        correct = (sim_matrix.topk(k, dim=1).indices == torch.arange(sim_matrix.size(0), device=device).unsqueeze(1)).any(dim=1)
         metrics[f"rank{r}"] = correct.float().mean().item()
 
     log("\nValidation Results:")
