@@ -22,6 +22,7 @@ from torch.utils.data import DataLoader
 from torch.utils.data.sampler import Sampler
 from collections import defaultdict
 import random
+from torch.utils.data import DataLoader, ConcatDataset
 
 
 def get_dataloader(data_dir, batch_size=64, shuffle=False, num_workers=4, train=True):
@@ -50,25 +51,19 @@ def get_dataloader(data_dir, batch_size=64, shuffle=False, num_workers=4, train=
 
 def get_train_val_loaders(config):
     """
-    Loads and returns the training and validation DataLoaders for training CLIP image encoder.
-
-    Args:
-        config (dict): Should contain keys:
-            - dataset (str): "11k" or "hd"
-            - aspect  (str): e.g., "dorsal", "palmar"
-            - batch_size (int): number of images per batch
+    Loads training and validation DataLoaders.
+    Temporarily replaces 'val' with query0+gallery0 for ReID-based validation.
 
     Returns:
-        train_loader (DataLoader): Training set loader
-        val_loader (DataLoader)  : Validation set loader
-        num_classes (int)        : Number of unique classes in training set
+        train_loader (DataLoader)
+        val_loader (DataLoader)  : Combined query0 + gallery0
+        num_classes (int)
     """
-
     dataset = config["dataset"]
     aspect = config["aspect"]
     batch_size = config["batch_size"]
 
-    # Set base directory based on dataset and aspect
+    # Define base path
     if dataset == "11k":
         base_path = f"./datasets/11khands/train_val_test_split_{aspect}"
     elif dataset == "hd":
@@ -76,33 +71,30 @@ def get_train_val_loaders(config):
     else:
         raise ValueError("Unsupported dataset in config.")
 
-    # Directories for train and val splits
     train_dir = os.path.join(base_path, "train")
-    val_dir = os.path.join(base_path, "val")
+    query_dir = os.path.join(base_path, "query0")
+    gallery_dir = os.path.join(base_path, "gallery0")
 
-    # Standard resizing and tensor conversion
     transform = transforms.Compose([
-        transforms.Resize((224, 224)),  # Resize to fixed input size
-        transforms.ToTensor(),          # Convert image to PyTorch tensor
+        transforms.Resize((224, 224)),
+        transforms.ToTensor(),
     ])
 
-    # Load train and val datasets using ImageFolder (labels inferred from subfolder names)
+    # Load datasets
     train_dataset = datasets.ImageFolder(train_dir, transform=transform)
-    val_dataset = datasets.ImageFolder(val_dir, transform=transform)
+    query_dataset = datasets.ImageFolder(query_dir, transform=transform)
+    gallery_dataset = datasets.ImageFolder(gallery_dir, transform=transform)
 
-    num_workers = config.get("num_workers", 4)
+    # Combine query0 and gallery0 into one validation set
+    val_dataset = ConcatDataset([query_dataset, gallery_dataset])
 
     # Create DataLoaders
+    num_workers = config.get("num_workers", 4)
     train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, num_workers=num_workers)
     val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False, num_workers=num_workers)
 
-    # Get number of unique classes (important for loss functions, classification heads, etc.)
     num_classes = len(train_dataset.classes)
-    #print(f"f numer of classes found is {num_classes}")
-
-
     return train_loader, val_loader, num_classes
-
 
 def get_test_loader(config):
     """

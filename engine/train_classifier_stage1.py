@@ -50,8 +50,9 @@ class FinetuneTrainerStage1:
             writer = csv.writer(f)
             writer.writerow([
                 "epoch", "train_loss", "train_acc1", "train_acc5", "train_acc10",
-                "val_loss", "val_acc1", "val_acc5", "val_acc10", "learning_rate", "epoch_time_sec"
-            ]) # Write header row to CSV.
+                "val_rank1", "val_rank5", "val_rank10", "val_mAP",
+                "learning_rate", "epoch_time_sec"
+            ])
 
     def train(self):
         """
@@ -106,15 +107,16 @@ class FinetuneTrainerStage1:
 
             # === Validation ===
             self.clip_model.classifier = self.classifier  # Required for validate()
+
             val_metrics = validate(
                 model=self.clip_model,
                 prompt_learner=None,
                 val_loader=self.val_loader,
                 device=self.device,
                 log=self.logger.info,
-                val_type="both",  # compute both classifier and embedding metrics
+                val_type="reid",  # <--  classifier not now
                 batch_size=self.config.get("batch_size", 32),
-                loss_fn = self.ce_loss
+                loss_fn=[self.ce_loss, self.triplet_loss]  # pass both losses unchanged
             )
 
             # === Save best checkpoint ===
@@ -138,14 +140,21 @@ class FinetuneTrainerStage1:
                 self.logger.info(f"[INFO] No improvement in Rank-1 ({val_metrics['rank1']:.2f}%), skipping checkpoint.")
 
             # === Log to CSV ===
-            with open(self.csv_path, "a", newline="") as f: # Open CSV file for appending.
+            with open(self.csv_path, "a", newline="") as f:
                 writer = csv.writer(f)
                 writer.writerow([
-                    epoch, avg_loss, acc1, acc5, acc10,
-                    val_metrics['avg_val_loss'], val_metrics['rank1'],
-                    val_metrics['rank5'], val_metrics['rank10'],
-                    self.lr, epoch_time
-                ]) # Write epoch metrics to CSV.
+                    epoch,
+                    avg_loss,
+                    acc1,
+                    acc5,
+                    acc10,
+                    val_metrics.get('rank1', 0.0),
+                    val_metrics.get('rank5', 0.0),
+                    val_metrics.get('rank10', 0.0),
+                    val_metrics.get('mAP', 0.0),
+                    self.lr,
+                    epoch_time
+                ])
 
         # === Final model save ===
         model_name = build_filename(self.config, epoch, stage="image", extension="_FINAL.pth", timestamped=False) # Build final model filename.
