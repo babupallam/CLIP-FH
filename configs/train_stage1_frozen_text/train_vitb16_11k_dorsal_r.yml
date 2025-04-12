@@ -9,7 +9,7 @@ variant: stage1_frozen_text
 freeze_text: true
 
 
-epochs: 30
+epochs: 10
 batch_size: 32
 lr: 0.0001
 num_workers: 4

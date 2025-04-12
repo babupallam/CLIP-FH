@@ -1,0 +1,152 @@
+2025-04-12 16:17:18,039 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+2025-04-12 16:17:18,039 - INFO - [DEBUG] img_features: torch.Size([32, 512]), prompt: N/A, pooled: torch.Size([32, 72])
+2025-04-12 16:17:18,042 - INFO - [DEBUG] logits std: 0.3197
+2025-04-12 16:17:18,042 - INFO - [DEBUG] CE loss: 4.3597, Triplet loss: 0.0645, Total: 4.4242
+2025-04-12 16:29:01,947 - INFO - [Epoch 1] Total Loss=4.2798
+2025-04-12 16:29:01,948 - INFO - [Epoch 1] Acc@1=2.70% | Acc@5=13.71% | Acc@10=28.31%
+2025-04-12 16:29:01,951 - INFO - [Validation] Extracting features...
+2025-04-12 16:33:58,238 - INFO - [Validation] Evaluating ranks and mAP...
+2025-04-12 16:33:59,003 - INFO - 
+[ReID Validation]
+2025-04-12 16:33:59,004 - INFO - RANK1: 27.29%
+2025-04-12 16:33:59,004 - INFO - RANK5: 51.60%
+2025-04-12 16:33:59,004 - INFO - RANK10: 66.22%
+2025-04-12 16:33:59,004 - INFO - MAP: 39.09%
+2025-04-12 16:34:00,353 - INFO - Saving best model at epoch 1 -> saved_models/stage1_frozen_text_vitb16_11k_dorsal_r_vitb16_11k_dorsal_r_finetune_e1_lr00001_bs32_BEST.pth
+2025-04-12 16:34:43,568 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+2025-04-12 16:34:43,569 - INFO - [DEBUG] img_features: torch.Size([32, 512]), prompt: N/A, pooled: torch.Size([32, 72])
+2025-04-12 16:34:43,569 - INFO - [DEBUG] logits std: 0.5914
+2025-04-12 16:34:43,569 - INFO - [DEBUG] CE loss: 4.1268, Triplet loss: 0.0000, Total: 4.1268
+2025-04-12 16:46:21,863 - INFO - [Epoch 2] Total Loss=4.2132
+2025-04-12 16:46:21,864 - INFO - [Epoch 2] Acc@1=4.83% | Acc@5=19.78% | Acc@10=33.37%
+2025-04-12 16:46:21,865 - INFO - [Validation] Extracting features...
+2025-04-12 16:51:15,618 - INFO - [Validation] Evaluating ranks and mAP...
+2025-04-12 16:51:16,340 - INFO - 
+[ReID Validation]
+2025-04-12 16:51:16,340 - INFO - RANK1: 27.81%
+2025-04-12 16:51:16,340 - INFO - RANK5: 50.36%
+2025-04-12 16:51:16,340 - INFO - RANK10: 64.68%
+2025-04-12 16:51:16,340 - INFO - MAP: 39.45%
+2025-04-12 16:51:17,573 - INFO - Saving best model at epoch 2 -> saved_models/stage1_frozen_text_vitb16_11k_dorsal_r_vitb16_11k_dorsal_r_finetune_e2_lr00001_bs32_BEST.pth
+2025-04-12 16:51:59,919 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+2025-04-12 16:51:59,919 - INFO - [DEBUG] img_features: torch.Size([32, 512]), prompt: N/A, pooled: torch.Size([32, 72])
+2025-04-12 16:51:59,920 - INFO - [DEBUG] logits std: 0.6042
+2025-04-12 16:51:59,920 - INFO - [DEBUG] CE loss: 4.0411, Triplet loss: 0.0574, Total: 4.0985
+2025-04-12 17:03:33,941 - INFO - [Epoch 3] Total Loss=4.0761
+2025-04-12 17:03:33,941 - INFO - [Epoch 3] Acc@1=4.94% | Acc@5=25.62% | Acc@10=41.80%
+2025-04-12 17:03:33,942 - INFO - [Validation] Extracting features...
+2025-04-12 17:08:25,704 - INFO - [Validation] Evaluating ranks and mAP...
+2025-04-12 17:08:26,426 - INFO - 
+[ReID Validation]
+2025-04-12 17:08:26,426 - INFO - RANK1: 21.22%
+2025-04-12 17:08:26,426 - INFO - RANK5: 45.73%
+2025-04-12 17:08:26,426 - INFO - RANK10: 59.32%
+2025-04-12 17:08:26,428 - INFO - MAP: 33.50%
+2025-04-12 17:08:26,433 - INFO - [INFO] No improvement in Rank-1 (21.22%), skipping checkpoint.
+2025-04-12 17:09:08,604 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+2025-04-12 17:09:08,604 - INFO - [DEBUG] img_features: torch.Size([32, 512]), prompt: N/A, pooled: torch.Size([32, 72])
+2025-04-12 17:09:08,605 - INFO - [DEBUG] logits std: 0.6586
+2025-04-12 17:09:08,605 - INFO - [DEBUG] CE loss: 3.6575, Triplet loss: 0.0994, Total: 3.7570
+2025-04-12 17:20:33,257 - INFO - [Epoch 4] Total Loss=4.0368
+2025-04-12 17:20:33,257 - INFO - [Epoch 4] Acc@1=7.42% | Acc@5=27.08% | Acc@10=44.04%
+2025-04-12 17:20:33,258 - INFO - [Validation] Extracting features...
+2025-04-12 17:25:30,222 - INFO - [Validation] Evaluating ranks and mAP...
+2025-04-12 17:25:30,951 - INFO - 
+[ReID Validation]
+2025-04-12 17:25:30,951 - INFO - RANK1: 11.12%
+2025-04-12 17:25:30,951 - INFO - RANK5: 36.05%
+2025-04-12 17:25:30,952 - INFO - RANK10: 55.20%
+2025-04-12 17:25:30,952 - INFO - MAP: 18.17%
+2025-04-12 17:25:30,957 - INFO - [INFO] No improvement in Rank-1 (11.12%), skipping checkpoint.
+2025-04-12 17:26:14,479 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+2025-04-12 17:26:14,479 - INFO - [DEBUG] img_features: torch.Size([32, 512]), prompt: N/A, pooled: torch.Size([32, 72])
+2025-04-12 17:26:14,479 - INFO - [DEBUG] logits std: 0.6259
+2025-04-12 17:26:14,480 - INFO - [DEBUG] CE loss: 4.1323, Triplet loss: 0.2913, Total: 4.4236
+2025-04-12 17:37:45,384 - INFO - [Epoch 5] Total Loss=4.3963
+2025-04-12 17:37:45,384 - INFO - [Epoch 5] Acc@1=3.93% | Acc@5=18.99% | Acc@10=34.16%
+2025-04-12 17:37:45,385 - INFO - [Validation] Extracting features...
+2025-04-12 17:42:39,027 - INFO - [Validation] Evaluating ranks and mAP...
+2025-04-12 17:42:39,850 - INFO - 
+[ReID Validation]
+2025-04-12 17:42:39,850 - INFO - RANK1: 11.84%
+2025-04-12 17:42:39,850 - INFO - RANK5: 33.47%
+2025-04-12 17:42:39,850 - INFO - RANK10: 48.61%
+2025-04-12 17:42:39,850 - INFO - MAP: 19.01%
+2025-04-12 17:42:39,856 - INFO - [INFO] No improvement in Rank-1 (11.84%), skipping checkpoint.
+2025-04-12 17:43:21,981 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+2025-04-12 17:43:21,981 - INFO - [DEBUG] img_features: torch.Size([32, 512]), prompt: N/A, pooled: torch.Size([32, 72])
+2025-04-12 17:43:21,982 - INFO - [DEBUG] logits std: 0.7086
+2025-04-12 17:43:21,982 - INFO - [DEBUG] CE loss: 4.1339, Triplet loss: 0.2764, Total: 4.4103
+2025-04-12 17:54:42,674 - INFO - [Epoch 6] Total Loss=4.3103
+2025-04-12 17:54:42,675 - INFO - [Epoch 6] Acc@1=3.93% | Acc@5=19.44% | Acc@10=33.37%
+2025-04-12 17:54:42,676 - INFO - [Validation] Extracting features...
+2025-04-12 17:59:35,660 - INFO - [Validation] Evaluating ranks and mAP...
+2025-04-12 17:59:36,402 - INFO - 
+[ReID Validation]
+2025-04-12 17:59:36,403 - INFO - RANK1: 15.76%
+2025-04-12 17:59:36,403 - INFO - RANK5: 39.03%
+2025-04-12 17:59:36,403 - INFO - RANK10: 52.94%
+2025-04-12 17:59:36,403 - INFO - MAP: 27.70%
+2025-04-12 17:59:36,410 - INFO - [INFO] No improvement in Rank-1 (15.76%), skipping checkpoint.
+2025-04-12 18:00:20,538 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+2025-04-12 18:00:20,539 - INFO - [DEBUG] img_features: torch.Size([32, 512]), prompt: N/A, pooled: torch.Size([32, 72])
+2025-04-12 18:00:20,539 - INFO - [DEBUG] logits std: 0.6632
+2025-04-12 18:00:20,539 - INFO - [DEBUG] CE loss: 4.0442, Triplet loss: 0.2220, Total: 4.2662
+2025-04-12 18:11:45,709 - INFO - [Epoch 7] Total Loss=4.1096
+2025-04-12 18:11:45,709 - INFO - [Epoch 7] Acc@1=3.82% | Acc@5=20.45% | Acc@10=39.10%
+2025-04-12 18:11:45,710 - INFO - [Validation] Extracting features...
+2025-04-12 18:16:36,273 - INFO - [Validation] Evaluating ranks and mAP...
+2025-04-12 18:16:36,986 - INFO - 
+[ReID Validation]
+2025-04-12 18:16:36,986 - INFO - RANK1: 17.92%
+2025-04-12 18:16:36,986 - INFO - RANK5: 42.53%
+2025-04-12 18:16:36,986 - INFO - RANK10: 56.85%
+2025-04-12 18:16:36,987 - INFO - MAP: 30.82%
+2025-04-12 18:16:36,993 - INFO - [INFO] No improvement in Rank-1 (17.92%), skipping checkpoint.
+2025-04-12 18:17:19,130 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+2025-04-12 18:17:19,130 - INFO - [DEBUG] img_features: torch.Size([32, 512]), prompt: N/A, pooled: torch.Size([32, 72])
+2025-04-12 18:17:19,131 - INFO - [DEBUG] logits std: 0.7871
+2025-04-12 18:17:19,131 - INFO - [DEBUG] CE loss: 3.8044, Triplet loss: 0.0179, Total: 3.8223
+2025-04-12 18:28:42,099 - INFO - [Epoch 8] Total Loss=3.9685
+2025-04-12 18:28:42,099 - INFO - [Epoch 8] Acc@1=8.65% | Acc@5=27.98% | Acc@10=45.39%
+2025-04-12 18:28:42,100 - INFO - [Validation] Extracting features...
+2025-04-12 18:33:35,231 - INFO - [Validation] Evaluating ranks and mAP...
+2025-04-12 18:33:35,946 - INFO - 
+[ReID Validation]
+2025-04-12 18:33:35,946 - INFO - RANK1: 20.60%
+2025-04-12 18:33:35,946 - INFO - RANK5: 48.92%
+2025-04-12 18:33:35,946 - INFO - RANK10: 66.12%
+2025-04-12 18:33:35,947 - INFO - MAP: 34.85%
+2025-04-12 18:33:35,952 - INFO - [INFO] No improvement in Rank-1 (20.60%), skipping checkpoint.
+2025-04-12 18:34:18,333 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+2025-04-12 18:34:18,334 - INFO - [DEBUG] img_features: torch.Size([32, 512]), prompt: N/A, pooled: torch.Size([32, 72])
+2025-04-12 18:34:18,334 - INFO - [DEBUG] logits std: 0.8852
+2025-04-12 18:34:18,334 - INFO - [DEBUG] CE loss: 3.5838, Triplet loss: 0.0073, Total: 3.5911
+2025-04-12 18:45:46,872 - INFO - [Epoch 9] Total Loss=3.6821
+2025-04-12 18:45:46,872 - INFO - [Epoch 9] Acc@1=9.78% | Acc@5=33.03% | Acc@10=53.03%
+2025-04-12 18:45:46,873 - INFO - [Validation] Extracting features...
+2025-04-12 18:50:37,613 - INFO - [Validation] Evaluating ranks and mAP...
+2025-04-12 18:50:38,373 - INFO - 
+[ReID Validation]
+2025-04-12 18:50:38,373 - INFO - RANK1: 20.19%
+2025-04-12 18:50:38,373 - INFO - RANK5: 47.68%
+2025-04-12 18:50:38,373 - INFO - RANK10: 64.06%
+2025-04-12 18:50:38,374 - INFO - MAP: 34.37%
+2025-04-12 18:50:38,378 - INFO - [INFO] No improvement in Rank-1 (20.19%), skipping checkpoint.
+2025-04-12 18:51:21,028 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+2025-04-12 18:51:21,028 - INFO - [DEBUG] img_features: torch.Size([32, 512]), prompt: N/A, pooled: torch.Size([32, 72])
+2025-04-12 18:51:21,029 - INFO - [DEBUG] logits std: 1.3097
+2025-04-12 18:51:21,029 - INFO - [DEBUG] CE loss: 3.4800, Triplet loss: 0.0000, Total: 3.4800
+2025-04-12 19:02:46,394 - INFO - [Epoch 10] Total Loss=3.7020
+2025-04-12 19:02:46,395 - INFO - [Epoch 10] Acc@1=13.03% | Acc@5=36.97% | Acc@10=57.30%
+2025-04-12 19:02:46,396 - INFO - [Validation] Extracting features...
+2025-04-12 19:07:37,555 - INFO - [Validation] Evaluating ranks and mAP...
+2025-04-12 19:07:38,317 - INFO - 
+[ReID Validation]
+2025-04-12 19:07:38,318 - INFO - RANK1: 23.17%
+2025-04-12 19:07:38,318 - INFO - RANK5: 53.55%
+2025-04-12 19:07:38,318 - INFO - RANK10: 71.37%
+2025-04-12 19:07:38,319 - INFO - MAP: 38.60%
+2025-04-12 19:07:38,326 - INFO - [INFO] No improvement in Rank-1 (23.17%), skipping checkpoint.
+2025-04-12 19:07:39,525 - INFO - Model saved to: saved_models/stage1_frozen_text_vitb16_11k_dorsal_r_vitb16_11k_dorsal_r_finetune_e10_lr00001_bs32_FINAL.pth
+154893398285
