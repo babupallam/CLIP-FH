@@ -1,21 +1,28 @@
 import torch
 import torch.nn as nn
 import clip
+from utils.loss.arcface import ArcFace
+
 
 def unfreeze_image_encoder(clip_model, log):
     for param in clip_model.visual.parameters():
         param.requires_grad = True
-    log("Unfroze CLIP image encoder.")
+    log("CLIP image encoder unfrozen.")
+
+
+def freeze_image_encoder(clip_model, log):
+    for param in clip_model.visual.parameters():
+        param.requires_grad = False
+    log("CLIP image encoder frozen.")
+
 
 def freeze_prompt_learner(prompt_learner, log):
     for param in prompt_learner.parameters():
         param.requires_grad = False
-    log("Prompt Learner frozen.")
+    log("Prompt learner frozen.")
 
-def freeze_clip_text_encoder(model):
-    """
-    Freezes all text-related parameters in CLIP (transformer, token embeddings, projection).
-    """
+
+def freeze_clip_text_encoder(model, log=None):
     for name, param in model.named_parameters():
         if (
             name.startswith("transformer") or
@@ -23,20 +30,32 @@ def freeze_clip_text_encoder(model):
             "text_projection" in name
         ):
             param.requires_grad = False
-            print(f"Freezing {name} parameters")
+    if log:
+        log("CLIP text encoder frozen.")
+
+
+def unfreeze_clip_text_encoder(model, log=None):
+    unfrozen = 0
+    for name, param in model.named_parameters():
+        if (
+            name.startswith("transformer") or
+            "token_embedding" in name or
+            "text_projection" in name
+        ):
+            param.requires_grad = True
+            unfrozen += 1
+    if log:
+        log(f"CLIP text encoder unfrozen ({unfrozen} layers).")
+
+
+def freeze_entire_clip_model(model, log=None):
+    for param in model.parameters():
+        param.requires_grad = False
+    if log:
+        log("All CLIP parameters frozen.")
+
 
 def build_model(config, freeze_text=False):
-    """
-    Builds a CLIP-based model for classification.
-
-    Args:
-        config (dict): Must include "model" (e.g., "vitb16", "rn50") and "num_classes".
-        freeze_text (bool): Whether to freeze the CLIP text encoder.
-
-    Returns:
-        clip_model: CLIP backbone
-        classifier: Linear classification head
-    """
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model_name = config["model"]
     clip_model, _ = clip.load("ViT-B/16" if model_name == "vitb16" else "RN50", device=device)
@@ -48,3 +67,18 @@ def build_model(config, freeze_text=False):
     num_classes = config["num_classes"]
     classifier = nn.Linear(image_embed_dim, num_classes)
     return clip_model, classifier
+
+
+def register_bnneck_and_arcface(model, feat_dim, num_classes, device, logger=None):
+    model.bottleneck = nn.BatchNorm1d(feat_dim).to(device)
+    model.bottleneck.bias.requires_grad = False
+
+    model.arcface = ArcFace(
+        in_features=feat_dim,
+        out_features=num_classes,
+        s=30.0,
+        m=0.5,
+    ).to(device)
+
+    if logger:
+        logger("BNNeck and ArcFace head registered.")

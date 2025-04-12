@@ -23,7 +23,9 @@ from torch.utils.data.sampler import Sampler
 from collections import defaultdict
 import random
 from torch.utils.data import DataLoader, ConcatDataset
-
+from collections import defaultdict
+from torchvision import datasets, transforms
+from torch.utils.data import Subset
 
 def get_dataloader(data_dir, batch_size=64, shuffle=False, num_workers=4, train=True):
     """
@@ -84,6 +86,24 @@ def get_train_val_loaders(config):
     train_dataset = datasets.ImageFolder(train_dir, transform=transform)
     query_dataset = datasets.ImageFolder(query_dir, transform=transform)
     gallery_dataset = datasets.ImageFolder(gallery_dir, transform=transform)
+
+    # ===== OPTIONAL: Restrict gallery to max 2 samples per class =====
+    # This is useful for testing or faster validation. Comment to disable.
+    restrict_gallery = True # -- make it false later
+    if restrict_gallery:
+        class_to_indices = defaultdict(list)
+        for idx, (_, label) in enumerate(gallery_dataset.samples):
+            class_to_indices[label].append(idx)
+
+        selected_indices = []
+        for label, indices in class_to_indices.items():
+            selected_indices.extend(indices[:2])  # take first 2 samples
+
+        gallery_dataset = Subset(gallery_dataset, selected_indices)
+        print(f"[DEBUG] Reduced gallery to {len(gallery_dataset)} samples (max 2 per class)")
+
+
+    #-------------
 
     # Combine query0 and gallery0 into one validation set
     val_dataset = ConcatDataset([query_dataset, gallery_dataset])

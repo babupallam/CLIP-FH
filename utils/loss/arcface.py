@@ -3,32 +3,32 @@ import torch.nn as nn
 import torch.nn.functional as F
 import math
 
-class ArcFaceLoss(nn.Module):
-    def __init__(self, feat_dim, num_classes, scale=30.0, margin=0.50):
-        super(ArcFaceLoss, self).__init__()
-        self.feat_dim = feat_dim
-        self.num_classes = num_classes
-        self.scale = scale
-        self.margin = margin
-
-        self.weights = nn.Parameter(torch.FloatTensor(num_classes, feat_dim))
-        nn.init.xavier_uniform_(self.weights)
+class ArcFace(nn.Module):
+    def __init__(self, in_features, out_features, s=30.0, m=0.50, easy_margin=False):
+        super(ArcFace, self).__init__()
+        self.weight = nn.Parameter(torch.FloatTensor(out_features, in_features))
+        nn.init.xavier_uniform_(self.weight)
+        self.s = s
+        self.m = m
+        self.easy_margin = easy_margin
+        self.cos_m = math.cos(m)
+        self.sin_m = math.sin(m)
+        self.th = math.cos(math.pi - m)
+        self.mm = math.sin(math.pi - m) * m
 
     def forward(self, features, labels):
-        # Normalize features and weights
-        features = F.normalize(features)
-        weights = F.normalize(self.weights)
+        cosine = F.linear(F.normalize(features), F.normalize(self.weight))
+        sine = torch.sqrt(1.0 - torch.clamp(cosine ** 2, 0, 1))
+        phi = cosine * self.cos_m - sine * self.sin_m
 
-        # Cosine similarity
-        cosine = F.linear(features, weights)
-
-        # Add angular margin
-        theta = torch.acos(torch.clamp(cosine, -1.0 + 1e-7, 1.0 - 1e-7))
-        target_logits = torch.cos(theta + self.margin)
+        if self.easy_margin:
+            phi = torch.where(cosine > 0, phi, cosine)
+        else:
+            phi = torch.where(cosine > self.th, phi, cosine - self.mm)
 
         one_hot = torch.zeros_like(cosine)
-        one_hot.scatter_(1, labels.view(-1, 1), 1.0)
+        one_hot.scatter_(1, labels.view(-1, 1), 1)
 
-        output = self.scale * (one_hot * target_logits + (1 - one_hot) * cosine)
-        loss = F.cross_entropy(output, labels)
-        return loss
+        output = (one_hot * phi) + ((1.0 - one_hot) * cosine)
+        output *= self.s
+        return output

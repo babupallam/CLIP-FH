@@ -1,9 +1,8 @@
 from utils.loss.cross_entropy_loss import CrossEntropyLoss
 from utils.loss.triplet_loss import TripletLoss
 from utils.loss.center_loss import CenterLoss
-from utils.loss.arcface import ArcFaceLoss
 from utils.loss.contrastive_loss import supcon_loss
-
+from utils.loss.arcface import ArcFace
 
 class CombinedLoss:
     def __init__(self, loss_fns, contrastive=None):
@@ -17,7 +16,7 @@ class CombinedLoss:
 
         total_loss = 0
         for loss_fn in self.loss_fns:
-            if isinstance(loss_fn, (TripletLoss, CenterLoss, ArcFaceLoss)):
+            if isinstance(loss_fn, (TripletLoss, CenterLoss, ArcFace)):
                 total_loss += loss_fn(features, targets)
             else:
                 total_loss += loss_fn(features, targets)
@@ -38,11 +37,11 @@ def build_loss(loss_list, num_classes=None, feat_dim=None):
         loss_fns.append(CenterLoss(num_classes=num_classes, feat_dim=feat_dim))
 
     if "arcface" in loss_list:
-        loss_fns.append(ArcFaceLoss(feat_dim=feat_dim, num_classes=num_classes))
+        loss_fns.append(ArcFace(feat_dim=feat_dim, num_classes=num_classes))
 
     if "supcon" in loss_list:
         contrastive_fn = supcon_loss
 
-    print(f"[make_loss] Using contrastive_fn = {contrastive_fn}")
+    #print(f"[make_loss] Using contrastive_fn = {contrastive_fn}")
 
     return CombinedLoss(loss_fns, contrastive=contrastive_fn)
