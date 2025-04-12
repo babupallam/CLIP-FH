@@ -7,8 +7,8 @@ import sys
 # Add root to PYTHONPATH
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from datasets.build_dataloader import get_train_val_loaders
-from models.make_model import build_model
+from utils.dataloaders import get_train_val_loaders
+from models.archived.make_model import build_model
 from engine.archived.finetune_trainer_stage2_loss import FinetuneTrainerStage2
 
 def main(config_path):

@@ -50,12 +50,6 @@ python experiments/stage1_train_classifier_frozen_text/eval_stage1_frozen_text.p
 
 ```
 
-## To Run Stage 1 Fine-Tuning continuation:
-```angular2html
-python experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text_continue.py --config configs/train_stage1_frozen_text/continue_train_vitb16_11k_dorsal_r.yml
-
-```
-
 ***
 ***
 ***

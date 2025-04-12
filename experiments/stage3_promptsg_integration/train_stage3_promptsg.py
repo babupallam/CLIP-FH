@@ -3,7 +3,6 @@ import sys
 import argparse
 import torch
 import torch.nn as nn
-from torch.utils.data import DataLoader
 import yaml
 from datetime import datetime
 from tqdm import tqdm
@@ -14,10 +13,10 @@ PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..'))
 if PROJECT_ROOT not in sys.path:
     sys.path.insert(0, PROJECT_ROOT)
 
-from loss.contrastive_loss import SymmetricSupConLoss
-from models.prompt_learner import TextualInversionMLP
-from models.clip_patch import MultiModalInteraction
-from datasets.build_dataloader import get_train_val_loaders
+from utils.loss import SymmetricSupConLoss
+from engine.prompt_learner import TextualInversionMLP
+from utils.clip_patch import MultiModalInteraction
+from utils.dataloaders import get_train_val_loaders
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 

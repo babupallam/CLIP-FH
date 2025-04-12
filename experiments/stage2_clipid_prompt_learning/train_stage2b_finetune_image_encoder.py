@@ -11,9 +11,9 @@ if "datasets" not in os.listdir(PROJECT_ROOT):
 if PROJECT_ROOT not in sys.path:
     sys.path.insert(0, PROJECT_ROOT)
 
-from models.clip_patch import load_clip_with_patch
-from models.prompt_learner import PromptLearner
-from datasets.build_dataloader import get_train_val_loaders
+from utils.clip_patch import load_clip_with_patch
+from engine.prompt_learner import PromptLearner
+from utils.dataloaders import get_train_val_loaders
 from engine.clipreid_trainer_stage2 import PromptLearnerTrainerStage2b
 
 

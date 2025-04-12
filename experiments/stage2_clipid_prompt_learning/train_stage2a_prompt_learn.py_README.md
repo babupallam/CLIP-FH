@@ -686,7 +686,7 @@ import torch.nn as nn
 import torch.optim as optim
 from tqdm import tqdm
 from datetime import datetime
-from loss.make_loss import build_loss
+from utils.loss.make_loss import build_loss
 
 from engine.baseline_inference import extract_features
 from engine.evaluator import evaluate_rank

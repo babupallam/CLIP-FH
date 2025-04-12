@@ -11,12 +11,12 @@ import torch
 import clip
 import time
 from datetime import datetime
-from models.utils import load_checkpoint
+from utils.save_load_models import load_checkpoint
 
 # Local imports from your repository
 from engine.baseline_inference import extract_features, compute_similarity_matrix
 from engine.evaluator import evaluate_rank
-from datasets.build_dataloader import get_dataloader
+from utils.dataloaders import get_dataloader
 
 
 def load_config(path):

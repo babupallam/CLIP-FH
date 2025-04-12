@@ -1,8 +1,8 @@
-from loss.cross_entropy_loss import CrossEntropyLoss
-from loss.triplet_loss import TripletLoss
-from loss.center_loss import CenterLoss
-from loss.arcface import ArcFaceLoss
-from loss.contrastive_loss import supcon_loss
+from utils.loss.cross_entropy_loss import CrossEntropyLoss
+from utils.loss.triplet_loss import TripletLoss
+from utils.loss.center_loss import CenterLoss
+from utils.loss.arcface import ArcFaceLoss
+from utils.loss.contrastive_loss import supcon_loss
 
 
 class CombinedLoss:

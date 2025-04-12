@@ -1,5 +1,5 @@
 """
-build_dataloader.py
+dataloaders.py
 
 Purpose:
 - Prepares PyTorch DataLoaders for hand image datasets (11k or HD).

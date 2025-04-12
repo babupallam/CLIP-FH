@@ -14,8 +14,8 @@ if PROJECT_ROOT not in sys.path:
 import argparse
 import yaml
 import torch
-from datasets.build_dataloader import get_train_val_loaders
-from models.make_model import build_model
+from utils.dataloaders import get_train_val_loaders
+from models.archived.make_model import build_model
 from engine.finetune_trainer_stage1 import FinetuneTrainerStage1
 
 

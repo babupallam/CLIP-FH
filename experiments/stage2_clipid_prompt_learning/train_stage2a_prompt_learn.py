@@ -16,10 +16,10 @@ import torch
 from datetime import datetime
 
 # ===== Internal Modules =====
-from models.prompt_learner import PromptLearner
-from models.clip_patch import load_clip_with_patch
+from engine.prompt_learner import PromptLearner
+from utils.clip_patch import load_clip_with_patch
 from engine.clipreid_trainer_stage1 import PromptLearnerTrainerStage1
-from datasets.build_dataloader import get_train_loader_all
+from utils.dataloaders import get_train_loader_all
 
 
 def main(config_path):

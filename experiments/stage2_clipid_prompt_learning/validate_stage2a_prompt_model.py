@@ -12,9 +12,9 @@ if PROJECT_ROOT not in sys.path:
     sys.path.insert(0, PROJECT_ROOT)
 
 # 🔌 Internal modules
-from models.clip_patch import load_clip_with_patch
-from models.prompt_learner import PromptLearner
-from datasets.build_dataloader import get_dataloader
+from utils.clip_patch import load_clip_with_patch
+from engine.prompt_learner import PromptLearner
+from utils.dataloaders import get_dataloader
 
 
 @torch.no_grad()

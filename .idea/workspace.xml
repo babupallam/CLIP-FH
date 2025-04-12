@@ -5,10 +5,50 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c7cde98-b929-4071-bc2e-b0363f4c695d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/engine/train_classifier_stage1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/engine/train_clipreid_stages.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/experiments/stage2_clipreid_integration/archived/train_stage2_joint_backup_before_making_modular.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/archived/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/eval_utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/feature_cache.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/logger.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/loss/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/naming.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/train_helpers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configs/eval_stage1_frozen_text/eval_vitb16_11k_dorsal_r.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/eval_stage1_frozen_text/eval_vitb16_11k_dorsal_r.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/train_stage2_clip_reid/train_joint_vitb16_11k_dorsal_r.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/train_stage2_clip_reid/train_joint_vitb16_11k_dorsal_r.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/build_dataloader.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/dataloaders.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/transforms.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/transforms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/archived/finetune_trainer_stage2_loss.py" beforeDir="false" afterPath="$PROJECT_DIR$/engine/archived/finetune_trainer_stage2_loss.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/clipreid_trainer_stage1.py" beforeDir="false" afterPath="$PROJECT_DIR$/engine/clipreid_trainer_stage1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/clipreid_trainer_stage2.py" beforeDir="false" afterPath="$PROJECT_DIR$/engine/clipreid_trainer_stage2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/archived/stage2_finetune_image_encoder_loss_variants/train_stage2_loss_variants_vitb16_11k_dorsal_r.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/archived/stage2_finetune_image_encoder_loss_variants/train_stage2_loss_variants_vitb16_11k_dorsal_r.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/run_eval_clip.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/run_eval_clip.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/stage1_train_classifier_frozen_text/archived/train_stage1_frozen_text_continue.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/stage1_train_classifier_frozen_text/archived/train_stage1_frozen_text_continue.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/train_logs/stage1_stage1_frozen_text_vitb16_11k_dorsal_r_e30_lr00001_bs32_losscross_entropy.log" beforeDir="false" afterPath="$PROJECT_DIR$/train_logs/stage1_stage1_frozen_text_vitb16_11k_dorsal_r_e30_lr00001_bs32_losscross_entropy.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/stage2_clipid_prompt_learning/train_stage2a_prompt_learn.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/stage2_clipid_prompt_learning/train_stage2a_prompt_learn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/stage2_clipid_prompt_learning/train_stage2a_prompt_learn.py_README.md" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/stage2_clipid_prompt_learning/train_stage2a_prompt_learn.py_README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/stage2_clipid_prompt_learning/train_stage2b_finetune_image_encoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/stage2_clipid_prompt_learning/train_stage2b_finetune_image_encoder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/stage2_clipid_prompt_learning/validate_stage2a_prompt_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/stage2_clipid_prompt_learning/validate_stage2a_prompt_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/stage2_clipreid_integration/train_stage2_joint.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/stage2_clipreid_integration/train_stage2_joint.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/stage3_promptsg_integration/train_stage3_promptsg.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/stage3_promptsg_integration/train_stage3_promptsg.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loss/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/utils/loss/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loss/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loss/arcface.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/loss/arcface.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loss/center_loss.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/loss/center_loss.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loss/contrastive_loss.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/loss/contrastive_loss.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loss/cross_entropy_loss.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/loss/cross_entropy_loss.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loss/make_loss.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/loss/make_loss.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loss/triplet_loss.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/loss/triplet_loss.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/clip_patch.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/clip_patch.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/make_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/archived/make_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/prompt_learner.py" beforeDir="false" afterPath="$PROJECT_DIR$/engine/prompt_learner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/save_load_models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/saved_models/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/train_logs/stage1_stage1_frozen_text_vitb16_11k_dorsal_r_e30_lr00001_bs32_losscross_entropy.log" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +58,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="Jupyter Notebook" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -52,7 +92,7 @@
     "Python.test_log_saving.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/Girija/Documents/GitHub/HandCLIP/eval_logs",
+    "last_opened_file_path": "C:/Users/Girija/Documents/GitHub/HandCLIP/experiments/stage2_clipreid_integration",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -63,17 +103,17 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Girija\Documents\GitHub\HandCLIP\experiments\stage2_clipreid_integration" />
+      <recent name="C:\Users\Girija\Documents\GitHub\HandCLIP\utils" />
       <recent name="C:\Users\Girija\Documents\GitHub\HandCLIP\eval_logs" />
       <recent name="C:\Users\Girija\Documents\GitHub\HandCLIP" />
       <recent name="C:\Users\Girija\Documents\GitHub\HandCLIP\configs\eval_stage2_clip_reid" />
-      <recent name="C:\Users\Girija\Documents\GitHub\HandCLIP\experiments\stage2_clipreid_integration" />
-      <recent name="C:\Users\Girija\Documents\GitHub\HandCLIP\configs\eval_stage3_promptsg" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Girija\Documents\GitHub\HandCLIP\experiments\stage1_train_classifier_frozen_text\archived" />
-      <recent name="C:\Users\Girija\Documents\GitHub\HandCLIP\models" />
-      <recent name="C:\Users\Girija\Documents\GitHub\HandCLIP\engine\archived" />
-      <recent name="C:\Users\Girija\Documents\GitHub\HandCLIP\experiments" />
+      <recent name="C:\Users\Girija\Documents\GitHub\HandCLIP\utils" />
+      <recent name="C:\Users\Girija\Documents\GitHub\HandCLIP\engine" />
+      <recent name="C:\Users\Girija\Documents\GitHub\HandCLIP\models\archived" />
+      <recent name="C:\Users\Girija\Documents\GitHub\HandCLIP\experiments\stage2_clipreid_integration\archived" />
       <recent name="C:\Users\Girija\Documents\GitHub\HandCLIP" />
     </key>
   </component>
@@ -100,7 +140,7 @@
       <workItem from="1743644798987" duration="34457000" />
       <workItem from="1743727135744" duration="417000" />
       <workItem from="1743727805200" duration="271051000" />
-      <workItem from="1744357298496" duration="21441000" />
+      <workItem from="1744357298496" duration="34056000" />
     </task>
     <servers />
   </component>
@@ -126,7 +166,7 @@
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/models/prompt_learner.py</url>
+          <url>file://$PROJECT_DIR$/engine/prompt_learner.py</url>
           <line>2</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>

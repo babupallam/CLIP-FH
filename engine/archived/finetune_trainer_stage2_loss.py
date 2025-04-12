@@ -1,7 +1,7 @@
 import torch
 import torch.optim as optim
 from tqdm import tqdm
-from loss.make_loss import build_loss
+from utils.loss.make_loss import build_loss
 
 class FinetuneTrainerStage2:
     def __init__(self, clip_model, classifier, train_loader, config, device):

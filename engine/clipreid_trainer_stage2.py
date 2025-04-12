@@ -5,7 +5,7 @@ import torch.nn.functional as F
 from tqdm import tqdm
 from datetime import datetime
 
-from loss.triplet_loss import TripletLoss
+from utils.loss.triplet_loss import TripletLoss
 
 
 def compute_topk_acc(similarity, labels, k=5):

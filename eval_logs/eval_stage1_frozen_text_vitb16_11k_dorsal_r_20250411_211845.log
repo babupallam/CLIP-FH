@@ -1,0 +1,104 @@
+Evaluation Log
+==================================================
+Config      : C:\Users\Girija\Documents\GitHub\HandCLIP\configs\eval_stage1_frozen_text\eval_vitb16_11k_dorsal_r.yml
+Experiment  : eval_stage1_frozen_text_vitb16_11k_dorsal_r
+Model       : vitb16
+Variant     : stage1_frozen_text
+Dataset     : 11k
+Aspect      : dorsal_r
+Model Path  : saved_models/stage1_stage1_frozen_text_vitb16_11k_dorsal_r_e30_lr00001_bs32_losscross_entropy_FINAL.pth
+==================================================
+
+Device: cpu
+Loading fine-tuned model from: saved_models/stage1_stage1_frozen_text_vitb16_11k_dorsal_r_e30_lr00001_bs32_losscross_entropy_FINAL.pth
+Model weights loaded successfully from: saved_models/stage1_stage1_frozen_text_vitb16_11k_dorsal_r_e30_lr00001_bs32_losscross_entropy_FINAL.pth
+Checkpoint restored from epoch 30
+Checkpoint metadata: {'used_prompt_learning': False, 'prompt_param_names': [], 'freeze_text_encoder': True, 'clip_variant': 'ViT-B/16', 'aspect': 'dorsal_r', 'dataset': '11k', 'fine_tuned_image_encoder': True, 'fine_tuned_classifier': True, 'has_scheduler': False, 'stage': 'unknown', 'save_time': '2025-04-11T21:06:51.726626', 'config_hash': 'e6e307c6c0ac2ea9600eb6d4e13a01a4'}
+
+Split 1/10
+Evaluation Metrics:
+   Rank-1 : 11.84%
+   Rank-5 : 28.63%
+   Rank-10: 45.01%
+   mAP    : 22.15%
+Time Taken     : 314.83s
+
+Split 2/10
+Evaluation Metrics:
+   Rank-1 : 10.40%
+   Rank-5 : 31.72%
+   Rank-10: 50.05%
+   mAP    : 22.40%
+Time Taken     : 345.72s
+
+Split 3/10
+Evaluation Metrics:
+   Rank-1 : 11.12%
+   Rank-5 : 29.87%
+   Rank-10: 44.28%
+   mAP    : 22.10%
+Time Taken     : 386.54s
+
+Split 4/10
+Evaluation Metrics:
+   Rank-1 : 13.49%
+   Rank-5 : 33.47%
+   Rank-10: 48.51%
+   mAP    : 24.70%
+Time Taken     : 347.10s
+
+Split 5/10
+Evaluation Metrics:
+   Rank-1 : 12.15%
+   Rank-5 : 29.87%
+   Rank-10: 44.39%
+   mAP    : 22.56%
+Time Taken     : 414.62s
+
+Split 6/10
+Evaluation Metrics:
+   Rank-1 : 12.46%
+   Rank-5 : 33.06%
+   Rank-10: 45.52%
+   mAP    : 23.68%
+Time Taken     : 421.40s
+
+Split 7/10
+Evaluation Metrics:
+   Rank-1 : 13.70%
+   Rank-5 : 32.13%
+   Rank-10: 43.87%
+   mAP    : 24.18%
+Time Taken     : 451.87s
+
+Split 8/10
+Evaluation Metrics:
+   Rank-1 : 10.92%
+   Rank-5 : 30.69%
+   Rank-10: 43.36%
+   mAP    : 21.94%
+Time Taken     : 411.60s
+
+Split 9/10
+Evaluation Metrics:
+   Rank-1 : 12.56%
+   Rank-5 : 32.85%
+   Rank-10: 46.24%
+   mAP    : 23.52%
+Time Taken     : 423.60s
+
+Split 10/10
+Evaluation Metrics:
+   Rank-1 : 13.49%
+   Rank-5 : 30.69%
+   Rank-10: 46.04%
+   mAP    : 23.65%
+Time Taken     : 430.46s
+
+Final Averaged Results Across All Splits:
+Rank-1 Accuracy : 12.21%
+Rank-5 Accuracy : 31.30%
+Rank-10 Accuracy: 45.73%
+Mean AP         : 23.09%
+
+Log saved to: eval_logs/eval_stage1_frozen_text_vitb16_11k_dorsal_r_20250411_211845.log
