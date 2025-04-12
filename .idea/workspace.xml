@@ -6,10 +6,20 @@
   <component name="ChangeListManager">
     <list default="true" id="8c7cde98-b929-4071-bc2e-b0363f4c695d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/train_classifier_stage1.py" beforeDir="false" afterPath="$PROJECT_DIR$/engine/train_classifier_stage1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/train_logs/stage1_frozen_text_vitb16_11k_dorsal_r_vitb16_11k_dorsal_r_finetune_e30_lr00001_bs32.log" beforeDir="false" afterPath="$PROJECT_DIR$/train_logs/stage1_frozen_text_vitb16_11k_dorsal_r_vitb16_11k_dorsal_r_finetune_e30_lr00001_bs32.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/eval_stage1_frozen_text/eval_vitb16_11k_dorsal_r.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/eval_stage1_frozen_text/eval_vitb16_11k_dorsal_r.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/eval_stage2_clip_reid/eval_joint_vitb16_11k_dorsal_r.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/eval_stage2_clip_reid/eval_joint_vitb16_11k_dorsal_r.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/train_stage1_frozen_text/train_vitb16_11k_dorsal_r.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/train_stage1_frozen_text/train_vitb16_11k_dorsal_r.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/train_stage2_clip_reid/train_joint_vitb16_11k_dorsal_r.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/train_stage2_clip_reid/train_joint_vitb16_11k_dorsal_r.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/train_clipreid_stages.py" beforeDir="false" afterPath="$PROJECT_DIR$/engine/train_clipreid_stages.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/run_eval_clip.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/run_eval_clip.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/stage2_clipreid_integration/train_stage2_joint.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/stage2_clipreid_integration/train_stage2_joint.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/dataloaders.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/dataloaders.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/eval_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/eval_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/loss/arcface.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/loss/arcface.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/loss/center_loss.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/loss/center_loss.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/loss/make_loss.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/loss/make_loss.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/naming.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/naming.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/train_helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/train_helpers.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,29 +49,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.1_baseline_vitb16.executor": "Run",
-    "Python.1_baseline_vitb16_11k.executor": "Run",
-    "Python.build_dataloader.executor": "Debug",
-    "Python.eval_baseline_clip.executor": "Run",
-    "Python.eval_rn50_vitb16_hd_dorsal_r.executor": "Run",
-    "Python.make.executor": "Run",
-    "Python.prepare_train_val_test_hd.executor": "Run",
-    "Python.run_all_experiments.executor": "Run",
-    "Python.run_all_stage1_dorsal_r.executor": "Run",
-    "Python.test_log_saving.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/Girija/Documents/GitHub/HandCLIP/experiments/stage2_clipreid_integration",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.notebooks.jupyter.connections.configuration.JupyterServerConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.1_baseline_vitb16.executor&quot;: &quot;Run&quot;,
+    &quot;Python.1_baseline_vitb16_11k.executor&quot;: &quot;Run&quot;,
+    &quot;Python.build_dataloader.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.eval_baseline_clip.executor&quot;: &quot;Run&quot;,
+    &quot;Python.eval_rn50_vitb16_hd_dorsal_r.executor&quot;: &quot;Run&quot;,
+    &quot;Python.make.executor&quot;: &quot;Run&quot;,
+    &quot;Python.prepare_train_val_test_hd.executor&quot;: &quot;Run&quot;,
+    &quot;Python.run_all_experiments.executor&quot;: &quot;Run&quot;,
+    &quot;Python.run_all_stage1_dorsal_r.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_log_saving.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Girija/Documents/GitHub/HandCLIP/experiments/stage2_clipreid_integration&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.notebooks.jupyter.connections.configuration.JupyterServerConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Girija\Documents\GitHub\HandCLIP\experiments\stage2_clipreid_integration" />
@@ -101,7 +111,7 @@
       <workItem from="1743644798987" duration="34457000" />
       <workItem from="1743727135744" duration="417000" />
       <workItem from="1743727805200" duration="271051000" />
-      <workItem from="1744357298496" duration="41363000" />
+      <workItem from="1744357298496" duration="77601000" />
     </task>
     <servers />
   </component>
