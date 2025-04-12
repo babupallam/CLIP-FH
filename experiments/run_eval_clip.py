@@ -17,6 +17,7 @@ from utils.save_load_models import load_checkpoint
 from engine.baseline_inference import extract_features, compute_similarity_matrix
 from engine.evaluator import evaluate_rank
 from utils.dataloaders import get_dataloader
+from utils.naming import build_filename
 
 
 def load_config(path):
@@ -57,15 +58,13 @@ def setup_log_file(config, config_path):
     # Derive a name for this experiment (or use the default naming scheme)
     exp_name = config.get("experiment", f"eval_{config['variant']}_{config['model']}_{config['dataset']}_{config['aspect']}")
 
-    # Create a timestamp to uniquely identify the log file
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-
     # Directory where the log file will be saved
     log_dir = config.get("output_dir", "eval_logs/")
     os.makedirs(log_dir, exist_ok=True)
 
-    # Construct the final path to the log file
-    log_path = os.path.join(log_dir, f"{exp_name}_{timestamp}.log")
+    log_filename = build_filename(config, epoches=config.get("epochs_image", 0), stage="image", extension=".log",
+                                  timestamped=False)
+    log_path = os.path.join(log_dir, log_filename)
 
     # Initialize the log file with basic run info
     with open(log_path, "w", encoding="utf-8") as f:
