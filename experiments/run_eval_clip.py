@@ -18,6 +18,7 @@ from engine.baseline_inference import extract_features, compute_similarity_matri
 from engine.evaluator import evaluate_rank
 from utils.dataloaders import get_dataloader
 from utils.naming import build_filename
+from utils.train_helpers import register_bnneck_and_arcface
 
 
 def load_config(path):
@@ -98,21 +99,6 @@ def log(log_path, text):
 
 
 def run_eval(config_path):
-    """
-    Main function that orchestrates the evaluation procedure.
-
-    Steps:
-      1. Load the config file.
-      2. Setup the log file for storing evaluation outputs.
-      3. Load a CLIP model (and optionally load fine-tuned weights).
-      4. For each split (query/gallery), extract features, compute similarity,
-         and evaluate rank-1 accuracy & mAP.
-      5. Compute averaged rank-1 & mAP across all splits.
-      6. Save and print results.
-
-    Args:
-        config_path (str): Path to the YAML configuration file.
-    """
     # 1. Read the YAML configuration.
     config = load_config(config_path)
 
@@ -148,6 +134,7 @@ def run_eval(config_path):
         raise ValueError(f"Unknown model name: {model_name}. Must be one of: {list(model_map.keys())}")
 
     model, preprocess = clip.load(clip_name, device=device)
+
 
     if model_path:
         if not os.path.exists(model_path):
