@@ -1,0 +1,104 @@
+Evaluation Log
+==================================================
+Config      : C:\Users\Girija\Documents\GitHub\HandCLIP\configs\eval_stage2_clip_reid\eval_joint_vitb16_11k_dorsal_r.yml
+Experiment  : eval_stage2_joint_vitb16_11k_dorsal_r
+Model       : vitb16
+Variant     : clipreid
+Dataset     : 11k
+Aspect      : dorsal_r
+Model Path  : saved_models/stage2_joint_vitb16_11k_dorsal_r_vitb16_11k_dorsal_r_finetune_e0_lr00001_bs32_BEST.pth
+==================================================
+
+Device: cpu
+Loading fine-tuned model from: saved_models/stage2_joint_vitb16_11k_dorsal_r_vitb16_11k_dorsal_r_finetune_e0_lr00001_bs32_BEST.pth
+Model weights loaded successfully from: saved_models/stage2_joint_vitb16_11k_dorsal_r_vitb16_11k_dorsal_r_finetune_e0_lr00001_bs32_BEST.pth
+Checkpoint restored from epoch 0
+Checkpoint metadata: {'used_prompt_learning': False, 'prompt_param_names': [], 'freeze_text_encoder': False, 'clip_variant': 'ViT-B/16', 'aspect': 'dorsal_r', 'dataset': '11k', 'fine_tuned_image_encoder': True, 'fine_tuned_classifier': False, 'has_scheduler': True, 'stage': 'unknown', 'save_time': '2025-04-12T23:30:47.259518', 'config_hash': 'b7d73d30118b57d200824c3bee1bfe46'}
+
+Split 1/10
+Evaluation Metrics:
+   Rank-1 : 71.06%
+   Rank-5 : 87.95%
+   Rank-10: 92.38%
+   mAP    : 78.47%
+Time Taken     : 412.83s
+
+Split 2/10
+Evaluation Metrics:
+   Rank-1 : 73.84%
+   Rank-5 : 89.08%
+   Rank-10: 93.82%
+   mAP    : 80.61%
+Time Taken     : 425.51s
+
+Split 3/10
+Evaluation Metrics:
+   Rank-1 : 69.00%
+   Rank-5 : 87.95%
+   Rank-10: 94.23%
+   mAP    : 77.39%
+Time Taken     : 436.07s
+
+Split 4/10
+Evaluation Metrics:
+   Rank-1 : 68.49%
+   Rank-5 : 87.13%
+   Rank-10: 93.82%
+   mAP    : 76.80%
+Time Taken     : 438.51s
+
+Split 5/10
+Evaluation Metrics:
+   Rank-1 : 72.61%
+   Rank-5 : 89.70%
+   Rank-10: 94.64%
+   mAP    : 79.63%
+Time Taken     : 394.16s
+
+Split 6/10
+Evaluation Metrics:
+   Rank-1 : 76.93%
+   Rank-5 : 91.56%
+   Rank-10: 95.67%
+   mAP    : 83.19%
+Time Taken     : 391.39s
+
+Split 7/10
+Evaluation Metrics:
+   Rank-1 : 72.71%
+   Rank-5 : 90.22%
+   Rank-10: 94.75%
+   mAP    : 80.27%
+Time Taken     : 387.34s
+
+Split 8/10
+Evaluation Metrics:
+   Rank-1 : 68.80%
+   Rank-5 : 87.54%
+   Rank-10: 93.10%
+   mAP    : 76.88%
+Time Taken     : 388.75s
+
+Split 9/10
+Evaluation Metrics:
+   Rank-1 : 70.96%
+   Rank-5 : 89.70%
+   Rank-10: 95.57%
+   mAP    : 79.03%
+Time Taken     : 386.93s
+
+Split 10/10
+Evaluation Metrics:
+   Rank-1 : 72.61%
+   Rank-5 : 90.53%
+   Rank-10: 96.81%
+   mAP    : 80.39%
+Time Taken     : 387.33s
+
+Final Averaged Results Across All Splits:
+Rank-1 Accuracy : 71.70%
+Rank-5 Accuracy : 89.13%
+Rank-10 Accuracy: 94.48%
+Mean AP         : 79.27%
+
+Log saved to: eval_logs/eval_stage2_joint_vitb16_11k_dorsal_r_vitb16_11k_dorsal_r_finetune_e0_lrNA_bs32.log
