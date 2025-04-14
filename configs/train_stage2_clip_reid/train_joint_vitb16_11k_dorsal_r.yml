@@ -1,5 +1,5 @@
 # === Experiment Info ===
-experiment: stage2_joint_vitb16_11k_dorsal_r
+experiment: stage2_clipreid_vitb16_11k_dorsal_r
 dataset: 11k
 aspect: dorsal_r
 model: vitb16
