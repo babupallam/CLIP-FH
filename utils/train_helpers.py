@@ -82,3 +82,48 @@ def register_bnneck_and_arcface(model, feat_dim, num_classes, device, logger=Non
 
     if logger:
         logger("BNNeck and ArcFace head registered.")
+
+
+# train_helpers.py
+import torch.nn as nn
+from engine.prompt_learner import TextualInversionMLP
+from utils.clip_patch import MultiModalInteraction
+
+def build_promptsg_models(config, num_classes, device):
+    pseudo_dim = config['pseudo_token_dim']
+    transformer_layers = config['transformer_layers']
+
+    inversion_model = TextualInversionMLP(pseudo_dim, pseudo_dim).to(device)
+    multimodal_module = MultiModalInteraction(dim=pseudo_dim, depth=transformer_layers).to(device)
+    classifier = nn.Linear(pseudo_dim, num_classes).to(device)
+
+    return inversion_model, multimodal_module, classifier
+
+
+
+import clip
+import torch
+
+def compose_prompt(text_encoder, pseudo_token_embedding, templates=("A detailed photo of a", "hand."), device="cuda"):
+    """
+    Compose prompts using prefix + pseudo-token + suffix.
+
+    Args:
+        text_encoder: CLIP text encoder
+        pseudo_token_embedding: [B, D] tensor
+        templates: Tuple of (prefix, suffix)
+        device: device to send tokens to
+
+    Returns:
+        Tensor of shape [B, 3, D]
+    """
+    batch_size = pseudo_token_embedding.shape[0]
+    prefix_tokens = clip.tokenize([templates[0]] * batch_size).to(device)
+    suffix_tokens = clip.tokenize([templates[1]] * batch_size).to(device)
+
+    with torch.no_grad():
+        prefix_emb = text_encoder(prefix_tokens).float()
+        suffix_emb = text_encoder(suffix_tokens).float()
+
+    composed = torch.stack([prefix_emb, pseudo_token_embedding, suffix_emb], dim=1)  # [B, 3, D]
+    return composed
