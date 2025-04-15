@@ -1,0 +1,148 @@
+2025-04-14 21:38:59,899 - INFO - Saving logs to: train_logs/stage3_promptsg_vitb16_11k_dorsal_r_vitb16_11k_dorsal_r_promptsg_e10_lrNA_bs32.log
+2025-04-14 21:38:59,900 - INFO - Using 72 classes | 28 training batches
+2025-04-14 21:38:59,900 - INFO - ======= Stage 3: PromptSG Training =======
+2025-04-14 21:38:59,900 - INFO - Experiment Name : stage3_promptsg_vitb16_11k_dorsal_r
+2025-04-14 21:38:59,901 - INFO - Model & Dataset : vitb16, 11k, dorsal_r
+2025-04-14 21:38:59,901 - INFO - Freeze Text Enc.: True
+2025-04-14 21:38:59,905 - INFO - Loss Weights    : ID=1.0, Tri=1.0, SupCon=0.5
+2025-04-14 21:38:59,906 - INFO - LR=0.0001 | Epochs=10 | BatchSize=32
+2025-04-14 21:38:59,906 - INFO -  Epoch 1/10
+2025-04-14 21:39:55,370 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+2025-04-14 21:39:55,371 - INFO - [DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
+2025-04-14 21:55:05,469 - INFO - [Epoch 1] Total Loss=6.2994
+2025-04-14 21:55:05,470 - INFO - Validating epoch 1...
+2025-04-14 22:02:55,731 - INFO - [Epoch 1] Avg Train Loss = 6.2994 | Val Acc@1 = 0.48%, Acc@5 = 5.09%, Acc@10 = 11.13%
+2025-04-14 22:02:55,731 - INFO - ==================== Epoch 1 Validation ====================
+2025-04-14 22:02:55,731 - INFO - Avg Validation Loss : 4.5187
+2025-04-14 22:02:55,732 - INFO - Validation Top-1    : 0.48%
+2025-04-14 22:02:55,732 - INFO - Validation Top-5    : 5.09%
+2025-04-14 22:02:55,732 - INFO - Validation Top-10   : 11.13%
+2025-04-14 22:02:55,732 - INFO - Validation mAP      : 4.05%
+2025-04-14 22:02:55,732 - INFO - ============================================================
+2025-04-14 22:02:55,733 - INFO - Saving best model at epoch 1 (Acc@1=0.48%)  saved_models/stage3_promptsg_vitb16_11k_dorsal_r_vitb16_11k_dorsal_r_promptsg_e10_lrNA_bs32_BEST.pth
+2025-04-14 22:02:57,663 - INFO -  Epoch 2/10
+2025-04-14 22:03:49,801 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+2025-04-14 22:03:49,801 - INFO - [DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
+2025-04-14 22:19:14,242 - INFO - [Epoch 2] Total Loss=6.1531
+2025-04-14 22:19:14,243 - INFO - Validating epoch 2...
+2025-04-14 22:27:10,043 - INFO - [Epoch 2] Avg Train Loss = 6.1531 | Val Acc@1 = 1.06%, Acc@5 = 6.05%, Acc@10 = 13.72%
+2025-04-14 22:27:10,043 - INFO - ==================== Epoch 2 Validation ====================
+2025-04-14 22:27:10,043 - INFO - Avg Validation Loss : 4.5506
+2025-04-14 22:27:10,043 - INFO - Validation Top-1    : 1.06%
+2025-04-14 22:27:10,043 - INFO - Validation Top-5    : 6.05%
+2025-04-14 22:27:10,044 - INFO - Validation Top-10   : 13.72%
+2025-04-14 22:27:10,044 - INFO - Validation mAP      : 3.94%
+2025-04-14 22:27:10,044 - INFO - ============================================================
+2025-04-14 22:27:10,045 - INFO - Saving best model at epoch 2 (Acc@1=1.06%)  saved_models/stage3_promptsg_vitb16_11k_dorsal_r_vitb16_11k_dorsal_r_promptsg_e10_lrNA_bs32_BEST.pth
+2025-04-14 22:27:11,697 - INFO -  Epoch 3/10
+2025-04-14 22:28:05,509 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+2025-04-14 22:28:05,509 - INFO - [DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
+2025-04-14 22:41:03,957 - INFO - [Epoch 3] Total Loss=6.1442
+2025-04-14 22:41:03,957 - INFO - Validating epoch 3...
+2025-04-14 22:47:08,157 - INFO - [Epoch 3] Avg Train Loss = 6.1442 | Val Acc@1 = 1.06%, Acc@5 = 4.61%, Acc@10 = 12.38%
+2025-04-14 22:47:08,158 - INFO - ==================== Epoch 3 Validation ====================
+2025-04-14 22:47:08,158 - INFO - Avg Validation Loss : 4.5421
+2025-04-14 22:47:08,158 - INFO - Validation Top-1    : 1.06%
+2025-04-14 22:47:08,158 - INFO - Validation Top-5    : 4.61%
+2025-04-14 22:47:08,159 - INFO - Validation Top-10   : 12.38%
+2025-04-14 22:47:08,159 - INFO - Validation mAP      : 2.93%
+2025-04-14 22:47:08,159 - INFO - ============================================================
+2025-04-14 22:47:08,159 - INFO -  Epoch 4/10
+2025-04-14 22:47:51,285 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+2025-04-14 22:47:51,285 - INFO - [DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
+2025-04-14 22:59:41,835 - INFO - [Epoch 4] Total Loss=6.1211
+2025-04-14 22:59:41,835 - INFO - Validating epoch 4...
+2025-04-14 23:05:49,820 - INFO - [Epoch 4] Avg Train Loss = 6.1211 | Val Acc@1 = 0.00%, Acc@5 = 4.51%, Acc@10 = 12.38%
+2025-04-14 23:05:49,820 - INFO - ==================== Epoch 4 Validation ====================
+2025-04-14 23:05:49,820 - INFO - Avg Validation Loss : 4.5556
+2025-04-14 23:05:49,821 - INFO - Validation Top-1    : 0.00%
+2025-04-14 23:05:49,821 - INFO - Validation Top-5    : 4.51%
+2025-04-14 23:05:49,821 - INFO - Validation Top-10   : 12.38%
+2025-04-14 23:05:49,821 - INFO - Validation mAP      : 2.32%
+2025-04-14 23:05:49,821 - INFO - ============================================================
+2025-04-14 23:05:49,822 - INFO -  Epoch 5/10
+2025-04-14 23:06:32,366 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+2025-04-14 23:06:32,366 - INFO - [DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
+2025-04-14 23:18:17,330 - INFO - [Epoch 5] Total Loss=6.1149
+2025-04-14 23:18:17,331 - INFO - Validating epoch 5...
+2025-04-14 23:24:23,715 - INFO - [Epoch 5] Avg Train Loss = 6.1149 | Val Acc@1 = 1.54%, Acc@5 = 5.47%, Acc@10 = 11.52%
+2025-04-14 23:24:23,716 - INFO - ==================== Epoch 5 Validation ====================
+2025-04-14 23:24:23,716 - INFO - Avg Validation Loss : 4.5133
+2025-04-14 23:24:23,716 - INFO - Validation Top-1    : 1.54%
+2025-04-14 23:24:23,717 - INFO - Validation Top-5    : 5.47%
+2025-04-14 23:24:23,717 - INFO - Validation Top-10   : 11.52%
+2025-04-14 23:24:23,717 - INFO - Validation mAP      : 2.42%
+2025-04-14 23:24:23,717 - INFO - ============================================================
+2025-04-14 23:24:23,717 - INFO - Saving best model at epoch 5 (Acc@1=1.54%)  saved_models/stage3_promptsg_vitb16_11k_dorsal_r_vitb16_11k_dorsal_r_promptsg_e10_lrNA_bs32_BEST.pth
+2025-04-14 23:24:25,122 - INFO -  Epoch 6/10
+2025-04-14 23:25:09,532 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+2025-04-14 23:25:09,532 - INFO - [DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
+2025-04-14 23:37:14,898 - INFO - [Epoch 6] Total Loss=6.1228
+2025-04-14 23:37:14,898 - INFO - Validating epoch 6...
+2025-04-14 23:43:20,044 - INFO - [Epoch 6] Avg Train Loss = 6.1228 | Val Acc@1 = 1.06%, Acc@5 = 5.85%, Acc@10 = 12.00%
+2025-04-14 23:43:20,044 - INFO - ==================== Epoch 6 Validation ====================
+2025-04-14 23:43:20,045 - INFO - Avg Validation Loss : 4.5406
+2025-04-14 23:43:20,045 - INFO - Validation Top-1    : 1.06%
+2025-04-14 23:43:20,045 - INFO - Validation Top-5    : 5.85%
+2025-04-14 23:43:20,045 - INFO - Validation Top-10   : 12.00%
+2025-04-14 23:43:20,045 - INFO - Validation mAP      : 2.21%
+2025-04-14 23:43:20,046 - INFO - ============================================================
+2025-04-14 23:43:20,046 - INFO -  Epoch 7/10
+2025-04-14 23:44:01,923 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+2025-04-14 23:44:01,923 - INFO - [DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
+2025-04-14 23:55:52,258 - INFO - [Epoch 7] Total Loss=6.1175
+2025-04-14 23:55:52,258 - INFO - Validating epoch 7...
+2025-04-15 00:01:57,987 - INFO - [Epoch 7] Avg Train Loss = 6.1175 | Val Acc@1 = 1.06%, Acc@5 = 4.61%, Acc@10 = 10.75%
+2025-04-15 00:01:57,988 - INFO - ==================== Epoch 7 Validation ====================
+2025-04-15 00:01:57,988 - INFO - Avg Validation Loss : 4.5622
+2025-04-15 00:01:57,988 - INFO - Validation Top-1    : 1.06%
+2025-04-15 00:01:57,988 - INFO - Validation Top-5    : 4.61%
+2025-04-15 00:01:57,989 - INFO - Validation Top-10   : 10.75%
+2025-04-15 00:01:57,989 - INFO - Validation mAP      : 2.15%
+2025-04-15 00:01:57,989 - INFO - ============================================================
+2025-04-15 00:01:57,989 - INFO -  Epoch 8/10
+2025-04-15 00:02:41,032 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+2025-04-15 00:02:41,032 - INFO - [DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
+2025-04-15 00:14:33,115 - INFO - [Epoch 8] Total Loss=6.1131
+2025-04-15 00:14:33,116 - INFO - Validating epoch 8...
+2025-04-15 00:20:37,812 - INFO - [Epoch 8] Avg Train Loss = 6.1131 | Val Acc@1 = 0.86%, Acc@5 = 5.85%, Acc@10 = 12.00%
+2025-04-15 00:20:37,813 - INFO - ==================== Epoch 8 Validation ====================
+2025-04-15 00:20:37,813 - INFO - Avg Validation Loss : 4.5496
+2025-04-15 00:20:37,813 - INFO - Validation Top-1    : 0.86%
+2025-04-15 00:20:37,813 - INFO - Validation Top-5    : 5.85%
+2025-04-15 00:20:37,813 - INFO - Validation Top-10   : 12.00%
+2025-04-15 00:20:37,814 - INFO - Validation mAP      : 2.17%
+2025-04-15 00:20:37,814 - INFO - ============================================================
+2025-04-15 00:20:37,814 - INFO -  Epoch 9/10
+2025-04-15 00:21:21,066 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+2025-04-15 00:21:21,066 - INFO - [DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
+2025-04-15 00:33:16,271 - INFO - [Epoch 9] Total Loss=6.1118
+2025-04-15 00:33:16,271 - INFO - Validating epoch 9...
+2025-04-15 00:39:27,053 - INFO - [Epoch 9] Avg Train Loss = 6.1118 | Val Acc@1 = 0.86%, Acc@5 = 7.01%, Acc@10 = 11.61%
+2025-04-15 00:39:27,055 - INFO - ==================== Epoch 9 Validation ====================
+2025-04-15 00:39:27,055 - INFO - Avg Validation Loss : 4.5373
+2025-04-15 00:39:27,055 - INFO - Validation Top-1    : 0.86%
+2025-04-15 00:39:27,055 - INFO - Validation Top-5    : 7.01%
+2025-04-15 00:39:27,056 - INFO - Validation Top-10   : 11.61%
+2025-04-15 00:39:27,056 - INFO - Validation mAP      : 2.08%
+2025-04-15 00:39:27,056 - INFO - ============================================================
+2025-04-15 00:39:27,056 - INFO -  Epoch 10/10
+2025-04-15 00:40:10,902 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+2025-04-15 00:40:10,902 - INFO - [DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
+2025-04-15 00:52:07,112 - INFO - [Epoch 10] Total Loss=6.1053
+2025-04-15 00:52:07,112 - INFO - Validating epoch 10...
+2025-04-15 00:58:18,964 - INFO - [Epoch 10] Avg Train Loss = 6.1053 | Val Acc@1 = 1.06%, Acc@5 = 7.01%, Acc@10 = 11.61%
+2025-04-15 00:58:18,964 - INFO - ==================== Epoch 10 Validation ====================
+2025-04-15 00:58:18,964 - INFO - Avg Validation Loss : 4.5344
+2025-04-15 00:58:18,964 - INFO - Validation Top-1    : 1.06%
+2025-04-15 00:58:18,965 - INFO - Validation Top-5    : 7.01%
+2025-04-15 00:58:18,965 - INFO - Validation Top-10   : 11.61%
+2025-04-15 00:58:18,965 - INFO - Validation mAP      : 2.07%
+2025-04-15 00:58:18,965 - INFO - ============================================================
+2025-04-15 00:58:20,148 - INFO - ====== FINAL SUMMARY ======
+2025-04-15 00:58:20,148 - INFO - Total epochs       : 10
+2025-04-15 00:58:20,148 - INFO - Avg Loss           : 0.9021
+2025-04-15 00:58:20,149 - INFO - Best Acc@1 Epoch   : 5
+2025-04-15 00:58:20,149 - INFO - Best Acc@1         : 1.54%
+2025-04-15 00:58:20,149 - INFO - Best mAP            : 2.07%
+2025-04-15 00:58:20,150 - INFO - ============================

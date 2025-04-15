@@ -94,14 +94,21 @@ def train(config):
             images, labels = images.to(device), labels.to(device)
             optimizer.zero_grad()
 
-            #with torch.no_grad(): not freexing image encoder
+            # Get image features from CLIP
             img_features = clip_model.encode_image(images).float()
 
+            # Generate pseudo prompts using the inversion model:
             pseudo_tokens = inversion_model(img_features)
-            text_emb = compose_prompt(clip_model.encode_text, pseudo_tokens, device=device)
+
+            # Compose full prompts: [prefix] + [pseudo] + [suffix]:
+            template = config.get("prompt_template", "A detailed photo of a hand.")
+            prefix, suffix = template.split("{aspect}")[0].strip(), template.split("{aspect}")[-1].strip()
+            text_emb = compose_prompt(clip_model.encode_text, pseudo_tokens, templates=(prefix, suffix), device=device)
+
+            # Fuse image & text using cross-attention:
             visual_emb = multimodal_module(text_emb, img_features.unsqueeze(1))  # [B, 3, 512]
             pooled = visual_emb.mean(dim=1)  # [B, 512]
-
+            # Classify the identity:
             logits = classifier(pooled)
             id_loss = id_loss_fn(logits, labels)
             triplet_loss = triplet_loss_fn(pooled, pooled, pooled)

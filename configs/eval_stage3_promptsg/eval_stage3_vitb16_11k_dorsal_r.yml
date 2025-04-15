@@ -10,7 +10,7 @@ batch_size: 32
 num_workers: 4
 
 # Path to the best trained model from Stage 3 (PromptSG)
-model_path: saved_models/stage3_promptsg_promptsg_vitb16_11k_dorsal_r_e20_lr0.0001_bs32_freezeTextTrue_BEST.pth
+model_path: saved_models/stage3_promptsg_vitb16_11k_dorsal_r_vitb16_11k_dorsal_r_promptsg_e10_lrNA_bs32_BEST.pth
 
 # Where to save the split-wise and average evaluation metrics
 output_dir: eval_logs/

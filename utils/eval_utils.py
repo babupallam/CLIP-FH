@@ -3,6 +3,7 @@ import torch.nn.functional as F
 import numpy as np
 from sklearn.metrics import average_precision_score
 from tqdm import tqdm
+import torch.nn as nn
 
 def validate(model, prompt_learner, val_loader, device, log, val_type="reid", batch_size=64, loss_fn=None):
     model.eval()
@@ -166,3 +167,97 @@ def validate_stage1_prompts(model, prompt_learner, val_loader, device, log=print
     log(f"Rank-10: {100.0 * cmc[9]:.2f}%" if len(cmc) > 9 else "")
 
     return {"rank1": cmc[0].item() * 100, "mAP": mAP * 100}
+
+@torch.no_grad()
+def validate_promptsg(model_components, val_loader, device, compose_prompt, loss_fn=None):
+    """
+    Validation for PromptSG: Uses composed prompts + cross-attention + classifier.
+    Returns classification loss, top-k accuracy, and mAP using cosine similarity.
+    """
+    import numpy as np
+    from sklearn.metrics import average_precision_score
+    from torch.nn.functional import normalize
+
+    clip_model, inversion_model, multimodal_module, classifier = model_components
+    clip_model.eval()
+    inversion_model.eval()
+    multimodal_module.eval()
+    classifier.eval()
+
+    total_samples = 0
+    correct_top1 = correct_top5 = correct_top10 = 0
+    total_val_loss = 0.0
+    criterion = loss_fn or nn.CrossEntropyLoss()
+
+    all_features = []
+    all_labels = []
+
+    print("\n[PromptSG] Starting Validation...")
+    for batch_idx, (images, labels) in enumerate(tqdm(val_loader, desc="Validation")):
+        images, labels = images.to(device), labels.to(device)
+
+        img_features = clip_model.encode_image(images).float()
+        pseudo_tokens = inversion_model(img_features)
+        text_embeddings = compose_prompt(clip_model.encode_text, pseudo_tokens, device=device)
+        visual_embeddings = multimodal_module(text_embeddings, img_features.unsqueeze(1))
+        pooled_emb = visual_embeddings.mean(dim=1)
+        logits = classifier(pooled_emb)
+
+        # Classification loss
+        loss = criterion(logits, labels)
+        total_val_loss += loss.item()
+
+        # Accuracy
+        _, pred_topk = logits.topk(10, dim=1)
+        match = pred_topk.eq(labels.unsqueeze(1).expand_as(pred_topk))
+        total_samples += labels.size(0)
+        correct_top1 += match[:, :1].sum().item()
+        correct_top5 += match[:, :5].sum().item()
+        correct_top10 += match[:, :10].sum().item()
+
+        # For mAP calculation
+        all_features.append(pooled_emb.cpu())
+        all_labels.append(labels.cpu())
+
+        if batch_idx == 0:
+            print(f"[DEBUG] Val Batch → Image Shape: {images.shape}, Logits: {logits.shape}")
+
+    # Accuracy metrics
+    avg_val_loss = total_val_loss / len(val_loader)
+    acc1 = 100 * correct_top1 / total_samples
+    acc5 = 100 * correct_top5 / total_samples
+    acc10 = 100 * correct_top10 / total_samples
+
+    # mAP computation
+    all_features = torch.cat(all_features, dim=0)
+    all_labels = torch.cat(all_labels, dim=0)
+    all_features = normalize(all_features, dim=1)
+
+    sim_matrix = torch.matmul(all_features, all_features.T).cpu().numpy()
+    all_labels_np = all_labels.cpu().numpy()
+    mAP_total = 0.0
+    num_queries = all_features.size(0)
+
+    for i in range(num_queries):
+        query_label = all_labels_np[i]
+        sims = sim_matrix[i]
+        mask = np.arange(num_queries) != i  # exclude self
+        sims = sims[mask]
+        targets = (all_labels_np[mask] == query_label).astype(int)
+
+        if targets.sum() > 0:
+            ap = average_precision_score(targets, sims)
+            if not np.isnan(ap):
+                mAP_total += ap
+
+    mAP = mAP_total / num_queries
+
+    print(f"[PromptSG] Val Results — Loss: {avg_val_loss:.4f} | Top1: {acc1:.2f}% | Top5: {acc5:.2f}% | Top10: {acc10:.2f}% | mAP: {mAP*100:.2f}%")
+
+    return {
+        'avg_val_loss': avg_val_loss,
+        'top1_accuracy': acc1,
+        'top5_accuracy': acc5,
+        'top10_accuracy': acc10,
+        'mAP': mAP * 100  # return as percentage
+    }
