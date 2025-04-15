@@ -161,10 +161,16 @@ def run_eval(config_path):
 
             # Rebuild the class list (required for PromptLearner initialization)
             aspect = config["aspect"]
-            dataset_root = os.path.join("datasets", "11khands" if dataset == "11k" else "HD/Original Images")
+            # Updated logic to reflect actual folder structure
             if dataset == "11k":
-                dataset_root += f"_{aspect}"
+                dataset_root = os.path.join("datasets", f"11khands/train_val_test_split_{aspect}")
+            elif dataset.lower() == "hd":
+                dataset_root = os.path.join("datasets", "HD/Original Images/train_val_test_split")
+            else:
+                raise ValueError(f"Unsupported dataset: {dataset}")
+
             train_dir = os.path.join(dataset_root, "train")
+
             transform = build_transforms(train=False)
             dataset_train = ImageFolder(train_dir, transform=transform)
 

@@ -7,11 +7,12 @@ variant: clipreid      # ensures correct loading logic in eval script
 
 batch_size: 32
 num_workers: 4
+n_ctx: 8
 
 
 # === Path to the fine-tuned image encoder from Stage 2 joint training ===
 # Change this path to _BEST.pth or _FINAL.pth depending on what you want to evaluate
-model_path: saved_models/stage2_joint_vitb16_11k_dorsal_r_vitb16_11k_dorsal_r_finetune_e0_lr00001_bs32_BEST.pth
+model_path: saved_models/stage2_clipreid_vitb16_11k_dorsal_r_vitb16_11k_dorsal_r_clipid_e1_bs32_BEST.pth
 
 # === Output logging directory ===
 output_dir: eval_logs/

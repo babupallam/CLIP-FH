@@ -1,0 +1,64 @@
+2025-04-15 10:54:27,350 - INFO - BNNeck and ArcFace head registered.
+2025-04-15 10:54:27,352 - INFO - All CLIP parameters frozen.
+2025-04-15 10:59:28,187 - INFO - Cached 890 features for prompt learning.
+2025-04-15 11:01:13,016 - INFO - [Epoch 1] Avg Prompt Loss: 0.2176
+2025-04-15 11:01:13,921 - INFO -  New BEST Prompt model saved with loss = 0.2176
+2025-04-15 11:02:44,927 - INFO - [Epoch 2] Avg Prompt Loss: 0.2176
+2025-04-15 11:02:45,855 - INFO -  New BEST Prompt model saved with loss = 0.2176
+2025-04-15 11:02:46,759 - INFO -  Final Prompt model saved to: saved_models/stage2_clipreid_vitb16_11k_dorsal_r_vitb16_11k_dorsal_r_clipid_e2_bs32_FINAL.pth
+2025-04-15 11:02:46,799 - INFO - CLIP text encoder unfrozen (146 layers).
+2025-04-15 11:03:19,223 - INFO - [Epoch 1] Total Image Loss: 27.2107
+2025-04-15 11:03:33,845 - INFO - [Epoch 1] Total Image Loss: 54.3722
+2025-04-15 11:03:49,870 - INFO - [Epoch 1] Total Image Loss: 81.6516
+2025-04-15 11:04:06,608 - INFO - [Epoch 1] Total Image Loss: 108.9343
+2025-04-15 11:04:20,752 - INFO - [Epoch 1] Total Image Loss: 136.2816
+2025-04-15 11:04:35,746 - INFO - [Epoch 1] Total Image Loss: 163.1072
+2025-04-15 11:04:52,269 - INFO - [Epoch 1] Total Image Loss: 189.9290
+2025-04-15 11:05:08,294 - INFO - [Epoch 1] Total Image Loss: 217.1730
+2025-04-15 11:05:25,395 - INFO - [Epoch 1] Total Image Loss: 244.2039
+2025-04-15 11:05:42,637 - INFO - [Epoch 1] Total Image Loss: 270.7615
+2025-04-15 11:05:59,410 - INFO - [Epoch 1] Total Image Loss: 297.8203
+2025-04-15 11:06:13,437 - INFO - [Epoch 1] Total Image Loss: 324.8468
+2025-04-15 11:06:28,119 - INFO - [Epoch 1] Total Image Loss: 351.9524
+2025-04-15 11:06:43,733 - INFO - [Epoch 1] Total Image Loss: 378.4670
+2025-04-15 11:06:57,582 - INFO - [Epoch 1] Total Image Loss: 405.4063
+2025-04-15 11:07:12,079 - INFO - [Epoch 1] Total Image Loss: 432.5682
+2025-04-15 11:07:25,117 - INFO - [Epoch 1] Total Image Loss: 459.6871
+2025-04-15 11:07:38,115 - INFO - [Epoch 1] Total Image Loss: 486.7016
+2025-04-15 11:07:51,007 - INFO - [Epoch 1] Total Image Loss: 513.6762
+2025-04-15 11:08:04,875 - INFO - [Epoch 1] Total Image Loss: 540.3352
+2025-04-15 11:08:18,705 - INFO - [Epoch 1] Total Image Loss: 567.5975
+2025-04-15 11:08:34,826 - INFO - [Epoch 1] Total Image Loss: 594.5158
+2025-04-15 11:08:52,024 - INFO - [Epoch 1] Total Image Loss: 621.4660
+2025-04-15 11:09:08,389 - INFO - [Epoch 1] Total Image Loss: 648.3653
+2025-04-15 11:09:24,097 - INFO - [Epoch 1] Total Image Loss: 674.9184
+2025-04-15 11:09:39,211 - INFO - [Epoch 1] Total Image Loss: 701.7145
+2025-04-15 11:09:54,297 - INFO - [Epoch 1] Total Image Loss: 729.3036
+2025-04-15 11:10:07,189 - INFO - [Epoch 1] Total Image Loss: 756.0023
+2025-04-15 11:10:07,996 - INFO - [Epoch 1] Learning Rate: 0.000051
+2025-04-15 11:10:07,997 - INFO - [Epoch 1] Running validation...
+2025-04-15 11:10:07,998 - INFO - [Validation] Extracting features...
+2025-04-15 11:15:31,252 - INFO - [Validation] Evaluating ranks and mAP...
+2025-04-15 11:15:32,100 - INFO - 
+[ReID Validation]
+2025-04-15 11:15:32,100 - INFO - RANK1: 72.50%
+2025-04-15 11:15:32,100 - INFO - RANK5: 88.77%
+2025-04-15 11:15:32,100 - INFO - RANK10: 93.20%
+2025-04-15 11:15:32,100 - INFO - MAP: 79.56%
+2025-04-15 11:15:33,072 - INFO -  New BEST Image model saved at Rank-1 = 7250.26%
+2025-04-15 11:15:33,072 - INFO - [Epoch 1] Rank-1: 7250.26%, mAP: 7955.95%
+2025-04-15 11:16:07,004 - INFO - [Epoch 2] Total Image Loss: 27.0029
+2025-04-15 11:16:24,036 - INFO - [Epoch 2] Total Image Loss: 54.2865
+2025-04-15 11:16:41,685 - INFO - [Epoch 2] Total Image Loss: 80.9677
+2025-04-15 11:16:56,808 - INFO - [Epoch 2] Total Image Loss: 107.7335
+2025-04-15 11:17:12,628 - INFO - [Epoch 2] Total Image Loss: 134.5458
+2025-04-15 11:17:28,128 - INFO - [Epoch 2] Total Image Loss: 161.4284
+2025-04-15 11:17:43,679 - INFO - [Epoch 2] Total Image Loss: 188.5639
+2025-04-15 11:18:00,289 - INFO - [Epoch 2] Total Image Loss: 215.4835
+2025-04-15 11:18:22,045 - INFO - [Epoch 2] Total Image Loss: 242.5225
+2025-04-15 11:18:47,143 - INFO - [Epoch 2] Total Image Loss: 269.2925
+2025-04-15 11:19:05,762 - INFO - [Epoch 2] Total Image Loss: 296.3520
+2025-04-15 11:19:22,876 - INFO - [Epoch 2] Total Image Loss: 323.0744
+2025-04-15 11:19:39,575 - INFO - [Epoch 2] Total Image Loss: 350.2905
+2025-04-15 11:19:57,777 - INFO - [Epoch 2] Total Image Loss: 377.1334
+2025-04-15 11:20:34,476 - INFO - [Epoch 2] Total Image Loss: 404.0687

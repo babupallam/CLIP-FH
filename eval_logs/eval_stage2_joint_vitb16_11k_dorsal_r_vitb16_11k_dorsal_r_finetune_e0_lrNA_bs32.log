@@ -6,98 +6,14 @@ Model       : vitb16
 Variant     : clipreid
 Dataset     : 11k
 Aspect      : dorsal_r
-Model Path  : saved_models/stage2_joint_vitb16_11k_dorsal_r_vitb16_11k_dorsal_r_finetune_e0_lr00001_bs32_BEST.pth
+Model Path  : saved_models/stage2_clipreid_vitb16_11k_dorsal_r_vitb16_11k_dorsal_r_clipid_e1_bs32_BEST.pth
 ==================================================
 
 Device: cpu
-Loading fine-tuned model from: saved_models/stage2_joint_vitb16_11k_dorsal_r_vitb16_11k_dorsal_r_finetune_e0_lr00001_bs32_BEST.pth
-Model weights loaded successfully from: saved_models/stage2_joint_vitb16_11k_dorsal_r_vitb16_11k_dorsal_r_finetune_e0_lr00001_bs32_BEST.pth
-Checkpoint restored from epoch 0
-Checkpoint metadata: {'used_prompt_learning': False, 'prompt_param_names': [], 'freeze_text_encoder': False, 'clip_variant': 'ViT-B/16', 'aspect': 'dorsal_r', 'dataset': '11k', 'fine_tuned_image_encoder': True, 'fine_tuned_classifier': False, 'has_scheduler': True, 'stage': 'unknown', 'save_time': '2025-04-12T23:30:47.259518', 'config_hash': 'b7d73d30118b57d200824c3bee1bfe46'}
+Loading fine-tuned model from: saved_models/stage2_clipreid_vitb16_11k_dorsal_r_vitb16_11k_dorsal_r_clipid_e1_bs32_BEST.pth
+Model weights loaded successfully from: saved_models/stage2_clipreid_vitb16_11k_dorsal_r_vitb16_11k_dorsal_r_clipid_e1_bs32_BEST.pth
+Checkpoint restored from epoch 1
+Checkpoint metadata: {'used_prompt_learning': False, 'prompt_param_names': [], 'freeze_text_encoder': False, 'clip_variant': 'ViT-B/16', 'aspect': 'dorsal_r', 'dataset': '11k', 'fine_tuned_image_encoder': True, 'fine_tuned_classifier': False, 'has_scheduler': True, 'stage': 'unknown', 'save_time': '2025-04-15T11:15:32.109393', 'config_hash': '49fb09dbb67f1217ee97e5215a1ca219'}
+Prompt Learner weights loaded from: saved_models/stage2_clipreid_vitb16_11k_dorsal_r_vitb16_11k_dorsal_r_clipid_e1_bs32_BEST_prompt.pth
+
 Split 1/10
-Evaluation Metrics:
-   Rank-1 : 52.64%
-   Rank-5 : 72.35%
-   Rank-10: 85.02%
-   mAP    : 63.72%
-Time Taken     : 412.83s
-
-Split 2/10
-Evaluation Metrics:
-   Rank-1 : 55.88%
-   Rank-5 : 74.01%
-   Rank-10: 86.47%
-   mAP    : 65.20%
-Time Taken     : 425.51s
-
-Split 3/10
-Evaluation Metrics:
-   Rank-1 : 50.21%
-   Rank-5 : 71.88%
-   Rank-10: 85.89%
-   mAP    : 62.48%
-Time Taken     : 436.07s
-
-Split 4/10
-Evaluation Metrics:
-   Rank-1 : 48.76%
-   Rank-5 : 70.90%
-   Rank-10: 85.27%
-   mAP    : 61.80%
-Time Taken     : 438.51s
-
-Split 5/10
-Evaluation Metrics:
-   Rank-1 : 54.39%
-   Rank-5 : 73.42%
-   Rank-10: 86.19%
-   mAP    : 64.77%
-Time Taken     : 394.16s
-
-Split 6/10
-Evaluation Metrics:
-   Rank-1 : 57.01%
-   Rank-5 : 76.62%
-   Rank-10: 88.08%
-   mAP    : 66.93%
-Time Taken     : 391.39s
-
-Split 7/10
-Evaluation Metrics:
-   Rank-1 : 54.72%
-   Rank-5 : 74.85%
-   Rank-10: 86.60%
-   mAP    : 64.90%
-Time Taken     : 387.34s
-
-Split 8/10
-Evaluation Metrics:
-   Rank-1 : 49.88%
-   Rank-5 : 70.66%
-   Rank-10: 84.96%
-   mAP    : 62.14%
-Time Taken     : 388.75s
-
-Split 9/10
-Evaluation Metrics:
-   Rank-1 : 51.74%
-   Rank-5 : 73.09%
-   Rank-10: 87.12%
-   mAP    : 63.95%
-Time Taken     : 386.93s
-
-Split 10/10
-Evaluation Metrics:
-   Rank-1 : 53.89%
-   Rank-5 : 74.52%
-   Rank-10: 88.39%
-   mAP    : 65.42%
-Time Taken     : 387.33s
-
-Final Averaged Results Across All Splits:
-Rank-1 Accuracy : 52.91%
-Rank-5 Accuracy : 73.43%
-Rank-10 Accuracy: 86.71%
-Mean AP         : 64.73%
-
-Log saved to: eval_logs/eval_stage2_joint_vitb16_11k_dorsal_r_vitb16_11k_dorsal_r_finetune_e0_lrNA_bs32.log

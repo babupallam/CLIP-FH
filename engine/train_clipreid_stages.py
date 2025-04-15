@@ -80,17 +80,19 @@ def train_clipreid_prompt_stage(clip_model, prompt_learner, optimizer, scheduler
         avg_loss = total_loss / len(indices)
         logger.info(f"[Epoch {epoch + 1}] Avg Prompt Loss: {avg_loss:.4f}")
 
+        # Babu, dont uncomment it now
+        '''
         # 10. Save checkpoint (optional)
         if avg_loss < best_loss:
             best_loss = avg_loss
-            best_path = os.path.join(cfg["save_dir"], build_filename(cfg, epoch, stage="prompt", extension="_BEST.pth", timestamped=False))
+            best_path = os.path.join(cfg["save_dir"], build_filename(cfg, epoch+1, stage="prompt", extension="_BEST.pth", timestamped=False))
 
             save_checkpoint(
                 model=clip_model,
                 classifier=None,
                 optimizer=optimizer,
                 config=cfg,
-                epoch=epoch,
+                epoch=epoch+1,
                 val_metrics={"loss": best_loss},
                 path=best_path,
                 is_best=True,
@@ -106,16 +108,25 @@ def train_clipreid_prompt_stage(clip_model, prompt_learner, optimizer, scheduler
 
     # 12. Save final model checkpoint
     final_path = os.path.join(cfg["save_dir"],
-                              build_filename(cfg, epoch, stage="prompt", extension="_FINAL.pth", timestamped=False))
+                              build_filename(cfg, epoch+1, stage="prompt", extension="_FINAL.pth", timestamped=False))
+
     save_checkpoint(
-        clip_model, None, optimizer, cfg, epoch,
-        {"loss": avg_loss}, final_path,
-        is_best=False, scheduler=scheduler,
-        train_loss=avg_loss
+        model=clip_model,
+        classifier=None,
+        optimizer=optimizer,
+        config=cfg,
+        epoch=epoch+1,
+        val_metrics={"loss": avg_loss},
+        path=final_path,
+        is_best=True,
+        scheduler=scheduler,
+        train_loss=avg_loss,
+        prompt_learner=prompt_learner
     )
+
     logger.info(f" Final Prompt model saved to: {final_path}")
 
-
+    '''
 
 def train_clipreid_image_stage(clip_model, prompt_learner, optimizer, scheduler,
                                train_loader, val_loader, cfg, device, logger,
@@ -181,7 +192,7 @@ def train_clipreid_image_stage(clip_model, prompt_learner, optimizer, scheduler,
 
             optimizer.step()
             total_loss += loss.item()
-            logger.info(f"[Epoch {epoch + 1}] Total Image Loss: {total_loss:.4f}")
+            #logger.info(f"[Epoch {epoch + 1}] Total Image Loss: {total_loss:.4f}")
             pbar.set_postfix({
                 "loss": f"{loss.item():.4f}",
                 "feat_n": f"{feat_norm:.2f}",
@@ -198,7 +209,19 @@ def train_clipreid_image_stage(clip_model, prompt_learner, optimizer, scheduler,
         if metrics["rank1"] > best_rank1_image:
             best_rank1_image = metrics["rank1"]
             best_path = os.path.join(cfg["save_dir"], build_filename(cfg, epoch+1, stage="image", extension="_BEST.pth", timestamped=False))
-            save_checkpoint(clip_model, None, optimizer, cfg, epoch+1, metrics, best_path, True, scheduler, total_loss)
+            save_checkpoint(
+                model=clip_model,
+                classifier=None,
+                optimizer=optimizer,
+                config=cfg,
+                epoch=epoch + 1,
+                val_metrics=metrics,
+                path=best_path,
+                is_best=True,
+                scheduler=scheduler,
+                train_loss=total_loss,
+                prompt_learner=prompt_learner
+            )
             logger.info(f" New BEST Image model saved at Rank-1 = {metrics['rank1'] * 100:.2f}%")
             logger.info(f"[Epoch {epoch + 1}] Rank-1: {metrics['rank1']:.2%}, mAP: {metrics['mAP']:.2%}")
 
@@ -208,10 +231,18 @@ def train_clipreid_image_stage(clip_model, prompt_learner, optimizer, scheduler,
     final_path = os.path.join(cfg["save_dir"],
                               build_filename(cfg, epoch+1, stage="image", extension="_FINAL.pth", timestamped=False))
     save_checkpoint(
-        clip_model, None, optimizer, cfg, epoch+1,
-        metrics, final_path,
-        is_best=False, scheduler=scheduler,
-        train_loss=total_loss
+        model=clip_model,
+        classifier=None,
+        optimizer=optimizer,
+        config=cfg,
+        epoch=epoch + 1,
+        val_metrics=metrics,
+        path=final_path,
+        is_best=False,
+        scheduler=scheduler,
+        train_loss=total_loss,
+        prompt_learner=prompt_learner
     )
+
     logger.info(f"Final Image model saved to: {final_path}")
 
