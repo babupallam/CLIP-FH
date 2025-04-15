@@ -2,7 +2,7 @@ experiment: eval_stage1_frozen_text
 
 dataset: 11k
 aspect: dorsal_r
-model: vitb16
+model: rn50
 variant: stage1_frozen_text
 
 batch_size: 32
