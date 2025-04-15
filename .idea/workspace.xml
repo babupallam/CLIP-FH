@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8c7cde98-b929-4071-bc2e-b0363f4c695d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/eval_stage3_promptsg/eval_stage3_vitb16_11k_dorsal_r.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/eval_stage3_promptsg/eval_stage3_vitb16_11k_dorsal_r.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/train_stage3_promptsg/train_stage3_vitb16_11k_dorsal_r.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/train_stage3_promptsg/train_stage3_vitb16_11k_dorsal_r.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/stage3_promptsg_integration/train_stage3_promptsg.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/stage3_promptsg_integration/train_stage3_promptsg.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/eval_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/eval_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eval_logs/eval_stage2_joint_vitb16_11k_dorsal_r_vitb16_11k_dorsal_r_finetune_e0_lrNA_bs32.log" beforeDir="false" afterPath="$PROJECT_DIR$/eval_logs/eval_stage2_joint_vitb16_11k_dorsal_r_vitb16_11k_dorsal_r_finetune_e0_lrNA_bs32.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +99,7 @@
       <workItem from="1743727135744" duration="417000" />
       <workItem from="1743727805200" duration="271051000" />
       <workItem from="1744357298496" duration="83077000" />
-      <workItem from="1744542299336" duration="90568000" />
+      <workItem from="1744542299336" duration="91096000" />
     </task>
     <servers />
   </component>
