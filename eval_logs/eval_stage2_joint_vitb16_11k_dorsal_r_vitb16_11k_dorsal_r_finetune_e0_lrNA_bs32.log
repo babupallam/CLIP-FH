@@ -17,3 +17,89 @@ Checkpoint metadata: {'used_prompt_learning': False, 'prompt_param_names': [], '
 Prompt Learner weights loaded from: saved_models/stage2_clipreid_vitb16_11k_dorsal_r_vitb16_11k_dorsal_r_clipid_e1_bs32_BEST_prompt.pth
 
 Split 1/10
+Evaluation Metrics:
+   Rank-1 : 71.06%
+   Rank-5 : 87.95%
+   Rank-10: 92.38%
+   mAP    : 78.47%
+Time Taken     : 452.52s
+
+Split 2/10
+Evaluation Metrics:
+   Rank-1 : 73.84%
+   Rank-5 : 89.08%
+   Rank-10: 93.82%
+   mAP    : 80.61%
+Time Taken     : 427.30s
+
+Split 3/10
+Evaluation Metrics:
+   Rank-1 : 69.00%
+   Rank-5 : 87.95%
+   Rank-10: 94.23%
+   mAP    : 77.39%
+Time Taken     : 414.44s
+
+Split 4/10
+Evaluation Metrics:
+   Rank-1 : 68.59%
+   Rank-5 : 87.13%
+   Rank-10: 93.82%
+   mAP    : 76.86%
+Time Taken     : 470.53s
+
+Split 5/10
+Evaluation Metrics:
+   Rank-1 : 72.61%
+   Rank-5 : 89.70%
+   Rank-10: 94.75%
+   mAP    : 79.60%
+Time Taken     : 486.18s
+
+Split 6/10
+Evaluation Metrics:
+   Rank-1 : 76.93%
+   Rank-5 : 91.56%
+   Rank-10: 95.67%
+   mAP    : 83.19%
+Time Taken     : 472.00s
+
+Split 7/10
+Evaluation Metrics:
+   Rank-1 : 72.71%
+   Rank-5 : 90.11%
+   Rank-10: 94.64%
+   mAP    : 80.23%
+Time Taken     : 423.58s
+
+Split 8/10
+Evaluation Metrics:
+   Rank-1 : 68.69%
+   Rank-5 : 87.54%
+   Rank-10: 93.10%
+   mAP    : 76.84%
+Time Taken     : 423.47s
+
+Split 9/10
+Evaluation Metrics:
+   Rank-1 : 70.96%
+   Rank-5 : 89.70%
+   Rank-10: 95.57%
+   mAP    : 79.03%
+Time Taken     : 439.66s
+
+Split 10/10
+Evaluation Metrics:
+   Rank-1 : 72.61%
+   Rank-5 : 90.53%
+   Rank-10: 96.81%
+   mAP    : 80.36%
+Time Taken     : 424.51s
+
+Final Averaged Results Across All Splits:
+Rank-1 Accuracy : 71.70%
+Rank-5 Accuracy : 89.12%
+Rank-10 Accuracy: 94.48%
+Mean AP         : 79.26%
+
+Log saved to: eval_logs/eval_stage2_joint_vitb16_11k_dorsal_r_vitb16_11k_dorsal_r_finetune_e0_lrNA_bs32.log
