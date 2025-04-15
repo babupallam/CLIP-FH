@@ -19,8 +19,11 @@ from tqdm import tqdm  # Progress bar for iterations
 from torch.nn.functional import normalize  # For L2-normalization of feature vectors
 
 
-
-def extract_features(model, dataloader, device, use_flip=False):
+def extract_features(model, dataloader, device, use_flip=False, prompt_learner=None):
+    """
+    Extracts image features using CLIP's image encoder (optionally with horizontal flip).
+    If a PromptLearner is provided (for clipreid), also fuses image and prompt features.
+    """
     model.eval()
     features, labels = [], []
 
@@ -37,6 +40,21 @@ def extract_features(model, dataloader, device, use_flip=False):
                 feats = (feats_orig + feats_flip) / 2.0
             else:
                 feats = feats_orig
+
+            # === Optional: Prompt fusion if prompt_learner is used ===
+            if prompt_learner is not None:
+                prompts = prompt_learner.forward_batch(label)  # shape: [B, n_ctx, D]
+                x = prompts + model.positional_embedding.unsqueeze(0)  # [B, n_ctx, D]
+                x = x.permute(1, 0, 2)  # [n_ctx, B, D]
+                x = model.transformer(x)
+                x = x.permute(1, 0, 2)
+                text_feats = model.ln_final(x[:, 0, :])  # CLS token
+                text_feats = torch.nn.functional.normalize(text_feats, dim=1)
+
+                # Fuse visual + textual embeddings (e.g., average)
+                feats = (feats + text_feats) / 2.0
+            else:
+                feats = feats
 
             feats = torch.nn.functional.normalize(feats, dim=1)
             features.append(feats)

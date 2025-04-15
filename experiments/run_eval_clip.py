@@ -19,6 +19,7 @@ from engine.evaluator import evaluate_rank
 from utils.dataloaders import get_dataloader
 from utils.naming import build_filename
 from utils.train_helpers import register_bnneck_and_arcface
+from engine.prompt_learner import PromptLearner
 
 
 def load_config(path):
@@ -151,6 +152,46 @@ def run_eval(config_path):
         log(log_path, f"Model weights loaded successfully from: {model_path}")
         log(log_path, f"Checkpoint restored from epoch {epoch_ckpt}")
         log(log_path, f"Checkpoint metadata: {metadata_ckpt}")
+
+        # === Load PromptLearner if using clipreid variant ===
+        if variant.lower() == "clipreid":
+            # Reconstruct classnames from train set (based on class_to_idx)
+            from torchvision.datasets import ImageFolder
+            from utils.transforms import build_transforms
+
+            # Rebuild the class list (required for PromptLearner initialization)
+            aspect = config["aspect"]
+            dataset_root = os.path.join("datasets", "11khands" if dataset == "11k" else "HD/Original Images")
+            if dataset == "11k":
+                dataset_root += f"_{aspect}"
+            train_dir = os.path.join(dataset_root, "train")
+            transform = build_transforms(train=False)
+            dataset_train = ImageFolder(train_dir, transform=transform)
+
+            class_to_idx = dataset_train.class_to_idx
+            classnames = [k for k, _ in sorted(class_to_idx.items(), key=lambda x: x[1])]
+
+            prompt_learner = PromptLearner(
+                classnames=classnames,
+                clip_model=model,
+                n_ctx=config.get("n_ctx", 16),
+                ctx_init=config.get("ctx_init", None),
+                prompt_template=config.get("prompt_template", "a photo of a {} hand."),
+                aspect=config.get("aspect", "dorsal"),
+                device=device
+            )
+
+            prompt_path = model_path.replace(".pth", "_prompt.pth")
+            if os.path.exists(prompt_path):
+                prompt_learner.load_state_dict(torch.load(prompt_path, map_location=device))
+                prompt_learner.to(device)
+                prompt_learner.eval()
+                log(log_path, f"Prompt Learner weights loaded from: {prompt_path}")
+            else:
+                log(log_path, f"[WARNING] Expected prompt weights not found at: {prompt_path}")
+        else:
+            prompt_learner = None
+
     else:
         log(log_path, "No fine-tuned model path specified. Using official CLIP baseline.")
 
@@ -198,8 +239,8 @@ def run_eval(config_path):
         use_flip = config.get("use_flip", False)  #l horizontal flip feature averaging (like MBA)
         # This will mirror the MBA strategy, where features from original and horizontally flipped images are averaged, improving generalization for re-identification.
         # this feature can be used from the config file
-        q_feats, q_labels = extract_features(model, query_loader, device, use_flip=use_flip)
-        g_feats, g_labels = extract_features(model, gallery_loader, device, use_flip=use_flip)
+        q_feats, q_labels = extract_features(model, query_loader, device, use_flip=use_flip, prompt_learner=prompt_learner)
+        g_feats, g_labels = extract_features(model, gallery_loader, device, use_flip=use_flip, prompt_learner=prompt_learner)
 
         # Compute similarity between query & gallery
         sim_matrix = compute_similarity_matrix(q_feats, g_feats)

@@ -84,12 +84,21 @@ def train_clipreid_prompt_stage(clip_model, prompt_learner, optimizer, scheduler
         if avg_loss < best_loss:
             best_loss = avg_loss
             best_path = os.path.join(cfg["save_dir"], build_filename(cfg, epoch, stage="prompt", extension="_BEST.pth", timestamped=False))
+
             save_checkpoint(
-                clip_model, None, optimizer, cfg, epoch,
-                {"loss": best_loss}, best_path,
-                is_best=True, scheduler=scheduler,
-                train_loss=best_loss
+                model=clip_model,
+                classifier=None,
+                optimizer=optimizer,
+                config=cfg,
+                epoch=epoch,
+                val_metrics={"loss": best_loss},
+                path=best_path,
+                is_best=True,
+                scheduler=scheduler,
+                train_loss=best_loss,
+                prompt_learner=prompt_learner
             )
+
             logger.info(f" New BEST Prompt model saved with loss = {best_loss:.4f}")
 
         # 11. Learning rate step

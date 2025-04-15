@@ -13,7 +13,8 @@ def save_checkpoint(
     is_best=False,
     scheduler=None,
     train_loss=None,
-    metrics_log=None
+    metrics_log=None,
+    prompt_learner=None
 ):
     """
     Save a full training checkpoint supporting all CLIP-FH stages.
@@ -38,6 +39,7 @@ def save_checkpoint(
     config_serialized = str(sorted(config.items()))
     config_hash = hashlib.md5(config_serialized.encode()).hexdigest()
 
+
     # Build metadata block
     metadata = {
         "used_prompt_learning": bool(prompt_params),
@@ -53,6 +55,12 @@ def save_checkpoint(
         "save_time": datetime.now().isoformat(),
         "config_hash": config_hash
     }
+
+    # Save Prompt Learner separately if available
+    if prompt_learner is not None:
+        prompt_path = path.replace(".pth", "_prompt.pth")
+        torch.save(prompt_learner.state_dict(), prompt_path)
+        print(f"Saved Prompt Learner to: {prompt_path}")
 
     # Save RNG states for exact reproducibility
     rng_state = {
@@ -88,6 +96,7 @@ def save_checkpoint(
     torch.save(checkpoint, path)
     tag = "BEST" if is_best else "FINAL"
     print(f"Saved {tag} checkpoint to: {path}")
+
 
 
 
