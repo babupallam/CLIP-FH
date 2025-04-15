@@ -1,0 +1,101 @@
+Evaluation Log
+==================================================
+Config      : C:\Users\P2849288\OneDrive - De Montfort University\MSC PROJECT\BABU PALLAM\CLIP-FH\configs\baseline\eval_vitb16_11k_dorsal_l.yml
+Experiment  : eval_stage0_baseline
+Model       : vitb16
+Variant     : baseline
+Dataset     : 11k
+Aspect      : dorsal_l
+Model Path  : N/A
+==================================================
+
+Device: cuda
+No fine-tuned model path specified. Using official CLIP baseline.
+
+Split 1/10
+Evaluation Metrics:
+   Rank-1 : 76.92%
+   Rank-5 : 91.19%
+   Rank-10: 94.53%
+   mAP    : 83.18%
+Time Taken     : 33.66s
+
+Split 2/10
+Evaluation Metrics:
+   Rank-1 : 73.89%
+   Rank-5 : 88.97%
+   Rank-10: 94.23%
+   mAP    : 80.37%
+Time Taken     : 30.27s
+
+Split 3/10
+Evaluation Metrics:
+   Rank-1 : 76.11%
+   Rank-5 : 93.12%
+   Rank-10: 96.05%
+   mAP    : 83.21%
+Time Taken     : 29.93s
+
+Split 4/10
+Evaluation Metrics:
+   Rank-1 : 76.42%
+   Rank-5 : 90.69%
+   Rank-10: 94.23%
+   mAP    : 82.72%
+Time Taken     : 29.77s
+
+Split 5/10
+Evaluation Metrics:
+   Rank-1 : 73.18%
+   Rank-5 : 86.94%
+   Rank-10: 92.61%
+   mAP    : 79.58%
+Time Taken     : 29.97s
+
+Split 6/10
+Evaluation Metrics:
+   Rank-1 : 77.94%
+   Rank-5 : 92.00%
+   Rank-10: 95.55%
+   mAP    : 84.10%
+Time Taken     : 29.98s
+
+Split 7/10
+Evaluation Metrics:
+   Rank-1 : 76.52%
+   Rank-5 : 90.99%
+   Rank-10: 95.34%
+   mAP    : 82.76%
+Time Taken     : 29.99s
+
+Split 8/10
+Evaluation Metrics:
+   Rank-1 : 71.56%
+   Rank-5 : 86.13%
+   Rank-10: 93.42%
+   mAP    : 78.56%
+Time Taken     : 30.20s
+
+Split 9/10
+Evaluation Metrics:
+   Rank-1 : 73.68%
+   Rank-5 : 87.96%
+   Rank-10: 93.22%
+   mAP    : 80.55%
+Time Taken     : 30.18s
+
+Split 10/10
+Evaluation Metrics:
+   Rank-1 : 72.47%
+   Rank-5 : 90.28%
+   Rank-10: 95.04%
+   mAP    : 80.46%
+Time Taken     : 30.39s
+
+Final Averaged Results Across All Splits:
+Rank-1 Accuracy : 74.87%
+Rank-5 Accuracy : 89.83%
+Rank-10 Accuracy: 94.42%
+Mean AP         : 81.55%
+
+Log saved to: eval_logs/eval_stage0_baseline_vitb16_11k_dorsal_l_baseline_e0_bs32.log

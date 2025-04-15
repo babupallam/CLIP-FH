@@ -1,0 +1,101 @@
+Evaluation Log
+==================================================
+Config      : C:\Users\P2849288\OneDrive - De Montfort University\MSC PROJECT\BABU PALLAM\CLIP-FH\configs\baseline\eval_rn50_11k_palmar_r.yml
+Experiment  : eval_stage0_baseline
+Model       : rn50
+Variant     : baseline
+Dataset     : 11k
+Aspect      : palmar_r
+Model Path  : N/A
+==================================================
+
+Device: cuda
+No fine-tuned model path specified. Using official CLIP baseline.
+
+Split 1/10
+Evaluation Metrics:
+   Rank-1 : 70.88%
+   Rank-5 : 89.20%
+   Rank-10: 94.33%
+   mAP    : 78.91%
+Time Taken     : 33.16s
+
+Split 2/10
+Evaluation Metrics:
+   Rank-1 : 68.70%
+   Rank-5 : 84.41%
+   Rank-10: 90.95%
+   mAP    : 76.21%
+Time Taken     : 29.94s
+
+Split 3/10
+Evaluation Metrics:
+   Rank-1 : 70.56%
+   Rank-5 : 87.13%
+   Rank-10: 92.37%
+   mAP    : 77.94%
+Time Taken     : 30.05s
+
+Split 4/10
+Evaluation Metrics:
+   Rank-1 : 71.54%
+   Rank-5 : 87.02%
+   Rank-10: 92.58%
+   mAP    : 78.33%
+Time Taken     : 29.93s
+
+Split 5/10
+Evaluation Metrics:
+   Rank-1 : 70.12%
+   Rank-5 : 86.15%
+   Rank-10: 91.38%
+   mAP    : 77.08%
+Time Taken     : 29.99s
+
+Split 6/10
+Evaluation Metrics:
+   Rank-1 : 69.36%
+   Rank-5 : 84.73%
+   Rank-10: 90.51%
+   mAP    : 76.64%
+Time Taken     : 29.98s
+
+Split 7/10
+Evaluation Metrics:
+   Rank-1 : 70.77%
+   Rank-5 : 84.19%
+   Rank-10: 89.97%
+   mAP    : 77.21%
+Time Taken     : 29.96s
+
+Split 8/10
+Evaluation Metrics:
+   Rank-1 : 64.67%
+   Rank-5 : 80.48%
+   Rank-10: 87.02%
+   mAP    : 72.19%
+Time Taken     : 29.80s
+
+Split 9/10
+Evaluation Metrics:
+   Rank-1 : 68.48%
+   Rank-5 : 83.64%
+   Rank-10: 90.84%
+   mAP    : 75.65%
+Time Taken     : 29.99s
+
+Split 10/10
+Evaluation Metrics:
+   Rank-1 : 70.88%
+   Rank-5 : 88.66%
+   Rank-10: 92.91%
+   mAP    : 78.88%
+Time Taken     : 29.97s
+
+Final Averaged Results Across All Splits:
+Rank-1 Accuracy : 69.60%
+Rank-5 Accuracy : 85.56%
+Rank-10 Accuracy: 91.29%
+Mean AP         : 76.90%
+
+Log saved to: eval_logs/eval_stage0_baseline_rn50_11k_palmar_r_baseline_e0_bs32.log

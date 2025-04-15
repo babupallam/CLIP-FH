@@ -1,0 +1,101 @@
+Evaluation Log
+==================================================
+Config      : C:\Users\P2849288\OneDrive - De Montfort University\MSC PROJECT\BABU PALLAM\CLIP-FH\configs\baseline\eval_rn50_hd_dorsal_r.yml
+Experiment  : eval_stage0_baseline
+Model       : rn50
+Variant     : baseline
+Dataset     : hd
+Aspect      : dorsal_r
+Model Path  : N/A
+==================================================
+
+Device: cuda
+No fine-tuned model path specified. Using official CLIP baseline.
+
+Split 1/10
+Evaluation Metrics:
+   Rank-1 : 0.00%
+   Rank-5 : 0.30%
+   Rank-10: 0.95%
+   mAP    : 0.79%
+Time Taken     : 59.83s
+
+Split 2/10
+Evaluation Metrics:
+   Rank-1 : 0.00%
+   Rank-5 : 0.35%
+   Rank-10: 0.90%
+   mAP    : 0.81%
+Time Taken     : 56.73s
+
+Split 3/10
+Evaluation Metrics:
+   Rank-1 : 0.00%
+   Rank-5 : 0.50%
+   Rank-10: 1.15%
+   mAP    : 0.85%
+Time Taken     : 56.83s
+
+Split 4/10
+Evaluation Metrics:
+   Rank-1 : 0.00%
+   Rank-5 : 0.30%
+   Rank-10: 0.85%
+   mAP    : 0.83%
+Time Taken     : 56.90s
+
+Split 5/10
+Evaluation Metrics:
+   Rank-1 : 0.00%
+   Rank-5 : 0.20%
+   Rank-10: 0.50%
+   mAP    : 0.75%
+Time Taken     : 57.16s
+
+Split 6/10
+Evaluation Metrics:
+   Rank-1 : 0.00%
+   Rank-5 : 0.25%
+   Rank-10: 0.75%
+   mAP    : 0.79%
+Time Taken     : 56.93s
+
+Split 7/10
+Evaluation Metrics:
+   Rank-1 : 0.00%
+   Rank-5 : 0.70%
+   Rank-10: 1.20%
+   mAP    : 0.92%
+Time Taken     : 56.56s
+
+Split 8/10
+Evaluation Metrics:
+   Rank-1 : 0.00%
+   Rank-5 : 0.40%
+   Rank-10: 1.05%
+   mAP    : 0.83%
+Time Taken     : 56.44s
+
+Split 9/10
+Evaluation Metrics:
+   Rank-1 : 0.00%
+   Rank-5 : 0.25%
+   Rank-10: 0.85%
+   mAP    : 0.81%
+Time Taken     : 56.13s
+
+Split 10/10
+Evaluation Metrics:
+   Rank-1 : 0.00%
+   Rank-5 : 0.20%
+   Rank-10: 0.65%
+   mAP    : 0.78%
+Time Taken     : 56.31s
+
+Final Averaged Results Across All Splits:
+Rank-1 Accuracy : 0.00%
+Rank-5 Accuracy : 0.35%
+Rank-10 Accuracy: 0.89%
+Mean AP         : 0.82%
+
+Log saved to: eval_logs/eval_stage0_baseline_rn50_hd_dorsal_r_baseline_e0_bs32.log
