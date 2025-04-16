@@ -1,4 +1,0 @@
-2025-04-16 01:11:03,664 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
-2025-04-16 01:11:03,664 - INFO - [DEBUG] img_features: torch.Size([32, 512]), prompt: N/A, pooled: torch.Size([32, 72])
-2025-04-16 01:11:03,665 - INFO - [DEBUG] logits std: 0.3058
-2025-04-16 01:11:03,666 - INFO - [DEBUG] CE loss: 4.3023, Triplet loss: 0.1896, Total: 4.4919
