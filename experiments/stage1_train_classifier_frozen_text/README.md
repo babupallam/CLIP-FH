@@ -1,146 +1,73 @@
-## **Implementation of `experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text.py`**
+Implementation of experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text.py
 
----
+========================
 
-### `main()`
+**main()**  
+   - **take configuration parameters** using `config.get("", default value)`  
+     - These parameters include things like `epochs`, `lr`, `batch_size`, `early_stop_patience`, etc.  
+     - They control how many epochs we train, what learning rate we use, etc.  
+   - **bulding filename** `build_filename()`  
+     - This function creates a systematic filename for saving logs and model checkpoints (e.g., with epoch number and timestamp).  
+   - **device selection**  
+     - Check if a GPU is available (`cuda`) or fall back to CPU. Ensures faster computation if GPU is present.  
+   - **train, val, classes loader** `get_train_val_loaders(config)`  
+     - **from the dataset**: Loads images from folder structures (train, query0, gallery0).  
+     - **transform() - used for** resizing images to 224×224, converting them to PyTorch tensors, etc. Ensures uniform input size and format.  
+   - **build model()** - which creates CLIP model and classifier  
+     - **why those are used for**  
+       - **clip model**: Provides the frozen text encoder and the fine-tunable image encoder to extract powerful image embeddings.  
+       - **classifier**: A small linear head (e.g. `nn.Linear(embed_dim, num_classes)`) that maps the CLIP image embeddings to class logits.  
+     - **assign clip_model** = using the model variant, using `clip.load()`  
+       - This loads the chosen CLIP architecture (ViT-B/32, RN50, etc.) so we can use its `visual` component.  
+     - **classifer** is created using a linear layer of `nn` with `image_embeddim x number_of_classes` dimension using `nn.Linear()`.  
+       - The output has size `[batch_size, num_classes]`, which fits the CrossEntropy classification setup.  
+   - **assign trainer class** = `FinetuneTrainerStage1(clip_model, classifier, train_loader, val_loader, config, device)` from `engine/train_classifier_stage1.py`  
+     - This class encapsulates the training logic so we keep our code structured.  
+   - **exicute train() function** in trainer class  
+     - **in the constructor `__init__()`** of `FinetuneTrainerStage1` class, it does  
+       - **assigning loaders**: Receives `train_loader` and `val_loader`  
+       - **assigning parameters**: Reads learning rate, epochs, and other hyperparameters from `config`.  
+       - **assign loss functions**  
+         - `crossEntropyLoss()`: For classification accuracy. Helps the classifier distinguish classes.  
+         - `tripletLoss()`: Encourages embeddings of the same class to be closer in feature space, and different classes to be farther apart.  
+       - **early stopping parameter** `self.early_stop_patience`  
+         - If `Rank-1` validation accuracy stops improving after this many epochs, training stops early.  
+       - **assign optimizer = Adam optimizer**  
+         - the parameter changes in this is  
+           - `clip_model.visual.parameters(), "lr": self.lr}`  
+             - **why?** Because we want to fine-tune the image encoder at the main learning rate.  
+           - `classifier.parameters(), "lr": self.lr * 0.1}`  
+             - **why?** Because the classifier is simpler and may need a smaller learning rate to avoid overfitting or to stabilize training.  
+       - **setting the log directory**  
+         - Where logs will be stored (such as training loss, rank1, rank5, rank10, mAP, and debug info like `logits std`).  
+       - **in train()**  
+         - **set clip in training mode** `clip_model.train()`  
+           - Ensures dropout, batch norm, etc., are active in training mode for the image encoder.  
+         - **for each epoch**  
+           - **for each batch of data**  
+             - **images and labels**: Tensors from `DataLoader`  
+             - **resetting optimizer values**: `optimizer.zero_grad()`  
+             - **use clip to encode images**: `features = clip_model.encode_image(images)`  
+               - We’re freezing the text side, but the image encoder learns.  
+             - **output is the classifier output** on extracted features  
+               - i.e., `outputs = classifier(features)`  
+             - **calculate loss**  
+               - **calculate crossentroppy loss on outputs, labels**  
+                 - E.g. `ce = ce_loss(outputs, labels)`  
+               - **calculate triplet loss on features, labels**  
+                 - E.g. `tri = triplet_loss(features, labels)`  
+               - **calculate sum of losses**: `loss = ce + tri`  
+                 - This ensures classification correctness and feature separation.  
+             - **back propogation of the loss**  
+               - `loss.backward()` accumulates gradients.  
+             - **Clip gradients** to avoid exploding gradients  
+               - e.g. `clip_grad_norm_` helps keep training stable.  
+             - **update the model parameters** using `optmizer.step()`  
+               - Applies the gradients to fine-tune `clip_model.visual` and the classifier.  
+             - Additionally, the code logs parameters like **Rank-1** / **Rank-5** / **Rank-10** accuracy, **mAP** for ReID evaluation, and **logits std** for diagnostic purposes.  
+               - **Rank-1**: How many times the correct label is in the top-1 prediction  
+               - **Rank-5**: How many times the correct label is in the top-5 predictions  
+               - **Rank-10**: How many times the correct label is in the top-10 predictions  
+               - **mAP (mean Average Precision)**: Measures overall retrieval performance, especially in ReID tasks  
+               - **logits std**: Debug measure to see if outputs are saturating or exploding.  
 
-#### 🔹 Step 1: Configuration Setup
-- Uses `config.get("", default_value)` to load hyperparameters, dataset details, paths, etc.
-- This enables flexibility and modular control over experiments.
-
-#### 🔹 Step 2: Output Naming
-- Calls `build_filename()` to create a unique name for logs and model checkpoints.
-- Helps manage multiple runs and track performance across experiments.
-
-#### 🔹 Step 3: Device Selection
-- Chooses `cuda` if available, else `cpu`, using `torch.device(...)`.
-- Ensures model runs on GPU when possible for faster training.
-
-#### 🔹 Step 4: Load Datasets and DataLoaders
-- Uses `get_train_val_loaders(config)` to return:
-  - `train_loader`, `val_loader`, `num_classes`
-  - Loads from dataset directory split into `train/`, `query0/`, and `gallery0/`
-  
-  ##### Substep: `transform()`
-  - Applies `Resize(224, 224)` and `ToTensor()` to prepare image inputs for CLIP.
-  - Keeps input format consistent with CLIP’s pretraining resolution.
-
----
-
-### `build_model()` (called inside main)
-
-#### 🔹 CLIP Model Creation
-- Loads pre-trained CLIP model using `clip.load(model_variant)` from OpenAI’s library.
-- **Why CLIP model?**
-  - Used for extracting robust image features via the `visual` encoder.
-  - Text encoder is **frozen** in this stage (Stage 1).
-
-#### 🔹 Classifier Creation
-- A simple linear classifier: `nn.Linear(image_embed_dim, num_classes)`
-- **Why classifier?**
-  - Trains to distinguish identities using CLIP image features.
-  - Works with `CrossEntropyLoss` to learn discriminative features.
-
----
-
-### Trainer Setup
-
-#### 🔹 Step: Instantiate Trainer Class
-- `trainer = FinetuneTrainerStage1(...)` from `engine/train_classifier_stage1.py`
-- Packages the full training pipeline: data, model, optimizer, loss, and logging.
-
----
-
-### `train()` Method Inside `FinetuneTrainerStage1`
-
----
-
-### `__init__()` (Constructor)
-
-#### 🔹 Assign Data & Model Components
-- Stores `clip_model`, `classifier`, `train_loader`, `val_loader`, `device`, etc.
-
-#### 🔹 Loss Functions
-- `CrossEntropyLoss()` for classification.
-- `TripletLoss(margin=0.3)` for embedding separation.
-
-#### 🔹 Early Stopping Parameter
-- `self.early_stop_patience` controls how many epochs to wait before early stopping if no Rank-1 improvement.
-
-#### 🔹 Optimizer Setup
-- Uses Adam optimizer with **differential learning rates**:
-  - `"params": clip_model.visual.parameters(), "lr": self.lr`
-    - Why? Image encoder is pretrained → needs a moderate learning rate.
-  - `"params": classifier.parameters(), "lr": self.lr * 0.1`
-    - Why? Classifier is small and new → needs a smaller rate to avoid overfitting.
-
-#### 🔹 Logging Setup
-- Creates log files and CSV metrics in the specified directory.
-
----
-
-### `train()` (Training Loop)
-
-#### 🔹 Start Training Mode
-- Sets the model to training mode: `clip_model.train()`
-
-#### 🔹 Epoch Loop
-- For each epoch:
-  - Initializes timers and accumulators for loss and accuracy.
-
-#### 🔹 Batch Loop
-- For each batch in `train_loader`:
-
-  ##### Substep: Forward Pass
-  - Move `images`, `labels` to GPU/CPU.
-  - Reset gradients: `optimizer.zero_grad()`
-  - Encode images: `clip_model.encode_image(images)`
-  - Run classifier: `outputs = classifier(features)`
-
-  ##### Substep: Loss Calculation
-  - `ce = CrossEntropyLoss(outputs, labels)`
-  - `tri = TripletLoss(features, labels)`
-  - Combine: `loss = ce + tri`
-
-  ##### Substep: Backward Pass & Update
-  - `loss.backward()` for gradient computation.
-  - Clip gradients using `clip_grad_norm_` to stabilize training.
-  - `optimizer.step()` to update parameters.
-
-  ##### Substep: Metric Logging
-  - Compute top-k (Rank-1, 5, 10) accuracies using `outputs.topk()`.
-  - Accumulate total loss and metrics for epoch reporting.
-
-#### 🔹 Epoch End
-- Compute average loss and accuracy.
-- Log epoch metrics using `self.logger`.
-
----
-
-### Validation
-
-#### 🔹 Run ReID-style Validation
-- Combine `query0 + gallery0` in validation loader.
-- `validate()` returns:
-  - Rank-1, Rank-5, Rank-10, mAP, and optionally losses.
-- Uses same model and classifier to test retrieval capability.
-
----
-
-### Model Checkpointing
-
-#### 🔹 Save Best Checkpoint
-- If current epoch improves `Rank-1`, save `_BEST.pth` model.
-- Resets `no_improve_epochs` counter.
-
-#### 🔹 Early Stopping
-- If no improvement for `early_stop_patience`, break training loop.
-
----
-
-### Final Save
-
-#### 🔹 Save Final Checkpoint
-- After training ends (early or full), save final model as `_FINAL.pth`.
-
----
