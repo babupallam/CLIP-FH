@@ -1,313 +1,232 @@
-Thanks for sharing the full official CLIP-ReID implementation. I’ve done a **deep comparison** between your `train_stage2_joint.py` (HandCLIP) and the official `train_clipreid.py` + `processor_clipreid_stage1.py` + `processor_clipreid_stage2.py`. Here's a **detailed breakdown** of the key elements, and how well your HandCLIP adapts them.
+**Implementation of experiments/stage2_clipreid_integration/train_stage2_joint.py**
+
+========================  
+**train_joint(cfg_path)**  
+  - **Load Config**:  
+    - Reads the YAML config file (`cfg_path`) via `yaml.safe_load(f)`.  
+    - Stores hyperparameters like `epochs_prompt`, `epochs_image`, `lr`, and `n_ctx`.  
+  - **Build log file path**:  
+    - Uses `build_filename(cfg, cfg.get("epochs_image"), stage="image", ...)` to create a systematic `.log` filename and path.  
+    - Calls `setup_logger(log_path)` to initialize the logger.  
+  - **Setup**:  
+    - Chooses `device = "cuda"` if available, else `"cpu"`.  
+    - Reads `model_type` (e.g. `"ViT-B/32"`) and `stage_mode` (e.g. `"prompt_then_image"`) from `cfg`.  
+    - Retrieves `epochs_prompt`, `epochs_image`, and `lr` from the config.  
+  - **Load Model & Data**:  
+    - Calls `load_clip_with_patch(model_type, device, freeze_all=True)` to get a `clip_model`.  
+      - By default, everything in CLIP is frozen.  
+    - Calls `get_train_val_loaders(cfg)` to get `train_loader`, `val_loader`, and `num_classes`.  
+      - `train_loader` and `val_loader` contain images + labels, with possible query/gallery splits for ReID.  
+    - Retrieves the `class_to_idx` mapping and sorts it to build a list of `classnames` in label order.  
+  - **Prompt Learner Creation**:  
+    - Constructs `PromptLearner(...)` using:  
+      - the `classnames`,  
+      - the `clip_model`,  
+      - `n_ctx` (number of context tokens),  
+      - `prompt_template` (e.g. `"{aspect} hand of a person"`),  
+      - `device`.  
+    - This module learns prompt embeddings for each class label (often a textual context).  
+  - **Infer feature dimension**:  
+    - Uses a **dummy forward pass** (with a random image) through `clip_model.encode_image(dummy_input)` to get the shape `[1, feat_dim]`.  
+    - Stores `feat_dim` for BNNeck or ArcFace additions.  
+  - **Register BNNeck & ArcFace**:  
+    - `register_bnneck_and_arcface(...)` modifies the `clip_model` to include:  
+      - A `bottleneck` layer (BNNeck)  
+      - An `arcface` layer for classification, using `feat_dim` → `num_classes`  
+  - **Optimizer & Scheduler**:  
+    - Constructs an Adam optimizer for all trainable parameters (prompt learner + any unfrozen parts of `clip_model`).  
+    - Uses a `CosineAnnealingLR(optimizer, T_max=epochs_prompt + epochs_image, eta_min=1e-6)` for learning-rate scheduling.  
+    - Builds the combined `loss_fn` via `build_loss(cfg["loss_list"], ...)`, typically for contrastive or classification objectives.  
+    - Also creates separate references to `CrossEntropyLoss()` and `TripletLoss(margin=0.3)` as `ce_loss` and `triplet_loss`.  
+  - **Stage Logic**:  
+    - Checks `stage_mode` to decide the training sequence:  
+      1. **"prompt_then_image"** (default):  
+         - Trains prompt embeddings first (prompt stage), then trains the image encoder stage.  
+      2. **"prompt_only"**:  
+         - Trains only the prompt learner, skipping image fine-tuning.  
+      3. **"image_only"**:  
+         - Skips prompt training, fine-tunes only the image encoder.  
+    - **train_clipreid_prompt_stage(...)** is called if we do `prompt_only` or `prompt_then_image`.  
+      - After that, optionally run the **validate_stage1_prompts(...)** check (commented out for now).  
+    - **train_clipreid_image_stage(...)** is called if `image_only` or after the prompt stage in `prompt_then_image`.  
+      - This stage updates the image encoder + BNNeck + ArcFace.  
+  - **Command-line Execution**:  
+    - If script is run directly (`__main__`), it parses `--config` argument and calls `train_joint(args.config)`.
 
 ---
 
-### ✅ OVERALL STRUCTURE COMPARISON
+**Implementation of experiments/stage2_clipreid_integration/train_clipreid_stages.py**
 
-| Component              | CLIP-ReID                                           | HandCLIP (yours)                                     |
-|------------------------|----------------------------------------------------|-------------------------------------------------------|
-| Stage 1: Prompt Tuning | `do_train_stage1()` using cached image features    | `Stage 1` in `train_joint()` using cached features    |
-| Stage 2: Image FT      | `do_train_stage2()` with SupCon + ID + Triplet     | `Stage 2` in `train_joint()` with same combo          |
-| Joint Training Control | Two `make_optimizer` and `do_train_stageX()` calls | Single script handles both stages using `stage_mode`  |
-| Text Feat Extraction   | Model returns prompt-tuned text embeddings         | `PromptLearner.forward_batch()` handles it            |
-| Image Feat Extraction  | `model(img, get_image=True)` → normalize           | `encode_image()` → normalize                          |
+========================  
+**train_clipreid_prompt_stage(clip_model, prompt_learner, optimizer, scheduler, train_loader, cfg, device, logger)**  
+  - **Freeze Entire CLIP**:  
+    - Calls `freeze_entire_clip_model(clip_model, logger.info)` so that only the prompt embeddings are learnable.  
+  - **Cache Frozen Image Features**:  
+    - `cache_image_features(clip_model, train_loader, device)` → extracts image embeddings once, storing them in `image_feats` and `labels`.  
+    - This is more efficient for prompt tuning because we no longer do a full forward pass for each step.  
+  - **Set Model Modes**:  
+    - `clip_model.eval()` so it remains in inference mode.  
+    - `prompt_learner.train()` is set to training mode.  
+  - **Epoch Loop**: `for epoch in range(cfg["epochs_prompt"])`  
+    1. **Shuffle Indices**: Creates a random permutation of the cached features.  
+    2. **Mini-batch Loop**:  
+       - Slices the shuffled indices in `cfg["batch_size"]` chunks.  
+       - **Prompt Forward**: `prompt_learner.forward_batch(batch_labels)` to create text embeddings.  
+         - Then adds `clip_model.positional_embedding`, passes them through `clip_model.transformer`, normalizes to get `text_feats`.  
+       - **Contrastive Loss**:  
+         - `loss_i2t` = `loss_fn(..., mode="contrastive")` comparing image→text embeddings.  
+         - `loss_t2i` = similarly for text→image.  
+         - Adds a small L2 reg on prompt embeddings: `0.001 * (prompt_learner.ctx**2).mean()`.  
+       - **Backprop**: `optimizer.zero_grad() → loss.backward() → optimizer.step()`.  
+       - Tracks running `loss` and logs parameters like `prompt_norm`, `prompt_var`, `prompt_grad`.  
+    3. **Epoch summary**:  
+       - Logs the average prompt loss for that epoch.  
+       - *Optionally* can save a “BEST Prompt” checkpoint and do `scheduler.step()`. (Currently commented out.)  
+  - **Final Prompt Model Save**:  
+    - Saves `_FINAL.pth` checkpoint with `save_checkpoint(...)`.  
 
-✅ **Conclusion**: Structural parity is maintained. You merged both stages into one modular script with flexible control via config — good design!
-
----
-
-### 🔁 STAGE 1: Prompt Tuning (SupCon loss on text vs. cached image features)
-
-| Key Component         | CLIP-ReID (`do_train_stage1`)                    | HandCLIP                                              |
-|-----------------------|--------------------------------------------------|--------------------------------------------------------|
-| Image feats caching   | Loop over dataloader → extract + store           | Same (via `cache_image_features()`)                   |
-| Labels                | Stored per image for supervised contrastive loss | Same                                                  |
-| Prompt → text feats   | `model(label=..., get_text=True)`                | `PromptLearner.forward_batch()` → transformer          |
-| SupCon loss           | `SupConLoss(image, text, label, label)`          | `loss_fn()` with `mode=contrastive`                   |
-| Training loop         | Manual sampling of mini-batches from cache       | Same                                                  |
-
-✅ **Conclusion**: Implementation logic is accurately replicated. You even added prompt L2 regularization: `+ 0.001 * (prompt_learner.ctx ** 2).mean()` — that’s a **nice touch**!
-
----
-
-### 🔁 STAGE 2: Fine-tuning Image Encoder (Joint Loss)
-
-| Component                 | CLIP-ReID (`do_train_stage2`)                       | HandCLIP                                               |
-|--------------------------|------------------------------------------------------|--------------------------------------------------------|
-| Text feature strategy     | Extract all prompts once at epoch start             | Extract in every batch via `PromptLearner`             |
-| Image encoding            | `model()` with classification + contrastive         | `encode_image()` + classifier                          |
-| ID Loss (CE)             | `score @ text_feats.t()` → logits → CE              | Direct classifier logits → CE                          |
-| Triplet Loss             | `TripletLoss(image_feats, labels)`                  | Same                                                   |
-| SupCon loss              | `SupConLoss(image, text, ...)`                      | Same logic via `loss_fn()` with `mode=contrastive`     |
-| Eval Metrics             | `R1_mAP_eval` with `feat_norm`, etc.                | `validate()` returns Rank-1, 5, 10, mAP                |
-
-🔎 **Differences:**
-- **Text features in CLIP-ReID** are precomputed and kept fixed for the whole epoch. Your HandCLIP recomputes prompts every batch. This adds **compute cost** but increases **flexibility** (e.g., prompt dropout or dynamic prompts).
-- You use a manually added `clip_model.classifier` for ID classification, instead of `score = image_feats @ text_feats.T`. Both are valid; yours enables explicit ID logits (helpful for ablations).
-
-✅ **Conclusion**: All losses, evaluation strategy, and logic are correctly adapted. Your version is slightly more general and introspectable.
-
----
-
-### 🔧 CONFIG & TRAINING CONTROL
-
-| Feature                   | CLIP-ReID                          | HandCLIP                                  |
-|---------------------------|------------------------------------|--------------------------------------------|
-| Epoch splitting           | Explicit `stage1`, `stage2`        | Unified script with `stage_mode` flag      |
-| Optimizer per stage       | Separate optimizers and schedulers | One optimizer reused across stages         |
-| Checkpointing             | By epoch checkpoint                | Best & final model saving + timestamping   |
-| Prompt freezing toggle    | No                                 | ✅ `cfg['freeze_prompt']` implemented       |
-| Logging                   | Logger with distributed support    | Simple file logger (efficient)             |
-
-✅ **Conclusion**: Your config-based modularity is **superior** for experiment automation and clean results management.
-
----
-
-### 📌 FINAL VERDICT
-
-✅ You have **faithfully and effectively adapted** the official CLIP-ReID training structure into your HandCLIP framework.
-
-In fact, your implementation:
-- **Improves usability** with config-driven training control.
-- **Adds flexibility** like optional prompt freezing and unified logging.
-- **Preserves key techniques** from CLIP-ReID (e.g., contrastive+ID+triplet combo, SupCon, prompt-first then image fine-tuning).
-
----
-
-***
-***
-
-Excellent question. Let's analyze this precisely: **does CLIP-ReID extract *any* information from images to build the prompts (text features)?**
+========================  
+**train_clipreid_image_stage(clip_model, prompt_learner, optimizer, scheduler, train_loader, val_loader, cfg, device, logger, loss_fn, ce_loss, triplet_loss)**  
+  - **Unfreeze CLIP Text Encoder**:  
+    - Calls `unfreeze_clip_text_encoder(clip_model, logger.info)`, so now both image + text could be trainable if desired.  
+  - **Optional: Freeze Prompt Learner**:  
+    - If `cfg.get("freeze_prompt", True)`, calls `freeze_prompt_learner(prompt_learner, logger.info)` so prompt embeddings remain fixed.  
+  - **Add Center Loss**:  
+    - Creates a `CenterLoss(num_classes=cfg["num_classes"], feat_dim=feat_dim, device=device)` to refine feature centers.  
+    - Also an `optimizer_center` (SGD) for center-criterion parameters.  
+  - **Epoch Loop**: `for epoch in range(cfg["epochs_image"])`  
+    - Sets both `prompt_learner.train()` and `clip_model.train()`.  
+    - **Batch Loop** over `train_loader`:  
+      - Moves `(images, labels_batch)` to `device`.  
+      - **Image Features**: `clip_model.encode_image(images) → L2 normalize them`.  
+      - **Prompt Forward**: Prompt embeddings from `prompt_learner.forward_batch(labels_batch)` + `clip_model.positional_embedding`, run through `clip_model.transformer`, get normalized `text_feats`.  
+      - **Contrastive Loss**:  
+        - `loss_i2t = loss_fn(..., mode="contrastive")`  
+        - `loss_t2i = ...` similarly for text→image  
+      - **BNNeck & ArcFace**:  
+        - `feats_bn = clip_model.bottleneck(image_feats)` → BNNeck stage  
+        - `arc_logits = clip_model.arcface(feats_bn, labels_batch)`  
+        - Optionally logs `feat_norm` (mean norm of BNNeck features) and `arc_conf` (avg max softmax confidence).  
+      - **Center Loss**:  
+        - `center_loss_val = center_criterion(feats_bn, labels_batch)`  
+      - **ID Loss**:  
+        - `id_loss = ce_loss(arc_logits, labels_batch)`  
+      - **Triplet Loss**:  
+        - `tri_loss = triplet_loss(image_feats, labels_batch)`  
+      - **Sum Loss**:  
+        - `loss = id_loss + tri_loss + loss_i2t + loss_t2i + cfg["center_loss_weight"] * center_loss_val`  
+      - **Backprop**:  
+        - Zero both `optimizer` and `optimizer_center`.  
+        - `loss.backward()`, scale center criterion grads by `(1 / center_loss_weight)`.  
+        - `optimizer.step()`.  
+      - Logs the batch-level stats in tqdm: `loss`, `id`, `tri`, `cen`, `feat_n`, etc.  
+    - **After each epoch**:  
+      - Logs current LR: `scheduler.get_last_lr()[0]`.  
+      - **Run Validation**: calls `validate(clip_model, prompt_learner, val_loader, device, logger.info, cfg)`.  
+        - Gets `rank1`, `mAP`, etc.  
+      - **Check Best Rank-1**: if improved, saves `_BEST.pth` checkpoint.  
+      - Then calls `scheduler.step()`.  
+  - **Save Final Checkpoint**:  
+    - After finishing all `epochs_image`, saves `_FINAL.pth` with `save_checkpoint(...)`.
 
 ---
 
-### 🧠 Prompt Learning in CLIP-ReID — Stage 1 (from `processor_clipreid_stage1.py`)
+**Implementation of experiments/stage2_clipreid_integration/save_load_models.py**
 
-Here’s what happens:
+This file contains two main functions for **checkpoint management**:
 
-```python
-with amp.autocast(enabled=True):
-    image_feature = model(img, target, get_image=True)
-    ...
-with amp.autocast(enabled=True):
-    text_features = model(label=target, get_text=True)
-```
+========================  
+**save_checkpoint(...)**  
+  - Gathers everything into a dictionary:  
+    - `model_state_dict`  
+    - `optimizer_state_dict`  
+    - `classifier_state_dict` (if `classifier` is provided)  
+    - `scheduler_state_dict` (if scheduler is provided)  
+    - `metadata` about the model architecture, config, hash, etc.  
+    - `rng_state` (PyTorch + CUDA RNG) for reproducibility  
+    - `train_loss`, `val_metrics`, etc.  
+  - If `prompt_learner` is given, also saves a separate `..._prompt.pth` state_dict for that learner.  
+  - Prints the tag “BEST” or “FINAL” after saving to indicate checkpoint type.  
 
-#### 🔍 What this tells us:
-- `get_image=True`: extract image features from images.
-- `get_text=True`: extract **textual features** *without any reference to the image* — it only uses the `target` (label/class id).
-- The contrastive loss is computed **between** the cached image features and the label-guided text features.
-
----
-
-### 🧪 Prompt Embedding Flow
-
-In `model(label=target, get_text=True)`, CLIP-ReID internally passes the `label` to its `PromptLearner`, which does something like this (abstractly):
-
-```python
-prompt = ctx_tokens + class_name
-tokenized_prompt = tokenizer(prompt)
-text_feat = CLIPTextEncoder(tokenized_prompt)
-```
-
-> There’s **no image input used here**. The prompt embeddings are conditioned **only on class labels**.
+========================  
+**load_checkpoint(...)**  
+  - Loads the `.pth` checkpoint from disk, maps it to the chosen `device`.  
+  - Restores:  
+    - `model` weights, classifier weights, optimizer states, scheduler states if present  
+    - `trainable_flags` to ensure the same `.requires_grad` setup as when saved  
+    - RNG states if included (both CPU and CUDA)  
+    - `metadata` and `epoch` for logging.  
+  - Warns if some keys are missing/unexpected.  
 
 ---
 
-### 💡 So, is prompt learning image-guided?
+**Implementation of experiments/stage2_clipreid_integration/eval_utils.py**
 
-| Aspect                     | CLIP-ReID                            |
-|----------------------------|--------------------------------------|
-| Prompt formed from image?  | ❌ **No** — uses label only          |
-| Any visual attention map?  | ❌ Not used in prompt generation     |
-| Prompt update via contrast | ✅ Yes — gradients come from image–text contrast loss |
-| Prompt reacts to image     | ✅ Indirectly (via loss), not structurally |
+This file defines **ReID-style** validation and optional **prompt-based** validation:
 
-**TL;DR:**  
-> ❌ **The prompt in CLIP-ReID is not generated from the image.**  
-> ✅ It is updated *based on image-text contrastive loss*, but not *formed from image features*.
+========================  
+**validate(model, prompt_learner, val_loader, device, log, val_type="reid", batch_size=64, loss_fn=None)**  
+  - **model.eval()** & `prompt_learner.eval()` if provided.  
+  - **Feature Extraction**:  
+    - Loops over `val_loader`, encodes images via `model.encode_image`, normalizes them.  
+    - Stores them in `all_feats`, `all_labels`.  
+  - **Split Query/Gallery**:  
+    - Derives `query_len` from `val_loader.dataset.datasets[0]`, `gallery_len` from `.datasets[1]`.  
+    - Splits `all_feats` accordingly into `query_feats`, `gallery_feats`.  
+    - Similarly for labels.  
+  - **Similarity Matrix**:  
+    - `sim_matrix = query_feats @ gallery_feats.T`.  
+  - **ReID Metrics**:  
+    - For each query, sorts gallery by descending similarity, compares top ranks for matching ID.  
+    - Accumulates rank positions in `cmc`, computes `average_precision_score` for each query → `aps`.  
+    - **rank1** = `100*cmc[0]`, rank5 = `100*cmc[4]`, etc.  
+    - **mAP** = `mean(aps)*100`.  
+  - Prints final ranks and mAP in a structured format.  
+  - Returns `{"rank1": ..., "rank5": ..., "rank10": ..., "mAP": ...}`.  
 
----
+========================  
+**validate_stage1_prompts(model, prompt_learner, val_loader, device, log=print, batch_size=64)**  
+  - Similar ReID evaluation but compares **image_features** to **prompt-generated text embeddings**.  
+  - Creates text embeddings for each class ID in bulk.  
+  - Extracts image embeddings from `val_loader`.  
+  - Builds a `sim_matrix = image_feats @ text_feats.T`.  
+  - Computes rank-based results and mAP.  
+  - Logs final rank1, mAP, etc.  
 
-### 🔁 Compared to HandCLIP
-
-Your `PromptLearner.forward_batch(labels)` does the same — uses class labels to select or construct prompts, with no image information influencing the prompt generation pipeline directly.
-
-So your HandCLIP:
-- ✅ Matches CLIP-ReID in logic and structure.
-- ❌ Does not require image data to build prompts — just class names + learnable context tokens.
-
----
-
-### ✅ Conclusion
-
-In both CLIP-ReID and your HandCLIP:
-
-- The **prompt is class-conditional**, not image-conditional.
-- **Image features are used to supervise prompt learning**, but not to construct the prompt.
-- This makes the system scalable and modular (any image of class *k* uses the same prompt *k*).
-
----
-
-***
-***
-Absolutely — let’s break this down clearly, in plain English, with **examples** and a **side-by-side comparison** of CLIP-ReID and your HandCLIP.
-
----
-
-### 🧠 What is a *prompt* in CLIP?
-
-In CLIP, a **prompt** is a sentence template used to describe each class label, like:
-
-```
-"A photo of a {}"
-```
-
-If your class is `"cat"`, this becomes:
-
-```
-"A photo of a cat"
-```
-
-This text gets turned into embeddings by CLIP’s text encoder, and is used to match with image features.
+========================  
+**validate_promptsg(model_components, val_loader, device, compose_prompt, loss_fn=None)**  
+  - Another specialized validation routine for *PromptSG* approach.  
+  - Involves an `inversion_model`, a `multimodal_module`, a `classifier`, etc.  
+  - Logs `avg_val_loss`, `top1_accuracy`, `top5_accuracy`, `top10_accuracy`, `mAP`.  
+  - This is used if you’re exploring more advanced synergy between text prompts + visual embeddings.  
 
 ---
 
-### 📌 What is *prompt learning*?
+### **Key Printed/Logged Parameters & Their Meaning**  
+Throughout these stage 2 scripts, you’ll see references to:  
 
-Instead of using fixed templates like `"A photo of a {}"`, prompt learning **adds learnable tokens** (e.g. `[CTX]`) to improve accuracy:
+- **`rank1`, `rank5`, `rank10`, `mAP`**:  
+  - Standard ReID metrics.  
+  - `rank1` → percentage of queries whose correct match is at position 1 in the sorted gallery.  
+  - `mAP` → mean Average Precision, capturing overall retrieval performance.  
+- **`loss`, `id_loss`, `tri_loss`, `center_loss`, `loss_i2t`, `loss_t2i`**:  
+  - Various loss components. Summed up for the total training objective.  
+- **`feat_norm`, `arc_conf`**:  
+  - Diagnostics in `train_clipreid_image_stage`: average norm of BNNeck features, average confidence from ArcFace classifier.  
+- **`prompt_norm`, `prompt_var`, `prompt_grad`**:  
+  - Diagnostics in the prompt stage, describing how learned prompt embeddings behave.  
+- **`logits std`** (from the stage1 approach) can also appear if extended logging is used.  
 
-```
-"[CTX1] [CTX2] ... [CTXn] a cat"
-```
-
-These `[CTX]` tokens are trained to get better feature alignment with images — **but they are still based only on the class label**, not on any specific image.
-
----
-
-## 🔍 Comparison: Prompt in CLIP-ReID vs. HandCLIP
-
-| Feature                     | **CLIP-ReID** (official)                          | **HandCLIP** (your code)                               |
-|-----------------------------|--------------------------------------------------|--------------------------------------------------------|
-| Prompt Template             | Learnable `[CTX]` tokens + class label           | Learnable `[CTX]` tokens + class label                |
-| Example Prompt              | `[CTX] [CTX] [CTX] a person`                     | `[CTX] [CTX] [CTX] a hand`                             |
-| Uses image to build prompt? | ❌ No — class label only                          | ❌ No — class label only                               |
-| Learns from image?          | ✅ Yes — via contrastive loss with image feats    | ✅ Yes — same contrastive loss logic                   |
-| Prompt building code        | `model(label=..., get_text=True)`                | `PromptLearner.forward_batch(labels)`                 |
-| Text encoder behavior       | Encodes prompt per class                         | Same                                                   |
+All these logs help track training stability and model performance across epochs.
 
 ---
 
-### 🧪 What really happens during training?
+**Conclusion**  
+In **stage2** (CLIP-ReID integration), you combine **prompt learning** + **image encoder fine-tuning** with optional BNNeck, ArcFace, and CenterLoss. The code:
 
-1. **Prompt is built**: using `[CTX]` tokens + class label → turned into a sentence like "`[CTX] [CTX] a person`".
-2. **Text embeddings** are extracted from that prompt using CLIP's text encoder.
-3. **Image embeddings** are extracted using CLIP's image encoder.
-4. **Loss is calculated**: to bring image and prompt features **closer together** if they belong to the same class.
+1. **Freezes** or **unfreezes** relevant parts of CLIP,  
+2. **Learns** prompt embeddings for each class,  
+3. **Fine-tunes** the image branch with advanced ReID losses (contrastive, ArcFace, center, triplet),  
+4. **Evaluates** using standard ReID metrics (rank1, rank5, rank10, mAP).  
 
-**At no point is the image used to create or change the prompt.**
-
----
-
-### ✅ Final Summary (Simple)
-
-> In both CLIP-ReID and HandCLIP:
-- The prompt is **class-based**, not image-based.
-- It uses **learnable tokens** like `[CTX]` plus the class name (e.g., "hand", "person").
-- It **does not look at the image to build the prompt**.
-- But during training, it **uses image–text matching loss** to improve those prompt tokens over time.
-
----
-
-
-***
-***
-
-Thanks! I’ve reviewed both `eval_stage1_frozen_text.py` and `run_eval_clip.py` — and here's a **clear professional verdict** on what kind of evaluation this setup performs.
-
----
-
-## ✅ TL;DR
-
-> 🔍 **This is a proper *Re-identification evaluation*** — NOT a classifier-based accuracy test.
-
----
-
-## ✅ Why It's Re-identification
-
-### 1. **No Classifier Involved**
-There is:
-- No call to `model.classifier(...)`
-- No `CrossEntropyLoss`
-- No class prediction → compare to label
-
-✔️ Instead, the model is used only to extract **embeddings**:
-```python
-q_feats, q_labels = extract_features(model, query_loader, ...)
-g_feats, g_labels = extract_features(model, gallery_loader, ...)
-```
-
----
-
-### 2. **Cosine Similarity Is Used**
-```python
-sim_matrix = compute_similarity_matrix(q_feats, g_feats)
-```
-✔️ This is how ReID systems measure similarity — by comparing **embedding vectors**, not class predictions.
-
----
-
-### 3. **Evaluation Metrics Are ReID Metrics**
-```python
-metrics = evaluate_rank(sim_matrix, q_labels, g_labels, topk=[1, 5, 10])
-```
-
-✔️ This gives:
-- **Rank-1**: Is the correct gallery identity the top match?
-- **Rank-5**, **Rank-10**: Is it in the top 5 or 10?
-- **mAP**: Mean Average Precision across ranked list
-
-These are classic **ReID ranking metrics**.
-
----
-
-### 4. **Multiple Query-Gallery Splits Are Evaluated**
-```python
-for i in range(num_splits):
-    ...
-    query_path = ...
-    gallery_path = ...
-```
-
-✔️ This is **query-gallery-based evaluation**, not a classification test. Typical of person or hand ReID systems.
-
----
-
-## ❌ What It’s Not
-
-| Metric                  | Used? |
-|-------------------------|-------|
-| CrossEntropy Loss       | ❌    |
-| Softmax classifier output | ❌    |
-| Accuracy from predicted classes | ❌ |
-
----
-
-## ✅ Summary
-
-| Aspect                     | Behavior           |
-|----------------------------|--------------------|
-| Type of evaluation         | 🔁 Re-identification |
-| Uses classifier?           | ❌ No              |
-| Uses embedding similarity? | ✅ Yes             |
-| Computes Rank-1/mAP?       | ✅ Yes             |
-| Compatible with CLIP-FH?   | ✅ Perfectly       |
-
----
-
-Would you like me to help you extend this to include:
-- Attention map logging
-- Per-class mAP
-- Hard positive/negative mining visuals?
-
-Let me know — your current setup is already correct for embedding-based CLIP ReID.
+Everything is **modular** and **checkpoint-friendly** (via `save_load_models.py`). You can **incrementally** experiment with prompt tuning alone, image tuning alone, or both sequentially.

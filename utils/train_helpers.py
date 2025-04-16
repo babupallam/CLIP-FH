@@ -59,21 +59,32 @@ from utils.loss.arcface import ArcFace
 
 
 def build_model(config, freeze_text=False):
+    # Automatically use GPU if available, otherwise fall back to CPU
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    model_name = config["model"]
+
+    # Load the desired CLIP model variant based on config
+    model_name = config["model"]  # e.g., "vitb16" or "rn50"
     clip_model, _ = clip.load("ViT-B/16" if model_name == "vitb16" else "RN50", device=device)
 
+    # Optionally freeze the text encoder (used in frozen-text training)
     if freeze_text:
         freeze_clip_text_encoder(clip_model)
 
-    image_embed_dim = clip_model.visual.output_dim
+    # Extract the output dimension of the image encoder
+    image_embed_dim = clip_model.visual.output_dim  # e.g., 512 for ViT-B/16, 1024 for RN50
+
+    # Get the number of output classes (usually = number of identities)
     num_classes = config["num_classes"]
+
+    # Define a simple linear classifier: image embedding → class logits
     classifier = nn.Linear(image_embed_dim, num_classes)
 
-    nn.init.xavier_normal_(classifier.weight)
+    # Initialize the weights and bias of the classifier for better convergence
+    nn.init.xavier_normal_(classifier.weight)       # Xavier initialization for weights
     if classifier.bias is not None:
-        nn.init.zeros_(classifier.bias)
+        nn.init.zeros_(classifier.bias)             # Set bias to zero (standard practice)
 
+    # Return both components: full CLIP model and the classifier head
     return clip_model, classifier
 
 
