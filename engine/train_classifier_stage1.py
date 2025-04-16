@@ -38,6 +38,9 @@ class FinetuneTrainerStage1:
         self.ce_loss = CrossEntropyLoss()
         self.triplet_loss = TripletLoss(margin=0.3)
 
+        self.early_stop_patience = config.get("early_stop_patience", 3)
+        self.no_improve_epochs = 0
+
         #self.optimizer = optim.Adam(
         #    list(self.clip_model.visual.parameters()) + list(self.classifier.parameters()), lr=self.lr
         #) # Optimizer for updating model weights. Only image encoder and classifier are updated.
@@ -140,10 +143,11 @@ class FinetuneTrainerStage1:
             )
 
             # === Save best checkpoint ===
-            if epoch == 1 or val_metrics['rank1'] > best_acc1: # Save model if it's the first epoch or best validation accuracy.
+            if epoch == 1 or val_metrics['rank1'] > best_acc1:
                 best_acc1 = val_metrics['rank1']
-                model_name = build_filename(self.config, epoch, stage="image", extension="_BEST.pth", timestamped=False) # Build model filename.
-                best_model_path = os.path.join(self.config['save_dir'], model_name) # Build model save path.
+                self.no_improve_epochs = 0  # ✅ reset counter
+                model_name = build_filename(self.config, epoch, stage="image", extension="_BEST.pth", timestamped=False)
+                best_model_path = os.path.join(self.config['save_dir'], model_name)
                 save_checkpoint(
                     model=self.clip_model,
                     classifier=self.classifier,
@@ -154,10 +158,18 @@ class FinetuneTrainerStage1:
                     path=best_model_path,
                     is_best=True,
                     scheduler=getattr(self, "scheduler", None)
-                ) # Save best model checkpoint.
+                )
                 self.logger.info(f"Saving best model at epoch {epoch} -> {best_model_path}")
             else:
-                self.logger.info(f"[INFO] No improvement in Rank-1 ({val_metrics['rank1']:.2f}%), skipping checkpoint.")
+                self.no_improve_epochs += 1  # ✅ increment counter
+                self.logger.info(
+                    f"[INFO] No improvement in Rank-1 ({val_metrics['rank1']:.2f}%), patience = {self.no_improve_epochs}/{self.early_stop_patience}")
+
+            # === Early stopping ===
+            if self.no_improve_epochs >= self.early_stop_patience:
+                self.logger.info(
+                    f"[EARLY STOPPING] No improvement for {self.early_stop_patience} consecutive epochs. Stopping at epoch {epoch}.")
+                break
 
             # === Log to CSV ===
             with open(self.csv_path, "a", newline="") as f:

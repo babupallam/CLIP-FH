@@ -15,5 +15,7 @@ lr: 0.00001   # = 1e-5
 num_workers: 4
 loss: cross_entropy
 
+early_stop_patience: 3
+
 log_dir: train_logs/
 save_dir: saved_models/
