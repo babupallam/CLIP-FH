@@ -117,18 +117,7 @@ def get_train_val_loaders(config):
     return train_loader, val_loader, num_classes
 
 def get_test_loader(config):
-    """
-    Loads the test set DataLoader for inference or final evaluation.
 
-    Args:
-        config (dict): Should contain keys:
-            - dataset (str): "11k" or "hd"
-            - aspect  (str): e.g., "dorsal", "palmar"
-            - batch_size (int): number of images per batch
-
-    Returns:
-        test_loader (DataLoader): DataLoader for the test split
-    """
     dataset = config["dataset"]
     aspect = config["aspect"]
     batch_size = config["batch_size"]
@@ -156,19 +145,7 @@ def get_test_loader(config):
 
 
 def get_train_all_loader(config):
-    """
-    Loads all training data (train + val combined) for final training before deployment.
 
-    Args:
-        config (dict): Should contain keys:
-            - dataset (str): "11k" or "hd"
-            - aspect  (str): e.g., "dorsal", "palmar"
-            - batch_size (int): number of images per batch
-
-    Returns:
-        train_all_loader (DataLoader): DataLoader with full training set
-        num_classes (int)             : Number of classes in the combined dataset
-    """
     dataset = config["dataset"]
     aspect = config["aspect"]
     batch_size = config["batch_size"]
