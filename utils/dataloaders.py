@@ -100,7 +100,7 @@ def get_train_val_loaders(config):
             selected_indices.extend(indices[:2])  # take first 2 samples
 
         gallery_dataset = Subset(gallery_dataset, selected_indices)
-        print(f"[DEBUG] Reduced gallery to {len(gallery_dataset)} samples (max 2 per class)")
+        #print(f"[DEBUG] Reduced gallery to {len(gallery_dataset)} samples (max 2 per class)")
 
 
     #-------------
