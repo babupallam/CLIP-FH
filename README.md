@@ -25,6 +25,7 @@ python experiments/stage0_baseline_inference/eval_baseline_clip_single.py --conf
 ## To Run Stage 1 Fine-Tuning Image Encoder:
 ```angular2html
 python experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_vitb16_11k_dorsal_r.yml
+python experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_rn50_11k_dorsal_r.yml
 
 
 python experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_vitb16_11k_dorsal_l.yml
@@ -32,7 +33,6 @@ python experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text.
 python experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_vitb16_11k_palmar_l.yml
 python experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_vitb16_hd_dorsal_r.yml
 
-python experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_rn50_11k_dorsal_r.yml
 python experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_rn50_11k_dorsal_l.yml
 python experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_rn50_11k_palmar_r.yml
 python experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_rn50_11k_palmar_l.yml
@@ -46,6 +46,7 @@ python experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text.
 ```angular2html
 
 python experiments/stage1_train_classifier_frozen_text/eval_stage1_frozen_text.py configs/eval_stage1_frozen_text/eval_vitb16_11k_dorsal_r.yml
+python experiments/stage1_train_classifier_frozen_text/eval_stage1_frozen_text.py configs/eval_stage1_frozen_text/eval_rn50_11k_dorsal_r.yml
 
 
 ```

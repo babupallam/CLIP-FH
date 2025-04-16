@@ -12,6 +12,7 @@ from utils.naming import build_filename
 from utils.save_load_models import save_checkpoint
 from utils.loss.cross_entropy_loss import CrossEntropyLoss
 from utils.loss.triplet_loss import TripletLoss
+from utils.loss.arcface import ArcFace
 
 
 
@@ -37,9 +38,13 @@ class FinetuneTrainerStage1:
         self.ce_loss = CrossEntropyLoss()
         self.triplet_loss = TripletLoss(margin=0.3)
 
-        self.optimizer = optim.Adam(
-            list(self.clip_model.visual.parameters()) + list(self.classifier.parameters()), lr=self.lr
-        ) # Optimizer for updating model weights. Only image encoder and classifier are updated.
+        #self.optimizer = optim.Adam(
+        #    list(self.clip_model.visual.parameters()) + list(self.classifier.parameters()), lr=self.lr
+        #) # Optimizer for updating model weights. Only image encoder and classifier are updated.
+        self.optimizer = optim.Adam([
+            {"params": clip_model.visual.parameters(), "lr": self.lr},
+            {"params": classifier.parameters(), "lr": self.lr * 0.1}
+        ], weight_decay=1e-4)
 
         # Setup logging
         os.makedirs(os.path.dirname(self.log_path), exist_ok=True) # Create log directory if it doesn't exist.
@@ -74,11 +79,26 @@ class FinetuneTrainerStage1:
                 features = self.clip_model.encode_image(images) # Encode images using the image encoder.
                 outputs = self.classifier(features) # Classify the encoded features.
 
+                if torch.isnan(outputs).any() or torch.isinf(outputs).any():
+                    self.logger.warning(
+                        f"[WARNING] Detected NaNs or Infs in logits at epoch {epoch}, batch {batch_idx}")
+
                 ce = self.ce_loss(outputs, labels)
-                tri = self.triplet_loss(features, labels)
+                try:
+                    tri = self.triplet_loss(features, labels)
+                except Exception as e:
+                    self.logger.warning(f"[TripletLoss Error] {e}")
+                    tri = torch.tensor(0.0, device=self.device)
+
                 loss = ce + tri # calculate loss (Cross Entropy + Triplet Loss (Classic hybrid))
 
                 loss.backward() # Backpropagate loss.
+                if torch.isnan(loss):
+                    self.logger.warning(f"[WARNING] Loss is NaN at epoch {epoch}, batch {batch_idx}")
+                    continue
+
+                torch.nn.utils.clip_grad_norm_(self.classifier.parameters(), max_norm=1.0)
+                torch.nn.utils.clip_grad_norm_(self.clip_model.visual.parameters(), max_norm=1.0)
                 self.optimizer.step() # Update model weights.
 
                 # Accumulate metrics

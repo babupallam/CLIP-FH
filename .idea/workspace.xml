@@ -5,31 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c7cde98-b929-4071-bc2e-b0363f4c695d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/configs/eval_stage1_frozen_text/eval_rn50_11k_dorsal_r.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/baseline/eval_rn50_11k_dorsal_l.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/baseline/eval_rn50_11k_dorsal_l.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/baseline/eval_rn50_11k_dorsal_r.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/baseline/eval_rn50_11k_dorsal_r.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/baseline/eval_rn50_11k_palmar_l.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/baseline/eval_rn50_11k_palmar_l.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/baseline/eval_rn50_11k_palmar_r.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/baseline/eval_rn50_11k_palmar_r.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/baseline/eval_rn50_hd_dorsal_r.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/baseline/eval_rn50_hd_dorsal_r.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/baseline/eval_vitb16_11k_dorsal_l.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/baseline/eval_vitb16_11k_dorsal_l.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/baseline/eval_vitb16_11k_dorsal_r.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/baseline/eval_vitb16_11k_dorsal_r.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/baseline/eval_vitb16_11k_palmar_l.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/baseline/eval_vitb16_11k_palmar_l.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/baseline/eval_vitb16_11k_palmar_r.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/baseline/eval_vitb16_11k_palmar_r.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/baseline/eval_vitb16_hd_dorsal_r.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/baseline/eval_vitb16_hd_dorsal_r.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/eval_stage1_frozen_text/eval_vitb16_11k_dorsal_r.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/eval_stage1_frozen_text/eval_vitb16_11k_dorsal_r.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/eval_stage1_frozen_text/eval_rn50_11k_dorsal_r.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/eval_stage1_frozen_text/eval_rn50_11k_dorsal_r.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/train_stage1_frozen_text/train_rn50_11k_dorsal_r.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/train_stage1_frozen_text/train_rn50_11k_dorsal_r.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configs/train_stage1_frozen_text/train_vitb16_11k_dorsal_r.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/train_stage1_frozen_text/train_vitb16_11k_dorsal_r.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eval_logs/eval_baseline_rn50_11k_dorsal_l_20250409_233306.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eval_logs/eval_baseline_rn50_11k_dorsal_r_20250410_000446.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eval_logs/eval_baseline_rn50_11k_palmar_l_20250410_003359.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eval_logs/eval_baseline_rn50_11k_palmar_r_20250410_010454.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eval_logs/eval_baseline_rn50_hd_dorsal_r_20250410_013330.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eval_logs/eval_baseline_vitb16_11k_dorsal_l_20250410_030344.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eval_logs/eval_baseline_vitb16_11k_dorsal_r_20250410_040435.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eval_logs/eval_baseline_vitb16_11k_palmar_l_20250410_050408.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eval_logs/eval_baseline_vitb16_11k_palmar_r_20250410_060329.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eval_logs/eval_baseline_vitb16_hd_dorsal_r_20250410_070025.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eval_logs/eval_stage2_joint_vitb16_11k_dorsal_r_vitb16_11k_dorsal_r_finetune_e0_lrNA_bs32.log" beforeDir="false" afterPath="$PROJECT_DIR$/eval_logs/eval_stage2_joint_vitb16_11k_dorsal_r_vitb16_11k_dorsal_r_finetune_e0_lrNA_bs32.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/train_classifier_stage1.py" beforeDir="false" afterPath="$PROJECT_DIR$/engine/train_classifier_stage1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eval_logs/eval_stage1_frozen_text_vitb16_11k_dorsal_r_vitb16_11k_dorsal_r_prompt_nctxNA_e0_lrNA_bs32.log" beforeDir="false" afterPath="$PROJECT_DIR$/eval_logs/eval_stage1_frozen_text_vitb16_11k_dorsal_r_prompt_nctxNA_e0_lrNA_bs32.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/train_helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/train_helpers.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +105,7 @@
       <workItem from="1743727135744" duration="417000" />
       <workItem from="1743727805200" duration="271051000" />
       <workItem from="1744357298496" duration="83077000" />
-      <workItem from="1744542299336" duration="104148000" />
+      <workItem from="1744542299336" duration="115087000" />
     </task>
     <servers />
   </component>
