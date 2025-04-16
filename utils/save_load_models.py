@@ -179,9 +179,28 @@ def load_checkpoint(
 
     # === RNG restoration ===
     if "rng_state" in checkpoint:
-        torch.set_rng_state(checkpoint["rng_state"]["torch_rng_state"])
-        if torch.cuda.is_available() and checkpoint["rng_state"]["cuda_rng_state"]:
-            torch.cuda.set_rng_state_all(checkpoint["rng_state"]["cuda_rng_state"])
+        torch_rng_state = checkpoint["rng_state"].get("torch_rng_state", None)
+        if torch_rng_state is not None:
+            torch_rng_state = torch.tensor(torch_rng_state, dtype=torch.uint8, device="cpu").contiguous()
+            torch.set_rng_state(torch_rng_state)
+
+        if torch.cuda.is_available():
+            cuda_rng_state = checkpoint["rng_state"].get("cuda_rng_state", None)
+            if cuda_rng_state is not None:
+                cuda_rng_state_tensor_list = []
+                for i, state in enumerate(cuda_rng_state):
+                    print(f"[DEBUG] cuda_rng_state[{i}] - type: {type(state)}, dtype: {getattr(state, 'dtype', 'n/a')}")
+                    if not isinstance(state, torch.ByteTensor):
+                        print(f"[FIX] Converting cuda_rng_state[{i}] to torch.ByteTensor on CUDA")
+                        state = torch.tensor(state, dtype=torch.uint8, device="cpu")
+
+                    cuda_rng_state_tensor_list.append(state)
+                print(f"[INFO] Setting RNG state for {len(cuda_rng_state_tensor_list)} CUDA devices.")
+
+                for i, s in enumerate(cuda_rng_state_tensor_list):
+                    print(f"[CONFIRM] Tensor[{i}] = {type(s)}, device: {s.device}, dtype: {s.dtype}")
+
+                torch.cuda.set_rng_state_all(cuda_rng_state_tensor_list)
 
     # === Meta info ===
     checkpoint_config = checkpoint.get("config", {})
