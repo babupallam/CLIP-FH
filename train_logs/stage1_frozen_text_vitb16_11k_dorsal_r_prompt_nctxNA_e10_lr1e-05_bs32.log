@@ -1,1 +1,82 @@
-epoch,train_loss,train_acc1,train_acc5,train_acc10,val_rank1,val_rank5,val_rank10,val_mAP,learning_rate,epoch_time_sec
+2025-04-16 10:05:23,275 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+2025-04-16 10:05:23,277 - INFO - [DEBUG] img_features: torch.Size([32, 512]), prompt: N/A, pooled: torch.Size([32, 72])
+2025-04-16 10:05:23,278 - INFO - [DEBUG] logits std: 0.2519
+2025-04-16 10:05:23,278 - INFO - [DEBUG] CE loss: 4.2411, Triplet loss: 0.0738, Total: 4.3149
+2025-04-16 10:18:43,912 - INFO - [Epoch 1] Total Loss=4.1852
+2025-04-16 10:18:43,914 - INFO - [Epoch 1] Acc@1=7.08% | Acc@5=21.91% | Acc@10=31.69%
+2025-04-16 10:18:43,917 - INFO - [Validation] Extracting features...
+2025-04-16 10:24:57,830 - INFO - [Validation] Evaluating ranks and mAP...
+2025-04-16 10:24:58,670 - INFO - 
+[ReID Validation]
+2025-04-16 10:24:58,670 - INFO - RANK1: 77.65%
+2025-04-16 10:24:58,670 - INFO - RANK5: 90.01%
+2025-04-16 10:24:58,670 - INFO - RANK10: 93.31%
+2025-04-16 10:24:58,671 - INFO - MAP: 83.61%
+2025-04-16 10:24:59,914 - INFO - Saving best model at epoch 1 -> saved_models/stage1_frozen_text_vitb16_11k_dorsal_r_prompt_nctxNA_e1_lr1e-05_bs32_BEST.pth
+2025-04-16 10:25:48,012 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+2025-04-16 10:25:48,012 - INFO - [DEBUG] img_features: torch.Size([32, 512]), prompt: N/A, pooled: torch.Size([32, 72])
+2025-04-16 10:25:48,013 - INFO - [DEBUG] logits std: 0.3522
+2025-04-16 10:25:48,013 - INFO - [DEBUG] CE loss: 3.8390, Triplet loss: 0.0086, Total: 3.8476
+2025-04-16 10:40:01,253 - INFO - [Epoch 2] Total Loss=3.4733
+2025-04-16 10:40:01,254 - INFO - [Epoch 2] Acc@1=37.42% | Acc@5=55.96% | Acc@10=68.88%
+2025-04-16 10:40:01,255 - INFO - [Validation] Extracting features...
+2025-04-16 10:46:10,874 - INFO - [Validation] Evaluating ranks and mAP...
+2025-04-16 10:46:11,778 - INFO - 
+[ReID Validation]
+2025-04-16 10:46:11,779 - INFO - RANK1: 86.20%
+2025-04-16 10:46:11,779 - INFO - RANK5: 96.19%
+2025-04-16 10:46:11,779 - INFO - RANK10: 98.25%
+2025-04-16 10:46:11,779 - INFO - MAP: 90.65%
+2025-04-16 10:46:14,294 - INFO - Saving best model at epoch 2 -> saved_models/stage1_frozen_text_vitb16_11k_dorsal_r_prompt_nctxNA_e2_lr1e-05_bs32_BEST.pth
+2025-04-16 10:47:05,868 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+2025-04-16 10:47:05,869 - INFO - [DEBUG] img_features: torch.Size([32, 512]), prompt: N/A, pooled: torch.Size([32, 72])
+2025-04-16 10:47:05,869 - INFO - [DEBUG] logits std: 0.4140
+2025-04-16 10:47:05,870 - INFO - [DEBUG] CE loss: 2.8489, Triplet loss: 0.0000, Total: 2.8489
+2025-04-16 11:01:23,777 - INFO - [Epoch 3] Total Loss=2.3147
+2025-04-16 11:01:23,777 - INFO - [Epoch 3] Acc@1=80.34% | Acc@5=92.36% | Acc@10=96.63%
+2025-04-16 11:01:23,782 - INFO - [Validation] Extracting features...
+2025-04-16 11:07:20,307 - INFO - [Validation] Evaluating ranks and mAP...
+2025-04-16 11:07:21,353 - INFO - 
+[ReID Validation]
+2025-04-16 11:07:21,353 - INFO - RANK1: 91.97%
+2025-04-16 11:07:21,353 - INFO - RANK5: 98.25%
+2025-04-16 11:07:21,354 - INFO - RANK10: 98.76%
+2025-04-16 11:07:21,354 - INFO - MAP: 94.84%
+2025-04-16 11:07:22,853 - INFO - Saving best model at epoch 3 -> saved_models/stage1_frozen_text_vitb16_11k_dorsal_r_prompt_nctxNA_e3_lr1e-05_bs32_BEST.pth
+2025-04-16 11:08:18,433 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+2025-04-16 11:08:18,434 - INFO - [DEBUG] img_features: torch.Size([32, 512]), prompt: N/A, pooled: torch.Size([32, 72])
+2025-04-16 11:08:18,434 - INFO - [DEBUG] logits std: 0.5091
+2025-04-16 11:08:18,435 - INFO - [DEBUG] CE loss: 1.8479, Triplet loss: 0.0000, Total: 1.8479
+2025-04-16 11:22:09,822 - INFO - [Epoch 4] Total Loss=1.4149
+2025-04-16 11:22:09,822 - INFO - [Epoch 4] Acc@1=95.84% | Acc@5=99.10% | Acc@10=99.89%
+2025-04-16 11:22:09,823 - INFO - [Validation] Extracting features...
+2025-04-16 11:28:15,010 - INFO - [Validation] Evaluating ranks and mAP...
+2025-04-16 11:28:16,458 - INFO - 
+[ReID Validation]
+2025-04-16 11:28:16,459 - INFO - RANK1: 94.44%
+2025-04-16 11:28:16,459 - INFO - RANK5: 98.46%
+2025-04-16 11:28:16,459 - INFO - RANK10: 99.18%
+2025-04-16 11:28:16,460 - INFO - MAP: 96.44%
+2025-04-16 11:28:19,775 - INFO - Saving best model at epoch 4 -> saved_models/stage1_frozen_text_vitb16_11k_dorsal_r_prompt_nctxNA_e4_lr1e-05_bs32_BEST.pth
+2025-04-16 11:29:13,070 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+2025-04-16 11:29:13,071 - INFO - [DEBUG] img_features: torch.Size([32, 512]), prompt: N/A, pooled: torch.Size([32, 72])
+2025-04-16 11:29:13,071 - INFO - [DEBUG] logits std: 0.5745
+2025-04-16 11:29:13,072 - INFO - [DEBUG] CE loss: 1.2173, Triplet loss: 0.0000, Total: 1.2173
+2025-04-16 11:44:05,978 - INFO - [Epoch 5] Total Loss=0.8795
+2025-04-16 11:44:05,978 - INFO - [Epoch 5] Acc@1=99.55% | Acc@5=100.00% | Acc@10=100.00%
+2025-04-16 11:44:05,980 - INFO - [Validation] Extracting features...
+2025-04-16 11:50:35,413 - INFO - [Validation] Evaluating ranks and mAP...
+2025-04-16 11:50:36,269 - INFO - 
+[ReID Validation]
+2025-04-16 11:50:36,269 - INFO - RANK1: 94.75%
+2025-04-16 11:50:36,269 - INFO - RANK5: 98.56%
+2025-04-16 11:50:36,269 - INFO - RANK10: 99.59%
+2025-04-16 11:50:36,270 - INFO - MAP: 96.64%
+2025-04-16 11:50:37,617 - INFO - Saving best model at epoch 5 -> saved_models/stage1_frozen_text_vitb16_11k_dorsal_r_prompt_nctxNA_e5_lr1e-05_bs32_BEST.pth
+2025-04-16 11:51:32,849 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+2025-04-16 11:51:32,849 - INFO - [DEBUG] img_features: torch.Size([32, 512]), prompt: N/A, pooled: torch.Size([32, 72])
+2025-04-16 11:51:32,850 - INFO - [DEBUG] logits std: 0.6450
+2025-04-16 11:51:32,850 - INFO - [DEBUG] CE loss: 0.7693, Triplet loss: 0.0000, Total: 0.7693
+2025-04-16 12:05:28,770 - INFO - [Epoch 6] Total Loss=0.5716
+2025-04-16 12:05:28,770 - INFO - [Epoch 6] Acc@1=100.00% | Acc@5=100.00% | Acc@10=100.00%
+2025-04-16 12:05:28,772 - INFO - [Validation] Extracting features...
