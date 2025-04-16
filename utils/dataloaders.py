@@ -52,68 +52,78 @@ def get_dataloader(data_dir, batch_size=64, shuffle=False, num_workers=4, train=
 
 
 def get_train_val_loaders(config):
-    """
-    Loads training and validation DataLoaders.
-    Temporarily replaces 'val' with query0+gallery0 for ReID-based validation.
-
-    Returns:
-        train_loader (DataLoader)
-        val_loader (DataLoader)  : Combined query0 + gallery0
-        num_classes (int)
-    """
+    # Read dataset name, hand aspect (e.g., dorsal_r), and batch size from config
     dataset = config["dataset"]
     aspect = config["aspect"]
     batch_size = config["batch_size"]
 
-    # Define base path
+    # Set the base folder path based on dataset type
     if dataset == "11k":
+        # For the 11k hands dataset, include the aspect in the folder name
         base_path = f"./datasets/11khands/train_val_test_split_{aspect}"
     elif dataset == "hd":
+        # For the HD dataset, the folder path is static
         base_path = f"./datasets/HD/Original Images/train_val_test_split"
     else:
+        # Raise error if unknown dataset is specified
         raise ValueError("Unsupported dataset in config.")
 
+    # Define full paths for training, query, and gallery subdirectories
     train_dir = os.path.join(base_path, "train")
     query_dir = os.path.join(base_path, "query0")
     gallery_dir = os.path.join(base_path, "gallery0")
 
+    # Define image transformation:
+    # 1. Resize all images to 224x224
+    # 2. Convert images to PyTorch tensors (CHW format, scaled to [0.0, 1.0])
     transform = transforms.Compose([
         transforms.Resize((224, 224)),
         transforms.ToTensor(),
     ])
 
-    # Load datasets
+    # Create datasets using ImageFolder
+    # Each subfolder inside these directories is treated as a separate class
+    # Labels are automatically assigned based on folder names
     train_dataset = datasets.ImageFolder(train_dir, transform=transform)
     query_dataset = datasets.ImageFolder(query_dir, transform=transform)
     gallery_dataset = datasets.ImageFolder(gallery_dir, transform=transform)
 
-    # ===== OPTIONAL: Restrict gallery to max 2 samples per class =====
-    # This is useful for testing or faster validation. Comment to disable.
-    restrict_gallery = True # -- make it false later
+    # ===== OPTIONAL STEP: Limit gallery to 2 samples per class for faster validation =====
+    restrict_gallery = True  # Set to False if you want to use the full gallery
     if restrict_gallery:
+        # Create a dictionary to collect sample indices per class
         class_to_indices = defaultdict(list)
         for idx, (_, label) in enumerate(gallery_dataset.samples):
             class_to_indices[label].append(idx)
 
+        # Select only the first 2 samples per class
         selected_indices = []
         for label, indices in class_to_indices.items():
-            selected_indices.extend(indices[:2])  # take first 2 samples
+            selected_indices.extend(indices[:2])  # Keep max 2 images for each class
 
+        # Use only the selected samples in the new gallery dataset
         gallery_dataset = Subset(gallery_dataset, selected_indices)
-        #print(f"[DEBUG] Reduced gallery to {len(gallery_dataset)} samples (max 2 per class)")
 
-
-    #-------------
-
-    # Combine query0 and gallery0 into one validation set
+    # ===== VALIDATION SETUP =====
+    # Combine query0 and (possibly reduced) gallery0 into a single validation set
     val_dataset = ConcatDataset([query_dataset, gallery_dataset])
 
-    # Create DataLoaders
+    # Get number of workers for DataLoader (used for parallel data loading)
     num_workers = config.get("num_workers", 4)
+
+    # Create DataLoader for training:
+    # - Shuffling enabled for training
+    # - Loads data in batches
     train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, num_workers=num_workers)
+
+    # Create DataLoader for validation:
+    # - No shuffling (order matters in evaluation)
     val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False, num_workers=num_workers)
 
+    # Get the number of classes (inferred from subfolders in training directory)
     num_classes = len(train_dataset.classes)
+
+    # Return DataLoaders and number of classes to the training pipeline
     return train_loader, val_loader, num_classes
 
 def get_test_loader(config):

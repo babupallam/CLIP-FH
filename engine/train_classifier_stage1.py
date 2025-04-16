@@ -1,7 +1,5 @@
 # Standard library imports for file operations and system functions
 import os
-# Standard library import for reading and writing CSV files
-import csv
 # Standard library import for time-related functions (to measure epoch duration, etc.)
 import time
 
@@ -39,7 +37,6 @@ class FinetuneTrainerStage1:
         self.lr = config["lr"] # Learning rate for the optimizer.
         self.save_path = config["save_path"] # Path to save model checkpoints.
         self.log_path = config["log_path"] # Path to save training logs.
-        self.csv_path = self.log_path.replace(".txt", ".csv") # Path to save training logs in CSV format.
         self.config = config
 
         # Define the training losses (cross-entropy and triplet)
@@ -61,14 +58,7 @@ class FinetuneTrainerStage1:
         os.makedirs(os.path.dirname(self.log_path), exist_ok=True) # Create log directory if it doesn't exist.
         self.logger = setup_logger(self.log_path) # Initialize logger.
 
-        # Prepare a CSV log for tracking epoch-wise metrics
-        with open(self.csv_path, "w", newline="") as f: # Open CSV file for writing.
-            writer = csv.writer(f)
-            writer.writerow([
-                "epoch", "train_loss", "train_acc1", "train_acc5", "train_acc10",
-                "val_rank1", "val_rank5", "val_rank10", "val_mAP",
-                "learning_rate", "epoch_time_sec"
-            ])
+
 
     def train(self):
         """
@@ -203,22 +193,6 @@ class FinetuneTrainerStage1:
                     f"[EARLY STOPPING] No improvement for {self.early_stop_patience} consecutive epochs. Stopping at epoch {epoch}.")
                 break
 
-            # === Log the epoch results to the CSV file ===
-            with open(self.csv_path, "a", newline="") as f:
-                writer = csv.writer(f)
-                writer.writerow([
-                    epoch,
-                    avg_loss,
-                    acc1,
-                    acc5,
-                    acc10,
-                    val_metrics.get('rank1', 0.0),
-                    val_metrics.get('rank5', 0.0),
-                    val_metrics.get('rank10', 0.0),
-                    val_metrics.get('mAP', 0.0),
-                    self.lr,
-                    epoch_time
-                ])
 
         # === Final model save ===
         # Build a filename to save the final model of this training session
