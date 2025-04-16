@@ -1,0 +1,107 @@
+2025-04-16 13:12:08,812 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+2025-04-16 13:12:08,813 - INFO - [DEBUG] img_features: torch.Size([32, 1024]), prompt: N/A, pooled: torch.Size([32, 72])
+2025-04-16 13:12:08,813 - INFO - [DEBUG] logits std: 0.0707
+2025-04-16 13:12:08,814 - INFO - [DEBUG] CE loss: 4.2744, Triplet loss: 0.1274, Total: 4.4018
+2025-04-16 13:12:13,104 - INFO - [Epoch 1] Total Loss=4.3345
+2025-04-16 13:12:13,104 - INFO - [Epoch 1] Acc@1=3.71% | Acc@5=12.81% | Acc@10=24.61%
+2025-04-16 13:12:13,104 - INFO - [Validation] Extracting features...
+2025-04-16 13:12:43,919 - INFO - [Validation] Evaluating ranks and mAP...
+2025-04-16 13:12:44,575 - INFO - 
+[ReID Validation]
+2025-04-16 13:12:44,575 - INFO - RANK1: 38.93%
+2025-04-16 13:12:44,575 - INFO - RANK5: 60.04%
+2025-04-16 13:12:44,575 - INFO - RANK10: 70.55%
+2025-04-16 13:12:44,575 - INFO - MAP: 49.47%
+2025-04-16 13:12:45,308 - INFO - Saving best model at epoch 1 -> saved_models/stage1_frozen_text_rn50_11k_dorsal_r_prompt_nctxNA_e1_lr1e-05_bs32_BEST.pth
+2025-04-16 13:13:10,989 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+2025-04-16 13:13:10,989 - INFO - [DEBUG] img_features: torch.Size([32, 1024]), prompt: N/A, pooled: torch.Size([32, 72])
+2025-04-16 13:13:10,989 - INFO - [DEBUG] logits std: 0.1022
+2025-04-16 13:13:10,989 - INFO - [DEBUG] CE loss: 4.2063, Triplet loss: 0.0732, Total: 4.2795
+2025-04-16 13:13:15,059 - INFO - [Epoch 2] Total Loss=4.3000
+2025-04-16 13:13:15,059 - INFO - [Epoch 2] Acc@1=6.18% | Acc@5=20.22% | Acc@10=31.46%
+2025-04-16 13:13:15,062 - INFO - [Validation] Extracting features...
+2025-04-16 13:13:44,070 - INFO - [Validation] Evaluating ranks and mAP...
+2025-04-16 13:13:44,699 - INFO - 
+[ReID Validation]
+2025-04-16 13:13:44,699 - INFO - RANK1: 53.24%
+2025-04-16 13:13:44,699 - INFO - RANK5: 74.77%
+2025-04-16 13:13:44,699 - INFO - RANK10: 83.73%
+2025-04-16 13:13:44,699 - INFO - MAP: 63.38%
+2025-04-16 13:13:45,401 - INFO - Saving best model at epoch 2 -> saved_models/stage1_frozen_text_rn50_11k_dorsal_r_prompt_nctxNA_e2_lr1e-05_bs32_BEST.pth
+2025-04-16 13:14:09,184 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+2025-04-16 13:14:09,189 - INFO - [DEBUG] img_features: torch.Size([32, 1024]), prompt: N/A, pooled: torch.Size([32, 72])
+2025-04-16 13:14:09,189 - INFO - [DEBUG] logits std: 0.3849
+2025-04-16 13:14:09,189 - INFO - [DEBUG] CE loss: 4.1389, Triplet loss: 0.0289, Total: 4.1678
+2025-04-16 13:14:13,219 - INFO - [Epoch 3] Total Loss=4.1754
+2025-04-16 13:14:13,219 - INFO - [Epoch 3] Acc@1=4.04% | Acc@5=19.78% | Acc@10=34.61%
+2025-04-16 13:14:13,219 - INFO - [Validation] Extracting features...
+2025-04-16 13:14:41,565 - INFO - [Validation] Evaluating ranks and mAP...
+2025-04-16 13:14:42,220 - INFO - 
+[ReID Validation]
+2025-04-16 13:14:42,220 - INFO - RANK1: 64.37%
+2025-04-16 13:14:42,220 - INFO - RANK5: 84.45%
+2025-04-16 13:14:42,225 - INFO - RANK10: 90.94%
+2025-04-16 13:14:42,225 - INFO - MAP: 72.80%
+2025-04-16 13:14:42,899 - INFO - Saving best model at epoch 3 -> saved_models/stage1_frozen_text_rn50_11k_dorsal_r_prompt_nctxNA_e3_lr1e-05_bs32_BEST.pth
+2025-04-16 13:15:07,360 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+2025-04-16 13:15:07,360 - INFO - [DEBUG] img_features: torch.Size([32, 1024]), prompt: N/A, pooled: torch.Size([32, 72])
+2025-04-16 13:15:07,360 - INFO - [DEBUG] logits std: 0.5107
+2025-04-16 13:15:07,360 - INFO - [DEBUG] CE loss: 3.9415, Triplet loss: 0.0454, Total: 3.9869
+2025-04-16 13:15:11,458 - INFO - [Epoch 4] Total Loss=4.0832
+2025-04-16 13:15:11,458 - INFO - [Epoch 4] Acc@1=4.83% | Acc@5=21.91% | Acc@10=35.28%
+2025-04-16 13:15:11,458 - INFO - [Validation] Extracting features...
+2025-04-16 13:15:41,013 - INFO - [Validation] Evaluating ranks and mAP...
+2025-04-16 13:15:41,689 - INFO - 
+[ReID Validation]
+2025-04-16 13:15:41,689 - INFO - RANK1: 71.37%
+2025-04-16 13:15:41,689 - INFO - RANK5: 87.64%
+2025-04-16 13:15:41,689 - INFO - RANK10: 92.07%
+2025-04-16 13:15:41,689 - INFO - MAP: 78.77%
+2025-04-16 13:15:42,408 - INFO - Saving best model at epoch 4 -> saved_models/stage1_frozen_text_rn50_11k_dorsal_r_prompt_nctxNA_e4_lr1e-05_bs32_BEST.pth
+2025-04-16 13:16:08,954 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+2025-04-16 13:16:08,954 - INFO - [DEBUG] img_features: torch.Size([32, 1024]), prompt: N/A, pooled: torch.Size([32, 72])
+2025-04-16 13:16:08,954 - INFO - [DEBUG] logits std: 0.4741
+2025-04-16 13:16:08,954 - INFO - [DEBUG] CE loss: 3.9402, Triplet loss: 0.0678, Total: 4.0080
+2025-04-16 13:16:13,150 - INFO - [Epoch 5] Total Loss=3.9498
+2025-04-16 13:16:13,150 - INFO - [Epoch 5] Acc@1=9.21% | Acc@5=28.88% | Acc@10=43.71%
+2025-04-16 13:16:13,150 - INFO - [Validation] Extracting features...
+2025-04-16 13:16:42,634 - INFO - [Validation] Evaluating ranks and mAP...
+2025-04-16 13:16:43,304 - INFO - 
+[ReID Validation]
+2025-04-16 13:16:43,304 - INFO - RANK1: 65.81%
+2025-04-16 13:16:43,304 - INFO - RANK5: 81.87%
+2025-04-16 13:16:43,304 - INFO - RANK10: 87.33%
+2025-04-16 13:16:43,304 - INFO - MAP: 73.22%
+2025-04-16 13:16:43,304 - INFO - [INFO] No improvement in Rank-1 (65.81%), patience = 1/3
+2025-04-16 13:17:08,313 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+2025-04-16 13:17:08,313 - INFO - [DEBUG] img_features: torch.Size([32, 1024]), prompt: N/A, pooled: torch.Size([32, 72])
+2025-04-16 13:17:08,313 - INFO - [DEBUG] logits std: 0.8739
+2025-04-16 13:17:08,313 - INFO - [DEBUG] CE loss: 3.4390, Triplet loss: 0.0000, Total: 3.4390
+2025-04-16 13:17:12,432 - INFO - [Epoch 6] Total Loss=3.7808
+2025-04-16 13:17:12,432 - INFO - [Epoch 6] Acc@1=13.93% | Acc@5=37.08% | Acc@10=54.72%
+2025-04-16 13:17:12,432 - INFO - [Validation] Extracting features...
+2025-04-16 13:17:42,278 - INFO - [Validation] Evaluating ranks and mAP...
+2025-04-16 13:17:42,973 - INFO - 
+[ReID Validation]
+2025-04-16 13:17:42,973 - INFO - RANK1: 66.43%
+2025-04-16 13:17:42,973 - INFO - RANK5: 82.29%
+2025-04-16 13:17:42,973 - INFO - RANK10: 88.67%
+2025-04-16 13:17:42,973 - INFO - MAP: 73.49%
+2025-04-16 13:17:42,973 - INFO - [INFO] No improvement in Rank-1 (66.43%), patience = 2/3
+2025-04-16 13:18:08,093 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+2025-04-16 13:18:08,093 - INFO - [DEBUG] img_features: torch.Size([32, 1024]), prompt: N/A, pooled: torch.Size([32, 72])
+2025-04-16 13:18:08,093 - INFO - [DEBUG] logits std: 1.0011
+2025-04-16 13:18:08,093 - INFO - [DEBUG] CE loss: 3.2878, Triplet loss: 0.0273, Total: 3.3151
+2025-04-16 13:18:12,212 - INFO - [Epoch 7] Total Loss=3.3746
+2025-04-16 13:18:12,212 - INFO - [Epoch 7] Acc@1=20.90% | Acc@5=47.19% | Acc@10=63.26%
+2025-04-16 13:18:12,212 - INFO - [Validation] Extracting features...
+2025-04-16 13:18:43,367 - INFO - [Validation] Evaluating ranks and mAP...
+2025-04-16 13:18:44,008 - INFO - 
+[ReID Validation]
+2025-04-16 13:18:44,008 - INFO - RANK1: 66.22%
+2025-04-16 13:18:44,008 - INFO - RANK5: 84.86%
+2025-04-16 13:18:44,008 - INFO - RANK10: 90.01%
+2025-04-16 13:18:44,008 - INFO - MAP: 74.31%
+2025-04-16 13:18:44,013 - INFO - [INFO] No improvement in Rank-1 (66.22%), patience = 3/3
+2025-04-16 13:18:44,013 - INFO - [EARLY STOPPING] No improvement for 3 consecutive epochs. Stopping at epoch 7.
+2025-04-16 13:18:44,757 - INFO - Model saved to: saved_models/stage1_frozen_text_rn50_11k_dorsal_r_prompt_nctxNA_e7_lr1e-05_bs32_FINAL.pth
