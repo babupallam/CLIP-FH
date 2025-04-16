@@ -55,6 +55,9 @@ def freeze_entire_clip_model(model, log=None):
         log("All CLIP parameters frozen.")
 
 
+from utils.loss.arcface import ArcFace
+
+
 def build_model(config, freeze_text=False):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model_name = config["model"]

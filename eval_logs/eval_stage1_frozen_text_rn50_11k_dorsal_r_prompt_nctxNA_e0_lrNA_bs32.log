@@ -1,0 +1,104 @@
+Evaluation Log
+==================================================
+Config      : C:\Users\Girija\Documents\GitHub\HandCLIP\configs\eval_stage1_frozen_text\eval_rn50_11k_dorsal_r.yml
+Experiment  : eval_stage1_frozen_text
+Model       : rn50
+Variant     : stage1_frozen_text
+Dataset     : 11k
+Aspect      : dorsal_r
+Model Path  : saved_models/stage1_frozen_text_rn50_11k_dorsal_r_prompt_nctxNA_e10_lr1e-05_bs32_BEST.pth
+==================================================
+
+Device: cpu
+Loading fine-tuned model from: saved_models/stage1_frozen_text_rn50_11k_dorsal_r_prompt_nctxNA_e10_lr1e-05_bs32_BEST.pth
+Model weights loaded successfully from: saved_models/stage1_frozen_text_rn50_11k_dorsal_r_prompt_nctxNA_e10_lr1e-05_bs32_BEST.pth
+Checkpoint restored from epoch 10
+Checkpoint metadata: {'used_prompt_learning': False, 'prompt_param_names': [], 'freeze_text_encoder': True, 'clip_variant': 'ViT-B/16', 'aspect': 'dorsal_r', 'dataset': '11k', 'fine_tuned_image_encoder': True, 'fine_tuned_classifier': True, 'has_scheduler': False, 'stage': 'unknown', 'save_time': '2025-04-16T00:20:44.518906', 'config_hash': '5c51431c897426b1bd64a88244672c88'}
+
+Split 1/10
+Evaluation Metrics:
+   Rank-1 : 56.64%
+   Rank-5 : 72.30%
+   Rank-10: 76.52%
+   mAP    : 63.89%
+Time Taken     : 163.65s
+
+Split 2/10
+Evaluation Metrics:
+   Rank-1 : 58.29%
+   Rank-5 : 74.15%
+   Rank-10: 78.78%
+   mAP    : 65.64%
+Time Taken     : 162.22s
+
+Split 3/10
+Evaluation Metrics:
+   Rank-1 : 58.91%
+   Rank-5 : 71.37%
+   Rank-10: 76.00%
+   mAP    : 65.35%
+Time Taken     : 166.05s
+
+Split 4/10
+Evaluation Metrics:
+   Rank-1 : 56.85%
+   Rank-5 : 71.06%
+   Rank-10: 76.11%
+   mAP    : 63.59%
+Time Taken     : 168.07s
+
+Split 5/10
+Evaluation Metrics:
+   Rank-1 : 53.14%
+   Rank-5 : 67.87%
+   Rank-10: 73.84%
+   mAP    : 60.74%
+Time Taken     : 161.87s
+
+Split 6/10
+Evaluation Metrics:
+   Rank-1 : 58.08%
+   Rank-5 : 74.67%
+   Rank-10: 79.71%
+   mAP    : 66.06%
+Time Taken     : 161.31s
+
+Split 7/10
+Evaluation Metrics:
+   Rank-1 : 54.99%
+   Rank-5 : 66.84%
+   Rank-10: 71.99%
+   mAP    : 61.14%
+Time Taken     : 161.02s
+
+Split 8/10
+Evaluation Metrics:
+   Rank-1 : 56.44%
+   Rank-5 : 69.93%
+   Rank-10: 73.94%
+   mAP    : 63.41%
+Time Taken     : 175.31s
+
+Split 9/10
+Evaluation Metrics:
+   Rank-1 : 51.80%
+   Rank-5 : 67.87%
+   Rank-10: 72.81%
+   mAP    : 59.73%
+Time Taken     : 160.80s
+
+Split 10/10
+Evaluation Metrics:
+   Rank-1 : 57.98%
+   Rank-5 : 72.81%
+   Rank-10: 78.48%
+   mAP    : 65.08%
+Time Taken     : 164.17s
+
+Final Averaged Results Across All Splits:
+Rank-1 Accuracy : 56.31%
+Rank-5 Accuracy : 70.89%
+Rank-10 Accuracy: 75.82%
+Mean AP         : 63.46%
+
+Log saved to: eval_logs/eval_stage1_frozen_text_rn50_11k_dorsal_r_prompt_nctxNA_e0_lrNA_bs32.log
