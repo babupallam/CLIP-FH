@@ -11,7 +11,7 @@ freeze_text: true
 
 epochs: 10
 batch_size: 32
-lr: 0.0001
+lr: 0.00001   # = 1e-5
 num_workers: 4
 loss: cross_entropy
 

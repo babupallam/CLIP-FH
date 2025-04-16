@@ -9,7 +9,7 @@ batch_size: 32
 num_workers: 4
 
  # this model is the best model found rather than best since it is calculating best based on the reid accuracy
-model_path: saved_models/stage1_frozen_text_vitb16_11k_dorsal_r_vitb16_11k_dorsal_r_finetune_e2_lr00001_bs32_BEST.pth
+model_path: saved_models/stage1_frozen_text_rn50_11k_dorsal_r_prompt_nctxNA_e10_lr1e-05_bs32_BEST.pth
 
 
 output_dir: eval_logs/
