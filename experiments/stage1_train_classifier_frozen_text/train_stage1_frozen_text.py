@@ -44,6 +44,8 @@ def main(config_path):
     # Build the CLIP model and the image classifier
     clip_model, classifier = build_model(config, freeze_text=True)  # We freeze the text encoder
 
+    clip_model.float()
+
     # Create the trainer object using the model, data, config, and device
     trainer = FinetuneTrainerStage1(clip_model, classifier, train_loader, val_loader, config, device)
 

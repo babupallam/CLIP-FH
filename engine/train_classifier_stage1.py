@@ -80,7 +80,7 @@ class FinetuneTrainerStage1:
                 self.optimizer.zero_grad() # Reset gradients to zero before computing new ones.
 
                 # Encode images using CLIP's visual encoder
-                features = self.clip_model.encode_image(images) # Get feature vectors from the image encoder.
+                features = self.clip_model.encode_image(images).float() # Get feature vectors from the image encoder.
                 # Run the classifier on the extracted features
                 outputs = self.classifier(features) # Classify the encoded features.
 

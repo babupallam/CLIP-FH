@@ -99,7 +99,7 @@ def get_train_val_loaders(config):
         # Select only the first 2 samples per class
         selected_indices = []
         for label, indices in class_to_indices.items():
-            selected_indices.extend(indices[:2])  # Keep max 2 images for each class
+            selected_indices.extend(indices[:4])  # Keep max 2 images for each class
 
         # Use only the selected samples in the new gallery dataset
         gallery_dataset = Subset(gallery_dataset, selected_indices)
