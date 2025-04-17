@@ -71,7 +71,7 @@ def build_model(config, freeze_text=False):
         freeze_clip_text_encoder(clip_model)
 
     # Extract the output dimension of the image encoder
-    image_embed_dim = clip_model.visual.output_dim  # e.g., 512 for ViT-B/16, 1024 for RN50
+    image_embed_dim = clip_model.visual.output_dim  # e.g., 512 for ViT-B/16, 1024 for RN50 -- this should be the reason why RN50 is not giving good performance..
 
     # Get the number of output classes (usually = number of identities)
     num_classes = config["num_classes"]
