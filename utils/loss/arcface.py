@@ -13,6 +13,13 @@ class ArcFace(nn.Module):
         self.easy_margin = easy_margin
         self.cos_m = math.cos(m)
         self.sin_m = math.sin(m)
+
+        #self.margin = 0.5  # try lowering to 0.3
+        #self.scale = 64  # try lowering to 30
+
+        self.scale = 30  # more forgiving
+        self.margin = 0.3  # easier class separation early on
+
         self.th = math.cos(math.pi - m)
         self.mm = math.sin(math.pi - m) * m
 

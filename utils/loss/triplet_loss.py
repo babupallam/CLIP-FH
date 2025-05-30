@@ -3,49 +3,40 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 class TripletLoss(nn.Module):
-    def __init__(self, margin=0.3):
-        super(TripletLoss, self).__init__()
+    def __init__(self, margin=0.3, mining='batch_hard'):
+        super().__init__()
         self.margin = margin
-        self.ranking_loss = nn.TripletMarginLoss(margin=margin, p=2)
+        self.mining = mining
+        self.ranking_loss = nn.MarginRankingLoss(margin=margin)
 
-    def forward(self, features, labels):
+    def forward(self, embeddings, labels):
+        if self.mining == 'batch_hard':
+            return self.batch_hard_triplet_loss(embeddings, labels)
+        else:
+            raise NotImplementedError("Only 'batch_hard' is supported.")
+
+    def batch_hard_triplet_loss(self, embeddings, labels):
         """
-        features: Tensor of shape [batch_size, feat_dim]
-        labels: Tensor of shape [batch_size]
+        For each anchor, select hardest positive and hardest negative in the batch.
         """
-        anchors, positives, negatives = self.select_triplets(features, labels)
-        if anchors is None:
-            return torch.tensor(0.0, requires_grad=True).to(features.device)
-        return self.ranking_loss(anchors, positives, negatives)
+        # Normalize embeddings
+        embeddings = F.normalize(embeddings, dim=1)
+        n = embeddings.size(0)
 
-    def select_triplets(self, features, labels):
-        """
-        Selects valid (anchor, positive, negative) triplets from the batch
-        """
-        anchors, positives, negatives = [], [], []
+        # Compute pairwise distance matrix [N, N]
+        dist = torch.cdist(embeddings, embeddings, p=2)
 
-        for i in range(len(features)):
-            anchor_feat = features[i]
-            anchor_label = labels[i]
+        # Mask for positives and negatives
+        labels = labels.unsqueeze(1)
+        mask_pos = labels.eq(labels.T).float()
+        mask_neg = 1.0 - mask_pos
 
-            # Find all positives and negatives
-            pos_mask = (labels == anchor_label).nonzero(as_tuple=True)[0]
-            neg_mask = (labels != anchor_label).nonzero(as_tuple=True)[0]
+        # For each anchor: hardest positive
+        dist_ap = (dist * mask_pos).max(1)[0]
+        dist_an = (dist + (1e5 * mask_pos)).min(1)[0]
 
-            pos_mask = pos_mask[pos_mask != i]  # Exclude anchor itself
+        # Triplet loss
+        y = torch.ones_like(dist_ap)
+        loss = self.ranking_loss(dist_an, dist_ap, y)
 
-            if len(pos_mask) == 0 or len(neg_mask) == 0:
-                continue
-
-            # Pick one positive and one negative
-            pos_feat = features[pos_mask[0]]
-            neg_feat = features[neg_mask[0]]
-
-            anchors.append(anchor_feat)
-            positives.append(pos_feat)
-            negatives.append(neg_feat)
-
-        if len(anchors) == 0:
-            return None, None, None
-
-        return torch.stack(anchors), torch.stack(positives), torch.stack(negatives)
+        return loss

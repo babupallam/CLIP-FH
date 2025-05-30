@@ -77,7 +77,8 @@ def get_train_val_loaders(config):
     # 1. Resize all images to 224x224
     # 2. Convert images to PyTorch tensors (CHW format, scaled to [0.0, 1.0])
     transform = transforms.Compose([
-        transforms.Resize((224, 224)),
+        #transforms.Resize((224, 224)),
+        transforms.Resize((224, 128)), # for v11
         transforms.ToTensor(),
     ])
 

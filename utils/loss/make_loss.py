@@ -1,7 +1,7 @@
 from utils.loss.cross_entropy_loss import CrossEntropyLoss
 from utils.loss.triplet_loss import TripletLoss
 from utils.loss.center_loss import CenterLoss
-from utils.loss.contrastive_loss import supcon_loss
+from utils.loss.supcon import SupConLoss
 from utils.loss.arcface import ArcFace
 
 class CombinedLoss:
@@ -40,7 +40,7 @@ def build_loss(loss_list, num_classes=None, feat_dim=None):
         loss_fns.append(ArcFace(feat_dim=feat_dim, num_classes=num_classes))
 
     if "supcon" in loss_list:
-        contrastive_fn = supcon_loss
+        contrastive_fn = SupConLoss(device="cuda")
 
     #print(f"[make_loss] Using contrastive_fn = {contrastive_fn}")
 

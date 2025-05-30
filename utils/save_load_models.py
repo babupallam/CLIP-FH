@@ -215,3 +215,97 @@ def load_checkpoint(
         warnings.warn("[INFO] Loaded checkpoint config differs from current config.")
 
     return checkpoint, checkpoint_config, epoch, metadata
+
+
+
+
+import torch, os, warnings, pickle   # ← add pickle import
+
+def _torch_load_flexible(path, map_location):
+    """
+    First tries PyTorch 2.6 default (weights_only=True); if that fails
+    because of a safe‑unpickle issue we retry with weights_only=False.
+    """
+    try:
+        return torch.load(path, map_location=map_location)   # default weights_only=True
+    except pickle.UnpicklingError as e:
+        warnings.warn(f"[WARN] torch.load failed with safe‑unpickler: {e}\n"
+                      "→ Retrying with weights_only=False because checkpoint is trusted.")
+        return torch.load(path, map_location=map_location, weights_only=False)
+
+
+
+
+import torch
+from datetime import datetime
+from typing import Dict, Tuple
+
+# ──────────────────────────── SAVE ────────────────────────────
+def save_promptsg_checkpoint(
+    model_components: Tuple[torch.nn.Module, torch.nn.Module,
+                            torch.nn.Module, torch.nn.Module],
+    optimizer: torch.optim.Optimizer,
+    config: Dict,
+    epoch: int,
+    val_metrics: Dict,
+    path: str,
+    scheduler: torch.optim.lr_scheduler._LRScheduler = None,
+    train_loss: float = None,
+    metrics_log: list = None,
+):
+    """
+    Save CLIP + PromptSG (inversion, cross‑attention, classifier) in **one file**.
+    `model_components` = (clip_model, inversion_model, multimodal_module, classifier)
+    """
+    clip_model, inversion, multimodal, classifier = model_components
+
+    checkpoint = {
+        # core
+        "epoch": epoch,
+        "clip_state_dict":       clip_model.state_dict(),
+        "inversion_state_dict":  inversion.state_dict(),
+        "multimodal_state_dict": multimodal.state_dict(),
+        "classifier_state_dict": classifier.state_dict(),
+        # optim / sched
+        "optimizer_state_dict":  optimizer.state_dict(),
+        "scheduler_state_dict":  scheduler.state_dict() if scheduler else None,
+        # bookkeeping
+        "val_metrics": val_metrics,
+        "train_loss":  train_loss,
+        "config":      config,
+        "metadata": {
+            "stage": "promptsg",
+            "save_time": datetime.now().isoformat(),
+            "clip_variant": config.get("clip_model", "ViT‑B/16"),
+            "dataset":      config.get("dataset", "unknown"),
+        },
+    }
+
+    torch.save(checkpoint, path)
+    print(f"[PromptSG] checkpoint saved → {path}")
+
+
+# ──────────────────────────── LOAD ────────────────────────────
+def load_promptsg_checkpoint(
+    path: str,
+    model_components: Tuple[torch.nn.Module, torch.nn.Module,
+                            torch.nn.Module, torch.nn.Module],
+    device: str = "cpu",
+):
+    """
+    Restore all four PromptSG blocks.
+    Returns (epoch, config, metadata)
+    """
+    ckpt = _torch_load_flexible(path, map_location=device)
+
+    clip_model, inversion, multimodal, classifier = model_components
+
+    clip_model.load_state_dict(ckpt["clip_state_dict"],       strict=False)
+    inversion.load_state_dict( ckpt["inversion_state_dict"],  strict=False)
+    multimodal.load_state_dict(ckpt["multimodal_state_dict"], strict=False)
+    classifier.load_state_dict( ckpt["classifier_state_dict"], strict=False)
+
+    if "optimizer_state_dict" in ckpt:
+        print("[INFO] Optimizer state present but NOT loaded (eval‑only).")
+
+    return ckpt["epoch"], ckpt.get("config", {}), ckpt.get("metadata", {})

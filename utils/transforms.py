@@ -22,14 +22,16 @@ def build_transforms(train=True):
 
     if train:
         return transforms.Compose([
-            transforms.Resize((224, 224)),
+            #transforms.Resize((224, 224)),
+            transforms.Resize((224, 128)),  # v11- preferred for hand ReID
             transforms.RandomHorizontalFlip(),
             transforms.ToTensor(),
             normalize,
         ])
     else:
         return transforms.Compose([
-            transforms.Resize((224, 224)),
+            #transforms.Resize((224, 224)),
+            transforms.Resize((224, 128)),  # v11- referred for hand ReID
             transforms.ToTensor(),
             normalize,
         ])

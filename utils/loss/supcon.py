@@ -1,43 +1,47 @@
-# utils/loss/supcon.py
+# utils/loss/supcontrast.py
 
 import torch
-import torch.nn.functional as F
 import torch.nn as nn
+import torch.nn.functional as F
 
-class SymmetricSupConLoss(nn.Module):
-    def __init__(self, temperature=0.07):
-        super().__init__()
+
+class SupConLoss(nn.Module):
+    """
+    Supervised Contrastive Loss (for CLIP-ReID stage 1)
+    """
+    def __init__(self, device="cuda", temperature=0.07):
+        super(SupConLoss, self).__init__()
         self.temperature = temperature
+        self.device = device
 
-    def forward(self, img_emb, text_emb, labels):
+    def forward(self, features, contrast_features, labels, targets=None):
         """
-        img_emb: [B, D]
-        text_emb: [B, D]
-        labels: [B]
+        Args:
+            features: Tensor of shape [B, D]
+            contrast_features: Tensor of shape [B, D]
+            labels: LongTensor of shape [B]
+        Returns:
+            loss: Scalar Tensor
         """
-        B = img_emb.size(0)
+        features = F.normalize(features, dim=-1)
+        contrast_features = F.normalize(contrast_features, dim=-1)
 
-        # Normalize features
-        img_emb = F.normalize(img_emb, dim=1)
-        text_emb = F.normalize(text_emb, dim=1)
+        batch_size = features.shape[0]
+        logits = torch.div(torch.matmul(features, contrast_features.T), self.temperature)  # [B, B]
 
-        # Similarity matrix: [B, B]
-        sim_i2t = torch.matmul(img_emb, text_emb.T) / self.temperature
-        sim_t2i = torch.matmul(text_emb, img_emb.T) / self.temperature
+        # mask: positive pairs (same label, excluding self-pairing)
+        mask = torch.eq(labels.unsqueeze(1), labels.unsqueeze(0)).float().to(self.device)
+        logits_mask = torch.ones_like(mask) - torch.eye(batch_size).to(self.device)
+        mask = mask * logits_mask  # zero out self-similarity
 
-        labels = labels.contiguous().view(-1, 1)
-        mask = torch.eq(labels, labels.T).float().to(labels.device)  # [B, B]
+        # log-softmax
+        exp_logits = torch.exp(logits) * logits_mask
+        log_prob = logits - torch.log(exp_logits.sum(1, keepdim=True) + 1e-8)
 
-        # Contrastive loss (from SimCLR-style SupCon)
-        def contrastive_loss(sim, mask):
-            # subtracting max for stability
-            sim = sim - sim.max(dim=1, keepdim=True)[0].detach()
-            exp_sim = torch.exp(sim)
-            log_prob = sim - torch.log(exp_sim.sum(dim=1, keepdim=True) + 1e-8)
-            loss = -(mask * log_prob).sum(1) / (mask.sum(1) + 1e-8)
-            return loss.mean()
+        # mean log-prob of positive pairs
+        mean_log_prob_pos = (mask * log_prob).sum(1) / (mask.sum(1) + 1e-8)
 
-        loss_i2t = contrastive_loss(sim_i2t, mask)
-        loss_t2i = contrastive_loss(sim_t2i, mask)
+        # final loss
+        loss = -mean_log_prob_pos.mean()
 
-        return 0.5 * (loss_i2t + loss_t2i)
+        return loss  # MUST be a Tensor
