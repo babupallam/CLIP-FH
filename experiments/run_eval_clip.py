@@ -21,6 +21,11 @@ from utils.naming import build_filename
 from utils.train_helpers import register_bnneck_and_arcface
 from engine.prompt_learner import PromptLearner
 
+# --- PromptSG specific helpers -----------------------------
+from utils.save_load_models import load_promptsg_checkpoint
+from utils.train_helpers import build_promptsg_models, compose_prompt
+from engine.promptsg_inference import extract_features_promptsg
+
 
 def load_config(path):
     """
@@ -110,10 +115,20 @@ def run_eval(config_path):
     model_name = config["model"]
     dataset = config["dataset"]
     aspect = config["aspect"]
-    variant = config.get("variant", "baseline")
+
+    variant = config.get("variant", "baseline").lower()
+
+    # allow auto‑detection when the YAML forgot to set variant: promptsg
+    def _is_promptsg(metadata):
+        return metadata.get("stage", "").lower() == "promptsg"
+
+    is_promptsg = variant == "promptsg"
+
+
     model_path = config.get("model_path")
     batch_size = config.get("batch_size")
     num_splits = config.get("num_splits", 10)
+
 
     # Decide on device (GPU if available, otherwise CPU).
     device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -136,32 +151,71 @@ def run_eval(config_path):
 
     model, preprocess = clip.load(clip_name, device=device)
 
-
     if model_path:
         if not os.path.exists(model_path):
             log(log_path, f"[ERROR] Specified checkpoint does not exist: {model_path}")
             raise FileNotFoundError(f"Checkpoint not found at {model_path}")
 
         log(log_path, f"Loading fine-tuned model from: {model_path}")
-        checkpoint, config_ckpt, epoch_ckpt, metadata_ckpt = load_checkpoint(
-            path=model_path,
-            model=model,
-            device=device,
-            config=config
-        )
-        log(log_path, f"Model weights loaded successfully from: {model_path}")
-        log(log_path, f"Checkpoint restored from epoch {epoch_ckpt}")
-        log(log_path, f"Checkpoint metadata: {metadata_ckpt}")
 
-        # === Load PromptLearner if using clipreid variant ===
-        if variant.lower() == "clipreid":
-            # Reconstruct classnames from train set (based on class_to_idx)
+        # ===== PROMPTSG CHECKPOINT LOADING (safe fallback) =====
+        if is_promptsg:
+            from utils.save_load_models import _torch_load_flexible
+            ckpt_raw = _torch_load_flexible(model_path, map_location=device)
+
+            # Load CLIP backbone only at this point
+            model.load_state_dict(ckpt_raw["clip_state_dict"], strict=False)
+
+            # Extract rest of info for later use
+            epoch_ckpt = ckpt_raw.get("epoch", 0)
+            config_ckpt = ckpt_raw.get("config", {})
+            metadata_ckpt = ckpt_raw.get("metadata", {})
+            checkpoint = ckpt_raw  # Optional: keep for classifier_state_dict
+
+            log(log_path, "[PromptSG] PromptSG checkpoint loaded")
+            log(log_path, f"Checkpoint restored from epoch {epoch_ckpt}")
+            log(log_path, f"Checkpoint metadata: {metadata_ckpt}")
+
+        # ===== NON-PROMPTSG (baseline / clipreid) =====
+        else:
+            checkpoint, config_ckpt, epoch_ckpt, metadata_ckpt = load_checkpoint(
+                path=model_path,
+                model=model,
+                device=device,
+                config=config
+            )
+            log(log_path, f"Model weights loaded successfully from: {model_path}")
+            log(log_path, f"Checkpoint restored from epoch {epoch_ckpt}")
+            log(log_path, f"Checkpoint metadata: {metadata_ckpt}")
+
+        # ===== PromptSG module setup (AFTER we extract config) =====
+        if is_promptsg or _is_promptsg(metadata_ckpt):
+            log(log_path, "[PromptSG] Detected PromptSG checkpoint – rebuilding submodules")
+
+            cfg_for_modules = config_ckpt if "pseudo_token_dim" in config_ckpt else config
+            num_classes = checkpoint.get("classifier_state_dict", {}).get("weight", torch.empty(0)).size(0)
+
+            inversion_model, multimodal_module, reduction, bnneck,  classifier = build_promptsg_models(
+                cfg_for_modules, num_classes, device
+            )
+
+            # Now that the submodules exist, load them
+            _, _, _ = load_promptsg_checkpoint(
+                path=model_path,
+                model_components=(model, inversion_model, multimodal_module, classifier),
+                device=device
+            )
+
+            inversion_model.eval()
+            multimodal_module.eval()
+            classifier.eval()
+            prompt_learner = None  # PromptSG does not use PromptLearner
+
+        # ===== ClipReID PromptLearner setup =====
+        elif variant == "clipreid":
             from torchvision.datasets import ImageFolder
             from utils.transforms import build_transforms
 
-            # Rebuild the class list (required for PromptLearner initialization)
-            aspect = config["aspect"]
-            # Updated logic to reflect actual folder structure
             if dataset == "11k":
                 dataset_root = os.path.join("datasets", f"11khands/train_val_test_split_{aspect}")
             elif dataset.lower() == "hd":
@@ -170,10 +224,8 @@ def run_eval(config_path):
                 raise ValueError(f"Unsupported dataset: {dataset}")
 
             train_dir = os.path.join(dataset_root, "train")
-
             transform = build_transforms(train=False)
             dataset_train = ImageFolder(train_dir, transform=transform)
-
             class_to_idx = dataset_train.class_to_idx
             classnames = [k for k, _ in sorted(class_to_idx.items(), key=lambda x: x[1])]
 
@@ -195,11 +247,21 @@ def run_eval(config_path):
                 log(log_path, f"Prompt Learner weights loaded from: {prompt_path}")
             else:
                 log(log_path, f"[WARNING] Expected prompt weights not found at: {prompt_path}")
+
+            inversion_model = multimodal_module = classifier = None
+
+        # ===== Baseline (no PromptSG, no PromptLearner) =====
         else:
             prompt_learner = None
+            inversion_model = multimodal_module = classifier = None
 
     else:
         log(log_path, "No fine-tuned model path specified. Using official CLIP baseline.")
+        prompt_learner = None
+        inversion_model = multimodal_module = classifier = None
+
+
+
 
     # Make sure model is in eval mode for inference
     model.eval()
@@ -245,8 +307,25 @@ def run_eval(config_path):
         use_flip = config.get("use_flip", False)  #l horizontal flip feature averaging (like MBA)
         # This will mirror the MBA strategy, where features from original and horizontally flipped images are averaged, improving generalization for re-identification.
         # this feature can be used from the config file
-        q_feats, q_labels = extract_features(model, query_loader, device, use_flip=use_flip, prompt_learner=prompt_learner)
-        g_feats, g_labels = extract_features(model, gallery_loader, device, use_flip=use_flip, prompt_learner=prompt_learner)
+
+        if inversion_model is not None:  # ← PromptSG path
+            q_feats, q_labels = extract_features_promptsg(
+                model, inversion_model, multimodal_module, classifier,
+                query_loader, device, compose_prompt
+            )
+            g_feats, g_labels = extract_features_promptsg(
+                model, inversion_model, multimodal_module, classifier,
+                gallery_loader, device, compose_prompt
+            )
+        else:  # ← baseline / clipreid path
+            q_feats, q_labels = extract_features(
+                model, query_loader, device,
+                use_flip=use_flip, prompt_learner=prompt_learner
+            )
+            g_feats, g_labels = extract_features(
+                model, gallery_loader, device,
+                use_flip=use_flip, prompt_learner=prompt_learner
+            )
 
         # Compute similarity between query & gallery
         sim_matrix = compute_similarity_matrix(q_feats, g_feats)
