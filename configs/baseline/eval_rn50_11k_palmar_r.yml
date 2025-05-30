@@ -1,7 +1,0 @@
-experiment: eval_stage1_baseline
-dataset: 11k
-aspect: palmar_r
-model: rn50
-variant: baseline
-batch_size: 32
-num_splits: 10
