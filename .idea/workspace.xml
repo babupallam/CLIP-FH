@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c7cde98-b929-4071-bc2e-b0363f4c695d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/train_classifier_stage1.py" beforeDir="false" afterPath="$PROJECT_DIR$/engine/train_classifier_stage1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/train_logs/stage1_frozen_text_vitb16_11k_dorsal_r_prompt_nctxNA_e10_lr1e-05_bs32.log" beforeDir="false" afterPath="$PROJECT_DIR$/train_logs/stage1_frozen_text_vitb16_11k_dorsal_r_prompt_nctxNA_e10_lr1e-05_bs32.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/configs/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/run_eval_clip.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/run_eval_clip.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +54,7 @@
     "Python.test_log_saving.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/Girija/Documents/GitHub/HandCLIP/configs/eval_stage1_frozen_text",
+    "last_opened_file_path": "C:/Users/Girija/Documents/GitHub/HandCLIP/experiments/conclusion_outputs",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -63,18 +65,18 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Girija\Documents\GitHub\HandCLIP\configs\eval_stage1_frozen_text" />
-      <recent name="C:\Users\Girija\Documents\GitHub\HandCLIP\eval_logs\v1" />
-      <recent name="C:\Users\Girija\Documents\GitHub\HandCLIP\notebooks\references" />
-      <recent name="C:\Users\Girija\Documents\GitHub\HandCLIP\experiments\stage2_clipreid_integration" />
+      <recent name="C:\Users\Girija\Documents\GitHub\HandCLIP\experiments\conclusion_outputs" />
+      <recent name="C:\Users\Girija\Documents\GitHub\HandCLIP\experiments\output-analysis" />
       <recent name="C:\Users\Girija\Documents\GitHub\HandCLIP\utils" />
+      <recent name="C:\Users\Girija\Documents\GitHub\HandCLIP\experiments" />
+      <recent name="C:\Users\Girija\Documents\GitHub\HandCLIP\configs\eval_stage1_frozen_text" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Girija\Documents\GitHub\HandCLIP\configs\train_stage2_clip_reid\archive" />
+      <recent name="C:\Users\Girija\Documents\GitHub\HandCLIP\train_logs\archived" />
+      <recent name="C:\Users\Girija\Documents\GitHub\HandCLIP\eval_logs\archived" />
+      <recent name="C:\Users\Girija\Documents\GitHub\HandCLIP\experiments" />
       <recent name="C:\Users\Girija\Documents\GitHub\HandCLIP\utils" />
-      <recent name="C:\Users\Girija\Documents\GitHub\HandCLIP\engine" />
-      <recent name="C:\Users\Girija\Documents\GitHub\HandCLIP\models\archived" />
-      <recent name="C:\Users\Girija\Documents\GitHub\HandCLIP\experiments\stage2_clipreid_integration\archived" />
-      <recent name="C:\Users\Girija\Documents\GitHub\HandCLIP" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -101,7 +103,9 @@
       <workItem from="1743727135744" duration="417000" />
       <workItem from="1743727805200" duration="271051000" />
       <workItem from="1744357298496" duration="83077000" />
-      <workItem from="1744542299336" duration="120342000" />
+      <workItem from="1744542299336" duration="188355000" />
+      <workItem from="1748398187481" duration="7019000" />
+      <workItem from="1748412642922" duration="21291000" />
     </task>
     <servers />
   </component>
