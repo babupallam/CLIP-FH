@@ -1,110 +1,70 @@
-Perfect — let me explain each of the files you listed under `experiments/` so you know exactly what they are for, and how they fit into your CLIP-FH workflow.
+
+# 🧪 CLIP-FH Experiments Directory
+
+This folder contains all the experimental scripts used in the **CLIP-FH** project. The project is organized in modular stages, each representing a critical step in the fine-tuning and evaluation pipeline for hand-based identity matching using CLIP.
 
 ---
 
-# 📁 `experiments/` — Your Central Execution Hub
-
-This directory contains **entry-point scripts** to run different parts of your CLIP-FH system — training, evaluation, multi-run jobs.
-
----
-
-### ✅ `run_eval_clip.py`
-- **Purpose**: Evaluates any trained/baseline model using a YAML config.
-- **Inputs**: A config from `configs/baseline/` or `configs/finetuned/`
-- **Does**:
-  - Loads the model (baseline or fine-tuned)
-  - Loads query/gallery splits
-  - Runs re-ID for `num_splits` (e.g., 10)
-  - Saves results to `result_logs/`
-
-> 💡 Ideal for single-run testing of model performance.
-
----
-
-### ✅ `run_all_experiments.py`
-- **Purpose**: Batch-runs all evaluation configs automatically.
-- **Does**:
-  - Scans all `configs/baseline/` and/or `configs/finetuned/`
-  - Calls `run_eval_clip.py` for each config
-  - Produces full result set in `result_logs/`
-
-> 💡 Run this when you want to benchmark all models and datasets at once.
-
----
-
-### ✅ `train_finetune_clip.py`
-- **Purpose**: Fine-tunes the CLIP image encoder with frozen text encoder.
-- **Loads config from**: `configs/train_finetune/`
-- **Does**:
-  - Loads base CLIP model (ViT-B/16 or RN50)
-  - Freezes the text encoder
-  - Adds a classifier head (e.g., ArcFace or softmax)
-  - Trains on 11k/HD datasets
-  - Saves models to `saved_models/`
-
-> 💡 This is your go-to script for standard finetuning of image encoder only.
-
----
-
-### ✅ `train_clipreid_stage1.py`
-- **Purpose**: Stage 1 of CLIP-ReID training — learn prompt tokens.
-- **Loads config from**: `configs/train_clipreid/`
-- **Does**:
-  - Freezes both image and text encoders
-  - Adds learnable text tokens (prompt tuning)
-  - Uses image–text contrastive loss
-  - Saves learned tokens for Stage 2
-
-> 💡 Needed if you're implementing the two-stage CLIP-ReID strategy.
-
----
-
-### ✅ `train_clipreid_stage2.py`
-- **Purpose**: Stage 2 of CLIP-ReID — finetune image encoder with learned tokens.
-- **Loads config from**: `configs/train_clipreid/`
-- **Does**:
-  - Loads text tokens from Stage 1
-  - Freezes text encoder and prompts
-  - Trains image encoder (CE loss + triplet + contrastive)
-  - Saves image encoder weights
-
-> 💡 This completes the two-stage CLIP-ReID training.
-
----
-
-### ✅ `train_full_finetune.py`
-- **Purpose**: Fully finetunes both the CLIP text encoder and image encoder.
-- **Loads config from**: `configs/train_finetune_full/`
-- **Does**:
-  - Unfreezes all parameters in CLIP
-  - Applies joint optimization (optional classifier head)
-  - Saves checkpoint
-
-> 💡 Use this when you want to tune the entire CLIP model.
-
----
-
-### ✅ `__init__.py`
-- Empty or utility file so the `experiments/` folder can be imported as a Python module.
-- Not required unless you're structuring this as an importable package.
-
----
-
-## 📌 Summary Table
-
-| File | Strategy | Uses Config | Purpose |
-|------|----------|-------------|---------|
-| `run_eval_clip.py` | Evaluation | ✅ | Single model evaluation |
-| `run_all_experiments.py` | Evaluation | ✅ | Batch evaluate all configs |
-| `train_finetune_clip.py` | Fine-tune image encoder | ✅ | Text encoder frozen |
-| `train_clipreid_stage1.py` | Prompt tuning | ✅ | Train learnable tokens |
-| `train_clipreid_stage2.py` | Prompt + image encoder | ✅ | Contrastive + ID loss |
-| `train_full_finetune.py` | Full CLIP finetune | ✅ | Train image + text encoder |
-
----
-
-```angular2html
-python experiments/run_eval_clip.py --config configs/finetuning_stage1_frozen_text/eval_vitb16_11k_dorsal_r.yml
+## 📁 Folder Structure Overview
 
 ```
 
+experiments/
+├── archived/                     # \[Optional] Deprecated or backup scripts from earlier versions
+├── conclusion\_outputs/          # Post-training analysis: metric plots, log parsers, and CSV generators
+├── stage1\_baseline\_inference/   # Stage 0/1: Baseline zero-shot evaluation and classifier fine-tuning
+├── stage2\_clipreid\_integration/ # Stage 2: CLIP-ReID style training (joint prompt + image encoder tuning)
+├── stage3\_promptsg\_integration/ # Stage 3: PromptSG (prompt tuning with semantic guidance)
+
+```
+
+---
+
+## 📍 Subdirectory Descriptions
+
+### 📂 `archived/`
+- Contains experimental or deprecated scripts from earlier training runs.
+- Not used in the current pipeline, but retained for reference.
+
+### 📂 `conclusion_outputs/`
+- Includes all scripts for:
+  - Directory tree generation (`generate_tree.py`)
+  - Log parsing for training/evaluation
+  - Plotting training metrics
+- Outputs CSV tables and `.png` plots to `result_logs/`.
+
+### 📂 `stage1_baseline_inference/`
+- Stage 0: Zero-shot baseline inference using pretrained CLIP.
+- Stage 1: Fine-tuning classifier on top of a frozen image encoder.
+- Example scripts:
+  - `eval_baseline_clip_single.py`
+  - `train_stage1_frozen_text.py`
+  - `eval_stage1_frozen_text.py`
+
+### 📂 `stage2_clipreid_integration/`
+- Implements Stage 2 of the pipeline using CLIP-ReID methodology.
+- Supports joint training of image encoder + prompt embeddings using ArcFace, Triplet, and Center loss.
+- Example scripts:
+  - `train_stage2_joint.py`
+  - `eval_stage2_joint.py`
+
+### 📂 `stage3_promptsg_integration/`
+- Final stage integrating **PromptSG**: fine-tuning prompts with semantic guidance.
+- Focuses on PromptEncoder and advanced supervision signals.
+- Example scripts:
+  - `train_stage3_promptsg.py`
+  - `eval_stage3_promptsg.py`
+
+---
+
+## ✅ Usage Notes
+
+- Each stage requires a YAML config file (under `configs/`) to run.
+- Training outputs are logged to `train_logs/`, and evaluations to `eval_logs/`.
+- Results and plots are saved to `result_logs/` by the scripts in `conclusion_outputs/`.
+
+---
+
+## 📬 Contact
+
+For technical questions or collaboration, contact: [babupallam@gmail.com](mailto:babupallam@gmail.com)
