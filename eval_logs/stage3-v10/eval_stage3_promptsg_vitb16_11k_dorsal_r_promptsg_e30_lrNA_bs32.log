@@ -1,0 +1,29 @@
+Running final ReID-style evaluation using best model...
+
+→ Evaluating Split 1/10
+[Split 1] Rank-1: 82.29%, Rank-5: 93.61%, Rank-10: 98.15%, mAP: 87.45%
+→ Evaluating Split 2/10
+[Split 2] Rank-1: 84.35%, Rank-5: 95.88%, Rank-10: 98.25%, mAP: 89.22%
+→ Evaluating Split 3/10
+[Split 3] Rank-1: 85.79%, Rank-5: 95.37%, Rank-10: 97.84%, mAP: 90.00%
+→ Evaluating Split 4/10
+[Split 4] Rank-1: 83.73%, Rank-5: 94.13%, Rank-10: 97.22%, mAP: 88.37%
+→ Evaluating Split 5/10
+[Split 5] Rank-1: 86.10%, Rank-5: 95.78%, Rank-10: 97.73%, mAP: 90.36%
+→ Evaluating Split 6/10
+[Split 6] Rank-1: 88.26%, Rank-5: 95.88%, Rank-10: 98.04%, mAP: 91.59%
+→ Evaluating Split 7/10
+[Split 7] Rank-1: 82.18%, Rank-5: 92.79%, Rank-10: 96.29%, mAP: 87.18%
+→ Evaluating Split 8/10
+[Split 8] Rank-1: 84.76%, Rank-5: 93.51%, Rank-10: 96.81%, mAP: 89.04%
+→ Evaluating Split 9/10
+[Split 9] Rank-1: 84.14%, Rank-5: 95.06%, Rank-10: 97.63%, mAP: 89.16%
+→ Evaluating Split 10/10
+[Split 10] Rank-1: 87.13%, Rank-5: 96.40%, Rank-10: 98.04%, mAP: 91.13%
+
+======= FINAL EVAL SUMMARY (Best Model) =======
+Avg Rank-1  : 84.87%
+Avg Rank-5  : 94.84%
+Avg Rank-10 : 97.60%
+Mean AP     : 89.35%
+===============================================

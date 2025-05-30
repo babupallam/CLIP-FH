@@ -1,0 +1,105 @@
+Evaluation Log
+==================================================
+Config      : C:\Users\P2849288\OneDrive - De Montfort University\MSC PROJECT\BABU PALLAM\CLIP-FH\configs\eval_stage3_promptsg\eval_stage3_vitb16_11k_dorsal_r.yml
+Experiment  : eval_stage3_promptsg
+Model       : vitb16
+Variant     : promptsg
+Dataset     : 11k
+Aspect      : dorsal_r
+Model Path  : saved_models/stage3_promptsg_vitb16_11k_dorsal_r_promptsg_e20_lrNA_bs32_BEST.pth
+==================================================
+
+Device: cuda
+Loading fine-tuned model from: saved_models/stage3_promptsg_vitb16_11k_dorsal_r_promptsg_e20_lrNA_bs32_BEST.pth
+[PromptSG] PromptSG checkpoint loaded
+Checkpoint restored from epoch 3
+Checkpoint metadata: {'stage': 'promptsg', 'save_time': '2025-04-19T08:46:21.984558', 'clip_variant': 'vitb16', 'dataset': '11k'}
+[PromptSG] Detected PromptSG checkpoint – rebuilding submodules
+
+Split 1/10
+Evaluation Metrics:
+   Rank-1 : 41.92%
+   Rank-5 : 67.25%
+   Rank-10: 76.93%
+   mAP    : 53.78%
+Time Taken     : 33.93s
+
+Split 2/10
+Evaluation Metrics:
+   Rank-1 : 40.37%
+   Rank-5 : 62.51%
+   Rank-10: 72.71%
+   mAP    : 50.95%
+Time Taken     : 32.83s
+
+Split 3/10
+Evaluation Metrics:
+   Rank-1 : 42.84%
+   Rank-5 : 68.38%
+   Rank-10: 79.92%
+   mAP    : 54.94%
+Time Taken     : 32.58s
+
+Split 4/10
+Evaluation Metrics:
+   Rank-1 : 44.49%
+   Rank-5 : 68.80%
+   Rank-10: 78.17%
+   mAP    : 55.68%
+Time Taken     : 32.56s
+
+Split 5/10
+Evaluation Metrics:
+   Rank-1 : 43.77%
+   Rank-5 : 71.27%
+   Rank-10: 80.43%
+   mAP    : 56.51%
+Time Taken     : 32.80s
+
+Split 6/10
+Evaluation Metrics:
+   Rank-1 : 45.73%
+   Rank-5 : 72.09%
+   Rank-10: 80.33%
+   mAP    : 57.51%
+Time Taken     : 32.61s
+
+Split 7/10
+Evaluation Metrics:
+   Rank-1 : 40.16%
+   Rank-5 : 65.60%
+   Rank-10: 80.64%
+   mAP    : 52.15%
+Time Taken     : 32.57s
+
+Split 8/10
+Evaluation Metrics:
+   Rank-1 : 40.47%
+   Rank-5 : 70.55%
+   Rank-10: 79.81%
+   mAP    : 53.96%
+Time Taken     : 32.56s
+
+Split 9/10
+Evaluation Metrics:
+   Rank-1 : 40.16%
+   Rank-5 : 66.32%
+   Rank-10: 79.51%
+   mAP    : 52.99%
+Time Taken     : 32.79s
+
+Split 10/10
+Evaluation Metrics:
+   Rank-1 : 42.53%
+   Rank-5 : 67.87%
+   Rank-10: 79.71%
+   mAP    : 54.74%
+Time Taken     : 32.61s
+
+Final Averaged Results Across All Splits:
+Rank-1 Accuracy : 42.25%
+Rank-5 Accuracy : 68.06%
+Rank-10 Accuracy: 78.82%
+Mean AP         : 54.32%
+
+Log saved to: eval_logs/eval_stage3_promptsg_vitb16_11k_dorsal_r_promptsg_e0_lrNA_bs32.log
