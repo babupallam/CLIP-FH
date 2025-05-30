@@ -39,7 +39,6 @@ def save_checkpoint(
     config_serialized = str(sorted(config.items()))
     config_hash = hashlib.md5(config_serialized.encode()).hexdigest()
 
-
     # Build metadata block
     metadata = {
         "used_prompt_learning": bool(prompt_params),
@@ -73,8 +72,8 @@ def save_checkpoint(
         "epoch": epoch,
         "model_state_dict": model.state_dict(),
         "optimizer_state_dict": optimizer.state_dict(),
-        "loss": val_metrics.get("avg_val_loss"),
-        "train_loss": train_loss,
+        "loss": val_metrics.get("avg_val_loss"),  # Validation loss
+        "train_loss": train_loss,                 # Optional training loss
         "top1_accuracy": val_metrics.get("top1_accuracy"),
         "top5_accuracy": val_metrics.get("top5_accuracy"),
         "top10_accuracy": val_metrics.get("top10_accuracy"),
@@ -82,10 +81,11 @@ def save_checkpoint(
         "metadata": metadata,
         "rng_state": rng_state,
         "trainable_flags": {
-            n: p.requires_grad for n, p in model.named_parameters()
+            n: p.requires_grad for n, p in model.named_parameters()  # Track which params were trainable
         }
     }
 
+    # Include classifier and scheduler if provided
     if has_classifier:
         checkpoint["classifier_state_dict"] = classifier.state_dict()
     if has_scheduler:
@@ -93,10 +93,10 @@ def save_checkpoint(
     if metrics_log is not None:
         checkpoint["metrics_log"] = metrics_log  # List of per-epoch logs
 
+    # Save the checkpoint to disk
     torch.save(checkpoint, path)
     tag = "BEST" if is_best else "FINAL"
     print(f"Saved {tag} checkpoint to: {path}")
-
 
 
 
