@@ -1,0 +1,43 @@
+.
+configs/
+    archived/
+        eval_stage1_frozen_text/
+        train_stage1_frozen_text/
+        train_stage2_loss_variants/
+        validate_stage2_clip_reid/
+    baseline/
+    eval_stage1_frozen_text/
+    eval_stage2_clip_reid/
+    eval_stage3_promptsg/
+    train_stage1_frozen_text/
+    train_stage2_clip_reid/
+        archive/
+    train_stage3_promptsg/
+    validate_stage2_clip_reid/
+datasets/
+    data_preprocessing/
+    dataset_analysis/
+engine/
+    archived/
+eval_logs/
+experiments/
+    archived/
+        stage1_train_classifier_frozen_text/
+        stage2_clipid_prompt_learning/
+        stage2_finetune_image_encoder_loss_variants/
+    conclusion_outputs/
+    stage1_baseline_inference/
+    stage2_clipreid_integration/
+        archived/
+    stage3_promptsg_integration/
+my_logs/
+notebooks/
+    references/
+previousVersions/
+result_logs/
+stage2_complete_funing_stages/
+train_logs/
+
+utils/
+    loss/
+        archives/
