@@ -1,0 +1,380 @@
+.
+.idea/
+    .name
+    HandCLIP.iml
+    inspectionProfiles/
+        Project_Default.xml
+        profiles_settings.xml
+    material_theme_project_new.xml
+    misc.xml
+    vcs.xml
+    workspace.xml
+README.md
+clip_fh_v4.zip
+code_structure.txt
+configs/
+    README.md
+    baseline/
+        eval_rn50_11k_dorsal_l.yml
+        eval_rn50_11k_dorsal_r.yml
+        eval_rn50_11k_palmar_l.yml
+        eval_rn50_11k_palmar_r.yml
+        eval_rn50_hd_dorsal_r.yml
+        eval_vitb16_11k_dorsal_l.yml
+        eval_vitb16_11k_dorsal_r.yml
+        eval_vitb16_11k_palmar_l.yml
+        eval_vitb16_11k_palmar_r.yml
+        eval_vitb16_hd_dorsal_r.yml
+        make.py
+    eval_stage1_frozen_text/
+        eval_rn50_11k_dorsal_r.yml
+        eval_vitb16_11k_dorsal_r.yml
+    eval_stage2_clip_reid/
+        eval_joint_vitb16_11k_dorsal_r.yml
+        eval_vitb16_11k_dorsal_r.yml
+    eval_stage3_promptsg/
+        eval_stage3_rn50_11k_dorsal_r.yml
+        eval_stage3_vitb16_11k_dorsal_r.yml
+    train_stage1_frozen_text/
+        continue_train_vitb16_11k_dorsal_r.yml
+        train_rn50_11k_dorsal_r.yml
+        train_vitb16_11k_dorsal_r.yml
+    train_stage2_clip_reid/
+        train_joint_rn50_11k_dorsal_r.yml
+        train_joint_vitb16_11k_dorsal_r.yml
+        train_stage2a_vitb16_11k_dorsal_r.yml
+        train_stage2b_vitb16_11k_dorsal_r.yml
+    train_stage3_promptsg/
+        train_stage3_rn50_11k_dorsal_r.yml
+        train_stage3_vitb16_11k_dorsal_r.yml
+    validate_stage2_clip_reid/
+        validate_stage2a_trainset_vitb16_11k_dorsal_r.yml
+        validate_stage2a_validationset_vitb16_11k_dorsal_r.yml
+datasets/
+    README.md
+    __init__.py
+    __pycache__/
+        __init__.cpython-310.pyc
+        __init__.cpython-38.pyc
+    data_preprocessing/
+        README.md
+        prepare_train_val_test_11k_r_l.py
+        prepare_train_val_test_hd.py
+        validate_dataset_splits.py
+    dataset_analysis/
+        __init__.py
+        analyze_11k_dataset.py
+        analyze_hd_dataset.py
+        check_class_imbalance.py
+        diagnosing the destractors.py
+engine/
+    README.md
+    __init__.py
+    __pycache__/
+        __init__.cpython-310.pyc
+        __init__.cpython-311.pyc
+        __init__.cpython-38.pyc
+        baseline_inference.cpython-310.pyc
+        baseline_inference.cpython-311.pyc
+        baseline_inference.cpython-38.pyc
+        clipreid_trainer_stage1.cpython-38.pyc
+        clipreid_trainer_stage2.cpython-38.pyc
+        evaluator.cpython-310.pyc
+        evaluator.cpython-311.pyc
+        evaluator.cpython-38.pyc
+        prompt_learner.cpython-311.pyc
+        prompt_learner.cpython-38.pyc
+        promptsg_inference.cpython-311.pyc
+        train_classifier_stage1.cpython-311.pyc
+        train_classifier_stage1.cpython-38.pyc
+        train_clipreid_stages.cpython-311.pyc
+        train_clipreid_stages.cpython-38.pyc
+    baseline_inference.py
+    evaluator.py
+    prompt_learner.py
+    promptsg_inference.py
+    train_classifier_stage1.py
+    train_clipreid_stages.py
+eval_logs/
+    stage1/
+        eval_stage1_baseline_rn50_11k_dorsal_r_baseline_e0_bs32.log
+        eval_stage1_baseline_vitb16_11k_dorsal_r_baseline_e0_bs32.log
+    stage2-v1/
+        eval_stage2_clipreid_rn50_11k_dorsal_r_clipid_e30_bs32_BEST.log
+        eval_stage2_clipreid_vitb16_11k_dorsal_r_clipid_e30_bs32_BEST.log
+    stage2-v10/
+        eval_stage2_clipreid_rn50_11k_dorsal_r_clipid_e30_bs32_BEST.log
+    stage2-v2/
+        eval_stage2_clipreid_rn50_11k_dorsal_r_clipid_e30_bs32_BEST.log
+        eval_stage2_clipreid_vitb16_11k_dorsal_r_clipid_e30_bs32_BEST.log
+    stage2-v3/
+        eval_stage2_clipreid_rn50_11k_dorsal_r_clipid_e30_bs32_BEST.log
+        eval_stage2_clipreid_vitb16_11k_dorsal_r_clipid_e30_bs32_BEST.log
+    stage2-v4/
+        eval_stage2_clipreid_rn50_11k_dorsal_r_clipid_e30_bs32_BEST.log
+        eval_stage2_clipreid_vitb16_11k_dorsal_r_clipid_e30_bs32_BEST.log
+    stage2-v5/
+        eval_stage2_clipreid_rn50_11k_dorsal_r_clipid_e30_bs32_BEST.log
+        eval_stage2_clipreid_vitb16_11k_dorsal_r_clipid_e30_bs32_BEST.log
+    stage2-v6/
+        eval_stage2_clipreid_rn50_11k_dorsal_r_clipid_e30_bs32_BEST.log
+        eval_stage2_clipreid_vitb16_11k_dorsal_r_clipid_e30_bs32_BEST.log
+    stage2-v7/
+        eval_stage2_clipreid_rn50_11k_dorsal_r_clipid_e30_bs32_BEST.log
+    stage2-v8/
+        eval_stage2_clipreid_rn50_11k_dorsal_r_clipid_e30_bs32_BEST.log
+    stage2-v9/
+        eval_stage2_clipreid_rn50_11k_dorsal_r_clipid_e30_bs32_BEST.log
+        eval_stage2_clipreid_vitb16_11k_dorsal_r_clipid_e30_bs32_BEST.log
+    stage3-v1/
+        eval_stage3_promptsg_rn50_11k_dorsal_r_promptsg_e0_lrNA_bs32.log
+        eval_stage3_promptsg_vitb16_11k_dorsal_r_promptsg_e0_lrNA_bs32.log
+    stage3-v10/
+        eval_stage3_promptsg_rn50_11k_dorsal_r_promptsg_e60_lrNA_bs32.log
+        eval_stage3_promptsg_vitb16_11k_dorsal_r_promptsg_e30_lrNA_bs32.log
+    stage3-v11/
+        eval_stage3_promptsg_rn50_11k_dorsal_r_promptsg_e60_lrNA_bs32.log
+        eval_stage3_promptsg_vitb16_11k_dorsal_r_promptsg_e60_lrNA_bs32.log
+    stage3-v2/
+        eval_stage3_promptsg_rn50_11k_dorsal_r_promptsg_e0_lrNA_bs32.log
+        eval_stage3_promptsg_vitb16_11k_dorsal_r_promptsg_e0_lrNA_bs32.log
+    stage3-v3/
+        eval_stage3_promptsg_rn50_11k_dorsal_r_promptsg_e0_lrNA_bs32.log
+        eval_stage3_promptsg_vitb16_11k_dorsal_r_promptsg_e0_lrNA_bs32.log
+    stage3-v4/
+        eval_stage3_promptsg_rn50_11k_dorsal_r_promptsg_e0_lrNA_bs32.log
+        eval_stage3_promptsg_vitb16_11k_dorsal_r_promptsg_e0_lrNA_bs32.log
+    stage3-v5/
+        eval_stage3_promptsg_rn50_11k_dorsal_r_promptsg_e0_lrNA_bs32.log
+        eval_stage3_promptsg_vitb16_11k_dorsal_r_promptsg_e0_lrNA_bs32.log
+    stage3-v6/
+        eval_stage3_promptsg_rn50_11k_dorsal_r_promptsg_e0_lrNA_bs32.log
+        eval_stage3_promptsg_vitb16_11k_dorsal_r_promptsg_e0_lrNA_bs32.log
+    stage3-v7/
+    stage3-v8/
+        eval_stage3_promptsg_rn50_11k_dorsal_r_promptsg_e0_lrNA_bs32.log
+        eval_stage3_promptsg_vitb16_11k_dorsal_r_promptsg_e0_lrNA_bs32.log
+    stage3-v9/
+        eval_stage3_promptsg_rn50_11k_dorsal_r_promptsg_e60_lrNA_bs32.log
+        eval_stage3_promptsg_vitb16_11k_dorsal_r_promptsg_e60_lrNA_bs32.log
+experiments/
+    README.md
+    conclusion_outputs/
+        generate_tree.py
+        plot_stage2_train_metrics.py
+        plot_stage3_train_metrics.py
+        stage2_eval_log_analysis.py
+        stage2_train_log_analysis.py
+        stage3_eval_log_analysis.py
+        stage3_train_log_analysis.py
+    run_eval_clip.py
+    stage1_baseline_inference/
+        ANALYSIS REPORT.md
+        eval_baseline_clip.py
+        eval_baseline_clip_single.py
+    stage2_clipreid_integration/
+        ANLAYSIS REPORT_FORMATTED.md
+        ANLAYSIS REPORT_UNFORMATTED.md
+        README.md
+        eval_stage2_joint.py
+        train_stage2_joint.py
+    stage3_promptsg_integration/
+        ANLAYSIS REPORT_FORMATTED.md
+        ANLAYSIS REPORT_UNFORMATTED.md
+        README.md
+        eval_stage3_promptsg.py
+        train_stage3_promptsg.py
+main.py
+my_logs/
+    configurable_training.md
+    extention_to_evaluation_matrix.md
+    how to Compute the Matrics.md
+    implementation_pipeline_a_baseline.md
+    implementation_pipeline_b_stage1_frozen_textencoder.md
+    implementation_pipeline_c_stage2_loss_variants.md
+    re-Identification (ReID) and How.md
+    to Be Done In FineTuning.md
+    why Distractors Are Present Only in the HD Dataset.md
+notebooks/
+    README.md
+    references/
+        01_MBA-Net_ Multi-Branch_with_Attention_Network_for_Hand-Based_Person_Recognition.ipynb
+        02_CLIP-ReID_ Exploiting Vision-Language Model for Image Re-Identification without Concrete Text Labels.ipynb
+        03_PromptSG_ A_Pedestrian_is_Worth_One_Prompt_Towards_Language_Guidance_Person_Re-_Identification.ipynb
+        04_CLIP-SCGI_ Synthesized Caption-Guided Inversion for Person Re-Identification.ipynb
+        05_CILP-FGDI_ Exploiting Vision-Language Model for Generalizable Person Re-Identification.ipynb
+previousVersions/
+    clip-fh_v1.zip
+    clip-fh_v2.zip
+    clip_fh_v3.zip
+    clip_fh_v4.zip
+    clip_fh_v6_before_compressing.zip
+    clip_fh_v7_22_04_2025_10_32 AM.zip
+    configs.zip
+requirements.txt
+result_logs/
+    README.md
+    code_structure.txt
+    dataset_11k_summary.txt
+    dataset_class_imbalance_check.txt
+    dataset_hd_summary.txt
+    stage2_rn50_eval_table.csv
+    stage2_rn50_train_table.csv
+    stage2_rn50_train_table_final_map_per_version.png
+    stage2_rn50_train_table_final_rank1_per_version.png
+    stage2_rn50_train_table_loss_breakdown_facet.png
+    stage2_rn50_train_table_loss_vs_epoch.png
+    stage2_rn50_train_table_map_vs_epoch.png
+    stage2_rn50_train_table_rank1_vs_epoch.png
+    stage2_vitb16_eval_table.csv
+    stage2_vitb16_train_table.csv
+    stage2_vitb16_train_table_final_map_per_version.png
+    stage2_vitb16_train_table_final_rank1_per_version.png
+    stage2_vitb16_train_table_loss_breakdown_facet.png
+    stage2_vitb16_train_table_loss_vs_epoch.png
+    stage2_vitb16_train_table_map_vs_epoch.png
+    stage2_vitb16_train_table_rank1_vs_epoch.png
+    stage3_rn50_eval_table.csv
+    stage3_rn50_train_table.csv
+    stage3_rn50_train_table_final_val_map.png
+    stage3_rn50_train_table_final_val_rank1.png
+    stage3_rn50_train_table_val_map_vs_epoch.png
+    stage3_rn50_train_table_val_rank1_vs_epoch.png
+    stage3_vitb16_eval_table.csv
+    stage3_vitb16_train_table.csv
+    stage3_vitb16_train_table_final_val_map.png
+    stage3_vitb16_train_table_final_val_rank1.png
+    stage3_vitb16_train_table_val_map_vs_epoch.png
+    stage3_vitb16_train_table_val_rank1_vs_epoch.png
+    total_formatted_result_with_remarks.xlsx
+run_full_handclip_pipeline.py
+stage2_complete_funing_stages/
+    stage2-v1.zip
+    stage2-v2.zip
+    stage2-v3.zip
+    stage2-v4.zip
+    stage2-v5.zip
+    stage2-v6.zip
+    stage2-v8.zip
+stage3_without_v10.zip
+train_logs/
+    stage2-v1/
+        stage2_clipreid_rn50_11k_dorsal_r_clipid_e30_bs32.log
+        stage2_clipreid_vitb16_11k_dorsal_r_clipid_e30_bs32.log
+    stage2-v10/
+        stage2_clipreid_rn50_11k_dorsal_r_clipid_e30_bs32.log
+    stage2-v2/
+        stage2_clipreid_rn50_11k_dorsal_r_clipid_e30_bs32.log
+        stage2_clipreid_vitb16_11k_dorsal_r_clipid_e30_bs32.log
+    stage2-v3/
+        stage2_clipreid_rn50_11k_dorsal_r_clipid_e30_bs32.log
+        stage2_clipreid_vitb16_11k_dorsal_r_clipid_e30_bs32.log
+    stage2-v4/
+        stage2_clipreid_rn50_11k_dorsal_r_clipid_e30_bs32.log
+        stage2_clipreid_vitb16_11k_dorsal_r_clipid_e30_bs32.log
+    stage2-v5/
+        stage2_clipreid_rn50_11k_dorsal_r_clipid_e30_bs32.log
+        stage2_clipreid_vitb16_11k_dorsal_r_clipid_e30_bs32.log
+    stage2-v6/
+        stage2_clipreid_rn50_11k_dorsal_r_clipid_e30_bs32.log
+        stage2_clipreid_vitb16_11k_dorsal_r_clipid_e30_bs32.log
+    stage2-v7/
+        stage2_clipreid_rn50_11k_dorsal_r_clipid_e30_bs32.log
+    stage2-v8/
+        stage2_clipreid_rn50_11k_dorsal_r_clipid_e30_bs32.log
+    stage2-v9/
+        stage2_clipreid_rn50_11k_dorsal_r_clipid_e30_bs32.log
+        stage2_clipreid_vitb16_11k_dorsal_r_clipid_e30_bs32.log
+    stage3-v1/
+        stage3_promptsg_rn50_11k_dorsal_r_promptsg_e20_lrNA_bs32.log
+        stage3_promptsg_vitb16_11k_dorsal_r_promptsg_e20_lrNA_bs32.log
+    stage3-v10/
+        stage3_promptsg_rn50_11k_dorsal_r_promptsg_e60_lrNA_bs32.log
+        stage3_promptsg_vitb16_11k_dorsal_r_promptsg_e30_lrNA_bs32.log
+    stage3-v11/
+        stage3_promptsg_rn50_11k_dorsal_r_promptsg_e60_lrNA_bs32.log
+        stage3_promptsg_vitb16_11k_dorsal_r_promptsg_e60_lrNA_bs32.log
+    stage3-v2/
+        stage3_promptsg_rn50_11k_dorsal_r_promptsg_e20_lrNA_bs32.log
+        stage3_promptsg_vitb16_11k_dorsal_r_promptsg_e20_lrNA_bs32.log
+    stage3-v3/
+        stage3_promptsg_rn50_11k_dorsal_r_promptsg_e20_lrNA_bs32.log
+        stage3_promptsg_vitb16_11k_dorsal_r_promptsg_e20_lrNA_bs32.log
+    stage3-v4/
+        stage3_promptsg_rn50_11k_dorsal_r_promptsg_e20_lrNA_bs32.log
+        stage3_promptsg_vitb16_11k_dorsal_r_promptsg_e20_lrNA_bs32.log
+    stage3-v5/
+        stage3_promptsg_rn50_11k_dorsal_r_promptsg_e20_lrNA_bs32.log
+        stage3_promptsg_vitb16_11k_dorsal_r_promptsg_e20_lrNA_bs32.log
+    stage3-v6/
+        stage3_promptsg_vitb16_11k_dorsal_r_promptsg_e20_lrNA_bs32.log
+    stage3-v7/
+        stage3_promptsg_rn50_11k_dorsal_r_promptsg_e30_lrNA_bs32.log
+        stage3_promptsg_vitb16_11k_dorsal_r_promptsg_e20_lrNA_bs32.log
+    stage3-v8/
+        stage3_promptsg_rn50_11k_dorsal_r_promptsg_e30_lrNA_bs32.log
+        stage3_promptsg_vitb16_11k_dorsal_r_promptsg_e20_lrNA_bs32.log
+    stage3-v9/
+        stage3_promptsg_rn50_11k_dorsal_r_promptsg_e60_lrNA_bs32.log
+        stage3_promptsg_vitb16_11k_dorsal_r_promptsg_e60_lrNA_bs32.log
+utils/
+    __init__.py
+    __pycache__/
+        __init__.cpython-311.pyc
+        __init__.cpython-38.pyc
+        clip_patch.cpython-311.pyc
+        clip_patch.cpython-38.pyc
+        dataloaders.cpython-311.pyc
+        dataloaders.cpython-38.pyc
+        device_selection.cpython-311.pyc
+        eval_utils.cpython-311.pyc
+        eval_utils.cpython-38.pyc
+        feature_cache.cpython-311.pyc
+        feature_cache.cpython-38.pyc
+        logger.cpython-311.pyc
+        logger.cpython-38.pyc
+        naming.cpython-311.pyc
+        naming.cpython-38.pyc
+        save_load_models.cpython-311.pyc
+        save_load_models.cpython-38.pyc
+        train_helpers.cpython-311.pyc
+        train_helpers.cpython-38.pyc
+        transforms.cpython-311.pyc
+        transforms.cpython-38.pyc
+    clip_patch.py
+    dataloaders.py
+    device_selection.py
+    eval_utils.py
+    feature_cache.py
+    logger.py
+    loss/
+        README.md
+        __init__.py
+        __pycache__/
+            __init__.cpython-311.pyc
+            __init__.cpython-38.pyc
+            arcface.cpython-311.pyc
+            arcface.cpython-38.pyc
+            center_loss.cpython-311.pyc
+            center_loss.cpython-38.pyc
+            cross_entropy_loss.cpython-311.pyc
+            cross_entropy_loss.cpython-38.pyc
+            make_loss.cpython-311.pyc
+            make_loss.cpython-38.pyc
+            supcon.cpython-311.pyc
+            supcon.cpython-38.pyc
+            triplet_loss.cpython-311.pyc
+            triplet_loss.cpython-38.pyc
+        arcface.py
+        archives/
+            __init__.py
+            contrastive_loss.py
+        center_loss.py
+        cross_entropy_loss.py
+        make_loss.py
+        supcon.py
+        triplet_loss.py
+    naming.py
+    save_load_models.py
+    train_helpers.py
+    transforms.py

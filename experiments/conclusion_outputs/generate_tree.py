@@ -46,4 +46,5 @@ if __name__ == "__main__":
 
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write("\n".join(tree_lines))
-    print(f"✅ Full directory + file structure saved to '{OUTPUT_FILE}'")
+
+    print(f"Full directory + file structure saved to '{OUTPUT_FILE}'")
