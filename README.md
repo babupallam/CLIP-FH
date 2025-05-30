@@ -1,136 +1,132 @@
 # CLIP-FH: Fine-Tuning CLIP for Hand-Based Identity Matching
 
+This repository implements a multi-stage fine-tuning pipeline for using CLIP (Contrastive Language–Image Pretraining) on hand-based biometric identification. It supports baseline evaluation, classifier training, CLIP-ReID integration, prompt-based fine-tuning (PromptSG), and detailed performance analysis.
 
-## Data preprocessing
-```
-python .\datasets\data_preprocessing\prepare_train_val_test_11k_r_l.py
-python .\datasets\data_preprocessing\prepare_train_val_test_hd.py     
-```
+---
 
-## stage0_baseline_model_evaluation
+## 📦 Environment Setup
 
-### for all
-```angular2html
-python experiments/stage0_baseline_inference/eval_baseline_clip.py
+We recommend using Python 3.9+ with `virtualenv` or `conda`.
 
-```
-
-### for single config
-
-````angular2html
-python experiments/stage0_baseline_inference/eval_baseline_clip_single.py --config configs/baseline/eval_vitb16_11k_dorsal_r.yml
-
-````
-
-## To Run Stage 1 Fine-Tuning Image Encoder:
-```angular2html
-python experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_vitb16_11k_dorsal_r.yml
-python experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_rn50_11k_dorsal_r.yml
-
-
-python experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_vitb16_11k_dorsal_l.yml
-python experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_vitb16_11k_palmar_r.yml
-python experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_vitb16_11k_palmar_l.yml
-python experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_vitb16_hd_dorsal_r.yml
-
-python experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_rn50_11k_dorsal_l.yml
-python experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_rn50_11k_palmar_r.yml
-python experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_rn50_11k_palmar_l.yml
-python experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_rn50_hd_dorsal_r.yml
-
-
-
+### 1. Clone the Repository
+```bash
+git clone https://github.com/yourusername/clip-fh.git
+cd clip-fh
 ```
 
-## To Run Stage 1 Evaluation: Single model evaluation
-```angular2html
+### 1. Create Environment and Install Dependencies
 
-python experiments/stage1_train_classifier_frozen_text/eval_stage1_frozen_text.py configs/eval_stage1_frozen_text/eval_vitb16_11k_dorsal_r.yml
-python experiments/stage1_train_classifier_frozen_text/eval_stage1_frozen_text.py configs/eval_stage1_frozen_text/eval_rn50_11k_dorsal_r.yml
+```bash
+python -m venv clipfh-env
+source clipfh-env/bin/activate  # or clipfh-env\Scripts\activate on Windows
 
-
+pip install -r requirements.txt
 ```
 
-***
-***
-***
+---
 
-## To Run Stage 2a: Training
+## 📁 Dataset Preparation
 
-``` 
-python experiments/stage2_clipid_prompt_learning/train_stage2a_prompt_learn.py --config configs/train_stage2_clip_reid/train_stage2a_vitb16_11k_dorsal_r.yml
+### 🖐️ Prepare Train/Val/Test Split for 11k Dataset
 
-```
-## Validation of Stage 2a
-
-```angular2html
-python experiments/stage2_clipid_prompt_learning/validate_stage2a_prompt_model.py --config configs/validate_stage2_clip_reid/validate_stage2a_vitb16_11k_dorsal_r.yml
-
+```bash
+python datasets/data_preprocessing/prepare_train_val_test_11k_r_l.py
 ```
 
-## To Run Stage 2b Training
+---
 
-``` 
-python experiments/stage2_clipid_prompt_learning/train_stage2b_finetune_image_encoder.py --config configs/train_stage2_clip_reid/train_stage2b_vitb16_11k_dorsal.yml
+## 🚀 Stage 1: Baseline Model Evaluation (Zero shot)
 
+### 🔁 Evaluate All Models
+
+### 🔎 Evaluate stage 1 models
+
+```bash
+python experiments/stage1_baseline_inference/eval_baseline_clip_single.py --config configs/baseline/eval_vitb16_11k_dorsal_r.yml
+python experiments/stage1_baseline_inference/eval_baseline_clip_single.py --config configs/baseline/eval_rn50_11k_dorsal_r.yml
 ```
 
-## To run Stage 2b Evaluation
+---
 
-```angular2html
-python experiments/stage2_clipid_prompt_learning/eval_stage2b_finetune_image_encoder.py configs/eval_stage2_clip_reid/eval_vitb16_11k_dorsal_r.yml
+## 🔄 Stage 2: CLIP-ReID Integration (Prompt + Image Encoder Fine-tuning)
 
-```
+### 🧠 Train with Joint Prompt & Image Embedding
 
-***
-***
-
-# To runt Stage 2 JOINED Training
-```
+```bash
 python experiments/stage2_clipreid_integration/train_stage2_joint.py --config configs/train_stage2_clip_reid/train_joint_vitb16_11k_dorsal_r.yml
+python experiments/stage2_clipreid_integration/train_stage2_joint.py --config configs/train_stage2_clip_reid/train_joint_rn50_11k_dorsal_r.yml
 ```
 
-# To run Stage 2 JOINED Evaluation
+*For RN50, create `train_joint_rn50_11k_dorsal_r.yml` and run similarly.*
 
-```
+### 🧪 Evaluate Stage 2
+
+```bash
 python experiments/stage2_clipreid_integration/eval_stage2_joint.py configs/eval_stage2_clip_reid/eval_joint_vitb16_11k_dorsal_r.yml
+python experiments/stage2_clipreid_integration/eval_stage2_joint.py configs/eval_stage2_clip_reid/eval_joint_rn50_11k_dorsal_r.yml
 ```
 
-***
-***
+*Create and use RN50 config if needed.*
 
-# To run stage 3 training
+---
 
-```
+## 🎯 Stage 3: PromptSG Fine-tuning (Prompt + Image Encoder with Semantic Guidance)
+
+### 🏋️ Train on ViT-B/16 and RN50
+
+```bash
 python experiments/stage3_promptsg_integration/train_stage3_promptsg.py --config configs/train_stage3_promptsg/train_stage3_vitb16_11k_dorsal_r.yml
+python experiments/stage3_promptsg_integration/train_stage3_promptsg.py --config configs/train_stage3_promptsg/train_stage3_rn50_11k_dorsal_r.yml
 ```
 
-# To run stage 3 evaluation
+### ✅ Evaluate Stage 3
 
-```
+```bash
 python experiments/stage3_promptsg_integration/eval_stage3_promptsg.py configs/eval_stage3_promptsg/eval_stage3_vitb16_11k_dorsal_r.yml
+python experiments/stage3_promptsg_integration/eval_stage3_promptsg.py configs/eval_stage3_promptsg/eval_stage3_rn50_11k_dorsal_r.yml
 ```
 
-***
-***
-***
+---
 
+## 📊 Plotting and Log Analysis
 
-```angular2html
-make a script which can run the following commands one follows another automatically 
+### 🌳 Tree Visualization
 
-
-python experiments/stage1_train_classifier_frozen_text/train_stage1_frozen_text.py --config configs/train_stage1_frozen_text/train_vitb16_11k_dorsal_r.yml   
-
-python experiments/stage1_train_classifier_frozen_text/eval_stage1_frozen_text_single.py configs/eval_stage1_frozen_text/eval_vitb16_11k_dorsal_r.yml
-
-python experiments/stage2_clipreid_integration/train_stage2_joint.py --config configs/train_stage2_clip_reid/train_joint_vitb16_11k_dorsal_r.yml
-
-python experiments/stage2_clipreid_integration/eval_stage2_joint.py --config configs/eval_stage2_clip_reid/eval_joint_vitb16_11k_dorsal_r.yml
-
-
-python experiments/stage3_promptsg_integration/train_stage3_promptsg.py --config configs/train_stage3_promptsg/train_stage3_vitb16_11k_dorsal_r.yml
-    
-python experiments/stage3_promptsg_integration/eval_stage3_promptsg.py configs/eval_stage3_promptsg/eval_stage3_vitb16_11k_dorsal_r.yml
-
+```bash
+python experiments/conclusion_outputs/generate_tree.py
 ```
+### 📋 Evaluation Log Analysis and CSV Creation
+
+```bash
+python experiments/conclusion_outputs/stage2_eval_log_analysis.py
+python experiments/conclusion_outputs/stage3_eval_log_analysis.py
+```
+
+### 🧾 Training Log Analysis and CSV Creation
+
+```bash
+python experiments/conclusion_outputs/stage2_train_log_analysis.py
+python experiments/conclusion_outputs/stage3_train_log_analysis.py
+```
+
+
+### 📈 Training Metrics Plots
+
+```bash
+python experiments/conclusion_outputs/plot_stage2_train_metrics.py
+python experiments/conclusion_outputs/plot_stage3_train_metrics.py
+```
+
+---
+
+## 🧠 Notes
+
+* Make sure all `config` files exist before running each stage.
+* For RN50 in Stage 2, create `train_joint_rn50_11k_dorsal_r.yml` and `eval_joint_rn50_11k_dorsal_r.yml` by copying the ViT config and updating `MODEL.NAME` to `RN50`.
+* For future datasets (e.g., HD Hands), replicate the above structure using `*_hd_dorsal_r.yml`.
+
+---
+
+## 📬 Contact
+
+For queries, suggestions, or collaboration, feel free to reach out via GitHub Issues or [babupallam@gmail.com](mailto:babupallam@gmail.com).
