@@ -20,6 +20,8 @@ from utils.loss.cross_entropy_loss import CrossEntropyLoss
 from utils.loss.triplet_loss import TripletLoss
 from utils.loss.arcface import ArcFace
 
+import torch.nn.functional as F
+
 
 class FinetuneTrainerStage1:
     """
@@ -82,7 +84,13 @@ class FinetuneTrainerStage1:
                 # Encode images using CLIP's visual encoder
                 features = self.clip_model.encode_image(images).float() # Get feature vectors from the image encoder.
                 # Run the classifier on the extracted features
-                outputs = self.classifier(features) # Classify the encoded features.
+                features = F.normalize(features, dim=1)  # Normalize before classifier --- from v4
+
+                #  This ensures ArcFace gets the label input it requires.
+                if self.config.get("classifier", "linear") == "arcface":
+                    outputs = self.classifier(features, labels)
+                else:
+                    outputs = self.classifier(features)
 
                 # Check for numerical issues in outputs
                 if torch.isnan(outputs).any() or torch.isinf(outputs).any():
@@ -109,6 +117,7 @@ class FinetuneTrainerStage1:
                     continue
 
                 # Clip gradients to avoid exploding gradients
+                #v2 - disabled this explode gradient solution
                 torch.nn.utils.clip_grad_norm_(self.classifier.parameters(), max_norm=1.0)
                 torch.nn.utils.clip_grad_norm_(self.clip_model.visual.parameters(), max_norm=1.0)
 
