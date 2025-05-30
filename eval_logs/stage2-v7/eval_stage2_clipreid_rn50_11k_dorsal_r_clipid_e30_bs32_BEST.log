@@ -1,0 +1,56 @@
+[Eval] Using base dataset path: datasets\11khands\train_val_test_split_dorsal_r
+[Eval] Split 1/10
+  Rank-1 : 49.54%
+  Rank-5 : 73.12%
+  Rank-10: 82.49%
+  mAP    : 60.57%
+[Eval] Split 2/10
+  Rank-1 : 52.83%
+  Rank-5 : 77.65%
+  Rank-10: 87.64%
+  mAP    : 63.67%
+[Eval] Split 3/10
+  Rank-1 : 54.48%
+  Rank-5 : 77.03%
+  Rank-10: 86.10%
+  mAP    : 65.02%
+[Eval] Split 4/10
+  Rank-1 : 49.33%
+  Rank-5 : 72.09%
+  Rank-10: 79.51%
+  mAP    : 59.91%
+[Eval] Split 5/10
+  Rank-1 : 49.33%
+  Rank-5 : 76.83%
+  Rank-10: 85.17%
+  mAP    : 61.39%
+[Eval] Split 6/10
+  Rank-1 : 53.14%
+  Rank-5 : 77.65%
+  Rank-10: 85.99%
+  mAP    : 64.29%
+[Eval] Split 7/10
+  Rank-1 : 50.77%
+  Rank-5 : 76.62%
+  Rank-10: 85.58%
+  mAP    : 62.03%
+[Eval] Split 8/10
+  Rank-1 : 51.39%
+  Rank-5 : 73.84%
+  Rank-10: 82.39%
+  mAP    : 61.83%
+[Eval] Split 9/10
+  Rank-1 : 49.95%
+  Rank-5 : 79.40%
+  Rank-10: 86.82%
+  mAP    : 62.70%
+[Eval] Split 10/10
+  Rank-1 : 55.41%
+  Rank-5 : 76.52%
+  Rank-10: 85.17%
+  mAP    : 64.93%
+===== Final ReID Metrics Across All Splits =====
+Rank-1 Accuracy : 51.62%
+Rank-5 Accuracy : 76.08%
+Rank-10 Accuracy: 84.69%
+Mean AP         : 62.63%
