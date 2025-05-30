@@ -1,0 +1,365 @@
+[DEBUG] CLIP Model = vitb16 → Token Embed Dim: 512, Final LN Dim: 512
+[DEBUG] PromptLearner proj layer = Identity | in: 512, out: 512
+[DEBUG] Dummy Image Feature Shape: torch.Size([1, 512])
+[DEBUG] Text Feature Output (via proj) should match: 512
+BNNeck, ArcFace, and Linear Classifier registered.
+CLIP text encoder unfrozen.
+[Trainable] class_embedding
+[Trainable] positional_embedding
+[Trainable] proj
+[Trainable] conv1.weight
+[Trainable] ln_pre.weight
+[Trainable] ln_pre.bias
+[Trainable] transformer.resblocks.0.attn.in_proj_weight
+[Trainable] transformer.resblocks.0.attn.in_proj_bias
+[Trainable] transformer.resblocks.0.attn.out_proj.weight
+[Trainable] transformer.resblocks.0.attn.out_proj.bias
+[Trainable] transformer.resblocks.0.ln_1.weight
+[Trainable] transformer.resblocks.0.ln_1.bias
+[Trainable] transformer.resblocks.0.mlp.c_fc.weight
+[Trainable] transformer.resblocks.0.mlp.c_fc.bias
+[Trainable] transformer.resblocks.0.mlp.c_proj.weight
+[Trainable] transformer.resblocks.0.mlp.c_proj.bias
+[Trainable] transformer.resblocks.0.ln_2.weight
+[Trainable] transformer.resblocks.0.ln_2.bias
+[Trainable] transformer.resblocks.1.attn.in_proj_weight
+[Trainable] transformer.resblocks.1.attn.in_proj_bias
+[Trainable] transformer.resblocks.1.attn.out_proj.weight
+[Trainable] transformer.resblocks.1.attn.out_proj.bias
+[Trainable] transformer.resblocks.1.ln_1.weight
+[Trainable] transformer.resblocks.1.ln_1.bias
+[Trainable] transformer.resblocks.1.mlp.c_fc.weight
+[Trainable] transformer.resblocks.1.mlp.c_fc.bias
+[Trainable] transformer.resblocks.1.mlp.c_proj.weight
+[Trainable] transformer.resblocks.1.mlp.c_proj.bias
+[Trainable] transformer.resblocks.1.ln_2.weight
+[Trainable] transformer.resblocks.1.ln_2.bias
+[Trainable] transformer.resblocks.2.attn.in_proj_weight
+[Trainable] transformer.resblocks.2.attn.in_proj_bias
+[Trainable] transformer.resblocks.2.attn.out_proj.weight
+[Trainable] transformer.resblocks.2.attn.out_proj.bias
+[Trainable] transformer.resblocks.2.ln_1.weight
+[Trainable] transformer.resblocks.2.ln_1.bias
+[Trainable] transformer.resblocks.2.mlp.c_fc.weight
+[Trainable] transformer.resblocks.2.mlp.c_fc.bias
+[Trainable] transformer.resblocks.2.mlp.c_proj.weight
+[Trainable] transformer.resblocks.2.mlp.c_proj.bias
+[Trainable] transformer.resblocks.2.ln_2.weight
+[Trainable] transformer.resblocks.2.ln_2.bias
+[Trainable] transformer.resblocks.3.attn.in_proj_weight
+[Trainable] transformer.resblocks.3.attn.in_proj_bias
+[Trainable] transformer.resblocks.3.attn.out_proj.weight
+[Trainable] transformer.resblocks.3.attn.out_proj.bias
+[Trainable] transformer.resblocks.3.ln_1.weight
+[Trainable] transformer.resblocks.3.ln_1.bias
+[Trainable] transformer.resblocks.3.mlp.c_fc.weight
+[Trainable] transformer.resblocks.3.mlp.c_fc.bias
+[Trainable] transformer.resblocks.3.mlp.c_proj.weight
+[Trainable] transformer.resblocks.3.mlp.c_proj.bias
+[Trainable] transformer.resblocks.3.ln_2.weight
+[Trainable] transformer.resblocks.3.ln_2.bias
+[Trainable] transformer.resblocks.4.attn.in_proj_weight
+[Trainable] transformer.resblocks.4.attn.in_proj_bias
+[Trainable] transformer.resblocks.4.attn.out_proj.weight
+[Trainable] transformer.resblocks.4.attn.out_proj.bias
+[Trainable] transformer.resblocks.4.ln_1.weight
+[Trainable] transformer.resblocks.4.ln_1.bias
+[Trainable] transformer.resblocks.4.mlp.c_fc.weight
+[Trainable] transformer.resblocks.4.mlp.c_fc.bias
+[Trainable] transformer.resblocks.4.mlp.c_proj.weight
+[Trainable] transformer.resblocks.4.mlp.c_proj.bias
+[Trainable] transformer.resblocks.4.ln_2.weight
+[Trainable] transformer.resblocks.4.ln_2.bias
+[Trainable] transformer.resblocks.5.attn.in_proj_weight
+[Trainable] transformer.resblocks.5.attn.in_proj_bias
+[Trainable] transformer.resblocks.5.attn.out_proj.weight
+[Trainable] transformer.resblocks.5.attn.out_proj.bias
+[Trainable] transformer.resblocks.5.ln_1.weight
+[Trainable] transformer.resblocks.5.ln_1.bias
+[Trainable] transformer.resblocks.5.mlp.c_fc.weight
+[Trainable] transformer.resblocks.5.mlp.c_fc.bias
+[Trainable] transformer.resblocks.5.mlp.c_proj.weight
+[Trainable] transformer.resblocks.5.mlp.c_proj.bias
+[Trainable] transformer.resblocks.5.ln_2.weight
+[Trainable] transformer.resblocks.5.ln_2.bias
+[Trainable] transformer.resblocks.6.attn.in_proj_weight
+[Trainable] transformer.resblocks.6.attn.in_proj_bias
+[Trainable] transformer.resblocks.6.attn.out_proj.weight
+[Trainable] transformer.resblocks.6.attn.out_proj.bias
+[Trainable] transformer.resblocks.6.ln_1.weight
+[Trainable] transformer.resblocks.6.ln_1.bias
+[Trainable] transformer.resblocks.6.mlp.c_fc.weight
+[Trainable] transformer.resblocks.6.mlp.c_fc.bias
+[Trainable] transformer.resblocks.6.mlp.c_proj.weight
+[Trainable] transformer.resblocks.6.mlp.c_proj.bias
+[Trainable] transformer.resblocks.6.ln_2.weight
+[Trainable] transformer.resblocks.6.ln_2.bias
+[Trainable] transformer.resblocks.7.attn.in_proj_weight
+[Trainable] transformer.resblocks.7.attn.in_proj_bias
+[Trainable] transformer.resblocks.7.attn.out_proj.weight
+[Trainable] transformer.resblocks.7.attn.out_proj.bias
+[Trainable] transformer.resblocks.7.ln_1.weight
+[Trainable] transformer.resblocks.7.ln_1.bias
+[Trainable] transformer.resblocks.7.mlp.c_fc.weight
+[Trainable] transformer.resblocks.7.mlp.c_fc.bias
+[Trainable] transformer.resblocks.7.mlp.c_proj.weight
+[Trainable] transformer.resblocks.7.mlp.c_proj.bias
+[Trainable] transformer.resblocks.7.ln_2.weight
+[Trainable] transformer.resblocks.7.ln_2.bias
+[Trainable] transformer.resblocks.8.attn.in_proj_weight
+[Trainable] transformer.resblocks.8.attn.in_proj_bias
+[Trainable] transformer.resblocks.8.attn.out_proj.weight
+[Trainable] transformer.resblocks.8.attn.out_proj.bias
+[Trainable] transformer.resblocks.8.ln_1.weight
+[Trainable] transformer.resblocks.8.ln_1.bias
+[Trainable] transformer.resblocks.8.mlp.c_fc.weight
+[Trainable] transformer.resblocks.8.mlp.c_fc.bias
+[Trainable] transformer.resblocks.8.mlp.c_proj.weight
+[Trainable] transformer.resblocks.8.mlp.c_proj.bias
+[Trainable] transformer.resblocks.8.ln_2.weight
+[Trainable] transformer.resblocks.8.ln_2.bias
+[Trainable] transformer.resblocks.9.attn.in_proj_weight
+[Trainable] transformer.resblocks.9.attn.in_proj_bias
+[Trainable] transformer.resblocks.9.attn.out_proj.weight
+[Trainable] transformer.resblocks.9.attn.out_proj.bias
+[Trainable] transformer.resblocks.9.ln_1.weight
+[Trainable] transformer.resblocks.9.ln_1.bias
+[Trainable] transformer.resblocks.9.mlp.c_fc.weight
+[Trainable] transformer.resblocks.9.mlp.c_fc.bias
+[Trainable] transformer.resblocks.9.mlp.c_proj.weight
+[Trainable] transformer.resblocks.9.mlp.c_proj.bias
+[Trainable] transformer.resblocks.9.ln_2.weight
+[Trainable] transformer.resblocks.9.ln_2.bias
+[Trainable] transformer.resblocks.10.attn.in_proj_weight
+[Trainable] transformer.resblocks.10.attn.in_proj_bias
+[Trainable] transformer.resblocks.10.attn.out_proj.weight
+[Trainable] transformer.resblocks.10.attn.out_proj.bias
+[Trainable] transformer.resblocks.10.ln_1.weight
+[Trainable] transformer.resblocks.10.ln_1.bias
+[Trainable] transformer.resblocks.10.mlp.c_fc.weight
+[Trainable] transformer.resblocks.10.mlp.c_fc.bias
+[Trainable] transformer.resblocks.10.mlp.c_proj.weight
+[Trainable] transformer.resblocks.10.mlp.c_proj.bias
+[Trainable] transformer.resblocks.10.ln_2.weight
+[Trainable] transformer.resblocks.10.ln_2.bias
+[Trainable] transformer.resblocks.11.attn.in_proj_weight
+[Trainable] transformer.resblocks.11.attn.in_proj_bias
+[Trainable] transformer.resblocks.11.attn.out_proj.weight
+[Trainable] transformer.resblocks.11.attn.out_proj.bias
+[Trainable] transformer.resblocks.11.ln_1.weight
+[Trainable] transformer.resblocks.11.ln_1.bias
+[Trainable] transformer.resblocks.11.mlp.c_fc.weight
+[Trainable] transformer.resblocks.11.mlp.c_fc.bias
+[Trainable] transformer.resblocks.11.mlp.c_proj.weight
+[Trainable] transformer.resblocks.11.mlp.c_proj.bias
+[Trainable] transformer.resblocks.11.ln_2.weight
+[Trainable] transformer.resblocks.11.ln_2.bias
+[Trainable] ln_post.weight
+[Trainable] ln_post.bias
+Total trainable CLIP params: 149695049
+[DEBUG] PromptLearner trainable params: 442368
+[DEBUG] CLIP trainable params: 149695049
+[Prompt] cached 890 frozen image feats
+[Epoch 1] Avg Prompt Loss: 2.8557
+new best prompt – 2.8557
+[Epoch 2] Avg Prompt Loss: 2.9237
+[Epoch 3] Avg Prompt Loss: 2.5601
+new best prompt – 2.5601
+[Epoch 4] Avg Prompt Loss: 2.3184
+new best prompt – 2.3184
+[Epoch 5] Avg Prompt Loss: 2.2454
+new best prompt – 2.2454
+[Epoch 6] Avg Prompt Loss: 2.1183
+new best prompt – 2.1183
+[Epoch 7] Avg Prompt Loss: 1.9233
+new best prompt – 1.9233
+[Epoch 8] Avg Prompt Loss: 1.7618
+new best prompt – 1.7618
+[Epoch 9] Avg Prompt Loss: 1.7499
+new best prompt – 1.7499
+[Epoch 10] Avg Prompt Loss: 1.8760
+[Epoch 11] Avg Prompt Loss: 1.7819
+[Epoch 12] Avg Prompt Loss: 1.7286
+new best prompt – 1.7286
+[Epoch 13] Avg Prompt Loss: 1.6785
+new best prompt – 1.6785
+[Epoch 14] Avg Prompt Loss: 1.7509
+[Epoch 15] Avg Prompt Loss: 1.7066
+[Epoch 16] Avg Prompt Loss: 1.6376
+new best prompt – 1.6376
+[Epoch 17] Avg Prompt Loss: 1.5237
+new best prompt – 1.5237
+[Epoch 18] Avg Prompt Loss: 1.4941
+new best prompt – 1.4941
+[Epoch 19] Avg Prompt Loss: 1.5923
+[Epoch 20] Avg Prompt Loss: 1.6657
+[Epoch 21] Avg Prompt Loss: 1.6353
+[Epoch 22] Avg Prompt Loss: 1.4378
+new best prompt – 1.4378
+[Epoch 23] Avg Prompt Loss: 1.5423
+[Epoch 24] Avg Prompt Loss: 1.4421
+[Epoch 25] Avg Prompt Loss: 1.4806
+[Epoch 26] Avg Prompt Loss: 1.5432
+[Epoch 27] Avg Prompt Loss: 1.4973
+[Epoch 28] Avg Prompt Loss: 1.4834
+[Epoch 29] Avg Prompt Loss: 1.5161
+[Epoch 30] Avg Prompt Loss: 1.4596
+[Epoch 1] Learning Rate: 0.000100
+[Epoch 1] Running validation...
+[Epoch 1] Loss Breakdown: ID = 9.5450, Triplet = 0.1093, Center = 478.2838, i2t = 1.5861, t2i = 1.6094
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 92.69%
+RANK5: 98.66%
+RANK10: 99.18%
+MAP: 95.28%
+ New BEST Image model saved
+[Epoch 2] Learning Rate: 0.000100
+[Epoch 2] Running validation...
+[Epoch 2] Loss Breakdown: ID = 4.8460, Triplet = 0.0157, Center = 482.8628, i2t = 0.4707, t2i = 0.4952
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 94.54%
+RANK5: 98.15%
+RANK10: 99.38%
+MAP: 96.39%
+ New BEST Image model saved
+[Epoch 3] Learning Rate: 0.000099
+[Epoch 3] Running validation...
+[Epoch 3] Loss Breakdown: ID = 1.0326, Triplet = 0.0110, Center = 484.6278, i2t = 1.2462, t2i = 1.2380
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 95.67%
+RANK5: 99.18%
+RANK10: 99.59%
+MAP: 97.32%
+ New BEST Image model saved
+[Epoch 4] Learning Rate: 0.000098
+[Epoch 4] Running validation...
+[Epoch 4] Loss Breakdown: ID = 0.2119, Triplet = 0.0072, Center = 489.3691, i2t = 1.3280, t2i = 1.3618
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 95.67%
+RANK5: 98.97%
+RANK10: 99.38%
+MAP: 97.14%
+No improvement in loss. Patience counter: 1/5
+[Epoch 5] Learning Rate: 0.000096
+[Epoch 5] Running validation...
+[Epoch 5] Loss Breakdown: ID = 0.0506, Triplet = 0.0024, Center = 479.1258, i2t = 0.5742, t2i = 0.6190
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 96.60%
+RANK5: 99.28%
+RANK10: 99.59%
+MAP: 97.88%
+ New BEST Image model saved
+[Epoch 6] Learning Rate: 0.000093
+[Epoch 6] Running validation...
+[Epoch 6] Loss Breakdown: ID = 0.0449, Triplet = 0.0078, Center = 483.8985, i2t = 1.2064, t2i = 1.2380
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 95.47%
+RANK5: 99.18%
+RANK10: 99.38%
+MAP: 97.22%
+No improvement in loss. Patience counter: 1/5
+[Epoch 7] Learning Rate: 0.000091
+[Epoch 7] Running validation...
+[Epoch 7] Loss Breakdown: ID = 0.0197, Triplet = 0.0000, Center = 461.1222, i2t = 1.3492, t2i = 1.3618
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 96.70%
+RANK5: 99.28%
+RANK10: 99.49%
+MAP: 98.03%
+ New BEST Image model saved
+[Epoch 8] Learning Rate: 0.000087
+[Epoch 8] Running validation...
+[Epoch 8] Loss Breakdown: ID = 0.0145, Triplet = 0.0000, Center = 464.3840, i2t = 0.9235, t2i = 0.9904
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 97.32%
+RANK5: 99.28%
+RANK10: 99.38%
+MAP: 98.22%
+ New BEST Image model saved
+[Epoch 9] Learning Rate: 0.000084
+[Epoch 9] Running validation...
+[Epoch 9] Loss Breakdown: ID = 0.0133, Triplet = 0.0000, Center = 448.4153, i2t = 0.8032, t2i = 0.8666
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 97.32%
+RANK5: 99.18%
+RANK10: 99.49%
+MAP: 98.22%
+No improvement in loss. Patience counter: 1/5
+[Epoch 10] Learning Rate: 0.000080
+[Epoch 10] Running validation...
+[Epoch 10] Loss Breakdown: ID = 0.0116, Triplet = 0.0006, Center = 446.2408, i2t = 1.0589, t2i = 1.1142
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 96.91%
+RANK5: 99.28%
+RANK10: 99.38%
+MAP: 98.00%
+No improvement in loss. Patience counter: 2/5
+[Epoch 11] Learning Rate: 0.000075
+[Epoch 11] Running validation...
+[Epoch 11] Loss Breakdown: ID = 0.0174, Triplet = 0.0000, Center = 447.6207, i2t = 1.0791, t2i = 1.1142
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 97.22%
+RANK5: 99.28%
+RANK10: 99.38%
+MAP: 98.15%
+No improvement in loss. Patience counter: 3/5
+[Epoch 12] Learning Rate: 0.000071
+[Epoch 12] Running validation...
+[Epoch 12] Loss Breakdown: ID = 0.0151, Triplet = 0.0004, Center = 442.0655, i2t = 0.8570, t2i = 0.8666
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 97.12%
+RANK5: 99.28%
+RANK10: 99.49%
+MAP: 98.13%
+No improvement in loss. Patience counter: 4/5
+[Epoch 13] Learning Rate: 0.000066
+[Epoch 13] Running validation...
+[Epoch 13] Loss Breakdown: ID = 0.0055, Triplet = 0.0000, Center = 434.0444, i2t = 0.2044, t2i = 0.2476
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 97.22%
+RANK5: 99.28%
+RANK10: 99.59%
+MAP: 98.17%
+No improvement in loss. Patience counter: 5/5
+Early stopping triggered (prompt stage).
+Restored BEST model for evaluation.
+[Eval] Starting evaluation across all 10 splits (ReID style)

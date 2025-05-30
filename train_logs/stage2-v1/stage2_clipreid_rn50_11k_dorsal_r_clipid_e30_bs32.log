@@ -1,0 +1,496 @@
+[DEBUG] CLIP Model = rn50 → Token Embed Dim: 512, Final LN Dim: 512
+[DEBUG] PromptLearner proj layer = Linear | in: 512, out: 512
+[DEBUG] Dummy Image Feature Shape: torch.Size([1, 1024])
+[DEBUG] Text Feature Output (via proj) should match: 512
+[WARNING] Feature dim mismatch! Image: 1024, Text: 512
+BNNeck, ArcFace, and Linear Classifier registered.
+CLIP text encoder unfrozen.
+[Trainable] conv1.weight
+[Trainable] bn1.weight
+[Trainable] bn1.bias
+[Trainable] conv2.weight
+[Trainable] bn2.weight
+[Trainable] bn2.bias
+[Trainable] conv3.weight
+[Trainable] bn3.weight
+[Trainable] bn3.bias
+[Trainable] layer1.0.conv1.weight
+[Trainable] layer1.0.bn1.weight
+[Trainable] layer1.0.bn1.bias
+[Trainable] layer1.0.conv2.weight
+[Trainable] layer1.0.bn2.weight
+[Trainable] layer1.0.bn2.bias
+[Trainable] layer1.0.conv3.weight
+[Trainable] layer1.0.bn3.weight
+[Trainable] layer1.0.bn3.bias
+[Trainable] layer1.0.downsample.0.weight
+[Trainable] layer1.0.downsample.1.weight
+[Trainable] layer1.0.downsample.1.bias
+[Trainable] layer1.1.conv1.weight
+[Trainable] layer1.1.bn1.weight
+[Trainable] layer1.1.bn1.bias
+[Trainable] layer1.1.conv2.weight
+[Trainable] layer1.1.bn2.weight
+[Trainable] layer1.1.bn2.bias
+[Trainable] layer1.1.conv3.weight
+[Trainable] layer1.1.bn3.weight
+[Trainable] layer1.1.bn3.bias
+[Trainable] layer1.2.conv1.weight
+[Trainable] layer1.2.bn1.weight
+[Trainable] layer1.2.bn1.bias
+[Trainable] layer1.2.conv2.weight
+[Trainable] layer1.2.bn2.weight
+[Trainable] layer1.2.bn2.bias
+[Trainable] layer1.2.conv3.weight
+[Trainable] layer1.2.bn3.weight
+[Trainable] layer1.2.bn3.bias
+[Trainable] layer2.0.conv1.weight
+[Trainable] layer2.0.bn1.weight
+[Trainable] layer2.0.bn1.bias
+[Trainable] layer2.0.conv2.weight
+[Trainable] layer2.0.bn2.weight
+[Trainable] layer2.0.bn2.bias
+[Trainable] layer2.0.conv3.weight
+[Trainable] layer2.0.bn3.weight
+[Trainable] layer2.0.bn3.bias
+[Trainable] layer2.0.downsample.0.weight
+[Trainable] layer2.0.downsample.1.weight
+[Trainable] layer2.0.downsample.1.bias
+[Trainable] layer2.1.conv1.weight
+[Trainable] layer2.1.bn1.weight
+[Trainable] layer2.1.bn1.bias
+[Trainable] layer2.1.conv2.weight
+[Trainable] layer2.1.bn2.weight
+[Trainable] layer2.1.bn2.bias
+[Trainable] layer2.1.conv3.weight
+[Trainable] layer2.1.bn3.weight
+[Trainable] layer2.1.bn3.bias
+[Trainable] layer2.2.conv1.weight
+[Trainable] layer2.2.bn1.weight
+[Trainable] layer2.2.bn1.bias
+[Trainable] layer2.2.conv2.weight
+[Trainable] layer2.2.bn2.weight
+[Trainable] layer2.2.bn2.bias
+[Trainable] layer2.2.conv3.weight
+[Trainable] layer2.2.bn3.weight
+[Trainable] layer2.2.bn3.bias
+[Trainable] layer2.3.conv1.weight
+[Trainable] layer2.3.bn1.weight
+[Trainable] layer2.3.bn1.bias
+[Trainable] layer2.3.conv2.weight
+[Trainable] layer2.3.bn2.weight
+[Trainable] layer2.3.bn2.bias
+[Trainable] layer2.3.conv3.weight
+[Trainable] layer2.3.bn3.weight
+[Trainable] layer2.3.bn3.bias
+[Trainable] layer3.0.conv1.weight
+[Trainable] layer3.0.bn1.weight
+[Trainable] layer3.0.bn1.bias
+[Trainable] layer3.0.conv2.weight
+[Trainable] layer3.0.bn2.weight
+[Trainable] layer3.0.bn2.bias
+[Trainable] layer3.0.conv3.weight
+[Trainable] layer3.0.bn3.weight
+[Trainable] layer3.0.bn3.bias
+[Trainable] layer3.0.downsample.0.weight
+[Trainable] layer3.0.downsample.1.weight
+[Trainable] layer3.0.downsample.1.bias
+[Trainable] layer3.1.conv1.weight
+[Trainable] layer3.1.bn1.weight
+[Trainable] layer3.1.bn1.bias
+[Trainable] layer3.1.conv2.weight
+[Trainable] layer3.1.bn2.weight
+[Trainable] layer3.1.bn2.bias
+[Trainable] layer3.1.conv3.weight
+[Trainable] layer3.1.bn3.weight
+[Trainable] layer3.1.bn3.bias
+[Trainable] layer3.2.conv1.weight
+[Trainable] layer3.2.bn1.weight
+[Trainable] layer3.2.bn1.bias
+[Trainable] layer3.2.conv2.weight
+[Trainable] layer3.2.bn2.weight
+[Trainable] layer3.2.bn2.bias
+[Trainable] layer3.2.conv3.weight
+[Trainable] layer3.2.bn3.weight
+[Trainable] layer3.2.bn3.bias
+[Trainable] layer3.3.conv1.weight
+[Trainable] layer3.3.bn1.weight
+[Trainable] layer3.3.bn1.bias
+[Trainable] layer3.3.conv2.weight
+[Trainable] layer3.3.bn2.weight
+[Trainable] layer3.3.bn2.bias
+[Trainable] layer3.3.conv3.weight
+[Trainable] layer3.3.bn3.weight
+[Trainable] layer3.3.bn3.bias
+[Trainable] layer3.4.conv1.weight
+[Trainable] layer3.4.bn1.weight
+[Trainable] layer3.4.bn1.bias
+[Trainable] layer3.4.conv2.weight
+[Trainable] layer3.4.bn2.weight
+[Trainable] layer3.4.bn2.bias
+[Trainable] layer3.4.conv3.weight
+[Trainable] layer3.4.bn3.weight
+[Trainable] layer3.4.bn3.bias
+[Trainable] layer3.5.conv1.weight
+[Trainable] layer3.5.bn1.weight
+[Trainable] layer3.5.bn1.bias
+[Trainable] layer3.5.conv2.weight
+[Trainable] layer3.5.bn2.weight
+[Trainable] layer3.5.bn2.bias
+[Trainable] layer3.5.conv3.weight
+[Trainable] layer3.5.bn3.weight
+[Trainable] layer3.5.bn3.bias
+[Trainable] layer4.0.conv1.weight
+[Trainable] layer4.0.bn1.weight
+[Trainable] layer4.0.bn1.bias
+[Trainable] layer4.0.conv2.weight
+[Trainable] layer4.0.bn2.weight
+[Trainable] layer4.0.bn2.bias
+[Trainable] layer4.0.conv3.weight
+[Trainable] layer4.0.bn3.weight
+[Trainable] layer4.0.bn3.bias
+[Trainable] layer4.0.downsample.0.weight
+[Trainable] layer4.0.downsample.1.weight
+[Trainable] layer4.0.downsample.1.bias
+[Trainable] layer4.1.conv1.weight
+[Trainable] layer4.1.bn1.weight
+[Trainable] layer4.1.bn1.bias
+[Trainable] layer4.1.conv2.weight
+[Trainable] layer4.1.bn2.weight
+[Trainable] layer4.1.bn2.bias
+[Trainable] layer4.1.conv3.weight
+[Trainable] layer4.1.bn3.weight
+[Trainable] layer4.1.bn3.bias
+[Trainable] layer4.2.conv1.weight
+[Trainable] layer4.2.bn1.weight
+[Trainable] layer4.2.bn1.bias
+[Trainable] layer4.2.conv2.weight
+[Trainable] layer4.2.bn2.weight
+[Trainable] layer4.2.bn2.bias
+[Trainable] layer4.2.conv3.weight
+[Trainable] layer4.2.bn3.weight
+[Trainable] layer4.2.bn3.bias
+[Trainable] attnpool.positional_embedding
+[Trainable] attnpool.k_proj.weight
+[Trainable] attnpool.k_proj.bias
+[Trainable] attnpool.q_proj.weight
+[Trainable] attnpool.q_proj.bias
+[Trainable] attnpool.v_proj.weight
+[Trainable] attnpool.v_proj.bias
+[Trainable] attnpool.c_proj.weight
+[Trainable] attnpool.c_proj.bias
+Total trainable CLIP params: 102155689
+[DEBUG] PromptLearner trainable params: 967680
+[DEBUG] CLIP trainable params: 102155689
+[Prompt] cached 890 frozen image feats
+[Epoch 1] Avg Prompt Loss: 2.8573
+new best prompt – 2.8573
+[Epoch 2] Avg Prompt Loss: 2.8009
+new best prompt – 2.8009
+[Epoch 3] Avg Prompt Loss: 2.6825
+new best prompt – 2.6825
+[Epoch 4] Avg Prompt Loss: 2.4264
+new best prompt – 2.4264
+[Epoch 5] Avg Prompt Loss: 2.2577
+new best prompt – 2.2577
+[Epoch 6] Avg Prompt Loss: 2.0767
+new best prompt – 2.0767
+[Epoch 7] Avg Prompt Loss: 1.9035
+new best prompt – 1.9035
+[Epoch 8] Avg Prompt Loss: 1.9970
+[Epoch 9] Avg Prompt Loss: 1.9072
+[Epoch 10] Avg Prompt Loss: 1.7659
+new best prompt – 1.7659
+[Epoch 11] Avg Prompt Loss: 1.7626
+new best prompt – 1.7626
+[Epoch 12] Avg Prompt Loss: 1.6894
+new best prompt – 1.6894
+[Epoch 13] Avg Prompt Loss: 1.6175
+new best prompt – 1.6175
+[Epoch 14] Avg Prompt Loss: 1.6271
+[Epoch 15] Avg Prompt Loss: 1.6301
+[Epoch 16] Avg Prompt Loss: 1.5009
+new best prompt – 1.5009
+[Epoch 17] Avg Prompt Loss: 1.6235
+[Epoch 18] Avg Prompt Loss: 1.5408
+[Epoch 19] Avg Prompt Loss: 1.4266
+new best prompt – 1.4266
+[Epoch 20] Avg Prompt Loss: 1.5272
+[Epoch 21] Avg Prompt Loss: 1.4309
+[Epoch 22] Avg Prompt Loss: 1.6085
+[Epoch 23] Avg Prompt Loss: 1.4784
+[Epoch 24] Avg Prompt Loss: 1.4835
+[Epoch 25] Avg Prompt Loss: 1.4859
+[Epoch 26] Avg Prompt Loss: 1.4283
+[Epoch 27] Avg Prompt Loss: 1.3479
+new best prompt – 1.3479
+[Epoch 28] Avg Prompt Loss: 1.5234
+[Epoch 29] Avg Prompt Loss: 1.4323
+[Epoch 30] Avg Prompt Loss: 1.4544
+[Epoch 1] Learning Rate: 0.000001
+[Epoch 1] Running validation...
+[Epoch 1] Loss Breakdown: ID = 19.0068, Triplet = 0.1645, Center = 974.4965, i2t = 1.6942, t2i = 1.6094
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 47.89%
+RANK5: 68.49%
+RANK10: 77.14%
+MAP: 57.56%
+ New BEST Image model saved
+[Epoch 2] Learning Rate: 0.000001
+[Epoch 2] Running validation...
+[Epoch 2] Loss Breakdown: ID = 18.3242, Triplet = 0.0656, Center = 988.3671, i2t = 0.6520, t2i = 0.6190
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 43.05%
+RANK5: 68.69%
+RANK10: 80.64%
+MAP: 55.12%
+No improvement in loss. Patience counter: 1/5
+[Epoch 3] Learning Rate: 0.000002
+[Epoch 3] Running validation...
+[Epoch 3] Loss Breakdown: ID = 17.8782, Triplet = 0.1254, Center = 995.8762, i2t = 1.2510, t2i = 1.2380
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 45.83%
+RANK5: 70.85%
+RANK10: 81.05%
+MAP: 57.68%
+No improvement in loss. Patience counter: 2/5
+[Epoch 4] Learning Rate: 0.000003
+[Epoch 4] Running validation...
+[Epoch 4] Loss Breakdown: ID = 16.8179, Triplet = 0.0907, Center = 990.4780, i2t = 1.0137, t2i = 0.9904
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 47.37%
+RANK5: 70.85%
+RANK10: 82.18%
+MAP: 58.64%
+No improvement in loss. Patience counter: 3/5
+[Epoch 5] Learning Rate: 0.000005
+[Epoch 5] Running validation...
+[Epoch 5] Loss Breakdown: ID = 14.4830, Triplet = 0.0870, Center = 983.4376, i2t = 1.5468, t2i = 1.6094
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 49.74%
+RANK5: 74.97%
+RANK10: 85.89%
+MAP: 60.94%
+ New BEST Image model saved
+[Epoch 6] Learning Rate: 0.000008
+[Epoch 6] Running validation...
+[Epoch 6] Loss Breakdown: ID = 14.7740, Triplet = 0.0588, Center = 994.6402, i2t = 1.0596, t2i = 1.1142
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 58.19%
+RANK5: 79.20%
+RANK10: 88.36%
+MAP: 68.00%
+ New BEST Image model saved
+[Epoch 7] Learning Rate: 0.000010
+[Epoch 7] Running validation...
+[Epoch 7] Loss Breakdown: ID = 10.5288, Triplet = 0.0471, Center = 985.4611, i2t = 1.3470, t2i = 1.3618
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 60.97%
+RANK5: 86.41%
+RANK10: 92.79%
+MAP: 71.88%
+ New BEST Image model saved
+[Epoch 8] Learning Rate: 0.000014
+[Epoch 8] Running validation...
+[Epoch 8] Loss Breakdown: ID = 6.1499, Triplet = 0.0031, Center = 989.1775, i2t = 1.4360, t2i = 1.3618
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 65.81%
+RANK5: 86.10%
+RANK10: 91.25%
+MAP: 74.73%
+ New BEST Image model saved
+[Epoch 9] Learning Rate: 0.000017
+[Epoch 9] Running validation...
+[Epoch 9] Loss Breakdown: ID = 2.8536, Triplet = 0.0000, Center = 988.2338, i2t = 2.0711, t2i = 2.1046
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 67.87%
+RANK5: 87.23%
+RANK10: 93.51%
+MAP: 76.60%
+ New BEST Image model saved
+[Epoch 10] Learning Rate: 0.000021
+[Epoch 10] Running validation...
+[Epoch 10] Loss Breakdown: ID = 1.7538, Triplet = 0.0000, Center = 977.8925, i2t = 0.5512, t2i = 0.6190
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 65.81%
+RANK5: 89.39%
+RANK10: 93.72%
+MAP: 75.57%
+No improvement in loss. Patience counter: 1/5
+[Epoch 11] Learning Rate: 0.000026
+[Epoch 11] Running validation...
+[Epoch 11] Loss Breakdown: ID = 1.8322, Triplet = 0.0027, Center = 985.1066, i2t = 1.7032, t2i = 1.7332
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 73.74%
+RANK5: 93.51%
+RANK10: 97.94%
+MAP: 81.98%
+ New BEST Image model saved
+[Epoch 12] Learning Rate: 0.000030
+[Epoch 12] Running validation...
+[Epoch 12] Loss Breakdown: ID = 0.6723, Triplet = 0.0000, Center = 963.4120, i2t = 1.1964, t2i = 1.2380
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 76.00%
+RANK5: 93.41%
+RANK10: 97.01%
+MAP: 83.74%
+ New BEST Image model saved
+[Epoch 13] Learning Rate: 0.000035
+[Epoch 13] Running validation...
+[Epoch 13] Loss Breakdown: ID = 0.2655, Triplet = 0.0000, Center = 968.6393, i2t = 0.8859, t2i = 0.9904
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 72.09%
+RANK5: 91.56%
+RANK10: 95.47%
+MAP: 80.37%
+No improvement in loss. Patience counter: 1/5
+[Epoch 14] Learning Rate: 0.000040
+[Epoch 14] Running validation...
+[Epoch 14] Loss Breakdown: ID = 0.2525, Triplet = 0.0000, Center = 944.6067, i2t = 1.3524, t2i = 1.3618
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 77.65%
+RANK5: 93.41%
+RANK10: 96.19%
+MAP: 84.82%
+ New BEST Image model saved
+[Epoch 15] Learning Rate: 0.000045
+[Epoch 15] Running validation...
+[Epoch 15] Loss Breakdown: ID = 0.3331, Triplet = 0.0012, Center = 920.5684, i2t = 0.9041, t2i = 0.9904
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 76.83%
+RANK5: 93.20%
+RANK10: 96.91%
+MAP: 83.96%
+No improvement in loss. Patience counter: 1/5
+[Epoch 16] Learning Rate: 0.000051
+[Epoch 16] Running validation...
+[Epoch 16] Loss Breakdown: ID = 0.0588, Triplet = 0.0000, Center = 891.7649, i2t = 1.0990, t2i = 1.1142
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 76.93%
+RANK5: 93.10%
+RANK10: 96.40%
+MAP: 84.08%
+No improvement in loss. Patience counter: 2/5
+[Epoch 17] Learning Rate: 0.000056
+[Epoch 17] Running validation...
+[Epoch 17] Loss Breakdown: ID = 0.0739, Triplet = 0.0000, Center = 854.9679, i2t = 0.5178, t2i = 0.4952
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 83.73%
+RANK5: 95.98%
+RANK10: 97.73%
+MAP: 89.28%
+ New BEST Image model saved
+[Epoch 18] Learning Rate: 0.000061
+[Epoch 18] Running validation...
+[Epoch 18] Loss Breakdown: ID = 0.0673, Triplet = 0.0022, Center = 824.7455, i2t = 0.9816, t2i = 1.1142
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 73.02%
+RANK5: 90.22%
+RANK10: 95.47%
+MAP: 80.38%
+No improvement in loss. Patience counter: 1/5
+[Epoch 19] Learning Rate: 0.000066
+[Epoch 19] Running validation...
+[Epoch 19] Loss Breakdown: ID = 0.1296, Triplet = 0.0006, Center = 845.4563, i2t = 1.2175, t2i = 1.3618
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 73.94%
+RANK5: 90.73%
+RANK10: 95.47%
+MAP: 81.53%
+No improvement in loss. Patience counter: 2/5
+[Epoch 20] Learning Rate: 0.000071
+[Epoch 20] Running validation...
+[Epoch 20] Loss Breakdown: ID = 0.5932, Triplet = 0.0033, Center = 879.4139, i2t = 1.2063, t2i = 1.2380
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 71.37%
+RANK5: 87.85%
+RANK10: 92.69%
+MAP: 78.78%
+No improvement in loss. Patience counter: 3/5
+[Epoch 21] Learning Rate: 0.000075
+[Epoch 21] Running validation...
+[Epoch 21] Loss Breakdown: ID = 0.7000, Triplet = 0.0000, Center = 892.5695, i2t = 0.8574, t2i = 0.9904
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 76.21%
+RANK5: 89.39%
+RANK10: 95.16%
+MAP: 82.43%
+No improvement in loss. Patience counter: 4/5
+[Epoch 22] Learning Rate: 0.000080
+[Epoch 22] Running validation...
+[Epoch 22] Loss Breakdown: ID = 0.1955, Triplet = 0.0012, Center = 906.4345, i2t = 1.8453, t2i = 1.8570
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 81.46%
+RANK5: 94.44%
+RANK10: 97.84%
+MAP: 87.24%
+No improvement in loss. Patience counter: 5/5
+Early stopping triggered (prompt stage).
+Restored BEST model for evaluation.
+[Eval] Starting evaluation across all 10 splits (ReID style)

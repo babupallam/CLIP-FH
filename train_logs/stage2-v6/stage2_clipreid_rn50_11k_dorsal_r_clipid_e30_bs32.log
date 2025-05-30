@@ -1,0 +1,859 @@
+[DEBUG] CLIP Model = rn50 → Token Embed Dim: 512, Final LN Dim: 512
+[DEBUG] PromptLearner proj layer = Linear | in: 512, out: 512
+[DEBUG] Dummy Image Feature Shape: torch.Size([1, 1024])
+[DEBUG] Text Feature Output (via proj) should match: 512
+[WARNING] Feature dim mismatch! Image: 1024, Text: 512
+BNNeck and ArcFace head registered (scale=20, margin=0.3)
+Total trainable CLIP params: 102155689
+[DEBUG] PromptLearner trainable params: 967680
+[DEBUG] CLIP trainable params: 102155689
+[Prompt] cached 890 frozen image feats
+[Epoch 1] Avg Prompt Loss: 2.9411
+new best prompt – 2.9411
+[Epoch 2] Avg Prompt Loss: 2.6414
+new best prompt – 2.6414
+[Epoch 3] Avg Prompt Loss: 2.6828
+[Epoch 4] Avg Prompt Loss: 2.3758
+new best prompt – 2.3758
+[Epoch 5] Avg Prompt Loss: 2.3623
+new best prompt – 2.3623
+[Epoch 6] Avg Prompt Loss: 2.0070
+new best prompt – 2.0070
+[Epoch 7] Avg Prompt Loss: 1.9807
+new best prompt – 1.9807
+[Epoch 8] Avg Prompt Loss: 1.8832
+new best prompt – 1.8832
+[Epoch 9] Avg Prompt Loss: 1.9475
+[Epoch 10] Avg Prompt Loss: 1.8040
+new best prompt – 1.8040
+[Epoch 11] Avg Prompt Loss: 1.7372
+new best prompt – 1.7372
+[Epoch 12] Avg Prompt Loss: 1.8039
+[Epoch 13] Avg Prompt Loss: 1.7057
+new best prompt – 1.7057
+[Epoch 14] Avg Prompt Loss: 1.6198
+new best prompt – 1.6198
+[Epoch 15] Avg Prompt Loss: 1.6269
+[Epoch 16] Avg Prompt Loss: 1.6041
+new best prompt – 1.6041
+[Epoch 17] Avg Prompt Loss: 1.5858
+new best prompt – 1.5858
+[Epoch 18] Avg Prompt Loss: 1.5993
+[Epoch 19] Avg Prompt Loss: 1.4699
+new best prompt – 1.4699
+[Epoch 20] Avg Prompt Loss: 1.6706
+[Epoch 21] Avg Prompt Loss: 1.6345
+[Epoch 22] Avg Prompt Loss: 1.5978
+[Epoch 23] Avg Prompt Loss: 1.5329
+[Epoch 24] Avg Prompt Loss: 1.5131
+[Epoch 25] Avg Prompt Loss: 1.4761
+[Epoch 26] Avg Prompt Loss: 1.4768
+[Epoch 27] Avg Prompt Loss: 1.4969
+[Epoch 28] Avg Prompt Loss: 1.5432
+[Epoch 29] Avg Prompt Loss: 1.4608
+new best prompt – 1.4608
+[Epoch 30] Avg Prompt Loss: 1.5042
+Unfroze RN50 layers: layer3 and layer4
+[ArcFace] Confidence: 0.0512
+[ArcFace] Confidence: 0.0543
+[ArcFace] Confidence: 0.0582
+[ArcFace] Confidence: 0.0514
+[ArcFace] Confidence: 0.0502
+[ArcFace] Confidence: 0.0539
+[ArcFace] Confidence: 0.0560
+[ArcFace] Confidence: 0.0546
+[ArcFace] Confidence: 0.0563
+[ArcFace] Confidence: 0.0550
+[ArcFace] Confidence: 0.0554
+[ArcFace] Confidence: 0.0517
+[ArcFace] Confidence: 0.0531
+[ArcFace] Confidence: 0.0582
+[ArcFace] Confidence: 0.0513
+[ArcFace] Confidence: 0.0631
+[ArcFace] Confidence: 0.0539
+[ArcFace] Confidence: 0.0505
+[ArcFace] Confidence: 0.0541
+[ArcFace] Confidence: 0.0522
+[ArcFace] Confidence: 0.0611
+[ArcFace] Confidence: 0.0531
+[ArcFace] Confidence: 0.0564
+[ArcFace] Confidence: 0.0546
+[ArcFace] Confidence: 0.0540
+[ArcFace] Confidence: 0.0508
+[ArcFace] Confidence: 0.0506
+[ArcFace] Confidence: 0.0523
+[Epoch 1] Learning Rate: 0.000006
+[Epoch 1] Running validation...
+[Epoch 1] Loss Breakdown: ID = 4.2638, Triplet = 0.1241, Center = 968.8426, i2t = 1.3287, t2i = 1.3618
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 50.77%
+RANK5: 71.37%
+RANK10: 79.30%
+MAP: 60.72%
+ New BEST Image model saved
+[ArcFace] Confidence: 0.0528
+[ArcFace] Confidence: 0.0559
+[ArcFace] Confidence: 0.0536
+[ArcFace] Confidence: 0.0553
+[ArcFace] Confidence: 0.0498
+[ArcFace] Confidence: 0.0576
+[ArcFace] Confidence: 0.0557
+[ArcFace] Confidence: 0.0488
+[ArcFace] Confidence: 0.0543
+[ArcFace] Confidence: 0.0547
+[ArcFace] Confidence: 0.0544
+[ArcFace] Confidence: 0.0548
+[ArcFace] Confidence: 0.0510
+[ArcFace] Confidence: 0.0541
+[ArcFace] Confidence: 0.0493
+[ArcFace] Confidence: 0.0537
+[ArcFace] Confidence: 0.0544
+[ArcFace] Confidence: 0.0506
+[ArcFace] Confidence: 0.0551
+[ArcFace] Confidence: 0.0548
+[ArcFace] Confidence: 0.0518
+[ArcFace] Confidence: 0.0484
+[ArcFace] Confidence: 0.0552
+[ArcFace] Confidence: 0.0536
+[ArcFace] Confidence: 0.0550
+[ArcFace] Confidence: 0.0581
+[ArcFace] Confidence: 0.0546
+[ArcFace] Confidence: 0.0594
+[Epoch 2] Learning Rate: 0.000015
+[Epoch 2] Running validation...
+[Epoch 2] Loss Breakdown: ID = 4.2668, Triplet = 0.0426, Center = 972.4825, i2t = 0.7527, t2i = 0.7428
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 48.20%
+RANK5: 73.43%
+RANK10: 82.70%
+MAP: 60.00%
+No improvement in loss. Patience counter: 1/5
+[ArcFace] Confidence: 0.0503
+[ArcFace] Confidence: 0.0533
+[ArcFace] Confidence: 0.0504
+[ArcFace] Confidence: 0.0536
+[ArcFace] Confidence: 0.0517
+[ArcFace] Confidence: 0.0508
+[ArcFace] Confidence: 0.0554
+[ArcFace] Confidence: 0.0576
+[ArcFace] Confidence: 0.0532
+[ArcFace] Confidence: 0.0494
+[ArcFace] Confidence: 0.0506
+[ArcFace] Confidence: 0.0532
+[ArcFace] Confidence: 0.0541
+[ArcFace] Confidence: 0.0537
+[ArcFace] Confidence: 0.0559
+[ArcFace] Confidence: 0.0527
+[ArcFace] Confidence: 0.0594
+[ArcFace] Confidence: 0.0503
+[ArcFace] Confidence: 0.0558
+[ArcFace] Confidence: 0.0522
+[ArcFace] Confidence: 0.0520
+[ArcFace] Confidence: 0.0491
+[ArcFace] Confidence: 0.0544
+[ArcFace] Confidence: 0.0526
+[ArcFace] Confidence: 0.0529
+[ArcFace] Confidence: 0.0531
+[ArcFace] Confidence: 0.0521
+[ArcFace] Confidence: 0.0515
+[Epoch 3] Learning Rate: 0.000020
+[Epoch 3] Running validation...
+[Epoch 3] Loss Breakdown: ID = 4.2376, Triplet = 0.1001, Center = 950.5012, i2t = 1.4008, t2i = 1.3618
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 61.69%
+RANK5: 85.17%
+RANK10: 91.86%
+MAP: 72.03%
+ New BEST Image model saved
+[ArcFace] Confidence: 0.0546
+[ArcFace] Confidence: 0.0560
+[ArcFace] Confidence: 0.0577
+[ArcFace] Confidence: 0.0518
+[ArcFace] Confidence: 0.0505
+[ArcFace] Confidence: 0.0486
+[ArcFace] Confidence: 0.0532
+[ArcFace] Confidence: 0.0508
+[ArcFace] Confidence: 0.0534
+[ArcFace] Confidence: 0.0565
+[ArcFace] Confidence: 0.0538
+[ArcFace] Confidence: 0.0539
+[ArcFace] Confidence: 0.0515
+[ArcFace] Confidence: 0.0505
+[ArcFace] Confidence: 0.0521
+[ArcFace] Confidence: 0.0522
+[ArcFace] Confidence: 0.0533
+[ArcFace] Confidence: 0.0518
+[ArcFace] Confidence: 0.0538
+[ArcFace] Confidence: 0.0519
+[ArcFace] Confidence: 0.0546
+[ArcFace] Confidence: 0.0508
+[ArcFace] Confidence: 0.0537
+[ArcFace] Confidence: 0.0569
+[ArcFace] Confidence: 0.0590
+[ArcFace] Confidence: 0.0528
+[ArcFace] Confidence: 0.0535
+[ArcFace] Confidence: 0.0561
+[Epoch 4] Learning Rate: 0.000020
+[Epoch 4] Running validation...
+[Epoch 4] Loss Breakdown: ID = 4.2223, Triplet = 0.0484, Center = 963.5132, i2t = 0.9762, t2i = 0.9904
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 65.91%
+RANK5: 88.77%
+RANK10: 94.13%
+MAP: 75.74%
+ New BEST Image model saved
+[ArcFace] Confidence: 0.0527
+[ArcFace] Confidence: 0.0509
+[ArcFace] Confidence: 0.0498
+[ArcFace] Confidence: 0.0534
+[ArcFace] Confidence: 0.0490
+[ArcFace] Confidence: 0.0496
+[ArcFace] Confidence: 0.0538
+[ArcFace] Confidence: 0.0506
+[ArcFace] Confidence: 0.0524
+[ArcFace] Confidence: 0.0548
+[ArcFace] Confidence: 0.0497
+[ArcFace] Confidence: 0.0513
+[ArcFace] Confidence: 0.0501
+[ArcFace] Confidence: 0.0552
+[ArcFace] Confidence: 0.0520
+[ArcFace] Confidence: 0.0562
+[ArcFace] Confidence: 0.0500
+[ArcFace] Confidence: 0.0495
+[ArcFace] Confidence: 0.0594
+[ArcFace] Confidence: 0.0517
+[ArcFace] Confidence: 0.0512
+[ArcFace] Confidence: 0.0529
+[ArcFace] Confidence: 0.0524
+[ArcFace] Confidence: 0.0551
+[ArcFace] Confidence: 0.0539
+[ArcFace] Confidence: 0.0548
+[ArcFace] Confidence: 0.0541
+[ArcFace] Confidence: 0.0510
+[Epoch 5] Learning Rate: 0.000020
+[Epoch 5] Running validation...
+[Epoch 5] Loss Breakdown: ID = 4.1945, Triplet = 0.0682, Center = 955.6863, i2t = 1.3405, t2i = 1.2380
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 66.01%
+RANK5: 89.08%
+RANK10: 95.06%
+MAP: 76.32%
+ New BEST Image model saved
+[ArcFace] Confidence: 0.0562
+[ArcFace] Confidence: 0.0580
+[ArcFace] Confidence: 0.0557
+[ArcFace] Confidence: 0.0523
+[ArcFace] Confidence: 0.0521
+[ArcFace] Confidence: 0.0520
+[ArcFace] Confidence: 0.0530
+[ArcFace] Confidence: 0.0522
+[ArcFace] Confidence: 0.0535
+[ArcFace] Confidence: 0.0549
+[ArcFace] Confidence: 0.0537
+[ArcFace] Confidence: 0.0509
+[ArcFace] Confidence: 0.0491
+[ArcFace] Confidence: 0.0510
+[ArcFace] Confidence: 0.0579
+[ArcFace] Confidence: 0.0502
+[ArcFace] Confidence: 0.0492
+[ArcFace] Confidence: 0.0519
+[ArcFace] Confidence: 0.0518
+[ArcFace] Confidence: 0.0562
+[ArcFace] Confidence: 0.0527
+[ArcFace] Confidence: 0.0507
+[ArcFace] Confidence: 0.0539
+[ArcFace] Confidence: 0.0513
+[ArcFace] Confidence: 0.0550
+[ArcFace] Confidence: 0.0518
+[ArcFace] Confidence: 0.0564
+[ArcFace] Confidence: 0.0549
+[Epoch 6] Learning Rate: 0.000019
+[Epoch 6] Running validation...
+[Epoch 6] Loss Breakdown: ID = 4.1647, Triplet = 0.0782, Center = 965.9407, i2t = 1.6286, t2i = 1.6094
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 73.84%
+RANK5: 92.38%
+RANK10: 96.50%
+MAP: 81.88%
+ New BEST Image model saved
+[ArcFace] Confidence: 0.0514
+[ArcFace] Confidence: 0.0552
+[ArcFace] Confidence: 0.0555
+[ArcFace] Confidence: 0.0525
+[ArcFace] Confidence: 0.0458
+[ArcFace] Confidence: 0.0506
+[ArcFace] Confidence: 0.0594
+[ArcFace] Confidence: 0.0502
+[ArcFace] Confidence: 0.0540
+[ArcFace] Confidence: 0.0539
+[ArcFace] Confidence: 0.0499
+[ArcFace] Confidence: 0.0510
+[ArcFace] Confidence: 0.0525
+[ArcFace] Confidence: 0.0519
+[ArcFace] Confidence: 0.0503
+[ArcFace] Confidence: 0.0513
+[ArcFace] Confidence: 0.0492
+[ArcFace] Confidence: 0.0530
+[ArcFace] Confidence: 0.0506
+[ArcFace] Confidence: 0.0541
+[ArcFace] Confidence: 0.0502
+[ArcFace] Confidence: 0.0525
+[ArcFace] Confidence: 0.0556
+[ArcFace] Confidence: 0.0578
+[ArcFace] Confidence: 0.0521
+[ArcFace] Confidence: 0.0514
+[ArcFace] Confidence: 0.0507
+[ArcFace] Confidence: 0.0525
+[Epoch 7] Learning Rate: 0.000019
+[Epoch 7] Running validation...
+[Epoch 7] Loss Breakdown: ID = 4.1472, Triplet = 0.0621, Center = 959.2514, i2t = 1.2747, t2i = 1.3618
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 72.61%
+RANK5: 92.79%
+RANK10: 97.12%
+MAP: 81.14%
+No improvement in loss. Patience counter: 1/5
+[ArcFace] Confidence: 0.0549
+[ArcFace] Confidence: 0.0534
+[ArcFace] Confidence: 0.0513
+[ArcFace] Confidence: 0.0525
+[ArcFace] Confidence: 0.0536
+[ArcFace] Confidence: 0.0516
+[ArcFace] Confidence: 0.0518
+[ArcFace] Confidence: 0.0565
+[ArcFace] Confidence: 0.0492
+[ArcFace] Confidence: 0.0562
+[ArcFace] Confidence: 0.0524
+[ArcFace] Confidence: 0.0526
+[ArcFace] Confidence: 0.0542
+[ArcFace] Confidence: 0.0532
+[ArcFace] Confidence: 0.0502
+[ArcFace] Confidence: 0.0542
+[ArcFace] Confidence: 0.0493
+[ArcFace] Confidence: 0.0508
+[ArcFace] Confidence: 0.0492
+[ArcFace] Confidence: 0.0524
+[ArcFace] Confidence: 0.0502
+[ArcFace] Confidence: 0.0548
+[ArcFace] Confidence: 0.0545
+[ArcFace] Confidence: 0.0540
+[ArcFace] Confidence: 0.0509
+[ArcFace] Confidence: 0.0519
+[ArcFace] Confidence: 0.0555
+[ArcFace] Confidence: 0.0505
+[Epoch 8] Learning Rate: 0.000018
+[Epoch 8] Running validation...
+[Epoch 8] Loss Breakdown: ID = 4.1222, Triplet = 0.0118, Center = 964.5510, i2t = 1.1027, t2i = 1.2380
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 73.84%
+RANK5: 92.28%
+RANK10: 95.78%
+MAP: 82.12%
+No improvement in loss. Patience counter: 2/5
+[ArcFace] Confidence: 0.0583
+[ArcFace] Confidence: 0.0530
+[ArcFace] Confidence: 0.0563
+[ArcFace] Confidence: 0.0526
+[ArcFace] Confidence: 0.0550
+[ArcFace] Confidence: 0.0503
+[ArcFace] Confidence: 0.0486
+[ArcFace] Confidence: 0.0556
+[ArcFace] Confidence: 0.0553
+[ArcFace] Confidence: 0.0550
+[ArcFace] Confidence: 0.0539
+[ArcFace] Confidence: 0.0538
+[ArcFace] Confidence: 0.0510
+[ArcFace] Confidence: 0.0503
+[ArcFace] Confidence: 0.0545
+[ArcFace] Confidence: 0.0521
+[ArcFace] Confidence: 0.0530
+[ArcFace] Confidence: 0.0541
+[ArcFace] Confidence: 0.0539
+[ArcFace] Confidence: 0.0510
+[ArcFace] Confidence: 0.0553
+[ArcFace] Confidence: 0.0531
+[ArcFace] Confidence: 0.0525
+[ArcFace] Confidence: 0.0502
+[ArcFace] Confidence: 0.0520
+[ArcFace] Confidence: 0.0532
+[ArcFace] Confidence: 0.0498
+[ArcFace] Confidence: 0.0573
+[Epoch 9] Learning Rate: 0.000018
+[Epoch 9] Running validation...
+[Epoch 9] Loss Breakdown: ID = 4.1259, Triplet = 0.0131, Center = 960.7458, i2t = 0.4459, t2i = 0.4952
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 77.75%
+RANK5: 93.10%
+RANK10: 96.19%
+MAP: 84.67%
+ New BEST Image model saved
+[ArcFace] Confidence: 0.0508
+[ArcFace] Confidence: 0.0540
+[ArcFace] Confidence: 0.0525
+[ArcFace] Confidence: 0.0534
+[ArcFace] Confidence: 0.0514
+[ArcFace] Confidence: 0.0524
+[ArcFace] Confidence: 0.0516
+[ArcFace] Confidence: 0.0483
+[ArcFace] Confidence: 0.0551
+[ArcFace] Confidence: 0.0544
+[ArcFace] Confidence: 0.0500
+[ArcFace] Confidence: 0.0513
+[ArcFace] Confidence: 0.0499
+[ArcFace] Confidence: 0.0539
+[ArcFace] Confidence: 0.0507
+[ArcFace] Confidence: 0.0486
+[ArcFace] Confidence: 0.0544
+[ArcFace] Confidence: 0.0525
+[ArcFace] Confidence: 0.0550
+[ArcFace] Confidence: 0.0509
+[ArcFace] Confidence: 0.0495
+[ArcFace] Confidence: 0.0539
+[ArcFace] Confidence: 0.0569
+[ArcFace] Confidence: 0.0534
+[ArcFace] Confidence: 0.0494
+[ArcFace] Confidence: 0.0508
+[ArcFace] Confidence: 0.0488
+[ArcFace] Confidence: 0.0499
+[Epoch 10] Learning Rate: 0.000017
+[Epoch 10] Running validation...
+[Epoch 10] Loss Breakdown: ID = 4.0861, Triplet = 0.0234, Center = 978.1603, i2t = 1.7474, t2i = 1.7332
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 80.12%
+RANK5: 94.13%
+RANK10: 96.81%
+MAP: 86.27%
+ New BEST Image model saved
+[ArcFace] Confidence: 0.0513
+[ArcFace] Confidence: 0.0596
+[ArcFace] Confidence: 0.0526
+[ArcFace] Confidence: 0.0513
+[ArcFace] Confidence: 0.0492
+[ArcFace] Confidence: 0.0538
+[ArcFace] Confidence: 0.0544
+[ArcFace] Confidence: 0.0542
+[ArcFace] Confidence: 0.0472
+[ArcFace] Confidence: 0.0553
+[ArcFace] Confidence: 0.0537
+[ArcFace] Confidence: 0.0516
+[ArcFace] Confidence: 0.0559
+[ArcFace] Confidence: 0.0507
+[ArcFace] Confidence: 0.0531
+[ArcFace] Confidence: 0.0551
+[ArcFace] Confidence: 0.0566
+[ArcFace] Confidence: 0.0492
+[ArcFace] Confidence: 0.0513
+[ArcFace] Confidence: 0.0518
+[ArcFace] Confidence: 0.0487
+[ArcFace] Confidence: 0.0555
+[ArcFace] Confidence: 0.0551
+[ArcFace] Confidence: 0.0516
+[ArcFace] Confidence: 0.0553
+[ArcFace] Confidence: 0.0572
+[ArcFace] Confidence: 0.0483
+[ArcFace] Confidence: 0.0498
+[Epoch 11] Learning Rate: 0.000016
+[Epoch 11] Running validation...
+[Epoch 11] Loss Breakdown: ID = 4.0639, Triplet = 0.0021, Center = 955.0933, i2t = 1.2700, t2i = 1.2380
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 77.55%
+RANK5: 94.13%
+RANK10: 96.29%
+MAP: 85.10%
+No improvement in loss. Patience counter: 1/5
+[ArcFace] Confidence: 0.0562
+[ArcFace] Confidence: 0.0495
+[ArcFace] Confidence: 0.0527
+[ArcFace] Confidence: 0.0555
+[ArcFace] Confidence: 0.0522
+[ArcFace] Confidence: 0.0518
+[ArcFace] Confidence: 0.0510
+[ArcFace] Confidence: 0.0488
+[ArcFace] Confidence: 0.0531
+[ArcFace] Confidence: 0.0529
+[ArcFace] Confidence: 0.0493
+[ArcFace] Confidence: 0.0508
+[ArcFace] Confidence: 0.0514
+[ArcFace] Confidence: 0.0512
+[ArcFace] Confidence: 0.0510
+[ArcFace] Confidence: 0.0475
+[ArcFace] Confidence: 0.0559
+[ArcFace] Confidence: 0.0532
+[ArcFace] Confidence: 0.0506
+[ArcFace] Confidence: 0.0557
+[ArcFace] Confidence: 0.0524
+[ArcFace] Confidence: 0.0505
+[ArcFace] Confidence: 0.0533
+[ArcFace] Confidence: 0.0511
+[ArcFace] Confidence: 0.0555
+[ArcFace] Confidence: 0.0497
+[ArcFace] Confidence: 0.0510
+[ArcFace] Confidence: 0.0598
+[Epoch 12] Learning Rate: 0.000015
+[Epoch 12] Running validation...
+[Epoch 12] Loss Breakdown: ID = 4.0518, Triplet = 0.0000, Center = 950.3546, i2t = 0.9782, t2i = 1.1142
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 79.71%
+RANK5: 95.16%
+RANK10: 97.01%
+MAP: 86.63%
+No improvement in loss. Patience counter: 2/5
+[ArcFace] Confidence: 0.0498
+[ArcFace] Confidence: 0.0486
+[ArcFace] Confidence: 0.0548
+[ArcFace] Confidence: 0.0516
+[ArcFace] Confidence: 0.0467
+[ArcFace] Confidence: 0.0537
+[ArcFace] Confidence: 0.0588
+[ArcFace] Confidence: 0.0516
+[ArcFace] Confidence: 0.0513
+[ArcFace] Confidence: 0.0515
+[ArcFace] Confidence: 0.0535
+[ArcFace] Confidence: 0.0533
+[ArcFace] Confidence: 0.0484
+[ArcFace] Confidence: 0.0515
+[ArcFace] Confidence: 0.0489
+[ArcFace] Confidence: 0.0497
+[ArcFace] Confidence: 0.0515
+[ArcFace] Confidence: 0.0524
+[ArcFace] Confidence: 0.0481
+[ArcFace] Confidence: 0.0534
+[ArcFace] Confidence: 0.0469
+[ArcFace] Confidence: 0.0520
+[ArcFace] Confidence: 0.0521
+[ArcFace] Confidence: 0.0480
+[ArcFace] Confidence: 0.0554
+[ArcFace] Confidence: 0.0528
+[ArcFace] Confidence: 0.0527
+[ArcFace] Confidence: 0.0492
+[Epoch 13] Learning Rate: 0.000014
+[Epoch 13] Running validation...
+[Epoch 13] Loss Breakdown: ID = 4.0542, Triplet = 0.0023, Center = 961.2530, i2t = 0.9070, t2i = 0.9904
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 79.71%
+RANK5: 94.03%
+RANK10: 96.50%
+MAP: 86.13%
+No improvement in loss. Patience counter: 3/5
+[ArcFace] Confidence: 0.0525
+[ArcFace] Confidence: 0.0498
+[ArcFace] Confidence: 0.0505
+[ArcFace] Confidence: 0.0486
+[ArcFace] Confidence: 0.0497
+[ArcFace] Confidence: 0.0467
+[ArcFace] Confidence: 0.0546
+[ArcFace] Confidence: 0.0537
+[ArcFace] Confidence: 0.0536
+[ArcFace] Confidence: 0.0504
+[ArcFace] Confidence: 0.0515
+[ArcFace] Confidence: 0.0497
+[ArcFace] Confidence: 0.0545
+[ArcFace] Confidence: 0.0525
+[ArcFace] Confidence: 0.0509
+[ArcFace] Confidence: 0.0488
+[ArcFace] Confidence: 0.0502
+[ArcFace] Confidence: 0.0506
+[ArcFace] Confidence: 0.0515
+[ArcFace] Confidence: 0.0521
+[ArcFace] Confidence: 0.0495
+[ArcFace] Confidence: 0.0506
+[ArcFace] Confidence: 0.0519
+[ArcFace] Confidence: 0.0458
+[ArcFace] Confidence: 0.0553
+[ArcFace] Confidence: 0.0456
+[ArcFace] Confidence: 0.0562
+[ArcFace] Confidence: 0.0571
+[Epoch 14] Learning Rate: 0.000013
+[Epoch 14] Running validation...
+[Epoch 14] Loss Breakdown: ID = 4.0317, Triplet = 0.0017, Center = 947.6964, i2t = 0.9831, t2i = 0.9904
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 82.08%
+RANK5: 94.54%
+RANK10: 96.91%
+MAP: 87.77%
+ New BEST Image model saved
+[ArcFace] Confidence: 0.0577
+[ArcFace] Confidence: 0.0498
+[ArcFace] Confidence: 0.0539
+[ArcFace] Confidence: 0.0485
+[ArcFace] Confidence: 0.0521
+[ArcFace] Confidence: 0.0522
+[ArcFace] Confidence: 0.0498
+[ArcFace] Confidence: 0.0538
+[ArcFace] Confidence: 0.0443
+[ArcFace] Confidence: 0.0536
+[ArcFace] Confidence: 0.0489
+[ArcFace] Confidence: 0.0509
+[ArcFace] Confidence: 0.0526
+[ArcFace] Confidence: 0.0477
+[ArcFace] Confidence: 0.0502
+[ArcFace] Confidence: 0.0513
+[ArcFace] Confidence: 0.0504
+[ArcFace] Confidence: 0.0512
+[ArcFace] Confidence: 0.0481
+[ArcFace] Confidence: 0.0501
+[ArcFace] Confidence: 0.0540
+[ArcFace] Confidence: 0.0539
+[ArcFace] Confidence: 0.0547
+[ArcFace] Confidence: 0.0543
+[ArcFace] Confidence: 0.0462
+[ArcFace] Confidence: 0.0544
+[ArcFace] Confidence: 0.0508
+[ArcFace] Confidence: 0.0537
+[Epoch 15] Learning Rate: 0.000012
+[Epoch 15] Running validation...
+[Epoch 15] Loss Breakdown: ID = 4.0185, Triplet = 0.0012, Center = 962.6039, i2t = 1.1031, t2i = 1.2380
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 82.29%
+RANK5: 94.54%
+RANK10: 96.19%
+MAP: 87.81%
+ New BEST Image model saved
+[ArcFace] Confidence: 0.0497
+[ArcFace] Confidence: 0.0502
+[ArcFace] Confidence: 0.0542
+[ArcFace] Confidence: 0.0531
+[ArcFace] Confidence: 0.0549
+[ArcFace] Confidence: 0.0517
+[ArcFace] Confidence: 0.0520
+[ArcFace] Confidence: 0.0535
+[ArcFace] Confidence: 0.0519
+[ArcFace] Confidence: 0.0538
+[ArcFace] Confidence: 0.0485
+[ArcFace] Confidence: 0.0550
+[ArcFace] Confidence: 0.0584
+[ArcFace] Confidence: 0.0505
+[ArcFace] Confidence: 0.0507
+[ArcFace] Confidence: 0.0522
+[ArcFace] Confidence: 0.0529
+[ArcFace] Confidence: 0.0491
+[ArcFace] Confidence: 0.0524
+[ArcFace] Confidence: 0.0501
+[ArcFace] Confidence: 0.0517
+[ArcFace] Confidence: 0.0484
+[ArcFace] Confidence: 0.0492
+[ArcFace] Confidence: 0.0532
+[ArcFace] Confidence: 0.0514
+[ArcFace] Confidence: 0.0457
+[ArcFace] Confidence: 0.0489
+[ArcFace] Confidence: 0.0523
+[Epoch 16] Learning Rate: 0.000011
+[Epoch 16] Running validation...
+[Epoch 16] Loss Breakdown: ID = 4.0089, Triplet = 0.0093, Center = 956.8723, i2t = 1.3630, t2i = 1.3618
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 81.98%
+RANK5: 94.85%
+RANK10: 96.81%
+MAP: 87.85%
+No improvement in loss. Patience counter: 1/5
+[ArcFace] Confidence: 0.0534
+[ArcFace] Confidence: 0.0491
+[ArcFace] Confidence: 0.0484
+[ArcFace] Confidence: 0.0566
+[ArcFace] Confidence: 0.0545
+[ArcFace] Confidence: 0.0482
+[ArcFace] Confidence: 0.0503
+[ArcFace] Confidence: 0.0529
+[ArcFace] Confidence: 0.0543
+[ArcFace] Confidence: 0.0522
+[ArcFace] Confidence: 0.0525
+[ArcFace] Confidence: 0.0610
+[ArcFace] Confidence: 0.0552
+[ArcFace] Confidence: 0.0533
+[ArcFace] Confidence: 0.0499
+[ArcFace] Confidence: 0.0565
+[ArcFace] Confidence: 0.0497
+[ArcFace] Confidence: 0.0501
+[ArcFace] Confidence: 0.0481
+[ArcFace] Confidence: 0.0500
+[ArcFace] Confidence: 0.0484
+[ArcFace] Confidence: 0.0533
+[ArcFace] Confidence: 0.0513
+[ArcFace] Confidence: 0.0493
+[ArcFace] Confidence: 0.0505
+[ArcFace] Confidence: 0.0531
+[ArcFace] Confidence: 0.0479
+[ArcFace] Confidence: 0.0473
+[Epoch 17] Learning Rate: 0.000009
+[Epoch 17] Running validation...
+[Epoch 17] Loss Breakdown: ID = 3.9798, Triplet = 0.0000, Center = 956.2650, i2t = 0.9779, t2i = 0.9904
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 81.26%
+RANK5: 94.85%
+RANK10: 96.50%
+MAP: 87.32%
+No improvement in loss. Patience counter: 2/5
+[ArcFace] Confidence: 0.0519
+[ArcFace] Confidence: 0.0516
+[ArcFace] Confidence: 0.0518
+[ArcFace] Confidence: 0.0523
+[ArcFace] Confidence: 0.0526
+[ArcFace] Confidence: 0.0561
+[ArcFace] Confidence: 0.0513
+[ArcFace] Confidence: 0.0516
+[ArcFace] Confidence: 0.0464
+[ArcFace] Confidence: 0.0511
+[ArcFace] Confidence: 0.0494
+[ArcFace] Confidence: 0.0506
+[ArcFace] Confidence: 0.0496
+[ArcFace] Confidence: 0.0508
+[ArcFace] Confidence: 0.0497
+[ArcFace] Confidence: 0.0566
+[ArcFace] Confidence: 0.0509
+[ArcFace] Confidence: 0.0512
+[ArcFace] Confidence: 0.0521
+[ArcFace] Confidence: 0.0530
+[ArcFace] Confidence: 0.0521
+[ArcFace] Confidence: 0.0513
+[ArcFace] Confidence: 0.0463
+[ArcFace] Confidence: 0.0544
+[ArcFace] Confidence: 0.0494
+[ArcFace] Confidence: 0.0513
+[ArcFace] Confidence: 0.0523
+[ArcFace] Confidence: 0.0517
+[Epoch 18] Learning Rate: 0.000008
+[Epoch 18] Running validation...
+[Epoch 18] Loss Breakdown: ID = 3.9757, Triplet = 0.0050, Center = 937.5203, i2t = 0.9949, t2i = 1.1142
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 79.61%
+RANK5: 95.06%
+RANK10: 96.60%
+MAP: 86.61%
+No improvement in loss. Patience counter: 3/5
+[ArcFace] Confidence: 0.0498
+[ArcFace] Confidence: 0.0513
+[ArcFace] Confidence: 0.0494
+[ArcFace] Confidence: 0.0483
+[ArcFace] Confidence: 0.0520
+[ArcFace] Confidence: 0.0539
+[ArcFace] Confidence: 0.0549
+[ArcFace] Confidence: 0.0503
+[ArcFace] Confidence: 0.0525
+[ArcFace] Confidence: 0.0502
+[ArcFace] Confidence: 0.0497
+[ArcFace] Confidence: 0.0494
+[ArcFace] Confidence: 0.0513
+[ArcFace] Confidence: 0.0512
+[ArcFace] Confidence: 0.0502
+[ArcFace] Confidence: 0.0540
+[ArcFace] Confidence: 0.0522
+[ArcFace] Confidence: 0.0521
+[ArcFace] Confidence: 0.0486
+[ArcFace] Confidence: 0.0521
+[ArcFace] Confidence: 0.0478
+[ArcFace] Confidence: 0.0476
+[ArcFace] Confidence: 0.0453
+[ArcFace] Confidence: 0.0517
+[ArcFace] Confidence: 0.0494
+[ArcFace] Confidence: 0.0522
+[ArcFace] Confidence: 0.0535
+[ArcFace] Confidence: 0.0516
+[Epoch 19] Learning Rate: 0.000007
+[Epoch 19] Running validation...
+[Epoch 19] Loss Breakdown: ID = 3.9821, Triplet = 0.0010, Center = 953.7748, i2t = 0.8480, t2i = 0.8666
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 81.87%
+RANK5: 95.06%
+RANK10: 96.91%
+MAP: 87.84%
+No improvement in loss. Patience counter: 4/5
+[ArcFace] Confidence: 0.0511
+[ArcFace] Confidence: 0.0481
+[ArcFace] Confidence: 0.0527
+[ArcFace] Confidence: 0.0507
+[ArcFace] Confidence: 0.0509
+[ArcFace] Confidence: 0.0479
+[ArcFace] Confidence: 0.0483
+[ArcFace] Confidence: 0.0496
+[ArcFace] Confidence: 0.0531
+[ArcFace] Confidence: 0.0488
+[ArcFace] Confidence: 0.0480
+[ArcFace] Confidence: 0.0483
+[ArcFace] Confidence: 0.0520
+[ArcFace] Confidence: 0.0522
+[ArcFace] Confidence: 0.0493
+[ArcFace] Confidence: 0.0522
+[ArcFace] Confidence: 0.0535
+[ArcFace] Confidence: 0.0463
+[ArcFace] Confidence: 0.0524
+[ArcFace] Confidence: 0.0505
+[ArcFace] Confidence: 0.0498
+[ArcFace] Confidence: 0.0525
+[ArcFace] Confidence: 0.0472
+[ArcFace] Confidence: 0.0556
+[ArcFace] Confidence: 0.0519
+[ArcFace] Confidence: 0.0508
+[ArcFace] Confidence: 0.0502
+[ArcFace] Confidence: 0.0548
+[Epoch 20] Learning Rate: 0.000006
+[Epoch 20] Running validation...
+[Epoch 20] Loss Breakdown: ID = 3.9473, Triplet = 0.0000, Center = 938.0187, i2t = 1.2645, t2i = 1.3618
+[Validation] Extracting features...
+[Validation] Evaluating ranks and mAP...
+
+[ReID Validation]
+RANK1: 81.05%
+RANK5: 95.16%
+RANK10: 96.81%
+MAP: 87.37%
+No improvement in loss. Patience counter: 5/5
+Early stopping triggered (prompt stage).
+Restored BEST model for evaluation.
+[Eval] Starting evaluation across all 10 splits (ReID style)
