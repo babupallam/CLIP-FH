@@ -2,12 +2,21 @@
 experiment: stage3_promptsg
 dataset: 11k
 aspect: dorsal_r
-model: vitb16
+model: rn50
 variant: promptsg
 stage: stage3_promptsg
 
+#classifier: linear # linear # arcface is not improving the result
+
+classifier: arcface
+bnneck_reduction: true
+bnneck_dim: 1024
+
+val_type: reid  # optional: prevent CE-style val logic
+
+
 # === CLIP Model Config ===
-clip_model:  vitb16
+clip_model:  rn50
 pretrained: true
 freeze_text_encoder: true
 
@@ -27,6 +36,7 @@ use_composed_prompt: true
 prompt_template: "A captured frame showing a person’s {aspect} hand during surveillance."
 #prompt_template: "Label: {aspect} hand, individual ID for re-identification."
 
+simplified_prompt: "A detailed photo of a {aspect} hand."
 
 # === Training Config ===
 batch_size: 32
@@ -34,24 +44,18 @@ epochs: 60
 
 early_stop_patience: 10
 
-lr_clip_visual: 0.000002
-lr_modules: 0.000002
+lr_clip_visual: 0.00001
+lr_modules: 0.00001
 weight_decay: 0.0005
+
 supcon_loss_weight: 0
 loss_tri_weight: 1.0
-loss_id_weight: 0.2
+loss_id_weight: 0.1
 
 # === Dataloader Settings ===
 num_workers: 4
 shuffle: true
 pin_memory: true
-
-#classifier: linear # arcface is not improving the result
-classifier: arcface
-bnneck_reduction: true
-bnneck_dim: 256
-val_type: reid  # optional: prevent CE-style val logic
-
 
 # === Logging and Checkpoint Saving ===
 output_dir: train_logs/
