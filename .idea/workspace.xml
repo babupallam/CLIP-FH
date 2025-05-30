@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8c7cde98-b929-4071-bc2e-b0363f4c695d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/baseline_inference.py" beforeDir="false" afterPath="$PROJECT_DIR$/engine/baseline_inference.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/evaluator.py" beforeDir="false" afterPath="$PROJECT_DIR$/engine/evaluator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/prompt_learner.py" beforeDir="false" afterPath="$PROJECT_DIR$/engine/prompt_learner.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/promptsg_inference.py" beforeDir="false" afterPath="$PROJECT_DIR$/engine/promptsg_inference.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/train_clipreid_stages.py" beforeDir="false" afterPath="$PROJECT_DIR$/engine/train_clipreid_stages.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +103,7 @@
       <workItem from="1748398187481" duration="7019000" />
       <workItem from="1748412642922" duration="22225000" />
       <workItem from="1748584748968" duration="178000" />
-      <workItem from="1748585518823" duration="1766000" />
+      <workItem from="1748585518823" duration="1935000" />
     </task>
     <servers />
   </component>

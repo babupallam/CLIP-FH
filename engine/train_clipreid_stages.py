@@ -144,6 +144,7 @@ def train_clipreid_image_stage(clip_model, prompt_learner, optimizer, scheduler,
                                loss_fn, ce_loss, triplet_loss, best_model_state):
 
 
+    global center_loss_val, tri_loss
     best_loss = float("inf")
     patience = cfg.get("early_stop_patience", 3)
     patience_counter = 0
@@ -345,57 +346,71 @@ from engine.evaluator import evaluate_rank
 from utils.dataloaders import get_dataloader
 import os
 from utils.logger import setup_logger  # Ensure this exists
-
 def evaluate_clipreid_after_training(clip_model, prompt_learner, cfg, logger, device):
+    # Build the base path to the dataset depending on which dataset is selected
     base_path = os.path.join("datasets", f"{'11khands' if cfg['dataset'] == '11k' else 'HD/Original Images'}", "train_val_test_split")
     if cfg["dataset"] == "11k":
-        base_path = os.path.join(base_path + f"_{cfg['aspect']}")
+        base_path = os.path.join(base_path + f"_{cfg['aspect']}")  # Add aspect if dataset is 11k
+
     # === Create Evaluation Log File ===
     # Save evaluation log into a separate folder `eval_logs`
-    eval_log_dir = os.path.join(cfg["log_dir"])
-    os.makedirs(eval_log_dir, exist_ok=True)
+    eval_log_dir = os.path.join(cfg["log_dir"])  # Folder where logs will be saved
+    os.makedirs(eval_log_dir, exist_ok=True)  # Create the folder if it doesn't exist
 
+    # Generate the filename of the best model checkpoint
     model_filename = build_filename(cfg, cfg["epochs_image"], stage="image", extension="_BEST.pth", timestamped=False)
-    model_basename = os.path.splitext(os.path.basename(model_filename))[0]
-    eval_log_name = f"eval_{model_basename}.log"
-    eval_log_path = os.path.join(eval_log_dir, eval_log_name)
+    model_basename = os.path.splitext(os.path.basename(model_filename))[0]  # Remove file extension
+    eval_log_name = f"eval_{model_basename}.log"  # Evaluation log name
+    eval_log_path = os.path.join(eval_log_dir, eval_log_name)  # Full path to log file
 
+    # Setup logger to write evaluation details
     eval_logger = setup_logger(eval_log_path, name="eval_logger")
     eval_logger.info(f"[Eval] Using base dataset path: {base_path}")
 
+    # Store metrics for all splits
     all_rank1, all_rank5, all_rank10, all_map = [], [], [], []
-    num_splits = cfg.get("num_splits", 10)
+    num_splits = cfg.get("num_splits", 10)  # Number of query-gallery splits (usually 10)
 
     for i in range(num_splits):
+        # Create path to query and gallery folders for each split
         query_path = os.path.join(base_path, f"query{i}")
         gallery_path = os.path.join(base_path, f"gallery{i}")
 
+        # Check if query and gallery folders exist for this split
         if not os.path.exists(query_path) or not os.path.exists(gallery_path):
             eval_logger.warning(f"Skipping split {i}: missing {query_path} or {gallery_path}")
             continue
 
         eval_logger.info(f"[Eval] Split {i + 1}/{num_splits}")
+
+        # Load query and gallery images without shuffling
         query_loader = get_dataloader(query_path, batch_size=cfg["batch_size"], shuffle=False, train=False)
         gallery_loader = get_dataloader(gallery_path, batch_size=cfg["batch_size"], shuffle=False, train=False)
 
-        # Extract features (PromptLearner active)
+        # Extract image features using CLIP model and prompt learner
         q_feats, q_labels = extract_features(clip_model, query_loader, device, prompt_learner=prompt_learner)
         g_feats, g_labels = extract_features(clip_model, gallery_loader, device, prompt_learner=prompt_learner)
 
+        # Compute cosine similarity between query and gallery features
         sim_matrix = compute_similarity_matrix(q_feats, g_feats)
-        metrics = evaluate_rank(sim_matrix, q_labels, g_labels, topk=[1, 5, 10])
-        metrics = {k: v * 100 for k, v in metrics.items()}
 
+        # Evaluate metrics (Rank@K and mAP)
+        metrics = evaluate_rank(sim_matrix, q_labels, g_labels, topk=[1, 5, 10])
+        metrics = {k: v * 100 for k, v in metrics.items()}  # Convert to percentage
+
+        # Log individual split results
         eval_logger.info(f"  Rank-1 : {metrics['Rank-1']:.2f}%")
         eval_logger.info(f"  Rank-5 : {metrics['Rank-5']:.2f}%")
         eval_logger.info(f"  Rank-10: {metrics['Rank-10']:.2f}%")
         eval_logger.info(f"  mAP    : {metrics['mAP']:.2f}%")
 
+        # Store metrics for averaging later
         all_rank1.append(metrics["Rank-1"])
         all_rank5.append(metrics["Rank-5"])
         all_rank10.append(metrics["Rank-10"])
         all_map.append(metrics["mAP"])
 
+    # === Final Aggregated Results ===
     if all_rank1:
         eval_logger.info("===== Final ReID Metrics Across All Splits =====")
         eval_logger.info(f"Rank-1 Accuracy : {sum(all_rank1) / len(all_rank1):.2f}%")
