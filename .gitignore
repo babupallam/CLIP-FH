@@ -21,3 +21,7 @@ experiments/stage0_baseline_inference/eval_baseline_clip.py
 /.venv
 /.idea
 /.idea
+clip_fh_v4.zip
+/configs/archived
+/configs/train_stage2_clip_reid/archive
+/engine/archived
