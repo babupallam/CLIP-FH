@@ -1,0 +1,227 @@
+2025-04-19 07:59:29,898 - INFO - Saving logs to: train_logs/stage3_promptsg_rn50_11k_dorsal_r_promptsg_e20_lrNA_bs32.log
+2025-04-19 07:59:29,898 - INFO - Using 72 classes | 28 training batches
+2025-04-19 07:59:29,898 - INFO - ======= Stage 3: PromptSG Training =======
+2025-04-19 07:59:29,898 - INFO - Experiment Name : stage3_promptsg
+2025-04-19 07:59:29,898 - INFO - Model & Dataset : rn50, 11k, dorsal_r
+2025-04-19 07:59:29,898 - INFO - Freeze Text Enc.: True
+2025-04-19 07:59:29,901 - INFO - Loss Weights    : ID=1.0, Tri=1.0, SupCon=0
+2025-04-19 07:59:29,901 - INFO - LR=1e-05 | Epochs=20 | BatchSize=32
+2025-04-19 07:59:29,901 - INFO -  Epoch 1/20
+2025-04-19 07:59:29,901 - INFO - [Epoch 1] Learning rate: 0.000010
+2025-04-19 07:59:56,661 - INFO - [DEBUG] Pooled feature mean L2 norm: 1.0000
+2025-04-19 07:59:56,664 - INFO - [DEBUG] Loss Breakdown — ID: 4.2805, SupCon: 3.4814, Tri: 0.1760
+2025-04-19 07:59:56,756 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+2025-04-19 07:59:56,756 - INFO - [DEBUG] img_features: torch.Size([32, 1024]), prompt: torch.Size([32, 3, 1024]), pooled: torch.Size([32, 1024])
+2025-04-19 07:59:56,852 - INFO - [DEBUG] Loss Breakdown — ID: 4.2802, SupCon: 3.5261, Tri: 0.1518
+2025-04-19 07:59:57,029 - INFO - [DEBUG] Loss Breakdown — ID: 4.2770, SupCon: 3.4794, Tri: 0.1245
+2025-04-19 07:59:57,203 - INFO - [DEBUG] Loss Breakdown — ID: 4.2846, SupCon: 3.4912, Tri: 0.0952
+2025-04-19 07:59:57,377 - INFO - [DEBUG] Loss Breakdown — ID: 4.2773, SupCon: 3.5150, Tri: 0.0612
+2025-04-19 07:59:57,554 - INFO - [DEBUG] Loss Breakdown — ID: 4.2771, SupCon: 3.5048, Tri: 0.1264
+2025-04-19 07:59:57,727 - INFO - [DEBUG] Loss Breakdown — ID: 4.2735, SupCon: 3.5345, Tri: 0.0747
+2025-04-19 07:59:57,904 - INFO - [DEBUG] Loss Breakdown — ID: 4.2676, SupCon: 3.5103, Tri: 0.0986
+2025-04-19 07:59:58,078 - INFO - [DEBUG] Loss Breakdown — ID: 4.2803, SupCon: 3.5022, Tri: 0.0785
+2025-04-19 07:59:58,251 - INFO - [DEBUG] Loss Breakdown — ID: 4.2723, SupCon: 3.5258, Tri: 0.0824
+2025-04-19 07:59:58,431 - INFO - [DEBUG] Loss Breakdown — ID: 4.2748, SupCon: 3.5311, Tri: 0.0692
+2025-04-19 07:59:58,602 - INFO - [DEBUG] Loss Breakdown — ID: 4.2756, SupCon: 3.5457, Tri: 0.0857
+2025-04-19 07:59:58,776 - INFO - [DEBUG] Loss Breakdown — ID: 4.2730, SupCon: 3.4679, Tri: 0.1204
+2025-04-19 07:59:58,953 - INFO - [DEBUG] Loss Breakdown — ID: 4.2763, SupCon: 3.4956, Tri: 0.1830
+2025-04-19 07:59:59,130 - INFO - [DEBUG] Loss Breakdown — ID: 4.2713, SupCon: 3.5182, Tri: 0.0540
+2025-04-19 07:59:59,303 - INFO - [DEBUG] Loss Breakdown — ID: 4.2755, SupCon: 3.5315, Tri: 0.0720
+2025-04-19 07:59:59,477 - INFO - [DEBUG] Loss Breakdown — ID: 4.2747, SupCon: 3.4879, Tri: 0.0923
+2025-04-19 07:59:59,654 - INFO - [DEBUG] Loss Breakdown — ID: 4.2786, SupCon: 3.4242, Tri: 0.1028
+2025-04-19 07:59:59,831 - INFO - [DEBUG] Loss Breakdown — ID: 4.2760, SupCon: 3.5486, Tri: 0.0350
+2025-04-19 08:00:00,005 - INFO - [DEBUG] Loss Breakdown — ID: 4.2848, SupCon: 3.5265, Tri: 0.1207
+2025-04-19 08:00:00,181 - INFO - [DEBUG] Loss Breakdown — ID: 4.2743, SupCon: 3.6588, Tri: 0.1049
+2025-04-19 08:00:00,352 - INFO - [DEBUG] Loss Breakdown — ID: 4.2770, SupCon: 3.5913, Tri: 0.0799
+2025-04-19 08:00:00,527 - INFO - [DEBUG] Loss Breakdown — ID: 4.2686, SupCon: 3.6593, Tri: 0.1122
+2025-04-19 08:00:00,701 - INFO - [DEBUG] Loss Breakdown — ID: 4.2700, SupCon: 3.6254, Tri: 0.0784
+2025-04-19 08:00:00,875 - INFO - [DEBUG] Loss Breakdown — ID: 4.2748, SupCon: 3.6399, Tri: 0.1470
+2025-04-19 08:00:01,049 - INFO - [DEBUG] Loss Breakdown — ID: 4.2756, SupCon: 3.6656, Tri: 0.0845
+2025-04-19 08:00:01,221 - INFO - [DEBUG] Loss Breakdown — ID: 4.2785, SupCon: 3.5652, Tri: 0.0465
+2025-04-19 08:00:01,425 - INFO - [DEBUG] Loss Breakdown — ID: 4.2691, SupCon: 3.4678, Tri: 0.0445
+2025-04-19 08:00:02,157 - INFO - [Epoch 1] Total Loss=0.0965
+2025-04-19 08:00:02,160 - INFO - Validating epoch 1...
+2025-04-19 08:00:31,950 - INFO - [Epoch 1] Avg Train Loss = 0.0965 | 
+2025-04-19 08:00:31,950 - INFO - ==================== Epoch 1 Validation ====================
+2025-04-19 08:00:31,950 - INFO - Validation rank-1    : 59.63%
+2025-04-19 08:00:31,950 - INFO - Validation rank-5    : 78.48%
+2025-04-19 08:00:31,950 - INFO - Validation rank-10   : 87.13%
+2025-04-19 08:00:31,950 - INFO - Validation mAP      : 68.77%
+2025-04-19 08:00:31,950 - INFO - ============================================================
+2025-04-19 08:00:31,950 - INFO - Saving best model at epoch 1 (Acc@1=59.63%)  saved_models/stage3_promptsg_rn50_11k_dorsal_r_promptsg_e20_lrNA_bs32_BEST.pth
+2025-04-19 08:00:32,861 - INFO -  Epoch 2/20
+2025-04-19 08:00:32,864 - INFO - [Epoch 2] Learning rate: 0.000010
+2025-04-19 08:00:57,087 - INFO - [DEBUG] Loss Breakdown — ID: 4.2716, SupCon: 3.6864, Tri: 0.0304
+2025-04-19 08:00:57,168 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+2025-04-19 08:00:57,168 - INFO - [DEBUG] img_features: torch.Size([32, 1024]), prompt: torch.Size([32, 3, 1024]), pooled: torch.Size([32, 1024])
+2025-04-19 08:00:57,263 - INFO - [DEBUG] Loss Breakdown — ID: 4.2770, SupCon: 3.5263, Tri: 0.0676
+2025-04-19 08:00:57,439 - INFO - [DEBUG] Loss Breakdown — ID: 4.2659, SupCon: 3.7270, Tri: 0.0564
+2025-04-19 08:00:57,616 - INFO - [DEBUG] Loss Breakdown — ID: 4.2724, SupCon: 3.6957, Tri: 0.1156
+2025-04-19 08:00:57,796 - INFO - [DEBUG] Loss Breakdown — ID: 4.2738, SupCon: 3.6062, Tri: 0.0911
+2025-04-19 08:00:57,973 - INFO - [DEBUG] Loss Breakdown — ID: 4.2818, SupCon: 3.7529, Tri: 0.0658
+2025-04-19 08:00:58,150 - INFO - [DEBUG] Loss Breakdown — ID: 4.2690, SupCon: 3.8102, Tri: 0.1260
+2025-04-19 08:00:58,329 - INFO - [DEBUG] Loss Breakdown — ID: 4.2677, SupCon: 3.7100, Tri: 0.0178
+2025-04-19 08:00:58,506 - INFO - [DEBUG] Loss Breakdown — ID: 4.2805, SupCon: 3.7849, Tri: 0.0757
+2025-04-19 08:00:58,680 - INFO - [DEBUG] Loss Breakdown — ID: 4.2775, SupCon: 3.7408, Tri: 0.0484
+2025-04-19 08:00:58,858 - INFO - [DEBUG] Loss Breakdown — ID: 4.2810, SupCon: 3.6426, Tri: 0.0810
+2025-04-19 08:00:59,035 - INFO - [DEBUG] Loss Breakdown — ID: 4.2722, SupCon: 3.6260, Tri: 0.0446
+2025-04-19 08:00:59,209 - INFO - [DEBUG] Loss Breakdown — ID: 4.2743, SupCon: 3.5648, Tri: 0.0828
+2025-04-19 08:00:59,385 - INFO - [DEBUG] Loss Breakdown — ID: 4.2758, SupCon: 3.5525, Tri: 0.0580
+2025-04-19 08:00:59,562 - INFO - [DEBUG] Loss Breakdown — ID: 4.2794, SupCon: 3.6127, Tri: 0.1069
+2025-04-19 08:00:59,740 - INFO - [DEBUG] Loss Breakdown — ID: 4.2742, SupCon: 3.6243, Tri: 0.0443
+2025-04-19 08:00:59,917 - INFO - [DEBUG] Loss Breakdown — ID: 4.2744, SupCon: 3.5857, Tri: 0.0961
+2025-04-19 08:01:00,093 - INFO - [DEBUG] Loss Breakdown — ID: 4.2713, SupCon: 3.5833, Tri: 0.0250
+2025-04-19 08:01:00,267 - INFO - [DEBUG] Loss Breakdown — ID: 4.2801, SupCon: 3.5906, Tri: 0.0762
+2025-04-19 08:01:00,441 - INFO - [DEBUG] Loss Breakdown — ID: 4.2780, SupCon: 3.6107, Tri: 0.0689
+2025-04-19 08:01:00,619 - INFO - [DEBUG] Loss Breakdown — ID: 4.2677, SupCon: 3.5777, Tri: 0.0329
+2025-04-19 08:01:00,793 - INFO - [DEBUG] Loss Breakdown — ID: 4.2771, SupCon: 3.5429, Tri: 0.0444
+2025-04-19 08:01:00,968 - INFO - [DEBUG] Loss Breakdown — ID: 4.2789, SupCon: 3.5910, Tri: 0.0567
+2025-04-19 08:01:01,139 - INFO - [DEBUG] Loss Breakdown — ID: 4.2686, SupCon: 3.6080, Tri: 0.0578
+2025-04-19 08:01:01,315 - INFO - [DEBUG] Loss Breakdown — ID: 4.2685, SupCon: 3.5538, Tri: 0.0103
+2025-04-19 08:01:01,486 - INFO - [DEBUG] Loss Breakdown — ID: 4.2772, SupCon: 3.6865, Tri: 0.0879
+2025-04-19 08:01:01,662 - INFO - [DEBUG] Loss Breakdown — ID: 4.2780, SupCon: 3.5709, Tri: 0.0459
+2025-04-19 08:01:01,822 - INFO - [DEBUG] Loss Breakdown — ID: 4.2764, SupCon: 3.4026, Tri: 0.0314
+2025-04-19 08:01:02,558 - INFO - [Epoch 2] Total Loss=0.0624
+2025-04-19 08:01:02,558 - INFO - Validating epoch 2...
+2025-04-19 08:01:31,949 - INFO - [Epoch 2] Avg Train Loss = 0.0624 | 
+2025-04-19 08:01:31,949 - INFO - ==================== Epoch 2 Validation ====================
+2025-04-19 08:01:31,949 - INFO - Validation rank-1    : 76.31%
+2025-04-19 08:01:31,952 - INFO - Validation rank-5    : 88.36%
+2025-04-19 08:01:31,952 - INFO - Validation rank-10   : 91.14%
+2025-04-19 08:01:31,952 - INFO - Validation mAP      : 81.85%
+2025-04-19 08:01:31,952 - INFO - ============================================================
+2025-04-19 08:01:31,952 - INFO - Saving best model at epoch 2 (Acc@1=76.31%)  saved_models/stage3_promptsg_rn50_11k_dorsal_r_promptsg_e20_lrNA_bs32_BEST.pth
+2025-04-19 08:01:32,956 - INFO -  Epoch 3/20
+2025-04-19 08:01:32,959 - INFO - [Epoch 3] Learning rate: 0.000010
+2025-04-19 08:01:57,246 - INFO - [DEBUG] Loss Breakdown — ID: 4.2770, SupCon: 3.5111, Tri: 0.0637
+2025-04-19 08:01:57,326 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+2025-04-19 08:01:57,326 - INFO - [DEBUG] img_features: torch.Size([32, 1024]), prompt: torch.Size([32, 3, 1024]), pooled: torch.Size([32, 1024])
+2025-04-19 08:01:57,425 - INFO - [DEBUG] Loss Breakdown — ID: 4.2793, SupCon: 3.4929, Tri: 0.0531
+2025-04-19 08:01:57,604 - INFO - [DEBUG] Loss Breakdown — ID: 4.2797, SupCon: 3.4790, Tri: 0.0571
+2025-04-19 08:01:57,780 - INFO - [DEBUG] Loss Breakdown — ID: 4.2783, SupCon: 3.5120, Tri: 0.0764
+2025-04-19 08:01:57,954 - INFO - [DEBUG] Loss Breakdown — ID: 4.2779, SupCon: 3.5433, Tri: 0.0216
+2025-04-19 08:01:58,132 - INFO - [DEBUG] Loss Breakdown — ID: 4.2758, SupCon: 3.4586, Tri: 0.0549
+2025-04-19 08:01:58,312 - INFO - [DEBUG] Loss Breakdown — ID: 4.2760, SupCon: 3.5357, Tri: 0.0738
+2025-04-19 08:01:58,489 - INFO - [DEBUG] Loss Breakdown — ID: 4.2757, SupCon: 3.5818, Tri: 0.0352
+2025-04-19 08:01:58,666 - INFO - [DEBUG] Loss Breakdown — ID: 4.2745, SupCon: 3.4887, Tri: 0.0819
+2025-04-19 08:01:58,842 - INFO - [DEBUG] Loss Breakdown — ID: 4.2752, SupCon: 3.4744, Tri: 0.0519
+2025-04-19 08:01:59,019 - INFO - [DEBUG] Loss Breakdown — ID: 4.2789, SupCon: 3.4749, Tri: 0.0386
+2025-04-19 08:01:59,196 - INFO - [DEBUG] Loss Breakdown — ID: 4.2745, SupCon: 3.4955, Tri: 0.0054
+2025-04-19 08:01:59,373 - INFO - [DEBUG] Loss Breakdown — ID: 4.2756, SupCon: 3.4681, Tri: 0.0342
+2025-04-19 08:01:59,548 - INFO - [DEBUG] Loss Breakdown — ID: 4.2707, SupCon: 3.6038, Tri: 0.1197
+2025-04-19 08:01:59,729 - INFO - [DEBUG] Loss Breakdown — ID: 4.2874, SupCon: 3.4860, Tri: 0.0579
+2025-04-19 08:01:59,906 - INFO - [DEBUG] Loss Breakdown — ID: 4.2745, SupCon: 3.5310, Tri: 0.0686
+2025-04-19 08:02:00,083 - INFO - [DEBUG] Loss Breakdown — ID: 4.2788, SupCon: 3.5512, Tri: 0.0730
+2025-04-19 08:02:00,263 - INFO - [DEBUG] Loss Breakdown — ID: 4.2801, SupCon: 3.5634, Tri: 0.0437
+2025-04-19 08:02:00,438 - INFO - [DEBUG] Loss Breakdown — ID: 4.2772, SupCon: 3.6436, Tri: 0.0644
+2025-04-19 08:02:00,613 - INFO - [DEBUG] Loss Breakdown — ID: 4.2746, SupCon: 3.6798, Tri: 0.0862
+2025-04-19 08:02:00,788 - INFO - [DEBUG] Loss Breakdown — ID: 4.2796, SupCon: 3.6655, Tri: 0.1392
+2025-04-19 08:02:00,963 - INFO - [DEBUG] Loss Breakdown — ID: 4.2801, SupCon: 3.5380, Tri: 0.1011
+2025-04-19 08:02:01,139 - INFO - [DEBUG] Loss Breakdown — ID: 4.2769, SupCon: 3.6043, Tri: 0.0623
+2025-04-19 08:02:01,314 - INFO - [DEBUG] Loss Breakdown — ID: 4.2766, SupCon: 3.6876, Tri: 0.0666
+2025-04-19 08:02:01,485 - INFO - [DEBUG] Loss Breakdown — ID: 4.2816, SupCon: 3.6618, Tri: 0.0564
+2025-04-19 08:02:01,662 - INFO - [DEBUG] Loss Breakdown — ID: 4.2781, SupCon: 3.6118, Tri: 0.0609
+2025-04-19 08:02:01,836 - INFO - [DEBUG] Loss Breakdown — ID: 4.2752, SupCon: 3.6666, Tri: 0.0901
+2025-04-19 08:02:01,995 - INFO - [DEBUG] Loss Breakdown — ID: 4.2825, SupCon: 3.4443, Tri: 0.0902
+2025-04-19 08:02:02,733 - INFO - [Epoch 3] Total Loss=0.0653
+2025-04-19 08:02:02,733 - INFO - Validating epoch 3...
+2025-04-19 08:02:32,163 - INFO - [Epoch 3] Avg Train Loss = 0.0653 | 
+2025-04-19 08:02:32,163 - INFO - ==================== Epoch 3 Validation ====================
+2025-04-19 08:02:32,163 - INFO - Validation rank-1    : 68.59%
+2025-04-19 08:02:32,163 - INFO - Validation rank-5    : 87.74%
+2025-04-19 08:02:32,163 - INFO - Validation rank-10   : 91.97%
+2025-04-19 08:02:32,163 - INFO - Validation mAP      : 77.19%
+2025-04-19 08:02:32,163 - INFO - ============================================================
+2025-04-19 08:02:32,163 - INFO - No improvement in Acc@1. Patience counter: 1/3
+2025-04-19 08:02:32,163 - INFO -  Epoch 4/20
+2025-04-19 08:02:32,163 - INFO - [Epoch 4] Learning rate: 0.000009
+2025-04-19 08:02:56,215 - INFO - [DEBUG] Loss Breakdown — ID: 4.2794, SupCon: 3.6437, Tri: 0.1013
+2025-04-19 08:02:56,296 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+2025-04-19 08:02:56,296 - INFO - [DEBUG] img_features: torch.Size([32, 1024]), prompt: torch.Size([32, 3, 1024]), pooled: torch.Size([32, 1024])
+2025-04-19 08:02:56,395 - INFO - [DEBUG] Loss Breakdown — ID: 4.2685, SupCon: 3.6278, Tri: 0.0322
+2025-04-19 08:02:56,569 - INFO - [DEBUG] Loss Breakdown — ID: 4.2760, SupCon: 3.5492, Tri: 0.0232
+2025-04-19 08:02:56,742 - INFO - [DEBUG] Loss Breakdown — ID: 4.2765, SupCon: 3.4979, Tri: 0.0909
+2025-04-19 08:02:56,919 - INFO - [DEBUG] Loss Breakdown — ID: 4.2794, SupCon: 3.5227, Tri: 0.0310
+2025-04-19 08:02:57,099 - INFO - [DEBUG] Loss Breakdown — ID: 4.2748, SupCon: 3.5111, Tri: 0.0984
+2025-04-19 08:02:57,274 - INFO - [DEBUG] Loss Breakdown — ID: 4.2771, SupCon: 3.4599, Tri: 0.0809
+2025-04-19 08:02:57,451 - INFO - [DEBUG] Loss Breakdown — ID: 4.2779, SupCon: 3.4882, Tri: 0.0877
+2025-04-19 08:02:57,628 - INFO - [DEBUG] Loss Breakdown — ID: 4.2854, SupCon: 3.4752, Tri: 0.0170
+2025-04-19 08:02:57,802 - INFO - [DEBUG] Loss Breakdown — ID: 4.2706, SupCon: 3.5579, Tri: 0.0436
+2025-04-19 08:02:57,977 - INFO - [DEBUG] Loss Breakdown — ID: 4.2816, SupCon: 3.4142, Tri: 0.0031
+2025-04-19 08:02:58,157 - INFO - [DEBUG] Loss Breakdown — ID: 4.2789, SupCon: 3.3406, Tri: 0.0130
+2025-04-19 08:02:58,331 - INFO - [DEBUG] Loss Breakdown — ID: 4.2757, SupCon: 3.4562, Tri: 0.0433
+2025-04-19 08:02:58,509 - INFO - [DEBUG] Loss Breakdown — ID: 4.2843, SupCon: 3.3773, Tri: 0.0197
+2025-04-19 08:02:58,683 - INFO - [DEBUG] Loss Breakdown — ID: 4.2749, SupCon: 3.3995, Tri: 0.0387
+2025-04-19 08:02:58,860 - INFO - [DEBUG] Loss Breakdown — ID: 4.2754, SupCon: 3.4115, Tri: 0.0149
+2025-04-19 08:02:59,038 - INFO - [DEBUG] Loss Breakdown — ID: 4.2763, SupCon: 3.4409, Tri: 0.0273
+2025-04-19 08:02:59,212 - INFO - [DEBUG] Loss Breakdown — ID: 4.2787, SupCon: 3.3355, Tri: 0.0815
+2025-04-19 08:02:59,386 - INFO - [DEBUG] Loss Breakdown — ID: 4.2742, SupCon: 3.3149, Tri: 0.0152
+2025-04-19 08:02:59,564 - INFO - [DEBUG] Loss Breakdown — ID: 4.2808, SupCon: 3.4166, Tri: 0.0435
+2025-04-19 08:02:59,739 - INFO - [DEBUG] Loss Breakdown — ID: 4.2763, SupCon: 3.3697, Tri: 0.0139
+2025-04-19 08:02:59,913 - INFO - [DEBUG] Loss Breakdown — ID: 4.2791, SupCon: 3.3809, Tri: 0.1046
+2025-04-19 08:03:00,087 - INFO - [DEBUG] Loss Breakdown — ID: 4.2728, SupCon: 3.2687, Tri: 0.1131
+2025-04-19 08:03:00,260 - INFO - [DEBUG] Loss Breakdown — ID: 4.2726, SupCon: 3.3183, Tri: 0.0712
+2025-04-19 08:03:00,433 - INFO - [DEBUG] Loss Breakdown — ID: 4.2685, SupCon: 3.4760, Tri: 0.0404
+2025-04-19 08:03:00,608 - INFO - [DEBUG] Loss Breakdown — ID: 4.2721, SupCon: 3.4115, Tri: 0.1241
+2025-04-19 08:03:00,781 - INFO - [DEBUG] Loss Breakdown — ID: 4.2809, SupCon: 3.4654, Tri: 0.0293
+2025-04-19 08:03:00,942 - INFO - [DEBUG] Loss Breakdown — ID: 4.2791, SupCon: 3.1645, Tri: 0.0603
+2025-04-19 08:03:01,666 - INFO - [Epoch 4] Total Loss=0.0523
+2025-04-19 08:03:01,666 - INFO - Validating epoch 4...
+2025-04-19 08:03:31,204 - INFO - [Epoch 4] Avg Train Loss = 0.0523 | 
+2025-04-19 08:03:31,204 - INFO - ==================== Epoch 4 Validation ====================
+2025-04-19 08:03:31,204 - INFO - Validation rank-1    : 69.93%
+2025-04-19 08:03:31,204 - INFO - Validation rank-5    : 88.67%
+2025-04-19 08:03:31,204 - INFO - Validation rank-10   : 93.10%
+2025-04-19 08:03:31,204 - INFO - Validation mAP      : 78.08%
+2025-04-19 08:03:31,204 - INFO - ============================================================
+2025-04-19 08:03:31,204 - INFO - No improvement in Acc@1. Patience counter: 2/3
+2025-04-19 08:03:31,204 - INFO -  Epoch 5/20
+2025-04-19 08:03:31,204 - INFO - [Epoch 5] Learning rate: 0.000009
+2025-04-19 08:03:55,215 - INFO - [DEBUG] Loss Breakdown — ID: 4.2732, SupCon: 3.3994, Tri: 0.0593
+2025-04-19 08:03:55,293 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
+2025-04-19 08:03:55,296 - INFO - [DEBUG] img_features: torch.Size([32, 1024]), prompt: torch.Size([32, 3, 1024]), pooled: torch.Size([32, 1024])
+2025-04-19 08:03:55,392 - INFO - [DEBUG] Loss Breakdown — ID: 4.2699, SupCon: 3.4186, Tri: 0.0069
+2025-04-19 08:03:55,572 - INFO - [DEBUG] Loss Breakdown — ID: 4.2806, SupCon: 3.4164, Tri: 0.0177
+2025-04-19 08:03:55,748 - INFO - [DEBUG] Loss Breakdown — ID: 4.2832, SupCon: 3.3771, Tri: 0.0691
+2025-04-19 08:03:55,927 - INFO - [DEBUG] Loss Breakdown — ID: 4.2759, SupCon: 3.4504, Tri: 0.0759
+2025-04-19 08:03:56,101 - INFO - [DEBUG] Loss Breakdown — ID: 4.2725, SupCon: 3.3755, Tri: 0.0859
+2025-04-19 08:03:56,276 - INFO - [DEBUG] Loss Breakdown — ID: 4.2767, SupCon: 3.3808, Tri: 0.0767
+2025-04-19 08:03:56,453 - INFO - [DEBUG] Loss Breakdown — ID: 4.2725, SupCon: 3.4192, Tri: 0.0140
+2025-04-19 08:03:56,632 - INFO - [DEBUG] Loss Breakdown — ID: 4.2785, SupCon: 3.3653, Tri: 0.0382
+2025-04-19 08:03:56,809 - INFO - [DEBUG] Loss Breakdown — ID: 4.2764, SupCon: 3.3743, Tri: 0.0466
+2025-04-19 08:03:56,986 - INFO - [DEBUG] Loss Breakdown — ID: 4.2758, SupCon: 3.4733, Tri: 0.0945
+2025-04-19 08:03:57,160 - INFO - [DEBUG] Loss Breakdown — ID: 4.2775, SupCon: 3.4365, Tri: 0.1571
+2025-04-19 08:03:57,336 - INFO - [DEBUG] Loss Breakdown — ID: 4.2791, SupCon: 3.4079, Tri: 0.0230
+2025-04-19 08:03:57,510 - INFO - [DEBUG] Loss Breakdown — ID: 4.2792, SupCon: 3.5156, Tri: 0.0778
+2025-04-19 08:03:57,690 - INFO - [DEBUG] Loss Breakdown — ID: 4.2773, SupCon: 3.4290, Tri: 0.1324
+2025-04-19 08:03:57,866 - INFO - [DEBUG] Loss Breakdown — ID: 4.2714, SupCon: 3.4677, Tri: 0.0427
+2025-04-19 08:03:58,042 - INFO - [DEBUG] Loss Breakdown — ID: 4.2821, SupCon: 3.4469, Tri: 0.0254
+2025-04-19 08:03:58,220 - INFO - [DEBUG] Loss Breakdown — ID: 4.2839, SupCon: 3.5153, Tri: 0.0272
+2025-04-19 08:03:58,394 - INFO - [DEBUG] Loss Breakdown — ID: 4.2729, SupCon: 3.5082, Tri: 0.0236
+2025-04-19 08:03:58,569 - INFO - [DEBUG] Loss Breakdown — ID: 4.2845, SupCon: 3.5374, Tri: 0.0610
+2025-04-19 08:03:58,746 - INFO - [DEBUG] Loss Breakdown — ID: 4.2771, SupCon: 3.4345, Tri: 0.0673
+2025-04-19 08:03:58,919 - INFO - [DEBUG] Loss Breakdown — ID: 4.2770, SupCon: 3.3722, Tri: 0.0493
+2025-04-19 08:03:59,093 - INFO - [DEBUG] Loss Breakdown — ID: 4.2760, SupCon: 3.4797, Tri: 0.0447
+2025-04-19 08:03:59,266 - INFO - [DEBUG] Loss Breakdown — ID: 4.2829, SupCon: 3.4054, Tri: 0.0735
+2025-04-19 08:03:59,439 - INFO - [DEBUG] Loss Breakdown — ID: 4.2790, SupCon: 3.4700, Tri: 0.0476
+2025-04-19 08:03:59,614 - INFO - [DEBUG] Loss Breakdown — ID: 4.2750, SupCon: 3.4301, Tri: 0.0729
+2025-04-19 08:03:59,791 - INFO - [DEBUG] Loss Breakdown — ID: 4.2865, SupCon: 3.5083, Tri: 0.0558
+2025-04-19 08:03:59,953 - INFO - [DEBUG] Loss Breakdown — ID: 4.2804, SupCon: 3.2244, Tri: 0.0287
+2025-04-19 08:04:00,699 - INFO - [Epoch 5] Total Loss=0.0570
+2025-04-19 08:04:00,699 - INFO - Validating epoch 5...
+2025-04-19 08:04:30,169 - INFO - [Epoch 5] Avg Train Loss = 0.0570 | 
+2025-04-19 08:04:30,169 - INFO - ==================== Epoch 5 Validation ====================
+2025-04-19 08:04:30,169 - INFO - Validation rank-1    : 65.29%
+2025-04-19 08:04:30,169 - INFO - Validation rank-5    : 82.39%
+2025-04-19 08:04:30,169 - INFO - Validation rank-10   : 87.64%
+2025-04-19 08:04:30,169 - INFO - Validation mAP      : 73.15%
+2025-04-19 08:04:30,169 - INFO - ============================================================
+2025-04-19 08:04:30,169 - INFO - No improvement in Acc@1. Patience counter: 3/3
+2025-04-19 08:04:30,169 - INFO - Early srankping at epoch 5 due to no improvement in rank-1 accuracy.
+2025-04-19 08:04:31,080 - INFO - ====== FINAL SUMMARY ======
+2025-04-19 08:04:31,080 - INFO - Total epochs       : 20
+2025-04-19 08:04:31,080 - INFO - Avg Loss           : 67.9506
+2025-04-19 08:04:31,080 - INFO - Best Acc@1 Epoch   : 2
+2025-04-19 08:04:31,080 - INFO - Best Acc@1         : 76.31%
+2025-04-19 08:04:31,080 - INFO - Best mAP            : 73.15%
+2025-04-19 08:04:31,080 - INFO - ============================

@@ -1,0 +1,10 @@
+2025-04-19 10:13:57,288 - INFO - Saving logs to: train_logs/stage3_promptsg_vitb16_11k_dorsal_r_promptsg_e20_lrNA_bs32.log
+2025-04-19 10:13:57,288 - INFO - Using 72 classes | 28 training batches
+2025-04-19 10:13:57,288 - INFO - ======= Stage 3: PromptSG Training =======
+2025-04-19 10:13:57,288 - INFO - Experiment Name : stage3_promptsg
+2025-04-19 10:13:57,288 - INFO - Model & Dataset : vitb16, 11k, dorsal_r
+2025-04-19 10:13:57,288 - INFO - Freeze Text Enc.: True
+2025-04-19 10:13:57,288 - INFO - Loss Weights    : ID=1.0, Tri=1.0, SupCon=0
+2025-04-19 10:13:57,288 - INFO - LR=1e-05 | Epochs=20 | BatchSize=32
+2025-04-19 10:13:57,288 - INFO -  Epoch 1/20
+2025-04-19 10:13:57,291 - INFO - [Epoch 1] Learning rate: 0.000010

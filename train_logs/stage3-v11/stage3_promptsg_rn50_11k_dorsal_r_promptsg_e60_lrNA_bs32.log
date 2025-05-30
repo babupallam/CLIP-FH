@@ -1,0 +1,2715 @@
+Saving logs to: train_logs/stage3_promptsg_rn50_11k_dorsal_r_promptsg_e60_lrNA_bs32.log
+Using 72 classes | 28 training batches
+======= Stage 3: PromptSG Training =======
+Experiment Name : stage3_promptsg
+Model & Dataset : rn50, 11k, dorsal_r
+Freeze Text Enc.: True
+Loss Weights    : ID=0.1, Tri=1.0, SupCon=0
+LR=0.0001 | Epochs=60 | BatchSize=32
+ Epoch 1/60
+[Epoch 1] Learning rate: 0.000100
+[DEBUG] Pooled feature mean L2 norm: 1.0000
+[DEBUG] ArcFace confidence: 0.0989
+[DEBUG] Loss Breakdown — ID: 17.5282, SupCon: 2.0044, Tri: 0.1979
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 128]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 1024]), prompt: torch.Size([32, 3, 1024]), pooled: torch.Size([32, 1024])
+[DEBUG] ArcFace confidence: 0.0879
+[DEBUG] Loss Breakdown — ID: 17.2378, SupCon: 1.9706, Tri: 0.1829
+[DEBUG] ArcFace confidence: 0.1089
+[DEBUG] Loss Breakdown — ID: 17.3904, SupCon: 1.2883, Tri: 0.1291
+[DEBUG] ArcFace confidence: 0.1253
+[DEBUG] Loss Breakdown — ID: 17.0421, SupCon: 1.7294, Tri: 0.2079
+[DEBUG] ArcFace confidence: 0.1589
+[DEBUG] Loss Breakdown — ID: 16.4792, SupCon: 1.8588, Tri: 0.1943
+[DEBUG] ArcFace confidence: 0.2024
+[DEBUG] Loss Breakdown — ID: 16.3043, SupCon: 1.9729, Tri: 0.2070
+[DEBUG] ArcFace confidence: 0.2231
+[DEBUG] Loss Breakdown — ID: 16.1682, SupCon: 1.4721, Tri: 0.1399
+[DEBUG] ArcFace confidence: 0.3210
+[DEBUG] Loss Breakdown — ID: 16.6166, SupCon: 1.4600, Tri: 0.1312
+[DEBUG] ArcFace confidence: 0.2520
+[DEBUG] Loss Breakdown — ID: 15.2584, SupCon: 1.3481, Tri: 0.1124
+[DEBUG] ArcFace confidence: 0.2338
+[DEBUG] Loss Breakdown — ID: 15.5937, SupCon: 1.2784, Tri: 0.1141
+[DEBUG] ArcFace confidence: 0.2469
+[DEBUG] Loss Breakdown — ID: 15.6255, SupCon: 1.5385, Tri: 0.1425
+[DEBUG] ArcFace confidence: 0.2984
+[DEBUG] Loss Breakdown — ID: 15.7671, SupCon: 1.4180, Tri: 0.1179
+[DEBUG] ArcFace confidence: 0.2532
+[DEBUG] Loss Breakdown — ID: 14.3064, SupCon: 0.7743, Tri: 0.0755
+[DEBUG] ArcFace confidence: 0.2782
+[DEBUG] Loss Breakdown — ID: 14.6817, SupCon: 0.8446, Tri: 0.0762
+[DEBUG] ArcFace confidence: 0.2576
+[DEBUG] Loss Breakdown — ID: 14.7276, SupCon: 1.7882, Tri: 0.1597
+[DEBUG] ArcFace confidence: 0.2822
+[DEBUG] Loss Breakdown — ID: 13.7429, SupCon: 1.8693, Tri: 0.1561
+Saving logs to: train_logs/stage3_promptsg_rn50_11k_dorsal_r_promptsg_e60_lrNA_bs32.log
+Using 72 classes | 28 training batches
+======= Stage 3: PromptSG Training =======
+Experiment Name : stage3_promptsg
+Model & Dataset : rn50, 11k, dorsal_r
+Freeze Text Enc.: True
+Loss Weights    : ID=0.1, Tri=1.0, SupCon=0
+LR=1e-05 | Epochs=60 | BatchSize=32
+ Epoch 1/60
+[Epoch 1] Learning rate: 0.000010
+[DEBUG] Pooled feature mean L2 norm: 1.0000
+[DEBUG] ArcFace confidence: 0.0822
+[DEBUG] Loss Breakdown — ID: 17.7095, SupCon: 1.7381, Tri: 0.1537
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 128]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 1024]), prompt: torch.Size([32, 3, 1024]), pooled: torch.Size([32, 1024])
+[DEBUG] ArcFace confidence: 0.0826
+[DEBUG] Loss Breakdown — ID: 17.6200, SupCon: 1.9891, Tri: 0.1718
+[DEBUG] ArcFace confidence: 0.0846
+[DEBUG] Loss Breakdown — ID: 17.4403, SupCon: 2.0017, Tri: 0.1543
+[DEBUG] ArcFace confidence: 0.0915
+[DEBUG] Loss Breakdown — ID: 17.3207, SupCon: 0.8367, Tri: 0.0939
+[DEBUG] ArcFace confidence: 0.0970
+[DEBUG] Loss Breakdown — ID: 17.5646, SupCon: 1.6251, Tri: 0.1749
+[DEBUG] ArcFace confidence: 0.0843
+[DEBUG] Loss Breakdown — ID: 17.1263, SupCon: 1.6155, Tri: 0.1514
+[DEBUG] ArcFace confidence: 0.0939
+[DEBUG] Loss Breakdown — ID: 17.1563, SupCon: 1.3480, Tri: 0.1378
+[DEBUG] ArcFace confidence: 0.0882
+[DEBUG] Loss Breakdown — ID: 17.3189, SupCon: 1.4027, Tri: 0.1367
+[DEBUG] ArcFace confidence: 0.0880
+[DEBUG] Loss Breakdown — ID: 16.9823, SupCon: 0.6661, Tri: 0.0510
+[DEBUG] ArcFace confidence: 0.0998
+[DEBUG] Loss Breakdown — ID: 17.0887, SupCon: 1.7993, Tri: 0.1762
+[DEBUG] ArcFace confidence: 0.0890
+[DEBUG] Loss Breakdown — ID: 17.0780, SupCon: 1.4602, Tri: 0.1379
+[DEBUG] ArcFace confidence: 0.0846
+[DEBUG] Loss Breakdown — ID: 17.1665, SupCon: 1.8305, Tri: 0.1562
+[DEBUG] ArcFace confidence: 0.1041
+[DEBUG] Loss Breakdown — ID: 16.8385, SupCon: 1.4432, Tri: 0.1338
+[DEBUG] ArcFace confidence: 0.0866
+[DEBUG] Loss Breakdown — ID: 16.7822, SupCon: 1.8537, Tri: 0.1794
+[DEBUG] ArcFace confidence: 0.1076
+[DEBUG] Loss Breakdown — ID: 16.7139, SupCon: 0.8911, Tri: 0.0987
+[DEBUG] ArcFace confidence: 0.1049
+[DEBUG] Loss Breakdown — ID: 17.0577, SupCon: 1.1948, Tri: 0.1216
+[DEBUG] ArcFace confidence: 0.0906
+[DEBUG] Loss Breakdown — ID: 16.3680, SupCon: 1.8603, Tri: 0.1749
+[DEBUG] ArcFace confidence: 0.1052
+[DEBUG] Loss Breakdown — ID: 16.2035, SupCon: 1.8691, Tri: 0.1597
+[DEBUG] ArcFace confidence: 0.1059
+[DEBUG] Loss Breakdown — ID: 16.6588, SupCon: 1.5089, Tri: 0.1228
+[DEBUG] ArcFace confidence: 0.0947
+[DEBUG] Loss Breakdown — ID: 16.2819, SupCon: 2.0755, Tri: 0.2136
+[DEBUG] ArcFace confidence: 0.1062
+[DEBUG] Loss Breakdown — ID: 16.3592, SupCon: 1.5247, Tri: 0.1393
+[DEBUG] ArcFace confidence: 0.0936
+[DEBUG] Loss Breakdown — ID: 15.9762, SupCon: 1.6676, Tri: 0.1696
+[DEBUG] ArcFace confidence: 0.1097
+[DEBUG] Loss Breakdown — ID: 16.1239, SupCon: 1.4475, Tri: 0.1348
+[DEBUG] ArcFace confidence: 0.1315
+[DEBUG] Loss Breakdown — ID: 16.8501, SupCon: 0.9847, Tri: 0.0863
+[DEBUG] ArcFace confidence: 0.0960
+[DEBUG] Loss Breakdown — ID: 16.1822, SupCon: 1.3112, Tri: 0.1143
+[DEBUG] ArcFace confidence: 0.1133
+[DEBUG] Loss Breakdown — ID: 15.9833, SupCon: 2.1782, Tri: 0.1577
+[DEBUG] ArcFace confidence: 0.1001
+[DEBUG] Loss Breakdown — ID: 15.4411, SupCon: 1.8368, Tri: 0.1424
+[DEBUG] ArcFace confidence: 0.1257
+[DEBUG] Loss Breakdown — ID: 16.1029, SupCon: 0.9921, Tri: 0.0608
+[Epoch 1] Total Loss=1.8163
+Validating epoch 1...
+[Epoch 1] Avg Train Loss = 1.8163 | 
+==================== Epoch 1 Validation ====================
+Validation rank-1    : 42.33%
+Validation rank-5    : 60.04%
+Validation rank-10   : 73.43%
+Validation mAP      : 51.63%
+============================================================
+Saving best model at epoch 1 (Acc@1=42.33%)  saved_models/stage3_promptsg_rn50_11k_dorsal_r_promptsg_e60_lrNA_bs32_BEST.pth
+ Epoch 2/60
+[Epoch 2] Learning rate: 0.000010
+[DEBUG] ArcFace confidence: 0.1233
+[DEBUG] Loss Breakdown — ID: 15.5231, SupCon: 1.6179, Tri: 0.1153
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 128]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 1024]), prompt: torch.Size([32, 3, 1024]), pooled: torch.Size([32, 1024])
+[DEBUG] ArcFace confidence: 0.1502
+[DEBUG] Loss Breakdown — ID: 15.7405, SupCon: 1.2762, Tri: 0.1185
+[DEBUG] ArcFace confidence: 0.1202
+[DEBUG] Loss Breakdown — ID: 15.3909, SupCon: 1.3008, Tri: 0.0850
+[DEBUG] ArcFace confidence: 0.1348
+[DEBUG] Loss Breakdown — ID: 15.0814, SupCon: 1.4926, Tri: 0.1077
+[DEBUG] ArcFace confidence: 0.1321
+[DEBUG] Loss Breakdown — ID: 15.4105, SupCon: 1.4432, Tri: 0.1020
+[DEBUG] ArcFace confidence: 0.1114
+[DEBUG] Loss Breakdown — ID: 15.0732, SupCon: 1.5346, Tri: 0.0686
+[DEBUG] ArcFace confidence: 0.1894
+[DEBUG] Loss Breakdown — ID: 15.2159, SupCon: 1.3925, Tri: 0.1061
+[DEBUG] ArcFace confidence: 0.1507
+[DEBUG] Loss Breakdown — ID: 14.8953, SupCon: 1.5342, Tri: 0.0862
+[DEBUG] ArcFace confidence: 0.1431
+[DEBUG] Loss Breakdown — ID: 14.8086, SupCon: 1.4314, Tri: 0.1013
+[DEBUG] ArcFace confidence: 0.1371
+[DEBUG] Loss Breakdown — ID: 14.5072, SupCon: 1.6335, Tri: 0.1145
+[DEBUG] ArcFace confidence: 0.1766
+[DEBUG] Loss Breakdown — ID: 14.9618, SupCon: 1.0080, Tri: 0.0784
+[DEBUG] ArcFace confidence: 0.1782
+[DEBUG] Loss Breakdown — ID: 15.1631, SupCon: 1.6071, Tri: 0.1103
+[DEBUG] ArcFace confidence: 0.1517
+[DEBUG] Loss Breakdown — ID: 14.6534, SupCon: 1.8835, Tri: 0.1413
+[DEBUG] ArcFace confidence: 0.2126
+[DEBUG] Loss Breakdown — ID: 14.6097, SupCon: 1.6797, Tri: 0.0957
+[DEBUG] ArcFace confidence: 0.1377
+[DEBUG] Loss Breakdown — ID: 13.7859, SupCon: 1.5131, Tri: 0.0917
+[DEBUG] ArcFace confidence: 0.1812
+[DEBUG] Loss Breakdown — ID: 14.4385, SupCon: 1.4483, Tri: 0.0971
+[DEBUG] ArcFace confidence: 0.2054
+[DEBUG] Loss Breakdown — ID: 14.3118, SupCon: 1.8610, Tri: 0.1044
+[DEBUG] ArcFace confidence: 0.1636
+[DEBUG] Loss Breakdown — ID: 14.4356, SupCon: 1.0743, Tri: 0.0859
+[DEBUG] ArcFace confidence: 0.1435
+[DEBUG] Loss Breakdown — ID: 14.2723, SupCon: 1.3174, Tri: 0.0913
+[DEBUG] ArcFace confidence: 0.1753
+[DEBUG] Loss Breakdown — ID: 14.0171, SupCon: 1.5983, Tri: 0.1086
+[DEBUG] ArcFace confidence: 0.2036
+[DEBUG] Loss Breakdown — ID: 14.4615, SupCon: 1.3088, Tri: 0.0712
+[DEBUG] ArcFace confidence: 0.2089
+[DEBUG] Loss Breakdown — ID: 13.8639, SupCon: 1.9584, Tri: 0.1019
+[DEBUG] ArcFace confidence: 0.1885
+[DEBUG] Loss Breakdown — ID: 13.9609, SupCon: 1.3123, Tri: 0.0820
+[DEBUG] ArcFace confidence: 0.2172
+[DEBUG] Loss Breakdown — ID: 14.2487, SupCon: 1.2268, Tri: 0.0622
+[DEBUG] ArcFace confidence: 0.1630
+[DEBUG] Loss Breakdown — ID: 13.7655, SupCon: 1.3977, Tri: 0.0449
+[DEBUG] ArcFace confidence: 0.1798
+[DEBUG] Loss Breakdown — ID: 13.9963, SupCon: 2.2211, Tri: 0.1294
+[DEBUG] ArcFace confidence: 0.1906
+[DEBUG] Loss Breakdown — ID: 13.6374, SupCon: 1.6241, Tri: 0.0813
+[DEBUG] ArcFace confidence: 0.1770
+[DEBUG] Loss Breakdown — ID: 13.8282, SupCon: 1.9133, Tri: 0.0842
+[Epoch 2] Total Loss=1.5526
+Validating epoch 2...
+[Epoch 2] Avg Train Loss = 1.5526 | 
+==================== Epoch 2 Validation ====================
+Validation rank-1    : 54.79%
+Validation rank-5    : 79.61%
+Validation rank-10   : 90.01%
+Validation mAP      : 65.97%
+============================================================
+Saving best model at epoch 2 (Acc@1=54.79%)  saved_models/stage3_promptsg_rn50_11k_dorsal_r_promptsg_e60_lrNA_bs32_BEST.pth
+ Epoch 3/60
+[Epoch 3] Learning rate: 0.000010
+[DEBUG] ArcFace confidence: 0.1658
+[DEBUG] Loss Breakdown — ID: 13.1116, SupCon: 1.2092, Tri: 0.0318
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 128]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 1024]), prompt: torch.Size([32, 3, 1024]), pooled: torch.Size([32, 1024])
+[DEBUG] ArcFace confidence: 0.2111
+[DEBUG] Loss Breakdown — ID: 13.5452, SupCon: 1.6212, Tri: 0.0570
+[DEBUG] ArcFace confidence: 0.1861
+[DEBUG] Loss Breakdown — ID: 13.0191, SupCon: 1.3247, Tri: 0.0478
+[DEBUG] ArcFace confidence: 0.1792
+[DEBUG] Loss Breakdown — ID: 13.4068, SupCon: 1.2253, Tri: 0.0549
+[DEBUG] ArcFace confidence: 0.1707
+[DEBUG] Loss Breakdown — ID: 12.8331, SupCon: 1.8540, Tri: 0.0832
+[DEBUG] ArcFace confidence: 0.2197
+[DEBUG] Loss Breakdown — ID: 13.9715, SupCon: 1.4250, Tri: 0.0924
+[DEBUG] ArcFace confidence: 0.2229
+[DEBUG] Loss Breakdown — ID: 13.6226, SupCon: 1.6129, Tri: 0.1047
+[DEBUG] ArcFace confidence: 0.1880
+[DEBUG] Loss Breakdown — ID: 11.9756, SupCon: 1.4217, Tri: 0.0239
+[DEBUG] ArcFace confidence: 0.2405
+[DEBUG] Loss Breakdown — ID: 13.3510, SupCon: 1.6182, Tri: 0.0601
+[DEBUG] ArcFace confidence: 0.2245
+[DEBUG] Loss Breakdown — ID: 12.1715, SupCon: 2.0234, Tri: 0.0594
+[DEBUG] ArcFace confidence: 0.2278
+[DEBUG] Loss Breakdown — ID: 11.9297, SupCon: 0.9789, Tri: 0.0233
+[DEBUG] ArcFace confidence: 0.2061
+[DEBUG] Loss Breakdown — ID: 11.8551, SupCon: 0.9955, Tri: 0.0395
+[DEBUG] ArcFace confidence: 0.1854
+[DEBUG] Loss Breakdown — ID: 11.4424, SupCon: 1.8008, Tri: 0.0406
+[DEBUG] ArcFace confidence: 0.1899
+[DEBUG] Loss Breakdown — ID: 11.7422, SupCon: 2.0165, Tri: 0.0357
+[DEBUG] ArcFace confidence: 0.2856
+[DEBUG] Loss Breakdown — ID: 11.8974, SupCon: 1.9310, Tri: 0.0651
+[DEBUG] ArcFace confidence: 0.1782
+[DEBUG] Loss Breakdown — ID: 11.5743, SupCon: 1.7805, Tri: 0.0214
+[DEBUG] ArcFace confidence: 0.1803
+[DEBUG] Loss Breakdown — ID: 10.6939, SupCon: 1.8462, Tri: 0.0514
+[DEBUG] ArcFace confidence: 0.2541
+[DEBUG] Loss Breakdown — ID: 11.4376, SupCon: 1.3295, Tri: 0.0315
+[DEBUG] ArcFace confidence: 0.2691
+[DEBUG] Loss Breakdown — ID: 11.8155, SupCon: 1.7841, Tri: 0.0158
+[DEBUG] ArcFace confidence: 0.2581
+[DEBUG] Loss Breakdown — ID: 11.6771, SupCon: 1.7646, Tri: 0.0411
+[DEBUG] ArcFace confidence: 0.2041
+[DEBUG] Loss Breakdown — ID: 11.1743, SupCon: 1.6360, Tri: 0.0253
+[DEBUG] ArcFace confidence: 0.2011
+[DEBUG] Loss Breakdown — ID: 11.9977, SupCon: 1.7397, Tri: 0.1109
+[DEBUG] ArcFace confidence: 0.2035
+[DEBUG] Loss Breakdown — ID: 11.1507, SupCon: 1.6986, Tri: 0.0469
+[DEBUG] ArcFace confidence: 0.2680
+[DEBUG] Loss Breakdown — ID: 12.4233, SupCon: 1.5163, Tri: 0.0471
+[DEBUG] ArcFace confidence: 0.1993
+[DEBUG] Loss Breakdown — ID: 10.9457, SupCon: 1.5215, Tri: 0.0209
+[DEBUG] ArcFace confidence: 0.2389
+[DEBUG] Loss Breakdown — ID: 11.8062, SupCon: 0.7508, Tri: 0.0446
+[DEBUG] ArcFace confidence: 0.1492
+[DEBUG] Loss Breakdown — ID: 9.8504, SupCon: 1.9491, Tri: 0.0452
+[DEBUG] ArcFace confidence: 0.1912
+[DEBUG] Loss Breakdown — ID: 11.5606, SupCon: 1.1586, Tri: 0.0281
+[Epoch 3] Total Loss=1.2553
+Validating epoch 3...
+[Epoch 3] Avg Train Loss = 1.2553 | 
+==================== Epoch 3 Validation ====================
+Validation rank-1    : 60.76%
+Validation rank-5    : 83.01%
+Validation rank-10   : 90.22%
+Validation mAP      : 70.85%
+============================================================
+Saving best model at epoch 3 (Acc@1=60.76%)  saved_models/stage3_promptsg_rn50_11k_dorsal_r_promptsg_e60_lrNA_bs32_BEST.pth
+ Epoch 4/60
+[Epoch 4] Learning rate: 0.000010
+[DEBUG] ArcFace confidence: 0.2247
+[DEBUG] Loss Breakdown — ID: 11.2672, SupCon: 1.2927, Tri: 0.0319
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 128]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 1024]), prompt: torch.Size([32, 3, 1024]), pooled: torch.Size([32, 1024])
+[DEBUG] ArcFace confidence: 0.2879
+[DEBUG] Loss Breakdown — ID: 11.4134, SupCon: 1.4517, Tri: 0.0127
+[DEBUG] ArcFace confidence: 0.1946
+[DEBUG] Loss Breakdown — ID: 10.2754, SupCon: 1.6410, Tri: 0.0181
+[DEBUG] ArcFace confidence: 0.2167
+[DEBUG] Loss Breakdown — ID: 11.2531, SupCon: 1.3170, Tri: 0.0365
+[DEBUG] ArcFace confidence: 0.2439
+[DEBUG] Loss Breakdown — ID: 10.8886, SupCon: 1.2935, Tri: 0.0203
+[DEBUG] ArcFace confidence: 0.2174
+[DEBUG] Loss Breakdown — ID: 9.3323, SupCon: 1.7659, Tri: 0.0131
+[DEBUG] ArcFace confidence: 0.1615
+[DEBUG] Loss Breakdown — ID: 8.8001, SupCon: 1.8659, Tri: 0.0143
+[DEBUG] ArcFace confidence: 0.2289
+[DEBUG] Loss Breakdown — ID: 11.0690, SupCon: 1.6525, Tri: 0.0134
+[DEBUG] ArcFace confidence: 0.2317
+[DEBUG] Loss Breakdown — ID: 10.0521, SupCon: 1.8898, Tri: 0.0503
+[DEBUG] ArcFace confidence: 0.2337
+[DEBUG] Loss Breakdown — ID: 8.8872, SupCon: 1.3589, Tri: 0.0350
+[DEBUG] ArcFace confidence: 0.2733
+[DEBUG] Loss Breakdown — ID: 9.6764, SupCon: 1.9312, Tri: 0.0119
+[DEBUG] ArcFace confidence: 0.2376
+[DEBUG] Loss Breakdown — ID: 8.7927, SupCon: 1.9122, Tri: 0.0038
+[DEBUG] ArcFace confidence: 0.2593
+[DEBUG] Loss Breakdown — ID: 9.5478, SupCon: 1.7015, Tri: 0.0230
+[DEBUG] ArcFace confidence: 0.2762
+[DEBUG] Loss Breakdown — ID: 10.5320, SupCon: 1.5905, Tri: 0.0085
+[DEBUG] ArcFace confidence: 0.2632
+[DEBUG] Loss Breakdown — ID: 9.6575, SupCon: 1.8145, Tri: 0.0420
+[DEBUG] ArcFace confidence: 0.2615
+[DEBUG] Loss Breakdown — ID: 9.8146, SupCon: 1.8540, Tri: 0.0209
+[DEBUG] ArcFace confidence: 0.3005
+[DEBUG] Loss Breakdown — ID: 10.3889, SupCon: 1.0868, Tri: 0.0116
+[DEBUG] ArcFace confidence: 0.2647
+[DEBUG] Loss Breakdown — ID: 9.4734, SupCon: 1.0101, Tri: 0.0145
+[DEBUG] ArcFace confidence: 0.2506
+[DEBUG] Loss Breakdown — ID: 7.9062, SupCon: 1.1806, Tri: 0.0037
+[DEBUG] ArcFace confidence: 0.2514
+[DEBUG] Loss Breakdown — ID: 9.4355, SupCon: 1.3372, Tri: 0.0062
+[DEBUG] ArcFace confidence: 0.2512
+[DEBUG] Loss Breakdown — ID: 8.8838, SupCon: 2.1027, Tri: 0.0210
+[DEBUG] ArcFace confidence: 0.2250
+[DEBUG] Loss Breakdown — ID: 8.4429, SupCon: 2.0808, Tri: 0.0461
+[DEBUG] ArcFace confidence: 0.3064
+[DEBUG] Loss Breakdown — ID: 8.8311, SupCon: 2.0454, Tri: 0.0072
+[DEBUG] ArcFace confidence: 0.3176
+[DEBUG] Loss Breakdown — ID: 10.7489, SupCon: 1.8759, Tri: 0.0524
+[DEBUG] ArcFace confidence: 0.2650
+[DEBUG] Loss Breakdown — ID: 8.1002, SupCon: 1.8566, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.2969
+[DEBUG] Loss Breakdown — ID: 10.4345, SupCon: 1.3559, Tri: 0.0162
+[DEBUG] ArcFace confidence: 0.2890
+[DEBUG] Loss Breakdown — ID: 9.7879, SupCon: 1.0973, Tri: 0.0277
+[DEBUG] ArcFace confidence: 0.3165
+[DEBUG] Loss Breakdown — ID: 8.7138, SupCon: 0.9934, Tri: 0.0000
+[Epoch 4] Total Loss=0.9930
+Validating epoch 4...
+[Epoch 4] Avg Train Loss = 0.9930 | 
+==================== Epoch 4 Validation ====================
+Validation rank-1    : 64.37%
+Validation rank-5    : 88.57%
+Validation rank-10   : 94.03%
+Validation mAP      : 74.95%
+============================================================
+Saving best model at epoch 4 (Acc@1=64.37%)  saved_models/stage3_promptsg_rn50_11k_dorsal_r_promptsg_e60_lrNA_bs32_BEST.pth
+ Epoch 5/60
+[Epoch 5] Learning rate: 0.000010
+[DEBUG] ArcFace confidence: 0.2671
+[DEBUG] Loss Breakdown — ID: 9.4549, SupCon: 1.7148, Tri: 0.0298
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 128]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 1024]), prompt: torch.Size([32, 3, 1024]), pooled: torch.Size([32, 1024])
+[DEBUG] ArcFace confidence: 0.2641
+[DEBUG] Loss Breakdown — ID: 7.8067, SupCon: 1.2531, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.2711
+[DEBUG] Loss Breakdown — ID: 8.5046, SupCon: 0.8409, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.2814
+[DEBUG] Loss Breakdown — ID: 8.8938, SupCon: 1.5185, Tri: 0.0035
+[DEBUG] ArcFace confidence: 0.2823
+[DEBUG] Loss Breakdown — ID: 6.9878, SupCon: 1.7990, Tri: 0.0202
+[DEBUG] ArcFace confidence: 0.2907
+[DEBUG] Loss Breakdown — ID: 8.8881, SupCon: 1.2949, Tri: 0.0309
+[DEBUG] ArcFace confidence: 0.2859
+[DEBUG] Loss Breakdown — ID: 7.8486, SupCon: 2.0789, Tri: 0.0044
+[DEBUG] ArcFace confidence: 0.2218
+[DEBUG] Loss Breakdown — ID: 7.7578, SupCon: 0.9494, Tri: 0.0011
+[DEBUG] ArcFace confidence: 0.2399
+[DEBUG] Loss Breakdown — ID: 8.3934, SupCon: 1.1268, Tri: 0.0251
+[DEBUG] ArcFace confidence: 0.3397
+[DEBUG] Loss Breakdown — ID: 8.7262, SupCon: 1.4115, Tri: 0.0134
+[DEBUG] ArcFace confidence: 0.2830
+[DEBUG] Loss Breakdown — ID: 7.5035, SupCon: 1.3328, Tri: 0.0027
+[DEBUG] ArcFace confidence: 0.2952
+[DEBUG] Loss Breakdown — ID: 7.0927, SupCon: 1.1214, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.2866
+[DEBUG] Loss Breakdown — ID: 8.6653, SupCon: 0.3230, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.2856
+[DEBUG] Loss Breakdown — ID: 6.2418, SupCon: 1.8375, Tri: 0.0252
+[DEBUG] ArcFace confidence: 0.2865
+[DEBUG] Loss Breakdown — ID: 6.5673, SupCon: 1.2175, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.3253
+[DEBUG] Loss Breakdown — ID: 6.6666, SupCon: 2.1572, Tri: 0.0021
+[DEBUG] ArcFace confidence: 0.2673
+[DEBUG] Loss Breakdown — ID: 7.5930, SupCon: 2.0069, Tri: 0.0078
+[DEBUG] ArcFace confidence: 0.4023
+[DEBUG] Loss Breakdown — ID: 10.5256, SupCon: 1.6539, Tri: 0.0219
+[DEBUG] ArcFace confidence: 0.3786
+[DEBUG] Loss Breakdown — ID: 7.7087, SupCon: 1.4956, Tri: 0.0059
+[DEBUG] ArcFace confidence: 0.2336
+[DEBUG] Loss Breakdown — ID: 7.4668, SupCon: 1.0985, Tri: 0.0117
+[DEBUG] ArcFace confidence: 0.3992
+[DEBUG] Loss Breakdown — ID: 5.4328, SupCon: 1.3851, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.3802
+[DEBUG] Loss Breakdown — ID: 8.2693, SupCon: 1.2875, Tri: 0.0183
+[DEBUG] ArcFace confidence: 0.2419
+[DEBUG] Loss Breakdown — ID: 7.3779, SupCon: 0.9939, Tri: 0.0007
+[DEBUG] ArcFace confidence: 0.4065
+[DEBUG] Loss Breakdown — ID: 6.1478, SupCon: 1.1773, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.2936
+[DEBUG] Loss Breakdown — ID: 6.9777, SupCon: 1.4803, Tri: 0.0045
+[DEBUG] ArcFace confidence: 0.3109
+[DEBUG] Loss Breakdown — ID: 6.2464, SupCon: 1.4372, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.3335
+[DEBUG] Loss Breakdown — ID: 6.8769, SupCon: 1.4635, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.3925
+[DEBUG] Loss Breakdown — ID: 9.4170, SupCon: 1.1244, Tri: 0.0162
+[Epoch 5] Total Loss=0.7803
+Validating epoch 5...
+[Epoch 5] Avg Train Loss = 0.7803 | 
+==================== Epoch 5 Validation ====================
+Validation rank-1    : 71.47%
+Validation rank-5    : 90.32%
+Validation rank-10   : 95.26%
+Validation mAP      : 79.73%
+============================================================
+Saving best model at epoch 5 (Acc@1=71.47%)  saved_models/stage3_promptsg_rn50_11k_dorsal_r_promptsg_e60_lrNA_bs32_BEST.pth
+ Epoch 6/60
+[Epoch 6] Learning rate: 0.000010
+[DEBUG] ArcFace confidence: 0.4008
+[DEBUG] Loss Breakdown — ID: 6.1862, SupCon: 1.4995, Tri: 0.0046
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 128]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 1024]), prompt: torch.Size([32, 3, 1024]), pooled: torch.Size([32, 1024])
+[DEBUG] ArcFace confidence: 0.3731
+[DEBUG] Loss Breakdown — ID: 6.1700, SupCon: 1.6780, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.3229
+[DEBUG] Loss Breakdown — ID: 8.4938, SupCon: 0.9032, Tri: 0.0061
+[DEBUG] ArcFace confidence: 0.3461
+[DEBUG] Loss Breakdown — ID: 5.8953, SupCon: 1.5191, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.2815
+[DEBUG] Loss Breakdown — ID: 7.0916, SupCon: 1.2696, Tri: 0.0002
+[DEBUG] ArcFace confidence: 0.3431
+[DEBUG] Loss Breakdown — ID: 5.5176, SupCon: 2.1438, Tri: 0.0016
+[DEBUG] ArcFace confidence: 0.2824
+[DEBUG] Loss Breakdown — ID: 6.7602, SupCon: 1.2279, Tri: 0.0168
+[DEBUG] ArcFace confidence: 0.2985
+[DEBUG] Loss Breakdown — ID: 5.3304, SupCon: 1.5367, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.3909
+[DEBUG] Loss Breakdown — ID: 5.6633, SupCon: 1.5485, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.3920
+[DEBUG] Loss Breakdown — ID: 5.0094, SupCon: 2.1397, Tri: 0.0030
+[DEBUG] ArcFace confidence: 0.3454
+[DEBUG] Loss Breakdown — ID: 6.4818, SupCon: 1.6906, Tri: 0.0018
+[DEBUG] ArcFace confidence: 0.3326
+[DEBUG] Loss Breakdown — ID: 6.1067, SupCon: 0.4488, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.3471
+[DEBUG] Loss Breakdown — ID: 5.2999, SupCon: 2.0034, Tri: 0.0054
+[DEBUG] ArcFace confidence: 0.3136
+[DEBUG] Loss Breakdown — ID: 6.2925, SupCon: 0.8046, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.3736
+[DEBUG] Loss Breakdown — ID: 5.9583, SupCon: 1.6269, Tri: 0.0053
+[DEBUG] ArcFace confidence: 0.3766
+[DEBUG] Loss Breakdown — ID: 5.1107, SupCon: 2.4516, Tri: 0.0136
+[DEBUG] ArcFace confidence: 0.2824
+[DEBUG] Loss Breakdown — ID: 7.0297, SupCon: 1.7068, Tri: 0.0099
+[DEBUG] ArcFace confidence: 0.3787
+[DEBUG] Loss Breakdown — ID: 5.1891, SupCon: 1.5418, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.3445
+[DEBUG] Loss Breakdown — ID: 5.4138, SupCon: 1.2554, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.4210
+[DEBUG] Loss Breakdown — ID: 8.3555, SupCon: 1.8534, Tri: 0.0321
+[DEBUG] ArcFace confidence: 0.3894
+[DEBUG] Loss Breakdown — ID: 5.6947, SupCon: 1.6834, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.4113
+[DEBUG] Loss Breakdown — ID: 5.5099, SupCon: 1.5374, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.3240
+[DEBUG] Loss Breakdown — ID: 6.1501, SupCon: 1.7643, Tri: 0.0002
+[DEBUG] ArcFace confidence: 0.3672
+[DEBUG] Loss Breakdown — ID: 6.6817, SupCon: 1.3128, Tri: 0.0298
+[DEBUG] ArcFace confidence: 0.4488
+[DEBUG] Loss Breakdown — ID: 5.1348, SupCon: 1.7006, Tri: 0.0118
+[DEBUG] ArcFace confidence: 0.3942
+[DEBUG] Loss Breakdown — ID: 7.3328, SupCon: 1.3164, Tri: 0.0002
+[DEBUG] ArcFace confidence: 0.3244
+[DEBUG] Loss Breakdown — ID: 6.2652, SupCon: 1.4258, Tri: 0.0032
+[DEBUG] ArcFace confidence: 0.4565
+[DEBUG] Loss Breakdown — ID: 5.7548, SupCon: 1.4969, Tri: 0.0199
+[Epoch 6] Total Loss=0.6198
+Validating epoch 6...
+[Epoch 6] Avg Train Loss = 0.6198 | 
+==================== Epoch 6 Validation ====================
+Validation rank-1    : 73.64%
+Validation rank-5    : 91.35%
+Validation rank-10   : 95.37%
+Validation mAP      : 81.41%
+============================================================
+Saving best model at epoch 6 (Acc@1=73.64%)  saved_models/stage3_promptsg_rn50_11k_dorsal_r_promptsg_e60_lrNA_bs32_BEST.pth
+ Epoch 7/60
+[Epoch 7] Learning rate: 0.000010
+[DEBUG] ArcFace confidence: 0.4028
+[DEBUG] Loss Breakdown — ID: 4.7954, SupCon: 1.6702, Tri: 0.0000
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 128]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 1024]), prompt: torch.Size([32, 3, 1024]), pooled: torch.Size([32, 1024])
+[DEBUG] ArcFace confidence: 0.3842
+[DEBUG] Loss Breakdown — ID: 4.5931, SupCon: 1.5636, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.3460
+[DEBUG] Loss Breakdown — ID: 6.2800, SupCon: 0.9788, Tri: 0.0026
+[DEBUG] ArcFace confidence: 0.4038
+[DEBUG] Loss Breakdown — ID: 4.3087, SupCon: 0.8383, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.3853
+[DEBUG] Loss Breakdown — ID: 5.6081, SupCon: 1.7073, Tri: 0.0018
+[DEBUG] ArcFace confidence: 0.3426
+[DEBUG] Loss Breakdown — ID: 5.5359, SupCon: 1.5616, Tri: 0.0063
+[DEBUG] ArcFace confidence: 0.3941
+[DEBUG] Loss Breakdown — ID: 6.1996, SupCon: 1.7032, Tri: 0.0001
+[DEBUG] ArcFace confidence: 0.4403
+[DEBUG] Loss Breakdown — ID: 4.9145, SupCon: 1.5405, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.4877
+[DEBUG] Loss Breakdown — ID: 3.4087, SupCon: 2.0469, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.3891
+[DEBUG] Loss Breakdown — ID: 3.9401, SupCon: 1.7908, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.3405
+[DEBUG] Loss Breakdown — ID: 5.6794, SupCon: 1.0620, Tri: 0.0033
+[DEBUG] ArcFace confidence: 0.3751
+[DEBUG] Loss Breakdown — ID: 4.8451, SupCon: 1.4823, Tri: 0.0093
+[DEBUG] ArcFace confidence: 0.4078
+[DEBUG] Loss Breakdown — ID: 5.1749, SupCon: 1.1100, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.2962
+[DEBUG] Loss Breakdown — ID: 4.6955, SupCon: 1.2641, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.3865
+[DEBUG] Loss Breakdown — ID: 5.8552, SupCon: 1.3271, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.4574
+[DEBUG] Loss Breakdown — ID: 3.5528, SupCon: 1.7262, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.4209
+[DEBUG] Loss Breakdown — ID: 5.6107, SupCon: 1.2477, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.4549
+[DEBUG] Loss Breakdown — ID: 4.9227, SupCon: 1.5042, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.4725
+[DEBUG] Loss Breakdown — ID: 5.1048, SupCon: 1.4296, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.4922
+[DEBUG] Loss Breakdown — ID: 4.1825, SupCon: 1.3917, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.4131
+[DEBUG] Loss Breakdown — ID: 4.9503, SupCon: 1.5313, Tri: 0.0141
+[DEBUG] ArcFace confidence: 0.3891
+[DEBUG] Loss Breakdown — ID: 4.3497, SupCon: 1.7115, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.3900
+[DEBUG] Loss Breakdown — ID: 4.8741, SupCon: 1.7960, Tri: 0.0016
+[DEBUG] ArcFace confidence: 0.4800
+[DEBUG] Loss Breakdown — ID: 3.8301, SupCon: 1.2555, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.4450
+[DEBUG] Loss Breakdown — ID: 4.7653, SupCon: 1.0192, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.4635
+[DEBUG] Loss Breakdown — ID: 3.2703, SupCon: 1.9392, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.4493
+[DEBUG] Loss Breakdown — ID: 4.2349, SupCon: 1.4473, Tri: 0.0097
+[DEBUG] ArcFace confidence: 0.4097
+[DEBUG] Loss Breakdown — ID: 4.7864, SupCon: 1.1856, Tri: 0.0000
+[Epoch 7] Total Loss=0.4813
+Validating epoch 7...
+[Epoch 7] Avg Train Loss = 0.4813 | 
+==================== Epoch 7 Validation ====================
+Validation rank-1    : 77.86%
+Validation rank-5    : 90.94%
+Validation rank-10   : 95.88%
+Validation mAP      : 84.05%
+============================================================
+Saving best model at epoch 7 (Acc@1=77.86%)  saved_models/stage3_promptsg_rn50_11k_dorsal_r_promptsg_e60_lrNA_bs32_BEST.pth
+ Epoch 8/60
+[Epoch 8] Learning rate: 0.000010
+[DEBUG] ArcFace confidence: 0.4485
+[DEBUG] Loss Breakdown — ID: 4.3624, SupCon: 1.2660, Tri: 0.0000
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 128]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 1024]), prompt: torch.Size([32, 3, 1024]), pooled: torch.Size([32, 1024])
+[DEBUG] ArcFace confidence: 0.4888
+[DEBUG] Loss Breakdown — ID: 4.0694, SupCon: 0.8905, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.4528
+[DEBUG] Loss Breakdown — ID: 3.5973, SupCon: 1.9871, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.4336
+[DEBUG] Loss Breakdown — ID: 3.6198, SupCon: 1.8343, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.4575
+[DEBUG] Loss Breakdown — ID: 4.3987, SupCon: 1.0574, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.4494
+[DEBUG] Loss Breakdown — ID: 4.3363, SupCon: 1.2093, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.4261
+[DEBUG] Loss Breakdown — ID: 3.5950, SupCon: 1.7129, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.5091
+[DEBUG] Loss Breakdown — ID: 3.5781, SupCon: 1.6525, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.3892
+[DEBUG] Loss Breakdown — ID: 3.6017, SupCon: 1.3862, Tri: 0.0001
+[DEBUG] ArcFace confidence: 0.4113
+[DEBUG] Loss Breakdown — ID: 4.5456, SupCon: 1.2058, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.4301
+[DEBUG] Loss Breakdown — ID: 3.9329, SupCon: 1.2429, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.3912
+[DEBUG] Loss Breakdown — ID: 3.9780, SupCon: 1.5970, Tri: 0.0042
+[DEBUG] ArcFace confidence: 0.4841
+[DEBUG] Loss Breakdown — ID: 3.4121, SupCon: 2.1650, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.4204
+[DEBUG] Loss Breakdown — ID: 4.2624, SupCon: 1.1515, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.4733
+[DEBUG] Loss Breakdown — ID: 3.3566, SupCon: 1.2978, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.5416
+[DEBUG] Loss Breakdown — ID: 3.0096, SupCon: 0.9725, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.4561
+[DEBUG] Loss Breakdown — ID: 4.3430, SupCon: 1.2547, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.4465
+[DEBUG] Loss Breakdown — ID: 3.9731, SupCon: 1.1187, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.4433
+[DEBUG] Loss Breakdown — ID: 4.1987, SupCon: 1.1066, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.4410
+[DEBUG] Loss Breakdown — ID: 4.5763, SupCon: 1.3080, Tri: 0.0030
+[DEBUG] ArcFace confidence: 0.4617
+[DEBUG] Loss Breakdown — ID: 4.1811, SupCon: 1.1704, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.4661
+[DEBUG] Loss Breakdown — ID: 4.7591, SupCon: 1.5750, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.5452
+[DEBUG] Loss Breakdown — ID: 2.8255, SupCon: 1.5696, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.3977
+[DEBUG] Loss Breakdown — ID: 5.3982, SupCon: 1.8306, Tri: 0.0176
+[DEBUG] ArcFace confidence: 0.5150
+[DEBUG] Loss Breakdown — ID: 2.7995, SupCon: 1.4736, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.4202
+[DEBUG] Loss Breakdown — ID: 3.3463, SupCon: 1.8035, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.5329
+[DEBUG] Loss Breakdown — ID: 2.4616, SupCon: 1.5066, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.3901
+[DEBUG] Loss Breakdown — ID: 3.8645, SupCon: 1.2723, Tri: 0.0000
+[Epoch 8] Total Loss=0.3880
+Validating epoch 8...
+[Epoch 8] Avg Train Loss = 0.3880 | 
+==================== Epoch 8 Validation ====================
+Validation rank-1    : 79.09%
+Validation rank-5    : 92.48%
+Validation rank-10   : 96.09%
+Validation mAP      : 85.15%
+============================================================
+Saving best model at epoch 8 (Acc@1=79.09%)  saved_models/stage3_promptsg_rn50_11k_dorsal_r_promptsg_e60_lrNA_bs32_BEST.pth
+ Epoch 9/60
+[Epoch 9] Learning rate: 0.000010
+[DEBUG] ArcFace confidence: 0.5088
+[DEBUG] Loss Breakdown — ID: 3.2655, SupCon: 1.7503, Tri: 0.0000
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 128]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 1024]), prompt: torch.Size([32, 3, 1024]), pooled: torch.Size([32, 1024])
+[DEBUG] ArcFace confidence: 0.5523
+[DEBUG] Loss Breakdown — ID: 2.7357, SupCon: 1.1887, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.4513
+[DEBUG] Loss Breakdown — ID: 4.8899, SupCon: 1.2100, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.4490
+[DEBUG] Loss Breakdown — ID: 3.8480, SupCon: 1.4597, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.4880
+[DEBUG] Loss Breakdown — ID: 3.7650, SupCon: 1.3532, Tri: 0.0076
+[DEBUG] ArcFace confidence: 0.4717
+[DEBUG] Loss Breakdown — ID: 2.7127, SupCon: 1.3494, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.5544
+[DEBUG] Loss Breakdown — ID: 2.3372, SupCon: 2.1224, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.5210
+[DEBUG] Loss Breakdown — ID: 2.6905, SupCon: 2.1930, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.5569
+[DEBUG] Loss Breakdown — ID: 3.1651, SupCon: 1.4090, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.5321
+[DEBUG] Loss Breakdown — ID: 2.7826, SupCon: 1.6420, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.4808
+[DEBUG] Loss Breakdown — ID: 2.7955, SupCon: 2.2394, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.5288
+[DEBUG] Loss Breakdown — ID: 3.1923, SupCon: 1.7479, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.5229
+[DEBUG] Loss Breakdown — ID: 2.9515, SupCon: 1.3820, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.5308
+[DEBUG] Loss Breakdown — ID: 2.7523, SupCon: 1.5532, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.4929
+[DEBUG] Loss Breakdown — ID: 2.4054, SupCon: 2.2691, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.4923
+[DEBUG] Loss Breakdown — ID: 3.7670, SupCon: 0.9060, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.4463
+[DEBUG] Loss Breakdown — ID: 4.1454, SupCon: 1.7068, Tri: 0.0094
+[DEBUG] ArcFace confidence: 0.4333
+[DEBUG] Loss Breakdown — ID: 3.5810, SupCon: 0.8858, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.4879
+[DEBUG] Loss Breakdown — ID: 3.3429, SupCon: 1.4723, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.4509
+[DEBUG] Loss Breakdown — ID: 3.2193, SupCon: 2.1355, Tri: 0.0069
+[DEBUG] ArcFace confidence: 0.4833
+[DEBUG] Loss Breakdown — ID: 2.3083, SupCon: 2.4833, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.4972
+[DEBUG] Loss Breakdown — ID: 3.3774, SupCon: 1.6484, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.5134
+[DEBUG] Loss Breakdown — ID: 2.6042, SupCon: 2.0577, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.5820
+[DEBUG] Loss Breakdown — ID: 2.8639, SupCon: 1.5001, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.4894
+[DEBUG] Loss Breakdown — ID: 3.8751, SupCon: 1.4156, Tri: 0.0082
+[DEBUG] ArcFace confidence: 0.5682
+[DEBUG] Loss Breakdown — ID: 2.3103, SupCon: 1.2873, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.5836
+[DEBUG] Loss Breakdown — ID: 2.3374, SupCon: 1.6783, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.3486
+[DEBUG] Loss Breakdown — ID: 4.2981, SupCon: 1.1227, Tri: 0.0000
+[Epoch 9] Total Loss=0.3166
+Validating epoch 9...
+[Epoch 9] Avg Train Loss = 0.3166 | 
+==================== Epoch 9 Validation ====================
+Validation rank-1    : 81.77%
+Validation rank-5    : 92.07%
+Validation rank-10   : 95.78%
+Validation mAP      : 86.51%
+============================================================
+Saving best model at epoch 9 (Acc@1=81.77%)  saved_models/stage3_promptsg_rn50_11k_dorsal_r_promptsg_e60_lrNA_bs32_BEST.pth
+ Epoch 10/60
+[Epoch 10] Learning rate: 0.000010
+[DEBUG] ArcFace confidence: 0.5188
+[DEBUG] Loss Breakdown — ID: 1.9800, SupCon: 1.9461, Tri: 0.0000
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 128]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 1024]), prompt: torch.Size([32, 3, 1024]), pooled: torch.Size([32, 1024])
+[DEBUG] ArcFace confidence: 0.5268
+[DEBUG] Loss Breakdown — ID: 2.7100, SupCon: 1.5671, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6430
+[DEBUG] Loss Breakdown — ID: 2.7494, SupCon: 1.2359, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.5854
+[DEBUG] Loss Breakdown — ID: 1.9222, SupCon: 1.8622, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.5839
+[DEBUG] Loss Breakdown — ID: 2.0829, SupCon: 1.6637, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.5243
+[DEBUG] Loss Breakdown — ID: 3.1856, SupCon: 1.3160, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6151
+[DEBUG] Loss Breakdown — ID: 2.9837, SupCon: 1.1988, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.5842
+[DEBUG] Loss Breakdown — ID: 2.3475, SupCon: 1.5781, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6022
+[DEBUG] Loss Breakdown — ID: 2.9117, SupCon: 1.2078, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6278
+[DEBUG] Loss Breakdown — ID: 2.1600, SupCon: 1.2673, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.5344
+[DEBUG] Loss Breakdown — ID: 2.4919, SupCon: 0.9798, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.5693
+[DEBUG] Loss Breakdown — ID: 2.2971, SupCon: 1.5024, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6049
+[DEBUG] Loss Breakdown — ID: 2.2611, SupCon: 1.6157, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.5126
+[DEBUG] Loss Breakdown — ID: 2.2494, SupCon: 1.4986, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6171
+[DEBUG] Loss Breakdown — ID: 1.8217, SupCon: 1.9459, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.5439
+[DEBUG] Loss Breakdown — ID: 2.6862, SupCon: 1.4967, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.5035
+[DEBUG] Loss Breakdown — ID: 2.3922, SupCon: 1.3453, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.5780
+[DEBUG] Loss Breakdown — ID: 2.9721, SupCon: 1.1284, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.4967
+[DEBUG] Loss Breakdown — ID: 3.2215, SupCon: 1.2825, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6554
+[DEBUG] Loss Breakdown — ID: 1.8243, SupCon: 1.5930, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.5201
+[DEBUG] Loss Breakdown — ID: 3.9145, SupCon: 1.0522, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.5319
+[DEBUG] Loss Breakdown — ID: 1.9411, SupCon: 2.0594, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.5901
+[DEBUG] Loss Breakdown — ID: 2.4181, SupCon: 1.2608, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.5242
+[DEBUG] Loss Breakdown — ID: 2.3072, SupCon: 1.7029, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.4618
+[DEBUG] Loss Breakdown — ID: 3.3907, SupCon: 1.3424, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6118
+[DEBUG] Loss Breakdown — ID: 2.2430, SupCon: 1.5369, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.5731
+[DEBUG] Loss Breakdown — ID: 1.9496, SupCon: 1.2644, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6468
+[DEBUG] Loss Breakdown — ID: 3.1354, SupCon: 0.7422, Tri: 0.0000
+[Epoch 10] Total Loss=0.2520
+Validating epoch 10...
+[Epoch 10] Avg Train Loss = 0.2520 | 
+==================== Epoch 10 Validation ====================
+Validation rank-1    : 79.92%
+Validation rank-5    : 94.03%
+Validation rank-10   : 96.91%
+Validation mAP      : 86.24%
+============================================================
+No improvement in Acc@1. Patience counter: 1/10
+ Epoch 11/60
+[Epoch 11] Learning rate: 0.000010
+[DEBUG] ArcFace confidence: 0.6664
+[DEBUG] Loss Breakdown — ID: 1.9450, SupCon: 2.0827, Tri: 0.0000
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 128]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 1024]), prompt: torch.Size([32, 3, 1024]), pooled: torch.Size([32, 1024])
+[DEBUG] ArcFace confidence: 0.6103
+[DEBUG] Loss Breakdown — ID: 2.5257, SupCon: 0.8878, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6932
+[DEBUG] Loss Breakdown — ID: 1.7054, SupCon: 1.6524, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6526
+[DEBUG] Loss Breakdown — ID: 2.3089, SupCon: 0.9658, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6736
+[DEBUG] Loss Breakdown — ID: 1.1845, SupCon: 1.6716, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6572
+[DEBUG] Loss Breakdown — ID: 1.6708, SupCon: 0.2232, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7344
+[DEBUG] Loss Breakdown — ID: 1.5464, SupCon: 2.1309, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6460
+[DEBUG] Loss Breakdown — ID: 2.1316, SupCon: 1.0431, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6417
+[DEBUG] Loss Breakdown — ID: 2.2447, SupCon: 0.9130, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6319
+[DEBUG] Loss Breakdown — ID: 2.5781, SupCon: 0.9874, Tri: 0.0001
+[DEBUG] ArcFace confidence: 0.5047
+[DEBUG] Loss Breakdown — ID: 2.5870, SupCon: 2.1753, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6065
+[DEBUG] Loss Breakdown — ID: 2.4216, SupCon: 1.4782, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.5518
+[DEBUG] Loss Breakdown — ID: 2.6004, SupCon: 1.4753, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.5630
+[DEBUG] Loss Breakdown — ID: 2.4867, SupCon: 1.6415, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7150
+[DEBUG] Loss Breakdown — ID: 1.6815, SupCon: 1.0248, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.5221
+[DEBUG] Loss Breakdown — ID: 2.4742, SupCon: 1.4293, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6382
+[DEBUG] Loss Breakdown — ID: 1.7245, SupCon: 1.4612, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.5461
+[DEBUG] Loss Breakdown — ID: 2.0751, SupCon: 1.3668, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.5765
+[DEBUG] Loss Breakdown — ID: 2.1430, SupCon: 1.4994, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6727
+[DEBUG] Loss Breakdown — ID: 1.4746, SupCon: 2.3036, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.5806
+[DEBUG] Loss Breakdown — ID: 2.6743, SupCon: 1.3502, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6444
+[DEBUG] Loss Breakdown — ID: 1.7263, SupCon: 1.1534, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.5719
+[DEBUG] Loss Breakdown — ID: 1.7366, SupCon: 1.5787, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7254
+[DEBUG] Loss Breakdown — ID: 2.2768, SupCon: 1.8357, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6553
+[DEBUG] Loss Breakdown — ID: 1.3634, SupCon: 1.4519, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7115
+[DEBUG] Loss Breakdown — ID: 2.1098, SupCon: 1.8536, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6726
+[DEBUG] Loss Breakdown — ID: 1.0337, SupCon: 1.8408, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6315
+[DEBUG] Loss Breakdown — ID: 1.9944, SupCon: 1.2917, Tri: 0.0000
+[Epoch 11] Total Loss=0.2015
+Validating epoch 11...
+[Epoch 11] Avg Train Loss = 0.2015 | 
+==================== Epoch 11 Validation ====================
+Validation rank-1    : 76.73%
+Validation rank-5    : 91.76%
+Validation rank-10   : 96.09%
+Validation mAP      : 83.37%
+============================================================
+No improvement in Acc@1. Patience counter: 2/10
+ Epoch 12/60
+[Epoch 12] Learning rate: 0.000010
+[DEBUG] ArcFace confidence: 0.6431
+[DEBUG] Loss Breakdown — ID: 2.6440, SupCon: 1.2833, Tri: 0.0000
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 128]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 1024]), prompt: torch.Size([32, 3, 1024]), pooled: torch.Size([32, 1024])
+[DEBUG] ArcFace confidence: 0.6866
+[DEBUG] Loss Breakdown — ID: 1.4465, SupCon: 2.0081, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6799
+[DEBUG] Loss Breakdown — ID: 1.5221, SupCon: 1.0927, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6885
+[DEBUG] Loss Breakdown — ID: 1.3934, SupCon: 1.3403, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6771
+[DEBUG] Loss Breakdown — ID: 1.2163, SupCon: 1.7807, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6139
+[DEBUG] Loss Breakdown — ID: 1.5216, SupCon: 1.3288, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6269
+[DEBUG] Loss Breakdown — ID: 2.2225, SupCon: 1.1980, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6981
+[DEBUG] Loss Breakdown — ID: 1.5867, SupCon: 1.2251, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7041
+[DEBUG] Loss Breakdown — ID: 2.0052, SupCon: 1.5919, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6586
+[DEBUG] Loss Breakdown — ID: 1.3533, SupCon: 1.5278, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6154
+[DEBUG] Loss Breakdown — ID: 2.4347, SupCon: 1.5340, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6071
+[DEBUG] Loss Breakdown — ID: 1.9875, SupCon: 1.7390, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.5259
+[DEBUG] Loss Breakdown — ID: 1.8691, SupCon: 1.9425, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6318
+[DEBUG] Loss Breakdown — ID: 1.9200, SupCon: 1.3793, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7082
+[DEBUG] Loss Breakdown — ID: 2.1597, SupCon: 1.6006, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7345
+[DEBUG] Loss Breakdown — ID: 1.5302, SupCon: 0.8905, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6830
+[DEBUG] Loss Breakdown — ID: 1.3418, SupCon: 1.5602, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6298
+[DEBUG] Loss Breakdown — ID: 1.9695, SupCon: 1.1585, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7010
+[DEBUG] Loss Breakdown — ID: 1.7572, SupCon: 1.8699, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7112
+[DEBUG] Loss Breakdown — ID: 1.4470, SupCon: 1.3511, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7107
+[DEBUG] Loss Breakdown — ID: 1.7212, SupCon: 1.5078, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6966
+[DEBUG] Loss Breakdown — ID: 1.2663, SupCon: 1.7053, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6608
+[DEBUG] Loss Breakdown — ID: 1.4762, SupCon: 1.5936, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7291
+[DEBUG] Loss Breakdown — ID: 1.2117, SupCon: 2.2104, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6765
+[DEBUG] Loss Breakdown — ID: 1.3889, SupCon: 1.8174, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7386
+[DEBUG] Loss Breakdown — ID: 1.6952, SupCon: 1.8108, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6562
+[DEBUG] Loss Breakdown — ID: 1.5950, SupCon: 1.7971, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7491
+[DEBUG] Loss Breakdown — ID: 1.1442, SupCon: 0.8696, Tri: 0.0000
+[Epoch 12] Total Loss=0.1672
+Validating epoch 12...
+[Epoch 12] Avg Train Loss = 0.1672 | 
+==================== Epoch 12 Validation ====================
+Validation rank-1    : 80.84%
+Validation rank-5    : 93.92%
+Validation rank-10   : 97.73%
+Validation mAP      : 86.66%
+============================================================
+No improvement in Acc@1. Patience counter: 3/10
+ Epoch 13/60
+[Epoch 13] Learning rate: 0.000010
+[DEBUG] ArcFace confidence: 0.7195
+[DEBUG] Loss Breakdown — ID: 1.0954, SupCon: 1.5915, Tri: 0.0000
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 128]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 1024]), prompt: torch.Size([32, 3, 1024]), pooled: torch.Size([32, 1024])
+[DEBUG] ArcFace confidence: 0.6106
+[DEBUG] Loss Breakdown — ID: 2.4058, SupCon: 1.6289, Tri: 0.0002
+[DEBUG] ArcFace confidence: 0.6709
+[DEBUG] Loss Breakdown — ID: 1.3472, SupCon: 1.5401, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6496
+[DEBUG] Loss Breakdown — ID: 1.8827, SupCon: 1.9773, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.5872
+[DEBUG] Loss Breakdown — ID: 2.0621, SupCon: 1.0998, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6971
+[DEBUG] Loss Breakdown — ID: 2.0310, SupCon: 1.5554, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6888
+[DEBUG] Loss Breakdown — ID: 1.7840, SupCon: 1.6523, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7310
+[DEBUG] Loss Breakdown — ID: 1.1948, SupCon: 1.7272, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7200
+[DEBUG] Loss Breakdown — ID: 1.4916, SupCon: 1.6917, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7629
+[DEBUG] Loss Breakdown — ID: 0.9771, SupCon: 1.6159, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7415
+[DEBUG] Loss Breakdown — ID: 1.2334, SupCon: 1.6981, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7306
+[DEBUG] Loss Breakdown — ID: 1.2784, SupCon: 1.8679, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6191
+[DEBUG] Loss Breakdown — ID: 2.0085, SupCon: 1.8065, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.4461
+[DEBUG] Loss Breakdown — ID: 2.1005, SupCon: 1.6821, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6343
+[DEBUG] Loss Breakdown — ID: 1.5354, SupCon: 1.5818, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7261
+[DEBUG] Loss Breakdown — ID: 1.6620, SupCon: 1.2306, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7094
+[DEBUG] Loss Breakdown — ID: 1.0139, SupCon: 1.9247, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6954
+[DEBUG] Loss Breakdown — ID: 1.3539, SupCon: 1.6943, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7215
+[DEBUG] Loss Breakdown — ID: 1.2213, SupCon: 1.7737, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7319
+[DEBUG] Loss Breakdown — ID: 2.0172, SupCon: 1.3862, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6066
+[DEBUG] Loss Breakdown — ID: 1.5128, SupCon: 1.6249, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7314
+[DEBUG] Loss Breakdown — ID: 1.4839, SupCon: 1.1504, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6442
+[DEBUG] Loss Breakdown — ID: 1.4594, SupCon: 1.3272, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7120
+[DEBUG] Loss Breakdown — ID: 1.6658, SupCon: 1.5985, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6886
+[DEBUG] Loss Breakdown — ID: 1.1408, SupCon: 1.5197, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7043
+[DEBUG] Loss Breakdown — ID: 1.5209, SupCon: 1.5523, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6913
+[DEBUG] Loss Breakdown — ID: 1.2210, SupCon: 1.6339, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6961
+[DEBUG] Loss Breakdown — ID: 1.5241, SupCon: 1.0601, Tri: 0.0000
+[Epoch 13] Total Loss=0.1544
+Validating epoch 13...
+[Epoch 13] Avg Train Loss = 0.1544 | 
+==================== Epoch 13 Validation ====================
+Validation rank-1    : 80.84%
+Validation rank-5    : 95.06%
+Validation rank-10   : 98.04%
+Validation mAP      : 87.00%
+============================================================
+No improvement in Acc@1. Patience counter: 4/10
+ Epoch 14/60
+[Epoch 14] Learning rate: 0.000010
+[DEBUG] ArcFace confidence: 0.7257
+[DEBUG] Loss Breakdown — ID: 1.2284, SupCon: 1.3375, Tri: 0.0000
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 128]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 1024]), prompt: torch.Size([32, 3, 1024]), pooled: torch.Size([32, 1024])
+[DEBUG] ArcFace confidence: 0.8336
+[DEBUG] Loss Breakdown — ID: 0.8520, SupCon: 1.6189, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7782
+[DEBUG] Loss Breakdown — ID: 1.1826, SupCon: 1.6499, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7680
+[DEBUG] Loss Breakdown — ID: 1.4005, SupCon: 1.5219, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7197
+[DEBUG] Loss Breakdown — ID: 1.6700, SupCon: 0.9824, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7757
+[DEBUG] Loss Breakdown — ID: 0.9393, SupCon: 2.1762, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7129
+[DEBUG] Loss Breakdown — ID: 1.3788, SupCon: 1.1592, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6994
+[DEBUG] Loss Breakdown — ID: 1.3152, SupCon: 1.8276, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7257
+[DEBUG] Loss Breakdown — ID: 1.2528, SupCon: 1.5240, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7574
+[DEBUG] Loss Breakdown — ID: 0.9439, SupCon: 1.6550, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7188
+[DEBUG] Loss Breakdown — ID: 1.3574, SupCon: 1.3885, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6902
+[DEBUG] Loss Breakdown — ID: 1.3951, SupCon: 1.5387, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7509
+[DEBUG] Loss Breakdown — ID: 1.1831, SupCon: 1.9489, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7030
+[DEBUG] Loss Breakdown — ID: 1.5027, SupCon: 1.5363, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7352
+[DEBUG] Loss Breakdown — ID: 1.4891, SupCon: 1.9231, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7600
+[DEBUG] Loss Breakdown — ID: 0.9568, SupCon: 2.0629, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6263
+[DEBUG] Loss Breakdown — ID: 1.5017, SupCon: 2.0619, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7011
+[DEBUG] Loss Breakdown — ID: 1.5448, SupCon: 1.4679, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7927
+[DEBUG] Loss Breakdown — ID: 1.0078, SupCon: 2.1382, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7429
+[DEBUG] Loss Breakdown — ID: 1.6129, SupCon: 1.3114, Tri: 0.0021
+[DEBUG] ArcFace confidence: 0.7055
+[DEBUG] Loss Breakdown — ID: 1.4694, SupCon: 1.2188, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6684
+[DEBUG] Loss Breakdown — ID: 1.3097, SupCon: 1.7613, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7469
+[DEBUG] Loss Breakdown — ID: 1.0480, SupCon: 1.6131, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7422
+[DEBUG] Loss Breakdown — ID: 1.2478, SupCon: 0.9916, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6566
+[DEBUG] Loss Breakdown — ID: 1.3520, SupCon: 2.1666, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6806
+[DEBUG] Loss Breakdown — ID: 1.2397, SupCon: 1.2016, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6379
+[DEBUG] Loss Breakdown — ID: 1.8939, SupCon: 1.1025, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7332
+[DEBUG] Loss Breakdown — ID: 1.2460, SupCon: 1.4665, Tri: 0.0000
+[Epoch 14] Total Loss=0.1305
+Validating epoch 14...
+[Epoch 14] Avg Train Loss = 0.1305 | 
+==================== Epoch 14 Validation ====================
+Validation rank-1    : 81.36%
+Validation rank-5    : 95.26%
+Validation rank-10   : 98.76%
+Validation mAP      : 87.47%
+============================================================
+No improvement in Acc@1. Patience counter: 5/10
+ Epoch 15/60
+[Epoch 15] Learning rate: 0.000010
+[DEBUG] ArcFace confidence: 0.7710
+[DEBUG] Loss Breakdown — ID: 1.0167, SupCon: 1.0203, Tri: 0.0000
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 128]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 1024]), prompt: torch.Size([32, 3, 1024]), pooled: torch.Size([32, 1024])
+[DEBUG] ArcFace confidence: 0.8107
+[DEBUG] Loss Breakdown — ID: 1.2676, SupCon: 1.5309, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7485
+[DEBUG] Loss Breakdown — ID: 1.0878, SupCon: 1.7971, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6781
+[DEBUG] Loss Breakdown — ID: 1.4889, SupCon: 1.6701, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8785
+[DEBUG] Loss Breakdown — ID: 0.8215, SupCon: 1.2029, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7959
+[DEBUG] Loss Breakdown — ID: 1.3245, SupCon: 1.5148, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6731
+[DEBUG] Loss Breakdown — ID: 1.3595, SupCon: 1.5227, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7640
+[DEBUG] Loss Breakdown — ID: 1.5011, SupCon: 1.4893, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7311
+[DEBUG] Loss Breakdown — ID: 1.3955, SupCon: 1.3000, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7802
+[DEBUG] Loss Breakdown — ID: 0.9376, SupCon: 2.2045, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7392
+[DEBUG] Loss Breakdown — ID: 1.1639, SupCon: 1.3419, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8260
+[DEBUG] Loss Breakdown — ID: 0.9305, SupCon: 1.0229, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6572
+[DEBUG] Loss Breakdown — ID: 1.8770, SupCon: 1.3707, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7898
+[DEBUG] Loss Breakdown — ID: 0.9486, SupCon: 1.5858, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7145
+[DEBUG] Loss Breakdown — ID: 1.2247, SupCon: 2.0333, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8141
+[DEBUG] Loss Breakdown — ID: 1.0955, SupCon: 1.4831, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7695
+[DEBUG] Loss Breakdown — ID: 1.4206, SupCon: 1.3201, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7180
+[DEBUG] Loss Breakdown — ID: 1.1836, SupCon: 1.7211, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7703
+[DEBUG] Loss Breakdown — ID: 0.9626, SupCon: 1.5056, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7382
+[DEBUG] Loss Breakdown — ID: 1.4559, SupCon: 0.6266, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7187
+[DEBUG] Loss Breakdown — ID: 1.1813, SupCon: 1.8755, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7452
+[DEBUG] Loss Breakdown — ID: 1.1198, SupCon: 1.2149, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8022
+[DEBUG] Loss Breakdown — ID: 0.9729, SupCon: 1.0947, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6967
+[DEBUG] Loss Breakdown — ID: 1.6624, SupCon: 0.9968, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7494
+[DEBUG] Loss Breakdown — ID: 1.0728, SupCon: 1.4826, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7016
+[DEBUG] Loss Breakdown — ID: 1.0493, SupCon: 1.9875, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7667
+[DEBUG] Loss Breakdown — ID: 1.0009, SupCon: 1.7106, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8060
+[DEBUG] Loss Breakdown — ID: 0.8787, SupCon: 0.4451, Tri: 0.0000
+[Epoch 15] Total Loss=0.1193
+Validating epoch 15...
+[Epoch 15] Avg Train Loss = 0.1193 | 
+==================== Epoch 15 Validation ====================
+Validation rank-1    : 83.21%
+Validation rank-5    : 95.67%
+Validation rank-10   : 98.15%
+Validation mAP      : 88.81%
+============================================================
+Saving best model at epoch 15 (Acc@1=83.21%)  saved_models/stage3_promptsg_rn50_11k_dorsal_r_promptsg_e60_lrNA_bs32_BEST.pth
+ Epoch 16/60
+[Epoch 16] Learning rate: 0.000010
+[DEBUG] ArcFace confidence: 0.7857
+[DEBUG] Loss Breakdown — ID: 1.0795, SupCon: 1.5642, Tri: 0.0000
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 128]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 1024]), prompt: torch.Size([32, 3, 1024]), pooled: torch.Size([32, 1024])
+[DEBUG] ArcFace confidence: 0.7330
+[DEBUG] Loss Breakdown — ID: 1.2593, SupCon: 1.4875, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7793
+[DEBUG] Loss Breakdown — ID: 1.1189, SupCon: 0.7419, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7907
+[DEBUG] Loss Breakdown — ID: 1.0915, SupCon: 1.1660, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6507
+[DEBUG] Loss Breakdown — ID: 1.2822, SupCon: 1.7490, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8377
+[DEBUG] Loss Breakdown — ID: 0.8933, SupCon: 1.2741, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7693
+[DEBUG] Loss Breakdown — ID: 1.4655, SupCon: 1.5730, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8411
+[DEBUG] Loss Breakdown — ID: 1.1461, SupCon: 1.3404, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6986
+[DEBUG] Loss Breakdown — ID: 1.6060, SupCon: 1.6755, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7715
+[DEBUG] Loss Breakdown — ID: 1.3279, SupCon: 1.4747, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8067
+[DEBUG] Loss Breakdown — ID: 0.9732, SupCon: 1.5613, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7597
+[DEBUG] Loss Breakdown — ID: 1.1762, SupCon: 1.8201, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8047
+[DEBUG] Loss Breakdown — ID: 0.9014, SupCon: 1.5331, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7030
+[DEBUG] Loss Breakdown — ID: 0.9937, SupCon: 1.8527, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8414
+[DEBUG] Loss Breakdown — ID: 0.9176, SupCon: 1.6411, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7967
+[DEBUG] Loss Breakdown — ID: 0.9307, SupCon: 1.3575, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6554
+[DEBUG] Loss Breakdown — ID: 1.3781, SupCon: 2.0335, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8022
+[DEBUG] Loss Breakdown — ID: 1.0819, SupCon: 1.6025, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6800
+[DEBUG] Loss Breakdown — ID: 1.1928, SupCon: 1.8035, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8653
+[DEBUG] Loss Breakdown — ID: 0.8339, SupCon: 1.3042, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6861
+[DEBUG] Loss Breakdown — ID: 1.2982, SupCon: 1.6418, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8129
+[DEBUG] Loss Breakdown — ID: 0.9350, SupCon: 1.4560, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7716
+[DEBUG] Loss Breakdown — ID: 1.2416, SupCon: 1.3078, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6043
+[DEBUG] Loss Breakdown — ID: 1.2675, SupCon: 2.9309, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8539
+[DEBUG] Loss Breakdown — ID: 0.9607, SupCon: 0.8096, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7971
+[DEBUG] Loss Breakdown — ID: 0.9818, SupCon: 2.1029, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7740
+[DEBUG] Loss Breakdown — ID: 1.0815, SupCon: 1.2220, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7604
+[DEBUG] Loss Breakdown — ID: 0.9994, SupCon: 1.1752, Tri: 0.0000
+[Epoch 16] Total Loss=0.1122
+Validating epoch 16...
+[Epoch 16] Avg Train Loss = 0.1122 | 
+==================== Epoch 16 Validation ====================
+Validation rank-1    : 73.12%
+Validation rank-5    : 91.25%
+Validation rank-10   : 94.85%
+Validation mAP      : 81.10%
+============================================================
+No improvement in Acc@1. Patience counter: 1/10
+ Epoch 17/60
+[Epoch 17] Learning rate: 0.000010
+[DEBUG] ArcFace confidence: 0.8504
+[DEBUG] Loss Breakdown — ID: 0.8595, SupCon: 1.7926, Tri: 0.0000
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 128]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 1024]), prompt: torch.Size([32, 3, 1024]), pooled: torch.Size([32, 1024])
+[DEBUG] ArcFace confidence: 0.8488
+[DEBUG] Loss Breakdown — ID: 0.8485, SupCon: 1.3814, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8189
+[DEBUG] Loss Breakdown — ID: 1.0731, SupCon: 1.3644, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7597
+[DEBUG] Loss Breakdown — ID: 1.0936, SupCon: 1.9703, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8176
+[DEBUG] Loss Breakdown — ID: 0.9901, SupCon: 1.1342, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7956
+[DEBUG] Loss Breakdown — ID: 1.1221, SupCon: 1.3226, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7542
+[DEBUG] Loss Breakdown — ID: 1.0515, SupCon: 1.7920, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7075
+[DEBUG] Loss Breakdown — ID: 1.1688, SupCon: 1.6494, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8341
+[DEBUG] Loss Breakdown — ID: 1.2110, SupCon: 1.3945, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8269
+[DEBUG] Loss Breakdown — ID: 1.1072, SupCon: 1.2449, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7966
+[DEBUG] Loss Breakdown — ID: 1.1805, SupCon: 1.2192, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6545
+[DEBUG] Loss Breakdown — ID: 1.9382, SupCon: 1.8295, Tri: 0.0096
+[DEBUG] ArcFace confidence: 0.8085
+[DEBUG] Loss Breakdown — ID: 1.0214, SupCon: 1.4260, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7019
+[DEBUG] Loss Breakdown — ID: 1.0786, SupCon: 1.7186, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8290
+[DEBUG] Loss Breakdown — ID: 0.9324, SupCon: 1.4533, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8410
+[DEBUG] Loss Breakdown — ID: 0.9302, SupCon: 1.8008, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8003
+[DEBUG] Loss Breakdown — ID: 1.0786, SupCon: 1.4649, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7966
+[DEBUG] Loss Breakdown — ID: 0.8976, SupCon: 1.6068, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8254
+[DEBUG] Loss Breakdown — ID: 1.0115, SupCon: 2.1093, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7783
+[DEBUG] Loss Breakdown — ID: 0.9958, SupCon: 1.5296, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7570
+[DEBUG] Loss Breakdown — ID: 0.9607, SupCon: 1.2245, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8417
+[DEBUG] Loss Breakdown — ID: 0.8631, SupCon: 1.9409, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8150
+[DEBUG] Loss Breakdown — ID: 0.8908, SupCon: 1.7473, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8750
+[DEBUG] Loss Breakdown — ID: 0.8187, SupCon: 1.6378, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7697
+[DEBUG] Loss Breakdown — ID: 1.1230, SupCon: 1.0128, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7486
+[DEBUG] Loss Breakdown — ID: 0.9560, SupCon: 0.8886, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7960
+[DEBUG] Loss Breakdown — ID: 1.0412, SupCon: 1.4879, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8007
+[DEBUG] Loss Breakdown — ID: 0.8843, SupCon: 0.9942, Tri: 0.0000
+[Epoch 17] Total Loss=0.1044
+Validating epoch 17...
+[Epoch 17] Avg Train Loss = 0.1044 | 
+==================== Epoch 17 Validation ====================
+Validation rank-1    : 83.63%
+Validation rank-5    : 96.40%
+Validation rank-10   : 98.04%
+Validation mAP      : 88.95%
+============================================================
+Saving best model at epoch 17 (Acc@1=83.63%)  saved_models/stage3_promptsg_rn50_11k_dorsal_r_promptsg_e60_lrNA_bs32_BEST.pth
+ Epoch 18/60
+[Epoch 18] Learning rate: 0.000010
+[DEBUG] ArcFace confidence: 0.8234
+[DEBUG] Loss Breakdown — ID: 0.8798, SupCon: 1.4125, Tri: 0.0000
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 128]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 1024]), prompt: torch.Size([32, 3, 1024]), pooled: torch.Size([32, 1024])
+[DEBUG] ArcFace confidence: 0.7455
+[DEBUG] Loss Breakdown — ID: 0.9715, SupCon: 1.6085, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7780
+[DEBUG] Loss Breakdown — ID: 0.9769, SupCon: 1.7158, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8013
+[DEBUG] Loss Breakdown — ID: 1.0033, SupCon: 1.6295, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8134
+[DEBUG] Loss Breakdown — ID: 0.9540, SupCon: 1.2056, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7732
+[DEBUG] Loss Breakdown — ID: 0.9231, SupCon: 1.5788, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7437
+[DEBUG] Loss Breakdown — ID: 0.9687, SupCon: 1.7972, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8533
+[DEBUG] Loss Breakdown — ID: 0.8376, SupCon: 0.9929, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8750
+[DEBUG] Loss Breakdown — ID: 0.9444, SupCon: 1.3232, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8214
+[DEBUG] Loss Breakdown — ID: 0.9802, SupCon: 1.4641, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8256
+[DEBUG] Loss Breakdown — ID: 1.0845, SupCon: 1.8567, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8032
+[DEBUG] Loss Breakdown — ID: 0.9812, SupCon: 1.5334, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8231
+[DEBUG] Loss Breakdown — ID: 1.2531, SupCon: 1.7506, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8521
+[DEBUG] Loss Breakdown — ID: 0.8984, SupCon: 1.1340, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8433
+[DEBUG] Loss Breakdown — ID: 0.9871, SupCon: 1.6377, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8490
+[DEBUG] Loss Breakdown — ID: 0.9567, SupCon: 1.0076, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8625
+[DEBUG] Loss Breakdown — ID: 0.8831, SupCon: 0.8492, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7434
+[DEBUG] Loss Breakdown — ID: 0.9708, SupCon: 2.4140, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7777
+[DEBUG] Loss Breakdown — ID: 0.9532, SupCon: 2.0164, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8358
+[DEBUG] Loss Breakdown — ID: 1.0609, SupCon: 2.0061, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7854
+[DEBUG] Loss Breakdown — ID: 1.0771, SupCon: 1.1625, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7889
+[DEBUG] Loss Breakdown — ID: 0.9627, SupCon: 2.1946, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8377
+[DEBUG] Loss Breakdown — ID: 0.8861, SupCon: 1.8573, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7986
+[DEBUG] Loss Breakdown — ID: 0.8762, SupCon: 1.6590, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8617
+[DEBUG] Loss Breakdown — ID: 0.8269, SupCon: 1.6575, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8709
+[DEBUG] Loss Breakdown — ID: 0.8201, SupCon: 1.9980, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8533
+[DEBUG] Loss Breakdown — ID: 0.9747, SupCon: 0.8411, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9022
+[DEBUG] Loss Breakdown — ID: 0.8074, SupCon: 1.0412, Tri: 0.0000
+[Epoch 18] Total Loss=0.0954
+Validating epoch 18...
+[Epoch 18] Avg Train Loss = 0.0954 | 
+==================== Epoch 18 Validation ====================
+Validation rank-1    : 84.14%
+Validation rank-5    : 96.81%
+Validation rank-10   : 98.76%
+Validation mAP      : 89.51%
+============================================================
+Saving best model at epoch 18 (Acc@1=84.14%)  saved_models/stage3_promptsg_rn50_11k_dorsal_r_promptsg_e60_lrNA_bs32_BEST.pth
+ Epoch 19/60
+[Epoch 19] Learning rate: 0.000010
+[DEBUG] ArcFace confidence: 0.7316
+[DEBUG] Loss Breakdown — ID: 1.0855, SupCon: 1.6252, Tri: 0.0000
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 128]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 1024]), prompt: torch.Size([32, 3, 1024]), pooled: torch.Size([32, 1024])
+[DEBUG] ArcFace confidence: 0.8377
+[DEBUG] Loss Breakdown — ID: 0.9922, SupCon: 1.9093, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6788
+[DEBUG] Loss Breakdown — ID: 1.3221, SupCon: 1.8559, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8624
+[DEBUG] Loss Breakdown — ID: 0.8467, SupCon: 1.7499, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8702
+[DEBUG] Loss Breakdown — ID: 0.8239, SupCon: 1.1257, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8597
+[DEBUG] Loss Breakdown — ID: 0.8484, SupCon: 1.7782, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8642
+[DEBUG] Loss Breakdown — ID: 0.8956, SupCon: 1.3254, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8952
+[DEBUG] Loss Breakdown — ID: 0.8094, SupCon: 1.5874, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8155
+[DEBUG] Loss Breakdown — ID: 1.0878, SupCon: 1.5667, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8670
+[DEBUG] Loss Breakdown — ID: 0.8250, SupCon: 1.7408, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8070
+[DEBUG] Loss Breakdown — ID: 0.9464, SupCon: 1.2445, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8082
+[DEBUG] Loss Breakdown — ID: 1.0331, SupCon: 0.8679, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8103
+[DEBUG] Loss Breakdown — ID: 0.9827, SupCon: 0.9458, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8596
+[DEBUG] Loss Breakdown — ID: 0.9044, SupCon: 2.3448, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7740
+[DEBUG] Loss Breakdown — ID: 0.9270, SupCon: 1.8828, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8242
+[DEBUG] Loss Breakdown — ID: 0.8647, SupCon: 1.9409, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8380
+[DEBUG] Loss Breakdown — ID: 0.9696, SupCon: 1.1895, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8817
+[DEBUG] Loss Breakdown — ID: 0.8172, SupCon: 1.0847, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8769
+[DEBUG] Loss Breakdown — ID: 0.8221, SupCon: 1.6307, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8494
+[DEBUG] Loss Breakdown — ID: 0.9023, SupCon: 1.4174, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8691
+[DEBUG] Loss Breakdown — ID: 0.8303, SupCon: 1.7765, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8379
+[DEBUG] Loss Breakdown — ID: 0.8759, SupCon: 0.5404, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8034
+[DEBUG] Loss Breakdown — ID: 0.9283, SupCon: 1.5875, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8311
+[DEBUG] Loss Breakdown — ID: 0.9888, SupCon: 1.4466, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8226
+[DEBUG] Loss Breakdown — ID: 1.0149, SupCon: 0.4395, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8823
+[DEBUG] Loss Breakdown — ID: 0.8177, SupCon: 1.5192, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8817
+[DEBUG] Loss Breakdown — ID: 0.8190, SupCon: 1.7471, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8659
+[DEBUG] Loss Breakdown — ID: 0.8698, SupCon: 0.9936, Tri: 0.0000
+[Epoch 19] Total Loss=0.0923
+Validating epoch 19...
+[Epoch 19] Avg Train Loss = 0.0923 | 
+==================== Epoch 19 Validation ====================
+Validation rank-1    : 83.32%
+Validation rank-5    : 96.29%
+Validation rank-10   : 98.25%
+Validation mAP      : 88.57%
+============================================================
+No improvement in Acc@1. Patience counter: 1/10
+ Epoch 20/60
+[Epoch 20] Learning rate: 0.000010
+[DEBUG] ArcFace confidence: 0.8655
+[DEBUG] Loss Breakdown — ID: 0.8306, SupCon: 1.8135, Tri: 0.0000
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 128]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 1024]), prompt: torch.Size([32, 3, 1024]), pooled: torch.Size([32, 1024])
+[DEBUG] ArcFace confidence: 0.7698
+[DEBUG] Loss Breakdown — ID: 1.0083, SupCon: 1.0955, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8755
+[DEBUG] Loss Breakdown — ID: 0.8252, SupCon: 1.4446, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8559
+[DEBUG] Loss Breakdown — ID: 0.8382, SupCon: 1.7571, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8491
+[DEBUG] Loss Breakdown — ID: 0.8371, SupCon: 1.6483, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7786
+[DEBUG] Loss Breakdown — ID: 1.0100, SupCon: 1.8201, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8602
+[DEBUG] Loss Breakdown — ID: 0.9752, SupCon: 1.9815, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7717
+[DEBUG] Loss Breakdown — ID: 1.0744, SupCon: 1.2028, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8883
+[DEBUG] Loss Breakdown — ID: 0.8259, SupCon: 1.5691, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8455
+[DEBUG] Loss Breakdown — ID: 0.8440, SupCon: 1.8527, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8343
+[DEBUG] Loss Breakdown — ID: 0.8870, SupCon: 1.2473, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8872
+[DEBUG] Loss Breakdown — ID: 0.8159, SupCon: 1.9234, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7485
+[DEBUG] Loss Breakdown — ID: 1.1425, SupCon: 1.6859, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8987
+[DEBUG] Loss Breakdown — ID: 0.8176, SupCon: 2.0944, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8637
+[DEBUG] Loss Breakdown — ID: 0.8196, SupCon: 2.1408, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8566
+[DEBUG] Loss Breakdown — ID: 0.8894, SupCon: 2.1470, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7633
+[DEBUG] Loss Breakdown — ID: 0.9507, SupCon: 1.3230, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8800
+[DEBUG] Loss Breakdown — ID: 0.8216, SupCon: 1.0996, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8899
+[DEBUG] Loss Breakdown — ID: 0.8288, SupCon: 1.0780, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8573
+[DEBUG] Loss Breakdown — ID: 0.8511, SupCon: 1.1853, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8487
+[DEBUG] Loss Breakdown — ID: 0.8285, SupCon: 2.0554, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8561
+[DEBUG] Loss Breakdown — ID: 0.9404, SupCon: 1.3432, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9033
+[DEBUG] Loss Breakdown — ID: 0.8053, SupCon: 1.5501, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8810
+[DEBUG] Loss Breakdown — ID: 0.8251, SupCon: 1.0714, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7930
+[DEBUG] Loss Breakdown — ID: 1.1234, SupCon: 1.7322, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9033
+[DEBUG] Loss Breakdown — ID: 0.8045, SupCon: 0.9197, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8791
+[DEBUG] Loss Breakdown — ID: 0.8779, SupCon: 0.8534, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8825
+[DEBUG] Loss Breakdown — ID: 0.8233, SupCon: 1.5557, Tri: 0.0000
+[Epoch 20] Total Loss=0.0890
+Validating epoch 20...
+[Epoch 20] Avg Train Loss = 0.0890 | 
+==================== Epoch 20 Validation ====================
+Validation rank-1    : 84.55%
+Validation rank-5    : 96.91%
+Validation rank-10   : 98.76%
+Validation mAP      : 89.35%
+============================================================
+Saving best model at epoch 20 (Acc@1=84.55%)  saved_models/stage3_promptsg_rn50_11k_dorsal_r_promptsg_e60_lrNA_bs32_BEST.pth
+ Epoch 21/60
+[Epoch 21] Learning rate: 0.000010
+[DEBUG] ArcFace confidence: 0.8741
+[DEBUG] Loss Breakdown — ID: 0.8151, SupCon: 1.8574, Tri: 0.0000
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 128]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 1024]), prompt: torch.Size([32, 3, 1024]), pooled: torch.Size([32, 1024])
+[DEBUG] ArcFace confidence: 0.8623
+[DEBUG] Loss Breakdown — ID: 0.8682, SupCon: 1.4353, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8893
+[DEBUG] Loss Breakdown — ID: 0.8283, SupCon: 1.1459, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8701
+[DEBUG] Loss Breakdown — ID: 0.8293, SupCon: 1.5697, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8706
+[DEBUG] Loss Breakdown — ID: 0.8405, SupCon: 2.0902, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8405
+[DEBUG] Loss Breakdown — ID: 0.8369, SupCon: 1.5191, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8043
+[DEBUG] Loss Breakdown — ID: 0.9097, SupCon: 1.7900, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8524
+[DEBUG] Loss Breakdown — ID: 0.8348, SupCon: 1.5558, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8606
+[DEBUG] Loss Breakdown — ID: 0.9412, SupCon: 1.7932, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7966
+[DEBUG] Loss Breakdown — ID: 0.8992, SupCon: 1.6508, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8717
+[DEBUG] Loss Breakdown — ID: 0.8607, SupCon: 1.6025, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8577
+[DEBUG] Loss Breakdown — ID: 0.8784, SupCon: 1.0535, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8972
+[DEBUG] Loss Breakdown — ID: 0.8455, SupCon: 0.9912, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8695
+[DEBUG] Loss Breakdown — ID: 0.8737, SupCon: 0.9652, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9245
+[DEBUG] Loss Breakdown — ID: 0.8066, SupCon: 1.2654, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8637
+[DEBUG] Loss Breakdown — ID: 0.8392, SupCon: 1.2711, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8944
+[DEBUG] Loss Breakdown — ID: 0.8213, SupCon: 1.0258, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7496
+[DEBUG] Loss Breakdown — ID: 0.9633, SupCon: 2.0121, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8351
+[DEBUG] Loss Breakdown — ID: 0.8825, SupCon: 1.8724, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8280
+[DEBUG] Loss Breakdown — ID: 0.9905, SupCon: 1.6062, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8713
+[DEBUG] Loss Breakdown — ID: 0.8223, SupCon: 1.5494, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8847
+[DEBUG] Loss Breakdown — ID: 0.8213, SupCon: 1.3218, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8785
+[DEBUG] Loss Breakdown — ID: 0.8170, SupCon: 1.5964, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8774
+[DEBUG] Loss Breakdown — ID: 0.8446, SupCon: 1.4617, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8565
+[DEBUG] Loss Breakdown — ID: 0.8666, SupCon: 1.4920, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8489
+[DEBUG] Loss Breakdown — ID: 0.8456, SupCon: 1.9066, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8813
+[DEBUG] Loss Breakdown — ID: 0.8259, SupCon: 1.1962, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9030
+[DEBUG] Loss Breakdown — ID: 0.8095, SupCon: 0.5296, Tri: 0.0000
+[Epoch 21] Total Loss=0.0858
+Validating epoch 21...
+[Epoch 21] Avg Train Loss = 0.0858 | 
+==================== Epoch 21 Validation ====================
+Validation rank-1    : 83.73%
+Validation rank-5    : 95.47%
+Validation rank-10   : 98.46%
+Validation mAP      : 88.96%
+============================================================
+No improvement in Acc@1. Patience counter: 1/10
+ Epoch 22/60
+[Epoch 22] Learning rate: 0.000010
+[DEBUG] ArcFace confidence: 0.8464
+[DEBUG] Loss Breakdown — ID: 0.8395, SupCon: 1.8055, Tri: 0.0000
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 128]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 1024]), prompt: torch.Size([32, 3, 1024]), pooled: torch.Size([32, 1024])
+[DEBUG] ArcFace confidence: 0.7619
+[DEBUG] Loss Breakdown — ID: 0.9830, SupCon: 1.5204, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8808
+[DEBUG] Loss Breakdown — ID: 0.8114, SupCon: 0.9616, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8559
+[DEBUG] Loss Breakdown — ID: 0.8292, SupCon: 1.6923, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8496
+[DEBUG] Loss Breakdown — ID: 0.8444, SupCon: 1.7104, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9006
+[DEBUG] Loss Breakdown — ID: 0.8091, SupCon: 1.1512, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8878
+[DEBUG] Loss Breakdown — ID: 0.8089, SupCon: 1.3631, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8929
+[DEBUG] Loss Breakdown — ID: 0.8214, SupCon: 1.0373, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8838
+[DEBUG] Loss Breakdown — ID: 0.8100, SupCon: 1.8943, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8993
+[DEBUG] Loss Breakdown — ID: 0.8104, SupCon: 1.3754, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9010
+[DEBUG] Loss Breakdown — ID: 0.8065, SupCon: 1.7828, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7950
+[DEBUG] Loss Breakdown — ID: 0.8676, SupCon: 1.8933, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8254
+[DEBUG] Loss Breakdown — ID: 0.9173, SupCon: 1.6514, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8342
+[DEBUG] Loss Breakdown — ID: 0.8683, SupCon: 1.7155, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8507
+[DEBUG] Loss Breakdown — ID: 0.8373, SupCon: 1.5925, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8793
+[DEBUG] Loss Breakdown — ID: 0.8545, SupCon: 0.6353, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8088
+[DEBUG] Loss Breakdown — ID: 0.9010, SupCon: 1.4257, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8117
+[DEBUG] Loss Breakdown — ID: 0.8631, SupCon: 1.6742, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8755
+[DEBUG] Loss Breakdown — ID: 0.8179, SupCon: 0.9400, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7935
+[DEBUG] Loss Breakdown — ID: 0.9620, SupCon: 2.0359, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8554
+[DEBUG] Loss Breakdown — ID: 0.8262, SupCon: 1.9625, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8497
+[DEBUG] Loss Breakdown — ID: 0.9064, SupCon: 1.5841, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8951
+[DEBUG] Loss Breakdown — ID: 0.8066, SupCon: 1.6170, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8397
+[DEBUG] Loss Breakdown — ID: 0.9524, SupCon: 1.8722, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8368
+[DEBUG] Loss Breakdown — ID: 0.9151, SupCon: 1.6673, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8896
+[DEBUG] Loss Breakdown — ID: 0.8044, SupCon: 2.0188, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8941
+[DEBUG] Loss Breakdown — ID: 0.8293, SupCon: 1.1218, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8219
+[DEBUG] Loss Breakdown — ID: 0.8701, SupCon: 1.3229, Tri: 0.0000
+[Epoch 22] Total Loss=0.0856
+Validating epoch 22...
+[Epoch 22] Avg Train Loss = 0.0856 | 
+==================== Epoch 22 Validation ====================
+Validation rank-1    : 81.57%
+Validation rank-5    : 95.06%
+Validation rank-10   : 98.15%
+Validation mAP      : 87.28%
+============================================================
+No improvement in Acc@1. Patience counter: 2/10
+ Epoch 23/60
+[Epoch 23] Learning rate: 0.000010
+[DEBUG] ArcFace confidence: 0.8754
+[DEBUG] Loss Breakdown — ID: 0.8229, SupCon: 2.3405, Tri: 0.0000
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 128]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 1024]), prompt: torch.Size([32, 3, 1024]), pooled: torch.Size([32, 1024])
+[DEBUG] ArcFace confidence: 0.8841
+[DEBUG] Loss Breakdown — ID: 0.8532, SupCon: 1.1763, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8902
+[DEBUG] Loss Breakdown — ID: 0.8103, SupCon: 1.5804, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8679
+[DEBUG] Loss Breakdown — ID: 0.8215, SupCon: 2.0479, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9027
+[DEBUG] Loss Breakdown — ID: 0.8074, SupCon: 1.5240, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8676
+[DEBUG] Loss Breakdown — ID: 0.8270, SupCon: 1.6283, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8974
+[DEBUG] Loss Breakdown — ID: 0.8066, SupCon: 1.7599, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8934
+[DEBUG] Loss Breakdown — ID: 0.8111, SupCon: 1.7464, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8770
+[DEBUG] Loss Breakdown — ID: 0.8307, SupCon: 1.1154, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8414
+[DEBUG] Loss Breakdown — ID: 0.9236, SupCon: 2.1046, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8950
+[DEBUG] Loss Breakdown — ID: 0.8050, SupCon: 1.4063, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8601
+[DEBUG] Loss Breakdown — ID: 0.8359, SupCon: 1.6894, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8507
+[DEBUG] Loss Breakdown — ID: 0.8360, SupCon: 1.6545, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8892
+[DEBUG] Loss Breakdown — ID: 0.8137, SupCon: 1.6982, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8559
+[DEBUG] Loss Breakdown — ID: 0.8396, SupCon: 1.4846, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8074
+[DEBUG] Loss Breakdown — ID: 0.9500, SupCon: 1.6263, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8507
+[DEBUG] Loss Breakdown — ID: 0.8479, SupCon: 1.6109, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8751
+[DEBUG] Loss Breakdown — ID: 0.8140, SupCon: 1.7104, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9210
+[DEBUG] Loss Breakdown — ID: 0.8020, SupCon: 1.3071, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8566
+[DEBUG] Loss Breakdown — ID: 0.8365, SupCon: 1.3408, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9093
+[DEBUG] Loss Breakdown — ID: 0.8049, SupCon: 1.3105, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8627
+[DEBUG] Loss Breakdown — ID: 0.8181, SupCon: 1.6153, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8815
+[DEBUG] Loss Breakdown — ID: 0.8165, SupCon: 2.0922, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9096
+[DEBUG] Loss Breakdown — ID: 0.8071, SupCon: 0.7959, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8814
+[DEBUG] Loss Breakdown — ID: 0.8128, SupCon: 1.6329, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8456
+[DEBUG] Loss Breakdown — ID: 0.8896, SupCon: 1.4383, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8397
+[DEBUG] Loss Breakdown — ID: 0.8791, SupCon: 1.7564, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8407
+[DEBUG] Loss Breakdown — ID: 0.8569, SupCon: 1.5102, Tri: 0.0000
+[Epoch 23] Total Loss=0.0835
+Validating epoch 23...
+[Epoch 23] Avg Train Loss = 0.0835 | 
+==================== Epoch 23 Validation ====================
+Validation rank-1    : 83.01%
+Validation rank-5    : 95.88%
+Validation rank-10   : 98.87%
+Validation mAP      : 88.49%
+============================================================
+No improvement in Acc@1. Patience counter: 3/10
+ Epoch 24/60
+[Epoch 24] Learning rate: 0.000010
+[DEBUG] ArcFace confidence: 0.8675
+[DEBUG] Loss Breakdown — ID: 0.8183, SupCon: 1.9283, Tri: 0.0000
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 128]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 1024]), prompt: torch.Size([32, 3, 1024]), pooled: torch.Size([32, 1024])
+[DEBUG] ArcFace confidence: 0.7790
+[DEBUG] Loss Breakdown — ID: 0.8915, SupCon: 2.0096, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8501
+[DEBUG] Loss Breakdown — ID: 0.8849, SupCon: 1.2340, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8883
+[DEBUG] Loss Breakdown — ID: 0.8085, SupCon: 1.6969, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8412
+[DEBUG] Loss Breakdown — ID: 0.8419, SupCon: 1.7044, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8818
+[DEBUG] Loss Breakdown — ID: 0.8237, SupCon: 1.0681, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8685
+[DEBUG] Loss Breakdown — ID: 0.8111, SupCon: 1.7454, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9059
+[DEBUG] Loss Breakdown — ID: 0.8031, SupCon: 1.4454, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8916
+[DEBUG] Loss Breakdown — ID: 0.8195, SupCon: 1.5320, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8719
+[DEBUG] Loss Breakdown — ID: 0.8258, SupCon: 1.6873, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8983
+[DEBUG] Loss Breakdown — ID: 0.7998, SupCon: 1.9394, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8671
+[DEBUG] Loss Breakdown — ID: 0.8359, SupCon: 1.4289, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8903
+[DEBUG] Loss Breakdown — ID: 0.8103, SupCon: 1.2142, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8751
+[DEBUG] Loss Breakdown — ID: 0.8093, SupCon: 1.4949, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8576
+[DEBUG] Loss Breakdown — ID: 0.8497, SupCon: 1.8788, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9104
+[DEBUG] Loss Breakdown — ID: 0.8051, SupCon: 0.8243, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8785
+[DEBUG] Loss Breakdown — ID: 0.8190, SupCon: 1.1890, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8906
+[DEBUG] Loss Breakdown — ID: 0.8060, SupCon: 1.6490, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8589
+[DEBUG] Loss Breakdown — ID: 0.8224, SupCon: 1.4741, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8830
+[DEBUG] Loss Breakdown — ID: 0.8129, SupCon: 1.3753, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8718
+[DEBUG] Loss Breakdown — ID: 0.8093, SupCon: 1.7117, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8955
+[DEBUG] Loss Breakdown — ID: 0.8024, SupCon: 1.4546, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9033
+[DEBUG] Loss Breakdown — ID: 0.8076, SupCon: 1.5691, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8954
+[DEBUG] Loss Breakdown — ID: 0.8047, SupCon: 1.5766, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8983
+[DEBUG] Loss Breakdown — ID: 0.8032, SupCon: 1.9536, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8844
+[DEBUG] Loss Breakdown — ID: 0.8075, SupCon: 1.3445, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8812
+[DEBUG] Loss Breakdown — ID: 0.8247, SupCon: 1.5126, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8927
+[DEBUG] Loss Breakdown — ID: 0.8067, SupCon: 1.0265, Tri: 0.0000
+[Epoch 24] Total Loss=0.0820
+Validating epoch 24...
+[Epoch 24] Avg Train Loss = 0.0820 | 
+==================== Epoch 24 Validation ====================
+Validation rank-1    : 83.93%
+Validation rank-5    : 94.23%
+Validation rank-10   : 98.15%
+Validation mAP      : 88.28%
+============================================================
+No improvement in Acc@1. Patience counter: 4/10
+ Epoch 25/60
+[Epoch 25] Learning rate: 0.000010
+[DEBUG] ArcFace confidence: 0.9126
+[DEBUG] Loss Breakdown — ID: 0.8023, SupCon: 0.8951, Tri: 0.0000
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 128]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 1024]), prompt: torch.Size([32, 3, 1024]), pooled: torch.Size([32, 1024])
+[DEBUG] ArcFace confidence: 0.8580
+[DEBUG] Loss Breakdown — ID: 0.8189, SupCon: 2.3531, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8071
+[DEBUG] Loss Breakdown — ID: 0.9425, SupCon: 1.5466, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8863
+[DEBUG] Loss Breakdown — ID: 0.8173, SupCon: 1.4854, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9036
+[DEBUG] Loss Breakdown — ID: 0.8042, SupCon: 0.9495, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8904
+[DEBUG] Loss Breakdown — ID: 0.8090, SupCon: 1.2856, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8250
+[DEBUG] Loss Breakdown — ID: 0.8879, SupCon: 2.1418, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8676
+[DEBUG] Loss Breakdown — ID: 0.8185, SupCon: 1.8806, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8821
+[DEBUG] Loss Breakdown — ID: 0.8142, SupCon: 1.7882, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9128
+[DEBUG] Loss Breakdown — ID: 0.7989, SupCon: 1.2981, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8588
+[DEBUG] Loss Breakdown — ID: 0.8526, SupCon: 1.1779, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8613
+[DEBUG] Loss Breakdown — ID: 0.8284, SupCon: 1.4290, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9081
+[DEBUG] Loss Breakdown — ID: 0.7970, SupCon: 1.5382, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8330
+[DEBUG] Loss Breakdown — ID: 0.8351, SupCon: 1.6919, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8587
+[DEBUG] Loss Breakdown — ID: 0.8241, SupCon: 2.0597, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8371
+[DEBUG] Loss Breakdown — ID: 0.8337, SupCon: 1.9110, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8586
+[DEBUG] Loss Breakdown — ID: 0.8263, SupCon: 1.4368, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8880
+[DEBUG] Loss Breakdown — ID: 0.8034, SupCon: 1.6430, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8544
+[DEBUG] Loss Breakdown — ID: 0.8257, SupCon: 1.9328, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9168
+[DEBUG] Loss Breakdown — ID: 0.8028, SupCon: 1.2084, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8353
+[DEBUG] Loss Breakdown — ID: 0.8317, SupCon: 1.8102, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8867
+[DEBUG] Loss Breakdown — ID: 0.8135, SupCon: 1.3786, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8656
+[DEBUG] Loss Breakdown — ID: 0.8183, SupCon: 1.7653, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9312
+[DEBUG] Loss Breakdown — ID: 0.7997, SupCon: 1.3112, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8819
+[DEBUG] Loss Breakdown — ID: 0.8156, SupCon: 1.6517, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8738
+[DEBUG] Loss Breakdown — ID: 0.8460, SupCon: 1.0319, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8928
+[DEBUG] Loss Breakdown — ID: 0.8066, SupCon: 1.4733, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7425
+[DEBUG] Loss Breakdown — ID: 0.9089, SupCon: 1.8134, Tri: 0.0000
+[Epoch 25] Total Loss=0.0828
+Validating epoch 25...
+[Epoch 25] Avg Train Loss = 0.0828 | 
+==================== Epoch 25 Validation ====================
+Validation rank-1    : 82.18%
+Validation rank-5    : 95.06%
+Validation rank-10   : 98.25%
+Validation mAP      : 88.00%
+============================================================
+No improvement in Acc@1. Patience counter: 5/10
+ Epoch 26/60
+[Epoch 26] Learning rate: 0.000010
+[DEBUG] ArcFace confidence: 0.8766
+[DEBUG] Loss Breakdown — ID: 0.8118, SupCon: 1.6073, Tri: 0.0000
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 128]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 1024]), prompt: torch.Size([32, 3, 1024]), pooled: torch.Size([32, 1024])
+[DEBUG] ArcFace confidence: 0.8880
+[DEBUG] Loss Breakdown — ID: 0.8108, SupCon: 1.2988, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8968
+[DEBUG] Loss Breakdown — ID: 0.8054, SupCon: 1.4687, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8962
+[DEBUG] Loss Breakdown — ID: 0.8045, SupCon: 1.3066, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8957
+[DEBUG] Loss Breakdown — ID: 0.8049, SupCon: 2.2542, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8808
+[DEBUG] Loss Breakdown — ID: 0.8087, SupCon: 1.8524, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9073
+[DEBUG] Loss Breakdown — ID: 0.7976, SupCon: 1.4267, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8958
+[DEBUG] Loss Breakdown — ID: 0.7981, SupCon: 2.1629, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9067
+[DEBUG] Loss Breakdown — ID: 0.7956, SupCon: 1.5647, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8813
+[DEBUG] Loss Breakdown — ID: 0.8123, SupCon: 1.4915, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8996
+[DEBUG] Loss Breakdown — ID: 0.8068, SupCon: 1.3228, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8706
+[DEBUG] Loss Breakdown — ID: 0.8316, SupCon: 1.1643, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8275
+[DEBUG] Loss Breakdown — ID: 0.8364, SupCon: 2.5083, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9133
+[DEBUG] Loss Breakdown — ID: 0.7998, SupCon: 1.2351, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8614
+[DEBUG] Loss Breakdown — ID: 0.8515, SupCon: 1.2736, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9230
+[DEBUG] Loss Breakdown — ID: 0.8012, SupCon: 0.8826, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8696
+[DEBUG] Loss Breakdown — ID: 0.8099, SupCon: 1.9060, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8873
+[DEBUG] Loss Breakdown — ID: 0.8083, SupCon: 1.7429, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8756
+[DEBUG] Loss Breakdown — ID: 0.8031, SupCon: 2.0376, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8780
+[DEBUG] Loss Breakdown — ID: 0.8106, SupCon: 1.6937, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9024
+[DEBUG] Loss Breakdown — ID: 0.7955, SupCon: 1.5757, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8662
+[DEBUG] Loss Breakdown — ID: 0.8316, SupCon: 1.6122, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9104
+[DEBUG] Loss Breakdown — ID: 0.7978, SupCon: 1.5192, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8908
+[DEBUG] Loss Breakdown — ID: 0.8045, SupCon: 1.4294, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7762
+[DEBUG] Loss Breakdown — ID: 0.9869, SupCon: 2.1913, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8631
+[DEBUG] Loss Breakdown — ID: 0.8141, SupCon: 2.0135, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9002
+[DEBUG] Loss Breakdown — ID: 0.8009, SupCon: 1.4214, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8995
+[DEBUG] Loss Breakdown — ID: 0.8188, SupCon: 0.7059, Tri: 0.0000
+[Epoch 26] Total Loss=0.0816
+Validating epoch 26...
+[Epoch 26] Avg Train Loss = 0.0816 | 
+==================== Epoch 26 Validation ====================
+Validation rank-1    : 85.17%
+Validation rank-5    : 96.19%
+Validation rank-10   : 98.46%
+Validation mAP      : 89.93%
+============================================================
+Saving best model at epoch 26 (Acc@1=85.17%)  saved_models/stage3_promptsg_rn50_11k_dorsal_r_promptsg_e60_lrNA_bs32_BEST.pth
+ Epoch 27/60
+[Epoch 27] Learning rate: 0.000010
+[DEBUG] ArcFace confidence: 0.9009
+[DEBUG] Loss Breakdown — ID: 0.8084, SupCon: 0.8476, Tri: 0.0000
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 128]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 1024]), prompt: torch.Size([32, 3, 1024]), pooled: torch.Size([32, 1024])
+[DEBUG] ArcFace confidence: 0.9164
+[DEBUG] Loss Breakdown — ID: 0.7930, SupCon: 1.4230, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8200
+[DEBUG] Loss Breakdown — ID: 0.8478, SupCon: 2.2883, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9008
+[DEBUG] Loss Breakdown — ID: 0.8020, SupCon: 1.6986, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8876
+[DEBUG] Loss Breakdown — ID: 0.8072, SupCon: 1.8387, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9087
+[DEBUG] Loss Breakdown — ID: 0.7990, SupCon: 1.3411, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8918
+[DEBUG] Loss Breakdown — ID: 0.8012, SupCon: 1.5207, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8550
+[DEBUG] Loss Breakdown — ID: 0.8235, SupCon: 2.0558, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8984
+[DEBUG] Loss Breakdown — ID: 0.8028, SupCon: 1.4106, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8618
+[DEBUG] Loss Breakdown — ID: 0.8271, SupCon: 1.4068, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8984
+[DEBUG] Loss Breakdown — ID: 0.7963, SupCon: 1.9655, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9158
+[DEBUG] Loss Breakdown — ID: 0.7936, SupCon: 1.5451, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9326
+[DEBUG] Loss Breakdown — ID: 0.8016, SupCon: 1.4258, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9144
+[DEBUG] Loss Breakdown — ID: 0.8011, SupCon: 1.1549, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8766
+[DEBUG] Loss Breakdown — ID: 0.8138, SupCon: 1.2377, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8972
+[DEBUG] Loss Breakdown — ID: 0.7965, SupCon: 1.7996, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8747
+[DEBUG] Loss Breakdown — ID: 0.8082, SupCon: 1.6212, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9210
+[DEBUG] Loss Breakdown — ID: 0.7990, SupCon: 0.4747, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8773
+[DEBUG] Loss Breakdown — ID: 0.8088, SupCon: 1.3307, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8924
+[DEBUG] Loss Breakdown — ID: 0.7985, SupCon: 1.6145, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8934
+[DEBUG] Loss Breakdown — ID: 0.7979, SupCon: 1.4346, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8905
+[DEBUG] Loss Breakdown — ID: 0.7991, SupCon: 1.0893, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9137
+[DEBUG] Loss Breakdown — ID: 0.7950, SupCon: 1.7358, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8893
+[DEBUG] Loss Breakdown — ID: 0.8003, SupCon: 2.3525, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8841
+[DEBUG] Loss Breakdown — ID: 0.8100, SupCon: 1.7095, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8986
+[DEBUG] Loss Breakdown — ID: 0.8015, SupCon: 1.2709, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8964
+[DEBUG] Loss Breakdown — ID: 0.7990, SupCon: 1.4722, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8593
+[DEBUG] Loss Breakdown — ID: 0.8371, SupCon: 1.5475, Tri: 0.0000
+[Epoch 27] Total Loss=0.0806
+Validating epoch 27...
+[Epoch 27] Avg Train Loss = 0.0806 | 
+==================== Epoch 27 Validation ====================
+Validation rank-1    : 84.14%
+Validation rank-5    : 95.37%
+Validation rank-10   : 97.94%
+Validation mAP      : 89.12%
+============================================================
+No improvement in Acc@1. Patience counter: 1/10
+ Epoch 28/60
+[Epoch 28] Learning rate: 0.000010
+[DEBUG] ArcFace confidence: 0.9128
+[DEBUG] Loss Breakdown — ID: 0.7944, SupCon: 1.9420, Tri: 0.0000
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 128]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 1024]), prompt: torch.Size([32, 3, 1024]), pooled: torch.Size([32, 1024])
+[DEBUG] ArcFace confidence: 0.9050
+[DEBUG] Loss Breakdown — ID: 0.7977, SupCon: 1.4572, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9051
+[DEBUG] Loss Breakdown — ID: 0.7973, SupCon: 1.2258, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8932
+[DEBUG] Loss Breakdown — ID: 0.7982, SupCon: 1.5595, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8730
+[DEBUG] Loss Breakdown — ID: 0.8136, SupCon: 1.9727, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8942
+[DEBUG] Loss Breakdown — ID: 0.7905, SupCon: 1.8854, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8792
+[DEBUG] Loss Breakdown — ID: 0.8104, SupCon: 1.3773, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9006
+[DEBUG] Loss Breakdown — ID: 0.7968, SupCon: 1.7160, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8566
+[DEBUG] Loss Breakdown — ID: 0.8163, SupCon: 1.7950, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9062
+[DEBUG] Loss Breakdown — ID: 0.7920, SupCon: 1.4726, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9053
+[DEBUG] Loss Breakdown — ID: 0.7958, SupCon: 1.3072, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8932
+[DEBUG] Loss Breakdown — ID: 0.8156, SupCon: 0.8557, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8992
+[DEBUG] Loss Breakdown — ID: 0.7983, SupCon: 1.4083, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8462
+[DEBUG] Loss Breakdown — ID: 0.8375, SupCon: 1.4823, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9147
+[DEBUG] Loss Breakdown — ID: 0.7928, SupCon: 1.1098, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8994
+[DEBUG] Loss Breakdown — ID: 0.7968, SupCon: 2.0777, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8817
+[DEBUG] Loss Breakdown — ID: 0.7974, SupCon: 2.0499, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8707
+[DEBUG] Loss Breakdown — ID: 0.8088, SupCon: 1.7049, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8986
+[DEBUG] Loss Breakdown — ID: 0.8002, SupCon: 0.9982, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8857
+[DEBUG] Loss Breakdown — ID: 0.7996, SupCon: 1.6337, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8625
+[DEBUG] Loss Breakdown — ID: 0.8113, SupCon: 1.4578, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9092
+[DEBUG] Loss Breakdown — ID: 0.7929, SupCon: 1.3103, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8497
+[DEBUG] Loss Breakdown — ID: 0.8304, SupCon: 1.1751, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8524
+[DEBUG] Loss Breakdown — ID: 0.8141, SupCon: 1.6479, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8987
+[DEBUG] Loss Breakdown — ID: 0.7982, SupCon: 1.7954, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8851
+[DEBUG] Loss Breakdown — ID: 0.8007, SupCon: 1.8539, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8959
+[DEBUG] Loss Breakdown — ID: 0.7978, SupCon: 1.4846, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8829
+[DEBUG] Loss Breakdown — ID: 0.7967, SupCon: 1.1642, Tri: 0.0000
+[Epoch 28] Total Loss=0.0803
+Validating epoch 28...
+[Epoch 28] Avg Train Loss = 0.0803 | 
+==================== Epoch 28 Validation ====================
+Validation rank-1    : 85.89%
+Validation rank-5    : 97.22%
+Validation rank-10   : 98.87%
+Validation mAP      : 90.77%
+============================================================
+Saving best model at epoch 28 (Acc@1=85.89%)  saved_models/stage3_promptsg_rn50_11k_dorsal_r_promptsg_e60_lrNA_bs32_BEST.pth
+ Epoch 29/60
+[Epoch 29] Learning rate: 0.000010
+[DEBUG] ArcFace confidence: 0.8960
+[DEBUG] Loss Breakdown — ID: 0.7944, SupCon: 1.4461, Tri: 0.0000
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 128]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 1024]), prompt: torch.Size([32, 3, 1024]), pooled: torch.Size([32, 1024])
+[DEBUG] ArcFace confidence: 0.9094
+[DEBUG] Loss Breakdown — ID: 0.7932, SupCon: 1.4545, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9021
+[DEBUG] Loss Breakdown — ID: 0.7931, SupCon: 1.6495, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9056
+[DEBUG] Loss Breakdown — ID: 0.7930, SupCon: 1.6217, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9059
+[DEBUG] Loss Breakdown — ID: 0.7960, SupCon: 1.4314, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8570
+[DEBUG] Loss Breakdown — ID: 0.8351, SupCon: 1.6142, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9017
+[DEBUG] Loss Breakdown — ID: 0.7946, SupCon: 1.9263, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8594
+[DEBUG] Loss Breakdown — ID: 0.8088, SupCon: 2.3387, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8922
+[DEBUG] Loss Breakdown — ID: 0.7981, SupCon: 1.1230, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8935
+[DEBUG] Loss Breakdown — ID: 0.7949, SupCon: 1.3932, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8943
+[DEBUG] Loss Breakdown — ID: 0.7902, SupCon: 1.7366, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8929
+[DEBUG] Loss Breakdown — ID: 0.8021, SupCon: 1.7626, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8842
+[DEBUG] Loss Breakdown — ID: 0.7984, SupCon: 1.2451, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9024
+[DEBUG] Loss Breakdown — ID: 0.7889, SupCon: 1.8877, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9014
+[DEBUG] Loss Breakdown — ID: 0.8006, SupCon: 1.3481, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8694
+[DEBUG] Loss Breakdown — ID: 0.8264, SupCon: 1.9306, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8998
+[DEBUG] Loss Breakdown — ID: 0.7943, SupCon: 1.1841, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8653
+[DEBUG] Loss Breakdown — ID: 0.8193, SupCon: 1.5449, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8604
+[DEBUG] Loss Breakdown — ID: 0.8173, SupCon: 1.9606, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8831
+[DEBUG] Loss Breakdown — ID: 0.8083, SupCon: 1.9255, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8889
+[DEBUG] Loss Breakdown — ID: 0.7934, SupCon: 1.5119, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9000
+[DEBUG] Loss Breakdown — ID: 0.7961, SupCon: 1.4608, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8943
+[DEBUG] Loss Breakdown — ID: 0.8000, SupCon: 0.7631, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9046
+[DEBUG] Loss Breakdown — ID: 0.7970, SupCon: 1.4647, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8722
+[DEBUG] Loss Breakdown — ID: 0.7998, SupCon: 1.9914, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8871
+[DEBUG] Loss Breakdown — ID: 0.7986, SupCon: 1.4155, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7979
+[DEBUG] Loss Breakdown — ID: 0.8801, SupCon: 2.1406, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8972
+[DEBUG] Loss Breakdown — ID: 0.7964, SupCon: 0.4890, Tri: 0.0000
+[Epoch 29] Total Loss=0.0804
+Validating epoch 29...
+[Epoch 29] Avg Train Loss = 0.0804 | 
+==================== Epoch 29 Validation ====================
+Validation rank-1    : 84.55%
+Validation rank-5    : 95.57%
+Validation rank-10   : 98.87%
+Validation mAP      : 89.20%
+============================================================
+No improvement in Acc@1. Patience counter: 1/10
+ Epoch 30/60
+[Epoch 30] Learning rate: 0.000010
+[DEBUG] ArcFace confidence: 0.8775
+[DEBUG] Loss Breakdown — ID: 0.8052, SupCon: 2.1014, Tri: 0.0000
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 128]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 1024]), prompt: torch.Size([32, 3, 1024]), pooled: torch.Size([32, 1024])
+[DEBUG] ArcFace confidence: 0.8847
+[DEBUG] Loss Breakdown — ID: 0.7941, SupCon: 1.5604, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9013
+[DEBUG] Loss Breakdown — ID: 0.7936, SupCon: 1.5253, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9062
+[DEBUG] Loss Breakdown — ID: 0.7911, SupCon: 1.4957, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9041
+[DEBUG] Loss Breakdown — ID: 0.7951, SupCon: 1.4203, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8835
+[DEBUG] Loss Breakdown — ID: 0.7998, SupCon: 2.4214, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8494
+[DEBUG] Loss Breakdown — ID: 0.8362, SupCon: 1.7003, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9211
+[DEBUG] Loss Breakdown — ID: 0.7967, SupCon: 0.5965, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9276
+[DEBUG] Loss Breakdown — ID: 0.7938, SupCon: 0.8883, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9062
+[DEBUG] Loss Breakdown — ID: 0.7903, SupCon: 1.6922, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8715
+[DEBUG] Loss Breakdown — ID: 0.8047, SupCon: 1.3226, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8762
+[DEBUG] Loss Breakdown — ID: 0.8014, SupCon: 1.8902, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8920
+[DEBUG] Loss Breakdown — ID: 0.8060, SupCon: 1.4861, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9073
+[DEBUG] Loss Breakdown — ID: 0.8020, SupCon: 0.9501, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9161
+[DEBUG] Loss Breakdown — ID: 0.7919, SupCon: 1.3798, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9222
+[DEBUG] Loss Breakdown — ID: 0.7954, SupCon: 1.0989, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8716
+[DEBUG] Loss Breakdown — ID: 0.8099, SupCon: 1.2852, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9122
+[DEBUG] Loss Breakdown — ID: 0.7928, SupCon: 1.0842, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8933
+[DEBUG] Loss Breakdown — ID: 0.7954, SupCon: 1.4177, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8153
+[DEBUG] Loss Breakdown — ID: 0.8444, SupCon: 1.7293, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8969
+[DEBUG] Loss Breakdown — ID: 0.7927, SupCon: 2.0659, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8990
+[DEBUG] Loss Breakdown — ID: 0.7971, SupCon: 1.6241, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9040
+[DEBUG] Loss Breakdown — ID: 0.7994, SupCon: 1.4556, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8729
+[DEBUG] Loss Breakdown — ID: 0.8037, SupCon: 1.8769, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8716
+[DEBUG] Loss Breakdown — ID: 0.8030, SupCon: 1.5804, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9002
+[DEBUG] Loss Breakdown — ID: 0.8000, SupCon: 1.5474, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9182
+[DEBUG] Loss Breakdown — ID: 0.7949, SupCon: 0.9508, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8928
+[DEBUG] Loss Breakdown — ID: 0.7982, SupCon: 0.7718, Tri: 0.0000
+[Epoch 30] Total Loss=0.0801
+Validating epoch 30...
+[Epoch 30] Avg Train Loss = 0.0801 | 
+==================== Epoch 30 Validation ====================
+Validation rank-1    : 83.21%
+Validation rank-5    : 92.79%
+Validation rank-10   : 96.60%
+Validation mAP      : 87.78%
+============================================================
+No improvement in Acc@1. Patience counter: 2/10
+ Epoch 31/60
+[Epoch 31] Learning rate: 0.000010
+[DEBUG] ArcFace confidence: 0.8885
+[DEBUG] Loss Breakdown — ID: 0.7950, SupCon: 1.4550, Tri: 0.0000
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 128]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 1024]), prompt: torch.Size([32, 3, 1024]), pooled: torch.Size([32, 1024])
+[DEBUG] ArcFace confidence: 0.8780
+[DEBUG] Loss Breakdown — ID: 0.8072, SupCon: 1.9475, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8858
+[DEBUG] Loss Breakdown — ID: 0.8021, SupCon: 1.8676, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9134
+[DEBUG] Loss Breakdown — ID: 0.7894, SupCon: 1.6845, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8962
+[DEBUG] Loss Breakdown — ID: 0.7905, SupCon: 1.4466, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9009
+[DEBUG] Loss Breakdown — ID: 0.7953, SupCon: 1.3916, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9077
+[DEBUG] Loss Breakdown — ID: 0.7915, SupCon: 0.7187, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8999
+[DEBUG] Loss Breakdown — ID: 0.7954, SupCon: 1.5507, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8875
+[DEBUG] Loss Breakdown — ID: 0.7924, SupCon: 1.9358, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8598
+[DEBUG] Loss Breakdown — ID: 0.8342, SupCon: 2.1364, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9152
+[DEBUG] Loss Breakdown — ID: 0.7919, SupCon: 1.2858, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8900
+[DEBUG] Loss Breakdown — ID: 0.7965, SupCon: 1.5848, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8951
+[DEBUG] Loss Breakdown — ID: 0.8014, SupCon: 1.3765, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8586
+[DEBUG] Loss Breakdown — ID: 0.8111, SupCon: 1.1811, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8962
+[DEBUG] Loss Breakdown — ID: 0.7923, SupCon: 1.4176, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8989
+[DEBUG] Loss Breakdown — ID: 0.7919, SupCon: 1.7009, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8873
+[DEBUG] Loss Breakdown — ID: 0.8009, SupCon: 0.9417, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8937
+[DEBUG] Loss Breakdown — ID: 0.7907, SupCon: 2.0872, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8887
+[DEBUG] Loss Breakdown — ID: 0.7962, SupCon: 1.6158, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9118
+[DEBUG] Loss Breakdown — ID: 0.7902, SupCon: 0.8756, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9275
+[DEBUG] Loss Breakdown — ID: 0.7891, SupCon: 0.4533, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8947
+[DEBUG] Loss Breakdown — ID: 0.7941, SupCon: 1.4966, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8698
+[DEBUG] Loss Breakdown — ID: 0.8098, SupCon: 0.8568, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8873
+[DEBUG] Loss Breakdown — ID: 0.7987, SupCon: 1.8804, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9052
+[DEBUG] Loss Breakdown — ID: 0.7901, SupCon: 1.2901, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9008
+[DEBUG] Loss Breakdown — ID: 0.7945, SupCon: 1.5902, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8258
+[DEBUG] Loss Breakdown — ID: 0.8337, SupCon: 2.0507, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9048
+[DEBUG] Loss Breakdown — ID: 0.7898, SupCon: 0.9625, Tri: 0.0000
+[Epoch 31] Total Loss=0.0798
+Validating epoch 31...
+[Epoch 31] Avg Train Loss = 0.0798 | 
+==================== Epoch 31 Validation ====================
+Validation rank-1    : 83.11%
+Validation rank-5    : 93.31%
+Validation rank-10   : 96.50%
+Validation mAP      : 87.68%
+============================================================
+No improvement in Acc@1. Patience counter: 3/10
+ Epoch 32/60
+[Epoch 32] Learning rate: 0.000010
+[DEBUG] ArcFace confidence: 0.9110
+[DEBUG] Loss Breakdown — ID: 0.7879, SupCon: 1.5754, Tri: 0.0000
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 128]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 1024]), prompt: torch.Size([32, 3, 1024]), pooled: torch.Size([32, 1024])
+[DEBUG] ArcFace confidence: 0.9089
+[DEBUG] Loss Breakdown — ID: 0.7921, SupCon: 1.3951, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8091
+[DEBUG] Loss Breakdown — ID: 0.8626, SupCon: 2.2692, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9016
+[DEBUG] Loss Breakdown — ID: 0.7887, SupCon: 1.7529, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9082
+[DEBUG] Loss Breakdown — ID: 0.7934, SupCon: 1.8653, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9078
+[DEBUG] Loss Breakdown — ID: 0.7889, SupCon: 1.3698, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8880
+[DEBUG] Loss Breakdown — ID: 0.7999, SupCon: 1.9332, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9049
+[DEBUG] Loss Breakdown — ID: 0.7925, SupCon: 1.2416, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8893
+[DEBUG] Loss Breakdown — ID: 0.7967, SupCon: 1.7617, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9003
+[DEBUG] Loss Breakdown — ID: 0.7923, SupCon: 1.6232, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9044
+[DEBUG] Loss Breakdown — ID: 0.7879, SupCon: 1.3178, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8937
+[DEBUG] Loss Breakdown — ID: 0.7958, SupCon: 1.5028, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8831
+[DEBUG] Loss Breakdown — ID: 0.7948, SupCon: 1.5451, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8895
+[DEBUG] Loss Breakdown — ID: 0.7926, SupCon: 2.3822, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9171
+[DEBUG] Loss Breakdown — ID: 0.7903, SupCon: 1.2938, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9155
+[DEBUG] Loss Breakdown — ID: 0.7906, SupCon: 0.8718, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9050
+[DEBUG] Loss Breakdown — ID: 0.7888, SupCon: 1.3060, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8889
+[DEBUG] Loss Breakdown — ID: 0.7969, SupCon: 1.5429, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8973
+[DEBUG] Loss Breakdown — ID: 0.7906, SupCon: 2.0290, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8951
+[DEBUG] Loss Breakdown — ID: 0.7936, SupCon: 1.6425, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9152
+[DEBUG] Loss Breakdown — ID: 0.7910, SupCon: 0.8104, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9053
+[DEBUG] Loss Breakdown — ID: 0.7898, SupCon: 1.6547, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8982
+[DEBUG] Loss Breakdown — ID: 0.7935, SupCon: 0.9681, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9063
+[DEBUG] Loss Breakdown — ID: 0.7933, SupCon: 1.4341, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8695
+[DEBUG] Loss Breakdown — ID: 0.8087, SupCon: 1.6566, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8975
+[DEBUG] Loss Breakdown — ID: 0.7887, SupCon: 1.6813, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7962
+[DEBUG] Loss Breakdown — ID: 0.8827, SupCon: 2.2147, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8907
+[DEBUG] Loss Breakdown — ID: 0.7996, SupCon: 0.7312, Tri: 0.0000
+[Epoch 32] Total Loss=0.0799
+Validating epoch 32...
+[Epoch 32] Avg Train Loss = 0.0799 | 
+==================== Epoch 32 Validation ====================
+Validation rank-1    : 81.98%
+Validation rank-5    : 93.82%
+Validation rank-10   : 97.01%
+Validation mAP      : 87.18%
+============================================================
+No improvement in Acc@1. Patience counter: 4/10
+ Epoch 33/60
+[Epoch 33] Learning rate: 0.000010
+[DEBUG] ArcFace confidence: 0.8971
+[DEBUG] Loss Breakdown — ID: 0.7957, SupCon: 1.5513, Tri: 0.0000
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 128]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 1024]), prompt: torch.Size([32, 3, 1024]), pooled: torch.Size([32, 1024])
+[DEBUG] ArcFace confidence: 0.8912
+[DEBUG] Loss Breakdown — ID: 0.7928, SupCon: 2.1033, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8896
+[DEBUG] Loss Breakdown — ID: 0.8020, SupCon: 1.3335, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9179
+[DEBUG] Loss Breakdown — ID: 0.7889, SupCon: 1.4176, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9136
+[DEBUG] Loss Breakdown — ID: 0.7888, SupCon: 0.8675, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8904
+[DEBUG] Loss Breakdown — ID: 0.7948, SupCon: 1.8696, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9079
+[DEBUG] Loss Breakdown — ID: 0.7860, SupCon: 1.7525, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8822
+[DEBUG] Loss Breakdown — ID: 0.7887, SupCon: 1.5688, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9002
+[DEBUG] Loss Breakdown — ID: 0.7952, SupCon: 1.0785, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9106
+[DEBUG] Loss Breakdown — ID: 0.7910, SupCon: 1.1174, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8981
+[DEBUG] Loss Breakdown — ID: 0.7910, SupCon: 1.2863, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8901
+[DEBUG] Loss Breakdown — ID: 0.7909, SupCon: 1.7551, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9192
+[DEBUG] Loss Breakdown — ID: 0.7875, SupCon: 1.3668, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9047
+[DEBUG] Loss Breakdown — ID: 0.7858, SupCon: 1.3662, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8941
+[DEBUG] Loss Breakdown — ID: 0.7929, SupCon: 1.9849, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8727
+[DEBUG] Loss Breakdown — ID: 0.8012, SupCon: 1.2701, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8713
+[DEBUG] Loss Breakdown — ID: 0.8024, SupCon: 1.5259, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8778
+[DEBUG] Loss Breakdown — ID: 0.8008, SupCon: 1.4963, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9056
+[DEBUG] Loss Breakdown — ID: 0.7879, SupCon: 1.5636, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9076
+[DEBUG] Loss Breakdown — ID: 0.7896, SupCon: 1.3040, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8906
+[DEBUG] Loss Breakdown — ID: 0.7899, SupCon: 2.2248, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9112
+[DEBUG] Loss Breakdown — ID: 0.7898, SupCon: 1.3954, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9134
+[DEBUG] Loss Breakdown — ID: 0.7881, SupCon: 1.7733, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9065
+[DEBUG] Loss Breakdown — ID: 0.7867, SupCon: 1.3279, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8931
+[DEBUG] Loss Breakdown — ID: 0.7957, SupCon: 1.6629, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8873
+[DEBUG] Loss Breakdown — ID: 0.7937, SupCon: 1.3609, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9034
+[DEBUG] Loss Breakdown — ID: 0.7863, SupCon: 1.5659, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7883
+[DEBUG] Loss Breakdown — ID: 0.8562, SupCon: 1.9368, Tri: 0.0000
+[Epoch 33] Total Loss=0.0794
+Validating epoch 33...
+[Epoch 33] Avg Train Loss = 0.0794 | 
+==================== Epoch 33 Validation ====================
+Validation rank-1    : 81.98%
+Validation rank-5    : 94.23%
+Validation rank-10   : 97.32%
+Validation mAP      : 87.34%
+============================================================
+No improvement in Acc@1. Patience counter: 5/10
+ Epoch 34/60
+[Epoch 34] Learning rate: 0.000010
+[DEBUG] ArcFace confidence: 0.8550
+[DEBUG] Loss Breakdown — ID: 0.8398, SupCon: 1.6666, Tri: 0.0000
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 128]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 1024]), prompt: torch.Size([32, 3, 1024]), pooled: torch.Size([32, 1024])
+[DEBUG] ArcFace confidence: 0.9166
+[DEBUG] Loss Breakdown — ID: 0.7865, SupCon: 1.5264, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8721
+[DEBUG] Loss Breakdown — ID: 0.7996, SupCon: 1.5848, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9102
+[DEBUG] Loss Breakdown — ID: 0.7893, SupCon: 0.8320, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8741
+[DEBUG] Loss Breakdown — ID: 0.7989, SupCon: 1.3210, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9048
+[DEBUG] Loss Breakdown — ID: 0.7902, SupCon: 1.3958, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9067
+[DEBUG] Loss Breakdown — ID: 0.7880, SupCon: 1.7624, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8983
+[DEBUG] Loss Breakdown — ID: 0.7888, SupCon: 1.4083, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8738
+[DEBUG] Loss Breakdown — ID: 0.8034, SupCon: 1.7149, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8773
+[DEBUG] Loss Breakdown — ID: 0.8022, SupCon: 1.3389, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8776
+[DEBUG] Loss Breakdown — ID: 0.7952, SupCon: 1.8508, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8979
+[DEBUG] Loss Breakdown — ID: 0.7868, SupCon: 1.2101, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8670
+[DEBUG] Loss Breakdown — ID: 0.7996, SupCon: 1.7469, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9012
+[DEBUG] Loss Breakdown — ID: 0.7890, SupCon: 1.6610, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8813
+[DEBUG] Loss Breakdown — ID: 0.7923, SupCon: 1.3940, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8702
+[DEBUG] Loss Breakdown — ID: 0.8004, SupCon: 1.7862, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8709
+[DEBUG] Loss Breakdown — ID: 0.8039, SupCon: 1.6425, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8820
+[DEBUG] Loss Breakdown — ID: 0.8017, SupCon: 1.3301, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8912
+[DEBUG] Loss Breakdown — ID: 0.7945, SupCon: 1.2643, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9187
+[DEBUG] Loss Breakdown — ID: 0.7860, SupCon: 0.9261, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9085
+[DEBUG] Loss Breakdown — ID: 0.7864, SupCon: 1.7474, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9115
+[DEBUG] Loss Breakdown — ID: 0.7852, SupCon: 1.5099, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8631
+[DEBUG] Loss Breakdown — ID: 0.8115, SupCon: 1.7098, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9036
+[DEBUG] Loss Breakdown — ID: 0.7878, SupCon: 1.9250, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8796
+[DEBUG] Loss Breakdown — ID: 0.7940, SupCon: 1.4693, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9149
+[DEBUG] Loss Breakdown — ID: 0.7886, SupCon: 1.6222, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9218
+[DEBUG] Loss Breakdown — ID: 0.7904, SupCon: 0.8488, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9101
+[DEBUG] Loss Breakdown — ID: 0.7870, SupCon: 0.2960, Tri: 0.0000
+[Epoch 34] Total Loss=0.0795
+Validating epoch 34...
+[Epoch 34] Avg Train Loss = 0.0795 | 
+==================== Epoch 34 Validation ====================
+Validation rank-1    : 83.83%
+Validation rank-5    : 95.67%
+Validation rank-10   : 98.25%
+Validation mAP      : 88.98%
+============================================================
+No improvement in Acc@1. Patience counter: 6/10
+ Epoch 35/60
+[Epoch 35] Learning rate: 0.000010
+[DEBUG] ArcFace confidence: 0.9025
+[DEBUG] Loss Breakdown — ID: 0.7912, SupCon: 1.4368, Tri: 0.0000
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 128]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 1024]), prompt: torch.Size([32, 3, 1024]), pooled: torch.Size([32, 1024])
+[DEBUG] ArcFace confidence: 0.8877
+[DEBUG] Loss Breakdown — ID: 0.7910, SupCon: 1.6830, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9028
+[DEBUG] Loss Breakdown — ID: 0.7873, SupCon: 1.0647, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8875
+[DEBUG] Loss Breakdown — ID: 0.7977, SupCon: 2.0252, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8979
+[DEBUG] Loss Breakdown — ID: 0.7985, SupCon: 1.0602, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9093
+[DEBUG] Loss Breakdown — ID: 0.7865, SupCon: 1.5920, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8865
+[DEBUG] Loss Breakdown — ID: 0.7927, SupCon: 1.5284, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8962
+[DEBUG] Loss Breakdown — ID: 0.7946, SupCon: 1.2517, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9116
+[DEBUG] Loss Breakdown — ID: 0.7880, SupCon: 1.4849, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8588
+[DEBUG] Loss Breakdown — ID: 0.8101, SupCon: 1.9057, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9213
+[DEBUG] Loss Breakdown — ID: 0.7854, SupCon: 1.1715, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9035
+[DEBUG] Loss Breakdown — ID: 0.7882, SupCon: 1.4515, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9103
+[DEBUG] Loss Breakdown — ID: 0.7859, SupCon: 1.4761, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8831
+[DEBUG] Loss Breakdown — ID: 0.7942, SupCon: 1.7431, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8854
+[DEBUG] Loss Breakdown — ID: 0.7882, SupCon: 2.0606, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8954
+[DEBUG] Loss Breakdown — ID: 0.7858, SupCon: 1.7140, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9066
+[DEBUG] Loss Breakdown — ID: 0.7848, SupCon: 1.2389, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9256
+[DEBUG] Loss Breakdown — ID: 0.7860, SupCon: 1.0161, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9184
+[DEBUG] Loss Breakdown — ID: 0.7858, SupCon: 1.0107, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8906
+[DEBUG] Loss Breakdown — ID: 0.7847, SupCon: 1.6739, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8085
+[DEBUG] Loss Breakdown — ID: 0.8579, SupCon: 1.8692, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8961
+[DEBUG] Loss Breakdown — ID: 0.7830, SupCon: 1.6360, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9002
+[DEBUG] Loss Breakdown — ID: 0.7885, SupCon: 1.5261, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8523
+[DEBUG] Loss Breakdown — ID: 0.8115, SupCon: 1.2202, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8929
+[DEBUG] Loss Breakdown — ID: 0.7870, SupCon: 2.0771, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8861
+[DEBUG] Loss Breakdown — ID: 0.7996, SupCon: 2.1255, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8938
+[DEBUG] Loss Breakdown — ID: 0.7869, SupCon: 1.7240, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8330
+[DEBUG] Loss Breakdown — ID: 0.8155, SupCon: 1.2425, Tri: 0.0000
+[Epoch 35] Total Loss=0.0794
+Validating epoch 35...
+[Epoch 35] Avg Train Loss = 0.0794 | 
+==================== Epoch 35 Validation ====================
+Validation rank-1    : 84.14%
+Validation rank-5    : 95.16%
+Validation rank-10   : 97.73%
+Validation mAP      : 88.73%
+============================================================
+No improvement in Acc@1. Patience counter: 7/10
+ Epoch 36/60
+[Epoch 36] Learning rate: 0.000010
+[DEBUG] ArcFace confidence: 0.9046
+[DEBUG] Loss Breakdown — ID: 0.7844, SupCon: 1.3779, Tri: 0.0000
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 128]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 1024]), prompt: torch.Size([32, 3, 1024]), pooled: torch.Size([32, 1024])
+[DEBUG] ArcFace confidence: 0.8942
+[DEBUG] Loss Breakdown — ID: 0.7855, SupCon: 1.4128, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9139
+[DEBUG] Loss Breakdown — ID: 0.7873, SupCon: 1.5285, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8949
+[DEBUG] Loss Breakdown — ID: 0.7886, SupCon: 1.6962, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8859
+[DEBUG] Loss Breakdown — ID: 0.7933, SupCon: 1.7108, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9038
+[DEBUG] Loss Breakdown — ID: 0.7869, SupCon: 1.6299, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8697
+[DEBUG] Loss Breakdown — ID: 0.8002, SupCon: 1.0174, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9008
+[DEBUG] Loss Breakdown — ID: 0.7886, SupCon: 1.0940, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8974
+[DEBUG] Loss Breakdown — ID: 0.7888, SupCon: 1.2295, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9033
+[DEBUG] Loss Breakdown — ID: 0.7852, SupCon: 1.0963, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9159
+[DEBUG] Loss Breakdown — ID: 0.7824, SupCon: 1.3058, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8921
+[DEBUG] Loss Breakdown — ID: 0.7961, SupCon: 1.7431, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8758
+[DEBUG] Loss Breakdown — ID: 0.8012, SupCon: 1.2840, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9155
+[DEBUG] Loss Breakdown — ID: 0.7891, SupCon: 1.0786, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9149
+[DEBUG] Loss Breakdown — ID: 0.7884, SupCon: 0.7508, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9062
+[DEBUG] Loss Breakdown — ID: 0.7846, SupCon: 1.2530, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9117
+[DEBUG] Loss Breakdown — ID: 0.7842, SupCon: 1.5789, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8950
+[DEBUG] Loss Breakdown — ID: 0.7912, SupCon: 1.1638, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9133
+[DEBUG] Loss Breakdown — ID: 0.7879, SupCon: 1.1978, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8954
+[DEBUG] Loss Breakdown — ID: 0.7850, SupCon: 1.4322, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8632
+[DEBUG] Loss Breakdown — ID: 0.7966, SupCon: 2.1030, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9056
+[DEBUG] Loss Breakdown — ID: 0.7833, SupCon: 1.5896, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8909
+[DEBUG] Loss Breakdown — ID: 0.7899, SupCon: 1.3026, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9041
+[DEBUG] Loss Breakdown — ID: 0.7861, SupCon: 1.3561, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9001
+[DEBUG] Loss Breakdown — ID: 0.7834, SupCon: 1.7052, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9036
+[DEBUG] Loss Breakdown — ID: 0.7870, SupCon: 1.6383, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9023
+[DEBUG] Loss Breakdown — ID: 0.7847, SupCon: 1.4663, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7332
+[DEBUG] Loss Breakdown — ID: 0.9026, SupCon: 1.8932, Tri: 0.0000
+[Epoch 36] Total Loss=0.0793
+Validating epoch 36...
+[Epoch 36] Avg Train Loss = 0.0793 | 
+==================== Epoch 36 Validation ====================
+Validation rank-1    : 83.42%
+Validation rank-5    : 93.00%
+Validation rank-10   : 97.01%
+Validation mAP      : 87.81%
+============================================================
+No improvement in Acc@1. Patience counter: 8/10
+ Epoch 37/60
+[Epoch 37] Learning rate: 0.000010
+[DEBUG] ArcFace confidence: 0.8780
+[DEBUG] Loss Breakdown — ID: 0.7896, SupCon: 1.7752, Tri: 0.0000
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 128]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 1024]), prompt: torch.Size([32, 3, 1024]), pooled: torch.Size([32, 1024])
+[DEBUG] ArcFace confidence: 0.8846
+[DEBUG] Loss Breakdown — ID: 0.7951, SupCon: 1.1490, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8884
+[DEBUG] Loss Breakdown — ID: 0.7871, SupCon: 1.9783, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9001
+[DEBUG] Loss Breakdown — ID: 0.7869, SupCon: 1.8039, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8919
+[DEBUG] Loss Breakdown — ID: 0.7880, SupCon: 1.9207, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8958
+[DEBUG] Loss Breakdown — ID: 0.7957, SupCon: 1.4567, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9048
+[DEBUG] Loss Breakdown — ID: 0.7845, SupCon: 1.3565, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9046
+[DEBUG] Loss Breakdown — ID: 0.7856, SupCon: 1.3730, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8893
+[DEBUG] Loss Breakdown — ID: 0.7936, SupCon: 1.7074, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9204
+[DEBUG] Loss Breakdown — ID: 0.7887, SupCon: 1.1723, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9272
+[DEBUG] Loss Breakdown — ID: 0.7854, SupCon: 1.0954, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8856
+[DEBUG] Loss Breakdown — ID: 0.7944, SupCon: 1.6967, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9014
+[DEBUG] Loss Breakdown — ID: 0.7879, SupCon: 1.3047, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9111
+[DEBUG] Loss Breakdown — ID: 0.7828, SupCon: 1.5288, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9231
+[DEBUG] Loss Breakdown — ID: 0.7861, SupCon: 1.1169, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9084
+[DEBUG] Loss Breakdown — ID: 0.7821, SupCon: 1.9250, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8966
+[DEBUG] Loss Breakdown — ID: 0.7870, SupCon: 1.9348, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9138
+[DEBUG] Loss Breakdown — ID: 0.7857, SupCon: 1.1330, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9069
+[DEBUG] Loss Breakdown — ID: 0.7883, SupCon: 1.0098, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8831
+[DEBUG] Loss Breakdown — ID: 0.7896, SupCon: 1.3889, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9000
+[DEBUG] Loss Breakdown — ID: 0.7871, SupCon: 1.0748, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9130
+[DEBUG] Loss Breakdown — ID: 0.7835, SupCon: 1.3647, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7992
+[DEBUG] Loss Breakdown — ID: 0.8954, SupCon: 2.1527, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8801
+[DEBUG] Loss Breakdown — ID: 0.8005, SupCon: 1.6093, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8426
+[DEBUG] Loss Breakdown — ID: 0.8115, SupCon: 2.2572, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8812
+[DEBUG] Loss Breakdown — ID: 0.7989, SupCon: 1.3336, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8430
+[DEBUG] Loss Breakdown — ID: 0.8168, SupCon: 1.6181, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8935
+[DEBUG] Loss Breakdown — ID: 0.7866, SupCon: 1.3360, Tri: 0.0000
+[Epoch 37] Total Loss=0.0794
+Validating epoch 37...
+[Epoch 37] Avg Train Loss = 0.0794 | 
+==================== Epoch 37 Validation ====================
+Validation rank-1    : 83.42%
+Validation rank-5    : 95.88%
+Validation rank-10   : 98.76%
+Validation mAP      : 88.75%
+============================================================
+No improvement in Acc@1. Patience counter: 9/10
+ Epoch 38/60
+[Epoch 38] Learning rate: 0.000010
+[DEBUG] ArcFace confidence: 0.9181
+[DEBUG] Loss Breakdown — ID: 0.7874, SupCon: 1.5335, Tri: 0.0000
+[DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 128]), labels: torch.Size([32])
+[DEBUG] img_features: torch.Size([32, 1024]), prompt: torch.Size([32, 3, 1024]), pooled: torch.Size([32, 1024])
+[DEBUG] ArcFace confidence: 0.9033
+[DEBUG] Loss Breakdown — ID: 0.7895, SupCon: 1.5484, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9007
+[DEBUG] Loss Breakdown — ID: 0.7819, SupCon: 1.8859, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9098
+[DEBUG] Loss Breakdown — ID: 0.7836, SupCon: 1.2787, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8999
+[DEBUG] Loss Breakdown — ID: 0.7858, SupCon: 1.0727, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.6980
+[DEBUG] Loss Breakdown — ID: 1.0374, SupCon: 1.8001, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8923
+[DEBUG] Loss Breakdown — ID: 0.7887, SupCon: 1.7419, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8381
+[DEBUG] Loss Breakdown — ID: 0.8085, SupCon: 1.9822, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9080
+[DEBUG] Loss Breakdown — ID: 0.7818, SupCon: 1.9901, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8983
+[DEBUG] Loss Breakdown — ID: 0.7823, SupCon: 1.7270, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.7485
+[DEBUG] Loss Breakdown — ID: 0.9823, SupCon: 1.9247, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9009
+[DEBUG] Loss Breakdown — ID: 0.7877, SupCon: 1.2043, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9176
+[DEBUG] Loss Breakdown — ID: 0.7834, SupCon: 0.7819, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8990
+[DEBUG] Loss Breakdown — ID: 0.7836, SupCon: 1.8103, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8733
+[DEBUG] Loss Breakdown — ID: 0.7972, SupCon: 1.5054, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9040
+[DEBUG] Loss Breakdown — ID: 0.7892, SupCon: 1.5806, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8958
+[DEBUG] Loss Breakdown — ID: 0.7846, SupCon: 1.6090, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9120
+[DEBUG] Loss Breakdown — ID: 0.7875, SupCon: 1.5183, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8977
+[DEBUG] Loss Breakdown — ID: 0.7908, SupCon: 1.4439, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9150
+[DEBUG] Loss Breakdown — ID: 0.7893, SupCon: 1.5226, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8977
+[DEBUG] Loss Breakdown — ID: 0.7985, SupCon: 1.0885, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8971
+[DEBUG] Loss Breakdown — ID: 0.7911, SupCon: 1.7356, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.9144
+[DEBUG] Loss Breakdown — ID: 0.7841, SupCon: 0.7725, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8845
+[DEBUG] Loss Breakdown — ID: 0.7947, SupCon: 1.6597, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8869
+[DEBUG] Loss Breakdown — ID: 0.7934, SupCon: 1.6330, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8720
+[DEBUG] Loss Breakdown — ID: 0.7958, SupCon: 1.5785, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8996
+[DEBUG] Loss Breakdown — ID: 0.7857, SupCon: 1.7049, Tri: 0.0000
+[DEBUG] ArcFace confidence: 0.8929
+[DEBUG] Loss Breakdown — ID: 0.7877, SupCon: 1.2728, Tri: 0.0000
+[Epoch 38] Total Loss=0.0805
+Validating epoch 38...
+[Epoch 38] Avg Train Loss = 0.0805 | 
+==================== Epoch 38 Validation ====================
+Validation rank-1    : 84.65%
+Validation rank-5    : 96.29%
+Validation rank-10   : 98.35%
+Validation mAP      : 89.72%
+============================================================
+No improvement in Acc@1. Patience counter: 10/10
+Early srankping at epoch 38 due to no improvement in rank-1 accuracy.
