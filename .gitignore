@@ -13,7 +13,7 @@
 *.pyc
 *.pyc
 experiments/run_eval_clip.py
-experiments/stage0_baseline_inference/eval_baseline_clip.py
+experiments/stage1_baseline_inference/eval_baseline_clip.py
 *.pyc
 /11k
 /HD
@@ -25,3 +25,7 @@ clip_fh_v4.zip
 /configs/archived
 /configs/train_stage2_clip_reid/archive
 /engine/archived
+/eval_logs/archived
+/experiments/archived
+/train_logs/archived
+/models/archived
