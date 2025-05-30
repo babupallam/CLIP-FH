@@ -2,7 +2,7 @@
 experiment: stage2_clipreid
 dataset: 11k
 aspect: dorsal_r
-model: vitb16
+model: rn50
 variant: clipid
 
 # === Prompt Config ===
@@ -13,19 +13,19 @@ freeze_prompt: false
 freeze_text_encoder: true
 
 # === Training Strategy ===
-stage_mode: prompt_then_image       # options: [prompt_only, image_only, prompt_then_image]
-epochs_prompt: 30            # prompt learner training epochs
-epochs_image: 30                     # image encoder fine-tuning epochs
+stage_mode: prompt_then_image        # options: [prompt_only, image_only, prompt_then_image]
+epochs_prompt: 30               # prompt learner training epochs
+epochs_image: 30                   # image encoder fine-tuning epochs
 early_stop_patience: 5
 
 # === Optimizer ===
-lr: 5e-5
+lr: 1e-5
 #weight_decay: 0.0005
 center_lr: 0.5
 center_loss_weight: 0.0003
 
 use_arcface: true
-arcface_scale: 35
+arcface_scale: 30
 arcface_margin: 0.4
 
 # === Loss Function ===
@@ -43,17 +43,16 @@ save_dir: saved_models/
 log_dir: eval_logs/
 
 
-# for v2
-
+#for v2
 prompt_template_list:
   - "A photo of a X X X X hand."
   - "A close-up of the {} of a person."
   - "{} hand image."
   - "An image showing a {}."
 
-lr_visual: 0.00001      # Lower to avoid overfitting ViT visual backbone
-lr_prompt: 0.0001       # Prompt learner learns faster
-lr_text: 0.000005       # Text encoder stays mostly stable
+lr_visual: 0.00007     # Reduced for AdamW stability with RN50
+lr_prompt: 0.0001       # Prompt learner can handle higher LR
+lr_text: 0.000005       # Conservative for text encoder
 
 weight_decay_prompt: 0.0005
 weight_decay_visual: 0.0005
@@ -63,10 +62,9 @@ weight_decay_text: 0.0005
 
 loss_use_supcon: true
 loss_use_arcface: true
-loss_use_triplet: false
+loss_use_triplet: true
 loss_use_center: true
 loss_use_id: true
 
 
-
-unfreeze_blocks: 12   # Unfreeze last 2 blocks of visual transformer (default: 0 = frozen)
+unfreeze_blocks: 4   # Unfreeze last 2 blocks of visual transformer (default: 0 = frozen)
