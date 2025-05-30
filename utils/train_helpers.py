@@ -67,7 +67,7 @@ def unfreeze_clip_image_encoder(model, logger=None, unfreeze_blocks=0):
                 for param in resblocks[idx].parameters():
                     param.requires_grad = True
             if logger:
-                logger(f"[ViT] Unfroze {unfreeze_blocks} resblocks: {start}–{total_blocks - 1}")
+                logger(f"[ViT] Unfroze {unfreeze_blocks} resblocks: {start}{total_blocks - 1}")
         else:
             if logger:
                 logger("[ViT] All visual blocks kept frozen")
@@ -221,7 +221,7 @@ from utils.clip_patch import MultiModalInteraction      # Cross-attention fusion
 from utils.loss.arcface import ArcFace                  # ArcFace classification head
 
 def build_promptsg_models(config, num_classes, device):
-    # ✅ Map each CLIP model type to its image feature output dimension
+    #  Map each CLIP model type to its image feature output dimension
     model_dim_map = {
         "vitb16": 512,
         "vitb32": 512,
@@ -241,7 +241,7 @@ def build_promptsg_models(config, num_classes, device):
 
     # === Build PromptSG modules ===
 
-    # 1. Pseudo-token generator (takes image features → outputs token for prompt)
+    # 1. Pseudo-token generator (takes image features  outputs token for prompt)
     inversion_model = TextualInversionMLP(pseudo_dim, pseudo_dim).to(device)
 
     # 2. Cross-attention fusion block (fuses prompt tokens + image features)

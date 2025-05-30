@@ -61,8 +61,8 @@ def print_split_stats(aspect, split, stats):
         f"| Min: {stats['min']:>2} ({stats['min_count']}) | Max: {stats['max']:>2} ({stats['max_count']})"
     )
 
-# 📘 Header: Explanation
-print_and_log("📘 Column Explanation:")
+#  Header: Explanation
+print_and_log(" Column Explanation:")
 print_and_log("-" * 85)
 print_and_log("ASPECT_SPLIT       : Aspect + split type (e.g. dorsal_r_train)")
 print_and_log("Classes            : Number of identity folders (unique IDs)")
@@ -71,20 +71,20 @@ print_and_log("Min                : Minimum samples found in any class (and how 
 print_and_log("Max                : Maximum samples found in any class (and how many classes have this count)")
 print_and_log("-" * 85)
 
-# 📊 Analysis of train/val/test
-print_and_log("\n📊 11k Dataset Distribution Summary")
+#  Analysis of train/val/test
+print_and_log("\n 11k Dataset Distribution Summary")
 print_and_log("=" * 85)
 
 for aspect_path in aspects:
     aspect_name = aspect_path.replace("train_val_test_split_", "")
-    print_and_log(f"\n🔹 {aspect_name.upper()}")
+    print_and_log(f"\n {aspect_name.upper()}")
     for split in splits:
         split_path = os.path.join(root_dir, aspect_path, split)
         stats = analyze_split(split_path)
         print_split_stats(aspect_name, split, stats)
 
-# 🎲 Monte Carlo analysis
-print_and_log("\n🎲 Monte Carlo Query/Gallery Splits Summary")
+#  Monte Carlo analysis
+print_and_log("\n Monte Carlo Query/Gallery Splits Summary")
 print_and_log("=" * 85)
 
 for aspect_path in aspects:
@@ -95,9 +95,9 @@ for aspect_path in aspects:
         split_path = os.path.join(monte_root, prefix)
         if os.path.exists(split_path):
             if not found:
-                print_and_log(f"\n🔹 {aspect_name.upper()}")
+                print_and_log(f"\n {aspect_name.upper()}")
                 found = True
             stats = analyze_split(split_path)
             print_split_stats(aspect_name, prefix, stats)
 
-print_and_log(f"\n✅ Log saved to: {log_file}")
+print_and_log(f"\n Log saved to: {log_file}")

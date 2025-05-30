@@ -1,128 +1,128 @@
-📊 Class Imbalance Check: 11k Dataset
+ Class Imbalance Check: 11k Dataset
 ======================================================================
-dorsal_r_train                 | Classes:   72 | Min:  2 | Max: 40 | ⚠️ Imbalanced
-dorsal_r_val                   | Classes:   72 | Min:  1 | Max:  1 | ✅ Balanced
-dorsal_r_test                  | Classes:   71 | Min:  2 | Max: 46 | ⚠️ Imbalanced
-dorsal_l_train                 | Classes:   73 | Min:  1 | Max: 41 | ⚠️ Imbalanced
-dorsal_l_val                   | Classes:   73 | Min:  1 | Max:  1 | ✅ Balanced
-dorsal_l_test                  | Classes:   73 | Min:  4 | Max: 52 | ⚠️ Imbalanced
-palmar_r_train                 | Classes:   72 | Min:  3 | Max: 70 | ⚠️ Imbalanced
-palmar_r_val                   | Classes:   72 | Min:  1 | Max:  1 | ✅ Balanced
-palmar_r_test                  | Classes:   71 | Min:  4 | Max: 54 | ⚠️ Imbalanced
-palmar_l_train                 | Classes:   76 | Min:  1 | Max: 55 | ⚠️ Imbalanced
-palmar_l_val                   | Classes:   76 | Min:  1 | Max:  1 | ✅ Balanced
-palmar_l_test                  | Classes:   75 | Min:  4 | Max: 39 | ⚠️ Imbalanced
+dorsal_r_train                 | Classes:   72 | Min:  2 | Max: 40 |  Imbalanced
+dorsal_r_val                   | Classes:   72 | Min:  1 | Max:  1 |  Balanced
+dorsal_r_test                  | Classes:   71 | Min:  2 | Max: 46 |  Imbalanced
+dorsal_l_train                 | Classes:   73 | Min:  1 | Max: 41 |  Imbalanced
+dorsal_l_val                   | Classes:   73 | Min:  1 | Max:  1 |  Balanced
+dorsal_l_test                  | Classes:   73 | Min:  4 | Max: 52 |  Imbalanced
+palmar_r_train                 | Classes:   72 | Min:  3 | Max: 70 |  Imbalanced
+palmar_r_val                   | Classes:   72 | Min:  1 | Max:  1 |  Balanced
+palmar_r_test                  | Classes:   71 | Min:  4 | Max: 54 |  Imbalanced
+palmar_l_train                 | Classes:   76 | Min:  1 | Max: 55 |  Imbalanced
+palmar_l_val                   | Classes:   76 | Min:  1 | Max:  1 |  Balanced
+palmar_l_test                  | Classes:   75 | Min:  4 | Max: 39 |  Imbalanced
 
-🎲 Monte Carlo Splits: 11k Dataset
+ Monte Carlo Splits: 11k Dataset
 ======================================================================
-dorsal_r_gallery0              | Classes:   71 | Min:  1 | Max:  1 | ✅ Balanced
-dorsal_r_gallery1              | Classes:   71 | Min:  1 | Max:  1 | ✅ Balanced
-dorsal_r_gallery2              | Classes:   71 | Min:  1 | Max:  1 | ✅ Balanced
-dorsal_r_gallery3              | Classes:   71 | Min:  1 | Max:  1 | ✅ Balanced
-dorsal_r_gallery4              | Classes:   71 | Min:  1 | Max:  1 | ✅ Balanced
-dorsal_r_gallery5              | Classes:   71 | Min:  1 | Max:  1 | ✅ Balanced
-dorsal_r_gallery6              | Classes:   71 | Min:  1 | Max:  1 | ✅ Balanced
-dorsal_r_gallery7              | Classes:   71 | Min:  1 | Max:  1 | ✅ Balanced
-dorsal_r_gallery8              | Classes:   71 | Min:  1 | Max:  1 | ✅ Balanced
-dorsal_r_gallery9              | Classes:   71 | Min:  1 | Max:  1 | ✅ Balanced
-dorsal_r_query0                | Classes:   71 | Min:  1 | Max: 45 | ⚠️ Imbalanced
-dorsal_r_query1                | Classes:   71 | Min:  1 | Max: 45 | ⚠️ Imbalanced
-dorsal_r_query2                | Classes:   71 | Min:  1 | Max: 45 | ⚠️ Imbalanced
-dorsal_r_query3                | Classes:   71 | Min:  1 | Max: 45 | ⚠️ Imbalanced
-dorsal_r_query4                | Classes:   71 | Min:  1 | Max: 45 | ⚠️ Imbalanced
-dorsal_r_query5                | Classes:   71 | Min:  1 | Max: 45 | ⚠️ Imbalanced
-dorsal_r_query6                | Classes:   71 | Min:  1 | Max: 45 | ⚠️ Imbalanced
-dorsal_r_query7                | Classes:   71 | Min:  1 | Max: 45 | ⚠️ Imbalanced
-dorsal_r_query8                | Classes:   71 | Min:  1 | Max: 45 | ⚠️ Imbalanced
-dorsal_r_query9                | Classes:   71 | Min:  1 | Max: 45 | ⚠️ Imbalanced
-dorsal_l_gallery0              | Classes:   73 | Min:  1 | Max:  1 | ✅ Balanced
-dorsal_l_gallery1              | Classes:   73 | Min:  1 | Max:  1 | ✅ Balanced
-dorsal_l_gallery2              | Classes:   73 | Min:  1 | Max:  1 | ✅ Balanced
-dorsal_l_gallery3              | Classes:   73 | Min:  1 | Max:  1 | ✅ Balanced
-dorsal_l_gallery4              | Classes:   73 | Min:  1 | Max:  1 | ✅ Balanced
-dorsal_l_gallery5              | Classes:   73 | Min:  1 | Max:  1 | ✅ Balanced
-dorsal_l_gallery6              | Classes:   73 | Min:  1 | Max:  1 | ✅ Balanced
-dorsal_l_gallery7              | Classes:   73 | Min:  1 | Max:  1 | ✅ Balanced
-dorsal_l_gallery8              | Classes:   73 | Min:  1 | Max:  1 | ✅ Balanced
-dorsal_l_gallery9              | Classes:   73 | Min:  1 | Max:  1 | ✅ Balanced
-dorsal_l_query0                | Classes:   73 | Min:  3 | Max: 51 | ⚠️ Imbalanced
-dorsal_l_query1                | Classes:   73 | Min:  3 | Max: 51 | ⚠️ Imbalanced
-dorsal_l_query2                | Classes:   73 | Min:  3 | Max: 51 | ⚠️ Imbalanced
-dorsal_l_query3                | Classes:   73 | Min:  3 | Max: 51 | ⚠️ Imbalanced
-dorsal_l_query4                | Classes:   73 | Min:  3 | Max: 51 | ⚠️ Imbalanced
-dorsal_l_query5                | Classes:   73 | Min:  3 | Max: 51 | ⚠️ Imbalanced
-dorsal_l_query6                | Classes:   73 | Min:  3 | Max: 51 | ⚠️ Imbalanced
-dorsal_l_query7                | Classes:   73 | Min:  3 | Max: 51 | ⚠️ Imbalanced
-dorsal_l_query8                | Classes:   73 | Min:  3 | Max: 51 | ⚠️ Imbalanced
-dorsal_l_query9                | Classes:   73 | Min:  3 | Max: 51 | ⚠️ Imbalanced
-palmar_r_gallery0              | Classes:   71 | Min:  1 | Max:  1 | ✅ Balanced
-palmar_r_gallery1              | Classes:   71 | Min:  1 | Max:  1 | ✅ Balanced
-palmar_r_gallery2              | Classes:   71 | Min:  1 | Max:  1 | ✅ Balanced
-palmar_r_gallery3              | Classes:   71 | Min:  1 | Max:  1 | ✅ Balanced
-palmar_r_gallery4              | Classes:   71 | Min:  1 | Max:  1 | ✅ Balanced
-palmar_r_gallery5              | Classes:   71 | Min:  1 | Max:  1 | ✅ Balanced
-palmar_r_gallery6              | Classes:   71 | Min:  1 | Max:  1 | ✅ Balanced
-palmar_r_gallery7              | Classes:   71 | Min:  1 | Max:  1 | ✅ Balanced
-palmar_r_gallery8              | Classes:   71 | Min:  1 | Max:  1 | ✅ Balanced
-palmar_r_gallery9              | Classes:   71 | Min:  1 | Max:  1 | ✅ Balanced
-palmar_r_query0                | Classes:   71 | Min:  3 | Max: 53 | ⚠️ Imbalanced
-palmar_r_query1                | Classes:   71 | Min:  3 | Max: 53 | ⚠️ Imbalanced
-palmar_r_query2                | Classes:   71 | Min:  3 | Max: 53 | ⚠️ Imbalanced
-palmar_r_query3                | Classes:   71 | Min:  3 | Max: 53 | ⚠️ Imbalanced
-palmar_r_query4                | Classes:   71 | Min:  3 | Max: 53 | ⚠️ Imbalanced
-palmar_r_query5                | Classes:   71 | Min:  3 | Max: 53 | ⚠️ Imbalanced
-palmar_r_query6                | Classes:   71 | Min:  3 | Max: 53 | ⚠️ Imbalanced
-palmar_r_query7                | Classes:   71 | Min:  3 | Max: 53 | ⚠️ Imbalanced
-palmar_r_query8                | Classes:   71 | Min:  3 | Max: 53 | ⚠️ Imbalanced
-palmar_r_query9                | Classes:   71 | Min:  3 | Max: 53 | ⚠️ Imbalanced
-palmar_l_gallery0              | Classes:   75 | Min:  1 | Max:  1 | ✅ Balanced
-palmar_l_gallery1              | Classes:   75 | Min:  1 | Max:  1 | ✅ Balanced
-palmar_l_gallery2              | Classes:   75 | Min:  1 | Max:  1 | ✅ Balanced
-palmar_l_gallery3              | Classes:   75 | Min:  1 | Max:  1 | ✅ Balanced
-palmar_l_gallery4              | Classes:   75 | Min:  1 | Max:  1 | ✅ Balanced
-palmar_l_gallery5              | Classes:   75 | Min:  1 | Max:  1 | ✅ Balanced
-palmar_l_gallery6              | Classes:   75 | Min:  1 | Max:  1 | ✅ Balanced
-palmar_l_gallery7              | Classes:   75 | Min:  1 | Max:  1 | ✅ Balanced
-palmar_l_gallery8              | Classes:   75 | Min:  1 | Max:  1 | ✅ Balanced
-palmar_l_gallery9              | Classes:   75 | Min:  1 | Max:  1 | ✅ Balanced
-palmar_l_query0                | Classes:   75 | Min:  3 | Max: 38 | ⚠️ Imbalanced
-palmar_l_query1                | Classes:   75 | Min:  3 | Max: 38 | ⚠️ Imbalanced
-palmar_l_query2                | Classes:   75 | Min:  3 | Max: 38 | ⚠️ Imbalanced
-palmar_l_query3                | Classes:   75 | Min:  3 | Max: 38 | ⚠️ Imbalanced
-palmar_l_query4                | Classes:   75 | Min:  3 | Max: 38 | ⚠️ Imbalanced
-palmar_l_query5                | Classes:   75 | Min:  3 | Max: 38 | ⚠️ Imbalanced
-palmar_l_query6                | Classes:   75 | Min:  3 | Max: 38 | ⚠️ Imbalanced
-palmar_l_query7                | Classes:   75 | Min:  3 | Max: 38 | ⚠️ Imbalanced
-palmar_l_query8                | Classes:   75 | Min:  3 | Max: 38 | ⚠️ Imbalanced
-palmar_l_query9                | Classes:   75 | Min:  3 | Max: 38 | ⚠️ Imbalanced
+dorsal_r_gallery0              | Classes:   71 | Min:  1 | Max:  1 |  Balanced
+dorsal_r_gallery1              | Classes:   71 | Min:  1 | Max:  1 |  Balanced
+dorsal_r_gallery2              | Classes:   71 | Min:  1 | Max:  1 |  Balanced
+dorsal_r_gallery3              | Classes:   71 | Min:  1 | Max:  1 |  Balanced
+dorsal_r_gallery4              | Classes:   71 | Min:  1 | Max:  1 |  Balanced
+dorsal_r_gallery5              | Classes:   71 | Min:  1 | Max:  1 |  Balanced
+dorsal_r_gallery6              | Classes:   71 | Min:  1 | Max:  1 |  Balanced
+dorsal_r_gallery7              | Classes:   71 | Min:  1 | Max:  1 |  Balanced
+dorsal_r_gallery8              | Classes:   71 | Min:  1 | Max:  1 |  Balanced
+dorsal_r_gallery9              | Classes:   71 | Min:  1 | Max:  1 |  Balanced
+dorsal_r_query0                | Classes:   71 | Min:  1 | Max: 45 |  Imbalanced
+dorsal_r_query1                | Classes:   71 | Min:  1 | Max: 45 |  Imbalanced
+dorsal_r_query2                | Classes:   71 | Min:  1 | Max: 45 |  Imbalanced
+dorsal_r_query3                | Classes:   71 | Min:  1 | Max: 45 |  Imbalanced
+dorsal_r_query4                | Classes:   71 | Min:  1 | Max: 45 |  Imbalanced
+dorsal_r_query5                | Classes:   71 | Min:  1 | Max: 45 |  Imbalanced
+dorsal_r_query6                | Classes:   71 | Min:  1 | Max: 45 |  Imbalanced
+dorsal_r_query7                | Classes:   71 | Min:  1 | Max: 45 |  Imbalanced
+dorsal_r_query8                | Classes:   71 | Min:  1 | Max: 45 |  Imbalanced
+dorsal_r_query9                | Classes:   71 | Min:  1 | Max: 45 |  Imbalanced
+dorsal_l_gallery0              | Classes:   73 | Min:  1 | Max:  1 |  Balanced
+dorsal_l_gallery1              | Classes:   73 | Min:  1 | Max:  1 |  Balanced
+dorsal_l_gallery2              | Classes:   73 | Min:  1 | Max:  1 |  Balanced
+dorsal_l_gallery3              | Classes:   73 | Min:  1 | Max:  1 |  Balanced
+dorsal_l_gallery4              | Classes:   73 | Min:  1 | Max:  1 |  Balanced
+dorsal_l_gallery5              | Classes:   73 | Min:  1 | Max:  1 |  Balanced
+dorsal_l_gallery6              | Classes:   73 | Min:  1 | Max:  1 |  Balanced
+dorsal_l_gallery7              | Classes:   73 | Min:  1 | Max:  1 |  Balanced
+dorsal_l_gallery8              | Classes:   73 | Min:  1 | Max:  1 |  Balanced
+dorsal_l_gallery9              | Classes:   73 | Min:  1 | Max:  1 |  Balanced
+dorsal_l_query0                | Classes:   73 | Min:  3 | Max: 51 |  Imbalanced
+dorsal_l_query1                | Classes:   73 | Min:  3 | Max: 51 |  Imbalanced
+dorsal_l_query2                | Classes:   73 | Min:  3 | Max: 51 |  Imbalanced
+dorsal_l_query3                | Classes:   73 | Min:  3 | Max: 51 |  Imbalanced
+dorsal_l_query4                | Classes:   73 | Min:  3 | Max: 51 |  Imbalanced
+dorsal_l_query5                | Classes:   73 | Min:  3 | Max: 51 |  Imbalanced
+dorsal_l_query6                | Classes:   73 | Min:  3 | Max: 51 |  Imbalanced
+dorsal_l_query7                | Classes:   73 | Min:  3 | Max: 51 |  Imbalanced
+dorsal_l_query8                | Classes:   73 | Min:  3 | Max: 51 |  Imbalanced
+dorsal_l_query9                | Classes:   73 | Min:  3 | Max: 51 |  Imbalanced
+palmar_r_gallery0              | Classes:   71 | Min:  1 | Max:  1 |  Balanced
+palmar_r_gallery1              | Classes:   71 | Min:  1 | Max:  1 |  Balanced
+palmar_r_gallery2              | Classes:   71 | Min:  1 | Max:  1 |  Balanced
+palmar_r_gallery3              | Classes:   71 | Min:  1 | Max:  1 |  Balanced
+palmar_r_gallery4              | Classes:   71 | Min:  1 | Max:  1 |  Balanced
+palmar_r_gallery5              | Classes:   71 | Min:  1 | Max:  1 |  Balanced
+palmar_r_gallery6              | Classes:   71 | Min:  1 | Max:  1 |  Balanced
+palmar_r_gallery7              | Classes:   71 | Min:  1 | Max:  1 |  Balanced
+palmar_r_gallery8              | Classes:   71 | Min:  1 | Max:  1 |  Balanced
+palmar_r_gallery9              | Classes:   71 | Min:  1 | Max:  1 |  Balanced
+palmar_r_query0                | Classes:   71 | Min:  3 | Max: 53 |  Imbalanced
+palmar_r_query1                | Classes:   71 | Min:  3 | Max: 53 |  Imbalanced
+palmar_r_query2                | Classes:   71 | Min:  3 | Max: 53 |  Imbalanced
+palmar_r_query3                | Classes:   71 | Min:  3 | Max: 53 |  Imbalanced
+palmar_r_query4                | Classes:   71 | Min:  3 | Max: 53 |  Imbalanced
+palmar_r_query5                | Classes:   71 | Min:  3 | Max: 53 |  Imbalanced
+palmar_r_query6                | Classes:   71 | Min:  3 | Max: 53 |  Imbalanced
+palmar_r_query7                | Classes:   71 | Min:  3 | Max: 53 |  Imbalanced
+palmar_r_query8                | Classes:   71 | Min:  3 | Max: 53 |  Imbalanced
+palmar_r_query9                | Classes:   71 | Min:  3 | Max: 53 |  Imbalanced
+palmar_l_gallery0              | Classes:   75 | Min:  1 | Max:  1 |  Balanced
+palmar_l_gallery1              | Classes:   75 | Min:  1 | Max:  1 |  Balanced
+palmar_l_gallery2              | Classes:   75 | Min:  1 | Max:  1 |  Balanced
+palmar_l_gallery3              | Classes:   75 | Min:  1 | Max:  1 |  Balanced
+palmar_l_gallery4              | Classes:   75 | Min:  1 | Max:  1 |  Balanced
+palmar_l_gallery5              | Classes:   75 | Min:  1 | Max:  1 |  Balanced
+palmar_l_gallery6              | Classes:   75 | Min:  1 | Max:  1 |  Balanced
+palmar_l_gallery7              | Classes:   75 | Min:  1 | Max:  1 |  Balanced
+palmar_l_gallery8              | Classes:   75 | Min:  1 | Max:  1 |  Balanced
+palmar_l_gallery9              | Classes:   75 | Min:  1 | Max:  1 |  Balanced
+palmar_l_query0                | Classes:   75 | Min:  3 | Max: 38 |  Imbalanced
+palmar_l_query1                | Classes:   75 | Min:  3 | Max: 38 |  Imbalanced
+palmar_l_query2                | Classes:   75 | Min:  3 | Max: 38 |  Imbalanced
+palmar_l_query3                | Classes:   75 | Min:  3 | Max: 38 |  Imbalanced
+palmar_l_query4                | Classes:   75 | Min:  3 | Max: 38 |  Imbalanced
+palmar_l_query5                | Classes:   75 | Min:  3 | Max: 38 |  Imbalanced
+palmar_l_query6                | Classes:   75 | Min:  3 | Max: 38 |  Imbalanced
+palmar_l_query7                | Classes:   75 | Min:  3 | Max: 38 |  Imbalanced
+palmar_l_query8                | Classes:   75 | Min:  3 | Max: 38 |  Imbalanced
+palmar_l_query9                | Classes:   75 | Min:  3 | Max: 38 |  Imbalanced
 
-📊 Class Imbalance Check: HD Dataset
+ Class Imbalance Check: HD Dataset
 ======================================================================
-hd_train                       | Classes:  251 | Min:  5 | Max: 17 | ⚠️ Imbalanced
-hd_val                         | Classes:  251 | Min:  1 | Max:  1 | ✅ Balanced
-hd_test                        | Classes:  251 | Min:  3 | Max: 43 | ⚠️ Imbalanced
+hd_train                       | Classes:  251 | Min:  5 | Max: 17 |  Imbalanced
+hd_val                         | Classes:  251 | Min:  1 | Max:  1 |  Balanced
+hd_test                        | Classes:  251 | Min:  3 | Max: 43 |  Imbalanced
 
-🎲 Monte Carlo Splits: HD Dataset
+ Monte Carlo Splits: HD Dataset
 ======================================================================
-hd_gallery0                    | Classes:  464 | Min:  1 | Max: 13 | ⚠️ Imbalanced
-hd_gallery1                    | Classes:  464 | Min:  1 | Max: 13 | ⚠️ Imbalanced
-hd_gallery2                    | Classes:  464 | Min:  1 | Max: 13 | ⚠️ Imbalanced
-hd_gallery3                    | Classes:  464 | Min:  1 | Max: 13 | ⚠️ Imbalanced
-hd_gallery4                    | Classes:  464 | Min:  1 | Max: 13 | ⚠️ Imbalanced
-hd_gallery5                    | Classes:  464 | Min:  1 | Max: 13 | ⚠️ Imbalanced
-hd_gallery6                    | Classes:  464 | Min:  1 | Max: 13 | ⚠️ Imbalanced
-hd_gallery7                    | Classes:  464 | Min:  1 | Max: 13 | ⚠️ Imbalanced
-hd_gallery8                    | Classes:  464 | Min:  1 | Max: 13 | ⚠️ Imbalanced
-hd_gallery9                    | Classes:  464 | Min:  1 | Max: 13 | ⚠️ Imbalanced
-hd_query0                      | Classes:  251 | Min:  2 | Max: 42 | ⚠️ Imbalanced
-hd_query1                      | Classes:  251 | Min:  2 | Max: 42 | ⚠️ Imbalanced
-hd_query2                      | Classes:  251 | Min:  2 | Max: 42 | ⚠️ Imbalanced
-hd_query3                      | Classes:  251 | Min:  2 | Max: 42 | ⚠️ Imbalanced
-hd_query4                      | Classes:  251 | Min:  2 | Max: 42 | ⚠️ Imbalanced
-hd_query5                      | Classes:  251 | Min:  2 | Max: 42 | ⚠️ Imbalanced
-hd_query6                      | Classes:  251 | Min:  2 | Max: 42 | ⚠️ Imbalanced
-hd_query7                      | Classes:  251 | Min:  2 | Max: 42 | ⚠️ Imbalanced
-hd_query8                      | Classes:  251 | Min:  2 | Max: 42 | ⚠️ Imbalanced
-hd_query9                      | Classes:  251 | Min:  2 | Max: 42 | ⚠️ Imbalanced
+hd_gallery0                    | Classes:  464 | Min:  1 | Max: 13 |  Imbalanced
+hd_gallery1                    | Classes:  464 | Min:  1 | Max: 13 |  Imbalanced
+hd_gallery2                    | Classes:  464 | Min:  1 | Max: 13 |  Imbalanced
+hd_gallery3                    | Classes:  464 | Min:  1 | Max: 13 |  Imbalanced
+hd_gallery4                    | Classes:  464 | Min:  1 | Max: 13 |  Imbalanced
+hd_gallery5                    | Classes:  464 | Min:  1 | Max: 13 |  Imbalanced
+hd_gallery6                    | Classes:  464 | Min:  1 | Max: 13 |  Imbalanced
+hd_gallery7                    | Classes:  464 | Min:  1 | Max: 13 |  Imbalanced
+hd_gallery8                    | Classes:  464 | Min:  1 | Max: 13 |  Imbalanced
+hd_gallery9                    | Classes:  464 | Min:  1 | Max: 13 |  Imbalanced
+hd_query0                      | Classes:  251 | Min:  2 | Max: 42 |  Imbalanced
+hd_query1                      | Classes:  251 | Min:  2 | Max: 42 |  Imbalanced
+hd_query2                      | Classes:  251 | Min:  2 | Max: 42 |  Imbalanced
+hd_query3                      | Classes:  251 | Min:  2 | Max: 42 |  Imbalanced
+hd_query4                      | Classes:  251 | Min:  2 | Max: 42 |  Imbalanced
+hd_query5                      | Classes:  251 | Min:  2 | Max: 42 |  Imbalanced
+hd_query6                      | Classes:  251 | Min:  2 | Max: 42 |  Imbalanced
+hd_query7                      | Classes:  251 | Min:  2 | Max: 42 |  Imbalanced
+hd_query8                      | Classes:  251 | Min:  2 | Max: 42 |  Imbalanced
+hd_query9                      | Classes:  251 | Min:  2 | Max: 42 |  Imbalanced
 
-✅ Log saved to: result_logs/dataset_class_imbalance_check.txt
+ Log saved to: result_logs/dataset_class_imbalance_check.txt

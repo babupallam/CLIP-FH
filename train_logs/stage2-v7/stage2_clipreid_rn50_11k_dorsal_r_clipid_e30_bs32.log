@@ -1,4 +1,4 @@
-[DEBUG] CLIP Model = rn50 → Token Embed Dim: 512, Final LN Dim: 512
+[DEBUG] CLIP Model = rn50  Token Embed Dim: 512, Final LN Dim: 512
 [DEBUG] PromptLearner proj layer = Linear | in: 512, out: 512
 [DEBUG] Dummy Image Feature Shape: torch.Size([1, 1024])
 [DEBUG] Text Feature Output (via proj) should match: 512
@@ -9,31 +9,31 @@ Total trainable CLIP params: 102155689
 [DEBUG] CLIP trainable params: 102155689
 [Prompt] cached 890 frozen image feats
 [Epoch 1] Avg Prompt Loss: 3.0837
-new best prompt – 3.0837
+new best prompt  3.0837
 [Epoch 2] Avg Prompt Loss: 2.8784
-new best prompt – 2.8784
+new best prompt  2.8784
 [Epoch 3] Avg Prompt Loss: 2.6086
-new best prompt – 2.6086
+new best prompt  2.6086
 [Epoch 4] Avg Prompt Loss: 2.2601
-new best prompt – 2.2601
+new best prompt  2.2601
 [Epoch 5] Avg Prompt Loss: 2.1416
-new best prompt – 2.1416
+new best prompt  2.1416
 [Epoch 6] Avg Prompt Loss: 2.2321
 [Epoch 7] Avg Prompt Loss: 1.8906
-new best prompt – 1.8906
+new best prompt  1.8906
 [Epoch 8] Avg Prompt Loss: 1.9855
 [Epoch 9] Avg Prompt Loss: 1.7804
-new best prompt – 1.7804
+new best prompt  1.7804
 [Epoch 10] Avg Prompt Loss: 1.8847
 [Epoch 11] Avg Prompt Loss: 1.6705
-new best prompt – 1.6705
+new best prompt  1.6705
 [Epoch 12] Avg Prompt Loss: 1.7003
 [Epoch 13] Avg Prompt Loss: 1.6033
-new best prompt – 1.6033
+new best prompt  1.6033
 [Epoch 14] Avg Prompt Loss: 1.6422
 [Epoch 15] Avg Prompt Loss: 1.7613
 [Epoch 16] Avg Prompt Loss: 1.5244
-new best prompt – 1.5244
+new best prompt  1.5244
 [Epoch 17] Avg Prompt Loss: 1.6636
 [Epoch 18] Avg Prompt Loss: 1.6219
 [Epoch 19] Avg Prompt Loss: 1.6082
@@ -41,13 +41,13 @@ new best prompt – 1.5244
 [Epoch 21] Avg Prompt Loss: 1.5602
 [Epoch 22] Avg Prompt Loss: 1.5433
 [Epoch 23] Avg Prompt Loss: 1.4706
-new best prompt – 1.4706
+new best prompt  1.4706
 [Epoch 24] Avg Prompt Loss: 1.5014
 [Epoch 25] Avg Prompt Loss: 1.5487
 [Epoch 26] Avg Prompt Loss: 1.5065
 [Epoch 27] Avg Prompt Loss: 1.5140
 [Epoch 28] Avg Prompt Loss: 1.4468
-new best prompt – 1.4468
+new best prompt  1.4468
 [Epoch 29] Avg Prompt Loss: 1.4891
 [Epoch 30] Avg Prompt Loss: 1.4815
 Unfroze RN50 layers: layer3 and layer4

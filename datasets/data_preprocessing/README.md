@@ -28,7 +28,7 @@ python datasets/data_preprocessing/prepare_hd.py \
 ```
 
 
-✅ **Explanation of the Arguments**
+ **Explanation of the Arguments**
 
 | Argument             | Value                             | Explanation                                                                                     |
 |----------------------|-----------------------------------|-------------------------------------------------------------------------------------------------|
@@ -38,18 +38,18 @@ python datasets/data_preprocessing/prepare_hd.py \
 
 ---
 
-✅ **Directory Expectation Before Running**
+ **Directory Expectation Before Running**
 ```
 datasets/
-└── HD/
-    └── Original Images/
-        ├── 1-501/               # Contains training/test images with IDs 1-501
-        └── 502-712/             # Additional gallery identities (211 subjects)
+ HD/
+     Original Images/
+         1-501/               # Contains training/test images with IDs 1-501
+         502-712/             # Additional gallery identities (211 subjects)
 ```
 
 ---
 
-✅ **What This Command Will Do**
+ **What This Command Will Do**
 1. Split `1-501` images into:
    - `train_all` (IDs 1-447)
    - `test` (IDs 448-501)
@@ -60,16 +60,16 @@ datasets/
 4. Save everything into:
    ```
    datasets/HD/Original Images/train_val_test_split/
-   ├── train_all/
-   ├── train/
-   ├── val/
-   ├── test/
-   ├── query0/ ... query9/
-   └── gallery0/ ... gallery9/
+    train_all/
+    train/
+    val/
+    test/
+    query0/ ... query9/
+    gallery0/ ... gallery9/
    ```
 
 ---
-✅ **Optional Variations**
+ **Optional Variations**
 - If you do NOT want random gallery selection (and instead just include all images in gallery):
   ```bash
   python datasets/data_preprocessing/prepare_hd.py --data_path ./datasets/HD/Original\ Images --runs 10

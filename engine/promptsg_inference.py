@@ -19,7 +19,7 @@ def maybe_patch_pos_embed(clip_model, input_hw):
         new_len = grid_h * grid_w + 1
 
         if pos_embed.shape[0] != new_len:
-            print(f"[ViT] Interpolating pos_embed: {pos_embed.shape[0]} → {new_len}")
+            print(f"[ViT] Interpolating pos_embed: {pos_embed.shape[0]}  {new_len}")
             cls_token = pos_embed[:1, :]  # [1, D]
             spatial_tokens = pos_embed[1:, :]  # [N-1, D]
 
@@ -43,7 +43,7 @@ def maybe_patch_pos_embed(clip_model, input_hw):
         new_len = feat_h * feat_w + 1
 
         if pos_embed.shape[0] != new_len:
-            print(f"[RN50] Interpolating attnpool pos_embed: {pos_embed.shape[0]} → {new_len}")
+            print(f"[RN50] Interpolating attnpool pos_embed: {pos_embed.shape[0]}  {new_len}")
             cls_token = pos_embed[:1]        # [1, D]
             spatial = pos_embed[1:].T.unsqueeze(0)  # [1, D, N]
             resized = interpolate(spatial, size=new_len - 1, mode='linear', align_corners=False)

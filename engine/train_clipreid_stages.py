@@ -16,7 +16,7 @@ from torch.nn.functional import normalize
 def train_clipreid_prompt_stage(clip_model, prompt_learner, optimizer, scheduler,
                                 train_loader, cfg, device, logger, best_model_state):
     """
-    Stage‑1 prompt learning using SupCon (CLIP‑ReID style).
+    Stage1 prompt learning using SupCon (CLIPReID style).
     Uses your logger + tqdm exactly like before.
     """
 
@@ -70,7 +70,7 @@ def train_clipreid_prompt_stage(clip_model, prompt_learner, optimizer, scheduler
 
             if img_feats.shape != txt_feats.shape:
                 logger.warning(
-                    f"[WARNING] Feature dimension mismatch → img_feats: {img_feats.shape}, txt_feats: {txt_feats.shape}")
+                    f"[WARNING] Feature dimension mismatch  img_feats: {img_feats.shape}, txt_feats: {txt_feats.shape}")
 
             #logger.info(f"[DEBUG] img_feats shape: {img_feats.shape}")
             #logger.info(f"[DEBUG] txt_feats shape: {txt_feats.shape}")
@@ -78,7 +78,7 @@ def train_clipreid_prompt_stage(clip_model, prompt_learner, optimizer, scheduler
             # ---- SupCon losses -------------------------------------------------------
             # Suitable for prompt learning
             # Used in: CLIP-ReID, PromptSG, and other prompt-tuning papers.
-            # why? Designed to bring same-class embeddings closer while pushing away different classes — perfect for ReID.
+            # why? Designed to bring same-class embeddings closer while pushing away different classes  perfect for ReID.
             # why? Works well with CLIP because it aligns learned text prompts with frozen (or fine-tuned) image embeddings.
 
             loss_i2t = loss_fn(
@@ -136,7 +136,7 @@ def train_clipreid_prompt_stage(clip_model, prompt_learner, optimizer, scheduler
         if avg_loss < best_loss:
             best_loss = avg_loss
             best_model_state["prompt_learner"] = prompt_learner.state_dict().copy()
-            logger.info(f"new best prompt – {best_loss:.4f}")
+            logger.info(f"new best prompt  {best_loss:.4f}")
 
 
 def train_clipreid_image_stage(clip_model, prompt_learner, optimizer, scheduler,
@@ -225,8 +225,8 @@ def train_clipreid_image_stage(clip_model, prompt_learner, optimizer, scheduler,
 
                 feat_norm = feats_bn.norm(dim=1).mean().item()
                 arc_conf = arc_logits.softmax(dim=1).max(dim=1)[0].mean().item()
-                # Low confidence → uncertain prediction → class separation might be poor.
-                # High confidence → sharp logits → better separation between identities.
+                # Low confidence  uncertain prediction  class separation might be poor.
+                # High confidence  sharp logits  better separation between identities.
 
                 logger.info(f"[ArcFace] Confidence: {arc_conf:.4f}")
             else:

@@ -3,14 +3,14 @@ experiments/stage2_clipreid_integration/ANLAYSIS REPORT.md
 ============================================================
 
 
-### **stage 2-v1 – ViT-B/16, 11k Hands (dorsal_r)**  
+### **stage 2-v1  ViT-B/16, 11k Hands (dorsal_r)**  
 Prompt + image encoder fine-tuning with ReID-style evaluation. Prompt tuning stage learns class-specific [CTX] embeddings (n_ctx=12) with templated prompt `"A photo of {}'s {aspect} hand for identification."`.  
 Image encoder is fully unfrozen in Stage 2 with BNNeck, ArcFace, and SupCon+ID+Triplet+CenterLoss.  
 Optimizer: Adam (lr=1e-4, weight_decay=5e-4), center_lr=0.5, center_loss_weight=0.0005.  
 Scheduler: CosineAnnealingLR. Prompt is frozen in Stage 2.  
 Evaluation on 10 splits (query/gallery) using Rank-1/5/10 and mAP.  
 Training: epochs_prompt=30, epochs_image=30, early_stop_patience=5, batch_size=32.  
-All components are modular and YAML-configurable. Total trainable params ≈149M.  
+All components are modular and YAML-configurable. Total trainable params 149M.  
 ArcFace duplicate param issue resolved.  
 
 Command: python experiments/stage2_clipreid_integration/train_stage2_joint.py --config configs/train_stage2_clip_reid/train_joint_vitb16_11k_dorsal_r.yml
@@ -23,7 +23,7 @@ Mean AP         : 71.35%
 
 ---
 
-### **stage 2-v1 – RN50, 11k Hands (dorsal_r)**  
+### **stage 2-v1  RN50, 11k Hands (dorsal_r)**  
 Same dual-stage pipeline as v1-ViT. Prompt learner uses [CTX] (n_ctx=12) with the same template prompt.  
 Stage 1 trains class prompts with frozen image encoder. Stage 2 unfreezes entire RN50 visual encoder for supervised contrastive + identity losses.  
 Uses BNNeck, ArcFace, SupCon+ID+Triplet+CenterLoss.  
@@ -46,16 +46,16 @@ Mean AP         : 67.07%
 ****
 ****
 
-### **stage 2-v2 – ViT-B/16, 11k Hands (dorsal_r)**  
+### **stage 2-v2  ViT-B/16, 11k Hands (dorsal_r)**  
 Improved version of v1.  
 Prompt learner uses `[CTX]` (n_ctx=12) with **diverse prompt templates** sampled randomly from a list.  
 Stage 1 trains class prompts with frozen image encoder.  
 Stage 2 unfreezes entire ViT-B/16 image encoder and applies:  
-✅ BNNeck, ArcFace, SupCon + ID + Triplet + CenterLoss.  
-✅ Feature normalization after projection (image + text).  
-✅ Prompt is **frozen** in Stage 2.  
-✅ Optimizer: **AdamW** with separate LR & weight decay for prompt, image, text.  
-✅ Scheduler: **CosineAnnealingLR**, stepped **per batch**.  
+ BNNeck, ArcFace, SupCon + ID + Triplet + CenterLoss.  
+ Feature normalization after projection (image + text).  
+ Prompt is **frozen** in Stage 2.  
+ Optimizer: **AdamW** with separate LR & weight decay for prompt, image, text.  
+ Scheduler: **CosineAnnealingLR**, stepped **per batch**.  
 All components modular via YAML. Fully compatible with v1 benchmarking setup.  
 ReID-style evaluation across 10 splits (query/gallery).  
 
@@ -95,7 +95,7 @@ Mean AP         : 83.19%
 
 ---
 
-### **stage 2-v2 – RN50, 11k Hands (dorsal_r)**  
+### **stage 2-v2  RN50, 11k Hands (dorsal_r)**  
 Same pipeline and improvements as v2-ViT.  
 Prompt learner and encoder settings identical except for LR tuning.  
 Stage 2 unfreezes entire RN50 visual encoder with projection-aware normalization and prompt freezing.  
@@ -140,16 +140,16 @@ Mean AP         : 57.59%
 *****
 *****
 
-### **stage 2-v3 – ViT-B/16, 11k Hands (dorsal_r)**  
+### **stage 2-v3  ViT-B/16, 11k Hands (dorsal_r)**  
 Further enhanced version of v2.  
 Prompt learner still uses `[CTX]` (n_ctx=12) with **diverse prompt templates**.  
 Stage 1 trains class prompts with frozen image encoder.  
 Stage 2 unfreezes entire ViT-B/16 image encoder and applies:  
-✅ BNNeck, ArcFace, SupCon + ID + Triplet + CenterLoss.  
-✅ **Feature normalization after projection** (image + text).  
-✅ **Prompt is frozen** in Stage 2.  
-✅ **AdamW optimizer** with LR/weight_decay split by component.  
-✅ **OneCycleLR scheduler** (replaces CosineAnnealingLR), stepped **per batch**.
+ BNNeck, ArcFace, SupCon + ID + Triplet + CenterLoss.  
+ **Feature normalization after projection** (image + text).  
+ **Prompt is frozen** in Stage 2.  
+ **AdamW optimizer** with LR/weight_decay split by component.  
+ **OneCycleLR scheduler** (replaces CosineAnnealingLR), stepped **per batch**.
 
 All components remain modular via YAML. Same benchmarking compatibility as v1/v2.  
 Evaluation performed over 10 ReID-style splits (query/gallery).
@@ -200,15 +200,15 @@ Mean AP         : 89.91%
 
 ---
 
-### **stage 2-v3 – RN50, 11k Hands (dorsal_r)**  
+### **stage 2-v3  RN50, 11k Hands (dorsal_r)**  
 Same pipeline and improvements as v3-ViT.  
 Prompt learner and training stages are identical except for `lr_visual`.  
 Stage 2 unfreezes entire RN50 image encoder and applies:  
-✅ BNNeck, ArcFace, SupCon + ID + Triplet + CenterLoss.  
-✅ **Feature normalization after projection** (image + text).  
-✅ **Prompt is frozen** in Stage 2.  
-✅ **AdamW optimizer** with component-wise LR/WD.  
-✅ **OneCycleLR scheduler** (stepped per batch, replaces CosineAnnealingLR).
+ BNNeck, ArcFace, SupCon + ID + Triplet + CenterLoss.  
+ **Feature normalization after projection** (image + text).  
+ **Prompt is frozen** in Stage 2.  
+ **AdamW optimizer** with component-wise LR/WD.  
+ **OneCycleLR scheduler** (stepped per batch, replaces CosineAnnealingLR).
 
 All config elements unchanged from v2 other than scheduling.
 
@@ -438,8 +438,8 @@ arcface_scale	Keep at 30	Working well
 arcface_margin	Keep at 0.4	Best margin so far
 lr_visual	Keep at 0.00007	Perfect balance of stability and learning
 loss_use_triplet	true is fine	No clear need for triplet due to SupCon+Center
-prompt	✅ Keep frozen	Learned prompts are generalizing well
-unfreeze_blocks	✅ Keep at 4	Full tuning proves optimal
+prompt	 Keep frozen	Learned prompts are generalizing well
+unfreeze_blocks	 Keep at 4	Full tuning proves optimal
 
 Rank-1 Accuracy : 51.52%
 Rank-5 Accuracy : 74.93%
@@ -454,41 +454,41 @@ Mean AP         : 62.26%
 
 # Build detailed remarks dictionaries including all points
 vit_remarks_full = {
-    "v1": ("Baseline dual‑stage pipeline: class‑specific [CTX]×12 prompt, templated string, "
-           "full ViT‑B/16 image encoder unfrozen with BNNeck + ArcFace + SupCon + Triplet + Center; "
-           "Adam (lr 1e‑4, wd 5e‑4), center_lr 0.5, center_loss_weight 0.0005; CosineAnnealingLR; "
-           "prompt frozen in Stage‑2; eval on 10 splits; ArcFace duplicate‑param bug fixed."),
-    "v2": ("Added diverse prompt_template_list; kept prompt frozen; enabled projection ℓ²‑norm; "
-           "switched optimizer to AdamW with component‑wise LR/WD (vis 1e‑5, prompt 1e‑4); "
+    "v1": ("Baseline dualstage pipeline: classspecific [CTX]12 prompt, templated string, "
+           "full ViTB/16 image encoder unfrozen with BNNeck + ArcFace + SupCon + Triplet + Center; "
+           "Adam (lr 1e4, wd 5e4), center_lr 0.5, center_loss_weight 0.0005; CosineAnnealingLR; "
+           "prompt frozen in Stage2; eval on 10 splits; ArcFace duplicateparam bug fixed."),
+    "v2": ("Added diverse prompt_template_list; kept prompt frozen; enabled projection norm; "
+           "switched optimizer to AdamW with componentwise LR/WD (vis 1e5, prompt 1e4); "
            "CosineAnnealingLR stepped per batch; all five losses retained."),
-    "v3": ("Scheduler changed to OneCycleLR (per‑batch) while retaining v2 template diversity, AdamW, "
-           "feature normalisation & losses – yielded best ViT performance."),
-    "v4": ("Ablation: disabled Triplet & Center losses (ArcFace + SupCon + ID only) – performance dropped."),
-    "v5": ("Restored Triplet & Center; softened ArcFace (scale 20, margin 0.3) – new peak (R1 88.18, mAP 92.2)."),
-    "v6": ("Partial fine‑tuning: set unfreeze_blocks=2 (last two ViT transformer blocks) while keeping v5 losses "
+    "v3": ("Scheduler changed to OneCycleLR (perbatch) while retaining v2 template diversity, AdamW, "
+           "feature normalisation & losses  yielded best ViT performance."),
+    "v4": ("Ablation: disabled Triplet & Center losses (ArcFace + SupCon + ID only)  performance dropped."),
+    "v5": ("Restored Triplet & Center; softened ArcFace (scale 20, margin 0.3)  new peak (R1 88.18, mAP 92.2)."),
+    "v6": ("Partial finetuning: set unfreeze_blocks=2 (last two ViT transformer blocks) while keeping v5 losses "
            "and ArcFace settings."),
-    "v7": "No ViT‑B/16 experiment (RN50‑exclusive tweaks).",
-    "v8": "No ViT‑B/16 experiment (RN50‑exclusive tweaks).",
-    "v9": ("Extreme ArcFace (scale 35, margin 0.4) + Triplet OFF + center_loss_weight 0.0003 + Cosine LR – "
+    "v7": "No ViTB/16 experiment (RN50exclusive tweaks).",
+    "v8": "No ViTB/16 experiment (RN50exclusive tweaks).",
+    "v9": ("Extreme ArcFace (scale 35, margin 0.4) + Triplet OFF + center_loss_weight 0.0003 + Cosine LR  "
            "led to severe collapse (R1 28.9, mAP 47.2)."),
-    "v10": "No ViT‑B/16 experiment (RN50‑exclusive tweaks)."
+    "v10": "No ViTB/16 experiment (RN50exclusive tweaks)."
 }
 
 rn_remarks_full = {
-    "v1": ("Baseline identical to ViT‑v1: full RN50 encoder, BNNeck + ArcFace + SupCon + Triplet + Center, "
+    "v1": ("Baseline identical to ViTv1: full RN50 encoder, BNNeck + ArcFace + SupCon + Triplet + Center, "
            "Adam + Cosine; prompt frozen."),
-    "v2": ("Inherited template diversity, AdamW split LR/WD, projection normalisation (as ViT‑v2)."),
-    "v3": ("Scheduler switched to OneCycleLR (per batch) keeping other settings – modest gain."),
-    "v4": ("Disabled Triplet & Center losses (ArcFace + SupCon + ID only) – performance dip."),
-    "v5": ("ArcFace softened: scale 20, margin 0.3; all five losses ON – slight uplift."),
-    "v6": ("Partial FT: unfreeze_blocks 2 with same loss set – results fell (R1 45.1, mAP 56.5)."),
-    "v7": ("RN50‑specific tuning: lr_visual 0.0005↓, ArcFace scale 25 margin 0.35, still unfreeze_blocks 2."),
+    "v2": ("Inherited template diversity, AdamW split LR/WD, projection normalisation (as ViTv2)."),
+    "v3": ("Scheduler switched to OneCycleLR (per batch) keeping other settings  modest gain."),
+    "v4": ("Disabled Triplet & Center losses (ArcFace + SupCon + ID only)  performance dip."),
+    "v5": ("ArcFace softened: scale 20, margin 0.3; all five losses ON  slight uplift."),
+    "v6": ("Partial FT: unfreeze_blocks 2 with same loss set  results fell (R1 45.1, mAP 56.5)."),
+    "v7": ("RN50specific tuning: lr_visual 0.0005, ArcFace scale 25 margin 0.35, still unfreeze_blocks 2."),
     "v8": ("Deeper partial FT: unfreeze_blocks 4; ArcFace scale 30 margin 0.35; Center back ON; Triplet kept; "
-           "lr_visual 1e‑4; max_norm 0.5; CosineAnnealingLR kept – best mAP 64.3."),
+           "lr_visual 1e4; max_norm 0.5; CosineAnnealingLR kept  best mAP 64.3."),
     "v9": ("Full encoder again; ArcFace scale 35 margin 0.4; Triplet OFF; center_loss_weight 0.0003; "
-           "lr_visual 7e‑5; Cosine LR – peak R1 59.8, mAP 69.8."),
-    "v10": ("Fine‑tune v9: keep center 0.0003, ArcFace scale 30 margin 0.4, Triplet ON, "
-            "unfreeze_blocks 4, lr_visual 7e‑5 – performance regressed to R1 51.5, mAP 62.3.")
+           "lr_visual 7e5; Cosine LR  peak R1 59.8, mAP 69.8."),
+    "v10": ("Finetune v9: keep center 0.0003, ArcFace scale 30 margin 0.4, Triplet ON, "
+            "unfreeze_blocks 4, lr_visual 7e5  performance regressed to R1 51.5, mAP 62.3.")
 }
 
 # Convert to DataFrames

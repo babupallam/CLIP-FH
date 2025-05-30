@@ -1,13 +1,13 @@
 
-# 📁 Result Logs — CLIP-FH Evaluation & Visualization
+#  Result Logs  CLIP-FH Evaluation & Visualization
 
 This directory contains all logs, tables, plots, and dataset summaries generated throughout the CLIP-FH pipeline. These outputs are produced from **Stage 2 (CLIP-ReID)** and **Stage 3 (PromptSG)** experiments for both **ViT-B/16** and **RN50** backbones.
 
 ---
 
-## 📊 Directory Contents
+##  Directory Contents
 
-### 📁 Dataset Summary Files
+###  Dataset Summary Files
 
 | File                             | Description |
 |----------------------------------|-------------|
@@ -17,7 +17,7 @@ This directory contains all logs, tables, plots, and dataset summaries generated
 
 ---
 
-### 🧱 Code Structure
+###  Code Structure
 
 | File                 | Description |
 |----------------------|-------------|
@@ -30,23 +30,23 @@ python experiments/conclusion_outputs/generate_tree.py
 
 ---
 
-## 📈 Stage 2: CLIP-ReID Logs & Visualizations
+##  Stage 2: CLIP-ReID Logs & Visualizations
 
-### ✅ Evaluation Tables
+###  Evaluation Tables
 
 * `stage2_vitb16_eval_table.csv`
 * `stage2_rn50_eval_table.csv`
 
 These CSVs include split-wise and final average Rank-1, Rank-5, Rank-10, and mAP metrics.
 
-### 📉 Training Metrics Tables
+###  Training Metrics Tables
 
 * `stage2_vitb16_train_table.csv`
 * `stage2_rn50_train_table.csv`
 
-Contain loss values and validation scores per epoch for each experiment version (v1–v10).
+Contain loss values and validation scores per epoch for each experiment version (v1v10).
 
-### 📊 Plots (ViT-B/16)
+###  Plots (ViT-B/16)
 
 ![ViT Final Rank-1 per Version](./stage2_vitb16_train_table_final_rank1_per_version.png)
 ![ViT Final mAP per Version](./stage2_vitb16_train_table_final_map_per_version.png)
@@ -55,7 +55,7 @@ Contain loss values and validation scores per epoch for each experiment version 
 ![ViT mAP vs Epoch](./stage2_vitb16_train_table_map_vs_epoch.png)
 ![ViT Total Loss vs Epoch](./stage2_vitb16_train_table_loss_vs_epoch.png)
 
-### 📊 Plots (RN50)
+###  Plots (RN50)
 
 ![RN50 Final Rank-1 per Version](./stage2_rn50_train_table_final_rank1_per_version.png)
 ![RN50 Final mAP per Version](./stage2_rn50_train_table_final_map_per_version.png)
@@ -66,30 +66,30 @@ Contain loss values and validation scores per epoch for each experiment version 
 
 ---
 
-## 🎯 Stage 3: PromptSG Logs & Visualizations
+##  Stage 3: PromptSG Logs & Visualizations
 
-### ✅ Evaluation Tables
+###  Evaluation Tables
 
 * `stage3_vitb16_eval_table.csv`
 * `stage3_rn50_eval_table.csv`
 
-Log Rank-1, Rank-5, Rank-10, and mAP across 10 splits and final averages for each version (v1–v11).
+Log Rank-1, Rank-5, Rank-10, and mAP across 10 splits and final averages for each version (v1v11).
 
-### 📉 Training Tables
+###  Training Tables
 
 * `stage3_vitb16_train_table.csv`
 * `stage3_rn50_train_table.csv`
 
 Include per-epoch losses and validation metrics across all PromptSG versions.
 
-### 📊 Plots (ViT-B/16)
+###  Plots (ViT-B/16)
 
 ![ViT Final Val Rank-1](./stage3_vitb16_train_table_final_val_rank1.png)
 ![ViT Final Val mAP](./stage3_vitb16_train_table_final_val_map.png)
 ![ViT Rank-1 vs Epoch](./stage3_vitb16_train_table_val_rank1_vs_epoch.png)
 ![ViT mAP vs Epoch](./stage3_vitb16_train_table_val_map_vs_epoch.png)
 
-### 📊 Plots (RN50)
+###  Plots (RN50)
 
 ![RN50 Final Val Rank-1](./stage3_rn50_train_table_final_val_rank1.png)
 ![RN50 Final Val mAP](./stage3_rn50_train_table_final_val_map.png)
@@ -98,14 +98,14 @@ Include per-epoch losses and validation metrics across all PromptSG versions.
 
 ---
 
-## 📄 Final Result Summary
+##  Final Result Summary
 
 * `total_formatted_result_with_remarks.xlsx`:
   This Excel file summarizes all Stage 2 and Stage 3 results (both backbones), annotated with performance insights and final selections.
 
 ---
 
-## 🔄 How These Files Were Generated
+##  How These Files Were Generated
 
 These files are outputs of the following scripts from `experiments/conclusion_outputs/`:
 
@@ -122,7 +122,7 @@ python plot_stage3_train_metrics.py
 
 ---
 
-## 🧠 Notes
+##  Notes
 
 * All plots are saved as `.png` and designed for presentation-ready clarity.
 * CSVs can be opened in Excel or directly used for plotting and reporting.
@@ -130,7 +130,7 @@ python plot_stage3_train_metrics.py
 
 ---
 
-## 📬 Contact
+##  Contact
 
 For any questions regarding these results or how they were generated, please contact [babupallam@gmail.com](mailto:babupallam@gmail.com).
 

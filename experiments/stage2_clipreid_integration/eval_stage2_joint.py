@@ -14,7 +14,7 @@ def run_single_eval_config(config_path):
     if not os.path.exists(run_eval_path):
         raise FileNotFoundError(f"Could not find run_eval_clip.py at: {run_eval_path}")
 
-    print(f"\nRunning Evaluation (Stage 2 Joint) with config:\n📄 {config_path}\n")
+    print(f"\nRunning Evaluation (Stage 2 Joint) with config:\n {config_path}\n")
     os.system(f"python \"{run_eval_path}\" --config \"{config_path}\"")
 
 if __name__ == "__main__":

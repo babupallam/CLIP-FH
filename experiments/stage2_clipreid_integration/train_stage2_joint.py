@@ -54,7 +54,7 @@ def clipreid_integration(cfg_path):
     # Log CLIP text encoder embedding and output dims
     ctx_dim = clip_model.token_embedding.embedding_dim
     output_dim = clip_model.ln_final.weight.shape[0]
-    logger.info(f"[DEBUG] CLIP Model = {model_type} → Token Embed Dim: {ctx_dim}, Final LN Dim: {output_dim}")
+    logger.info(f"[DEBUG] CLIP Model = {model_type}  Token Embed Dim: {ctx_dim}, Final LN Dim: {output_dim}")
 
     best_model_state = {
         "clip_model": None,
@@ -259,7 +259,7 @@ def clipreid_integration(cfg_path):
         prompt_learner.load_state_dict(best_model_state["prompt_learner"])
         logger.info("Restored BEST model for evaluation.")
     else:
-        logger.warning("No best model stored — using final model for evaluation.")
+        logger.warning("No best model stored  using final model for evaluation.")
 
     # === Final Evaluation: ReID metrics across 10 splits ===
     logger.info("[Eval] Starting evaluation across all 10 splits (ReID style)")

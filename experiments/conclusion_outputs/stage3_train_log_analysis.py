@@ -85,7 +85,7 @@ def collect_logs_stage3(model_name, n_versions=11):
         for fname in os.listdir(subdir):
             if model_name in fname.lower() and fname.endswith(".log"):
                 log_path = os.path.join(subdir, fname)
-                print(f"[✓] Parsing {log_path}")
+                print(f"[] Parsing {log_path}")
                 parsed = parse_stage3_promptsg_log(log_path, version_name, model_name)
                 all_data.extend(parsed)
                 found = True

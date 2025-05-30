@@ -8,7 +8,7 @@ def extract_stage3_metrics(file_path):
 
     metrics = {}
 
-    # Format 1 — PromptSG style
+    # Format 1  PromptSG style
     pattern1_splits = re.findall(
         r'Split (\d+)/10\s+Evaluation Metrics:\s+'
         r'Rank-1\s*:\s*([\d.]+)%\s+'
@@ -23,7 +23,7 @@ def extract_stage3_metrics(file_path):
         r'Rank-10 Accuracy\s*:\s*([\d.]+)%\s*'
         r'Mean AP\s*:\s*([\d.]+)%', content)
 
-    # Format 2 — ReID-style logs
+    # Format 2  ReID-style logs
     pattern2_splits = re.findall(
         r'\[Split (\d+)\] Rank-1: ([\d.]+)%, Rank-5: ([\d.]+)%, Rank-10: ([\d.]+)%, mAP: ([\d.]+)%', content)
 

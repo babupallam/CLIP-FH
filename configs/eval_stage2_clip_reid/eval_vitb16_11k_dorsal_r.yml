@@ -3,7 +3,7 @@ experiment: eval_stage2b_finetuned_vitb16_11k_dorsal_r
 dataset: 11k
 aspect: dorsal_r
 model: vitb16
-variant: finetuned     # ⚠️ Triggers loading from model_path
+variant: finetuned     #  Triggers loading from model_path
 
 batch_size: 32
 num_workers: 4

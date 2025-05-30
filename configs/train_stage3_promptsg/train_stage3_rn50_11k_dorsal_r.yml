@@ -33,7 +33,7 @@ attention_heads: 8
 use_composed_prompt: true
 #prompt_template: "A detailed photo of {aspect} hand for identification." -- for all
 #prompt_template: "A biometric scan of the {aspect} hand for ID verification."
-prompt_template: "A captured frame showing a person’s {aspect} hand during surveillance."
+prompt_template: "A captured frame showing a persons {aspect} hand during surveillance."
 #prompt_template: "Label: {aspect} hand, individual ID for re-identification."
 
 simplified_prompt: "A detailed photo of a {aspect} hand."

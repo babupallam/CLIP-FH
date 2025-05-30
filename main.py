@@ -13,7 +13,7 @@ def freeze_clip_text_encoder(model):
             "text_projection" in name
         ):
             param.requires_grad = False
-            print(f"🔒 Froze {name}")
+            print(f" Froze {name}")
 
 def check_text_encoder_frozen(checkpoint_path, model_name="ViT-B/16", device="cpu"):
     # Load base CLIP model architecture
@@ -35,11 +35,11 @@ def check_text_encoder_frozen(checkpoint_path, model_name="ViT-B/16", device="cp
 
     # Check frozen status
     frozen = all(not p.requires_grad for _, p in text_params)
-    print(f"\n[✓] Text encoder is {'FROZEN ✅' if frozen else 'NOT frozen ❌'}")
+    print(f"\n[] Text encoder is {'FROZEN ' if frozen else 'NOT frozen '}")
 
-    print("\n🔍 Breakdown:")
+    print("\n Breakdown:")
     for name, param in text_params:
-        print(f"{'❌' if param.requires_grad else '✅'} {name}")
+        print(f"{'' if param.requires_grad else ''} {name}")
 
 # Run it
 if __name__ == "__main__":

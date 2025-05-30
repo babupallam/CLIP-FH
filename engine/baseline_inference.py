@@ -65,7 +65,7 @@ def extract_features(model, dataloader, device, use_flip=False, prompt_learner=N
 
 def test_clip_import():
     import sys
-    print("📦 Inside baseline_inference:")
+    print(" Inside baseline_inference:")
     print(" - sys.executable:", sys.executable)
     print(" - sys.path:")
     for p in sys.path:
@@ -73,9 +73,9 @@ def test_clip_import():
 
     try:
         import clip
-        print("✅ Successfully imported clip in baseline_inference.")
+        print(" Successfully imported clip in baseline_inference.")
     except ModuleNotFoundError as e:
-        print("❌ Failed to import clip in baseline_inference:", e)
+        print(" Failed to import clip in baseline_inference:", e)
 
 
 

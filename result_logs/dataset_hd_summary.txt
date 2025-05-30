@@ -1,4 +1,4 @@
-📘 Column Explanation:
+ Column Explanation:
 -------------------------------------------------------------------------------------
 SPLIT LABEL         : Split type or Monte Carlo folder (e.g. TRAIN, gallery0)
 Classes             : Number of identity folders (unique IDs)
@@ -7,13 +7,13 @@ Min                 : Fewest images in a class + count of such classes
 Max                 : Most images in a class + count of such classes
 -------------------------------------------------------------------------------------
 
-📊 HD Dataset Distribution Summary
+ HD Dataset Distribution Summary
 =====================================================================================
 TRAIN                | Classes:  251 | Samples:  2156 | Min:  5 (4) | Max: 17 (1)
 VAL                  | Classes:  251 | Samples:   251 | Min:  1 (251) | Max:  1 (251)
 TEST                 | Classes:  251 | Samples:  2243 | Min:  3 (1) | Max: 43 (1)
 
-🎲 Monte Carlo Query/Gallery Splits Summary
+ Monte Carlo Query/Gallery Splits Summary
 =====================================================================================
 gallery0             | Classes:  464 | Samples:  1593 | Min:  1 (251) | Max: 13 (2)
 gallery1             | Classes:  464 | Samples:  1593 | Min:  1 (251) | Max: 13 (2)
@@ -36,4 +36,4 @@ query7               | Classes:  251 | Samples:  1992 | Min:  2 (1) | Max: 42 (1
 query8               | Classes:  251 | Samples:  1992 | Min:  2 (1) | Max: 42 (1)
 query9               | Classes:  251 | Samples:  1992 | Min:  2 (1) | Max: 42 (1)
 
-✅ Log saved to: result_logs/dataset_hd_summary.txt
+ Log saved to: result_logs/dataset_hd_summary.txt

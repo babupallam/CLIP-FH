@@ -1,4 +1,4 @@
-[DEBUG] CLIP Model = vitb16 → Token Embed Dim: 512, Final LN Dim: 512
+[DEBUG] CLIP Model = vitb16  Token Embed Dim: 512, Final LN Dim: 512
 [DEBUG] PromptLearner proj layer = Identity | in: 512, out: 512
 [DEBUG] Dummy Image Feature Shape: torch.Size([1, 512])
 [DEBUG] Text Feature Output (via proj) should match: 512
@@ -8,26 +8,26 @@ Total trainable CLIP params: 149695049
 [DEBUG] CLIP trainable params: 149695049
 [Prompt] cached 890 frozen image feats
 [Epoch 1] Avg Prompt Loss: 3.0139
-new best prompt – 3.0139
+new best prompt  3.0139
 [Epoch 2] Avg Prompt Loss: 3.0393
 [Epoch 3] Avg Prompt Loss: 2.5061
-new best prompt – 2.5061
+new best prompt  2.5061
 [Epoch 4] Avg Prompt Loss: 2.3257
-new best prompt – 2.3257
+new best prompt  2.3257
 [Epoch 5] Avg Prompt Loss: 2.2909
-new best prompt – 2.2909
+new best prompt  2.2909
 [Epoch 6] Avg Prompt Loss: 2.2977
 [Epoch 7] Avg Prompt Loss: 1.9904
-new best prompt – 1.9904
+new best prompt  1.9904
 [Epoch 8] Avg Prompt Loss: 1.8472
-new best prompt – 1.8472
+new best prompt  1.8472
 [Epoch 9] Avg Prompt Loss: 1.8175
-new best prompt – 1.8175
+new best prompt  1.8175
 [Epoch 10] Avg Prompt Loss: 1.7006
-new best prompt – 1.7006
+new best prompt  1.7006
 [Epoch 11] Avg Prompt Loss: 1.7690
 [Epoch 12] Avg Prompt Loss: 1.5288
-new best prompt – 1.5288
+new best prompt  1.5288
 [Epoch 13] Avg Prompt Loss: 1.6850
 [Epoch 14] Avg Prompt Loss: 1.5862
 [Epoch 15] Avg Prompt Loss: 1.7130
@@ -35,7 +35,7 @@ new best prompt – 1.5288
 [Epoch 17] Avg Prompt Loss: 1.5790
 [Epoch 18] Avg Prompt Loss: 1.5318
 [Epoch 19] Avg Prompt Loss: 1.4417
-new best prompt – 1.4417
+new best prompt  1.4417
 [Epoch 20] Avg Prompt Loss: 1.4966
 [Epoch 21] Avg Prompt Loss: 1.4986
 [Epoch 22] Avg Prompt Loss: 1.6324

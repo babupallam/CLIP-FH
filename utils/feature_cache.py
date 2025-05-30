@@ -41,6 +41,6 @@ def cache_image_features(clip_model, dataloader, device, model_name="vitb16", ca
 
     torch.save(image_features, feat_path)
     torch.save(labels, label_path)
-    print(f"[Cache] Saved features → {feat_path}")
+    print(f"[Cache] Saved features  {feat_path}")
 
     return image_features, labels

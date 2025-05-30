@@ -1,4 +1,4 @@
-📘 Column Explanation:
+ Column Explanation:
 -------------------------------------------------------------------------------------
 ASPECT_SPLIT       : Aspect + split type (e.g. dorsal_r_train)
 Classes            : Number of identity folders (unique IDs)
@@ -7,33 +7,33 @@ Min                : Minimum samples found in any class (and how many classes ha
 Max                : Maximum samples found in any class (and how many classes have this count)
 -------------------------------------------------------------------------------------
 
-📊 11k Dataset Distribution Summary
+ 11k Dataset Distribution Summary
 =====================================================================================
 
-🔹 DORSAL_R
+ DORSAL_R
 dorsal_r_train       | Classes:   72 | Samples:   890 | Min:  2 (1) | Max: 40 (2)
 dorsal_r_val         | Classes:   72 | Samples:    72 | Min:  1 (72) | Max:  1 (72)
 dorsal_r_test        | Classes:   71 | Samples:  1042 | Min:  2 (1) | Max: 46 (1)
 
-🔹 DORSAL_L
+ DORSAL_L
 dorsal_l_train       | Classes:   73 | Samples:   735 | Min:  1 (1) | Max: 41 (1)
 dorsal_l_val         | Classes:   73 | Samples:    73 | Min:  1 (73) | Max:  1 (73)
 dorsal_l_test        | Classes:   73 | Samples:  1061 | Min:  4 (1) | Max: 52 (1)
 
-🔹 PALMAR_R
+ PALMAR_R
 palmar_r_train       | Classes:   72 | Samples:   905 | Min:  3 (4) | Max: 70 (1)
 palmar_r_val         | Classes:   72 | Samples:    72 | Min:  1 (72) | Max:  1 (72)
 palmar_r_test        | Classes:   71 | Samples:   988 | Min:  4 (2) | Max: 54 (1)
 
-🔹 PALMAR_L
+ PALMAR_L
 palmar_l_train       | Classes:   76 | Samples:   928 | Min:  1 (2) | Max: 55 (1)
 palmar_l_val         | Classes:   76 | Samples:    76 | Min:  1 (76) | Max:  1 (76)
 palmar_l_test        | Classes:   75 | Samples:  1023 | Min:  4 (1) | Max: 39 (1)
 
-🎲 Monte Carlo Query/Gallery Splits Summary
+ Monte Carlo Query/Gallery Splits Summary
 =====================================================================================
 
-🔹 DORSAL_R
+ DORSAL_R
 dorsal_r_gallery0    | Classes:   71 | Samples:    71 | Min:  1 (71) | Max:  1 (71)
 dorsal_r_gallery1    | Classes:   71 | Samples:    71 | Min:  1 (71) | Max:  1 (71)
 dorsal_r_gallery2    | Classes:   71 | Samples:    71 | Min:  1 (71) | Max:  1 (71)
@@ -55,7 +55,7 @@ dorsal_r_query7      | Classes:   71 | Samples:   971 | Min:  1 (1) | Max: 45 (1
 dorsal_r_query8      | Classes:   71 | Samples:   971 | Min:  1 (1) | Max: 45 (1)
 dorsal_r_query9      | Classes:   71 | Samples:   971 | Min:  1 (1) | Max: 45 (1)
 
-🔹 DORSAL_L
+ DORSAL_L
 dorsal_l_gallery0    | Classes:   73 | Samples:    73 | Min:  1 (73) | Max:  1 (73)
 dorsal_l_gallery1    | Classes:   73 | Samples:    73 | Min:  1 (73) | Max:  1 (73)
 dorsal_l_gallery2    | Classes:   73 | Samples:    73 | Min:  1 (73) | Max:  1 (73)
@@ -77,7 +77,7 @@ dorsal_l_query7      | Classes:   73 | Samples:   988 | Min:  3 (1) | Max: 51 (1
 dorsal_l_query8      | Classes:   73 | Samples:   988 | Min:  3 (1) | Max: 51 (1)
 dorsal_l_query9      | Classes:   73 | Samples:   988 | Min:  3 (1) | Max: 51 (1)
 
-🔹 PALMAR_R
+ PALMAR_R
 palmar_r_gallery0    | Classes:   71 | Samples:    71 | Min:  1 (71) | Max:  1 (71)
 palmar_r_gallery1    | Classes:   71 | Samples:    71 | Min:  1 (71) | Max:  1 (71)
 palmar_r_gallery2    | Classes:   71 | Samples:    71 | Min:  1 (71) | Max:  1 (71)
@@ -99,7 +99,7 @@ palmar_r_query7      | Classes:   71 | Samples:   917 | Min:  3 (2) | Max: 53 (1
 palmar_r_query8      | Classes:   71 | Samples:   917 | Min:  3 (2) | Max: 53 (1)
 palmar_r_query9      | Classes:   71 | Samples:   917 | Min:  3 (2) | Max: 53 (1)
 
-🔹 PALMAR_L
+ PALMAR_L
 palmar_l_gallery0    | Classes:   75 | Samples:    75 | Min:  1 (75) | Max:  1 (75)
 palmar_l_gallery1    | Classes:   75 | Samples:    75 | Min:  1 (75) | Max:  1 (75)
 palmar_l_gallery2    | Classes:   75 | Samples:    75 | Min:  1 (75) | Max:  1 (75)
@@ -121,4 +121,4 @@ palmar_l_query7      | Classes:   75 | Samples:   948 | Min:  3 (1) | Max: 38 (1
 palmar_l_query8      | Classes:   75 | Samples:   948 | Min:  3 (1) | Max: 38 (1)
 palmar_l_query9      | Classes:   75 | Samples:   948 | Min:  3 (1) | Max: 38 (1)
 
-✅ Log saved to: result_logs/dataset_11k_summary.txt
+ Log saved to: result_logs/dataset_11k_summary.txt

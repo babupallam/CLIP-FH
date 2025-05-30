@@ -16,7 +16,7 @@ def load_clip_with_patch(model_type, device, freeze_all=True):
 
     model_name = model_map.get(model_type.lower())
     if model_name is None:
-        raise ValueError(f"❌ Unknown model type: {model_type}")
+        raise ValueError(f" Unknown model type: {model_type}")
 
     model, _ = clip.load(model_name, device=device)
 

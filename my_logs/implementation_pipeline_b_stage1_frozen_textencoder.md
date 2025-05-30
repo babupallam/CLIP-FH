@@ -44,7 +44,7 @@
    ```python
    clip_model, classifier = build_model(config, freeze_text=True)
    ```
-   - `freeze_text=True` means the CLIP text transformer’s parameters are locked.
+   - `freeze_text=True` means the CLIP text transformers parameters are locked.
 
 5. **Init** the trainer:
    ```python
@@ -59,7 +59,7 @@
 ### **2) `build_dataloader.py`**
 
 - **Function** `get_train_val_loaders(config)`:
-  1. Checks `config["dataset"]` & `config["aspect"]` → builds path like `./datasets/11khands/train_val_test_split_dorsal_r`
+  1. Checks `config["dataset"]` & `config["aspect"]`  builds path like `./datasets/11khands/train_val_test_split_dorsal_r`
   2. Creates `train_dir` = `.../train`, `val_dir` = `.../val`
   3. Uses `ImageFolder(...)` with transforms to load images
   4. Returns `(train_loader, val_loader, num_classes)`
@@ -122,10 +122,10 @@
 
 ### **1) `run_all_finetuned_stage1.py`**
 
-1. Searches `configs/finetuning_stage1_frozen_text` for `.yml` files — e.g. `eval_vitb16_11k_dorsal_r.yml`.
+1. Searches `configs/finetuning_stage1_frozen_text` for `.yml` files  e.g. `eval_vitb16_11k_dorsal_r.yml`.
 2. For each config:
    - Runs `python experiments/run_eval_clip.py --config <that_config>`
-3. This effectively performs a batch run of your new “finetuned” evaluation scenario.
+3. This effectively performs a batch run of your new finetuned evaluation scenario.
 
 ---
 
@@ -142,14 +142,14 @@ num_splits: 10
 save_path: "saved_models/stage1_vitb16_11k_dorsal_r.pth"
 ...
 ```
-- Tells `run_eval_clip.py` that we’re evaluating a **finetuned** model vs. the baseline.
+- Tells `run_eval_clip.py` that were evaluating a **finetuned** model vs. the baseline.
 
 ---
 
 ### **3) `run_eval_clip.py`** (Universal evaluation script)
 
 1. **Parses** `--config`.
-2. **Loads** config → sees `variant: finetuned`.
+2. **Loads** config  sees `variant: finetuned`.
 3. **Loads** the corresponding **finetuned** model checkpoint from `save_path` (the same path used in training).
    - E.g., 
      ```python
@@ -169,15 +169,15 @@ save_path: "saved_models/stage1_vitb16_11k_dorsal_r.pth"
 
 1. **Train** (Stage 1)  
    - `python experiments/train_stage1_frozen_text_vitb16_11k_dorsal_r.py --config configs/finetuning_stage1_frozen_text/train_vitb16_11k_dorsal_r.yml`
-   - → Produces `saved_models/stage1_vitb16_11k_dorsal_r.pth`
+   -  Produces `saved_models/stage1_vitb16_11k_dorsal_r.pth`
 2. **Evaluate**  
-   - `python run_all_finetuned_stage1.py` → Looks at `configs/finetuning_stage1_frozen_text/*.yml`  
+   - `python run_all_finetuned_stage1.py`  Looks at `configs/finetuning_stage1_frozen_text/*.yml`  
      - For each `eval_*.yml`, calls `run_eval_clip.py --config <that_eval_yml>`  
-   - `run_eval_clip.py` sees `variant=finetuned`, loads the checkpoint → measures new performance.
+   - `run_eval_clip.py` sees `variant=finetuned`, loads the checkpoint  measures new performance.
 
 ---
 
-### **Final Clarification**: “No Steps Missed”
+### **Final Clarification**: No Steps Missed
 - We have included:
   1. The training script (`train_stage1_frozen_text_vitb16_11k_dorsal_r.py`)
   2. The trainer code (`finetune_trainer_stage1.py`)
@@ -187,4 +187,4 @@ save_path: "saved_models/stage1_vitb16_11k_dorsal_r.pth"
      - `run_all_finetuned_stage1.py` (for batch runs)
      - `eval_vitb16_11k_dorsal_r.yml` config
      - `run_eval_clip.py` logic (universal script for baseline or finetuned)
-- Each part references one another to **train** or **evaluate** the Stage 1 approach: “frozen text encoder + cross-entropy on the image encoder.”
+- Each part references one another to **train** or **evaluate** the Stage 1 approach: frozen text encoder + cross-entropy on the image encoder.

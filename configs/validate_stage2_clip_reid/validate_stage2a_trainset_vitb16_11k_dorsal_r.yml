@@ -4,7 +4,7 @@ aspect: dorsal_r
 model: vitb16
 variant: clipid
 
-# Prompt config — must match training config exactly
+# Prompt config  must match training config exactly
 n_ctx: 8
 ctx_init: "a hand"
 prompt_template: "A photo of {}'s {aspect} hand for identification."

@@ -51,7 +51,7 @@ def maybe_patch_clip_pos_embed(clip_model, input_hw):
         new_len = grid_h * grid_w + 1
 
         if pos_embed.shape[0] != new_len:
-            print(f"[v11-ViT] Interpolating ViT pos_embed: {pos_embed.shape[0]} → {new_len}")
+            print(f"[v11-ViT] Interpolating ViT pos_embed: {pos_embed.shape[0]}  {new_len}")
             cls_token = pos_embed[:1, :]  # [1, D]
             spatial_tokens = pos_embed[1:, :]  # [N-1, D]
 
@@ -74,7 +74,7 @@ def maybe_patch_clip_pos_embed(clip_model, input_hw):
         new_len = feat_h * feat_w + 1
 
         if pos_embed.shape[0] != new_len:
-            print(f"[v11-RN50] Interpolating RN50 attnpool pos_embed: {pos_embed.shape[0]} → {new_len}")
+            print(f"[v11-RN50] Interpolating RN50 attnpool pos_embed: {pos_embed.shape[0]}  {new_len}")
             cls_token = pos_embed[:1, :]  # [1, D]
             spatial_tokens = pos_embed[1:, :].T.unsqueeze(0)  # [1, D, N]
             resized = F.interpolate(spatial_tokens, size=new_len - 1, mode='linear', align_corners=False)
@@ -208,7 +208,7 @@ def promptSG_integration(config):
                 '''
                     If ~0.9 = very confident
 
-                    If < 0.5 = very confused → suggests:
+                    If < 0.5 = very confused  suggests:
                     
                     embeddings are untrained
                     
@@ -240,7 +240,7 @@ def promptSG_integration(config):
                 continue  # Skip this batch
 
             logger.info(
-                f"[DEBUG] Loss Breakdown — ID: {id_loss.item():.4f}, SupCon: {supcon_loss.item():.4f}, Tri: {triplet_loss.item():.4f}")
+                f"[DEBUG] Loss Breakdown  ID: {id_loss.item():.4f}, SupCon: {supcon_loss.item():.4f}, Tri: {triplet_loss.item():.4f}")
 
             loss.backward()
             optimizer.step()
@@ -386,7 +386,7 @@ def promptSG_integration(config):
                     eval_log_info(f"Skipping missing split {i}: {query_path} / {gallery_path}")
                     continue
 
-                eval_log_info(f"→ Evaluating Split {i + 1}/{num_splits}")
+                eval_log_info(f" Evaluating Split {i + 1}/{num_splits}")
 
                 query_loader = get_dataloader(query_path, batch_size=batch_size, shuffle=False, train=False)
                 gallery_loader = get_dataloader(gallery_path, batch_size=batch_size, shuffle=False, train=False)
@@ -427,7 +427,7 @@ def promptSG_integration(config):
             else:
                 eval_log_info(" No valid splits evaluated.")
     else:
-        logger.warning("Skipping final evaluation — best_model_components was not set.")
+        logger.warning("Skipping final evaluation  best_model_components was not set.")
 
 
 if __name__ == "__main__":

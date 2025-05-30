@@ -4,7 +4,7 @@ import torch.nn.functional as F
 
 def supcon_loss(text_features, image_features, t_labels, i_labels, temperature=1.0):
     """
-    CLIP-ReID style Supervised Contrastive Loss (one-directional: text → image)
+    CLIP-ReID style Supervised Contrastive Loss (one-directional: text  image)
 
     Args:
         text_features:  (B, D) - prompt/text embeddings
@@ -32,7 +32,7 @@ def supcon_loss(text_features, image_features, t_labels, i_labels, temperature=1
     labels = t_labels.contiguous().view(-1, 1)  # shape: (B, 1)
     mask = torch.eq(labels, labels.T).float().to(device)  # (B, B)
 
-    # === Similarity matrix (text → image) ===
+    # === Similarity matrix (text  image) ===
     logits = torch.matmul(text_features, image_features.transpose(0, 1)) / temperature
 
     # === Numerical stability ===

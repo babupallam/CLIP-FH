@@ -316,7 +316,7 @@ def train_joint(cfg_path):
                 loss_t2i = loss_fn(features=text_feats, text_features=image_feats,
                                    targets=labels_batch, mode="contrastive")
 
-                # Assume you have a classifier layer for ID logits — add if missing
+                # Assume you have a classifier layer for ID logits  add if missing
                 if not hasattr(clip_model, "classifier"):
                     clip_model.classifier = nn.Linear(image_feats.size(1), num_classes).to(device)
 

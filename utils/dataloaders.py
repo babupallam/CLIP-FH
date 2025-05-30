@@ -7,8 +7,8 @@ Purpose:
 - Also provides train-validation splits with standard transforms.
 
 Functions:
-1. get_dataloader() → for generic directory (query/gallery/test)
-2. get_train_val_loaders() → for loading training and validation data
+1. get_dataloader()  for generic directory (query/gallery/test)
+2. get_train_val_loaders()  for loading training and validation data
 """
 
 # ====== Imports ======
@@ -188,7 +188,7 @@ def get_train_all_loader(config):
 def get_train_loader_all(config):
     """
     Loads the full training set as a standard PyTorch DataLoader.
-    This is used for CLIP-ReID style Stage 1, without P×K batching.
+    This is used for CLIP-ReID style Stage 1, without PK batching.
     """
     dataset = config["dataset"]
     aspect = config["aspect"]

@@ -14,7 +14,7 @@ Loading fine-tuned model from: saved_models/stage3_promptsg_vitb16_11k_dorsal_r_
 [PromptSG] PromptSG checkpoint loaded
 Checkpoint restored from epoch 15
 Checkpoint metadata: {'stage': 'promptsg', 'save_time': '2025-04-19T11:08:50.747595', 'clip_variant': 'vitb16', 'dataset': '11k'}
-[PromptSG] Detected PromptSG checkpoint – rebuilding submodules
+[PromptSG] Detected PromptSG checkpoint  rebuilding submodules
 
 Split 1/10
 Evaluation Metrics:

@@ -9,36 +9,36 @@
 2025-04-19 07:45:42,222 - INFO -  Epoch 1/20
 2025-04-19 07:45:42,225 - INFO - [Epoch 1] Learning rate: 0.000010
 2025-04-19 07:46:10,871 - INFO - [DEBUG] Pooled feature mean L2 norm: 1.0000
-2025-04-19 07:46:10,874 - INFO - [DEBUG] Loss Breakdown — ID: 4.2772, SupCon: 3.5106, Tri: 0.1542
+2025-04-19 07:46:10,874 - INFO - [DEBUG] Loss Breakdown  ID: 4.2772, SupCon: 3.5106, Tri: 0.1542
 2025-04-19 07:46:11,120 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
 2025-04-19 07:46:11,120 - INFO - [DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
-2025-04-19 07:46:11,300 - INFO - [DEBUG] Loss Breakdown — ID: 4.2852, SupCon: 3.5538, Tri: 0.1220
-2025-04-19 07:46:11,714 - INFO - [DEBUG] Loss Breakdown — ID: 4.2788, SupCon: 3.5441, Tri: 0.1077
-2025-04-19 07:46:12,119 - INFO - [DEBUG] Loss Breakdown — ID: 4.2806, SupCon: 3.5434, Tri: 0.1262
-2025-04-19 07:46:12,528 - INFO - [DEBUG] Loss Breakdown — ID: 4.2734, SupCon: 3.5112, Tri: 0.1937
-2025-04-19 07:46:12,941 - INFO - [DEBUG] Loss Breakdown — ID: 4.2773, SupCon: 3.4986, Tri: 0.1294
-2025-04-19 07:46:13,351 - INFO - [DEBUG] Loss Breakdown — ID: 4.2773, SupCon: 3.5031, Tri: 0.2235
-2025-04-19 07:46:13,760 - INFO - [DEBUG] Loss Breakdown — ID: 4.2738, SupCon: 3.5567, Tri: 0.0931
-2025-04-19 07:46:14,172 - INFO - [DEBUG] Loss Breakdown — ID: 4.2674, SupCon: 3.5573, Tri: 0.2154
-2025-04-19 07:46:14,586 - INFO - [DEBUG] Loss Breakdown — ID: 4.2672, SupCon: 3.4870, Tri: 0.1932
-2025-04-19 07:46:14,997 - INFO - [DEBUG] Loss Breakdown — ID: 4.2726, SupCon: 3.4862, Tri: 0.1882
-2025-04-19 07:46:15,406 - INFO - [DEBUG] Loss Breakdown — ID: 4.2689, SupCon: 3.4643, Tri: 0.2076
-2025-04-19 07:46:15,818 - INFO - [DEBUG] Loss Breakdown — ID: 4.2752, SupCon: 3.4724, Tri: 0.1109
-2025-04-19 07:46:16,230 - INFO - [DEBUG] Loss Breakdown — ID: 4.2677, SupCon: 3.4818, Tri: 0.1722
-2025-04-19 07:46:16,638 - INFO - [DEBUG] Loss Breakdown — ID: 4.2694, SupCon: 3.4849, Tri: 0.1396
-2025-04-19 07:46:17,048 - INFO - [DEBUG] Loss Breakdown — ID: 4.2780, SupCon: 3.4535, Tri: 0.1455
-2025-04-19 07:46:17,461 - INFO - [DEBUG] Loss Breakdown — ID: 4.2804, SupCon: 3.4895, Tri: 0.1459
-2025-04-19 07:46:17,871 - INFO - [DEBUG] Loss Breakdown — ID: 4.2755, SupCon: 3.4822, Tri: 0.1964
-2025-04-19 07:46:18,283 - INFO - [DEBUG] Loss Breakdown — ID: 4.2801, SupCon: 3.4786, Tri: 0.1463
-2025-04-19 07:46:18,693 - INFO - [DEBUG] Loss Breakdown — ID: 4.2816, SupCon: 3.4663, Tri: 0.1033
-2025-04-19 07:46:19,099 - INFO - [DEBUG] Loss Breakdown — ID: 4.2752, SupCon: 3.4191, Tri: 0.1602
-2025-04-19 07:46:19,505 - INFO - [DEBUG] Loss Breakdown — ID: 4.2737, SupCon: 3.4630, Tri: 0.1258
-2025-04-19 07:46:19,913 - INFO - [DEBUG] Loss Breakdown — ID: 4.2813, SupCon: 3.5074, Tri: 0.1238
-2025-04-19 07:46:20,319 - INFO - [DEBUG] Loss Breakdown — ID: 4.2722, SupCon: 3.5187, Tri: 0.1185
-2025-04-19 07:46:20,732 - INFO - [DEBUG] Loss Breakdown — ID: 4.2764, SupCon: 3.4611, Tri: 0.1829
-2025-04-19 07:46:21,147 - INFO - [DEBUG] Loss Breakdown — ID: 4.2752, SupCon: 3.4518, Tri: 0.1534
-2025-04-19 07:46:21,557 - INFO - [DEBUG] Loss Breakdown — ID: 4.2776, SupCon: 3.4768, Tri: 0.1492
-2025-04-19 07:46:21,936 - INFO - [DEBUG] Loss Breakdown — ID: 4.2842, SupCon: 3.2183, Tri: 0.1386
+2025-04-19 07:46:11,300 - INFO - [DEBUG] Loss Breakdown  ID: 4.2852, SupCon: 3.5538, Tri: 0.1220
+2025-04-19 07:46:11,714 - INFO - [DEBUG] Loss Breakdown  ID: 4.2788, SupCon: 3.5441, Tri: 0.1077
+2025-04-19 07:46:12,119 - INFO - [DEBUG] Loss Breakdown  ID: 4.2806, SupCon: 3.5434, Tri: 0.1262
+2025-04-19 07:46:12,528 - INFO - [DEBUG] Loss Breakdown  ID: 4.2734, SupCon: 3.5112, Tri: 0.1937
+2025-04-19 07:46:12,941 - INFO - [DEBUG] Loss Breakdown  ID: 4.2773, SupCon: 3.4986, Tri: 0.1294
+2025-04-19 07:46:13,351 - INFO - [DEBUG] Loss Breakdown  ID: 4.2773, SupCon: 3.5031, Tri: 0.2235
+2025-04-19 07:46:13,760 - INFO - [DEBUG] Loss Breakdown  ID: 4.2738, SupCon: 3.5567, Tri: 0.0931
+2025-04-19 07:46:14,172 - INFO - [DEBUG] Loss Breakdown  ID: 4.2674, SupCon: 3.5573, Tri: 0.2154
+2025-04-19 07:46:14,586 - INFO - [DEBUG] Loss Breakdown  ID: 4.2672, SupCon: 3.4870, Tri: 0.1932
+2025-04-19 07:46:14,997 - INFO - [DEBUG] Loss Breakdown  ID: 4.2726, SupCon: 3.4862, Tri: 0.1882
+2025-04-19 07:46:15,406 - INFO - [DEBUG] Loss Breakdown  ID: 4.2689, SupCon: 3.4643, Tri: 0.2076
+2025-04-19 07:46:15,818 - INFO - [DEBUG] Loss Breakdown  ID: 4.2752, SupCon: 3.4724, Tri: 0.1109
+2025-04-19 07:46:16,230 - INFO - [DEBUG] Loss Breakdown  ID: 4.2677, SupCon: 3.4818, Tri: 0.1722
+2025-04-19 07:46:16,638 - INFO - [DEBUG] Loss Breakdown  ID: 4.2694, SupCon: 3.4849, Tri: 0.1396
+2025-04-19 07:46:17,048 - INFO - [DEBUG] Loss Breakdown  ID: 4.2780, SupCon: 3.4535, Tri: 0.1455
+2025-04-19 07:46:17,461 - INFO - [DEBUG] Loss Breakdown  ID: 4.2804, SupCon: 3.4895, Tri: 0.1459
+2025-04-19 07:46:17,871 - INFO - [DEBUG] Loss Breakdown  ID: 4.2755, SupCon: 3.4822, Tri: 0.1964
+2025-04-19 07:46:18,283 - INFO - [DEBUG] Loss Breakdown  ID: 4.2801, SupCon: 3.4786, Tri: 0.1463
+2025-04-19 07:46:18,693 - INFO - [DEBUG] Loss Breakdown  ID: 4.2816, SupCon: 3.4663, Tri: 0.1033
+2025-04-19 07:46:19,099 - INFO - [DEBUG] Loss Breakdown  ID: 4.2752, SupCon: 3.4191, Tri: 0.1602
+2025-04-19 07:46:19,505 - INFO - [DEBUG] Loss Breakdown  ID: 4.2737, SupCon: 3.4630, Tri: 0.1258
+2025-04-19 07:46:19,913 - INFO - [DEBUG] Loss Breakdown  ID: 4.2813, SupCon: 3.5074, Tri: 0.1238
+2025-04-19 07:46:20,319 - INFO - [DEBUG] Loss Breakdown  ID: 4.2722, SupCon: 3.5187, Tri: 0.1185
+2025-04-19 07:46:20,732 - INFO - [DEBUG] Loss Breakdown  ID: 4.2764, SupCon: 3.4611, Tri: 0.1829
+2025-04-19 07:46:21,147 - INFO - [DEBUG] Loss Breakdown  ID: 4.2752, SupCon: 3.4518, Tri: 0.1534
+2025-04-19 07:46:21,557 - INFO - [DEBUG] Loss Breakdown  ID: 4.2776, SupCon: 3.4768, Tri: 0.1492
+2025-04-19 07:46:21,936 - INFO - [DEBUG] Loss Breakdown  ID: 4.2842, SupCon: 3.2183, Tri: 0.1386
 2025-04-19 07:46:22,825 - INFO - [Epoch 1] Total Loss=0.1524
 2025-04-19 07:46:22,825 - INFO - Validating epoch 1...
 2025-04-19 07:46:55,329 - INFO - [Epoch 1] Avg Train Loss = 0.1524 | 
@@ -51,36 +51,36 @@
 2025-04-19 07:46:55,332 - INFO - Saving best model at epoch 1 (Acc@1=19.57%)  saved_models/stage3_promptsg_vitb16_11k_dorsal_r_promptsg_e20_lrNA_bs32_BEST.pth
 2025-04-19 07:46:56,553 - INFO -  Epoch 2/20
 2025-04-19 07:46:56,553 - INFO - [Epoch 2] Learning rate: 0.000010
-2025-04-19 07:47:22,187 - INFO - [DEBUG] Loss Breakdown — ID: 4.2692, SupCon: 3.3813, Tri: 0.1113
+2025-04-19 07:47:22,187 - INFO - [DEBUG] Loss Breakdown  ID: 4.2692, SupCon: 3.3813, Tri: 0.1113
 2025-04-19 07:47:22,421 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
 2025-04-19 07:47:22,421 - INFO - [DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
-2025-04-19 07:47:22,595 - INFO - [DEBUG] Loss Breakdown — ID: 4.2758, SupCon: 3.4833, Tri: 0.1143
-2025-04-19 07:47:23,001 - INFO - [DEBUG] Loss Breakdown — ID: 4.2768, SupCon: 3.4835, Tri: 0.0897
-2025-04-19 07:47:23,410 - INFO - [DEBUG] Loss Breakdown — ID: 4.2840, SupCon: 3.3816, Tri: 0.1984
-2025-04-19 07:47:23,815 - INFO - [DEBUG] Loss Breakdown — ID: 4.2739, SupCon: 3.5142, Tri: 0.1194
-2025-04-19 07:47:24,221 - INFO - [DEBUG] Loss Breakdown — ID: 4.2889, SupCon: 3.4736, Tri: 0.1533
-2025-04-19 07:47:24,631 - INFO - [DEBUG] Loss Breakdown — ID: 4.2713, SupCon: 3.4761, Tri: 0.1536
-2025-04-19 07:47:25,039 - INFO - [DEBUG] Loss Breakdown — ID: 4.2758, SupCon: 3.5101, Tri: 0.1009
-2025-04-19 07:47:25,448 - INFO - [DEBUG] Loss Breakdown — ID: 4.2787, SupCon: 3.4615, Tri: 0.1357
-2025-04-19 07:47:25,854 - INFO - [DEBUG] Loss Breakdown — ID: 4.2782, SupCon: 3.4798, Tri: 0.1358
-2025-04-19 07:47:26,265 - INFO - [DEBUG] Loss Breakdown — ID: 4.2761, SupCon: 3.4490, Tri: 0.1831
-2025-04-19 07:47:26,674 - INFO - [DEBUG] Loss Breakdown — ID: 4.2775, SupCon: 3.5144, Tri: 0.1226
-2025-04-19 07:47:27,082 - INFO - [DEBUG] Loss Breakdown — ID: 4.2727, SupCon: 3.5739, Tri: 0.1439
-2025-04-19 07:47:27,491 - INFO - [DEBUG] Loss Breakdown — ID: 4.2784, SupCon: 3.5291, Tri: 0.1674
-2025-04-19 07:47:27,897 - INFO - [DEBUG] Loss Breakdown — ID: 4.2707, SupCon: 3.6318, Tri: 0.1790
-2025-04-19 07:47:28,305 - INFO - [DEBUG] Loss Breakdown — ID: 4.2825, SupCon: 3.6821, Tri: 0.1702
-2025-04-19 07:47:28,714 - INFO - [DEBUG] Loss Breakdown — ID: 4.2704, SupCon: 3.6459, Tri: 0.1449
-2025-04-19 07:47:29,123 - INFO - [DEBUG] Loss Breakdown — ID: 4.2762, SupCon: 3.6411, Tri: 0.1535
-2025-04-19 07:47:29,531 - INFO - [DEBUG] Loss Breakdown — ID: 4.2694, SupCon: 3.6402, Tri: 0.1492
-2025-04-19 07:47:29,939 - INFO - [DEBUG] Loss Breakdown — ID: 4.2702, SupCon: 3.5852, Tri: 0.1518
-2025-04-19 07:47:30,348 - INFO - [DEBUG] Loss Breakdown — ID: 4.2747, SupCon: 3.5156, Tri: 0.1341
-2025-04-19 07:47:30,754 - INFO - [DEBUG] Loss Breakdown — ID: 4.2725, SupCon: 3.4946, Tri: 0.1600
-2025-04-19 07:47:31,161 - INFO - [DEBUG] Loss Breakdown — ID: 4.2681, SupCon: 3.5290, Tri: 0.1031
-2025-04-19 07:47:31,567 - INFO - [DEBUG] Loss Breakdown — ID: 4.2765, SupCon: 3.6420, Tri: 0.1442
-2025-04-19 07:47:31,969 - INFO - [DEBUG] Loss Breakdown — ID: 4.2819, SupCon: 3.5636, Tri: 0.2015
-2025-04-19 07:47:32,375 - INFO - [DEBUG] Loss Breakdown — ID: 4.2699, SupCon: 3.6224, Tri: 0.1933
-2025-04-19 07:47:32,781 - INFO - [DEBUG] Loss Breakdown — ID: 4.2751, SupCon: 3.5592, Tri: 0.1333
-2025-04-19 07:47:33,156 - INFO - [DEBUG] Loss Breakdown — ID: 4.2782, SupCon: 3.3310, Tri: 0.1607
+2025-04-19 07:47:22,595 - INFO - [DEBUG] Loss Breakdown  ID: 4.2758, SupCon: 3.4833, Tri: 0.1143
+2025-04-19 07:47:23,001 - INFO - [DEBUG] Loss Breakdown  ID: 4.2768, SupCon: 3.4835, Tri: 0.0897
+2025-04-19 07:47:23,410 - INFO - [DEBUG] Loss Breakdown  ID: 4.2840, SupCon: 3.3816, Tri: 0.1984
+2025-04-19 07:47:23,815 - INFO - [DEBUG] Loss Breakdown  ID: 4.2739, SupCon: 3.5142, Tri: 0.1194
+2025-04-19 07:47:24,221 - INFO - [DEBUG] Loss Breakdown  ID: 4.2889, SupCon: 3.4736, Tri: 0.1533
+2025-04-19 07:47:24,631 - INFO - [DEBUG] Loss Breakdown  ID: 4.2713, SupCon: 3.4761, Tri: 0.1536
+2025-04-19 07:47:25,039 - INFO - [DEBUG] Loss Breakdown  ID: 4.2758, SupCon: 3.5101, Tri: 0.1009
+2025-04-19 07:47:25,448 - INFO - [DEBUG] Loss Breakdown  ID: 4.2787, SupCon: 3.4615, Tri: 0.1357
+2025-04-19 07:47:25,854 - INFO - [DEBUG] Loss Breakdown  ID: 4.2782, SupCon: 3.4798, Tri: 0.1358
+2025-04-19 07:47:26,265 - INFO - [DEBUG] Loss Breakdown  ID: 4.2761, SupCon: 3.4490, Tri: 0.1831
+2025-04-19 07:47:26,674 - INFO - [DEBUG] Loss Breakdown  ID: 4.2775, SupCon: 3.5144, Tri: 0.1226
+2025-04-19 07:47:27,082 - INFO - [DEBUG] Loss Breakdown  ID: 4.2727, SupCon: 3.5739, Tri: 0.1439
+2025-04-19 07:47:27,491 - INFO - [DEBUG] Loss Breakdown  ID: 4.2784, SupCon: 3.5291, Tri: 0.1674
+2025-04-19 07:47:27,897 - INFO - [DEBUG] Loss Breakdown  ID: 4.2707, SupCon: 3.6318, Tri: 0.1790
+2025-04-19 07:47:28,305 - INFO - [DEBUG] Loss Breakdown  ID: 4.2825, SupCon: 3.6821, Tri: 0.1702
+2025-04-19 07:47:28,714 - INFO - [DEBUG] Loss Breakdown  ID: 4.2704, SupCon: 3.6459, Tri: 0.1449
+2025-04-19 07:47:29,123 - INFO - [DEBUG] Loss Breakdown  ID: 4.2762, SupCon: 3.6411, Tri: 0.1535
+2025-04-19 07:47:29,531 - INFO - [DEBUG] Loss Breakdown  ID: 4.2694, SupCon: 3.6402, Tri: 0.1492
+2025-04-19 07:47:29,939 - INFO - [DEBUG] Loss Breakdown  ID: 4.2702, SupCon: 3.5852, Tri: 0.1518
+2025-04-19 07:47:30,348 - INFO - [DEBUG] Loss Breakdown  ID: 4.2747, SupCon: 3.5156, Tri: 0.1341
+2025-04-19 07:47:30,754 - INFO - [DEBUG] Loss Breakdown  ID: 4.2725, SupCon: 3.4946, Tri: 0.1600
+2025-04-19 07:47:31,161 - INFO - [DEBUG] Loss Breakdown  ID: 4.2681, SupCon: 3.5290, Tri: 0.1031
+2025-04-19 07:47:31,567 - INFO - [DEBUG] Loss Breakdown  ID: 4.2765, SupCon: 3.6420, Tri: 0.1442
+2025-04-19 07:47:31,969 - INFO - [DEBUG] Loss Breakdown  ID: 4.2819, SupCon: 3.5636, Tri: 0.2015
+2025-04-19 07:47:32,375 - INFO - [DEBUG] Loss Breakdown  ID: 4.2699, SupCon: 3.6224, Tri: 0.1933
+2025-04-19 07:47:32,781 - INFO - [DEBUG] Loss Breakdown  ID: 4.2751, SupCon: 3.5592, Tri: 0.1333
+2025-04-19 07:47:33,156 - INFO - [DEBUG] Loss Breakdown  ID: 4.2782, SupCon: 3.3310, Tri: 0.1607
 2025-04-19 07:47:34,061 - INFO - [Epoch 2] Total Loss=0.1467
 2025-04-19 07:47:34,064 - INFO - Validating epoch 2...
 2025-04-19 07:48:05,702 - INFO - [Epoch 2] Avg Train Loss = 0.1467 | 
@@ -93,36 +93,36 @@
 2025-04-19 07:48:05,702 - INFO - No improvement in Acc@1. Patience counter: 1/3
 2025-04-19 07:48:05,702 - INFO -  Epoch 3/20
 2025-04-19 07:48:05,705 - INFO - [Epoch 3] Learning rate: 0.000010
-2025-04-19 07:48:29,971 - INFO - [DEBUG] Loss Breakdown — ID: 4.2824, SupCon: 3.5703, Tri: 0.1176
+2025-04-19 07:48:29,971 - INFO - [DEBUG] Loss Breakdown  ID: 4.2824, SupCon: 3.5703, Tri: 0.1176
 2025-04-19 07:48:30,205 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
 2025-04-19 07:48:30,205 - INFO - [DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
-2025-04-19 07:48:30,380 - INFO - [DEBUG] Loss Breakdown — ID: 4.2750, SupCon: 3.5339, Tri: 0.0620
-2025-04-19 07:48:30,791 - INFO - [DEBUG] Loss Breakdown — ID: 4.2796, SupCon: 3.4956, Tri: 0.0812
-2025-04-19 07:48:31,199 - INFO - [DEBUG] Loss Breakdown — ID: 4.2718, SupCon: 3.5265, Tri: 0.1433
-2025-04-19 07:48:31,611 - INFO - [DEBUG] Loss Breakdown — ID: 4.2716, SupCon: 3.5126, Tri: 0.1147
-2025-04-19 07:48:32,016 - INFO - [DEBUG] Loss Breakdown — ID: 4.2800, SupCon: 3.5558, Tri: 0.1516
-2025-04-19 07:48:32,427 - INFO - [DEBUG] Loss Breakdown — ID: 4.2722, SupCon: 3.5193, Tri: 0.1114
-2025-04-19 07:48:32,832 - INFO - [DEBUG] Loss Breakdown — ID: 4.2751, SupCon: 3.4801, Tri: 0.1850
-2025-04-19 07:48:33,240 - INFO - [DEBUG] Loss Breakdown — ID: 4.2724, SupCon: 3.5304, Tri: 0.1323
-2025-04-19 07:48:33,648 - INFO - [DEBUG] Loss Breakdown — ID: 4.2726, SupCon: 3.5399, Tri: 0.1973
-2025-04-19 07:48:34,056 - INFO - [DEBUG] Loss Breakdown — ID: 4.2760, SupCon: 3.5339, Tri: 0.0983
-2025-04-19 07:48:34,461 - INFO - [DEBUG] Loss Breakdown — ID: 4.2686, SupCon: 3.4978, Tri: 0.1448
-2025-04-19 07:48:34,866 - INFO - [DEBUG] Loss Breakdown — ID: 4.2811, SupCon: 3.5053, Tri: 0.1990
-2025-04-19 07:48:35,275 - INFO - [DEBUG] Loss Breakdown — ID: 4.2783, SupCon: 3.4703, Tri: 0.0718
-2025-04-19 07:48:35,678 - INFO - [DEBUG] Loss Breakdown — ID: 4.2734, SupCon: 3.5377, Tri: 0.1307
-2025-04-19 07:48:36,086 - INFO - [DEBUG] Loss Breakdown — ID: 4.2751, SupCon: 3.4979, Tri: 0.2362
-2025-04-19 07:48:36,492 - INFO - [DEBUG] Loss Breakdown — ID: 4.2640, SupCon: 3.5342, Tri: 0.1996
-2025-04-19 07:48:36,898 - INFO - [DEBUG] Loss Breakdown — ID: 4.2807, SupCon: 3.5014, Tri: 0.1949
-2025-04-19 07:48:37,309 - INFO - [DEBUG] Loss Breakdown — ID: 4.2735, SupCon: 3.5276, Tri: 0.1507
-2025-04-19 07:48:37,720 - INFO - [DEBUG] Loss Breakdown — ID: 4.2816, SupCon: 3.5058, Tri: 0.1311
-2025-04-19 07:48:38,127 - INFO - [DEBUG] Loss Breakdown — ID: 4.2731, SupCon: 3.5189, Tri: 0.1138
-2025-04-19 07:48:38,534 - INFO - [DEBUG] Loss Breakdown — ID: 4.2673, SupCon: 3.4772, Tri: 0.1466
-2025-04-19 07:48:38,938 - INFO - [DEBUG] Loss Breakdown — ID: 4.2716, SupCon: 3.5178, Tri: 0.0943
-2025-04-19 07:48:39,342 - INFO - [DEBUG] Loss Breakdown — ID: 4.2752, SupCon: 3.5521, Tri: 0.1197
-2025-04-19 07:48:39,752 - INFO - [DEBUG] Loss Breakdown — ID: 4.2700, SupCon: 3.5659, Tri: 0.0692
-2025-04-19 07:48:40,152 - INFO - [DEBUG] Loss Breakdown — ID: 4.2709, SupCon: 3.5135, Tri: 0.1524
-2025-04-19 07:48:40,561 - INFO - [DEBUG] Loss Breakdown — ID: 4.2706, SupCon: 3.5285, Tri: 0.1297
-2025-04-19 07:48:40,936 - INFO - [DEBUG] Loss Breakdown — ID: 4.2863, SupCon: 3.3881, Tri: 0.0977
+2025-04-19 07:48:30,380 - INFO - [DEBUG] Loss Breakdown  ID: 4.2750, SupCon: 3.5339, Tri: 0.0620
+2025-04-19 07:48:30,791 - INFO - [DEBUG] Loss Breakdown  ID: 4.2796, SupCon: 3.4956, Tri: 0.0812
+2025-04-19 07:48:31,199 - INFO - [DEBUG] Loss Breakdown  ID: 4.2718, SupCon: 3.5265, Tri: 0.1433
+2025-04-19 07:48:31,611 - INFO - [DEBUG] Loss Breakdown  ID: 4.2716, SupCon: 3.5126, Tri: 0.1147
+2025-04-19 07:48:32,016 - INFO - [DEBUG] Loss Breakdown  ID: 4.2800, SupCon: 3.5558, Tri: 0.1516
+2025-04-19 07:48:32,427 - INFO - [DEBUG] Loss Breakdown  ID: 4.2722, SupCon: 3.5193, Tri: 0.1114
+2025-04-19 07:48:32,832 - INFO - [DEBUG] Loss Breakdown  ID: 4.2751, SupCon: 3.4801, Tri: 0.1850
+2025-04-19 07:48:33,240 - INFO - [DEBUG] Loss Breakdown  ID: 4.2724, SupCon: 3.5304, Tri: 0.1323
+2025-04-19 07:48:33,648 - INFO - [DEBUG] Loss Breakdown  ID: 4.2726, SupCon: 3.5399, Tri: 0.1973
+2025-04-19 07:48:34,056 - INFO - [DEBUG] Loss Breakdown  ID: 4.2760, SupCon: 3.5339, Tri: 0.0983
+2025-04-19 07:48:34,461 - INFO - [DEBUG] Loss Breakdown  ID: 4.2686, SupCon: 3.4978, Tri: 0.1448
+2025-04-19 07:48:34,866 - INFO - [DEBUG] Loss Breakdown  ID: 4.2811, SupCon: 3.5053, Tri: 0.1990
+2025-04-19 07:48:35,275 - INFO - [DEBUG] Loss Breakdown  ID: 4.2783, SupCon: 3.4703, Tri: 0.0718
+2025-04-19 07:48:35,678 - INFO - [DEBUG] Loss Breakdown  ID: 4.2734, SupCon: 3.5377, Tri: 0.1307
+2025-04-19 07:48:36,086 - INFO - [DEBUG] Loss Breakdown  ID: 4.2751, SupCon: 3.4979, Tri: 0.2362
+2025-04-19 07:48:36,492 - INFO - [DEBUG] Loss Breakdown  ID: 4.2640, SupCon: 3.5342, Tri: 0.1996
+2025-04-19 07:48:36,898 - INFO - [DEBUG] Loss Breakdown  ID: 4.2807, SupCon: 3.5014, Tri: 0.1949
+2025-04-19 07:48:37,309 - INFO - [DEBUG] Loss Breakdown  ID: 4.2735, SupCon: 3.5276, Tri: 0.1507
+2025-04-19 07:48:37,720 - INFO - [DEBUG] Loss Breakdown  ID: 4.2816, SupCon: 3.5058, Tri: 0.1311
+2025-04-19 07:48:38,127 - INFO - [DEBUG] Loss Breakdown  ID: 4.2731, SupCon: 3.5189, Tri: 0.1138
+2025-04-19 07:48:38,534 - INFO - [DEBUG] Loss Breakdown  ID: 4.2673, SupCon: 3.4772, Tri: 0.1466
+2025-04-19 07:48:38,938 - INFO - [DEBUG] Loss Breakdown  ID: 4.2716, SupCon: 3.5178, Tri: 0.0943
+2025-04-19 07:48:39,342 - INFO - [DEBUG] Loss Breakdown  ID: 4.2752, SupCon: 3.5521, Tri: 0.1197
+2025-04-19 07:48:39,752 - INFO - [DEBUG] Loss Breakdown  ID: 4.2700, SupCon: 3.5659, Tri: 0.0692
+2025-04-19 07:48:40,152 - INFO - [DEBUG] Loss Breakdown  ID: 4.2709, SupCon: 3.5135, Tri: 0.1524
+2025-04-19 07:48:40,561 - INFO - [DEBUG] Loss Breakdown  ID: 4.2706, SupCon: 3.5285, Tri: 0.1297
+2025-04-19 07:48:40,936 - INFO - [DEBUG] Loss Breakdown  ID: 4.2863, SupCon: 3.3881, Tri: 0.0977
 2025-04-19 07:48:41,805 - INFO - [Epoch 3] Total Loss=0.1349
 2025-04-19 07:48:41,808 - INFO - Validating epoch 3...
 2025-04-19 07:49:14,303 - INFO - [Epoch 3] Avg Train Loss = 0.1349 | 
@@ -135,36 +135,36 @@
 2025-04-19 07:49:14,303 - INFO - No improvement in Acc@1. Patience counter: 2/3
 2025-04-19 07:49:14,303 - INFO -  Epoch 4/20
 2025-04-19 07:49:14,303 - INFO - [Epoch 4] Learning rate: 0.000009
-2025-04-19 07:49:39,748 - INFO - [DEBUG] Loss Breakdown — ID: 4.2747, SupCon: 3.5518, Tri: 0.1315
+2025-04-19 07:49:39,748 - INFO - [DEBUG] Loss Breakdown  ID: 4.2747, SupCon: 3.5518, Tri: 0.1315
 2025-04-19 07:49:39,985 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
 2025-04-19 07:49:39,985 - INFO - [DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
-2025-04-19 07:49:40,162 - INFO - [DEBUG] Loss Breakdown — ID: 4.2783, SupCon: 3.5249, Tri: 0.1359
-2025-04-19 07:49:40,571 - INFO - [DEBUG] Loss Breakdown — ID: 4.2643, SupCon: 3.6413, Tri: 0.1171
-2025-04-19 07:49:40,982 - INFO - [DEBUG] Loss Breakdown — ID: 4.2813, SupCon: 3.6686, Tri: 0.1250
-2025-04-19 07:49:41,389 - INFO - [DEBUG] Loss Breakdown — ID: 4.2673, SupCon: 3.6472, Tri: 0.2227
-2025-04-19 07:49:41,797 - INFO - [DEBUG] Loss Breakdown — ID: 4.2703, SupCon: 3.5905, Tri: 0.1594
-2025-04-19 07:49:42,203 - INFO - [DEBUG] Loss Breakdown — ID: 4.2658, SupCon: 3.6109, Tri: 0.1495
-2025-04-19 07:49:42,614 - INFO - [DEBUG] Loss Breakdown — ID: 4.2735, SupCon: 3.5910, Tri: 0.1504
-2025-04-19 07:49:43,020 - INFO - [DEBUG] Loss Breakdown — ID: 4.2684, SupCon: 3.6240, Tri: 0.1363
-2025-04-19 07:49:43,423 - INFO - [DEBUG] Loss Breakdown — ID: 4.2758, SupCon: 3.5521, Tri: 0.1521
-2025-04-19 07:49:43,831 - INFO - [DEBUG] Loss Breakdown — ID: 4.2752, SupCon: 3.5058, Tri: 0.2044
-2025-04-19 07:49:44,243 - INFO - [DEBUG] Loss Breakdown — ID: 4.2693, SupCon: 3.5008, Tri: 0.1553
-2025-04-19 07:49:44,651 - INFO - [DEBUG] Loss Breakdown — ID: 4.2717, SupCon: 3.4672, Tri: 0.1635
-2025-04-19 07:49:45,059 - INFO - [DEBUG] Loss Breakdown — ID: 4.2785, SupCon: 3.4977, Tri: 0.1822
-2025-04-19 07:49:45,468 - INFO - [DEBUG] Loss Breakdown — ID: 4.2879, SupCon: 3.4877, Tri: 0.2027
-2025-04-19 07:49:45,881 - INFO - [DEBUG] Loss Breakdown — ID: 4.2722, SupCon: 3.4515, Tri: 0.1600
-2025-04-19 07:49:46,289 - INFO - [DEBUG] Loss Breakdown — ID: 4.2760, SupCon: 3.4868, Tri: 0.1691
-2025-04-19 07:49:46,697 - INFO - [DEBUG] Loss Breakdown — ID: 4.2724, SupCon: 3.4552, Tri: 0.1300
-2025-04-19 07:49:47,104 - INFO - [DEBUG] Loss Breakdown — ID: 4.2806, SupCon: 3.4839, Tri: 0.1321
-2025-04-19 07:49:47,519 - INFO - [DEBUG] Loss Breakdown — ID: 4.2799, SupCon: 3.4994, Tri: 0.1004
-2025-04-19 07:49:47,926 - INFO - [DEBUG] Loss Breakdown — ID: 4.2760, SupCon: 3.4310, Tri: 0.1780
-2025-04-19 07:49:48,337 - INFO - [DEBUG] Loss Breakdown — ID: 4.2812, SupCon: 3.4828, Tri: 0.1057
-2025-04-19 07:49:48,749 - INFO - [DEBUG] Loss Breakdown — ID: 4.2686, SupCon: 3.4672, Tri: 0.1495
-2025-04-19 07:49:49,160 - INFO - [DEBUG] Loss Breakdown — ID: 4.2820, SupCon: 3.4786, Tri: 0.1757
-2025-04-19 07:49:49,573 - INFO - [DEBUG] Loss Breakdown — ID: 4.2915, SupCon: 3.4807, Tri: 0.1225
-2025-04-19 07:49:49,985 - INFO - [DEBUG] Loss Breakdown — ID: 4.2792, SupCon: 3.4528, Tri: 0.1678
-2025-04-19 07:49:50,397 - INFO - [DEBUG] Loss Breakdown — ID: 4.2715, SupCon: 3.4673, Tri: 0.1389
-2025-04-19 07:49:50,785 - INFO - [DEBUG] Loss Breakdown — ID: 4.2771, SupCon: 3.2334, Tri: 0.1454
+2025-04-19 07:49:40,162 - INFO - [DEBUG] Loss Breakdown  ID: 4.2783, SupCon: 3.5249, Tri: 0.1359
+2025-04-19 07:49:40,571 - INFO - [DEBUG] Loss Breakdown  ID: 4.2643, SupCon: 3.6413, Tri: 0.1171
+2025-04-19 07:49:40,982 - INFO - [DEBUG] Loss Breakdown  ID: 4.2813, SupCon: 3.6686, Tri: 0.1250
+2025-04-19 07:49:41,389 - INFO - [DEBUG] Loss Breakdown  ID: 4.2673, SupCon: 3.6472, Tri: 0.2227
+2025-04-19 07:49:41,797 - INFO - [DEBUG] Loss Breakdown  ID: 4.2703, SupCon: 3.5905, Tri: 0.1594
+2025-04-19 07:49:42,203 - INFO - [DEBUG] Loss Breakdown  ID: 4.2658, SupCon: 3.6109, Tri: 0.1495
+2025-04-19 07:49:42,614 - INFO - [DEBUG] Loss Breakdown  ID: 4.2735, SupCon: 3.5910, Tri: 0.1504
+2025-04-19 07:49:43,020 - INFO - [DEBUG] Loss Breakdown  ID: 4.2684, SupCon: 3.6240, Tri: 0.1363
+2025-04-19 07:49:43,423 - INFO - [DEBUG] Loss Breakdown  ID: 4.2758, SupCon: 3.5521, Tri: 0.1521
+2025-04-19 07:49:43,831 - INFO - [DEBUG] Loss Breakdown  ID: 4.2752, SupCon: 3.5058, Tri: 0.2044
+2025-04-19 07:49:44,243 - INFO - [DEBUG] Loss Breakdown  ID: 4.2693, SupCon: 3.5008, Tri: 0.1553
+2025-04-19 07:49:44,651 - INFO - [DEBUG] Loss Breakdown  ID: 4.2717, SupCon: 3.4672, Tri: 0.1635
+2025-04-19 07:49:45,059 - INFO - [DEBUG] Loss Breakdown  ID: 4.2785, SupCon: 3.4977, Tri: 0.1822
+2025-04-19 07:49:45,468 - INFO - [DEBUG] Loss Breakdown  ID: 4.2879, SupCon: 3.4877, Tri: 0.2027
+2025-04-19 07:49:45,881 - INFO - [DEBUG] Loss Breakdown  ID: 4.2722, SupCon: 3.4515, Tri: 0.1600
+2025-04-19 07:49:46,289 - INFO - [DEBUG] Loss Breakdown  ID: 4.2760, SupCon: 3.4868, Tri: 0.1691
+2025-04-19 07:49:46,697 - INFO - [DEBUG] Loss Breakdown  ID: 4.2724, SupCon: 3.4552, Tri: 0.1300
+2025-04-19 07:49:47,104 - INFO - [DEBUG] Loss Breakdown  ID: 4.2806, SupCon: 3.4839, Tri: 0.1321
+2025-04-19 07:49:47,519 - INFO - [DEBUG] Loss Breakdown  ID: 4.2799, SupCon: 3.4994, Tri: 0.1004
+2025-04-19 07:49:47,926 - INFO - [DEBUG] Loss Breakdown  ID: 4.2760, SupCon: 3.4310, Tri: 0.1780
+2025-04-19 07:49:48,337 - INFO - [DEBUG] Loss Breakdown  ID: 4.2812, SupCon: 3.4828, Tri: 0.1057
+2025-04-19 07:49:48,749 - INFO - [DEBUG] Loss Breakdown  ID: 4.2686, SupCon: 3.4672, Tri: 0.1495
+2025-04-19 07:49:49,160 - INFO - [DEBUG] Loss Breakdown  ID: 4.2820, SupCon: 3.4786, Tri: 0.1757
+2025-04-19 07:49:49,573 - INFO - [DEBUG] Loss Breakdown  ID: 4.2915, SupCon: 3.4807, Tri: 0.1225
+2025-04-19 07:49:49,985 - INFO - [DEBUG] Loss Breakdown  ID: 4.2792, SupCon: 3.4528, Tri: 0.1678
+2025-04-19 07:49:50,397 - INFO - [DEBUG] Loss Breakdown  ID: 4.2715, SupCon: 3.4673, Tri: 0.1389
+2025-04-19 07:49:50,785 - INFO - [DEBUG] Loss Breakdown  ID: 4.2771, SupCon: 3.2334, Tri: 0.1454
 2025-04-19 07:49:51,678 - INFO - [Epoch 4] Total Loss=0.1522
 2025-04-19 07:49:51,681 - INFO - Validating epoch 4...
 2025-04-19 07:50:24,160 - INFO - [Epoch 4] Avg Train Loss = 0.1522 | 
@@ -177,36 +177,36 @@
 2025-04-19 07:50:24,160 - INFO - Saving best model at epoch 4 (Acc@1=21.63%)  saved_models/stage3_promptsg_vitb16_11k_dorsal_r_promptsg_e20_lrNA_bs32_BEST.pth
 2025-04-19 07:50:25,517 - INFO -  Epoch 5/20
 2025-04-19 07:50:25,520 - INFO - [Epoch 5] Learning rate: 0.000009
-2025-04-19 07:50:51,315 - INFO - [DEBUG] Loss Breakdown — ID: 4.2792, SupCon: 3.4287, Tri: 0.1280
+2025-04-19 07:50:51,315 - INFO - [DEBUG] Loss Breakdown  ID: 4.2792, SupCon: 3.4287, Tri: 0.1280
 2025-04-19 07:50:51,551 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
 2025-04-19 07:50:51,551 - INFO - [DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
-2025-04-19 07:50:51,729 - INFO - [DEBUG] Loss Breakdown — ID: 4.2795, SupCon: 3.4348, Tri: 0.1656
-2025-04-19 07:50:52,148 - INFO - [DEBUG] Loss Breakdown — ID: 4.2829, SupCon: 3.4291, Tri: 0.1684
-2025-04-19 07:50:52,553 - INFO - [DEBUG] Loss Breakdown — ID: 4.2708, SupCon: 3.4377, Tri: 0.1554
-2025-04-19 07:50:52,959 - INFO - [DEBUG] Loss Breakdown — ID: 4.2733, SupCon: 3.4675, Tri: 0.1492
-2025-04-19 07:50:53,369 - INFO - [DEBUG] Loss Breakdown — ID: 4.2808, SupCon: 3.4642, Tri: 0.1708
-2025-04-19 07:50:53,781 - INFO - [DEBUG] Loss Breakdown — ID: 4.2816, SupCon: 3.4539, Tri: 0.1239
-2025-04-19 07:50:54,188 - INFO - [DEBUG] Loss Breakdown — ID: 4.2743, SupCon: 3.4583, Tri: 0.1362
-2025-04-19 07:50:54,599 - INFO - [DEBUG] Loss Breakdown — ID: 4.2725, SupCon: 3.4518, Tri: 0.1292
-2025-04-19 07:50:55,009 - INFO - [DEBUG] Loss Breakdown — ID: 4.2666, SupCon: 3.4723, Tri: 0.1952
-2025-04-19 07:50:55,426 - INFO - [DEBUG] Loss Breakdown — ID: 4.2735, SupCon: 3.4605, Tri: 0.1376
-2025-04-19 07:50:55,838 - INFO - [DEBUG] Loss Breakdown — ID: 4.2696, SupCon: 3.4245, Tri: 0.1785
-2025-04-19 07:50:56,246 - INFO - [DEBUG] Loss Breakdown — ID: 4.2767, SupCon: 3.4535, Tri: 0.1148
-2025-04-19 07:50:56,654 - INFO - [DEBUG] Loss Breakdown — ID: 4.2815, SupCon: 3.4429, Tri: 0.1647
-2025-04-19 07:50:57,062 - INFO - [DEBUG] Loss Breakdown — ID: 4.2730, SupCon: 3.4317, Tri: 0.1578
-2025-04-19 07:50:57,472 - INFO - [DEBUG] Loss Breakdown — ID: 4.2725, SupCon: 3.4467, Tri: 0.1587
-2025-04-19 07:50:57,885 - INFO - [DEBUG] Loss Breakdown — ID: 4.2708, SupCon: 3.4500, Tri: 0.1215
-2025-04-19 07:50:58,297 - INFO - [DEBUG] Loss Breakdown — ID: 4.2667, SupCon: 3.4179, Tri: 0.1130
-2025-04-19 07:50:58,709 - INFO - [DEBUG] Loss Breakdown — ID: 4.2725, SupCon: 3.4684, Tri: 0.1714
-2025-04-19 07:50:59,117 - INFO - [DEBUG] Loss Breakdown — ID: 4.2737, SupCon: 3.4188, Tri: 0.0405
-2025-04-19 07:50:59,519 - INFO - [DEBUG] Loss Breakdown — ID: 4.2664, SupCon: 3.4242, Tri: 0.1375
-2025-04-19 07:50:59,932 - INFO - [DEBUG] Loss Breakdown — ID: 4.2803, SupCon: 3.4662, Tri: 0.1399
-2025-04-19 07:51:00,345 - INFO - [DEBUG] Loss Breakdown — ID: 4.2702, SupCon: 3.4630, Tri: 0.1506
-2025-04-19 07:51:00,753 - INFO - [DEBUG] Loss Breakdown — ID: 4.2805, SupCon: 3.4713, Tri: 0.1114
-2025-04-19 07:51:01,161 - INFO - [DEBUG] Loss Breakdown — ID: 4.2677, SupCon: 3.4651, Tri: 0.1171
-2025-04-19 07:51:01,575 - INFO - [DEBUG] Loss Breakdown — ID: 4.2830, SupCon: 3.4372, Tri: 0.1429
-2025-04-19 07:51:01,988 - INFO - [DEBUG] Loss Breakdown — ID: 4.2832, SupCon: 3.4847, Tri: 0.1321
-2025-04-19 07:51:02,369 - INFO - [DEBUG] Loss Breakdown — ID: 4.2798, SupCon: 3.2764, Tri: 0.1342
+2025-04-19 07:50:51,729 - INFO - [DEBUG] Loss Breakdown  ID: 4.2795, SupCon: 3.4348, Tri: 0.1656
+2025-04-19 07:50:52,148 - INFO - [DEBUG] Loss Breakdown  ID: 4.2829, SupCon: 3.4291, Tri: 0.1684
+2025-04-19 07:50:52,553 - INFO - [DEBUG] Loss Breakdown  ID: 4.2708, SupCon: 3.4377, Tri: 0.1554
+2025-04-19 07:50:52,959 - INFO - [DEBUG] Loss Breakdown  ID: 4.2733, SupCon: 3.4675, Tri: 0.1492
+2025-04-19 07:50:53,369 - INFO - [DEBUG] Loss Breakdown  ID: 4.2808, SupCon: 3.4642, Tri: 0.1708
+2025-04-19 07:50:53,781 - INFO - [DEBUG] Loss Breakdown  ID: 4.2816, SupCon: 3.4539, Tri: 0.1239
+2025-04-19 07:50:54,188 - INFO - [DEBUG] Loss Breakdown  ID: 4.2743, SupCon: 3.4583, Tri: 0.1362
+2025-04-19 07:50:54,599 - INFO - [DEBUG] Loss Breakdown  ID: 4.2725, SupCon: 3.4518, Tri: 0.1292
+2025-04-19 07:50:55,009 - INFO - [DEBUG] Loss Breakdown  ID: 4.2666, SupCon: 3.4723, Tri: 0.1952
+2025-04-19 07:50:55,426 - INFO - [DEBUG] Loss Breakdown  ID: 4.2735, SupCon: 3.4605, Tri: 0.1376
+2025-04-19 07:50:55,838 - INFO - [DEBUG] Loss Breakdown  ID: 4.2696, SupCon: 3.4245, Tri: 0.1785
+2025-04-19 07:50:56,246 - INFO - [DEBUG] Loss Breakdown  ID: 4.2767, SupCon: 3.4535, Tri: 0.1148
+2025-04-19 07:50:56,654 - INFO - [DEBUG] Loss Breakdown  ID: 4.2815, SupCon: 3.4429, Tri: 0.1647
+2025-04-19 07:50:57,062 - INFO - [DEBUG] Loss Breakdown  ID: 4.2730, SupCon: 3.4317, Tri: 0.1578
+2025-04-19 07:50:57,472 - INFO - [DEBUG] Loss Breakdown  ID: 4.2725, SupCon: 3.4467, Tri: 0.1587
+2025-04-19 07:50:57,885 - INFO - [DEBUG] Loss Breakdown  ID: 4.2708, SupCon: 3.4500, Tri: 0.1215
+2025-04-19 07:50:58,297 - INFO - [DEBUG] Loss Breakdown  ID: 4.2667, SupCon: 3.4179, Tri: 0.1130
+2025-04-19 07:50:58,709 - INFO - [DEBUG] Loss Breakdown  ID: 4.2725, SupCon: 3.4684, Tri: 0.1714
+2025-04-19 07:50:59,117 - INFO - [DEBUG] Loss Breakdown  ID: 4.2737, SupCon: 3.4188, Tri: 0.0405
+2025-04-19 07:50:59,519 - INFO - [DEBUG] Loss Breakdown  ID: 4.2664, SupCon: 3.4242, Tri: 0.1375
+2025-04-19 07:50:59,932 - INFO - [DEBUG] Loss Breakdown  ID: 4.2803, SupCon: 3.4662, Tri: 0.1399
+2025-04-19 07:51:00,345 - INFO - [DEBUG] Loss Breakdown  ID: 4.2702, SupCon: 3.4630, Tri: 0.1506
+2025-04-19 07:51:00,753 - INFO - [DEBUG] Loss Breakdown  ID: 4.2805, SupCon: 3.4713, Tri: 0.1114
+2025-04-19 07:51:01,161 - INFO - [DEBUG] Loss Breakdown  ID: 4.2677, SupCon: 3.4651, Tri: 0.1171
+2025-04-19 07:51:01,575 - INFO - [DEBUG] Loss Breakdown  ID: 4.2830, SupCon: 3.4372, Tri: 0.1429
+2025-04-19 07:51:01,988 - INFO - [DEBUG] Loss Breakdown  ID: 4.2832, SupCon: 3.4847, Tri: 0.1321
+2025-04-19 07:51:02,369 - INFO - [DEBUG] Loss Breakdown  ID: 4.2798, SupCon: 3.2764, Tri: 0.1342
 2025-04-19 07:51:03,281 - INFO - [Epoch 5] Total Loss=0.1409
 2025-04-19 07:51:03,281 - INFO - Validating epoch 5...
 2025-04-19 07:51:36,340 - INFO - [Epoch 5] Avg Train Loss = 0.1409 | 
@@ -219,36 +219,36 @@
 2025-04-19 07:51:36,343 - INFO - Saving best model at epoch 5 (Acc@1=21.73%)  saved_models/stage3_promptsg_vitb16_11k_dorsal_r_promptsg_e20_lrNA_bs32_BEST.pth
 2025-04-19 07:51:37,769 - INFO -  Epoch 6/20
 2025-04-19 07:51:37,769 - INFO - [Epoch 6] Learning rate: 0.000008
-2025-04-19 07:52:04,299 - INFO - [DEBUG] Loss Breakdown — ID: 4.2715, SupCon: 3.4589, Tri: 0.1625
+2025-04-19 07:52:04,299 - INFO - [DEBUG] Loss Breakdown  ID: 4.2715, SupCon: 3.4589, Tri: 0.1625
 2025-04-19 07:52:04,536 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
 2025-04-19 07:52:04,536 - INFO - [DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
-2025-04-19 07:52:04,710 - INFO - [DEBUG] Loss Breakdown — ID: 4.2691, SupCon: 3.4774, Tri: 0.1372
-2025-04-19 07:52:05,119 - INFO - [DEBUG] Loss Breakdown — ID: 4.2748, SupCon: 3.4622, Tri: 0.1167
-2025-04-19 07:52:05,524 - INFO - [DEBUG] Loss Breakdown — ID: 4.2706, SupCon: 3.4697, Tri: 0.1132
-2025-04-19 07:52:05,930 - INFO - [DEBUG] Loss Breakdown — ID: 4.2790, SupCon: 3.5053, Tri: 0.1375
-2025-04-19 07:52:06,343 - INFO - [DEBUG] Loss Breakdown — ID: 4.2780, SupCon: 3.4893, Tri: 0.1428
-2025-04-19 07:52:06,756 - INFO - [DEBUG] Loss Breakdown — ID: 4.2697, SupCon: 3.5090, Tri: 0.1422
-2025-04-19 07:52:07,165 - INFO - [DEBUG] Loss Breakdown — ID: 4.2741, SupCon: 3.4679, Tri: 0.0899
-2025-04-19 07:52:07,571 - INFO - [DEBUG] Loss Breakdown — ID: 4.2710, SupCon: 3.4647, Tri: 0.1201
-2025-04-19 07:52:07,977 - INFO - [DEBUG] Loss Breakdown — ID: 4.2747, SupCon: 3.4766, Tri: 0.1623
-2025-04-19 07:52:08,386 - INFO - [DEBUG] Loss Breakdown — ID: 4.2576, SupCon: 3.4743, Tri: 0.1236
-2025-04-19 07:52:08,794 - INFO - [DEBUG] Loss Breakdown — ID: 4.2723, SupCon: 3.4795, Tri: 0.1342
-2025-04-19 07:52:09,203 - INFO - [DEBUG] Loss Breakdown — ID: 4.2718, SupCon: 3.4869, Tri: 0.0612
-2025-04-19 07:52:09,611 - INFO - [DEBUG] Loss Breakdown — ID: 4.2706, SupCon: 3.4893, Tri: 0.1832
-2025-04-19 07:52:10,023 - INFO - [DEBUG] Loss Breakdown — ID: 4.2704, SupCon: 3.4997, Tri: 0.1410
-2025-04-19 07:52:10,438 - INFO - [DEBUG] Loss Breakdown — ID: 4.2756, SupCon: 3.5058, Tri: 0.1392
-2025-04-19 07:52:10,844 - INFO - [DEBUG] Loss Breakdown — ID: 4.2768, SupCon: 3.4885, Tri: 0.1661
-2025-04-19 07:52:11,253 - INFO - [DEBUG] Loss Breakdown — ID: 4.2783, SupCon: 3.4705, Tri: 0.0698
-2025-04-19 07:52:11,659 - INFO - [DEBUG] Loss Breakdown — ID: 4.2668, SupCon: 3.4685, Tri: 0.1783
-2025-04-19 07:52:12,071 - INFO - [DEBUG] Loss Breakdown — ID: 4.2803, SupCon: 3.5591, Tri: 0.1421
-2025-04-19 07:52:12,482 - INFO - [DEBUG] Loss Breakdown — ID: 4.2681, SupCon: 3.5511, Tri: 0.1812
-2025-04-19 07:52:12,891 - INFO - [DEBUG] Loss Breakdown — ID: 4.2829, SupCon: 3.5209, Tri: 0.1134
-2025-04-19 07:52:13,303 - INFO - [DEBUG] Loss Breakdown — ID: 4.2725, SupCon: 3.5361, Tri: 0.1100
-2025-04-19 07:52:13,711 - INFO - [DEBUG] Loss Breakdown — ID: 4.2668, SupCon: 3.5122, Tri: 0.1322
-2025-04-19 07:52:14,124 - INFO - [DEBUG] Loss Breakdown — ID: 4.2755, SupCon: 3.5496, Tri: 0.1540
-2025-04-19 07:52:14,535 - INFO - [DEBUG] Loss Breakdown — ID: 4.2862, SupCon: 3.5162, Tri: 0.1705
-2025-04-19 07:52:14,949 - INFO - [DEBUG] Loss Breakdown — ID: 4.2821, SupCon: 3.5110, Tri: 0.1798
-2025-04-19 07:52:15,328 - INFO - [DEBUG] Loss Breakdown — ID: 4.2780, SupCon: 3.2835, Tri: 0.1301
+2025-04-19 07:52:04,710 - INFO - [DEBUG] Loss Breakdown  ID: 4.2691, SupCon: 3.4774, Tri: 0.1372
+2025-04-19 07:52:05,119 - INFO - [DEBUG] Loss Breakdown  ID: 4.2748, SupCon: 3.4622, Tri: 0.1167
+2025-04-19 07:52:05,524 - INFO - [DEBUG] Loss Breakdown  ID: 4.2706, SupCon: 3.4697, Tri: 0.1132
+2025-04-19 07:52:05,930 - INFO - [DEBUG] Loss Breakdown  ID: 4.2790, SupCon: 3.5053, Tri: 0.1375
+2025-04-19 07:52:06,343 - INFO - [DEBUG] Loss Breakdown  ID: 4.2780, SupCon: 3.4893, Tri: 0.1428
+2025-04-19 07:52:06,756 - INFO - [DEBUG] Loss Breakdown  ID: 4.2697, SupCon: 3.5090, Tri: 0.1422
+2025-04-19 07:52:07,165 - INFO - [DEBUG] Loss Breakdown  ID: 4.2741, SupCon: 3.4679, Tri: 0.0899
+2025-04-19 07:52:07,571 - INFO - [DEBUG] Loss Breakdown  ID: 4.2710, SupCon: 3.4647, Tri: 0.1201
+2025-04-19 07:52:07,977 - INFO - [DEBUG] Loss Breakdown  ID: 4.2747, SupCon: 3.4766, Tri: 0.1623
+2025-04-19 07:52:08,386 - INFO - [DEBUG] Loss Breakdown  ID: 4.2576, SupCon: 3.4743, Tri: 0.1236
+2025-04-19 07:52:08,794 - INFO - [DEBUG] Loss Breakdown  ID: 4.2723, SupCon: 3.4795, Tri: 0.1342
+2025-04-19 07:52:09,203 - INFO - [DEBUG] Loss Breakdown  ID: 4.2718, SupCon: 3.4869, Tri: 0.0612
+2025-04-19 07:52:09,611 - INFO - [DEBUG] Loss Breakdown  ID: 4.2706, SupCon: 3.4893, Tri: 0.1832
+2025-04-19 07:52:10,023 - INFO - [DEBUG] Loss Breakdown  ID: 4.2704, SupCon: 3.4997, Tri: 0.1410
+2025-04-19 07:52:10,438 - INFO - [DEBUG] Loss Breakdown  ID: 4.2756, SupCon: 3.5058, Tri: 0.1392
+2025-04-19 07:52:10,844 - INFO - [DEBUG] Loss Breakdown  ID: 4.2768, SupCon: 3.4885, Tri: 0.1661
+2025-04-19 07:52:11,253 - INFO - [DEBUG] Loss Breakdown  ID: 4.2783, SupCon: 3.4705, Tri: 0.0698
+2025-04-19 07:52:11,659 - INFO - [DEBUG] Loss Breakdown  ID: 4.2668, SupCon: 3.4685, Tri: 0.1783
+2025-04-19 07:52:12,071 - INFO - [DEBUG] Loss Breakdown  ID: 4.2803, SupCon: 3.5591, Tri: 0.1421
+2025-04-19 07:52:12,482 - INFO - [DEBUG] Loss Breakdown  ID: 4.2681, SupCon: 3.5511, Tri: 0.1812
+2025-04-19 07:52:12,891 - INFO - [DEBUG] Loss Breakdown  ID: 4.2829, SupCon: 3.5209, Tri: 0.1134
+2025-04-19 07:52:13,303 - INFO - [DEBUG] Loss Breakdown  ID: 4.2725, SupCon: 3.5361, Tri: 0.1100
+2025-04-19 07:52:13,711 - INFO - [DEBUG] Loss Breakdown  ID: 4.2668, SupCon: 3.5122, Tri: 0.1322
+2025-04-19 07:52:14,124 - INFO - [DEBUG] Loss Breakdown  ID: 4.2755, SupCon: 3.5496, Tri: 0.1540
+2025-04-19 07:52:14,535 - INFO - [DEBUG] Loss Breakdown  ID: 4.2862, SupCon: 3.5162, Tri: 0.1705
+2025-04-19 07:52:14,949 - INFO - [DEBUG] Loss Breakdown  ID: 4.2821, SupCon: 3.5110, Tri: 0.1798
+2025-04-19 07:52:15,328 - INFO - [DEBUG] Loss Breakdown  ID: 4.2780, SupCon: 3.2835, Tri: 0.1301
 2025-04-19 07:52:16,250 - INFO - [Epoch 6] Total Loss=0.1369
 2025-04-19 07:52:16,250 - INFO - Validating epoch 6...
 2025-04-19 07:52:48,654 - INFO - [Epoch 6] Avg Train Loss = 0.1369 | 
@@ -261,36 +261,36 @@
 2025-04-19 07:52:48,657 - INFO - Saving best model at epoch 6 (Acc@1=35.84%)  saved_models/stage3_promptsg_vitb16_11k_dorsal_r_promptsg_e20_lrNA_bs32_BEST.pth
 2025-04-19 07:52:49,987 - INFO -  Epoch 7/20
 2025-04-19 07:52:49,987 - INFO - [Epoch 7] Learning rate: 0.000008
-2025-04-19 07:53:15,890 - INFO - [DEBUG] Loss Breakdown — ID: 4.2876, SupCon: 3.5622, Tri: 0.1381
+2025-04-19 07:53:15,890 - INFO - [DEBUG] Loss Breakdown  ID: 4.2876, SupCon: 3.5622, Tri: 0.1381
 2025-04-19 07:53:16,127 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
 2025-04-19 07:53:16,127 - INFO - [DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
-2025-04-19 07:53:16,303 - INFO - [DEBUG] Loss Breakdown — ID: 4.2700, SupCon: 3.5587, Tri: 0.1310
-2025-04-19 07:53:16,711 - INFO - [DEBUG] Loss Breakdown — ID: 4.2788, SupCon: 3.5329, Tri: 0.1312
-2025-04-19 07:53:17,118 - INFO - [DEBUG] Loss Breakdown — ID: 4.2726, SupCon: 3.5523, Tri: 0.1118
-2025-04-19 07:53:17,526 - INFO - [DEBUG] Loss Breakdown — ID: 4.2864, SupCon: 3.5290, Tri: 0.1621
-2025-04-19 07:53:17,938 - INFO - [DEBUG] Loss Breakdown — ID: 4.2799, SupCon: 3.5846, Tri: 0.1002
-2025-04-19 07:53:18,347 - INFO - [DEBUG] Loss Breakdown — ID: 4.2839, SupCon: 3.5309, Tri: 0.1708
-2025-04-19 07:53:18,756 - INFO - [DEBUG] Loss Breakdown — ID: 4.2786, SupCon: 3.5640, Tri: 0.1077
-2025-04-19 07:53:19,160 - INFO - [DEBUG] Loss Breakdown — ID: 4.2687, SupCon: 3.5639, Tri: 0.1044
-2025-04-19 07:53:19,567 - INFO - [DEBUG] Loss Breakdown — ID: 4.2668, SupCon: 3.6138, Tri: 0.1576
-2025-04-19 07:53:19,977 - INFO - [DEBUG] Loss Breakdown — ID: 4.2722, SupCon: 3.5319, Tri: 0.1513
-2025-04-19 07:53:20,387 - INFO - [DEBUG] Loss Breakdown — ID: 4.2822, SupCon: 3.5690, Tri: 0.1738
-2025-04-19 07:53:20,799 - INFO - [DEBUG] Loss Breakdown — ID: 4.2763, SupCon: 3.5339, Tri: 0.1436
-2025-04-19 07:53:21,207 - INFO - [DEBUG] Loss Breakdown — ID: 4.2795, SupCon: 3.5400, Tri: 0.1974
-2025-04-19 07:53:21,622 - INFO - [DEBUG] Loss Breakdown — ID: 4.2799, SupCon: 3.4673, Tri: 0.0924
-2025-04-19 07:53:22,027 - INFO - [DEBUG] Loss Breakdown — ID: 4.2760, SupCon: 3.4441, Tri: 0.1648
-2025-04-19 07:53:22,440 - INFO - [DEBUG] Loss Breakdown — ID: 4.2680, SupCon: 3.4865, Tri: 0.0977
-2025-04-19 07:53:22,848 - INFO - [DEBUG] Loss Breakdown — ID: 4.2634, SupCon: 3.5215, Tri: 0.1691
-2025-04-19 07:53:23,257 - INFO - [DEBUG] Loss Breakdown — ID: 4.2834, SupCon: 3.5280, Tri: 0.1218
-2025-04-19 07:53:23,664 - INFO - [DEBUG] Loss Breakdown — ID: 4.2786, SupCon: 3.5330, Tri: 0.1243
-2025-04-19 07:53:24,074 - INFO - [DEBUG] Loss Breakdown — ID: 4.2677, SupCon: 3.5198, Tri: 0.0905
-2025-04-19 07:53:24,482 - INFO - [DEBUG] Loss Breakdown — ID: 4.2740, SupCon: 3.5195, Tri: 0.1275
-2025-04-19 07:53:24,892 - INFO - [DEBUG] Loss Breakdown — ID: 4.2745, SupCon: 3.4623, Tri: 0.1356
-2025-04-19 07:53:25,303 - INFO - [DEBUG] Loss Breakdown — ID: 4.2661, SupCon: 3.4599, Tri: 0.1382
-2025-04-19 07:53:25,715 - INFO - [DEBUG] Loss Breakdown — ID: 4.2702, SupCon: 3.4514, Tri: 0.1691
-2025-04-19 07:53:26,126 - INFO - [DEBUG] Loss Breakdown — ID: 4.2756, SupCon: 3.4990, Tri: 0.1665
-2025-04-19 07:53:26,536 - INFO - [DEBUG] Loss Breakdown — ID: 4.2676, SupCon: 3.4582, Tri: 0.1287
-2025-04-19 07:53:26,915 - INFO - [DEBUG] Loss Breakdown — ID: 4.2729, SupCon: 3.2635, Tri: 0.1592
+2025-04-19 07:53:16,303 - INFO - [DEBUG] Loss Breakdown  ID: 4.2700, SupCon: 3.5587, Tri: 0.1310
+2025-04-19 07:53:16,711 - INFO - [DEBUG] Loss Breakdown  ID: 4.2788, SupCon: 3.5329, Tri: 0.1312
+2025-04-19 07:53:17,118 - INFO - [DEBUG] Loss Breakdown  ID: 4.2726, SupCon: 3.5523, Tri: 0.1118
+2025-04-19 07:53:17,526 - INFO - [DEBUG] Loss Breakdown  ID: 4.2864, SupCon: 3.5290, Tri: 0.1621
+2025-04-19 07:53:17,938 - INFO - [DEBUG] Loss Breakdown  ID: 4.2799, SupCon: 3.5846, Tri: 0.1002
+2025-04-19 07:53:18,347 - INFO - [DEBUG] Loss Breakdown  ID: 4.2839, SupCon: 3.5309, Tri: 0.1708
+2025-04-19 07:53:18,756 - INFO - [DEBUG] Loss Breakdown  ID: 4.2786, SupCon: 3.5640, Tri: 0.1077
+2025-04-19 07:53:19,160 - INFO - [DEBUG] Loss Breakdown  ID: 4.2687, SupCon: 3.5639, Tri: 0.1044
+2025-04-19 07:53:19,567 - INFO - [DEBUG] Loss Breakdown  ID: 4.2668, SupCon: 3.6138, Tri: 0.1576
+2025-04-19 07:53:19,977 - INFO - [DEBUG] Loss Breakdown  ID: 4.2722, SupCon: 3.5319, Tri: 0.1513
+2025-04-19 07:53:20,387 - INFO - [DEBUG] Loss Breakdown  ID: 4.2822, SupCon: 3.5690, Tri: 0.1738
+2025-04-19 07:53:20,799 - INFO - [DEBUG] Loss Breakdown  ID: 4.2763, SupCon: 3.5339, Tri: 0.1436
+2025-04-19 07:53:21,207 - INFO - [DEBUG] Loss Breakdown  ID: 4.2795, SupCon: 3.5400, Tri: 0.1974
+2025-04-19 07:53:21,622 - INFO - [DEBUG] Loss Breakdown  ID: 4.2799, SupCon: 3.4673, Tri: 0.0924
+2025-04-19 07:53:22,027 - INFO - [DEBUG] Loss Breakdown  ID: 4.2760, SupCon: 3.4441, Tri: 0.1648
+2025-04-19 07:53:22,440 - INFO - [DEBUG] Loss Breakdown  ID: 4.2680, SupCon: 3.4865, Tri: 0.0977
+2025-04-19 07:53:22,848 - INFO - [DEBUG] Loss Breakdown  ID: 4.2634, SupCon: 3.5215, Tri: 0.1691
+2025-04-19 07:53:23,257 - INFO - [DEBUG] Loss Breakdown  ID: 4.2834, SupCon: 3.5280, Tri: 0.1218
+2025-04-19 07:53:23,664 - INFO - [DEBUG] Loss Breakdown  ID: 4.2786, SupCon: 3.5330, Tri: 0.1243
+2025-04-19 07:53:24,074 - INFO - [DEBUG] Loss Breakdown  ID: 4.2677, SupCon: 3.5198, Tri: 0.0905
+2025-04-19 07:53:24,482 - INFO - [DEBUG] Loss Breakdown  ID: 4.2740, SupCon: 3.5195, Tri: 0.1275
+2025-04-19 07:53:24,892 - INFO - [DEBUG] Loss Breakdown  ID: 4.2745, SupCon: 3.4623, Tri: 0.1356
+2025-04-19 07:53:25,303 - INFO - [DEBUG] Loss Breakdown  ID: 4.2661, SupCon: 3.4599, Tri: 0.1382
+2025-04-19 07:53:25,715 - INFO - [DEBUG] Loss Breakdown  ID: 4.2702, SupCon: 3.4514, Tri: 0.1691
+2025-04-19 07:53:26,126 - INFO - [DEBUG] Loss Breakdown  ID: 4.2756, SupCon: 3.4990, Tri: 0.1665
+2025-04-19 07:53:26,536 - INFO - [DEBUG] Loss Breakdown  ID: 4.2676, SupCon: 3.4582, Tri: 0.1287
+2025-04-19 07:53:26,915 - INFO - [DEBUG] Loss Breakdown  ID: 4.2729, SupCon: 3.2635, Tri: 0.1592
 2025-04-19 07:53:27,801 - INFO - [Epoch 7] Total Loss=0.1381
 2025-04-19 07:53:27,801 - INFO - Validating epoch 7...
 2025-04-19 07:53:58,963 - INFO - [Epoch 7] Avg Train Loss = 0.1381 | 
@@ -303,36 +303,36 @@
 2025-04-19 07:53:58,963 - INFO - No improvement in Acc@1. Patience counter: 1/3
 2025-04-19 07:53:58,963 - INFO -  Epoch 8/20
 2025-04-19 07:53:58,966 - INFO - [Epoch 8] Learning rate: 0.000007
-2025-04-19 07:54:23,657 - INFO - [DEBUG] Loss Breakdown — ID: 4.2751, SupCon: 3.4620, Tri: 0.1274
+2025-04-19 07:54:23,657 - INFO - [DEBUG] Loss Breakdown  ID: 4.2751, SupCon: 3.4620, Tri: 0.1274
 2025-04-19 07:54:23,893 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
 2025-04-19 07:54:23,893 - INFO - [DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
-2025-04-19 07:54:24,069 - INFO - [DEBUG] Loss Breakdown — ID: 4.2739, SupCon: 3.4116, Tri: 0.1498
-2025-04-19 07:54:24,478 - INFO - [DEBUG] Loss Breakdown — ID: 4.2787, SupCon: 3.4729, Tri: 0.1904
-2025-04-19 07:54:24,888 - INFO - [DEBUG] Loss Breakdown — ID: 4.2852, SupCon: 3.4319, Tri: 0.1916
-2025-04-19 07:54:25,303 - INFO - [DEBUG] Loss Breakdown — ID: 4.2801, SupCon: 3.4509, Tri: 0.1805
-2025-04-19 07:54:25,715 - INFO - [DEBUG] Loss Breakdown — ID: 4.2821, SupCon: 3.4561, Tri: 0.0903
-2025-04-19 07:54:26,125 - INFO - [DEBUG] Loss Breakdown — ID: 4.2744, SupCon: 3.4533, Tri: 0.1440
-2025-04-19 07:54:26,536 - INFO - [DEBUG] Loss Breakdown — ID: 4.2753, SupCon: 3.4922, Tri: 0.1750
-2025-04-19 07:54:26,946 - INFO - [DEBUG] Loss Breakdown — ID: 4.2750, SupCon: 3.4774, Tri: 0.1535
-2025-04-19 07:54:27,358 - INFO - [DEBUG] Loss Breakdown — ID: 4.2681, SupCon: 3.4989, Tri: 0.1086
-2025-04-19 07:54:27,766 - INFO - [DEBUG] Loss Breakdown — ID: 4.2738, SupCon: 3.5410, Tri: 0.1294
-2025-04-19 07:54:28,177 - INFO - [DEBUG] Loss Breakdown — ID: 4.2706, SupCon: 3.4519, Tri: 0.1602
-2025-04-19 07:54:28,588 - INFO - [DEBUG] Loss Breakdown — ID: 4.2744, SupCon: 3.4818, Tri: 0.1703
-2025-04-19 07:54:28,998 - INFO - [DEBUG] Loss Breakdown — ID: 4.2637, SupCon: 3.4588, Tri: 0.1200
-2025-04-19 07:54:29,409 - INFO - [DEBUG] Loss Breakdown — ID: 4.2754, SupCon: 3.5107, Tri: 0.1948
-2025-04-19 07:54:29,820 - INFO - [DEBUG] Loss Breakdown — ID: 4.2764, SupCon: 3.4893, Tri: 0.0809
-2025-04-19 07:54:30,232 - INFO - [DEBUG] Loss Breakdown — ID: 4.2780, SupCon: 3.5095, Tri: 0.1513
-2025-04-19 07:54:30,639 - INFO - [DEBUG] Loss Breakdown — ID: 4.2637, SupCon: 3.5623, Tri: 0.1019
-2025-04-19 07:54:31,048 - INFO - [DEBUG] Loss Breakdown — ID: 4.2736, SupCon: 3.5289, Tri: 0.1011
-2025-04-19 07:54:31,461 - INFO - [DEBUG] Loss Breakdown — ID: 4.2721, SupCon: 3.4966, Tri: 0.1343
-2025-04-19 07:54:31,875 - INFO - [DEBUG] Loss Breakdown — ID: 4.2754, SupCon: 3.4877, Tri: 0.1521
-2025-04-19 07:54:32,282 - INFO - [DEBUG] Loss Breakdown — ID: 4.2743, SupCon: 3.5349, Tri: 0.1130
-2025-04-19 07:54:32,695 - INFO - [DEBUG] Loss Breakdown — ID: 4.2712, SupCon: 3.5096, Tri: 0.1728
-2025-04-19 07:54:33,103 - INFO - [DEBUG] Loss Breakdown — ID: 4.2677, SupCon: 3.6212, Tri: 0.1382
-2025-04-19 07:54:33,518 - INFO - [DEBUG] Loss Breakdown — ID: 4.2716, SupCon: 3.5239, Tri: 0.1222
-2025-04-19 07:54:33,925 - INFO - [DEBUG] Loss Breakdown — ID: 4.2725, SupCon: 3.5156, Tri: 0.1468
-2025-04-19 07:54:34,338 - INFO - [DEBUG] Loss Breakdown — ID: 4.2644, SupCon: 3.4958, Tri: 0.1298
-2025-04-19 07:54:34,719 - INFO - [DEBUG] Loss Breakdown — ID: 4.2657, SupCon: 3.3086, Tri: 0.0255
+2025-04-19 07:54:24,069 - INFO - [DEBUG] Loss Breakdown  ID: 4.2739, SupCon: 3.4116, Tri: 0.1498
+2025-04-19 07:54:24,478 - INFO - [DEBUG] Loss Breakdown  ID: 4.2787, SupCon: 3.4729, Tri: 0.1904
+2025-04-19 07:54:24,888 - INFO - [DEBUG] Loss Breakdown  ID: 4.2852, SupCon: 3.4319, Tri: 0.1916
+2025-04-19 07:54:25,303 - INFO - [DEBUG] Loss Breakdown  ID: 4.2801, SupCon: 3.4509, Tri: 0.1805
+2025-04-19 07:54:25,715 - INFO - [DEBUG] Loss Breakdown  ID: 4.2821, SupCon: 3.4561, Tri: 0.0903
+2025-04-19 07:54:26,125 - INFO - [DEBUG] Loss Breakdown  ID: 4.2744, SupCon: 3.4533, Tri: 0.1440
+2025-04-19 07:54:26,536 - INFO - [DEBUG] Loss Breakdown  ID: 4.2753, SupCon: 3.4922, Tri: 0.1750
+2025-04-19 07:54:26,946 - INFO - [DEBUG] Loss Breakdown  ID: 4.2750, SupCon: 3.4774, Tri: 0.1535
+2025-04-19 07:54:27,358 - INFO - [DEBUG] Loss Breakdown  ID: 4.2681, SupCon: 3.4989, Tri: 0.1086
+2025-04-19 07:54:27,766 - INFO - [DEBUG] Loss Breakdown  ID: 4.2738, SupCon: 3.5410, Tri: 0.1294
+2025-04-19 07:54:28,177 - INFO - [DEBUG] Loss Breakdown  ID: 4.2706, SupCon: 3.4519, Tri: 0.1602
+2025-04-19 07:54:28,588 - INFO - [DEBUG] Loss Breakdown  ID: 4.2744, SupCon: 3.4818, Tri: 0.1703
+2025-04-19 07:54:28,998 - INFO - [DEBUG] Loss Breakdown  ID: 4.2637, SupCon: 3.4588, Tri: 0.1200
+2025-04-19 07:54:29,409 - INFO - [DEBUG] Loss Breakdown  ID: 4.2754, SupCon: 3.5107, Tri: 0.1948
+2025-04-19 07:54:29,820 - INFO - [DEBUG] Loss Breakdown  ID: 4.2764, SupCon: 3.4893, Tri: 0.0809
+2025-04-19 07:54:30,232 - INFO - [DEBUG] Loss Breakdown  ID: 4.2780, SupCon: 3.5095, Tri: 0.1513
+2025-04-19 07:54:30,639 - INFO - [DEBUG] Loss Breakdown  ID: 4.2637, SupCon: 3.5623, Tri: 0.1019
+2025-04-19 07:54:31,048 - INFO - [DEBUG] Loss Breakdown  ID: 4.2736, SupCon: 3.5289, Tri: 0.1011
+2025-04-19 07:54:31,461 - INFO - [DEBUG] Loss Breakdown  ID: 4.2721, SupCon: 3.4966, Tri: 0.1343
+2025-04-19 07:54:31,875 - INFO - [DEBUG] Loss Breakdown  ID: 4.2754, SupCon: 3.4877, Tri: 0.1521
+2025-04-19 07:54:32,282 - INFO - [DEBUG] Loss Breakdown  ID: 4.2743, SupCon: 3.5349, Tri: 0.1130
+2025-04-19 07:54:32,695 - INFO - [DEBUG] Loss Breakdown  ID: 4.2712, SupCon: 3.5096, Tri: 0.1728
+2025-04-19 07:54:33,103 - INFO - [DEBUG] Loss Breakdown  ID: 4.2677, SupCon: 3.6212, Tri: 0.1382
+2025-04-19 07:54:33,518 - INFO - [DEBUG] Loss Breakdown  ID: 4.2716, SupCon: 3.5239, Tri: 0.1222
+2025-04-19 07:54:33,925 - INFO - [DEBUG] Loss Breakdown  ID: 4.2725, SupCon: 3.5156, Tri: 0.1468
+2025-04-19 07:54:34,338 - INFO - [DEBUG] Loss Breakdown  ID: 4.2644, SupCon: 3.4958, Tri: 0.1298
+2025-04-19 07:54:34,719 - INFO - [DEBUG] Loss Breakdown  ID: 4.2657, SupCon: 3.3086, Tri: 0.0255
 2025-04-19 07:54:35,591 - INFO - [Epoch 8] Total Loss=0.1377
 2025-04-19 07:54:35,591 - INFO - Validating epoch 8...
 2025-04-19 07:55:07,385 - INFO - [Epoch 8] Avg Train Loss = 0.1377 | 
@@ -345,36 +345,36 @@
 2025-04-19 07:55:07,388 - INFO - No improvement in Acc@1. Patience counter: 2/3
 2025-04-19 07:55:07,388 - INFO -  Epoch 9/20
 2025-04-19 07:55:07,388 - INFO - [Epoch 9] Learning rate: 0.000006
-2025-04-19 07:55:32,041 - INFO - [DEBUG] Loss Breakdown — ID: 4.2771, SupCon: 3.4984, Tri: 0.1555
+2025-04-19 07:55:32,041 - INFO - [DEBUG] Loss Breakdown  ID: 4.2771, SupCon: 3.4984, Tri: 0.1555
 2025-04-19 07:55:32,277 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
 2025-04-19 07:55:32,277 - INFO - [DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
-2025-04-19 07:55:32,451 - INFO - [DEBUG] Loss Breakdown — ID: 4.2632, SupCon: 3.5536, Tri: 0.1500
-2025-04-19 07:55:32,857 - INFO - [DEBUG] Loss Breakdown — ID: 4.2771, SupCon: 3.5282, Tri: 0.1640
-2025-04-19 07:55:33,265 - INFO - [DEBUG] Loss Breakdown — ID: 4.2813, SupCon: 3.5236, Tri: 0.0797
-2025-04-19 07:55:33,670 - INFO - [DEBUG] Loss Breakdown — ID: 4.2710, SupCon: 3.5482, Tri: 0.0515
-2025-04-19 07:55:34,074 - INFO - [DEBUG] Loss Breakdown — ID: 4.2630, SupCon: 3.5100, Tri: 0.1315
-2025-04-19 07:55:34,482 - INFO - [DEBUG] Loss Breakdown — ID: 4.2651, SupCon: 3.4833, Tri: 0.2042
-2025-04-19 07:55:34,897 - INFO - [DEBUG] Loss Breakdown — ID: 4.2883, SupCon: 3.5242, Tri: 0.1832
-2025-04-19 07:55:35,303 - INFO - [DEBUG] Loss Breakdown — ID: 4.2624, SupCon: 3.5380, Tri: 0.1763
-2025-04-19 07:55:35,717 - INFO - [DEBUG] Loss Breakdown — ID: 4.2719, SupCon: 3.5523, Tri: 0.0907
-2025-04-19 07:55:36,121 - INFO - [DEBUG] Loss Breakdown — ID: 4.2714, SupCon: 3.5189, Tri: 0.2036
-2025-04-19 07:55:36,532 - INFO - [DEBUG] Loss Breakdown — ID: 4.2817, SupCon: 3.5118, Tri: 0.0738
-2025-04-19 07:55:36,941 - INFO - [DEBUG] Loss Breakdown — ID: 4.2832, SupCon: 3.5083, Tri: 0.1190
-2025-04-19 07:55:37,347 - INFO - [DEBUG] Loss Breakdown — ID: 4.2710, SupCon: 3.5289, Tri: 0.1452
-2025-04-19 07:55:37,759 - INFO - [DEBUG] Loss Breakdown — ID: 4.2713, SupCon: 3.5177, Tri: 0.1385
-2025-04-19 07:55:38,165 - INFO - [DEBUG] Loss Breakdown — ID: 4.2776, SupCon: 3.5340, Tri: 0.1137
-2025-04-19 07:55:38,574 - INFO - [DEBUG] Loss Breakdown — ID: 4.2730, SupCon: 3.5303, Tri: 0.1397
-2025-04-19 07:55:38,983 - INFO - [DEBUG] Loss Breakdown — ID: 4.2702, SupCon: 3.5324, Tri: 0.0589
-2025-04-19 07:55:39,389 - INFO - [DEBUG] Loss Breakdown — ID: 4.2730, SupCon: 3.5435, Tri: 0.1427
-2025-04-19 07:55:39,797 - INFO - [DEBUG] Loss Breakdown — ID: 4.2803, SupCon: 3.5452, Tri: 0.1262
-2025-04-19 07:55:40,207 - INFO - [DEBUG] Loss Breakdown — ID: 4.2834, SupCon: 3.5315, Tri: 0.1278
-2025-04-19 07:55:40,617 - INFO - [DEBUG] Loss Breakdown — ID: 4.2779, SupCon: 3.5462, Tri: 0.2200
-2025-04-19 07:55:41,028 - INFO - [DEBUG] Loss Breakdown — ID: 4.2669, SupCon: 3.5486, Tri: 0.1587
-2025-04-19 07:55:41,439 - INFO - [DEBUG] Loss Breakdown — ID: 4.2782, SupCon: 3.5185, Tri: 0.1334
-2025-04-19 07:55:41,845 - INFO - [DEBUG] Loss Breakdown — ID: 4.2691, SupCon: 3.5273, Tri: 0.1331
-2025-04-19 07:55:42,256 - INFO - [DEBUG] Loss Breakdown — ID: 4.2687, SupCon: 3.5380, Tri: 0.1278
-2025-04-19 07:55:42,660 - INFO - [DEBUG] Loss Breakdown — ID: 4.2756, SupCon: 3.5343, Tri: 0.1889
-2025-04-19 07:55:43,042 - INFO - [DEBUG] Loss Breakdown — ID: 4.2711, SupCon: 3.3271, Tri: 0.1009
+2025-04-19 07:55:32,451 - INFO - [DEBUG] Loss Breakdown  ID: 4.2632, SupCon: 3.5536, Tri: 0.1500
+2025-04-19 07:55:32,857 - INFO - [DEBUG] Loss Breakdown  ID: 4.2771, SupCon: 3.5282, Tri: 0.1640
+2025-04-19 07:55:33,265 - INFO - [DEBUG] Loss Breakdown  ID: 4.2813, SupCon: 3.5236, Tri: 0.0797
+2025-04-19 07:55:33,670 - INFO - [DEBUG] Loss Breakdown  ID: 4.2710, SupCon: 3.5482, Tri: 0.0515
+2025-04-19 07:55:34,074 - INFO - [DEBUG] Loss Breakdown  ID: 4.2630, SupCon: 3.5100, Tri: 0.1315
+2025-04-19 07:55:34,482 - INFO - [DEBUG] Loss Breakdown  ID: 4.2651, SupCon: 3.4833, Tri: 0.2042
+2025-04-19 07:55:34,897 - INFO - [DEBUG] Loss Breakdown  ID: 4.2883, SupCon: 3.5242, Tri: 0.1832
+2025-04-19 07:55:35,303 - INFO - [DEBUG] Loss Breakdown  ID: 4.2624, SupCon: 3.5380, Tri: 0.1763
+2025-04-19 07:55:35,717 - INFO - [DEBUG] Loss Breakdown  ID: 4.2719, SupCon: 3.5523, Tri: 0.0907
+2025-04-19 07:55:36,121 - INFO - [DEBUG] Loss Breakdown  ID: 4.2714, SupCon: 3.5189, Tri: 0.2036
+2025-04-19 07:55:36,532 - INFO - [DEBUG] Loss Breakdown  ID: 4.2817, SupCon: 3.5118, Tri: 0.0738
+2025-04-19 07:55:36,941 - INFO - [DEBUG] Loss Breakdown  ID: 4.2832, SupCon: 3.5083, Tri: 0.1190
+2025-04-19 07:55:37,347 - INFO - [DEBUG] Loss Breakdown  ID: 4.2710, SupCon: 3.5289, Tri: 0.1452
+2025-04-19 07:55:37,759 - INFO - [DEBUG] Loss Breakdown  ID: 4.2713, SupCon: 3.5177, Tri: 0.1385
+2025-04-19 07:55:38,165 - INFO - [DEBUG] Loss Breakdown  ID: 4.2776, SupCon: 3.5340, Tri: 0.1137
+2025-04-19 07:55:38,574 - INFO - [DEBUG] Loss Breakdown  ID: 4.2730, SupCon: 3.5303, Tri: 0.1397
+2025-04-19 07:55:38,983 - INFO - [DEBUG] Loss Breakdown  ID: 4.2702, SupCon: 3.5324, Tri: 0.0589
+2025-04-19 07:55:39,389 - INFO - [DEBUG] Loss Breakdown  ID: 4.2730, SupCon: 3.5435, Tri: 0.1427
+2025-04-19 07:55:39,797 - INFO - [DEBUG] Loss Breakdown  ID: 4.2803, SupCon: 3.5452, Tri: 0.1262
+2025-04-19 07:55:40,207 - INFO - [DEBUG] Loss Breakdown  ID: 4.2834, SupCon: 3.5315, Tri: 0.1278
+2025-04-19 07:55:40,617 - INFO - [DEBUG] Loss Breakdown  ID: 4.2779, SupCon: 3.5462, Tri: 0.2200
+2025-04-19 07:55:41,028 - INFO - [DEBUG] Loss Breakdown  ID: 4.2669, SupCon: 3.5486, Tri: 0.1587
+2025-04-19 07:55:41,439 - INFO - [DEBUG] Loss Breakdown  ID: 4.2782, SupCon: 3.5185, Tri: 0.1334
+2025-04-19 07:55:41,845 - INFO - [DEBUG] Loss Breakdown  ID: 4.2691, SupCon: 3.5273, Tri: 0.1331
+2025-04-19 07:55:42,256 - INFO - [DEBUG] Loss Breakdown  ID: 4.2687, SupCon: 3.5380, Tri: 0.1278
+2025-04-19 07:55:42,660 - INFO - [DEBUG] Loss Breakdown  ID: 4.2756, SupCon: 3.5343, Tri: 0.1889
+2025-04-19 07:55:43,042 - INFO - [DEBUG] Loss Breakdown  ID: 4.2711, SupCon: 3.3271, Tri: 0.1009
 2025-04-19 07:55:43,915 - INFO - [Epoch 9] Total Loss=0.1371
 2025-04-19 07:55:43,918 - INFO - Validating epoch 9...
 2025-04-19 07:56:15,591 - INFO - [Epoch 9] Avg Train Loss = 0.1371 | 

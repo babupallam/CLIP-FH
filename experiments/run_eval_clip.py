@@ -1,7 +1,7 @@
 import os
 import sys
 
-# 🔧 Add the project root to sys.path for local imports to work
+#  Add the project root to sys.path for local imports to work
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 if PROJECT_ROOT not in sys.path:
     sys.path.insert(0, PROJECT_ROOT)
@@ -42,7 +42,7 @@ def load_config(path):
     """
     if not os.path.exists(path):
         raise FileNotFoundError(f"Config file not found: {path}")
-    with open(path, "r", encoding="utf-8") as f:  # ✅ Fix here
+    with open(path, "r", encoding="utf-8") as f:  #  Fix here
         return yaml.safe_load(f)
 
 
@@ -118,7 +118,7 @@ def run_eval(config_path):
 
     variant = config.get("variant", "baseline").lower()
 
-    # allow auto‑detection when the YAML forgot to set variant: promptsg
+    # allow autodetection when the YAML forgot to set variant: promptsg
     def _is_promptsg(metadata):
         return metadata.get("stage", "").lower() == "promptsg"
 
@@ -190,7 +190,7 @@ def run_eval(config_path):
 
         # ===== PromptSG module setup (AFTER we extract config) =====
         if is_promptsg or _is_promptsg(metadata_ckpt):
-            log(log_path, "[PromptSG] Detected PromptSG checkpoint – rebuilding submodules")
+            log(log_path, "[PromptSG] Detected PromptSG checkpoint  rebuilding submodules")
 
             cfg_for_modules = config_ckpt if "pseudo_token_dim" in config_ckpt else config
             num_classes = checkpoint.get("classifier_state_dict", {}).get("weight", torch.empty(0)).size(0)
@@ -287,7 +287,7 @@ def run_eval(config_path):
         query_path = os.path.join(base_path, f"query{i}")
         gallery_path = os.path.join(base_path, f"gallery{i}")
 
-        # If either folder doesn’t exist, we skip.
+        # If either folder doesnt exist, we skip.
         if not os.path.exists(query_path) or not os.path.exists(gallery_path):
             log(log_path, f" Skipping missing split {i}: {query_path} / {gallery_path}")
             continue
@@ -308,7 +308,7 @@ def run_eval(config_path):
         # This will mirror the MBA strategy, where features from original and horizontally flipped images are averaged, improving generalization for re-identification.
         # this feature can be used from the config file
 
-        if inversion_model is not None:  # ← PromptSG path
+        if inversion_model is not None:  #  PromptSG path
             q_feats, q_labels = extract_features_promptsg(
                 model, inversion_model, multimodal_module, classifier,
                 query_loader, device, compose_prompt
@@ -317,7 +317,7 @@ def run_eval(config_path):
                 model, inversion_model, multimodal_module, classifier,
                 gallery_loader, device, compose_prompt
             )
-        else:  # ← baseline / clipreid path
+        else:  #  baseline / clipreid path
             q_feats, q_labels = extract_features(
                 model, query_loader, device,
                 use_flip=use_flip, prompt_learner=prompt_learner

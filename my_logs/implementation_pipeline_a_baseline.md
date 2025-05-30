@@ -1,6 +1,6 @@
-# **Baseline (Applying Direct CLIP Over Images) — Detailed Algorithmic Breakdown**
+# **Baseline (Applying Direct CLIP Over Images)  Detailed Algorithmic Breakdown**
 
-We’ll assume you have four main files involved for the baseline:
+Well assume you have four main files involved for the baseline:
 
 1. **`run_all_experiments.py`**  
 2. **`run_eval_clip.py`**  
@@ -20,7 +20,7 @@ Below is the sequence of calls and how each function operates:
    1. **Spawn** a process (or direct function call) to run `run_eval_clip.py --config <config_file>`.
 3. **End**: Once all configs are processed, you have results for each baseline experiment.
 
-**Effect**: This script is basically a “batch-run manager” that organizes multiple evaluation runs.
+**Effect**: This script is basically a batch-run manager that organizes multiple evaluation runs.
 
 ---
 
@@ -28,7 +28,7 @@ Below is the sequence of calls and how each function operates:
 **(Core Baseline Evaluation Script)**
 
 1. **Parse CLI Args** (with `argparse`):
-   - `--config` → path to a YAML file (like `baseline_vitb16_11k_dorsal_r.yml`).
+   - `--config`  path to a YAML file (like `baseline_vitb16_11k_dorsal_r.yml`).
 
 2. **Load Config** (using `yaml.safe_load`):
    - E.g.: 
@@ -51,7 +51,7 @@ Below is the sequence of calls and how each function operates:
    - `model_type = config["model"]` (e.g., `'vitb16'` or `'rn50'`).
    - `dataset = config["dataset"]` (e.g., `'11k'`).
    - `aspect = config["aspect"]` (e.g., `'dorsal_r'`).
-   - Possibly `variant = config["variant"]` to see if it’s `baseline`, `finetune`, etc.
+   - Possibly `variant = config["variant"]` to see if its `baseline`, `finetune`, etc.
 
 2. **Load CLIP** (in baseline mode, no fine-tuned weights):
    ```python
@@ -95,14 +95,14 @@ Below is the sequence of calls and how each function operates:
 ## 3. **`engine/baseline_inference.py`**  
 **(Feature Extraction + Similarity)**
 
-This file usually has 2–3 key functions:
+This file usually has 23 key functions:
 
 #### 3.1. `extract_features(model, dataloader, device)`
 
 1. **Initialize** two lists: `features_list`, `labels_list`.
 2. **Loop** over `dataloader`:
    1. For each `(images, labels)` batch:
-      - Move `images` → `device`.
+      - Move `images`  `device`.
       - `with torch.no_grad():`
         - `image_features = model.encode_image(images)` or something similar.  
         - Possibly `image_features = F.normalize(image_features, dim=-1)`.
@@ -132,25 +132,25 @@ This file usually has 2–3 key functions:
 #### 4.1. `evaluate_rank(sim_matrix, q_labels, g_labels)`
 1. For each query:
    - **Sort** gallery indices by descending similarity.
-   - Check the rank at which the correct label appears → accumulate rank-1, rank-5, etc.
+   - Check the rank at which the correct label appears  accumulate rank-1, rank-5, etc.
    - Also compute **mAP** using standard ReID approach (counting how quickly the correct matches appear).
-2. Average across all queries → final rank-1, rank-5, rank-10, mAP.
+2. Average across all queries  final rank-1, rank-5, rank-10, mAP.
 3. Return a dictionary of metrics.
 
 ---
 
 ## Overall Algorithm Flow
 
-1. **[run_all_experiments.py]** → Finds config files → calls `run_eval_clip.py` for each.
+1. **[run_all_experiments.py]**  Finds config files  calls `run_eval_clip.py` for each.
 2. **[run_eval_clip.py]**  
    1. Parse config  
    2. Setup CLIP zero-shot model  
    3. For each query/gallery split:  
-      - `extract_features(... → baseline_inference.py )`  
-      - `compute_similarity_matrix(... → baseline_inference.py )`  
-      - `evaluate_rank(... → evaluator.py )`  
-   4. Average results → print/save
-3. **[baseline_inference.py]** does the low-level feature extraction (calls CLIP’s `encode_image`) and similarity.
+      - `extract_features(...  baseline_inference.py )`  
+      - `compute_similarity_matrix(...  baseline_inference.py )`  
+      - `evaluate_rank(...  evaluator.py )`  
+   4. Average results  print/save
+3. **[baseline_inference.py]** does the low-level feature extraction (calls CLIPs `encode_image`) and similarity.
 4. **[evaluator.py]** (or relevant file) does the final ranking metrics.
 
 ---

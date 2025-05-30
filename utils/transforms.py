@@ -1,8 +1,8 @@
 """
-📍 Location: CLIP-FH/datasets/transforms.py
-🔧 What to Implement:
+ Location: CLIP-FH/datasets/transforms.py
+ What to Implement:
     - Image preprocessing and augmentations (resize, crop, normalize)
-    - Compatible with CLIP (ImageNet normalization or CLIP’s own)
+    - Compatible with CLIP (ImageNet normalization or CLIPs own)
 """
 
 """

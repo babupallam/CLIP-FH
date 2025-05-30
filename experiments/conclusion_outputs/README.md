@@ -1,11 +1,11 @@
 
-# 📊 CLIP-FH: Log Analysis and Visualization Scripts
+#  CLIP-FH: Log Analysis and Visualization Scripts
 
 This folder contains post-training analysis tools for the **CLIP-FH** project, including codebase structure generation, training/evaluation log parsing, metric CSV export, and result plotting for **Stage 2** and **Stage 3**.
 
 ---
 
-## 🗂️ Files Overview
+##  Files Overview
 
 | File                              | Description |
 |-----------------------------------|-------------|
@@ -19,7 +19,7 @@ This folder contains post-training analysis tools for the **CLIP-FH** project, i
 
 ---
 
-## 📁 Output Folders
+##  Output Folders
 
 - All outputs (CSV tables and plots) are saved in:
 ```
@@ -32,7 +32,7 @@ result\_logs/
 
 ---
 
-## 🧰 How to Use the Scripts
+##  How to Use the Scripts
 
 ### 1. Generate Codebase Structure
 
@@ -46,7 +46,7 @@ python generate_tree.py
 
 ### 2. Parse Stage 2 Logs
 
-#### a. Training Logs → CSVs
+#### a. Training Logs  CSVs
 
 ```bash
 python stage2_train_log_analysis.py
@@ -57,7 +57,7 @@ python stage2_train_log_analysis.py
   * `result_logs/stage2_vitb16_train_table.csv`
   * `result_logs/stage2_rn50_train_table.csv`
 
-#### b. Evaluation Logs → CSVs
+#### b. Evaluation Logs  CSVs
 
 ```bash
 python stage2_eval_log_analysis.py
@@ -88,7 +88,7 @@ python plot_stage2_train_metrics.py
 
 ### 4. Parse Stage 3 Logs
 
-#### a. Training Logs → CSVs
+#### a. Training Logs  CSVs
 
 ```bash
 python stage3_train_log_analysis.py
@@ -99,7 +99,7 @@ python stage3_train_log_analysis.py
   * `result_logs/stage3_vitb16_train_table.csv`
   * `result_logs/stage3_rn50_train_table.csv`
 
-#### b. Evaluation Logs → CSVs
+#### b. Evaluation Logs  CSVs
 
 ```bash
 python stage3_eval_log_analysis.py
@@ -126,7 +126,7 @@ python plot_stage3_train_metrics.py
 
 ---
 
-## ✅ Prerequisites
+##  Prerequisites
 
 Ensure the following Python packages are installed:
 
@@ -136,7 +136,7 @@ pip install pandas matplotlib seaborn
 
 ---
 
-## 📌 Notes
+##  Notes
 
 * These scripts are **post-processing utilities**. You must first run the training and evaluation steps from the main CLIP-FH pipeline.
 * All log files must be placed in the expected folder structure:
@@ -148,7 +148,7 @@ pip install pandas matplotlib seaborn
 
 ---
 
-## 📬 Contact
+##  Contact
 
 For questions or contributions, contact: [babupallam@gmail.com](mailto:babupallam@gmail.com)
 

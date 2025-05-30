@@ -9,12 +9,12 @@ Re-Identification means that, given an image of a person (or hand, in your case)
 
 ---
 
-### **2. CLIP’s Role**
+### **2. CLIPs Role**
 
-OpenAI’s CLIP model has **two main encoders**:
+OpenAIs CLIP model has **two main encoders**:
 
-1. **Image Encoder** – This converts images into a numerical feature vector (embedding).
-2. **Text Encoder** – This converts text prompts into a numerical feature vector (same dimensional space as the image embeddings).
+1. **Image Encoder**  This converts images into a numerical feature vector (embedding).
+2. **Text Encoder**  This converts text prompts into a numerical feature vector (same dimensional space as the image embeddings).
 
 **In your code**, only the **image encoder** is being used.  
 - You do **not** call `model.encode_text(...)`.
@@ -31,8 +31,8 @@ gallery_feats, gallery_labels = extract_features(model, gallery_loader, device)
 ```
 Each image in the query set is fed through the **image encoder** to produce a **feature vector**. The same happens for the gallery images.
 
-- If an identity (e.g., `0001051`) has 5 images in the query set, you’ll get **5 feature vectors** for that identity.  
-- If the gallery folder has 1 image for the same identity, you’ll get **1 feature vector** for that identity in the gallery.
+- If an identity (e.g., `0001051`) has 5 images in the query set, youll get **5 feature vectors** for that identity.  
+- If the gallery folder has 1 image for the same identity, youll get **1 feature vector** for that identity in the gallery.
 
 All of these are combined into two big tensors:  
 - `query_feats` = \[Number of total query images\] x \[embedding dimension\]  
@@ -60,17 +60,17 @@ So if you have 5 query images for `0001051` and 1 gallery image for `0001051`, y
 With the similarity scores, your evaluation code (`evaluate_rank`) checks:
 
 1. For each **query image**, which gallery identity has the **highest cosine similarity**?  
-2. Is that highest similarity from the **correct** identity’s gallery image?  
+2. Is that highest similarity from the **correct** identitys gallery image?  
 3. Based on how many correct matches you get, it calculates **mAP** (mean Average Precision), **CMC** (Cumulative Matching Characteristic), and so on.
 
-Even though you have **multiple query images** for a single identity, the system treats them **independently** during similarity computation (each has its own row in the matrix). In the final evaluation, the metrics still recognize they belong to the same person, so you’ll see if they match the correct gallery entry.
+Even though you have **multiple query images** for a single identity, the system treats them **independently** during similarity computation (each has its own row in the matrix). In the final evaluation, the metrics still recognize they belong to the same person, so youll see if they match the correct gallery entry.
 
 ---
 
 ### **6. Involving the Text Encoder (Optional Context)**
 
 - **Text Encoder** in CLIP: 
-  - If you had a caption or textual prompt describing the hand or person (e.g., “A photo of ID 0001051’s dorsal hand”), you could encode that text with `model.encode_text(...)`.  
+  - If you had a caption or textual prompt describing the hand or person (e.g., A photo of ID 0001051s dorsal hand), you could encode that text with `model.encode_text(...)`.  
   - Then you could compare image embeddings to text embeddings in the **same** vector space. 
 
 **However**, in your ReID workflow, **you are not using any text descriptions**, so the **text encoder is not used**. Everything stays image-to-image.
@@ -81,7 +81,7 @@ Even though you have **multiple query images** for a single identity, the system
 
 1. **Query**: Identity `0001051` has 3 images.
 2. **Gallery**: Identity `0001051` has 1 image.
-3. Each image goes through the CLIP image encoder → returns a feature vector.
+3. Each image goes through the CLIP image encoder  returns a feature vector.
    - Query might get 3 vectors: \[Q1, Q2, Q3\]
    - Gallery might get 1 vector: \[G\]
 
@@ -90,18 +90,18 @@ Even though you have **multiple query images** for a single identity, the system
      - `CosSim(Q1, G)`  
      - `CosSim(Q2, G)`  
      - `CosSim(Q3, G)`
-5. If they’re sufficiently high, it indicates the query images match the single gallery image of `0001051`.
+5. If theyre sufficiently high, it indicates the query images match the single gallery image of `0001051`.
 
-That’s how the algorithm confirms who’s who in the dataset, all via **cosine similarity** of image embeddings.
+Thats how the algorithm confirms whos who in the dataset, all via **cosine similarity** of image embeddings.
 
 ---
 
 **In short:**
 
-1. **Image encoder** transforms each image → feature vector.  
+1. **Image encoder** transforms each image  feature vector.  
 2. **Cosine similarity** is computed for every query image vs. every gallery image.  
 3. **Evaluation** checks if the top-matching gallery image is from the correct identity.  
-4. **Text encoder** is not used since we’re only dealing with images, not text queries.
+4. **Text encoder** is not used since were only dealing with images, not text queries.
 
 
 ***

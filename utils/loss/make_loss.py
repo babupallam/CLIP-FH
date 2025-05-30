@@ -11,7 +11,7 @@ class CombinedLoss:
 
     def __call__(self, features=None, text_features=None, targets=None, mode="contrastive"):
         if mode == "contrastive" and self.contrastive is not None:
-            #print(f"🧪 Calling contrastive loss with:\n  text_feats: {text_features.shape}\n  img_feats: {features.shape}\n  labels: {targets.shape}")
+            #print(f" Calling contrastive loss with:\n  text_feats: {text_features.shape}\n  img_feats: {features.shape}\n  labels: {targets.shape}")
             return self.contrastive(text_features, features, targets, targets)
 
         total_loss = 0

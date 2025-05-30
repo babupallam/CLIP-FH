@@ -10,63 +10,63 @@
 2025-04-19 08:42:53,550 - INFO - [Epoch 1] Learning rate: 0.000010
 2025-04-19 08:43:20,946 - INFO - [DEBUG] Pooled feature mean L2 norm: 1.0000
 2025-04-19 08:43:20,946 - INFO - [DEBUG] ArcFace confidence: 0.2921
-2025-04-19 08:43:20,949 - INFO - [DEBUG] Loss Breakdown — ID: 18.3298, SupCon: 3.4627, Tri: 0.0664
+2025-04-19 08:43:20,949 - INFO - [DEBUG] Loss Breakdown  ID: 18.3298, SupCon: 3.4627, Tri: 0.0664
 2025-04-19 08:43:21,192 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
 2025-04-19 08:43:21,192 - INFO - [DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
 2025-04-19 08:43:21,367 - INFO - [DEBUG] ArcFace confidence: 0.2448
-2025-04-19 08:43:21,370 - INFO - [DEBUG] Loss Breakdown — ID: 18.4658, SupCon: 3.5279, Tri: 0.1569
+2025-04-19 08:43:21,370 - INFO - [DEBUG] Loss Breakdown  ID: 18.4658, SupCon: 3.5279, Tri: 0.1569
 2025-04-19 08:43:21,782 - INFO - [DEBUG] ArcFace confidence: 0.2753
-2025-04-19 08:43:21,785 - INFO - [DEBUG] Loss Breakdown — ID: 18.7218, SupCon: 3.5081, Tri: 0.1358
+2025-04-19 08:43:21,785 - INFO - [DEBUG] Loss Breakdown  ID: 18.7218, SupCon: 3.5081, Tri: 0.1358
 2025-04-19 08:43:22,191 - INFO - [DEBUG] ArcFace confidence: 0.2385
-2025-04-19 08:43:22,194 - INFO - [DEBUG] Loss Breakdown — ID: 18.9548, SupCon: 3.4983, Tri: 0.2056
+2025-04-19 08:43:22,194 - INFO - [DEBUG] Loss Breakdown  ID: 18.9548, SupCon: 3.4983, Tri: 0.2056
 2025-04-19 08:43:22,597 - INFO - [DEBUG] ArcFace confidence: 0.2515
-2025-04-19 08:43:22,603 - INFO - [DEBUG] Loss Breakdown — ID: 19.1157, SupCon: 3.5434, Tri: 0.1890
+2025-04-19 08:43:22,603 - INFO - [DEBUG] Loss Breakdown  ID: 19.1157, SupCon: 3.5434, Tri: 0.1890
 2025-04-19 08:43:23,011 - INFO - [DEBUG] ArcFace confidence: 0.2880
-2025-04-19 08:43:23,014 - INFO - [DEBUG] Loss Breakdown — ID: 18.8565, SupCon: 3.4805, Tri: 0.2061
+2025-04-19 08:43:23,014 - INFO - [DEBUG] Loss Breakdown  ID: 18.8565, SupCon: 3.4805, Tri: 0.2061
 2025-04-19 08:43:23,420 - INFO - [DEBUG] ArcFace confidence: 0.2813
-2025-04-19 08:43:23,423 - INFO - [DEBUG] Loss Breakdown — ID: 18.4727, SupCon: 3.4935, Tri: 0.2014
+2025-04-19 08:43:23,423 - INFO - [DEBUG] Loss Breakdown  ID: 18.4727, SupCon: 3.4935, Tri: 0.2014
 2025-04-19 08:43:23,830 - INFO - [DEBUG] ArcFace confidence: 0.2312
-2025-04-19 08:43:23,833 - INFO - [DEBUG] Loss Breakdown — ID: 18.6744, SupCon: 3.5406, Tri: 0.1219
+2025-04-19 08:43:23,833 - INFO - [DEBUG] Loss Breakdown  ID: 18.6744, SupCon: 3.5406, Tri: 0.1219
 2025-04-19 08:43:24,237 - INFO - [DEBUG] ArcFace confidence: 0.2946
-2025-04-19 08:43:24,243 - INFO - [DEBUG] Loss Breakdown — ID: 19.1939, SupCon: 3.5658, Tri: 0.1957
+2025-04-19 08:43:24,243 - INFO - [DEBUG] Loss Breakdown  ID: 19.1939, SupCon: 3.5658, Tri: 0.1957
 2025-04-19 08:43:24,650 - INFO - [DEBUG] ArcFace confidence: 0.2360
-2025-04-19 08:43:24,653 - INFO - [DEBUG] Loss Breakdown — ID: 19.0053, SupCon: 3.4923, Tri: 0.1625
+2025-04-19 08:43:24,653 - INFO - [DEBUG] Loss Breakdown  ID: 19.0053, SupCon: 3.4923, Tri: 0.1625
 2025-04-19 08:43:25,061 - INFO - [DEBUG] ArcFace confidence: 0.3115
-2025-04-19 08:43:25,064 - INFO - [DEBUG] Loss Breakdown — ID: 18.9165, SupCon: 3.4805, Tri: 0.1258
+2025-04-19 08:43:25,064 - INFO - [DEBUG] Loss Breakdown  ID: 18.9165, SupCon: 3.4805, Tri: 0.1258
 2025-04-19 08:43:25,470 - INFO - [DEBUG] ArcFace confidence: 0.2630
-2025-04-19 08:43:25,473 - INFO - [DEBUG] Loss Breakdown — ID: 19.1097, SupCon: 3.4875, Tri: 0.1555
+2025-04-19 08:43:25,473 - INFO - [DEBUG] Loss Breakdown  ID: 19.1097, SupCon: 3.4875, Tri: 0.1555
 2025-04-19 08:43:25,876 - INFO - [DEBUG] ArcFace confidence: 0.2729
-2025-04-19 08:43:25,879 - INFO - [DEBUG] Loss Breakdown — ID: 19.2448, SupCon: 3.4849, Tri: 0.1247
+2025-04-19 08:43:25,879 - INFO - [DEBUG] Loss Breakdown  ID: 19.2448, SupCon: 3.4849, Tri: 0.1247
 2025-04-19 08:43:26,287 - INFO - [DEBUG] ArcFace confidence: 0.2691
-2025-04-19 08:43:26,290 - INFO - [DEBUG] Loss Breakdown — ID: 18.7917, SupCon: 3.4759, Tri: 0.1504
+2025-04-19 08:43:26,290 - INFO - [DEBUG] Loss Breakdown  ID: 18.7917, SupCon: 3.4759, Tri: 0.1504
 2025-04-19 08:43:26,693 - INFO - [DEBUG] ArcFace confidence: 0.2646
-2025-04-19 08:43:26,696 - INFO - [DEBUG] Loss Breakdown — ID: 18.9629, SupCon: 3.4906, Tri: 0.1323
+2025-04-19 08:43:26,696 - INFO - [DEBUG] Loss Breakdown  ID: 18.9629, SupCon: 3.4906, Tri: 0.1323
 2025-04-19 08:43:27,099 - INFO - [DEBUG] ArcFace confidence: 0.2912
-2025-04-19 08:43:27,105 - INFO - [DEBUG] Loss Breakdown — ID: 18.4004, SupCon: 3.4544, Tri: 0.1711
+2025-04-19 08:43:27,105 - INFO - [DEBUG] Loss Breakdown  ID: 18.4004, SupCon: 3.4544, Tri: 0.1711
 2025-04-19 08:43:27,510 - INFO - [DEBUG] ArcFace confidence: 0.2664
-2025-04-19 08:43:27,513 - INFO - [DEBUG] Loss Breakdown — ID: 19.0296, SupCon: 3.4851, Tri: 0.1759
+2025-04-19 08:43:27,513 - INFO - [DEBUG] Loss Breakdown  ID: 19.0296, SupCon: 3.4851, Tri: 0.1759
 2025-04-19 08:43:27,918 - INFO - [DEBUG] ArcFace confidence: 0.2205
-2025-04-19 08:43:27,921 - INFO - [DEBUG] Loss Breakdown — ID: 19.2369, SupCon: 3.4931, Tri: 0.1387
+2025-04-19 08:43:27,921 - INFO - [DEBUG] Loss Breakdown  ID: 19.2369, SupCon: 3.4931, Tri: 0.1387
 2025-04-19 08:43:28,326 - INFO - [DEBUG] ArcFace confidence: 0.2084
-2025-04-19 08:43:28,329 - INFO - [DEBUG] Loss Breakdown — ID: 18.6469, SupCon: 3.4319, Tri: 0.1740
+2025-04-19 08:43:28,329 - INFO - [DEBUG] Loss Breakdown  ID: 18.6469, SupCon: 3.4319, Tri: 0.1740
 2025-04-19 08:43:28,737 - INFO - [DEBUG] ArcFace confidence: 0.2782
-2025-04-19 08:43:28,743 - INFO - [DEBUG] Loss Breakdown — ID: 18.6472, SupCon: 3.5170, Tri: 0.1562
+2025-04-19 08:43:28,743 - INFO - [DEBUG] Loss Breakdown  ID: 18.6472, SupCon: 3.5170, Tri: 0.1562
 2025-04-19 08:43:29,143 - INFO - [DEBUG] ArcFace confidence: 0.2821
-2025-04-19 08:43:29,146 - INFO - [DEBUG] Loss Breakdown — ID: 18.6247, SupCon: 3.4691, Tri: 0.0918
+2025-04-19 08:43:29,146 - INFO - [DEBUG] Loss Breakdown  ID: 18.6247, SupCon: 3.4691, Tri: 0.0918
 2025-04-19 08:43:29,549 - INFO - [DEBUG] ArcFace confidence: 0.2647
-2025-04-19 08:43:29,552 - INFO - [DEBUG] Loss Breakdown — ID: 18.6331, SupCon: 3.4840, Tri: 0.1645
+2025-04-19 08:43:29,552 - INFO - [DEBUG] Loss Breakdown  ID: 18.6331, SupCon: 3.4840, Tri: 0.1645
 2025-04-19 08:43:29,955 - INFO - [DEBUG] ArcFace confidence: 0.2782
-2025-04-19 08:43:29,958 - INFO - [DEBUG] Loss Breakdown — ID: 19.2145, SupCon: 3.4880, Tri: 0.1026
+2025-04-19 08:43:29,958 - INFO - [DEBUG] Loss Breakdown  ID: 19.2145, SupCon: 3.4880, Tri: 0.1026
 2025-04-19 08:43:30,366 - INFO - [DEBUG] ArcFace confidence: 0.2932
-2025-04-19 08:43:30,369 - INFO - [DEBUG] Loss Breakdown — ID: 19.0992, SupCon: 3.4883, Tri: 0.2120
+2025-04-19 08:43:30,369 - INFO - [DEBUG] Loss Breakdown  ID: 19.0992, SupCon: 3.4883, Tri: 0.2120
 2025-04-19 08:43:30,773 - INFO - [DEBUG] ArcFace confidence: 0.2767
-2025-04-19 08:43:30,778 - INFO - [DEBUG] Loss Breakdown — ID: 18.8025, SupCon: 3.4558, Tri: 0.1746
+2025-04-19 08:43:30,778 - INFO - [DEBUG] Loss Breakdown  ID: 18.8025, SupCon: 3.4558, Tri: 0.1746
 2025-04-19 08:43:31,180 - INFO - [DEBUG] ArcFace confidence: 0.2577
-2025-04-19 08:43:31,186 - INFO - [DEBUG] Loss Breakdown — ID: 18.8547, SupCon: 3.4686, Tri: 0.1129
+2025-04-19 08:43:31,186 - INFO - [DEBUG] Loss Breakdown  ID: 18.8547, SupCon: 3.4686, Tri: 0.1129
 2025-04-19 08:43:31,589 - INFO - [DEBUG] ArcFace confidence: 0.2635
-2025-04-19 08:43:31,592 - INFO - [DEBUG] Loss Breakdown — ID: 19.0215, SupCon: 3.5400, Tri: 0.1579
+2025-04-19 08:43:31,592 - INFO - [DEBUG] Loss Breakdown  ID: 19.0215, SupCon: 3.5400, Tri: 0.1579
 2025-04-19 08:43:31,999 - INFO - [DEBUG] ArcFace confidence: 0.2523
-2025-04-19 08:43:32,002 - INFO - [DEBUG] Loss Breakdown — ID: 18.5668, SupCon: 3.2942, Tri: 0.1078
+2025-04-19 08:43:32,002 - INFO - [DEBUG] Loss Breakdown  ID: 18.5668, SupCon: 3.2942, Tri: 0.1078
 2025-04-19 08:43:32,914 - INFO - [Epoch 1] Total Loss=0.1525
 2025-04-19 08:43:32,914 - INFO - Validating epoch 1...
 2025-04-19 08:44:03,781 - INFO - [Epoch 1] Avg Train Loss = 0.1525 | 
@@ -80,63 +80,63 @@
 2025-04-19 08:44:04,972 - INFO -  Epoch 2/20
 2025-04-19 08:44:04,975 - INFO - [Epoch 2] Learning rate: 0.000010
 2025-04-19 08:44:29,292 - INFO - [DEBUG] ArcFace confidence: 0.2878
-2025-04-19 08:44:29,298 - INFO - [DEBUG] Loss Breakdown — ID: 18.7797, SupCon: 3.5086, Tri: 0.1029
+2025-04-19 08:44:29,298 - INFO - [DEBUG] Loss Breakdown  ID: 18.7797, SupCon: 3.5086, Tri: 0.1029
 2025-04-19 08:44:29,532 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
 2025-04-19 08:44:29,532 - INFO - [DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
 2025-04-19 08:44:29,705 - INFO - [DEBUG] ArcFace confidence: 0.2304
-2025-04-19 08:44:29,708 - INFO - [DEBUG] Loss Breakdown — ID: 19.0980, SupCon: 3.5848, Tri: 0.1692
+2025-04-19 08:44:29,708 - INFO - [DEBUG] Loss Breakdown  ID: 19.0980, SupCon: 3.5848, Tri: 0.1692
 2025-04-19 08:44:30,114 - INFO - [DEBUG] ArcFace confidence: 0.2627
-2025-04-19 08:44:30,119 - INFO - [DEBUG] Loss Breakdown — ID: 18.7276, SupCon: 3.6244, Tri: 0.1527
+2025-04-19 08:44:30,119 - INFO - [DEBUG] Loss Breakdown  ID: 18.7276, SupCon: 3.6244, Tri: 0.1527
 2025-04-19 08:44:30,527 - INFO - [DEBUG] ArcFace confidence: 0.2831
-2025-04-19 08:44:30,533 - INFO - [DEBUG] Loss Breakdown — ID: 18.6495, SupCon: 3.5201, Tri: 0.1118
+2025-04-19 08:44:30,533 - INFO - [DEBUG] Loss Breakdown  ID: 18.6495, SupCon: 3.5201, Tri: 0.1118
 2025-04-19 08:44:30,943 - INFO - [DEBUG] ArcFace confidence: 0.2438
-2025-04-19 08:44:30,946 - INFO - [DEBUG] Loss Breakdown — ID: 19.0235, SupCon: 3.5984, Tri: 0.1696
+2025-04-19 08:44:30,946 - INFO - [DEBUG] Loss Breakdown  ID: 19.0235, SupCon: 3.5984, Tri: 0.1696
 2025-04-19 08:44:31,360 - INFO - [DEBUG] ArcFace confidence: 0.2404
-2025-04-19 08:44:31,366 - INFO - [DEBUG] Loss Breakdown — ID: 18.5346, SupCon: 3.5284, Tri: 0.1415
+2025-04-19 08:44:31,366 - INFO - [DEBUG] Loss Breakdown  ID: 18.5346, SupCon: 3.5284, Tri: 0.1415
 2025-04-19 08:44:31,773 - INFO - [DEBUG] ArcFace confidence: 0.2445
-2025-04-19 08:44:31,776 - INFO - [DEBUG] Loss Breakdown — ID: 19.2155, SupCon: 3.4742, Tri: 0.1724
+2025-04-19 08:44:31,776 - INFO - [DEBUG] Loss Breakdown  ID: 19.2155, SupCon: 3.4742, Tri: 0.1724
 2025-04-19 08:44:32,183 - INFO - [DEBUG] ArcFace confidence: 0.2317
-2025-04-19 08:44:32,189 - INFO - [DEBUG] Loss Breakdown — ID: 18.6223, SupCon: 3.3728, Tri: 0.1323
+2025-04-19 08:44:32,189 - INFO - [DEBUG] Loss Breakdown  ID: 18.6223, SupCon: 3.3728, Tri: 0.1323
 2025-04-19 08:44:32,594 - INFO - [DEBUG] ArcFace confidence: 0.2324
-2025-04-19 08:44:32,597 - INFO - [DEBUG] Loss Breakdown — ID: 19.2795, SupCon: 3.4246, Tri: 0.1168
+2025-04-19 08:44:32,597 - INFO - [DEBUG] Loss Breakdown  ID: 19.2795, SupCon: 3.4246, Tri: 0.1168
 2025-04-19 08:44:33,004 - INFO - [DEBUG] ArcFace confidence: 0.2889
-2025-04-19 08:44:33,007 - INFO - [DEBUG] Loss Breakdown — ID: 19.0734, SupCon: 3.4180, Tri: 0.1091
+2025-04-19 08:44:33,007 - INFO - [DEBUG] Loss Breakdown  ID: 19.0734, SupCon: 3.4180, Tri: 0.1091
 2025-04-19 08:44:33,414 - INFO - [DEBUG] ArcFace confidence: 0.2618
-2025-04-19 08:44:33,417 - INFO - [DEBUG] Loss Breakdown — ID: 19.2616, SupCon: 3.3898, Tri: 0.1051
+2025-04-19 08:44:33,417 - INFO - [DEBUG] Loss Breakdown  ID: 19.2616, SupCon: 3.3898, Tri: 0.1051
 2025-04-19 08:44:33,823 - INFO - [DEBUG] ArcFace confidence: 0.2647
-2025-04-19 08:44:33,826 - INFO - [DEBUG] Loss Breakdown — ID: 18.1388, SupCon: 3.4925, Tri: 0.0733
+2025-04-19 08:44:33,826 - INFO - [DEBUG] Loss Breakdown  ID: 18.1388, SupCon: 3.4925, Tri: 0.0733
 2025-04-19 08:44:34,230 - INFO - [DEBUG] ArcFace confidence: 0.2558
-2025-04-19 08:44:34,233 - INFO - [DEBUG] Loss Breakdown — ID: 18.9851, SupCon: 3.4883, Tri: 0.0855
+2025-04-19 08:44:34,233 - INFO - [DEBUG] Loss Breakdown  ID: 18.9851, SupCon: 3.4883, Tri: 0.0855
 2025-04-19 08:44:34,640 - INFO - [DEBUG] ArcFace confidence: 0.2808
-2025-04-19 08:44:34,643 - INFO - [DEBUG] Loss Breakdown — ID: 18.6691, SupCon: 3.4687, Tri: 0.1678
+2025-04-19 08:44:34,643 - INFO - [DEBUG] Loss Breakdown  ID: 18.6691, SupCon: 3.4687, Tri: 0.1678
 2025-04-19 08:44:35,051 - INFO - [DEBUG] ArcFace confidence: 0.2580
-2025-04-19 08:44:35,054 - INFO - [DEBUG] Loss Breakdown — ID: 18.6342, SupCon: 3.4408, Tri: 0.1092
+2025-04-19 08:44:35,054 - INFO - [DEBUG] Loss Breakdown  ID: 18.6342, SupCon: 3.4408, Tri: 0.1092
 2025-04-19 08:44:35,462 - INFO - [DEBUG] ArcFace confidence: 0.2414
-2025-04-19 08:44:35,465 - INFO - [DEBUG] Loss Breakdown — ID: 18.5923, SupCon: 3.4571, Tri: 0.2290
+2025-04-19 08:44:35,465 - INFO - [DEBUG] Loss Breakdown  ID: 18.5923, SupCon: 3.4571, Tri: 0.2290
 2025-04-19 08:44:35,869 - INFO - [DEBUG] ArcFace confidence: 0.2527
-2025-04-19 08:44:35,875 - INFO - [DEBUG] Loss Breakdown — ID: 18.8414, SupCon: 3.4248, Tri: 0.1773
+2025-04-19 08:44:35,875 - INFO - [DEBUG] Loss Breakdown  ID: 18.8414, SupCon: 3.4248, Tri: 0.1773
 2025-04-19 08:44:36,283 - INFO - [DEBUG] ArcFace confidence: 0.2361
-2025-04-19 08:44:36,286 - INFO - [DEBUG] Loss Breakdown — ID: 18.8334, SupCon: 3.4164, Tri: 0.1255
+2025-04-19 08:44:36,286 - INFO - [DEBUG] Loss Breakdown  ID: 18.8334, SupCon: 3.4164, Tri: 0.1255
 2025-04-19 08:44:36,689 - INFO - [DEBUG] ArcFace confidence: 0.3205
-2025-04-19 08:44:36,692 - INFO - [DEBUG] Loss Breakdown — ID: 18.7686, SupCon: 3.3913, Tri: 0.0710
+2025-04-19 08:44:36,692 - INFO - [DEBUG] Loss Breakdown  ID: 18.7686, SupCon: 3.3913, Tri: 0.0710
 2025-04-19 08:44:37,100 - INFO - [DEBUG] ArcFace confidence: 0.2531
-2025-04-19 08:44:37,103 - INFO - [DEBUG] Loss Breakdown — ID: 19.0674, SupCon: 3.2991, Tri: 0.1981
+2025-04-19 08:44:37,103 - INFO - [DEBUG] Loss Breakdown  ID: 19.0674, SupCon: 3.2991, Tri: 0.1981
 2025-04-19 08:44:37,510 - INFO - [DEBUG] ArcFace confidence: 0.2426
-2025-04-19 08:44:37,513 - INFO - [DEBUG] Loss Breakdown — ID: 18.7375, SupCon: 3.3608, Tri: 0.1743
+2025-04-19 08:44:37,513 - INFO - [DEBUG] Loss Breakdown  ID: 18.7375, SupCon: 3.3608, Tri: 0.1743
 2025-04-19 08:44:37,922 - INFO - [DEBUG] ArcFace confidence: 0.2810
-2025-04-19 08:44:37,925 - INFO - [DEBUG] Loss Breakdown — ID: 18.6591, SupCon: 3.3759, Tri: 0.1090
+2025-04-19 08:44:37,925 - INFO - [DEBUG] Loss Breakdown  ID: 18.6591, SupCon: 3.3759, Tri: 0.1090
 2025-04-19 08:44:38,332 - INFO - [DEBUG] ArcFace confidence: 0.2799
-2025-04-19 08:44:38,335 - INFO - [DEBUG] Loss Breakdown — ID: 18.3948, SupCon: 3.4503, Tri: 0.0936
+2025-04-19 08:44:38,335 - INFO - [DEBUG] Loss Breakdown  ID: 18.3948, SupCon: 3.4503, Tri: 0.0936
 2025-04-19 08:44:38,743 - INFO - [DEBUG] ArcFace confidence: 0.2643
-2025-04-19 08:44:38,746 - INFO - [DEBUG] Loss Breakdown — ID: 18.6935, SupCon: 3.3366, Tri: 0.0928
+2025-04-19 08:44:38,746 - INFO - [DEBUG] Loss Breakdown  ID: 18.6935, SupCon: 3.3366, Tri: 0.0928
 2025-04-19 08:44:39,151 - INFO - [DEBUG] ArcFace confidence: 0.2663
-2025-04-19 08:44:39,157 - INFO - [DEBUG] Loss Breakdown — ID: 18.6241, SupCon: 3.3092, Tri: 0.1063
+2025-04-19 08:44:39,157 - INFO - [DEBUG] Loss Breakdown  ID: 18.6241, SupCon: 3.3092, Tri: 0.1063
 2025-04-19 08:44:39,561 - INFO - [DEBUG] ArcFace confidence: 0.2584
-2025-04-19 08:44:39,564 - INFO - [DEBUG] Loss Breakdown — ID: 19.1648, SupCon: 3.3901, Tri: 0.1399
+2025-04-19 08:44:39,564 - INFO - [DEBUG] Loss Breakdown  ID: 19.1648, SupCon: 3.3901, Tri: 0.1399
 2025-04-19 08:44:39,965 - INFO - [DEBUG] ArcFace confidence: 0.2817
-2025-04-19 08:44:39,971 - INFO - [DEBUG] Loss Breakdown — ID: 18.8524, SupCon: 3.3623, Tri: 0.1826
+2025-04-19 08:44:39,971 - INFO - [DEBUG] Loss Breakdown  ID: 18.8524, SupCon: 3.3623, Tri: 0.1826
 2025-04-19 08:44:40,344 - INFO - [DEBUG] ArcFace confidence: 0.2628
-2025-04-19 08:44:40,350 - INFO - [DEBUG] Loss Breakdown — ID: 18.9893, SupCon: 3.1749, Tri: 0.0941
+2025-04-19 08:44:40,350 - INFO - [DEBUG] Loss Breakdown  ID: 18.9893, SupCon: 3.1749, Tri: 0.0941
 2025-04-19 08:44:41,210 - INFO - [Epoch 2] Total Loss=0.1326
 2025-04-19 08:44:41,210 - INFO - Validating epoch 2...
 2025-04-19 08:45:13,243 - INFO - [Epoch 2] Avg Train Loss = 0.1326 | 
@@ -150,63 +150,63 @@
 2025-04-19 08:45:13,246 - INFO -  Epoch 3/20
 2025-04-19 08:45:13,246 - INFO - [Epoch 3] Learning rate: 0.000010
 2025-04-19 08:45:38,284 - INFO - [DEBUG] ArcFace confidence: 0.2529
-2025-04-19 08:45:38,290 - INFO - [DEBUG] Loss Breakdown — ID: 18.5649, SupCon: 3.3363, Tri: 0.1364
+2025-04-19 08:45:38,290 - INFO - [DEBUG] Loss Breakdown  ID: 18.5649, SupCon: 3.3363, Tri: 0.1364
 2025-04-19 08:45:38,525 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
 2025-04-19 08:45:38,525 - INFO - [DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
 2025-04-19 08:45:38,699 - INFO - [DEBUG] ArcFace confidence: 0.2501
-2025-04-19 08:45:38,702 - INFO - [DEBUG] Loss Breakdown — ID: 18.5632, SupCon: 3.3392, Tri: 0.1612
+2025-04-19 08:45:38,702 - INFO - [DEBUG] Loss Breakdown  ID: 18.5632, SupCon: 3.3392, Tri: 0.1612
 2025-04-19 08:45:39,111 - INFO - [DEBUG] ArcFace confidence: 0.2786
-2025-04-19 08:45:39,114 - INFO - [DEBUG] Loss Breakdown — ID: 18.7818, SupCon: 3.2664, Tri: 0.1738
+2025-04-19 08:45:39,114 - INFO - [DEBUG] Loss Breakdown  ID: 18.7818, SupCon: 3.2664, Tri: 0.1738
 2025-04-19 08:45:39,525 - INFO - [DEBUG] ArcFace confidence: 0.2695
-2025-04-19 08:45:39,531 - INFO - [DEBUG] Loss Breakdown — ID: 18.5496, SupCon: 3.2723, Tri: 0.1675
+2025-04-19 08:45:39,531 - INFO - [DEBUG] Loss Breakdown  ID: 18.5496, SupCon: 3.2723, Tri: 0.1675
 2025-04-19 08:45:39,939 - INFO - [DEBUG] ArcFace confidence: 0.2632
-2025-04-19 08:45:39,942 - INFO - [DEBUG] Loss Breakdown — ID: 18.7533, SupCon: 3.3124, Tri: 0.0985
+2025-04-19 08:45:39,942 - INFO - [DEBUG] Loss Breakdown  ID: 18.7533, SupCon: 3.3124, Tri: 0.0985
 2025-04-19 08:45:40,350 - INFO - [DEBUG] ArcFace confidence: 0.2469
-2025-04-19 08:45:40,356 - INFO - [DEBUG] Loss Breakdown — ID: 19.0072, SupCon: 3.3991, Tri: 0.1487
+2025-04-19 08:45:40,356 - INFO - [DEBUG] Loss Breakdown  ID: 19.0072, SupCon: 3.3991, Tri: 0.1487
 2025-04-19 08:45:40,762 - INFO - [DEBUG] ArcFace confidence: 0.2515
-2025-04-19 08:45:40,765 - INFO - [DEBUG] Loss Breakdown — ID: 18.8802, SupCon: 3.4665, Tri: 0.1528
+2025-04-19 08:45:40,765 - INFO - [DEBUG] Loss Breakdown  ID: 18.8802, SupCon: 3.4665, Tri: 0.1528
 2025-04-19 08:45:41,175 - INFO - [DEBUG] ArcFace confidence: 0.2743
-2025-04-19 08:45:41,181 - INFO - [DEBUG] Loss Breakdown — ID: 19.1323, SupCon: 3.4376, Tri: 0.1167
+2025-04-19 08:45:41,181 - INFO - [DEBUG] Loss Breakdown  ID: 19.1323, SupCon: 3.4376, Tri: 0.1167
 2025-04-19 08:45:41,584 - INFO - [DEBUG] ArcFace confidence: 0.2999
-2025-04-19 08:45:41,590 - INFO - [DEBUG] Loss Breakdown — ID: 19.0203, SupCon: 3.4878, Tri: 0.1636
+2025-04-19 08:45:41,590 - INFO - [DEBUG] Loss Breakdown  ID: 19.0203, SupCon: 3.4878, Tri: 0.1636
 2025-04-19 08:45:41,997 - INFO - [DEBUG] ArcFace confidence: 0.2577
-2025-04-19 08:45:42,000 - INFO - [DEBUG] Loss Breakdown — ID: 18.9950, SupCon: 3.4192, Tri: 0.1422
+2025-04-19 08:45:42,000 - INFO - [DEBUG] Loss Breakdown  ID: 18.9950, SupCon: 3.4192, Tri: 0.1422
 2025-04-19 08:45:42,405 - INFO - [DEBUG] ArcFace confidence: 0.2879
-2025-04-19 08:45:42,408 - INFO - [DEBUG] Loss Breakdown — ID: 18.7719, SupCon: 3.4958, Tri: 0.1019
+2025-04-19 08:45:42,408 - INFO - [DEBUG] Loss Breakdown  ID: 18.7719, SupCon: 3.4958, Tri: 0.1019
 2025-04-19 08:45:42,811 - INFO - [DEBUG] ArcFace confidence: 0.2704
-2025-04-19 08:45:42,814 - INFO - [DEBUG] Loss Breakdown — ID: 18.7542, SupCon: 3.4416, Tri: 0.1636
+2025-04-19 08:45:42,814 - INFO - [DEBUG] Loss Breakdown  ID: 18.7542, SupCon: 3.4416, Tri: 0.1636
 2025-04-19 08:45:43,222 - INFO - [DEBUG] ArcFace confidence: 0.2632
-2025-04-19 08:45:43,225 - INFO - [DEBUG] Loss Breakdown — ID: 18.7119, SupCon: 3.4501, Tri: 0.1170
+2025-04-19 08:45:43,225 - INFO - [DEBUG] Loss Breakdown  ID: 18.7119, SupCon: 3.4501, Tri: 0.1170
 2025-04-19 08:45:43,631 - INFO - [DEBUG] ArcFace confidence: 0.2326
-2025-04-19 08:45:43,637 - INFO - [DEBUG] Loss Breakdown — ID: 18.6111, SupCon: 3.4293, Tri: 0.1097
+2025-04-19 08:45:43,637 - INFO - [DEBUG] Loss Breakdown  ID: 18.6111, SupCon: 3.4293, Tri: 0.1097
 2025-04-19 08:45:44,042 - INFO - [DEBUG] ArcFace confidence: 0.2194
-2025-04-19 08:45:44,045 - INFO - [DEBUG] Loss Breakdown — ID: 19.0881, SupCon: 3.2503, Tri: 0.1226
+2025-04-19 08:45:44,045 - INFO - [DEBUG] Loss Breakdown  ID: 19.0881, SupCon: 3.2503, Tri: 0.1226
 2025-04-19 08:45:44,452 - INFO - [DEBUG] ArcFace confidence: 0.2017
-2025-04-19 08:45:44,455 - INFO - [DEBUG] Loss Breakdown — ID: 18.6034, SupCon: 3.3180, Tri: 0.1128
+2025-04-19 08:45:44,455 - INFO - [DEBUG] Loss Breakdown  ID: 18.6034, SupCon: 3.3180, Tri: 0.1128
 2025-04-19 08:45:44,858 - INFO - [DEBUG] ArcFace confidence: 0.2492
-2025-04-19 08:45:44,864 - INFO - [DEBUG] Loss Breakdown — ID: 18.9357, SupCon: 3.3124, Tri: 0.1119
+2025-04-19 08:45:44,864 - INFO - [DEBUG] Loss Breakdown  ID: 18.9357, SupCon: 3.3124, Tri: 0.1119
 2025-04-19 08:45:45,270 - INFO - [DEBUG] ArcFace confidence: 0.2321
-2025-04-19 08:45:45,273 - INFO - [DEBUG] Loss Breakdown — ID: 18.7845, SupCon: 3.1483, Tri: 0.1131
+2025-04-19 08:45:45,273 - INFO - [DEBUG] Loss Breakdown  ID: 18.7845, SupCon: 3.1483, Tri: 0.1131
 2025-04-19 08:45:45,676 - INFO - [DEBUG] ArcFace confidence: 0.2130
-2025-04-19 08:45:45,680 - INFO - [DEBUG] Loss Breakdown — ID: 18.9423, SupCon: 3.1867, Tri: 0.1245
+2025-04-19 08:45:45,680 - INFO - [DEBUG] Loss Breakdown  ID: 18.9423, SupCon: 3.1867, Tri: 0.1245
 2025-04-19 08:45:46,086 - INFO - [DEBUG] ArcFace confidence: 0.2733
-2025-04-19 08:45:46,092 - INFO - [DEBUG] Loss Breakdown — ID: 19.1606, SupCon: 3.4439, Tri: 0.1567
+2025-04-19 08:45:46,092 - INFO - [DEBUG] Loss Breakdown  ID: 19.1606, SupCon: 3.4439, Tri: 0.1567
 2025-04-19 08:45:46,493 - INFO - [DEBUG] ArcFace confidence: 0.2234
-2025-04-19 08:45:46,499 - INFO - [DEBUG] Loss Breakdown — ID: 18.7816, SupCon: 3.4559, Tri: 0.2149
+2025-04-19 08:45:46,499 - INFO - [DEBUG] Loss Breakdown  ID: 18.7816, SupCon: 3.4559, Tri: 0.2149
 2025-04-19 08:45:46,904 - INFO - [DEBUG] ArcFace confidence: 0.2564
-2025-04-19 08:45:46,907 - INFO - [DEBUG] Loss Breakdown — ID: 18.8555, SupCon: 3.4153, Tri: 0.1277
+2025-04-19 08:45:46,907 - INFO - [DEBUG] Loss Breakdown  ID: 18.8555, SupCon: 3.4153, Tri: 0.1277
 2025-04-19 08:45:47,309 - INFO - [DEBUG] ArcFace confidence: 0.2524
-2025-04-19 08:45:47,314 - INFO - [DEBUG] Loss Breakdown — ID: 18.3974, SupCon: 3.3881, Tri: 0.1454
+2025-04-19 08:45:47,314 - INFO - [DEBUG] Loss Breakdown  ID: 18.3974, SupCon: 3.3881, Tri: 0.1454
 2025-04-19 08:45:47,722 - INFO - [DEBUG] ArcFace confidence: 0.2584
-2025-04-19 08:45:47,725 - INFO - [DEBUG] Loss Breakdown — ID: 18.1898, SupCon: 3.2222, Tri: 0.1249
+2025-04-19 08:45:47,725 - INFO - [DEBUG] Loss Breakdown  ID: 18.1898, SupCon: 3.2222, Tri: 0.1249
 2025-04-19 08:45:48,129 - INFO - [DEBUG] ArcFace confidence: 0.2440
-2025-04-19 08:45:48,132 - INFO - [DEBUG] Loss Breakdown — ID: 18.8020, SupCon: 3.2859, Tri: 0.2083
+2025-04-19 08:45:48,132 - INFO - [DEBUG] Loss Breakdown  ID: 18.8020, SupCon: 3.2859, Tri: 0.2083
 2025-04-19 08:45:48,538 - INFO - [DEBUG] ArcFace confidence: 0.2174
-2025-04-19 08:45:48,544 - INFO - [DEBUG] Loss Breakdown — ID: 18.5947, SupCon: 3.3665, Tri: 0.1629
+2025-04-19 08:45:48,544 - INFO - [DEBUG] Loss Breakdown  ID: 18.5947, SupCon: 3.3665, Tri: 0.1629
 2025-04-19 08:45:48,949 - INFO - [DEBUG] ArcFace confidence: 0.2231
-2025-04-19 08:45:48,952 - INFO - [DEBUG] Loss Breakdown — ID: 19.1092, SupCon: 3.4672, Tri: 0.1695
+2025-04-19 08:45:48,952 - INFO - [DEBUG] Loss Breakdown  ID: 19.1092, SupCon: 3.4672, Tri: 0.1695
 2025-04-19 08:45:49,333 - INFO - [DEBUG] ArcFace confidence: 0.2666
-2025-04-19 08:45:49,336 - INFO - [DEBUG] Loss Breakdown — ID: 18.9324, SupCon: 3.2253, Tri: 0.0279
+2025-04-19 08:45:49,336 - INFO - [DEBUG] Loss Breakdown  ID: 18.9324, SupCon: 3.2253, Tri: 0.0279
 2025-04-19 08:45:50,214 - INFO - [Epoch 3] Total Loss=0.1384
 2025-04-19 08:45:50,214 - INFO - Validating epoch 3...
 2025-04-19 08:46:21,981 - INFO - [Epoch 3] Avg Train Loss = 0.1384 | 
@@ -220,63 +220,63 @@
 2025-04-19 08:46:23,286 - INFO -  Epoch 4/20
 2025-04-19 08:46:23,289 - INFO - [Epoch 4] Learning rate: 0.000009
 2025-04-19 08:46:48,276 - INFO - [DEBUG] ArcFace confidence: 0.2555
-2025-04-19 08:46:48,279 - INFO - [DEBUG] Loss Breakdown — ID: 18.5014, SupCon: 3.4893, Tri: 0.1296
+2025-04-19 08:46:48,279 - INFO - [DEBUG] Loss Breakdown  ID: 18.5014, SupCon: 3.4893, Tri: 0.1296
 2025-04-19 08:46:48,518 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
 2025-04-19 08:46:48,518 - INFO - [DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
 2025-04-19 08:46:48,692 - INFO - [DEBUG] ArcFace confidence: 0.2991
-2025-04-19 08:46:48,695 - INFO - [DEBUG] Loss Breakdown — ID: 18.9191, SupCon: 3.4732, Tri: 0.1808
+2025-04-19 08:46:48,695 - INFO - [DEBUG] Loss Breakdown  ID: 18.9191, SupCon: 3.4732, Tri: 0.1808
 2025-04-19 08:46:49,110 - INFO - [DEBUG] ArcFace confidence: 0.2427
-2025-04-19 08:46:49,113 - INFO - [DEBUG] Loss Breakdown — ID: 18.4158, SupCon: 3.5053, Tri: 0.1106
+2025-04-19 08:46:49,113 - INFO - [DEBUG] Loss Breakdown  ID: 18.4158, SupCon: 3.5053, Tri: 0.1106
 2025-04-19 08:46:49,522 - INFO - [DEBUG] ArcFace confidence: 0.2425
-2025-04-19 08:46:49,525 - INFO - [DEBUG] Loss Breakdown — ID: 18.7866, SupCon: 3.4796, Tri: 0.1792
+2025-04-19 08:46:49,525 - INFO - [DEBUG] Loss Breakdown  ID: 18.7866, SupCon: 3.4796, Tri: 0.1792
 2025-04-19 08:46:49,932 - INFO - [DEBUG] ArcFace confidence: 0.2416
-2025-04-19 08:46:49,938 - INFO - [DEBUG] Loss Breakdown — ID: 18.4317, SupCon: 3.4799, Tri: 0.1213
+2025-04-19 08:46:49,938 - INFO - [DEBUG] Loss Breakdown  ID: 18.4317, SupCon: 3.4799, Tri: 0.1213
 2025-04-19 08:46:50,340 - INFO - [DEBUG] ArcFace confidence: 0.2502
-2025-04-19 08:46:50,346 - INFO - [DEBUG] Loss Breakdown — ID: 18.4830, SupCon: 3.4735, Tri: 0.1882
+2025-04-19 08:46:50,346 - INFO - [DEBUG] Loss Breakdown  ID: 18.4830, SupCon: 3.4735, Tri: 0.1882
 2025-04-19 08:46:50,753 - INFO - [DEBUG] ArcFace confidence: 0.2820
-2025-04-19 08:46:50,756 - INFO - [DEBUG] Loss Breakdown — ID: 18.9040, SupCon: 3.4490, Tri: 0.1169
+2025-04-19 08:46:50,756 - INFO - [DEBUG] Loss Breakdown  ID: 18.9040, SupCon: 3.4490, Tri: 0.1169
 2025-04-19 08:46:51,163 - INFO - [DEBUG] ArcFace confidence: 0.2401
-2025-04-19 08:46:51,166 - INFO - [DEBUG] Loss Breakdown — ID: 18.9282, SupCon: 3.4099, Tri: 0.1448
+2025-04-19 08:46:51,166 - INFO - [DEBUG] Loss Breakdown  ID: 18.9282, SupCon: 3.4099, Tri: 0.1448
 2025-04-19 08:46:51,570 - INFO - [DEBUG] ArcFace confidence: 0.2231
-2025-04-19 08:46:51,576 - INFO - [DEBUG] Loss Breakdown — ID: 18.5629, SupCon: 3.6185, Tri: 0.2030
+2025-04-19 08:46:51,576 - INFO - [DEBUG] Loss Breakdown  ID: 18.5629, SupCon: 3.6185, Tri: 0.2030
 2025-04-19 08:46:51,985 - INFO - [DEBUG] ArcFace confidence: 0.2490
-2025-04-19 08:46:51,991 - INFO - [DEBUG] Loss Breakdown — ID: 19.0607, SupCon: 3.5855, Tri: 0.1419
+2025-04-19 08:46:51,991 - INFO - [DEBUG] Loss Breakdown  ID: 19.0607, SupCon: 3.5855, Tri: 0.1419
 2025-04-19 08:46:52,400 - INFO - [DEBUG] ArcFace confidence: 0.2889
-2025-04-19 08:46:52,403 - INFO - [DEBUG] Loss Breakdown — ID: 18.9867, SupCon: 3.5004, Tri: 0.1682
+2025-04-19 08:46:52,403 - INFO - [DEBUG] Loss Breakdown  ID: 18.9867, SupCon: 3.5004, Tri: 0.1682
 2025-04-19 08:46:52,810 - INFO - [DEBUG] ArcFace confidence: 0.2717
-2025-04-19 08:46:52,813 - INFO - [DEBUG] Loss Breakdown — ID: 18.9376, SupCon: 3.4577, Tri: 0.1467
+2025-04-19 08:46:52,813 - INFO - [DEBUG] Loss Breakdown  ID: 18.9376, SupCon: 3.4577, Tri: 0.1467
 2025-04-19 08:46:53,219 - INFO - [DEBUG] ArcFace confidence: 0.2557
-2025-04-19 08:46:53,223 - INFO - [DEBUG] Loss Breakdown — ID: 18.4277, SupCon: 3.5111, Tri: 0.1114
+2025-04-19 08:46:53,223 - INFO - [DEBUG] Loss Breakdown  ID: 18.4277, SupCon: 3.5111, Tri: 0.1114
 2025-04-19 08:46:53,628 - INFO - [DEBUG] ArcFace confidence: 0.2539
-2025-04-19 08:46:53,631 - INFO - [DEBUG] Loss Breakdown — ID: 18.9871, SupCon: 3.4747, Tri: 0.1921
+2025-04-19 08:46:53,631 - INFO - [DEBUG] Loss Breakdown  ID: 18.9871, SupCon: 3.4747, Tri: 0.1921
 2025-04-19 08:46:54,037 - INFO - [DEBUG] ArcFace confidence: 0.2984
-2025-04-19 08:46:54,043 - INFO - [DEBUG] Loss Breakdown — ID: 18.9001, SupCon: 3.4581, Tri: 0.1232
+2025-04-19 08:46:54,043 - INFO - [DEBUG] Loss Breakdown  ID: 18.9001, SupCon: 3.4581, Tri: 0.1232
 2025-04-19 08:46:54,449 - INFO - [DEBUG] ArcFace confidence: 0.2384
-2025-04-19 08:46:54,452 - INFO - [DEBUG] Loss Breakdown — ID: 18.3861, SupCon: 3.4606, Tri: 0.1523
+2025-04-19 08:46:54,452 - INFO - [DEBUG] Loss Breakdown  ID: 18.3861, SupCon: 3.4606, Tri: 0.1523
 2025-04-19 08:46:54,859 - INFO - [DEBUG] ArcFace confidence: 0.2519
-2025-04-19 08:46:54,865 - INFO - [DEBUG] Loss Breakdown — ID: 18.5096, SupCon: 3.4659, Tri: 0.1017
+2025-04-19 08:46:54,865 - INFO - [DEBUG] Loss Breakdown  ID: 18.5096, SupCon: 3.4659, Tri: 0.1017
 2025-04-19 08:46:55,270 - INFO - [DEBUG] ArcFace confidence: 0.2547
-2025-04-19 08:46:55,273 - INFO - [DEBUG] Loss Breakdown — ID: 19.4376, SupCon: 3.4596, Tri: 0.1128
+2025-04-19 08:46:55,273 - INFO - [DEBUG] Loss Breakdown  ID: 19.4376, SupCon: 3.4596, Tri: 0.1128
 2025-04-19 08:46:55,679 - INFO - [DEBUG] ArcFace confidence: 0.2702
-2025-04-19 08:46:55,682 - INFO - [DEBUG] Loss Breakdown — ID: 19.3277, SupCon: 3.5053, Tri: 0.1203
+2025-04-19 08:46:55,682 - INFO - [DEBUG] Loss Breakdown  ID: 19.3277, SupCon: 3.5053, Tri: 0.1203
 2025-04-19 08:46:56,087 - INFO - [DEBUG] ArcFace confidence: 0.2283
-2025-04-19 08:46:56,090 - INFO - [DEBUG] Loss Breakdown — ID: 18.7923, SupCon: 3.4570, Tri: 0.1507
+2025-04-19 08:46:56,090 - INFO - [DEBUG] Loss Breakdown  ID: 18.7923, SupCon: 3.4570, Tri: 0.1507
 2025-04-19 08:46:56,494 - INFO - [DEBUG] ArcFace confidence: 0.2714
-2025-04-19 08:46:56,500 - INFO - [DEBUG] Loss Breakdown — ID: 18.8432, SupCon: 3.5148, Tri: 0.1390
+2025-04-19 08:46:56,500 - INFO - [DEBUG] Loss Breakdown  ID: 18.8432, SupCon: 3.5148, Tri: 0.1390
 2025-04-19 08:46:56,905 - INFO - [DEBUG] ArcFace confidence: 0.2745
-2025-04-19 08:46:56,908 - INFO - [DEBUG] Loss Breakdown — ID: 18.9310, SupCon: 3.4911, Tri: 0.1214
+2025-04-19 08:46:56,908 - INFO - [DEBUG] Loss Breakdown  ID: 18.9310, SupCon: 3.4911, Tri: 0.1214
 2025-04-19 08:46:57,311 - INFO - [DEBUG] ArcFace confidence: 0.2340
-2025-04-19 08:46:57,314 - INFO - [DEBUG] Loss Breakdown — ID: 19.0906, SupCon: 3.4538, Tri: 0.1275
+2025-04-19 08:46:57,314 - INFO - [DEBUG] Loss Breakdown  ID: 19.0906, SupCon: 3.4538, Tri: 0.1275
 2025-04-19 08:46:57,721 - INFO - [DEBUG] ArcFace confidence: 0.2642
-2025-04-19 08:46:57,723 - INFO - [DEBUG] Loss Breakdown — ID: 18.5407, SupCon: 3.4579, Tri: 0.1126
+2025-04-19 08:46:57,723 - INFO - [DEBUG] Loss Breakdown  ID: 18.5407, SupCon: 3.4579, Tri: 0.1126
 2025-04-19 08:46:58,128 - INFO - [DEBUG] ArcFace confidence: 0.2016
-2025-04-19 08:46:58,134 - INFO - [DEBUG] Loss Breakdown — ID: 19.2407, SupCon: 3.4839, Tri: 0.1854
+2025-04-19 08:46:58,134 - INFO - [DEBUG] Loss Breakdown  ID: 19.2407, SupCon: 3.4839, Tri: 0.1854
 2025-04-19 08:46:58,544 - INFO - [DEBUG] ArcFace confidence: 0.2781
-2025-04-19 08:46:58,547 - INFO - [DEBUG] Loss Breakdown — ID: 18.7930, SupCon: 3.4182, Tri: 0.1320
+2025-04-19 08:46:58,547 - INFO - [DEBUG] Loss Breakdown  ID: 18.7930, SupCon: 3.4182, Tri: 0.1320
 2025-04-19 08:46:58,955 - INFO - [DEBUG] ArcFace confidence: 0.2155
-2025-04-19 08:46:58,958 - INFO - [DEBUG] Loss Breakdown — ID: 18.7294, SupCon: 3.4704, Tri: 0.1428
+2025-04-19 08:46:58,958 - INFO - [DEBUG] Loss Breakdown  ID: 18.7294, SupCon: 3.4704, Tri: 0.1428
 2025-04-19 08:46:59,337 - INFO - [DEBUG] ArcFace confidence: 0.2659
-2025-04-19 08:46:59,340 - INFO - [DEBUG] Loss Breakdown — ID: 19.2011, SupCon: 3.1587, Tri: 0.1528
+2025-04-19 08:46:59,340 - INFO - [DEBUG] Loss Breakdown  ID: 19.2011, SupCon: 3.1587, Tri: 0.1528
 2025-04-19 08:47:00,218 - INFO - [Epoch 4] Total Loss=0.1432
 2025-04-19 08:47:00,218 - INFO - Validating epoch 4...
 2025-04-19 08:47:31,785 - INFO - [Epoch 4] Avg Train Loss = 0.1432 | 
@@ -290,63 +290,63 @@
 2025-04-19 08:47:31,785 - INFO -  Epoch 5/20
 2025-04-19 08:47:31,785 - INFO - [Epoch 5] Learning rate: 0.000009
 2025-04-19 08:47:56,834 - INFO - [DEBUG] ArcFace confidence: 0.2488
-2025-04-19 08:47:56,837 - INFO - [DEBUG] Loss Breakdown — ID: 18.7465, SupCon: 3.4326, Tri: 0.1211
+2025-04-19 08:47:56,837 - INFO - [DEBUG] Loss Breakdown  ID: 18.7465, SupCon: 3.4326, Tri: 0.1211
 2025-04-19 08:47:57,078 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
 2025-04-19 08:47:57,078 - INFO - [DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
 2025-04-19 08:47:57,252 - INFO - [DEBUG] ArcFace confidence: 0.2769
-2025-04-19 08:47:57,258 - INFO - [DEBUG] Loss Breakdown — ID: 18.8585, SupCon: 3.4281, Tri: 0.1468
+2025-04-19 08:47:57,258 - INFO - [DEBUG] Loss Breakdown  ID: 18.8585, SupCon: 3.4281, Tri: 0.1468
 2025-04-19 08:47:57,663 - INFO - [DEBUG] ArcFace confidence: 0.2499
-2025-04-19 08:47:57,669 - INFO - [DEBUG] Loss Breakdown — ID: 18.8608, SupCon: 3.4389, Tri: 0.1398
+2025-04-19 08:47:57,669 - INFO - [DEBUG] Loss Breakdown  ID: 18.8608, SupCon: 3.4389, Tri: 0.1398
 2025-04-19 08:47:58,074 - INFO - [DEBUG] ArcFace confidence: 0.2758
-2025-04-19 08:47:58,080 - INFO - [DEBUG] Loss Breakdown — ID: 19.2597, SupCon: 3.4421, Tri: 0.1272
+2025-04-19 08:47:58,080 - INFO - [DEBUG] Loss Breakdown  ID: 19.2597, SupCon: 3.4421, Tri: 0.1272
 2025-04-19 08:47:58,489 - INFO - [DEBUG] ArcFace confidence: 0.2281
-2025-04-19 08:47:58,492 - INFO - [DEBUG] Loss Breakdown — ID: 18.7938, SupCon: 3.4134, Tri: 0.1361
+2025-04-19 08:47:58,492 - INFO - [DEBUG] Loss Breakdown  ID: 18.7938, SupCon: 3.4134, Tri: 0.1361
 2025-04-19 08:47:58,906 - INFO - [DEBUG] ArcFace confidence: 0.2305
-2025-04-19 08:47:58,912 - INFO - [DEBUG] Loss Breakdown — ID: 19.0671, SupCon: 3.4234, Tri: 0.0601
+2025-04-19 08:47:58,912 - INFO - [DEBUG] Loss Breakdown  ID: 19.0671, SupCon: 3.4234, Tri: 0.0601
 2025-04-19 08:47:59,321 - INFO - [DEBUG] ArcFace confidence: 0.2614
-2025-04-19 08:47:59,327 - INFO - [DEBUG] Loss Breakdown — ID: 18.7695, SupCon: 3.4003, Tri: 0.0857
+2025-04-19 08:47:59,327 - INFO - [DEBUG] Loss Breakdown  ID: 18.7695, SupCon: 3.4003, Tri: 0.0857
 2025-04-19 08:47:59,732 - INFO - [DEBUG] ArcFace confidence: 0.2379
-2025-04-19 08:47:59,738 - INFO - [DEBUG] Loss Breakdown — ID: 18.4213, SupCon: 3.4420, Tri: 0.1225
+2025-04-19 08:47:59,738 - INFO - [DEBUG] Loss Breakdown  ID: 18.4213, SupCon: 3.4420, Tri: 0.1225
 2025-04-19 08:48:00,146 - INFO - [DEBUG] ArcFace confidence: 0.2240
-2025-04-19 08:48:00,149 - INFO - [DEBUG] Loss Breakdown — ID: 18.6795, SupCon: 3.4156, Tri: 0.0897
+2025-04-19 08:48:00,149 - INFO - [DEBUG] Loss Breakdown  ID: 18.6795, SupCon: 3.4156, Tri: 0.0897
 2025-04-19 08:48:00,554 - INFO - [DEBUG] ArcFace confidence: 0.2833
-2025-04-19 08:48:00,557 - INFO - [DEBUG] Loss Breakdown — ID: 19.5358, SupCon: 3.4517, Tri: 0.0919
+2025-04-19 08:48:00,557 - INFO - [DEBUG] Loss Breakdown  ID: 19.5358, SupCon: 3.4517, Tri: 0.0919
 2025-04-19 08:48:00,968 - INFO - [DEBUG] ArcFace confidence: 0.2838
-2025-04-19 08:48:00,971 - INFO - [DEBUG] Loss Breakdown — ID: 19.2135, SupCon: 3.4019, Tri: 0.1231
+2025-04-19 08:48:00,971 - INFO - [DEBUG] Loss Breakdown  ID: 19.2135, SupCon: 3.4019, Tri: 0.1231
 2025-04-19 08:48:01,376 - INFO - [DEBUG] ArcFace confidence: 0.2346
-2025-04-19 08:48:01,382 - INFO - [DEBUG] Loss Breakdown — ID: 19.0709, SupCon: 3.4246, Tri: 0.1035
+2025-04-19 08:48:01,382 - INFO - [DEBUG] Loss Breakdown  ID: 19.0709, SupCon: 3.4246, Tri: 0.1035
 2025-04-19 08:48:01,790 - INFO - [DEBUG] ArcFace confidence: 0.2182
-2025-04-19 08:48:01,796 - INFO - [DEBUG] Loss Breakdown — ID: 18.6686, SupCon: 3.4629, Tri: 0.0916
+2025-04-19 08:48:01,796 - INFO - [DEBUG] Loss Breakdown  ID: 18.6686, SupCon: 3.4629, Tri: 0.0916
 2025-04-19 08:48:02,207 - INFO - [DEBUG] ArcFace confidence: 0.2414
-2025-04-19 08:48:02,213 - INFO - [DEBUG] Loss Breakdown — ID: 18.4618, SupCon: 3.4533, Tri: 0.1781
+2025-04-19 08:48:02,213 - INFO - [DEBUG] Loss Breakdown  ID: 18.4618, SupCon: 3.4533, Tri: 0.1781
 2025-04-19 08:48:02,616 - INFO - [DEBUG] ArcFace confidence: 0.2896
-2025-04-19 08:48:02,622 - INFO - [DEBUG] Loss Breakdown — ID: 18.5460, SupCon: 3.4810, Tri: 0.1588
+2025-04-19 08:48:02,622 - INFO - [DEBUG] Loss Breakdown  ID: 18.5460, SupCon: 3.4810, Tri: 0.1588
 2025-04-19 08:48:03,039 - INFO - [DEBUG] ArcFace confidence: 0.2879
-2025-04-19 08:48:03,045 - INFO - [DEBUG] Loss Breakdown — ID: 18.8022, SupCon: 3.4942, Tri: 0.1591
+2025-04-19 08:48:03,045 - INFO - [DEBUG] Loss Breakdown  ID: 18.8022, SupCon: 3.4942, Tri: 0.1591
 2025-04-19 08:48:03,465 - INFO - [DEBUG] ArcFace confidence: 0.2357
-2025-04-19 08:48:03,468 - INFO - [DEBUG] Loss Breakdown — ID: 18.4424, SupCon: 3.4883, Tri: 0.1012
+2025-04-19 08:48:03,468 - INFO - [DEBUG] Loss Breakdown  ID: 18.4424, SupCon: 3.4883, Tri: 0.1012
 2025-04-19 08:48:03,887 - INFO - [DEBUG] ArcFace confidence: 0.2524
-2025-04-19 08:48:03,890 - INFO - [DEBUG] Loss Breakdown — ID: 18.9507, SupCon: 3.5031, Tri: 0.1487
+2025-04-19 08:48:03,890 - INFO - [DEBUG] Loss Breakdown  ID: 18.9507, SupCon: 3.5031, Tri: 0.1487
 2025-04-19 08:48:04,307 - INFO - [DEBUG] ArcFace confidence: 0.2726
-2025-04-19 08:48:04,312 - INFO - [DEBUG] Loss Breakdown — ID: 18.6557, SupCon: 3.4681, Tri: 0.1198
+2025-04-19 08:48:04,312 - INFO - [DEBUG] Loss Breakdown  ID: 18.6557, SupCon: 3.4681, Tri: 0.1198
 2025-04-19 08:48:04,730 - INFO - [DEBUG] ArcFace confidence: 0.2776
-2025-04-19 08:48:04,733 - INFO - [DEBUG] Loss Breakdown — ID: 18.4774, SupCon: 3.5039, Tri: 0.1290
+2025-04-19 08:48:04,733 - INFO - [DEBUG] Loss Breakdown  ID: 18.4774, SupCon: 3.5039, Tri: 0.1290
 2025-04-19 08:48:05,152 - INFO - [DEBUG] ArcFace confidence: 0.2712
-2025-04-19 08:48:05,155 - INFO - [DEBUG] Loss Breakdown — ID: 19.4331, SupCon: 3.4770, Tri: 0.1450
+2025-04-19 08:48:05,155 - INFO - [DEBUG] Loss Breakdown  ID: 19.4331, SupCon: 3.4770, Tri: 0.1450
 2025-04-19 08:48:05,575 - INFO - [DEBUG] ArcFace confidence: 0.2574
-2025-04-19 08:48:05,581 - INFO - [DEBUG] Loss Breakdown — ID: 18.5682, SupCon: 3.4667, Tri: 0.1641
+2025-04-19 08:48:05,581 - INFO - [DEBUG] Loss Breakdown  ID: 18.5682, SupCon: 3.4667, Tri: 0.1641
 2025-04-19 08:48:05,991 - INFO - [DEBUG] ArcFace confidence: 0.2546
-2025-04-19 08:48:05,997 - INFO - [DEBUG] Loss Breakdown — ID: 18.7462, SupCon: 3.4860, Tri: 0.1111
+2025-04-19 08:48:05,997 - INFO - [DEBUG] Loss Breakdown  ID: 18.7462, SupCon: 3.4860, Tri: 0.1111
 2025-04-19 08:48:06,402 - INFO - [DEBUG] ArcFace confidence: 0.2982
-2025-04-19 08:48:06,405 - INFO - [DEBUG] Loss Breakdown — ID: 19.3205, SupCon: 3.4886, Tri: 0.1252
+2025-04-19 08:48:06,405 - INFO - [DEBUG] Loss Breakdown  ID: 19.3205, SupCon: 3.4886, Tri: 0.1252
 2025-04-19 08:48:06,812 - INFO - [DEBUG] ArcFace confidence: 0.2227
-2025-04-19 08:48:06,815 - INFO - [DEBUG] Loss Breakdown — ID: 18.7841, SupCon: 3.4900, Tri: 0.1005
+2025-04-19 08:48:06,815 - INFO - [DEBUG] Loss Breakdown  ID: 18.7841, SupCon: 3.4900, Tri: 0.1005
 2025-04-19 08:48:07,239 - INFO - [DEBUG] ArcFace confidence: 0.2806
-2025-04-19 08:48:07,243 - INFO - [DEBUG] Loss Breakdown — ID: 18.8609, SupCon: 3.4845, Tri: 0.1331
+2025-04-19 08:48:07,243 - INFO - [DEBUG] Loss Breakdown  ID: 18.8609, SupCon: 3.4845, Tri: 0.1331
 2025-04-19 08:48:07,643 - INFO - [DEBUG] ArcFace confidence: 0.3199
-2025-04-19 08:48:07,649 - INFO - [DEBUG] Loss Breakdown — ID: 19.2287, SupCon: 3.4695, Tri: 0.1618
+2025-04-19 08:48:07,649 - INFO - [DEBUG] Loss Breakdown  ID: 19.2287, SupCon: 3.4695, Tri: 0.1618
 2025-04-19 08:48:08,024 - INFO - [DEBUG] ArcFace confidence: 0.2797
-2025-04-19 08:48:08,027 - INFO - [DEBUG] Loss Breakdown — ID: 18.6784, SupCon: 3.2641, Tri: 0.0653
+2025-04-19 08:48:08,027 - INFO - [DEBUG] Loss Breakdown  ID: 18.6784, SupCon: 3.2641, Tri: 0.0653
 2025-04-19 08:48:08,909 - INFO - [Epoch 5] Total Loss=0.1229
 2025-04-19 08:48:08,909 - INFO - Validating epoch 5...
 2025-04-19 08:48:40,632 - INFO - [Epoch 5] Avg Train Loss = 0.1229 | 
@@ -360,63 +360,63 @@
 2025-04-19 08:48:40,634 - INFO -  Epoch 6/20
 2025-04-19 08:48:40,635 - INFO - [Epoch 6] Learning rate: 0.000008
 2025-04-19 08:49:05,019 - INFO - [DEBUG] ArcFace confidence: 0.2382
-2025-04-19 08:49:05,024 - INFO - [DEBUG] Loss Breakdown — ID: 19.0512, SupCon: 3.4656, Tri: 0.1068
+2025-04-19 08:49:05,024 - INFO - [DEBUG] Loss Breakdown  ID: 19.0512, SupCon: 3.4656, Tri: 0.1068
 2025-04-19 08:49:05,257 - INFO - [DEBUG] Batch 0 - image shape: torch.Size([32, 3, 224, 224]), labels: torch.Size([32])
 2025-04-19 08:49:05,257 - INFO - [DEBUG] img_features: torch.Size([32, 512]), prompt: torch.Size([32, 3, 512]), pooled: torch.Size([32, 512])
 2025-04-19 08:49:05,428 - INFO - [DEBUG] ArcFace confidence: 0.2428
-2025-04-19 08:49:05,432 - INFO - [DEBUG] Loss Breakdown — ID: 18.6475, SupCon: 3.4757, Tri: 0.1099
+2025-04-19 08:49:05,432 - INFO - [DEBUG] Loss Breakdown  ID: 18.6475, SupCon: 3.4757, Tri: 0.1099
 2025-04-19 08:49:05,837 - INFO - [DEBUG] ArcFace confidence: 0.2861
-2025-04-19 08:49:05,840 - INFO - [DEBUG] Loss Breakdown — ID: 19.0075, SupCon: 3.4827, Tri: 0.0929
+2025-04-19 08:49:05,840 - INFO - [DEBUG] Loss Breakdown  ID: 19.0075, SupCon: 3.4827, Tri: 0.0929
 2025-04-19 08:49:06,241 - INFO - [DEBUG] ArcFace confidence: 0.3138
-2025-04-19 08:49:06,245 - INFO - [DEBUG] Loss Breakdown — ID: 18.7788, SupCon: 3.4475, Tri: 0.0888
+2025-04-19 08:49:06,245 - INFO - [DEBUG] Loss Breakdown  ID: 18.7788, SupCon: 3.4475, Tri: 0.0888
 2025-04-19 08:49:06,643 - INFO - [DEBUG] ArcFace confidence: 0.3573
-2025-04-19 08:49:06,645 - INFO - [DEBUG] Loss Breakdown — ID: 19.0864, SupCon: 3.4810, Tri: 0.1783
+2025-04-19 08:49:06,645 - INFO - [DEBUG] Loss Breakdown  ID: 19.0864, SupCon: 3.4810, Tri: 0.1783
 2025-04-19 08:49:07,056 - INFO - [DEBUG] ArcFace confidence: 0.2307
-2025-04-19 08:49:07,058 - INFO - [DEBUG] Loss Breakdown — ID: 18.7776, SupCon: 3.4482, Tri: 0.1098
+2025-04-19 08:49:07,058 - INFO - [DEBUG] Loss Breakdown  ID: 18.7776, SupCon: 3.4482, Tri: 0.1098
 2025-04-19 08:49:07,465 - INFO - [DEBUG] ArcFace confidence: 0.2494
-2025-04-19 08:49:07,469 - INFO - [DEBUG] Loss Breakdown — ID: 18.5695, SupCon: 3.4590, Tri: 0.1714
+2025-04-19 08:49:07,469 - INFO - [DEBUG] Loss Breakdown  ID: 18.5695, SupCon: 3.4590, Tri: 0.1714
 2025-04-19 08:49:07,870 - INFO - [DEBUG] ArcFace confidence: 0.2478
-2025-04-19 08:49:07,874 - INFO - [DEBUG] Loss Breakdown — ID: 19.0263, SupCon: 3.4401, Tri: 0.0715
+2025-04-19 08:49:07,874 - INFO - [DEBUG] Loss Breakdown  ID: 19.0263, SupCon: 3.4401, Tri: 0.0715
 2025-04-19 08:49:08,276 - INFO - [DEBUG] ArcFace confidence: 0.2309
-2025-04-19 08:49:08,279 - INFO - [DEBUG] Loss Breakdown — ID: 19.2341, SupCon: 3.4669, Tri: 0.1541
+2025-04-19 08:49:08,279 - INFO - [DEBUG] Loss Breakdown  ID: 19.2341, SupCon: 3.4669, Tri: 0.1541
 2025-04-19 08:49:08,688 - INFO - [DEBUG] ArcFace confidence: 0.3034
-2025-04-19 08:49:08,691 - INFO - [DEBUG] Loss Breakdown — ID: 18.6412, SupCon: 3.4085, Tri: 0.1241
+2025-04-19 08:49:08,691 - INFO - [DEBUG] Loss Breakdown  ID: 18.6412, SupCon: 3.4085, Tri: 0.1241
 2025-04-19 08:49:09,099 - INFO - [DEBUG] ArcFace confidence: 0.2846
-2025-04-19 08:49:09,103 - INFO - [DEBUG] Loss Breakdown — ID: 18.6585, SupCon: 3.3995, Tri: 0.1312
+2025-04-19 08:49:09,103 - INFO - [DEBUG] Loss Breakdown  ID: 18.6585, SupCon: 3.3995, Tri: 0.1312
 2025-04-19 08:49:09,507 - INFO - [DEBUG] ArcFace confidence: 0.2387
-2025-04-19 08:49:09,510 - INFO - [DEBUG] Loss Breakdown — ID: 18.6656, SupCon: 3.4991, Tri: 0.1085
+2025-04-19 08:49:09,510 - INFO - [DEBUG] Loss Breakdown  ID: 18.6656, SupCon: 3.4991, Tri: 0.1085
 2025-04-19 08:49:09,914 - INFO - [DEBUG] ArcFace confidence: 0.2494
-2025-04-19 08:49:09,917 - INFO - [DEBUG] Loss Breakdown — ID: 18.6004, SupCon: 3.5459, Tri: 0.0904
+2025-04-19 08:49:09,917 - INFO - [DEBUG] Loss Breakdown  ID: 18.6004, SupCon: 3.5459, Tri: 0.0904
 2025-04-19 08:49:10,320 - INFO - [DEBUG] ArcFace confidence: 0.2191
-2025-04-19 08:49:10,324 - INFO - [DEBUG] Loss Breakdown — ID: 18.7769, SupCon: 3.5760, Tri: 0.1531
+2025-04-19 08:49:10,324 - INFO - [DEBUG] Loss Breakdown  ID: 18.7769, SupCon: 3.5760, Tri: 0.1531
 2025-04-19 08:49:10,728 - INFO - [DEBUG] ArcFace confidence: 0.2556
-2025-04-19 08:49:10,732 - INFO - [DEBUG] Loss Breakdown — ID: 18.7542, SupCon: 3.6342, Tri: 0.0942
+2025-04-19 08:49:10,732 - INFO - [DEBUG] Loss Breakdown  ID: 18.7542, SupCon: 3.6342, Tri: 0.0942
 2025-04-19 08:49:11,133 - INFO - [DEBUG] ArcFace confidence: 0.2937
-2025-04-19 08:49:11,138 - INFO - [DEBUG] Loss Breakdown — ID: 19.2998, SupCon: 3.5363, Tri: 0.1099
+2025-04-19 08:49:11,138 - INFO - [DEBUG] Loss Breakdown  ID: 19.2998, SupCon: 3.5363, Tri: 0.1099
 2025-04-19 08:49:11,540 - INFO - [DEBUG] ArcFace confidence: 0.2683
-2025-04-19 08:49:11,543 - INFO - [DEBUG] Loss Breakdown — ID: 19.1675, SupCon: 3.6394, Tri: 0.1497
+2025-04-19 08:49:11,543 - INFO - [DEBUG] Loss Breakdown  ID: 19.1675, SupCon: 3.6394, Tri: 0.1497
 2025-04-19 08:49:11,948 - INFO - [DEBUG] ArcFace confidence: 0.2612
-2025-04-19 08:49:11,951 - INFO - [DEBUG] Loss Breakdown — ID: 18.7952, SupCon: 3.6682, Tri: 0.1570
+2025-04-19 08:49:11,951 - INFO - [DEBUG] Loss Breakdown  ID: 18.7952, SupCon: 3.6682, Tri: 0.1570
 2025-04-19 08:49:12,357 - INFO - [DEBUG] ArcFace confidence: 0.2770
-2025-04-19 08:49:12,360 - INFO - [DEBUG] Loss Breakdown — ID: 18.6994, SupCon: 3.6042, Tri: 0.1502
+2025-04-19 08:49:12,360 - INFO - [DEBUG] Loss Breakdown  ID: 18.6994, SupCon: 3.6042, Tri: 0.1502
 2025-04-19 08:49:12,763 - INFO - [DEBUG] ArcFace confidence: 0.2929
-2025-04-19 08:49:12,767 - INFO - [DEBUG] Loss Breakdown — ID: 18.6290, SupCon: 3.5592, Tri: 0.1285
+2025-04-19 08:49:12,767 - INFO - [DEBUG] Loss Breakdown  ID: 18.6290, SupCon: 3.5592, Tri: 0.1285
 2025-04-19 08:49:13,184 - INFO - [DEBUG] ArcFace confidence: 0.2374
-2025-04-19 08:49:13,187 - INFO - [DEBUG] Loss Breakdown — ID: 19.0109, SupCon: 3.7324, Tri: 0.1239
+2025-04-19 08:49:13,187 - INFO - [DEBUG] Loss Breakdown  ID: 19.0109, SupCon: 3.7324, Tri: 0.1239
 2025-04-19 08:49:13,592 - INFO - [DEBUG] ArcFace confidence: 0.2673
-2025-04-19 08:49:13,595 - INFO - [DEBUG] Loss Breakdown — ID: 19.0845, SupCon: 3.6192, Tri: 0.1186
+2025-04-19 08:49:13,595 - INFO - [DEBUG] Loss Breakdown  ID: 19.0845, SupCon: 3.6192, Tri: 0.1186
 2025-04-19 08:49:14,000 - INFO - [DEBUG] ArcFace confidence: 0.2331
-2025-04-19 08:49:14,006 - INFO - [DEBUG] Loss Breakdown — ID: 18.9869, SupCon: 3.6977, Tri: 0.1724
+2025-04-19 08:49:14,006 - INFO - [DEBUG] Loss Breakdown  ID: 18.9869, SupCon: 3.6977, Tri: 0.1724
 2025-04-19 08:49:14,414 - INFO - [DEBUG] ArcFace confidence: 0.2339
-2025-04-19 08:49:14,418 - INFO - [DEBUG] Loss Breakdown — ID: 19.0160, SupCon: 3.7787, Tri: 0.1464
+2025-04-19 08:49:14,418 - INFO - [DEBUG] Loss Breakdown  ID: 19.0160, SupCon: 3.7787, Tri: 0.1464
 2025-04-19 08:49:14,822 - INFO - [DEBUG] ArcFace confidence: 0.2641
-2025-04-19 08:49:14,825 - INFO - [DEBUG] Loss Breakdown — ID: 18.6297, SupCon: 3.5386, Tri: 0.1188
+2025-04-19 08:49:14,825 - INFO - [DEBUG] Loss Breakdown  ID: 18.6297, SupCon: 3.5386, Tri: 0.1188
 2025-04-19 08:49:15,229 - INFO - [DEBUG] ArcFace confidence: 0.2766
-2025-04-19 08:49:15,233 - INFO - [DEBUG] Loss Breakdown — ID: 19.1223, SupCon: 3.6663, Tri: 0.1291
+2025-04-19 08:49:15,233 - INFO - [DEBUG] Loss Breakdown  ID: 19.1223, SupCon: 3.6663, Tri: 0.1291
 2025-04-19 08:49:15,635 - INFO - [DEBUG] ArcFace confidence: 0.2469
-2025-04-19 08:49:15,639 - INFO - [DEBUG] Loss Breakdown — ID: 18.6399, SupCon: 3.5629, Tri: 0.1700
+2025-04-19 08:49:15,639 - INFO - [DEBUG] Loss Breakdown  ID: 18.6399, SupCon: 3.5629, Tri: 0.1700
 2025-04-19 08:49:16,018 - INFO - [DEBUG] ArcFace confidence: 0.2748
-2025-04-19 08:49:16,021 - INFO - [DEBUG] Loss Breakdown — ID: 19.3426, SupCon: 3.4120, Tri: 0.0252
+2025-04-19 08:49:16,021 - INFO - [DEBUG] Loss Breakdown  ID: 19.3426, SupCon: 3.4120, Tri: 0.0252
 2025-04-19 08:49:16,894 - INFO - [Epoch 6] Total Loss=0.1245
 2025-04-19 08:49:16,894 - INFO - Validating epoch 6...
 2025-04-19 08:49:47,957 - INFO - [Epoch 6] Avg Train Loss = 0.1245 | 

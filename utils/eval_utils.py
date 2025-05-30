@@ -212,7 +212,7 @@ def validate_promptsg(model_components, val_loader, device, compose_prompt, conf
         all_labels.append(labels.cpu())
 
         if batch_idx == 0:
-            print(f"[DEBUG] Val Batch → Image Shape: {images.shape}, Logits: SKIPPED")
+            print(f"[DEBUG] Val Batch  Image Shape: {images.shape}, Logits: SKIPPED")
 
     # === Stack all features and labels
     all_features = torch.cat(all_features, dim=0)

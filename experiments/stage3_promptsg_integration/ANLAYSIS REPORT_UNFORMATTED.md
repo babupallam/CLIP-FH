@@ -2,8 +2,8 @@ experiments/stage3_promptsg_integration/ANALYSIS REPORT.md
 ===========================================================
 
 
-##  v1 – Baseline PromptSG with Linear Classifier
-### 🔧 Configuration Highlights:
+##  v1  Baseline PromptSG with Linear Classifier
+###  Configuration Highlights:
 - Model: ViT-B/16 or RN50 (based on config)
 - Stage: Stage 3 (joint prompt + image encoder tuning)
 - Classifier: `nn.Linear` (used after pooled multimodal features)
@@ -24,8 +24,8 @@ experiments/stage3_promptsg_integration/ANALYSIS REPORT.md
   - `F.dropout(p=0.1)` applied after fusion
 - Optimizer: `Adam`
   - Separate LR for:
-    - `clip.visual` → `0.0001`
-    - All other modules → `0.00001`
+    - `clip.visual`  `0.0001`
+    - All other modules  `0.00001`
 - Regularization:
   - `weight_decay = 0.0005`
   - Gradient clipping: `max_norm=5.0`
@@ -49,7 +49,7 @@ rn50: Rank-1 Accuracy : 64.07%  Rank-5 Accuracy : 79.94%  Rank-10 Accuracy: 84.7
 ===============================
 ===============================
 
-#### 🔥v2 abstract
+#### v2 abstract
 
 This version strengthens training through:
 - Better optimization dynamics
@@ -59,7 +59,7 @@ This version strengthens training through:
 
 ---
 
-### ✨ Key Implementation Highlights (v2)
+###  Key Implementation Highlights (v2)
 
 -  L2 Regularization via `weight_decay=1e-4` (tunable)
 -  Learning Rate Warm-up (first few epochs)
@@ -77,14 +77,14 @@ This version strengthens training through:
 ###  Why v2?
 
 - We already using ArcFace + SupCon + Triplet in v1.
-- However, training is unstable, especially for RN50: after epoch 4, Rank-1 fluctuates → signs of either:
+- However, training is unstable, especially for RN50: after epoch 4, Rank-1 fluctuates  signs of either:
   - Overfitting (too confident model)
   - Suboptimal optimization settings
-- ViT-B/16 ends at 53.14% Rank-1 — early stopping kicks in due to stagnation
+- ViT-B/16 ends at 53.14% Rank-1  early stopping kicks in due to stagnation
 
 ---
 
-(Perfect — let me walk you through implementing all 3 improvements _without needing `transformers`_, using native PyTorch or simplified logic.
+(Perfect  let me walk you through implementing all 3 improvements _without needing `transformers`_, using native PyTorch or simplified logic.
 
 ---
 
@@ -92,7 +92,7 @@ This version strengthens training through:
 
 Replace `transformers.get_cosine_schedule_with_warmup` with PyTorch's native cosine scheduler + manual warmup.
 
-#### 🔧 Step-by-step
+####  Step-by-step
 
  After `optimizer` definition:
 ```python
@@ -132,7 +132,7 @@ for group in optimizer.param_groups:
 
 ###  3. Configurable SupCon Temperature
 
-#### 🛠 YAML:
+####  YAML:
 Add:
 ```yaml
 supcon_temperature: 0.07
@@ -165,7 +165,7 @@ loss = (
 )
 ```
 
-🧪 This encourages the model to first focus on classification (ID + Triplet) then learn fine-grained contrast later.
+ This encourages the model to first focus on classification (ID + Triplet) then learn fine-grained contrast later.
 
 ---
 
@@ -196,7 +196,7 @@ rn50: Rank-1 Accuracy : 68.99% Rank-5 Accuracy : 85.13% Rank-10 Accuracy: 90.93%
 ================
 v4: for both
 
-Here’s your updated `build_promptsg_models()` function for v4 – BNNeck with optional dimension reduction:
+Heres your updated `build_promptsg_models()` function for v4  BNNeck with optional dimension reduction:
 
 ---
 
@@ -247,7 +247,7 @@ def build_promptsg_models(config, num_classes, device):
 
 ---
 
-### 🔧 Notes:
+###  Notes:
 - This function now supports both `v1` (linear classifier) and `v4` (BNNeck with ArcFace).
 - When using ArcFace, you must also return the `reduction` layer and `bnneck`, and apply them inside the `train()` loop:
   ```python
@@ -272,18 +272,18 @@ rn50: Rank-1 Accuracy : 42.25% Rank-5 Accuracy : 68.06%  Rank-10 Accuracy: 78.82
 
 ======================
 ====================
-##  v5 – for bnoth
+##  v5  for bnoth
 
 PromptSG with Semantic Consistency & Inversion Refinement
 
 ###  Motivation:
-To align more closely with the official PromptSG paper, v5 integrates architectural fidelity and semantic embedding improvements. This version strengthens the _prompt generation_ and _fusion mechanism_, guided by insights from §5.1, §5.3, and ablation studies in the paper.
+To align more closely with the official PromptSG paper, v5 integrates architectural fidelity and semantic embedding improvements. This version strengthens the _prompt generation_ and _fusion mechanism_, guided by insights from 5.1, 5.3, and ablation studies in the paper.
 
-> “The inversion network is a lightweight model with a three-layer MLP... a BatchNorm layer is placed after the last state.”
+> The inversion network is a lightweight model with a three-layer MLP... a BatchNorm layer is placed after the last state.
 
 ---
 
-### ✨ Key Enhancements in v5
+###  Key Enhancements in v5
 
 ####  1. TextualInversionMLP now replicates paper architecture
 - 3-layer MLP with 512 hidden dimensions
@@ -305,7 +305,7 @@ self.mlp = nn.Sequential(
 ---
 
 ####  2. Multimodal Prompt Interaction = Paper-Compliant
-- `transformer_layers: 3` → 1 cross-attn + 2 self-attn (as per paper)
+- `transformer_layers: 3`  1 cross-attn + 2 self-attn (as per paper)
 - Cross-modal refinement using fused visual + textual embeddings
 - `MultiModalInteraction` module now handles semantic attention properly
 
@@ -326,15 +326,15 @@ use_composed_prompt: true
 ---
 ---
 
-## 🔍 Summary Table (Compared to Previous Versions)
+##  Summary Table (Compared to Previous Versions)
 
 | Feature                     | v1    | v4      | v5  (Current)              |
 |-----------------------------|--------|---------|-----------------------------|
 | TextualInversionMLP         | Basic  | Basic   | 3-layer + ReLU + BN        |
 | Prompt Composition          | Basic  | Yes     | Refined, paper-style        |
 | MultiModalInteraction       | 1x     |        | 1 cross + 2 self-attn       |
-| Use in Validation           | ✖      | Yes     |                           |
-| Conformity to PromptSG Paper| ❌     | Partial |  Close match              |
+| Use in Validation           |       | Yes     |                           |
+| Conformity to PromptSG Paper|      | Partial |  Close match              |
 
 ---
 
@@ -375,7 +375,7 @@ bnneck_dim: 256
 
 ---
 
-### 📦 YAML Additions for v5:
+###  YAML Additions for v5:
 ```yaml
 classifier: arcface
 bnneck_reduction: true
@@ -396,7 +396,7 @@ rn50: Rank-1 Accuracy : 50.08%  Rank-5 Accuracy : 71.54%  Rank-10 Accuracy: 80.0
 v7: for both
 
 Avoid Crossentropy loss
-If you’re intentionally experimenting with a pure contrastive objective, that’s fine.
+If youre intentionally experimenting with a pure contrastive objective, thats fine.
  keep ID loss (even with low weight):
 loss = (config['loss_id_weight'] * id_loss +
         config['loss_tri_weight'] * triplet_loss +
@@ -443,7 +443,7 @@ from
 prompt_template: "A detailed photo of {aspect} hand for identification."
 
 to
-prompt_template: "A captured frame showing a person’s {aspect} hand during surveillance."
+prompt_template: "A captured frame showing a persons {aspect} hand during surveillance."
 
 vitb16: Avg Rank-1  : 84.87%  Avg Rank-5  : 94.84%  Avg Rank-10 : 97.60% Mean AP     : 89.35%
 rn50:Avg Rank-1  : 63.00%  Avg Rank-5  : 80.31%  Avg Rank-10 : 86.90% Mean AP     : 71.13%
@@ -456,7 +456,7 @@ now image size is
  transforms.Resize((224, 224)),
 utils/transforms.py:25
 
-change the image size into 224×128 → rectangular (portrait-style), more closely matching hand ReID datasets (which often use 256×128 or 384×128)
+change the image size into 224128  rectangular (portrait-style), more closely matching hand ReID datasets (which often use 256128 or 384128)
 
 
 vitb16: Avg Rank-1  : 81.59% Avg Rank-5  : 93.73% Avg Rank-10 : 96.91% Mean AP     : 86.93%
@@ -469,50 +469,50 @@ rn50: Avg Rank-1  : 58.25% Avg Rank-5  : 77.49% Avg Rank-10 : 85.31%  Mean AP   
 
 import pandas as pd, os
 
-# Full remarks for Stage‑3 PromptSG – ViT‑B/16
+# Full remarks for Stage3 PromptSG  ViTB/16
 vit3 = {
-    "v1": ("Baseline PromptSG joint tuning: Linear classifier, Cross‑Entropy + Triplet (SupCon disabled); "
-           "AdamW optimiser (vis 1e‑4, other 1e‑5), weight_decay 5e‑4, grad‑clip 5; "
-           "single cross‑attention layer, mean‑pool fusion; pseudo‑token inversion with template "
+    "v1": ("Baseline PromptSG joint tuning: Linear classifier, CrossEntropy + Triplet (SupCon disabled); "
+           "AdamW optimiser (vis 1e4, other 1e5), weight_decay 5e4, gradclip 5; "
+           "single crossattention layer, meanpool fusion; pseudotoken inversion with template "
            "\"A detailed photo of {}'s {aspect} hand for identification.\"; "
            "embeddings F.normalize + dropout 0.1; ReID cosine eval ignoring logits."),
-    "v2": ("Training stability package: weight_decay 1e‑4, LR warm‑up (few epochs) then CosineAnnealingLR; "
-           "SupCon enabled with configurable temperature + auto loss‑balance; early_stop_patience 5. "
+    "v2": ("Training stability package: weight_decay 1e4, LR warmup (few epochs) then CosineAnnealingLR; "
+           "SupCon enabled with configurable temperature + auto lossbalance; early_stop_patience 5. "
            "ViT became unstable and performance dropped."),
-    "v3": ("Ablation: Cross‑Entropy removed – pure Triplet + SupCon contrastive objective; further performance drop."),
-    "v4": ("Added BNNeck + optional reduction (256‑d) and ArcFace head; build_promptsg_models updated; "
+    "v3": ("Ablation: CrossEntropy removed  pure Triplet + SupCon contrastive objective; further performance drop."),
+    "v4": ("Added BNNeck + optional reduction (256d) and ArcFace head; build_promptsg_models updated; "
            "classifier switch via YAML fields classifier=arcface, bnneck_reduction=true, bnneck_dim=256."),
-    "v5": ("Paper‑faithful PromptSG: 3‑layer TextualInversionMLP + BN; MultiModalInteraction 1×cross + 2×self; "
+    "v5": ("Paperfaithful PromptSG: 3layer TextualInversionMLP + BN; MultiModalInteraction 1cross + 2self; "
            "dynamic composed prompt used in both train & val (prompt_template \"A photo of a {} {aspect} hand.\", "
            "use_composed_prompt true)."),
-    "v6": ("Gradient clip tightened 5→1; lr_clip_visual and lr_modules set to 1e‑6; "
+    "v6": ("Gradient clip tightened 51; lr_clip_visual and lr_modules set to 1e6; "
            "BNNeck + ArcFace retained; semantic alignment focus; big accuracy jump (R1 80.8, mAP 86.6)."),
-    "v7": ("Experiment with pure contrastive objective (CE still off) – kept v6 config; results similar."),
-    "v8": ("Config unchanged for ViT (RN50‑only tweaks), but continued training yielded best R1 85.9 / mAP 90.0."),
-    "v9": ("Same cfg as v8 but epochs extended to 60 and early_stop_patience 10 – no improvement (slight decline)."),
+    "v7": ("Experiment with pure contrastive objective (CE still off)  kept v6 config; results similar."),
+    "v8": ("Config unchanged for ViT (RN50only tweaks), but continued training yielded best R1 85.9 / mAP 90.0."),
+    "v9": ("Same cfg as v8 but epochs extended to 60 and early_stop_patience 10  no improvement (slight decline)."),
     "v10": ("Prompt template swapped to surveillance wording "
-            "\"A captured frame showing a person’s {aspect} hand during surveillance.\" – negligible change."),
-    "v11": ("Input resize changed to portrait 224×128 (was 224×224) – mAP dropped ~3 pp to 86.9.")
+            "\"A captured frame showing a persons {aspect} hand during surveillance.\"  negligible change."),
+    "v11": ("Input resize changed to portrait 224128 (was 224224)  mAP dropped ~3pp to 86.9.")
 }
 
-# Full remarks for Stage‑3 PromptSG – RN50
+# Full remarks for Stage3 PromptSG  RN50
 rn3 = {
-    "v1": ("Baseline PromptSG identical logic to ViT‑v1 (Linear + CE + Triplet, SupCon off, AdamW, grad‑clip 5)."),
-    "v2": ("Introduced weight_decay 1e‑4, LR warm‑up + Cosine LR, SupCon enabled with temperature & loss‑balance; "
+    "v1": ("Baseline PromptSG identical logic to ViTv1 (Linear + CE + Triplet, SupCon off, AdamW, gradclip 5)."),
+    "v2": ("Introduced weight_decay 1e4, LR warmup + Cosine LR, SupCon enabled with temperature & lossbalance; "
            "early_stop_patience 5."),
-    "v3": ("Removed Cross‑Entropy (contrastive‑only Triplet + SupCon) – large performance boost to R1 69 / mAP 76."),
-    "v4": ("BNNeck + ArcFace head introduced (256‑d) via build_promptsg_models; sharp performance drop."),
-    "v5": ("TextualInversionMLP upgraded (3‑layer + BN); refined multimodal fusion (1 cross + 2 self); "
+    "v3": ("Removed CrossEntropy (contrastiveonly Triplet + SupCon)  large performance boost to R1 69 / mAP 76."),
+    "v4": ("BNNeck + ArcFace head introduced (256d) via build_promptsg_models; sharp performance drop."),
+    "v5": ("TextualInversionMLP upgraded (3layer + BN); refined multimodal fusion (1 cross + 2 self); "
            "composed prompt used; modest recovery."),
-    "v6": ("Stability tweaks: grad‑clip 1, lr_clip_visual and lr_modules 1e‑6; BNNeck/ArcFace retained; "
+    "v6": ("Stability tweaks: gradclip 1, lr_clip_visual and lr_modules 1e6; BNNeck/ArcFace retained; "
            "performance to R1 50 / mAP 60."),
-    "v7": ("RN50‑specific tuning: lr_visual 0.0005 ↓, ArcFace scale 25 margin 0.35, unfreeze_blocks 2 – slight gain."),
+    "v7": ("RN50specific tuning: lr_visual 0.0005 , ArcFace scale 25 margin 0.35, unfreeze_blocks 2  slight gain."),
     "v8": ("Deeper FT & larger neck: unfreeze_blocks 4, bnneck_dim 1024; "
-           "ArcFace scale 30 margin 0.35; lr_clip_visual/modules 1e‑4; max_norm 0.5; Cosine scheduler removed – "
+           "ArcFace scale 30 margin 0.35; lr_clip_visual/modules 1e4; max_norm 0.5; Cosine scheduler removed  "
            "peak R1 61.2 / mAP 69.8."),
-    "v9": ("Configuration kept, but epochs 60 and patience 10 – over‑training led to drop (R1 52.9 / mAP 62.9)."),
-    "v10": ("Surveillance‑style prompt template applied – lifted to R1 63 / mAP 71.1 (near peak)."),
-    "v11": ("Dataset resize to portrait 224×128 – performance fell to R1 58.3 / mAP 67.3.")
+    "v9": ("Configuration kept, but epochs 60 and patience 10  overtraining led to drop (R1 52.9 / mAP 62.9)."),
+    "v10": ("Surveillancestyle prompt template applied  lifted to R1 63 / mAP 71.1 (near peak)."),
+    "v11": ("Dataset resize to portrait 224128  performance fell to R1 58.3 / mAP 67.3.")
 }
 
 # Create DataFrames

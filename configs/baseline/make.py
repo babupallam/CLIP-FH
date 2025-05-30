@@ -46,4 +46,4 @@ for model in models:
         fname = f"eval_{model}_hd_{aspect}.yml"
         write_config(cfg, os.path.join(config_dir, fname))
 
-print(f"✅ Generated {len(models)*(len(aspects_11k)+len(aspects_hd))} baseline configs in {config_dir}")
+print(f" Generated {len(models)*(len(aspects_11k)+len(aspects_hd))} baseline configs in {config_dir}")

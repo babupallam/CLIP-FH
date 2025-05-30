@@ -1,4 +1,4 @@
-[DEBUG] CLIP Model = rn50 → Token Embed Dim: 512, Final LN Dim: 512
+[DEBUG] CLIP Model = rn50  Token Embed Dim: 512, Final LN Dim: 512
 [DEBUG] PromptLearner proj layer = Linear | in: 512, out: 512
 [DEBUG] Dummy Image Feature Shape: torch.Size([1, 1024])
 [DEBUG] Text Feature Output (via proj) should match: 512
@@ -184,30 +184,30 @@ Total trainable CLIP params: 102155689
 [DEBUG] CLIP trainable params: 102155689
 [Prompt] cached 890 frozen image feats
 [Epoch 1] Avg Prompt Loss: 2.8519
-new best prompt – 2.8519
+new best prompt  2.8519
 [Epoch 2] Avg Prompt Loss: 2.8052
-new best prompt – 2.8052
+new best prompt  2.8052
 [Epoch 3] Avg Prompt Loss: 2.8758
 [Epoch 4] Avg Prompt Loss: 2.3375
-new best prompt – 2.3375
+new best prompt  2.3375
 [Epoch 5] Avg Prompt Loss: 2.1223
-new best prompt – 2.1223
+new best prompt  2.1223
 [Epoch 6] Avg Prompt Loss: 2.1699
 [Epoch 7] Avg Prompt Loss: 1.9653
-new best prompt – 1.9653
+new best prompt  1.9653
 [Epoch 8] Avg Prompt Loss: 1.9816
 [Epoch 9] Avg Prompt Loss: 1.9801
 [Epoch 10] Avg Prompt Loss: 1.8530
-new best prompt – 1.8530
+new best prompt  1.8530
 [Epoch 11] Avg Prompt Loss: 1.6778
-new best prompt – 1.6778
+new best prompt  1.6778
 [Epoch 12] Avg Prompt Loss: 1.6123
-new best prompt – 1.6123
+new best prompt  1.6123
 [Epoch 13] Avg Prompt Loss: 1.7196
 [Epoch 14] Avg Prompt Loss: 1.5970
-new best prompt – 1.5970
+new best prompt  1.5970
 [Epoch 15] Avg Prompt Loss: 1.5246
-new best prompt – 1.5246
+new best prompt  1.5246
 [Epoch 16] Avg Prompt Loss: 1.5881
 [Epoch 17] Avg Prompt Loss: 1.5921
 [Epoch 18] Avg Prompt Loss: 1.6451
@@ -215,12 +215,12 @@ new best prompt – 1.5246
 [Epoch 20] Avg Prompt Loss: 1.6477
 [Epoch 21] Avg Prompt Loss: 1.6099
 [Epoch 22] Avg Prompt Loss: 1.5209
-new best prompt – 1.5209
+new best prompt  1.5209
 [Epoch 23] Avg Prompt Loss: 1.5612
 [Epoch 24] Avg Prompt Loss: 1.5590
 [Epoch 25] Avg Prompt Loss: 1.6343
 [Epoch 26] Avg Prompt Loss: 1.4626
-new best prompt – 1.4626
+new best prompt  1.4626
 [Epoch 27] Avg Prompt Loss: 1.5001
 [Epoch 28] Avg Prompt Loss: 1.5345
 [Epoch 29] Avg Prompt Loss: 1.4984

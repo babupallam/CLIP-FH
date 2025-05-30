@@ -55,8 +55,8 @@ def print_split_stats(split_label, stats):
         f"| Min: {stats['min']:>2} ({stats['min_count']}) | Max: {stats['max']:>2} ({stats['max_count']})"
     )
 
-# 📘 Header: Explanation
-print_and_log("📘 Column Explanation:")
+#  Header: Explanation
+print_and_log(" Column Explanation:")
 print_and_log("-" * 85)
 print_and_log("SPLIT LABEL         : Split type or Monte Carlo folder (e.g. TRAIN, gallery0)")
 print_and_log("Classes             : Number of identity folders (unique IDs)")
@@ -65,8 +65,8 @@ print_and_log("Min                 : Fewest images in a class + count of such cl
 print_and_log("Max                 : Most images in a class + count of such classes")
 print_and_log("-" * 85)
 
-# 📊 Summary for train/val/test
-print_and_log("\n📊 HD Dataset Distribution Summary")
+#  Summary for train/val/test
+print_and_log("\n HD Dataset Distribution Summary")
 print_and_log("=" * 85)
 
 for split in splits:
@@ -74,8 +74,8 @@ for split in splits:
     stats = analyze_split(split_path)
     print_split_stats(split.upper(), stats)
 
-# 🎲 Monte Carlo analysis
-print_and_log("\n🎲 Monte Carlo Query/Gallery Splits Summary")
+#  Monte Carlo analysis
+print_and_log("\n Monte Carlo Query/Gallery Splits Summary")
 print_and_log("=" * 85)
 
 for prefix in monte_prefixes:
@@ -84,4 +84,4 @@ for prefix in monte_prefixes:
         stats = analyze_split(split_path)
         print_split_stats(prefix, stats)
 
-print_and_log(f"\n✅ Log saved to: {log_file}")
+print_and_log(f"\n Log saved to: {log_file}")

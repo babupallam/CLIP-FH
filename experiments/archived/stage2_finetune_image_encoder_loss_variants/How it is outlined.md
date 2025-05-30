@@ -1,46 +1,46 @@
-Perfect — now that I can see your **actual Stage 2 config files** under `configs/train_stage2_loss_variants/`, here’s your **regenerated and aligned implementation outline** based on your naming conventions and structure.
+Perfect  now that I can see your **actual Stage 2 config files** under `configs/train_stage2_loss_variants/`, heres your **regenerated and aligned implementation outline** based on your naming conventions and structure.
 
 ---
 
-## 🧩 **Stage 2: Fine-Tune Image Encoder with Loss Variants (CLIP-FH)**
+##  **Stage 2: Fine-Tune Image Encoder with Loss Variants (CLIP-FH)**
 
-### 🎯 Goal:
+###  Goal:
 Continue training the CLIP **image encoder** with more powerful **ReID-aware loss functions**, building on Stage 1 weights, while keeping the **text encoder frozen**.
 
 ---
 
-## 📁 Project Directory Overview (Refined)
+##  Project Directory Overview (Refined)
 
 ```bash
 HandCLIP/
-├── configs/
-│   ├── train_stage2_loss_variants/
-│   │   ├── train_vitb16_11k_dorsal_r_ce.yml
-│   │   ├── train_vitb16_11k_dorsal_r_ce_arcface.yml
-│   │   ├── train_vitb16_11k_dorsal_r_ce_triplet.yml
-│   │   └── train_vitb16_11k_dorsal_r_ce_triplet_center.yml
-│   └── ...
-│
-├── experiments/
-│   └── stage2_finetune_image_encoder_loss_variants/
-│       └── train_stage2_loss_variants.py          ✅ Stage 2 training script
-│
-├── loss/
-│   ├── cross_entropy_loss.py
-│   ├── arcface.py
-│   ├── center_loss.py
-│   ├── triplet_loss.py            ✅ (You may need to add this)
-│   └── loss_factory.py            ✅ Combines losses dynamically
-│
-├── datasets/
-├── run_eval_clip.py               ✅ Unified evaluator (supports Stage 2 models)
-├── eval_logs/
-└── saved_models/
+ configs/
+    train_stage2_loss_variants/
+       train_vitb16_11k_dorsal_r_ce.yml
+       train_vitb16_11k_dorsal_r_ce_arcface.yml
+       train_vitb16_11k_dorsal_r_ce_triplet.yml
+       train_vitb16_11k_dorsal_r_ce_triplet_center.yml
+    ...
+
+ experiments/
+    stage2_finetune_image_encoder_loss_variants/
+        train_stage2_loss_variants.py           Stage 2 training script
+
+ loss/
+    cross_entropy_loss.py
+    arcface.py
+    center_loss.py
+    triplet_loss.py             (You may need to add this)
+    loss_factory.py             Combines losses dynamically
+
+ datasets/
+ run_eval_clip.py                Unified evaluator (supports Stage 2 models)
+ eval_logs/
+ saved_models/
 ```
 
 ---
 
-## ✅ Config File Naming Convention
+##  Config File Naming Convention
 
 | Config File Name                                   | Loss Functions Included                        |
 |----------------------------------------------------|------------------------------------------------|
@@ -53,7 +53,7 @@ HandCLIP/
 
 ---
 
-## ⚙️ What Happens in Stage 2
+##  What Happens in Stage 2
 
 | Component         | Purpose                                                                 |
 |------------------|-------------------------------------------------------------------------|
@@ -64,7 +64,7 @@ HandCLIP/
 
 ---
 
-## 🧪 Example: YAML Config Contents
+##  Example: YAML Config Contents
 
 ```yaml
 experiment: stage2_vitb16_11k_dorsal_r_ce_triplet_center
@@ -90,7 +90,7 @@ save_dir: saved_models/
 
 ---
 
-## 🧠 Stage Summary So Far
+##  Stage Summary So Far
 
 | Stage   | Text Encoder | Image Encoder     | Loss Strategy                        | Purpose                            |
 |---------|---------------|-------------------|--------------------------------------|------------------------------------|
@@ -100,10 +100,10 @@ save_dir: saved_models/
 
 ---
 
-## ✅ Next Suggested Steps
+##  Next Suggested Steps
 
 Let me know if you want help generating or reviewing:
-- `loss_factory.py` (dynamic multi-loss loader ✅)
+- `loss_factory.py` (dynamic multi-loss loader )
 - Updating `train_stage2_loss_variants.py` to support loss config
 - Making evaluation reuse your Stage 2 weights (already supported in `run_eval_clip.py`)
 
@@ -115,22 +115,22 @@ I'm ready when you are!
 ***
 ***
 
-That's a fantastic set of questions — and it's exactly what you should be thinking about at this stage in your research. Let's break it down step by step into a **feasibility study + strategy roadmap** for incorporating **loss variants in Stage 2**, specifically in your **HandCLIP** project.
+That's a fantastic set of questions  and it's exactly what you should be thinking about at this stage in your research. Let's break it down step by step into a **feasibility study + strategy roadmap** for incorporating **loss variants in Stage 2**, specifically in your **HandCLIP** project.
 
 ---
 
-## 🧠 **1. Why Use Multiple Loss Functions in Re-ID?**
+##  **1. Why Use Multiple Loss Functions in Re-ID?**
 
 In biometric Re-ID (e.g., hand image identity matching), the objective is not just to **classify**, but to:
 - **Pull embeddings of the same identity closer** in feature space
 - **Push different identities apart**
 - Make the model **generalize** well to unseen identities
 
-### 🔍 Classification Loss Alone (e.g., Cross-Entropy) Is Not Enough:
+###  Classification Loss Alone (e.g., Cross-Entropy) Is Not Enough:
 - Good for **ID classification**
 - But **not explicitly designed** to separate embeddings in feature space for re-ID
 
-### ✅ That’s why we combine it with:
+###  Thats why we combine it with:
 | Loss Function    | What it does                                                   | Benefit for ReID                                |
 |------------------|----------------------------------------------------------------|--------------------------------------------------|
 | **Triplet Loss** | Encourages margin between anchor-positive-negative embeddings  | Improves intra-class compactness & inter-class separation |
@@ -138,11 +138,11 @@ In biometric Re-ID (e.g., hand image identity matching), the objective is not ju
 | **ArcFace Loss** | Adds angular margin during classification                      | Boosts feature discriminability and robustness   |
 | **Cross-Entropy**| Supervises class prediction                                    | Ensures base-level identity learning             |
 
-> 📌 When combined, they offer **stronger embedding learning** than any one loss alone.
+>  When combined, they offer **stronger embedding learning** than any one loss alone.
 
 ---
 
-## 🧪 **2. Feasibility: Why Stage 2 Is Needed**
+##  **2. Feasibility: Why Stage 2 Is Needed**
 
 You're not just "continuing" training. Stage 2:
 - **Changes the training objective**
@@ -150,7 +150,7 @@ You're not just "continuing" training. Stage 2:
 - Switches from just ID classification to **embedding optimization**
 - Brings CLIP closer to what **MBA-Net with CNN** does (but with transformer power!)
 
-### 🔁 Stage-Based Training Advantage
+###  Stage-Based Training Advantage
 | Stage | Focus                    | Loss                 | Purpose                                |
 |-------|--------------------------|----------------------|----------------------------------------|
 | 1     | Identity Classification  | Cross Entropy        | Establish feature extractor            |
@@ -158,29 +158,29 @@ You're not just "continuing" training. Stage 2:
 
 ---
 
-## ⚔️ **3. CLIP vs MBA-Net (CNN)**: Why Compare?
+##  **3. CLIP vs MBA-Net (CNN)**: Why Compare?
 
 | Feature                        | MBA-Net (CNN-based)               | HandCLIP (CLIP-based)               |
 |-------------------------------|------------------------------------|-------------------------------------|
 | Architecture                  | ResNet-50 + part attention blocks  | Transformer (ViT-B/16 or RN50)      |
 | Image Processing              | CNN feature maps                   | Patch embeddings                    |
 | Training Loss                 | Cross-Entropy + Triplet            | You can match this (Stage 2)        |
-| Embedding Space               | Learned via metric losses          | Currently CE only → Stage 2 enables |
+| Embedding Space               | Learned via metric losses          | Currently CE only  Stage 2 enables |
 | Explainability                | Harder                             | Attention maps (ViT) are easier     |
 | Generalization                | CNNs may overfit on small datasets | CLIP generalizes better             |
 
-👉 You must compare CLIP to MBA **with a fair loss setup** — hence **Stage 2 is crucial**.
+ You must compare CLIP to MBA **with a fair loss setup**  hence **Stage 2 is crucial**.
 
 ---
 
-## 🧪 Recommended Loss Combinations to Try
+##  Recommended Loss Combinations to Try
 
-### ✅ Start Simple
+###  Start Simple
 - `cross_entropy + triplet`
-- ✅ Widely used baseline in ReID literature (also used in MBA-Net)
+-  Widely used baseline in ReID literature (also used in MBA-Net)
 - Encourages identity prediction **and** feature space separation
 
-### ➕ Then Try:
+###  Then Try:
 - `cross_entropy + arcface`
 - `cross_entropy + center_loss`
 - `cross_entropy + triplet + center_loss`
@@ -189,7 +189,7 @@ You're not just "continuing" training. Stage 2:
 
 ---
 
-## 📈 What You Should Compare (CLIP vs MBA)
+##  What You Should Compare (CLIP vs MBA)
 
 | Metric            | Description                                  |
 |-------------------|----------------------------------------------|
@@ -201,7 +201,7 @@ You're not just "continuing" training. Stage 2:
 
 ---
 
-## ✅ Summary: Why Stage 2 Matters
+##  Summary: Why Stage 2 Matters
 
 - It's a **core part** of your methodology
 - Makes your CLIP model **fairly comparable to CNN-based MBA-Net**
@@ -217,4 +217,4 @@ Would you like me to help you:
 2. Implement a `loss_factory.py` to support all these combinations cleanly?
 3. Plot evaluation metrics from logs for comparison?
 
-Let’s go step-by-step 🚀
+Lets go step-by-step 

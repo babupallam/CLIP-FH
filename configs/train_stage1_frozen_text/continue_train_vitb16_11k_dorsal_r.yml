@@ -7,7 +7,7 @@ variant: stage1_frozen_text
 epochs: 1
 batch_size: 32
 num_workers: 4
-lr: 0.0001                 # ✅ Required for training
+lr: 0.0001                 #  Required for training
 
 resume_from: saved_models/stage1_frozen_text_vitb16_11k_dorsal_r_e5_lr00001_bs32_losscross_entropy.pth
 

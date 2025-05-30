@@ -1,4 +1,4 @@
-[DEBUG] CLIP Model = vitb16 → Token Embed Dim: 512, Final LN Dim: 512
+[DEBUG] CLIP Model = vitb16  Token Embed Dim: 512, Final LN Dim: 512
 [DEBUG] PromptLearner proj layer = Identity | in: 512, out: 512
 [DEBUG] Dummy Image Feature Shape: torch.Size([1, 512])
 [DEBUG] Text Feature Output (via proj) should match: 512
@@ -160,7 +160,7 @@ Total trainable CLIP params: 149695049
 [DEBUG] PromptLearner trainable params: 442368
 [DEBUG] CLIP trainable params: 149695049
 [Prompt] cached 890 frozen image feats
-[DEBUG] CLIP Model = vitb16 → Token Embed Dim: 512, Final LN Dim: 512
+[DEBUG] CLIP Model = vitb16  Token Embed Dim: 512, Final LN Dim: 512
 [DEBUG] PromptLearner proj layer = Identity | in: 512, out: 512
 [DEBUG] Dummy Image Feature Shape: torch.Size([1, 512])
 [DEBUG] Text Feature Output (via proj) should match: 512
@@ -323,35 +323,35 @@ Total trainable CLIP params: 149695049
 [DEBUG] CLIP trainable params: 149695049
 [Prompt] cached 890 frozen image feats
 [Epoch 1] Avg Prompt Loss: 2.9176
-new best prompt – 2.9176
+new best prompt  2.9176
 [Epoch 2] Avg Prompt Loss: 2.7595
-new best prompt – 2.7595
+new best prompt  2.7595
 [Epoch 3] Avg Prompt Loss: 2.6446
-new best prompt – 2.6446
+new best prompt  2.6446
 [Epoch 4] Avg Prompt Loss: 2.3216
-new best prompt – 2.3216
+new best prompt  2.3216
 [Epoch 5] Avg Prompt Loss: 2.1816
-new best prompt – 2.1816
+new best prompt  2.1816
 [Epoch 6] Avg Prompt Loss: 2.0994
-new best prompt – 2.0994
+new best prompt  2.0994
 [Epoch 7] Avg Prompt Loss: 1.7102
-new best prompt – 1.7102
+new best prompt  1.7102
 [Epoch 8] Avg Prompt Loss: 1.9491
 [Epoch 9] Avg Prompt Loss: 1.7292
 [Epoch 10] Avg Prompt Loss: 1.7575
 [Epoch 11] Avg Prompt Loss: 1.8055
 [Epoch 12] Avg Prompt Loss: 1.7387
 [Epoch 13] Avg Prompt Loss: 1.5883
-new best prompt – 1.5883
+new best prompt  1.5883
 [Epoch 14] Avg Prompt Loss: 1.5980
 [Epoch 15] Avg Prompt Loss: 1.5891
 [Epoch 16] Avg Prompt Loss: 1.4675
-new best prompt – 1.4675
+new best prompt  1.4675
 [Epoch 17] Avg Prompt Loss: 1.5438
 [Epoch 18] Avg Prompt Loss: 1.7289
 [Epoch 19] Avg Prompt Loss: 1.5299
 [Epoch 20] Avg Prompt Loss: 1.3745
-new best prompt – 1.3745
+new best prompt  1.3745
 [Epoch 21] Avg Prompt Loss: 1.5547
 [Epoch 22] Avg Prompt Loss: 1.4556
 [Epoch 23] Avg Prompt Loss: 1.5424
