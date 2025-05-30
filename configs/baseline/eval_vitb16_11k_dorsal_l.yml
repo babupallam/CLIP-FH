@@ -1,4 +1,4 @@
-experiment: eval_stage0_baseline
+experiment: eval_stage1_baseline
 dataset: 11k
 aspect: dorsal_l
 model: vitb16

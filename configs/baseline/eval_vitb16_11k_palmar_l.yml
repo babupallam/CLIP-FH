@@ -1,4 +1,4 @@
-experiment: eval_stage0_baseline
+experiment: eval_stage1_baseline
 dataset: 11k
 aspect: palmar_l
 model: vitb16
