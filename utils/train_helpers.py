@@ -249,6 +249,7 @@ def build_promptsg_models(config, num_classes, device):
 
     # === BNNeck Variant (used when classifier is 'arcface') ===
     # BNNeck is a normalization layer (BatchNorm1d) placed before the classifier.
+    # BNNeck cleans and organizes the features so the model can match identities more accurately and train smoothly.
     # It helps to stabilize features and improve the angular margin learning of ArcFace.
     # Optionally, we can also reduce the feature dimensionality before applying BNNeck.
 
