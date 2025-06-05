@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c7cde98-b929-4071-bc2e-b0363f4c695d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/qodana.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/prompt_learner.py" beforeDir="false" afterPath="$PROJECT_DIR$/engine/prompt_learner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/train_clipreid_stages.py" beforeDir="false" afterPath="$PROJECT_DIR$/engine/train_clipreid_stages.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/stage2_clipreid_integration/train_stage2_joint.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/stage2_clipreid_integration/train_stage2_joint.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +28,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -38,47 +42,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.1_baseline_vitb16.executor": "Run",
-    "Python.1_baseline_vitb16_11k.executor": "Run",
-    "Python.build_dataloader.executor": "Debug",
-    "Python.eval_baseline_clip.executor": "Run",
-    "Python.eval_rn50_vitb16_hd_dorsal_r.executor": "Run",
-    "Python.make.executor": "Run",
-    "Python.prepare_train_val_test_hd.executor": "Run",
-    "Python.run_all_experiments.executor": "Run",
-    "Python.run_all_stage1_dorsal_r.executor": "Run",
-    "Python.test_log_saving.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/Girija/Documents/GitHub/HandCLIP/experiments/conclusion_outputs",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.notebooks.jupyter.connections.configuration.JupyterServerConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.1_baseline_vitb16.executor&quot;: &quot;Run&quot;,
+    &quot;Python.1_baseline_vitb16_11k.executor&quot;: &quot;Run&quot;,
+    &quot;Python.build_dataloader.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.eval_baseline_clip.executor&quot;: &quot;Run&quot;,
+    &quot;Python.eval_rn50_vitb16_hd_dorsal_r.executor&quot;: &quot;Run&quot;,
+    &quot;Python.make.executor&quot;: &quot;Run&quot;,
+    &quot;Python.prepare_train_val_test_hd.executor&quot;: &quot;Run&quot;,
+    &quot;Python.run_all_experiments.executor&quot;: &quot;Run&quot;,
+    &quot;Python.run_all_stage1_dorsal_r.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_log_saving.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Girija/Documents/GitHub/HandCLIP/experiments/conclusion_outputs&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.notebooks.jupyter.connections.configuration.JupyterServerConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="QodanaHighlightedReportService">
-    <option name="localRunNotPublishedPersistedInfo">
-      <LocalReportPersistedInfo>
-        <option name="path" value="C:\Users\Girija\AppData\Local\Temp\qodana_output\qodana.sarif.json" />
-        <option name="reportGuid" value="124afd8b-d027-4ef3-8297-013ac59f8d54" />
-        <option name="reportName" value="README.md/qodana/2025-05-30" />
-      </LocalReportPersistedInfo>
-    </option>
-  </component>
-  <component name="QodanaIsSelectedPersistenceService">
-    <option name="selectedOrLoading" value="true" />
-  </component>
-  <component name="QodanaReportsService">
-    <option name="descriptions">
-      <ReportDescription localRun="true" path="C:\Users\Girija\AppData\Local\Temp\qodana_output\qodana.sarif.json" reportGuid="124afd8b-d027-4ef3-8297-013ac59f8d54" reportId="README.md/qodana/2025-05-30" />
-    </option>
-  </component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Girija\Documents\GitHub\HandCLIP\experiments\conclusion_outputs" />
@@ -88,11 +75,11 @@
       <recent name="C:\Users\Girija\Documents\GitHub\HandCLIP\configs\eval_stage1_frozen_text" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Girija\Documents\GitHub\HandCLIP\experiments\archived" />
       <recent name="C:\Users\Girija\Documents\GitHub\HandCLIP\previousVersions" />
       <recent name="C:\Users\Girija\Documents\GitHub\HandCLIP\engine\archived" />
       <recent name="C:\Users\Girija\Documents\GitHub\HandCLIP\configs\train_stage2_clip_reid\archive" />
       <recent name="C:\Users\Girija\Documents\GitHub\HandCLIP\train_logs\archived" />
-      <recent name="C:\Users\Girija\Documents\GitHub\HandCLIP\eval_logs\archived" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -124,6 +111,10 @@
       <workItem from="1748412642922" duration="22225000" />
       <workItem from="1748584748968" duration="178000" />
       <workItem from="1748585518823" duration="2236000" />
+      <workItem from="1748588661075" duration="111000" />
+      <workItem from="1748998208271" duration="2755000" />
+      <workItem from="1749086287814" duration="10952000" />
+      <workItem from="1749109205961" duration="3059000" />
     </task>
     <servers />
   </component>

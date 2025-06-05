@@ -51,6 +51,8 @@ def train_clipreid_prompt_stage(clip_model, prompt_learner, optimizer, scheduler
             txt_embeds = prompt_learner(lab)  # (B, L, dim)
 
             # Add positional embeddings (detach so gradients flow only through prompts)
+            # this will tell where each token sits in the sequence
+            #  Using .detach() means the positional embeddings are treated as fixed constants—no gradients flow back through them during training.
             pos_embed = clip_model.positional_embedding.unsqueeze(0).to(txt_embeds.device).detach()
             pos_embed = pos_embed.expand_as(txt_embeds)
             txt_embeds = txt_embeds + pos_embed
@@ -199,7 +201,7 @@ def train_clipreid_image_stage(clip_model, prompt_learner, optimizer, scheduler,
             text_feats = clip_model.ln_final(x[:, 0, :])
             image_feats = normalize(image_feats, dim=-1)
 
-            # Match projection before computing SupCon
+            # Match projection before computing SupCon - for RN50
             text_feats = prompt_learner.proj(text_feats)
 
             # Before computing losses:
@@ -245,7 +247,9 @@ def train_clipreid_image_stage(clip_model, prompt_learner, optimizer, scheduler,
                 center_loss_val = torch.tensor(0.0, device=device)
 
             if cfg.get("loss_use_supcon", True):
+                # How close the image features are to the matching text features (and how far from non-matching ones).
                 loss_i2t = loss_fn(image_feats, text_feats, labels_batch, mode="contrastive")
+                #How close the text features are to the matching image features (and how far from non-matching ones).
                 loss_t2i = loss_fn(text_feats, image_feats, labels_batch, mode="contrastive")
             else:
                 loss_i2t = loss_t2i = torch.tensor(0.0, device=device)

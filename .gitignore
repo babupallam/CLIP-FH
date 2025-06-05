@@ -13,7 +13,7 @@
 *.pyc
 *.pyc
 experiments/run_eval_clip.py
-experiments/stage1_baseline_inference/eval_baseline_clip.py
+experiments/archived/eval_baseline_clip.py
 *.pyc
 /11k
 /HD

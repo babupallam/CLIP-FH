@@ -70,7 +70,7 @@ def clipreid_integration(cfg_path):
 
     # === Prompt Learner ===
     prompt_learner = PromptLearner(
-        classnames=classnames,
+        classnames=classnames, #identities name
         cfg=cfg,
         clip_model=clip_model,
         n_ctx=cfg["n_ctx"],
@@ -139,9 +139,12 @@ def clipreid_integration(cfg_path):
 
     # for v2
     # 1. Scheduler for Prompt stage
+    #  The learning rate decreases in a smooth curve like a cosine wave.
     scheduler_prompt = CosineAnnealingLR(optimizer, T_max=epochs_prompt, eta_min=1e-6)
 
     # 2. Scheduler for Image stage
+    # OneCycle policy: Learning rate first increases and then decreases.
+    # More aggressive: Starts low → goes up → drops down again.
     scheduler_image = CosineAnnealingLR(optimizer, T_max=epochs_image, eta_min=1e-6)
 
     # for v3
