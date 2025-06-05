@@ -170,18 +170,20 @@ def promptSG_integration(config):
         for step, (images, labels) in enumerate(pbar):
             images, labels = images.to(device), labels.to(device)
             optimizer.zero_grad()
-
+            #1. Get image features from the CLIP image encoder.
             # Get image features from CLIP
             img_features = clip_model.encode_image(images).float()
-
+            #2. Generate pseudo-token prompts using the inversion model.
             # Generate pseudo prompts using the inversion model:
             pseudo_tokens = inversion_model(img_features)
 
             # Compose full prompts: [prefix] + [pseudo] + [suffix]:
             template = config.get("prompt_template", "A detailed photo of a hand.")
             prefix, suffix = template.split("{aspect}")[0].strip(), template.split("{aspect}")[-1].strip()
+            #3. Compose full prompts (prefix + pseudo + suffix).
             text_emb = compose_prompt(clip_model.encode_text, pseudo_tokens, templates=(prefix, suffix), device=device)
 
+            #4. Fuse image and prompt embeddings using the multimodal module.
             # Fuse image & text using cross-attention:
             visual_emb = multimodal_module(text_emb, img_features.unsqueeze(1))  # [B, 3, 512]
             pooled = visual_emb.mean(dim=1)  # [B, 512]
@@ -195,7 +197,7 @@ def promptSG_integration(config):
                 logger.info(f"[DEBUG] Pooled feature mean L2 norm: {norm:.4f}")
 
             # <<< v2 end
-
+            #5. Normalize and pool features → pass to classifier.
             # Classify the identity:
             classifier_type = config.get("classifier", "linear").lower()
             #logger.info(f"[DEBUG] Classifier type: {classifier.__class__.__name__}")
@@ -220,6 +222,7 @@ def promptSG_integration(config):
             else:
                 logits = classifier(pooled)
 
+            # 6. Compute all losses
             id_loss = id_loss_fn(logits, labels)
             triplet_loss_fn = TripletLoss(margin=0.3, mining='batch_hard')
             triplet_loss = triplet_loss_fn(pooled, labels)
@@ -242,6 +245,7 @@ def promptSG_integration(config):
             logger.info(
                 f"[DEBUG] Loss Breakdown  ID: {id_loss.item():.4f}, SupCon: {supcon_loss.item():.4f}, Tri: {triplet_loss.item():.4f}")
 
+            # 7. Backpropagate and update weights.
             loss.backward()
             optimizer.step()
 
@@ -250,7 +254,7 @@ def promptSG_integration(config):
                 list(multimodal_module.parameters()) +
                 list(classifier.parameters()) +
                 list(clip_model.visual.parameters()),
-                max_norm= 0.5  # reasonable threshold
+                max_norm= 0.5  # reasonable threshold --- overfitting
             )
 
             total_loss += loss.item()
