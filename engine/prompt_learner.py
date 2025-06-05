@@ -143,11 +143,11 @@ class TextualInversionMLP(nn.Module):
         # 3-layer MLP with ReLU activations and BatchNorm at the end
         self.mlp = nn.Sequential(
             nn.Linear(in_dim, 512),  # Layer 1: Project input to 512
-            nn.ReLU(),  # Non-linearity
+            nn.ReLU(),  # Non-linearity   (helps the network learn complex patterns) # Rectified Linear Unit  ReLU = max(0, x).
             nn.Linear(512, 512),  # Layer 2: Maintain 512 hidden state
             nn.ReLU(),  # Non-linearity
             nn.Linear(512, out_dim),  # Layer 3: Final projection to pseudo-token dimension
-            nn.BatchNorm1d(out_dim)  #  As specified: BN after final layer
+            nn.BatchNorm1d(out_dim)  #  As specified: BN after final layer # stabilize and speed up training by normalizing the output of the last layer.
         )
 
     def forward(self, x):
